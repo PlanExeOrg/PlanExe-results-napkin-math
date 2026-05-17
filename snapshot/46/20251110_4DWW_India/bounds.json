@@ -1,0 +1,79 @@
+{
+  "monthly_program_operating_cost_inr": {
+    "unit": "INR_per_month",
+    "low": 20000000,
+    "base": 50000000,
+    "high": 100000000,
+    "rationale": "Bottom-up: PMO staffing (~30–80 FTEs at gov pay scales) plus third-party audits, SME hardware lifecycle, liaison team, and UMF/cloud hosting; wide spread reflects unknown audit contract value and PMO scope.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "sme_admin_overhead_actual_hours_per_week": {
+    "unit": "hours_per_week",
+    "low": 1.0,
+    "base": 2.5,
+    "high": 5.0,
+    "rationale": "Risk 2 failure trigger names >2 hr/week for >40% of sampled SMEs; base set slightly above the cap to reflect realistic burden under deployed tablet tooling, with upper tail in the FM2 collapse region.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "voluntary_participation_actual_share": {
+    "unit": "fraction",
+    "low": 0.50,
+    "base": 0.72,
+    "high": 0.90,
+    "rationale": "Risk 5 union resistance and Risk 3 incentive dependency widen the downside; base sits just below the 75% target to reflect realistic SME and unionized-firm dropout pressure across 24 months.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "sustained_productivity_retention_actual_share": {
+    "unit": "fraction",
+    "low": 0.40,
+    "base": 0.70,
+    "high": 0.90,
+    "rationale": "Expert Issue 2 assumes 50% attrition of grant-driven efficiency in the first 12 months post-expiry as a baseline; base set just below the 75% target to reflect the named decay model.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "sme_admin_overhead_cap_hours_per_week": {
+    "unit": "hours_per_week",
+    "low": 1.5,
+    "base": 2.0,
+    "high": 3.0,
+    "rationale": "Plan names 2 hr/week as the SME compliance target; Risk 2 trigger uses the same value as a failure threshold. Spread reflects how tightly the cap is interpreted in operational rollbacks.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "voluntary_participation_target_share": {
+    "unit": "fraction",
+    "low": 0.70,
+    "base": 0.75,
+    "high": 0.85,
+    "rationale": "Plan commits to the 75% opt-in threshold; spread reflects sensitivity to how strictly downstream M&E claims rely on the threshold for statistical-power arguments.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "sustained_productivity_retention_target_share": {
+    "unit": "fraction",
+    "low": 0.60,
+    "base": 0.75,
+    "high": 0.90,
+    "rationale": "Expert Issue 2 names 75% as the formal-review threshold; range reflects that the threshold is a recommendation, not a treaty-fixed value, and downstream policy framings vary.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

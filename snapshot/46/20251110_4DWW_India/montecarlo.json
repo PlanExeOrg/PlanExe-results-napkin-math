@@ -1,0 +1,341 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "4-Day Work Week (4DWW) India Pilot",
+    "plan_type": "public_policy_pilot"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "total_program_operating_cost_inr": {
+      "unit": "INR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2733784850.2277174,
+      "std": 792645403.8530526,
+      "min": 965920192.1858094,
+      "p05": 1493250673.9959686,
+      "p25": 2151656169.134846,
+      "p50": 2669447832.944475,
+      "p75": 3294614921.5145016,
+      "p95": 4145259595.9847846,
+      "max": 4783747695.4757595
+    },
+    "formal_operations_budget_surplus_inr": {
+      "unit": "INR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 66215149.77228196,
+      "std": 792645403.8530526,
+      "min": -1983747695.47576,
+      "p05": -1345259595.9847853,
+      "p25": -494614921.51450205,
+      "p50": 130552167.05552435,
+      "p75": 648343830.8651532,
+      "p95": 1306749326.0040307,
+      "max": 1834079807.8141901
+    },
+    "sme_admin_overhead_margin_hours_per_week": {
+      "unit": "hours_per_week",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.6794554572033508,
+      "std": 0.8757793344631756,
+      "min": -3.329379528968544,
+      "p05": -2.189558429399104,
+      "p25": -1.2817483017154467,
+      "p50": -0.6225829293436742,
+      "p75": -0.04188122620641932,
+      "p95": 0.6989635472999747,
+      "max": 1.7691898121249663
+    },
+    "voluntary_participation_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.05904932140865086,
+      "std": 0.08763142376529501,
+      "min": -0.31300275444773007,
+      "p05": -0.20633017869438106,
+      "p25": -0.12168900852754341,
+      "p50": -0.05719686106460664,
+      "p75": 0.003636290796521058,
+      "p95": 0.08356801331203616,
+      "max": 0.17641601138313867
+    },
+    "sustained_productivity_retention_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.08340902819043683,
+      "std": 0.12128483128087048,
+      "min": -0.45478203698722036,
+      "p05": -0.29055188364001655,
+      "p25": -0.16808697120293087,
+      "p50": -0.07812794924856914,
+      "p75": 0.0029362783852939778,
+      "p95": 0.11102900336432285,
+      "max": 0.26487677445236857
+    }
+  },
+  "thresholds": {
+    "formal_operations_budget_surplus_inr": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5597,
+      "valid_count": 10000,
+      "probability": 0.5597
+    },
+    "sme_admin_overhead_margin_hours_per_week": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2352,
+      "valid_count": 10000,
+      "probability": 0.2352
+    },
+    "voluntary_participation_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2633,
+      "valid_count": 10000,
+      "probability": 0.2633
+    },
+    "sustained_productivity_retention_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2591,
+      "valid_count": 10000,
+      "probability": 0.2591
+    }
+  },
+  "sensitivity": {
+    "total_program_operating_cost_inr": {
+      "top_inputs": [
+        {
+          "id": "monthly_program_operating_cost_inr",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "formal_operations_budget_surplus_inr": {
+      "top_inputs": [
+        {
+          "id": "monthly_program_operating_cost_inr",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "sme_admin_overhead_margin_hours_per_week": {
+      "top_inputs": [
+        {
+          "id": "sme_admin_overhead_actual_hours_per_week",
+          "correlation": -0.936
+        },
+        {
+          "id": "sme_admin_overhead_cap_hours_per_week",
+          "correlation": 0.3389
+        }
+      ]
+    },
+    "voluntary_participation_margin": {
+      "top_inputs": [
+        {
+          "id": "voluntary_participation_actual_share",
+          "correlation": 0.9333
+        },
+        {
+          "id": "voluntary_participation_target_share",
+          "correlation": -0.3557
+        }
+      ]
+    },
+    "sustained_productivity_retention_margin": {
+      "top_inputs": [
+        {
+          "id": "sustained_productivity_retention_actual_share",
+          "correlation": 0.8633
+        },
+        {
+          "id": "sustained_productivity_retention_target_share",
+          "correlation": -0.5163
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "formal_operations_budget_surplus_inr": [
+      {
+        "id": "monthly_program_operating_cost_inr",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "sme_admin_overhead_margin_hours_per_week": [
+      {
+        "id": "sme_admin_overhead_actual_hours_per_week",
+        "p_pass_low_quartile": 0.7636,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -76.36
+      },
+      {
+        "id": "sme_admin_overhead_cap_hours_per_week",
+        "p_pass_low_quartile": 0.1044,
+        "p_pass_high_quartile": 0.406,
+        "delta_pp": 30.16
+      }
+    ],
+    "voluntary_participation_margin": [
+      {
+        "id": "voluntary_participation_actual_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.842,
+        "delta_pp": 84.2
+      },
+      {
+        "id": "voluntary_participation_target_share",
+        "p_pass_low_quartile": 0.4044,
+        "p_pass_high_quartile": 0.12,
+        "delta_pp": -28.44
+      }
+    ],
+    "sustained_productivity_retention_margin": [
+      {
+        "id": "sustained_productivity_retention_actual_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.738,
+        "delta_pp": 73.8
+      },
+      {
+        "id": "sustained_productivity_retention_target_share",
+        "p_pass_low_quartile": 0.4996,
+        "p_pass_high_quartile": 0.06,
+        "delta_pp": -43.96
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "formal_operations_budget_surplus_inr": [
+      {
+        "id": "monthly_program_operating_cost_inr",
+        "direction": "below",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 63894808.57904457,
+        "conditional_pass_prob": 0.8354,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "sme_admin_overhead_margin_hours_per_week": [
+      {
+        "id": "sme_admin_overhead_actual_hours_per_week",
+        "direction": "below",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 1.961621521243889,
+        "conditional_pass_prob": 0.9213,
+        "admitted_fraction": 0.15
+      }
+    ],
+    "voluntary_participation_margin": [
+      {
+        "id": "voluntary_participation_actual_share",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 0.7675057900046994,
+        "conditional_pass_prob": 0.842,
+        "admitted_fraction": 0.25
+      }
+    ],
+    "sustained_productivity_retention_margin": [
+      {
+        "id": "sustained_productivity_retention_actual_share",
+        "direction": "above",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 0.7788652768512901,
+        "conditional_pass_prob": 0.8493,
+        "admitted_fraction": 0.15
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "sme_admin_overhead_actual_hours_per_week",
+      "score": 93.4402,
+      "worst_gate": "sme_admin_overhead_margin_hours_per_week",
+      "bound_width_ratio": 1.6,
+      "source": "assumption"
+    },
+    {
+      "id": "monthly_program_operating_cost_inr",
+      "score": 70.448,
+      "worst_gate": "formal_operations_budget_surplus_inr",
+      "bound_width_ratio": 1.6,
+      "source": "assumption"
+    },
+    {
+      "id": "sustained_productivity_retention_actual_share",
+      "score": 39.056,
+      "worst_gate": "sustained_productivity_retention_margin",
+      "bound_width_ratio": 0.7143,
+      "source": "data"
+    },
+    {
+      "id": "voluntary_participation_actual_share",
+      "score": 34.4612,
+      "worst_gate": "voluntary_participation_margin",
+      "bound_width_ratio": 0.5556,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "total_program_operating_cost_inr": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.6,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.60"
+      ]
+    },
+    "formal_operations_budget_surplus_inr": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.6,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.60"
+      ]
+    },
+    "sme_admin_overhead_margin_hours_per_week": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.175,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.18"
+      ]
+    },
+    "voluntary_participation_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.3778,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.38"
+      ]
+    },
+    "sustained_productivity_retention_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.5571,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.56"
+      ]
+    }
+  },
+  "warnings": []
+}

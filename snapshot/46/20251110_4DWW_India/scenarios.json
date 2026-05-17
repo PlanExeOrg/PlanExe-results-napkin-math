@@ -1,0 +1,120 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "4-Day Work Week (4DWW) India Pilot",
+    "plan_type": "public_policy_pilot"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_budget_inr": 20000000000,
+        "pilot_duration_months": 48,
+        "formal_track_budget_share": 0.70,
+        "incentive_budget_share_of_formal": 0.80,
+        "sme_admin_overhead_cap_hours_per_week": 1.5,
+        "voluntary_participation_target_share": 0.70,
+        "sustained_productivity_retention_target_share": 0.60,
+        "monthly_program_operating_cost_inr": 20000000,
+        "sme_admin_overhead_actual_hours_per_week": 1.0,
+        "voluntary_participation_actual_share": 0.50,
+        "sustained_productivity_retention_actual_share": 0.40
+      },
+      "outputs": {
+        "total_program_operating_cost_inr": 960000000,
+        "formal_operations_budget_surplus_inr": 1840000000,
+        "sme_admin_overhead_margin_hours_per_week": 0.5,
+        "voluntary_participation_margin": -0.2,
+        "sustained_productivity_retention_margin": -0.2
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_budget_inr": 20000000000,
+        "pilot_duration_months": 48,
+        "formal_track_budget_share": 0.70,
+        "incentive_budget_share_of_formal": 0.80,
+        "sme_admin_overhead_cap_hours_per_week": 2.0,
+        "voluntary_participation_target_share": 0.75,
+        "sustained_productivity_retention_target_share": 0.75,
+        "monthly_program_operating_cost_inr": 50000000,
+        "sme_admin_overhead_actual_hours_per_week": 2.5,
+        "voluntary_participation_actual_share": 0.72,
+        "sustained_productivity_retention_actual_share": 0.70
+      },
+      "outputs": {
+        "total_program_operating_cost_inr": 2400000000,
+        "formal_operations_budget_surplus_inr": 400000000,
+        "sme_admin_overhead_margin_hours_per_week": -0.5,
+        "voluntary_participation_margin": -0.03,
+        "sustained_productivity_retention_margin": -0.05
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_budget_inr": 20000000000,
+        "pilot_duration_months": 48,
+        "formal_track_budget_share": 0.70,
+        "incentive_budget_share_of_formal": 0.80,
+        "sme_admin_overhead_cap_hours_per_week": 3.0,
+        "voluntary_participation_target_share": 0.85,
+        "sustained_productivity_retention_target_share": 0.90,
+        "monthly_program_operating_cost_inr": 100000000,
+        "sme_admin_overhead_actual_hours_per_week": 5.0,
+        "voluntary_participation_actual_share": 0.90,
+        "sustained_productivity_retention_actual_share": 0.90
+      },
+      "outputs": {
+        "total_program_operating_cost_inr": 4800000000,
+        "formal_operations_budget_surplus_inr": -2000000000,
+        "sme_admin_overhead_margin_hours_per_week": -2.0,
+        "voluntary_participation_margin": 0.05,
+        "sustained_productivity_retention_margin": 0.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "total_program_operating_cost_inr": {
+        "low": 960000000,
+        "base": 2400000000,
+        "high": 4800000000,
+        "unit": "INR",
+        "spread_ratio": 5.0,
+        "spread_absolute": 3840000000
+      },
+      "formal_operations_budget_surplus_inr": {
+        "low": 1840000000,
+        "base": 400000000,
+        "high": -2000000000,
+        "unit": "INR",
+        "spread_ratio": -1.0869565217391304,
+        "spread_absolute": -3840000000
+      },
+      "sme_admin_overhead_margin_hours_per_week": {
+        "low": 0.5,
+        "base": -0.5,
+        "high": -2.0,
+        "unit": "hours_per_week",
+        "spread_ratio": -4.0,
+        "spread_absolute": -2.5
+      },
+      "voluntary_participation_margin": {
+        "low": -0.2,
+        "base": -0.03,
+        "high": 0.05,
+        "unit": "fraction",
+        "spread_ratio": -0.25,
+        "spread_absolute": 0.25
+      },
+      "sustained_productivity_retention_margin": {
+        "low": -0.2,
+        "base": -0.05,
+        "high": 0.0,
+        "unit": "fraction",
+        "spread_ratio": 0.0,
+        "spread_absolute": 0.2
+      }
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,68 @@
+{
+  "specialized_cip_replacement_cost_usd": {
+    "unit": "USD",
+    "low": 50000000000,
+    "base": 250000000000,
+    "high": 900000000000,
+    "rationale": "Risk 3 projects 25% inflation of specialized Northern labor costs over 24 months with a 2:1 replacement buffer; wide range reflects unknown CIP swap volume and contract-rate dispersion.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "legacy_system_monthly_maintenance_cost_usd": {
+    "unit": "USD_per_month",
+    "low": 10000000000,
+    "base": 30000000000,
+    "high": 70000000000,
+    "rationale": "Risk 6 names a $500B+ annual shortfall from legacy maintenance drain (~$42B/month); base set near that figure with wide spread for unknown contract scope and liability-cap design.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "infrastructure_transfer_actual_share": {
+    "unit": "fraction",
+    "low": 0.65,
+    "base": 0.85,
+    "high": 0.95,
+    "rationale": "Risk 2 (cascading severance failure) and Risk 5 (corridor bottlenecks) jointly drive a wide miss vs the 90% IOB-dissolution target; base just below target reflects realistic slip.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "wave1_verification_actual_share": {
+    "unit": "fraction",
+    "low": 0.65,
+    "base": 0.82,
+    "high": 0.95,
+    "rationale": "Wave 1 is the highest-sync-risk severance window (premortem top operational risk); base set below the 85% trigger to reflect a realistic sequencing miss requiring grace-period extension.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "northern_hub_projected_density_persons_per_km2": {
+    "unit": "persons_per_km2",
+    "low": 8000,
+    "base": 13000,
+    "high": 18000,
+    "rationale": "Q7 requires sanitation/medical resources for 175% of currently settled population; base sits at the 13,000 design-suspension cap, with the upper tail crossing the 15,000 humane-mandate ceiling.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "northern_density_cap_persons_per_km2": {
+    "unit": "persons_per_km2",
+    "low": 11000,
+    "base": 13000,
+    "high": 15000,
+    "rationale": "Plan names two caps: 13,000 design-suspension (conservative modelling) and 15,000 humane-mandate (absolute breach); spread reflects sensitivity to which cap downstream commitments are written against.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

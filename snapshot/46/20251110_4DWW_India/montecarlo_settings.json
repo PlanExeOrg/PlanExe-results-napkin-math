@@ -1,0 +1,11 @@
+{
+  "n_runs": 10000,
+  "seed": 12345,
+  "distribution_default": "triangular",
+  "thresholds": {
+    "formal_operations_budget_surplus_inr":         { "operator": ">=", "value": 0 },
+    "sme_admin_overhead_margin_hours_per_week":     { "operator": ">=", "value": 0 },
+    "voluntary_participation_margin":               { "operator": ">=", "value": 0 },
+    "sustained_productivity_retention_margin":      { "operator": ">=", "value": 0 }
+  }
+}

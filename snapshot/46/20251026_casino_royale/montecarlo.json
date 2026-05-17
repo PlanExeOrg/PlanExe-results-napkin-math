@@ -1,0 +1,441 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "White House East Wing Casino (Pioneer's Gauntlet)",
+    "plan_type": "commercial_construction_phased"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "expected_daily_revenue_usd": {
+      "unit": "USD_per_day",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 852008.2823692374,
+      "std": 381203.8459816999,
+      "min": 144797.66550188986,
+      "p05": 340734.9735220533,
+      "p25": 562165.3142559823,
+      "p50": 785712.8600354951,
+      "p75": 1090744.825498064,
+      "p95": 1572684.1195189238,
+      "max": 2345736.296555369
+    },
+    "expected_daily_noi_usd": {
+      "unit": "USD_per_day",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 452649.83496158826,
+      "std": 398128.19526946853,
+      "min": -481920.4199795881,
+      "p05": -104870.78674713238,
+      "p25": 158892.6347173833,
+      "p50": 395252.58626804256,
+      "p75": 698827.5727667422,
+      "p95": 1196074.5447836982,
+      "max": 2082130.3215183888
+    },
+    "sponsor_profitability_trigger_margin_usd": {
+      "unit": "USD_per_day",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 402649.83496158826,
+      "std": 398128.19526946853,
+      "min": -531920.4199795881,
+      "p05": -154870.78674713237,
+      "p25": 108892.63471738332,
+      "p50": 345252.58626804256,
+      "p75": 648827.5727667422,
+      "p95": 1146074.5447836982,
+      "max": 2032130.3215183888
+    },
+    "sponsor_capital_release_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 450000000.0,
+      "std": 0.0,
+      "min": 450000000.0,
+      "p05": 450000000.0,
+      "p25": 450000000.0,
+      "p50": 450000000.0,
+      "p75": 450000000.0,
+      "p95": 450000000.0,
+      "max": 450000000.0
+    },
+    "court_remediation_daily_burn_capacity_usd": {
+      "unit": "USD_per_day",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1017768.6994348558,
+      "std": 143843.71481624985,
+      "min": 750000.0,
+      "p05": 810810.8108108108,
+      "p25": 909090.9090909091,
+      "p50": 1000000.0,
+      "p75": 1111111.111111111,
+      "p95": 1285714.2857142857,
+      "max": 1475409.8360655739
+    },
+    "sponsor_profitability_window_margin_days": {
+      "unit": "days",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -7.9787,
+      "std": 1.4833227261793032,
+      "min": -12.0,
+      "p05": -11.0,
+      "p25": -9.0,
+      "p50": -8.0,
+      "p75": -7.0,
+      "p95": -6.0,
+      "max": -5.0
+    },
+    "aml_adjusted_daily_noi_margin_usd": {
+      "unit": "USD_per_day",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 308773.4794100667,
+      "std": 359330.66822419723,
+      "min": -551290.3125730748,
+      "p05": -199958.39047109772,
+      "p25": 42679.91424028859,
+      "p50": 260215.58376254397,
+      "p75": 531936.3834042215,
+      "p95": 979416.9828007346,
+      "max": 1837296.2036354651
+    },
+    "high_roller_daily_revenue_usd": {
+      "unit": "USD_per_day",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 511204.96942154237,
+      "std": 228722.30758901994,
+      "min": 86878.59930113392,
+      "p05": 204440.98411323197,
+      "p25": 337299.1885535894,
+      "p50": 471427.71602129703,
+      "p75": 654446.8952988384,
+      "p95": 943610.4717113542,
+      "max": 1407441.7779332215
+    }
+  },
+  "thresholds": {
+    "sponsor_profitability_trigger_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 8517,
+      "valid_count": 10000,
+      "probability": 0.8517
+    },
+    "sponsor_profitability_window_margin_days": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "aml_adjusted_daily_noi_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 7983,
+      "valid_count": 10000,
+      "probability": 0.7983
+    }
+  },
+  "sensitivity": {
+    "expected_daily_revenue_usd": {
+      "top_inputs": [
+        {
+          "id": "daily_revenue_per_guest_usd",
+          "correlation": 0.8721
+        },
+        {
+          "id": "expected_utilization_rate",
+          "correlation": 0.4552
+        }
+      ]
+    },
+    "expected_daily_noi_usd": {
+      "top_inputs": [
+        {
+          "id": "daily_revenue_per_guest_usd",
+          "correlation": 0.8359
+        },
+        {
+          "id": "expected_utilization_rate",
+          "correlation": 0.4391
+        },
+        {
+          "id": "daily_operating_cost_usd",
+          "correlation": -0.2885
+        }
+      ]
+    },
+    "sponsor_profitability_trigger_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "daily_revenue_per_guest_usd",
+          "correlation": 0.8359
+        },
+        {
+          "id": "expected_utilization_rate",
+          "correlation": 0.4391
+        },
+        {
+          "id": "daily_operating_cost_usd",
+          "correlation": -0.2885
+        }
+      ]
+    },
+    "sponsor_capital_release_usd": {
+      "top_inputs": []
+    },
+    "court_remediation_daily_burn_capacity_usd": {
+      "top_inputs": [
+        {
+          "id": "court_political_reversal_remediation_window_days",
+          "correlation": -0.9866
+        }
+      ]
+    },
+    "sponsor_profitability_window_margin_days": {
+      "top_inputs": [
+        {
+          "id": "relocation_blackout_days",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "aml_adjusted_daily_noi_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "daily_revenue_per_guest_usd",
+          "correlation": 0.825
+        },
+        {
+          "id": "expected_utilization_rate",
+          "correlation": 0.4336
+        },
+        {
+          "id": "daily_operating_cost_usd",
+          "correlation": -0.3187
+        },
+        {
+          "id": "aml_bank_settlement_revenue_reduction_fraction",
+          "correlation": -0.0776
+        }
+      ]
+    },
+    "high_roller_daily_revenue_usd": {
+      "top_inputs": [
+        {
+          "id": "daily_revenue_per_guest_usd",
+          "correlation": 0.8721
+        },
+        {
+          "id": "expected_utilization_rate",
+          "correlation": 0.4552
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "sponsor_profitability_trigger_margin_usd": [
+      {
+        "id": "daily_revenue_per_guest_usd",
+        "p_pass_low_quartile": 0.5152,
+        "p_pass_high_quartile": 0.9992,
+        "delta_pp": 48.4
+      },
+      {
+        "id": "daily_operating_cost_usd",
+        "p_pass_low_quartile": 0.9684,
+        "p_pass_high_quartile": 0.7052,
+        "delta_pp": -26.32
+      },
+      {
+        "id": "expected_utilization_rate",
+        "p_pass_low_quartile": 0.7124,
+        "p_pass_high_quartile": 0.9516,
+        "delta_pp": 23.92
+      }
+    ],
+    "sponsor_profitability_window_margin_days": [
+      {
+        "id": "relocation_blackout_days",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "aml_adjusted_daily_noi_margin_usd": [
+      {
+        "id": "daily_revenue_per_guest_usd",
+        "p_pass_low_quartile": 0.402,
+        "p_pass_high_quartile": 0.9952,
+        "delta_pp": 59.32
+      },
+      {
+        "id": "daily_operating_cost_usd",
+        "p_pass_low_quartile": 0.9448,
+        "p_pass_high_quartile": 0.6168,
+        "delta_pp": -32.8
+      },
+      {
+        "id": "expected_utilization_rate",
+        "p_pass_low_quartile": 0.6376,
+        "p_pass_high_quartile": 0.9256,
+        "delta_pp": 28.8
+      },
+      {
+        "id": "aml_bank_settlement_revenue_reduction_fraction",
+        "p_pass_low_quartile": 0.8244,
+        "p_pass_high_quartile": 0.7828,
+        "delta_pp": -4.16
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "aml_adjusted_daily_noi_margin_usd": [
+      {
+        "id": "daily_revenue_per_guest_usd",
+        "direction": "above",
+        "input_percentile_cutoff": 5,
+        "cutoff_value": 746.6741265238746,
+        "conditional_pass_prob": 0.8344,
+        "admitted_fraction": 0.95
+      },
+      {
+        "id": "daily_operating_cost_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 5,
+        "cutoff_value": 600550.0881478584,
+        "conditional_pass_prob": 0.8132,
+        "admitted_fraction": 0.95
+      },
+      {
+        "id": "expected_utilization_rate",
+        "direction": "above",
+        "input_percentile_cutoff": 5,
+        "cutoff_value": 0.33017510942112543,
+        "conditional_pass_prob": 0.814,
+        "admitted_fraction": 0.95
+      },
+      {
+        "id": "aml_bank_settlement_revenue_reduction_fraction",
+        "direction": "below",
+        "input_percentile_cutoff": 5,
+        "cutoff_value": 0.26419503946610257,
+        "conditional_pass_prob": 0.8007,
+        "admitted_fraction": 0.95
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "daily_revenue_per_guest_usd",
+      "score": 30.9092,
+      "worst_gate": "aml_adjusted_daily_noi_margin_usd",
+      "bound_width_ratio": 2.5833,
+      "source": "data"
+    },
+    {
+      "id": "daily_operating_cost_usd",
+      "score": 10.3962,
+      "worst_gate": "aml_adjusted_daily_noi_margin_usd",
+      "bound_width_ratio": 1.5714,
+      "source": "assumption"
+    },
+    {
+      "id": "expected_utilization_rate",
+      "score": 5.809,
+      "worst_gate": "aml_adjusted_daily_noi_margin_usd",
+      "bound_width_ratio": 1.0,
+      "source": "data"
+    },
+    {
+      "id": "aml_bank_settlement_revenue_reduction_fraction",
+      "score": 1.0488,
+      "worst_gate": "aml_adjusted_daily_noi_margin_usd",
+      "bound_width_ratio": 1.25,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "expected_daily_revenue_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.7917,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.79"
+      ]
+    },
+    "expected_daily_noi_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 0.6667,
+      "average_bound_width_ratio": 1.7183,
+      "reasons": [
+        "2/3 input bounds anchored in data; 1/3 are assumptions",
+        "average bound-width-to-base ratio = 1.72"
+      ]
+    },
+    "sponsor_profitability_trigger_margin_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 0.6667,
+      "average_bound_width_ratio": 1.7183,
+      "reasons": [
+        "2/3 input bounds anchored in data; 1/3 are assumptions",
+        "average bound-width-to-base ratio = 1.72"
+      ]
+    },
+    "sponsor_capital_release_usd": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "court_remediation_daily_burn_capacity_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.67"
+      ]
+    },
+    "sponsor_profitability_window_margin_days": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.0,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.00"
+      ]
+    },
+    "aml_adjusted_daily_noi_margin_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 0.75,
+      "average_bound_width_ratio": 1.6012,
+      "reasons": [
+        "3/4 input bounds anchored in data; 1/4 are assumptions",
+        "average bound-width-to-base ratio = 1.60"
+      ]
+    },
+    "high_roller_daily_revenue_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.7917,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.79"
+      ]
+    }
+  },
+  "warnings": []
+}

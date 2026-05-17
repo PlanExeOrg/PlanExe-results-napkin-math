@@ -1,0 +1,195 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "White House East Wing Casino (Pioneer's Gauntlet)",
+    "plan_type": "commercial_construction_phased"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_sponsor_budget_usd": 600000000,
+        "political_reversal_contingency_usd": 90000000,
+        "sponsor_capital_release_fraction": 0.75,
+        "required_daily_noi_usd": 50000,
+        "sponsor_profitability_window_days": 90,
+        "casino_capacity_guests": 999,
+        "high_roller_capacity_share": 0.6,
+        "daily_revenue_per_guest_usd": 400,
+        "daily_operating_cost_usd": 150000,
+        "expected_utilization_rate": 0.25,
+        "aml_bank_settlement_revenue_reduction_fraction": 0.05,
+        "court_political_reversal_remediation_window_days": 60,
+        "relocation_blackout_days": 5
+      },
+      "outputs": {
+        "expected_daily_revenue_usd": 99900.0,
+        "expected_daily_noi_usd": -50100.0,
+        "sponsor_profitability_trigger_margin_usd": -100100.0,
+        "sponsor_capital_release_usd": 450000000.0,
+        "court_remediation_daily_burn_capacity_usd": 1500000.0,
+        "sponsor_profitability_window_margin_days": -5,
+        "aml_adjusted_daily_noi_margin_usd": -103097.0,
+        "high_roller_daily_revenue_usd": 59940.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_sponsor_budget_usd": 600000000,
+        "political_reversal_contingency_usd": 90000000,
+        "sponsor_capital_release_fraction": 0.75,
+        "required_daily_noi_usd": 50000,
+        "sponsor_profitability_window_days": 90,
+        "casino_capacity_guests": 999,
+        "high_roller_capacity_share": 0.6,
+        "daily_revenue_per_guest_usd": 1200,
+        "daily_operating_cost_usd": 350000,
+        "expected_utilization_rate": 0.5,
+        "aml_bank_settlement_revenue_reduction_fraction": 0.2,
+        "court_political_reversal_remediation_window_days": 90,
+        "relocation_blackout_days": 7
+      },
+      "outputs": {
+        "expected_daily_revenue_usd": 599400.0,
+        "expected_daily_noi_usd": 249400.0,
+        "sponsor_profitability_trigger_margin_usd": 199400.0,
+        "sponsor_capital_release_usd": 450000000.0,
+        "court_remediation_daily_burn_capacity_usd": 1000000.0,
+        "sponsor_profitability_window_margin_days": -7,
+        "aml_adjusted_daily_noi_margin_usd": 127472.0,
+        "high_roller_daily_revenue_usd": 359640.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_sponsor_budget_usd": 600000000,
+        "political_reversal_contingency_usd": 90000000,
+        "sponsor_capital_release_fraction": 0.75,
+        "required_daily_noi_usd": 50000,
+        "sponsor_profitability_window_days": 90,
+        "casino_capacity_guests": 999,
+        "high_roller_capacity_share": 0.6,
+        "daily_revenue_per_guest_usd": 3500,
+        "daily_operating_cost_usd": 700000,
+        "expected_utilization_rate": 0.75,
+        "aml_bank_settlement_revenue_reduction_fraction": 0.3,
+        "court_political_reversal_remediation_window_days": 120,
+        "relocation_blackout_days": 12
+      },
+      "outputs": {
+        "expected_daily_revenue_usd": 2622375.0,
+        "expected_daily_noi_usd": 1922375.0,
+        "sponsor_profitability_trigger_margin_usd": 1872375.0,
+        "sponsor_capital_release_usd": 450000000.0,
+        "court_remediation_daily_burn_capacity_usd": 750000.0,
+        "sponsor_profitability_window_margin_days": -12,
+        "aml_adjusted_daily_noi_margin_usd": 1400347.5,
+        "high_roller_daily_revenue_usd": 1573425.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "expected_daily_revenue_usd": {
+        "low": 99900.0,
+        "base": 599400.0,
+        "high": 2622375.0,
+        "unit": "USD_per_day",
+        "spread_ratio": 26.250000000000004,
+        "spread_absolute": 2522475.0
+      },
+      "expected_daily_noi_usd": {
+        "low": -50100.0,
+        "base": 249400.0,
+        "high": 1922375.0,
+        "unit": "USD_per_day",
+        "spread_ratio": null,
+        "spread_absolute": 1972475.0
+      },
+      "sponsor_profitability_trigger_margin_usd": {
+        "low": -100100.0,
+        "base": 199400.0,
+        "high": 1872375.0,
+        "unit": "USD_per_day",
+        "spread_ratio": null,
+        "spread_absolute": 1972475.0
+      },
+      "sponsor_capital_release_usd": {
+        "low": 450000000.0,
+        "base": 450000000.0,
+        "high": 450000000.0,
+        "unit": "USD",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "court_remediation_daily_burn_capacity_usd": {
+        "low": 1500000.0,
+        "base": 1000000.0,
+        "high": 750000.0,
+        "unit": "USD_per_day",
+        "spread_ratio": 0.5,
+        "spread_absolute": -750000.0
+      },
+      "sponsor_profitability_window_margin_days": {
+        "low": -5,
+        "base": -7,
+        "high": -12,
+        "unit": "days",
+        "spread_ratio": null,
+        "spread_absolute": -7
+      },
+      "aml_adjusted_daily_noi_margin_usd": {
+        "low": -103097.0,
+        "base": 127472.0,
+        "high": 1400347.5,
+        "unit": "USD_per_day",
+        "spread_ratio": null,
+        "spread_absolute": 1503444.5
+      },
+      "high_roller_daily_revenue_usd": {
+        "low": 59940.0,
+        "base": 359640.0,
+        "high": 1573425.0,
+        "unit": "USD_per_day",
+        "spread_ratio": 26.25,
+        "spread_absolute": 1513485.0
+      }
+    }
+  },
+  "warnings": [
+    {
+      "stage": "run_scenarios",
+      "scenario": "low",
+      "calculation": "sponsor_profitability_trigger_margin_usd",
+      "message": "Negative margin (-100100 USD/day): daily NOI fails the $50k sponsor profitability gate in the low scenario.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "run_scenarios",
+      "scenario": "low",
+      "calculation": "aml_adjusted_daily_noi_margin_usd",
+      "message": "Negative margin (-103097 USD/day): AML-shocked daily NOI fails the $50k sponsor gate in the low scenario.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "run_scenarios",
+      "scenario": "low",
+      "calculation": "sponsor_profitability_window_margin_days",
+      "message": "Negative margin (-5 days): achievable profitable-operation days (window minus blackout) fall short of the 90-day sponsor requirement in the low scenario.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "run_scenarios",
+      "scenario": "base",
+      "calculation": "sponsor_profitability_window_margin_days",
+      "message": "Negative margin (-7 days): achievable profitable-operation days (window minus blackout) fall short of the 90-day sponsor requirement in the base scenario.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "run_scenarios",
+      "scenario": "high",
+      "calculation": "sponsor_profitability_window_margin_days",
+      "message": "Negative margin (-12 days): achievable profitable-operation days (window minus blackout) fall short of the 90-day sponsor requirement in the high scenario.",
+      "severity": "WARN"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "daily_revenue_per_guest_usd": {
+    "unit": "USD_per_guest_per_day",
+    "low": 400,
+    "base": 1200,
+    "high": 3500,
+    "rationale": "High-end international casinos report daily gaming revenue per occupied seat from a few hundred USD at mid-tier venues to several thousand at VIP/diplomatic-mix rooms; wide band reflects high-roller variance.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "daily_operating_cost_usd": {
+    "unit": "USD_per_day",
+    "low": 150000,
+    "base": 350000,
+    "high": 700000,
+    "rationale": "Sum of 24/7 staff, 2.5 MW microgrid energy, T2CA vetting, security, and venue overhead for a 999-guest containerized venue; container-casino opex comparables span this range.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "expected_utilization_rate": {
+    "unit": "fraction",
+    "low": 0.25,
+    "base": 0.5,
+    "high": 0.75,
+    "rationale": "Peer 24/7 high-end venues average 0.3-0.7 occupancy with seasonal and diplomatic-event spikes; T2CA throughput friction biases toward the lower end.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "aml_bank_settlement_revenue_reduction_fraction": {
+    "unit": "fraction",
+    "low": 0.05,
+    "base": 0.2,
+    "high": 0.3,
+    "rationale": "Plan's stated up-to-20% cap on high-roller spend reduction from bank-only settlement; bounded 5-30% to reflect uncertainty in actual VIP behavior under fungible-only markers.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "court_political_reversal_remediation_window_days": {
+    "unit": "days",
+    "low": 60,
+    "base": 90,
+    "high": 120,
+    "rationale": "Plan cites 90-day court-mandated remediation window; bracketed 60-120 days to reflect possible accelerated or extended court orders for federal-site restoration.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "relocation_blackout_days": {
+    "unit": "days",
+    "low": 5,
+    "base": 7,
+    "high": 12,
+    "rationale": "Plan assumes 7-day Phase 1-to-Phase 2 container relocation blackout; data-collection task targets sub-8 days but logistics-risk reviewers flag overruns up to ~12 days.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

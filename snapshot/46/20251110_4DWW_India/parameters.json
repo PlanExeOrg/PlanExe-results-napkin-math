@@ -1,0 +1,223 @@
+{
+  "plan_summary": {
+    "plan_name": "4-Day Work Week (4DWW) India Pilot",
+    "plan_type": "public_policy_pilot",
+    "primary_goal": "Generate robust, attributable evidence over a 48-month controlled pilot to inform national labor-reform tooling on the 4-day work week.",
+    "modelling_frame": "Tests the formal-track operations envelope against projected monthly program cost; the SME administrative-overhead margin against the 2 worker-hour/week cap; the voluntary-participation margin against the 75% threshold; and the post-incentive productivity-retention margin against the 75% sustained-efficiency target. State Labor Department binding sign-off, legal executive-notification viability, and union/political acceptance are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "total_budget_inr",
+      "label": "Total project budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "INR",
+      "value": 20000000000,
+      "comment": "INR 2,000 crore total envelope across both tracks plus contingency; the central financing input for the 48-month pilot.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total budget ceiling: INR 2,000 crore — input to total cost modeling."
+    },
+    {
+      "id": "pilot_duration_months",
+      "label": "Pilot duration",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 48,
+      "comment": "Primary measurement window for the controlled pilot, including evaluation and national-toolkit transition.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Pilot period for primary measurement: 48 months — total pilot duration for Monte Carlo simulation horizon."
+    },
+    {
+      "id": "formal_track_budget_share",
+      "label": "Formal-track budget share",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.70,
+      "comment": "70% of the INR 2,000 crore envelope is allocated to the formal-sector pilot track (operations plus incentives).",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Formal sector 4DWW budget allocation: 70% — input to cost breakdown model."
+    },
+    {
+      "id": "incentive_budget_share_of_formal",
+      "label": "Incentive share of the formal-track budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.80,
+      "comment": "Within the formal-track envelope, 80% is earmarked for productivity-sharing grants; the remaining 20% funds program operations.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Incentive budget allocation favors productivity grants at 80% — input to budget split simulation."
+    },
+    {
+      "id": "sme_admin_overhead_cap_hours_per_week",
+      "label": "SME administrative-overhead cap",
+      "category": "compliance",
+      "value_type": "inferred",
+      "unit": "hours_per_week",
+      "value": 2,
+      "comment": "SME pilot compliance must stay at or below 2 worker-hours per week; exceeding it triggers the Risk-2 data-integrity failure mode.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "SME data compliance target is less than 2 worker-hours per week — performance gate."
+    },
+    {
+      "id": "voluntary_participation_target_share",
+      "label": "Voluntary opt-in participation target",
+      "category": "demand",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.75,
+      "comment": "Voluntary opt-in commitment across the first 24 months must hold above 75% for the experimental design to remain valid.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Voluntary opt-in participation rates remain above seventy-five percent throughout the first twenty-four months."
+    },
+    {
+      "id": "sustained_productivity_retention_target_share",
+      "label": "Post-incentive productivity-retention target",
+      "category": "outcome",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.75,
+      "comment": "Sustained efficiency after the incentive period (Month 37+) must hold at 75% of in-incentive levels to claim structural rather than subsidised change.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "high",
+      "source_text": "If sustained productivity < 75% threshold, trigger formal review under Issue 1."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "monthly_program_operating_cost_inr",
+      "label": "Monthly program operating cost across the pilot",
+      "unit": "INR_per_month",
+      "why_needed": "Required to test whether the 20% non-incentive slice of the formal-track envelope covers PMO, audits, hardware, and liaison-team operations across 48 months.",
+      "suggested_estimation_method": "Bottom-up: PMO staffing × FTE rate + third-party audit contract value/period + SME hardware lifecycle + UMF/cloud hosting; cross-check against the INR 50 crore evaluation-loss figure named in Risk 2."
+    },
+    {
+      "id": "sme_admin_overhead_actual_hours_per_week",
+      "label": "Projected SME compliance hours per week under deployed tooling",
+      "unit": "hours_per_week",
+      "why_needed": "Determines whether the low-friction tablet and visual-scale interface (Decision 5) hits the ≤2 hr/week target or breaches it and collapses the SME cohort.",
+      "suggested_estimation_method": "Per Data Item 6: baseline ASI exercise on a sample SME group; per-task time-and-motion measurements scaled to the full weekly data-entry cadence."
+    },
+    {
+      "id": "voluntary_participation_actual_share",
+      "label": "Achieved voluntary opt-in share across the first 24 months",
+      "unit": "fraction",
+      "why_needed": "Below the 75% target the cohort design loses statistical power and selection bias amplifies (Risk 4, Risk 5).",
+      "suggested_estimation_method": "Cohort-recruitment funnel: MOU signings / target cohort size, projected by city; sensitivity to union resistance per Risk 5."
+    },
+    {
+      "id": "sustained_productivity_retention_actual_share",
+      "label": "Achieved post-incentive productivity retention",
+      "unit": "fraction",
+      "why_needed": "Tests the central scaling claim that the 4DWW is structurally sustained, not subsidised; failure invalidates the national-toolkit recommendation.",
+      "suggested_estimation_method": "Per Expert Issue 2: survival analysis across 10 historical subsidy programs to derive an evidence-based decay rate; assume 50% baseline decay with bounded sensitivity."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "total_program_operating_cost_inr",
+      "label": "Total non-incentive program operating cost over the pilot",
+      "formula_hint": "total_program_operating_cost_inr = monthly_program_operating_cost_inr * pilot_duration_months",
+      "output_name": "total_program_operating_cost_inr",
+      "output_unit": "INR",
+      "depends_on": ["monthly_program_operating_cost_inr", "pilot_duration_months"],
+      "why_first": "Aggregates the monthly burn into a single 48-month pressure that can be netted against the formal-track operations envelope."
+    },
+    {
+      "id": "formal_operations_budget_surplus_inr",
+      "label": "Formal-track operations budget surplus",
+      "formula_hint": "formal_operations_budget_surplus_inr = total_budget_inr * formal_track_budget_share * (1 - incentive_budget_share_of_formal) - total_program_operating_cost_inr",
+      "output_name": "formal_operations_budget_surplus_inr",
+      "output_unit": "INR",
+      "depends_on": ["total_budget_inr", "formal_track_budget_share", "incentive_budget_share_of_formal", "total_program_operating_cost_inr"],
+      "why_first": "Tests whether the 20% non-incentive slice of the formal-track envelope (~INR 280 crore) is sufficient for PMO, audits, liaison-team, and hardware operations across 48 months."
+    },
+    {
+      "id": "sme_admin_overhead_margin_hours_per_week",
+      "label": "SME admin-overhead margin against the 2 hr/week cap",
+      "formula_hint": "sme_admin_overhead_margin_hours_per_week = sme_admin_overhead_cap_hours_per_week - sme_admin_overhead_actual_hours_per_week",
+      "output_name": "sme_admin_overhead_margin_hours_per_week",
+      "output_unit": "hours_per_week",
+      "depends_on": ["sme_admin_overhead_cap_hours_per_week", "sme_admin_overhead_actual_hours_per_week"],
+      "why_first": "Positive margin means SMEs can comply without breaching the 2 hr/week ceiling; negative margin triggers the FM2 Data Integrity Collapse path identified in the premortem."
+    },
+    {
+      "id": "voluntary_participation_margin",
+      "label": "Voluntary participation margin against the 75% target",
+      "formula_hint": "voluntary_participation_margin = voluntary_participation_actual_share - voluntary_participation_target_share",
+      "output_name": "voluntary_participation_margin",
+      "output_unit": "fraction",
+      "depends_on": ["voluntary_participation_actual_share", "voluntary_participation_target_share"],
+      "why_first": "Below zero the cohort loses statistical power and selection bias dominates; the M&E claim on national generalisability cannot be made."
+    },
+    {
+      "id": "sustained_productivity_retention_margin",
+      "label": "Post-incentive productivity-retention margin",
+      "formula_hint": "sustained_productivity_retention_margin = sustained_productivity_retention_actual_share - sustained_productivity_retention_target_share",
+      "output_name": "sustained_productivity_retention_margin",
+      "output_unit": "fraction",
+      "depends_on": ["sustained_productivity_retention_actual_share", "sustained_productivity_retention_target_share"],
+      "why_first": "Tests the structural-vs-subsidised claim; if retention falls below 75%, the national-toolkit recommendation rests on incentive dependency rather than durable productivity change."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "state_labor_dept_binding_signoff_gate",
+      "label": "State Labor Departments accept binding PMO tie-breaking vote",
+      "why_it_matters": "Premortem A1 and Expert Issue 1.6 name this as the single most critical authority assumption; without it the quarterly decision gates and rollback execution lack enforceable jurisdiction, regardless of any financial or operational margin the model evaluates.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Decision-gate paralysis; rollback execution stalls past two quarterly review cycles per Expert Criticism; central PMO cannot enforce standardised metrics or operational rollbacks across the federal/state split."
+    },
+    {
+      "id": "legal_executive_notification_gate",
+      "label": "Executive notification suffices for 4DWW workday redefinition across 24 months",
+      "why_it_matters": "Expert Criticism flags reliance on minimal executive notification (rather than full legislative amendment) as a load-bearing legal assumption; if notifications fail or are challenged, the pilot's legal basis collapses without a legislative fallback inside the 12-month launch window.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Halting 10% of formal cohort pending clarification; INR 5 crore unplanned legal review; 4-week data collection pause; potential 3–6 month pilot delay per Risk 1."
+    },
+    {
+      "id": "union_political_acceptance_gate",
+      "label": "Unions remain cooperative and political climate stable across the 48-month pilot",
+      "why_it_matters": "Premortem A7 and Risk 5 treat sustained union cooperation as binary; organized opposition, boycotts, or a political-cycle reversal would shut the pilot down independently of any productivity-retention margin the model evaluates.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Industrial disputes, boycotts stopping pilot operations, INR 10 crore crisis-communication spend per Risk 5; risk of forced 5-day reversion invalidating the structural-change objective."
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "plan_summary": {
+    "plan_name": "White House East Wing Casino (Pioneer's Gauntlet)",
+    "plan_type": "commercial_construction_phased",
+    "primary_goal": "Launch Phase 1 container casino, prove 60-90 days continuous profitability to unlock 75% sponsor capital, fund permanent Phase 2 build.",
+    "modelling_frame": "Tests Phase 1 daily revenue, NOI, sponsor profitability gate margin, sponsor capital release, contingency remediation burn capacity, and AML-shock NOI resilience. Existential regulatory and AML-licensing gates are out-of-model and tracked as unmodelled_gates."
+  },
+  "key_values": [
+    {
+      "id": "total_sponsor_budget_usd",
+      "label": "Total sponsor budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 600000000,
+      "comment": "Total CapEx envelope committed by sponsors; ceiling on construction and contingency draws.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total construction budget envelope is 600 Million USD from sponsors"
+    },
+    {
+      "id": "political_reversal_contingency_usd",
+      "label": "Ring-fenced political reversal contingency",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 90000000,
+      "comment": "15% of $600M segregated escrow for forced site remediation if political reversal mandate is declared.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "$90M ring-fenced for immediate political reversal contingency (15% of $600M)"
+    },
+    {
+      "id": "sponsor_capital_release_fraction",
+      "label": "Sponsor capital release fraction tied to Phase 1",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.75,
+      "comment": "75% of total sponsor capital is conditional on the Phase 1 profitability gate clearing.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Sponsor funding release is tied 75% to temporary casino profitability milestones"
+    },
+    {
+      "id": "required_daily_noi_usd",
+      "label": "Required daily NOI for sponsor unlock",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "USD_per_day",
+      "value": 50000,
+      "comment": "Sponsor-contracted minimum Net Operating Income per operational day during the continuous-profit window.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Target NOI per day for funding unlock: $50,000 USD"
+    },
+    {
+      "id": "sponsor_profitability_window_days",
+      "label": "Sponsor profitability gate window",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "days",
+      "value": 90,
+      "comment": "Sponsor-contract requires 90 consecutive days of profitable operation to trigger capital release.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Sponsor capital release threshold: 90 days of continuous profitable operation"
+    },
+    {
+      "id": "casino_capacity_guests",
+      "label": "Casino guest capacity ceiling",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "guests",
+      "value": 999,
+      "comment": "Hard cap on simultaneous patrons; the denominator for revenue, utilization, and high-roller mix.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Casino capacity ceiling is 999 guests"
+    },
+    {
+      "id": "high_roller_capacity_share",
+      "label": "High-roller share of guest capacity",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.6,
+      "comment": "60/40 split prioritizing high-roller patrons; AML cap on bank-settled spend impacts this segment disproportionately.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Guest capacity split prioritizes high-roller patrons at 60%"
+    },
+    {
+      "id": "relocation_blackout_days",
+      "label": "Phase 1 relocation operational blackout",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "days",
+      "value": 7,
+      "comment": "Forced 7-day no-revenue interval during Phase 1-to-Phase 2 container relocation; eats into the sponsor gate window.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Phase 1 relocation requires a 7-day operational blackout"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_sponsor_profitability_window_margin_days",
+      "question": "Does the sponsor-contracted profitability window still clear after absorbing the mandated relocation blackout?",
+      "why_it_matters": "Threshold-friendly margin: achieved profitable-operation days (window minus blackout) minus the contractually required window. Positive means the gate clears at >= 0; negative quantifies the days short of the sponsor's 90-day continuous-profit requirement, which would fail the capital release gate regardless of daily NOI.",
+      "formula_hint": "sponsor_profitability_window_margin_days = (sponsor_profitability_window_days - relocation_blackout_days) - sponsor_profitability_window_days",
+      "output_name": "sponsor_profitability_window_margin_days",
+      "output_unit": "days",
+      "depends_on": ["sponsor_profitability_window_days", "relocation_blackout_days"]
+    },
+    {
+      "id": "q_aml_adjusted_daily_noi_margin_usd",
+      "question": "After the AML bank-settlement spend reduction on the high-roller segment, does daily NOI still clear the $50k sponsor threshold?",
+      "why_it_matters": "AML compliance forces bank-settled markers, projected to cut top-tier spend; this stress-tests the sponsor gate under that shock.",
+      "formula_hint": "aml_adjusted_daily_noi_margin_usd = (expected_daily_revenue_usd * (1 - aml_bank_settlement_revenue_reduction_fraction * high_roller_capacity_share)) - daily_operating_cost_usd - required_daily_noi_usd",
+      "output_name": "aml_adjusted_daily_noi_margin_usd",
+      "output_unit": "USD_per_day",
+      "depends_on": ["expected_daily_revenue_usd", "aml_bank_settlement_revenue_reduction_fraction", "high_roller_capacity_share", "daily_operating_cost_usd", "required_daily_noi_usd"]
+    },
+    {
+      "id": "q_high_roller_daily_revenue_usd",
+      "question": "What share of expected daily revenue comes from the high-roller segment, given the 60/40 capacity prioritization?",
+      "why_it_matters": "Quantifies the revenue concentration on the AML-exposed segment so coupling to the AML shock can be reasoned about.",
+      "formula_hint": "high_roller_daily_revenue_usd = expected_daily_revenue_usd * high_roller_capacity_share",
+      "output_name": "high_roller_daily_revenue_usd",
+      "output_unit": "USD_per_day",
+      "depends_on": ["expected_daily_revenue_usd", "high_roller_capacity_share"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "daily_revenue_per_guest_usd",
+      "label": "Average daily revenue per guest",
+      "unit": "USD_per_guest_per_day",
+      "why_needed": "Required to size Phase 1 daily revenue from capacity and utilization; not stated in the digest.",
+      "suggested_estimation_method": "Benchmark high-end international casino daily gaming revenue per occupied seat; bound widely given diplomatic mix."
+    },
+    {
+      "id": "daily_operating_cost_usd",
+      "label": "Phase 1 daily operating cost",
+      "unit": "USD_per_day",
+      "why_needed": "Subtracted from daily revenue to get NOI tested against the $50k sponsor gate.",
+      "suggested_estimation_method": "Sum staff, microgrid energy, security, T2CA vetting, and venue lease per day; ground in container-casino opex comparables."
+    },
+    {
+      "id": "expected_utilization_rate",
+      "label": "Expected average capacity utilization",
+      "unit": "fraction",
+      "why_needed": "Scales the 999-guest ceiling to realistic average occupancy for revenue modelling.",
+      "suggested_estimation_method": "Bound from peer 24/7 high-end venues; consider 0.3-0.7 range with seasonal/diplomatic-event spikes."
+    },
+    {
+      "id": "aml_bank_settlement_revenue_reduction_fraction",
+      "label": "High-roller spend reduction from bank-only settlement",
+      "unit": "fraction",
+      "why_needed": "Quantifies the AML-imposed spend cap on bank-settled markers; needed for the AML-adjusted NOI stress test.",
+      "suggested_estimation_method": "Center near the digest's stated up-to-20% cap; bound 0.05-0.30 to reflect uncertainty in actual high-roller behavior shift."
+    },
+    {
+      "id": "court_political_reversal_remediation_window_days",
+      "label": "Court-imposed remediation window if political reversal occurs",
+      "unit": "days",
+      "why_needed": "Denominator for converting the $90M contingency into a daily remediation burn capacity tested against actual remediation costs.",
+      "suggested_estimation_method": "Use the digest's stated 90-day mandate; bound 60-120 days to reflect possible accelerated or extended court orders."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "expected_daily_revenue_usd",
+      "label": "Expected Phase 1 daily revenue",
+      "formula_hint": "expected_daily_revenue_usd = casino_capacity_guests * expected_utilization_rate * daily_revenue_per_guest_usd",
+      "output_name": "expected_daily_revenue_usd",
+      "output_unit": "USD_per_day",
+      "depends_on": ["casino_capacity_guests", "expected_utilization_rate", "daily_revenue_per_guest_usd"],
+      "why_first": "Top of the revenue chain; everything downstream — NOI, sponsor gate, AML shock — consumes this value."
+    },
+    {
+      "id": "expected_daily_noi_usd",
+      "label": "Expected daily Net Operating Income",
+      "formula_hint": "expected_daily_noi_usd = expected_daily_revenue_usd - daily_operating_cost_usd",
+      "output_name": "expected_daily_noi_usd",
+      "output_unit": "USD_per_day",
+      "depends_on": ["expected_daily_revenue_usd", "daily_operating_cost_usd"],
+      "why_first": "Direct input to the sponsor-contracted $50k/day profitability gate."
+    },
+    {
+      "id": "sponsor_profitability_trigger_margin_usd",
+      "label": "Sponsor profitability trigger margin",
+      "formula_hint": "sponsor_profitability_trigger_margin_usd = expected_daily_noi_usd - required_daily_noi_usd",
+      "output_name": "sponsor_profitability_trigger_margin_usd",
+      "output_unit": "USD_per_day",
+      "depends_on": ["expected_daily_noi_usd", "required_daily_noi_usd"],
+      "why_first": "Counterparty-enforced contractual gate: positive margin means the sponsor capital release condition clears at the daily level."
+    },
+    {
+      "id": "sponsor_capital_release_usd",
+      "label": "Sponsor capital release on Phase 1 success",
+      "formula_hint": "sponsor_capital_release_usd = total_sponsor_budget_usd * sponsor_capital_release_fraction",
+      "output_name": "sponsor_capital_release_usd",
+      "output_unit": "USD",
+      "depends_on": ["total_sponsor_budget_usd", "sponsor_capital_release_fraction"],
+      "why_first": "Sizes the tranche unlocked by the sponsor contractual gate (~$450M); the financial stake in clearing the profitability trigger."
+    },
+    {
+      "id": "court_remediation_daily_burn_capacity_usd",
+      "label": "Court-mandated remediation daily burn capacity",
+      "formula_hint": "court_remediation_daily_burn_capacity_usd = political_reversal_contingency_usd / court_political_reversal_remediation_window_days",
+      "output_name": "court_remediation_daily_burn_capacity_usd",
+      "output_unit": "USD_per_day",
+      "depends_on": ["political_reversal_contingency_usd", "court_political_reversal_remediation_window_days"],
+      "why_first": "Tests whether the $90M escrow can fund site remediation at the pace a court-ordered political reversal would demand."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "gsa_doi_post_facto_authorization_gate",
+      "label": "GSA/DOI post-facto land-use authorization",
+      "why_it_matters": "Construction proceeds before federal authorization for converting demolished White House East Wing land to commercial casino use; no quantitative threshold exists.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Court ruling halts the project mid-construction; sponsor tranche never releases and Phase 2 capital becomes stranded regardless of Phase 1 NOI performance."
+    },
+    {
+      "id": "aml_banking_consortium_certification_gate",
+      "label": "International Banking Consortium AML/KYC certification",
+      "why_it_matters": "All high-value markers must settle through the pre-approved consortium; without certification, the only legal settlement rail is blocked.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Loss of banking access shuts down high-roller settlement, collapsing the revenue assumption underlying the sponsor profitability gate."
+    },
+    {
+      "id": "high_security_gaming_license_gate",
+      "label": "Conditional High-Security Gaming Operation License",
+      "why_it_matters": "Phase 1 operations are conditional on this Phase-1 license; the model treats it as granted but cannot probabilistically test issuance.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Phase 1 cannot open; the 90-day continuous-profit clock never starts and the sponsor capital gate cannot be reached."
+    },
+    {
+      "id": "t2ca_diplomatic_acceptance_gate",
+      "label": "Diplomatic acceptance of Tier 2 Commercial Access vetting",
+      "why_it_matters": "Revenue concentration on diplomatic high-rollers depends on world-leader delegations accepting a commercial-grade (non-sovereign) vetting tier.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Patron boycott collapses the 60/40 high-roller mix and the revenue assumptions underlying the sponsor gate."
+    }
+  ]
+}

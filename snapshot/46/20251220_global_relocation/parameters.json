@@ -1,0 +1,205 @@
+{
+  "plan_summary": {
+    "plan_name": "Split Evenly",
+    "plan_type": "geopolitical_partition",
+    "primary_goal": "Complete legal hemispheric partition between human and machine civilizations within 24 months under the $30T budget envelope.",
+    "modelling_frame": "Tests the $12T initial-allocation budget surplus against severance plus Northern stabilization costs; the 90% IOB-dissolution and 85% wave-verification margins; and the 13,000 persons/km² Northern density margin. Machine southern viability, IOB charter ratification, IOB consensus legitimacy, and the non-coercion welfare mandate are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "initial_24_month_budget_usd",
+      "label": "Initial 24-month budget allocation",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 12000000000000,
+      "comment": "Front-loaded 40% of the $30T envelope; must cover severance and Northern stabilization through the 24-month mandate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Initial 24-month budget allocation: $12 Trillion USD — input for initial 24-month cash burn model."
+    },
+    {
+      "id": "partition_legal_deadline_months",
+      "label": "Legal partition deadline",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 24,
+      "comment": "Hard legal deadline for partition, governance handover, and priority infrastructure separation; missing it invalidates the mandate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total separation legal deadline: 24 months — target date for legal partition completion."
+    },
+    {
+      "id": "infrastructure_transfer_target_share",
+      "label": "Required infrastructure-transfer share by Month 24",
+      "category": "compliance",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.9,
+      "comment": "Below this verified-transfer share by Month 24, the International Oversight Body cannot dissolve and the bilateral pathway is blocked.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If 90% of designated infrastructure transfers are not certified complete by Month 24, the Oversight Body dissolves automatically."
+    },
+    {
+      "id": "wave_verification_threshold_share",
+      "label": "Wave-to-wave verification trigger share",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.85,
+      "comment": "Wave N+1 cannot start until Wave N reaches 85% verified handover; replaces hard severance dates with performance-based triggers.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If objective adherence falls below 85% of defined critical systems transfer, then subsequent severance waves cannot commence."
+    },
+    {
+      "id": "northern_density_cap_persons_per_km2",
+      "label": "Northern hub design-suspension density cap",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "persons_per_km2",
+      "value": 13000,
+      "comment": "Above this density Northern mega-city designs require sign-off suspension and modular-housing acceleration; an absolute 15,000 cap violates the humane mandate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If Northern mega-city sectors are designed to exceed 13,000 persons/km², then final design sign-off is suspended."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "specialized_cip_replacement_cost_usd",
+      "label": "Total USD cost to backfill specialized Critical Infrastructure Personnel",
+      "unit": "USD",
+      "why_needed": "Required to test whether the $12T initial allocation covers severance plus Northern stabilization; CIP-flight cost is the dominant non-infrastructure budget pressure.",
+      "suggested_estimation_method": "CIP-swapped-South count × 2:1 replacement-buffer ratio × specialized-labor monthly rate × 24 months; cross-check against the 25% inflation impact flagged in Risk 3."
+    },
+    {
+      "id": "legacy_system_monthly_maintenance_cost_usd",
+      "label": "Monthly cost of funding maintenance on relinquished legacy systems",
+      "unit": "USD_per_month",
+      "why_needed": "Risk 6 flags a ~$500B/year shortfall from legacy-system maintenance drain; monthly burn must be netted against the 24-month $12T envelope.",
+      "suggested_estimation_method": "Sum of Decision-2 maintenance contracts × per-contract liability caps; benchmark against the $500B+ annual shortfall figure named in Risk 6."
+    },
+    {
+      "id": "northern_hub_projected_density_persons_per_km2",
+      "label": "Projected peak Northern hub population density",
+      "unit": "persons_per_km2",
+      "why_needed": "Required to test the 13,000 persons/km² design-suspension threshold and avoid the 15,000 humane-mandate breach.",
+      "suggested_estimation_method": "Modeled population inflow into top five Northern consolidation hubs / hub area; sensitivity to modular-housing deployment rate."
+    },
+    {
+      "id": "infrastructure_transfer_actual_share",
+      "label": "Achieved share of designated infrastructure transferred by Month 24",
+      "unit": "fraction",
+      "why_needed": "Determines whether the 90% IOB-dissolution gate clears at Month 24; failure leaves the Oversight Body intact past mandate.",
+      "suggested_estimation_method": "Decision-12 audit projection from Wave 1/2/3 cumulative completion rates and slip distribution; benchmark against Risk 2 sequencing-failure scenarios."
+    },
+    {
+      "id": "wave1_verification_actual_share",
+      "label": "Verified share of Wave 1 critical-system handover by Month 8",
+      "unit": "fraction",
+      "why_needed": "Wave 2 cannot start below the 85% verification trigger; failure cascades into the Month 24 deadline via Wave 2 and Wave 3 slip.",
+      "suggested_estimation_method": "Monte Carlo dependency mapping per Data Item 2 simulation plan; vary the M8 physical cut-off slip by ±30 days."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "total_severance_stabilization_cost_usd",
+      "label": "Total severance plus stabilization cost over the mandate window",
+      "formula_hint": "total_severance_stabilization_cost_usd = specialized_cip_replacement_cost_usd + legacy_system_monthly_maintenance_cost_usd * partition_legal_deadline_months",
+      "output_name": "total_severance_stabilization_cost_usd",
+      "output_unit": "USD",
+      "depends_on": ["specialized_cip_replacement_cost_usd", "legacy_system_monthly_maintenance_cost_usd", "partition_legal_deadline_months"],
+      "why_first": "Aggregates the two dominant non-budgeted draws on the $12T initial envelope so the surplus test has a single summed pressure."
+    },
+    {
+      "id": "initial_budget_surplus_usd",
+      "label": "Initial-allocation surplus after severance and stabilization",
+      "formula_hint": "initial_budget_surplus_usd = initial_24_month_budget_usd - total_severance_stabilization_cost_usd",
+      "output_name": "initial_budget_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["initial_24_month_budget_usd", "total_severance_stabilization_cost_usd"],
+      "why_first": "Tests the load-bearing claim that the $12T initial allocation covers both severance obligations and Northern stabilization within the 24-month mandate."
+    },
+    {
+      "id": "infrastructure_transfer_margin",
+      "label": "Infrastructure-transfer margin against the IOB-dissolution gate",
+      "formula_hint": "infrastructure_transfer_margin = infrastructure_transfer_actual_share - infrastructure_transfer_target_share",
+      "output_name": "infrastructure_transfer_margin",
+      "output_unit": "fraction",
+      "depends_on": ["infrastructure_transfer_actual_share", "infrastructure_transfer_target_share"],
+      "why_first": "Positive margin means the Oversight Body can dissolve at Month 24 per Decision 5; negative margin leaves the IOB in place and the bilateral pathway blocked."
+    },
+    {
+      "id": "wave1_verification_margin",
+      "label": "Wave 1 verification margin against the 85% trigger",
+      "formula_hint": "wave1_verification_margin = wave1_verification_actual_share - wave_verification_threshold_share",
+      "output_name": "wave1_verification_margin",
+      "output_unit": "fraction",
+      "depends_on": ["wave1_verification_actual_share", "wave_verification_threshold_share"],
+      "why_first": "Below zero blocks Wave 2 sequencing; the resulting slip cascades into Wave 3 and threatens the Month 24 legal deadline."
+    },
+    {
+      "id": "northern_density_margin_persons_per_km2",
+      "label": "Northern hub density margin against the 13,000 persons/km² cap",
+      "formula_hint": "northern_density_margin_persons_per_km2 = northern_density_cap_persons_per_km2 - northern_hub_projected_density_persons_per_km2",
+      "output_name": "northern_density_margin_persons_per_km2",
+      "output_unit": "persons_per_km2",
+      "depends_on": ["northern_density_cap_persons_per_km2", "northern_hub_projected_density_persons_per_km2"],
+      "why_first": "Negative margin suspends Northern mega-city design sign-off and forces modular-housing acceleration; sustained breach violates the humane relocation mandate."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "machine_southern_viability_gate",
+      "label": "Machine civilization verifiable foundational capacity south of 3°S",
+      "why_it_matters": "Expert Criticism Issue 1 names this as the single most critical systemic assumption; the deterministic model treats Southern energy/compute self-sufficiency as a fixed input rather than a probabilistic gate.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Partition premise collapses; plan reverts to managed co-dependency with an estimated $8-15T additional liability or a 4-7 year ROI delay."
+    },
+    {
+      "id": "iob_charter_ratification_gate",
+      "label": "IOB hybrid arbitration charter ratified by Month 15",
+      "why_it_matters": "Without ratification, dispute resolution defaults to a single emergency human arbiter; hybrid governance is the keystone for post-partition legitimacy and the M24 dissolution conditions.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Hybrid arbitration collapses to a single-arbiter contingency; long-term governance legitimacy fails and the M24 dissolution conditions become politically contested."
+    },
+    {
+      "id": "non_coercion_welfare_mandate_gate",
+      "label": "Welfare-essentials continuity (food, water, power, shelter, communications)",
+      "why_it_matters": "Explicit treaty constraint with binary compliance semantics; any cessation of civilian welfare essentials is a treaty violation, not a quantified shortfall the simulation can integrate.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Plan is in treaty breach; nonviolent-relocation mandate void; international legitimacy of the partition collapses regardless of any infrastructure or budget margin."
+    },
+    {
+      "id": "iob_consensus_legitimacy_gate",
+      "label": "IOB maintains consensus legitimacy through hybrid-panel arbitration",
+      "why_it_matters": "Premortem and Risk 1 flag hybrid-panel deadlock as a binary legitimacy failure; the IOB either holds or doesn't, with no quantifiable threshold the simulation can test.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Border closures, ~$500B emergency operations cost per Risk 1, and potential return to kinetic dispute escalation in violation of the nonviolent mandate."
+    }
+  ]
+}

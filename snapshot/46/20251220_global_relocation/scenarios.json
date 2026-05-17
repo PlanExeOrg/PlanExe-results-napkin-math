@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Split Evenly",
+    "plan_type": "geopolitical_partition"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "initial_24_month_budget_usd": 12000000000000,
+        "partition_legal_deadline_months": 24,
+        "infrastructure_transfer_target_share": 0.9,
+        "wave_verification_threshold_share": 0.85,
+        "northern_density_cap_persons_per_km2": 11000,
+        "specialized_cip_replacement_cost_usd": 50000000000,
+        "legacy_system_monthly_maintenance_cost_usd": 10000000000,
+        "infrastructure_transfer_actual_share": 0.65,
+        "wave1_verification_actual_share": 0.65,
+        "northern_hub_projected_density_persons_per_km2": 8000
+      },
+      "outputs": {
+        "total_severance_stabilization_cost_usd": 290000000000,
+        "initial_budget_surplus_usd": 11710000000000,
+        "infrastructure_transfer_margin": -0.25,
+        "wave1_verification_margin": -0.2,
+        "northern_density_margin_persons_per_km2": 3000
+      }
+    },
+    "base": {
+      "inputs": {
+        "initial_24_month_budget_usd": 12000000000000,
+        "partition_legal_deadline_months": 24,
+        "infrastructure_transfer_target_share": 0.9,
+        "wave_verification_threshold_share": 0.85,
+        "northern_density_cap_persons_per_km2": 13000,
+        "specialized_cip_replacement_cost_usd": 250000000000,
+        "legacy_system_monthly_maintenance_cost_usd": 30000000000,
+        "infrastructure_transfer_actual_share": 0.85,
+        "wave1_verification_actual_share": 0.82,
+        "northern_hub_projected_density_persons_per_km2": 13000
+      },
+      "outputs": {
+        "total_severance_stabilization_cost_usd": 970000000000,
+        "initial_budget_surplus_usd": 11030000000000,
+        "infrastructure_transfer_margin": -0.05,
+        "wave1_verification_margin": -0.03,
+        "northern_density_margin_persons_per_km2": 0
+      }
+    },
+    "high": {
+      "inputs": {
+        "initial_24_month_budget_usd": 12000000000000,
+        "partition_legal_deadline_months": 24,
+        "infrastructure_transfer_target_share": 0.9,
+        "wave_verification_threshold_share": 0.85,
+        "northern_density_cap_persons_per_km2": 15000,
+        "specialized_cip_replacement_cost_usd": 900000000000,
+        "legacy_system_monthly_maintenance_cost_usd": 70000000000,
+        "infrastructure_transfer_actual_share": 0.95,
+        "wave1_verification_actual_share": 0.95,
+        "northern_hub_projected_density_persons_per_km2": 18000
+      },
+      "outputs": {
+        "total_severance_stabilization_cost_usd": 2580000000000,
+        "initial_budget_surplus_usd": 9420000000000,
+        "infrastructure_transfer_margin": 0.05,
+        "wave1_verification_margin": 0.1,
+        "northern_density_margin_persons_per_km2": -3000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "total_severance_stabilization_cost_usd": {
+        "low": 290000000000,
+        "base": 970000000000,
+        "high": 2580000000000,
+        "unit": "USD",
+        "spread_ratio": 8.896551724137931,
+        "spread_absolute": 2290000000000
+      },
+      "initial_budget_surplus_usd": {
+        "low": 11710000000000,
+        "base": 11030000000000,
+        "high": 9420000000000,
+        "unit": "USD",
+        "spread_ratio": 0.8044406490179334,
+        "spread_absolute": -2290000000000
+      },
+      "infrastructure_transfer_margin": {
+        "low": -0.25,
+        "base": -0.05,
+        "high": 0.05,
+        "unit": "fraction",
+        "spread_ratio": -0.2,
+        "spread_absolute": 0.3
+      },
+      "wave1_verification_margin": {
+        "low": -0.2,
+        "base": -0.03,
+        "high": 0.1,
+        "unit": "fraction",
+        "spread_ratio": -0.5,
+        "spread_absolute": 0.3
+      },
+      "northern_density_margin_persons_per_km2": {
+        "low": 3000,
+        "base": 0,
+        "high": -3000,
+        "unit": "persons_per_km2",
+        "spread_ratio": -1.0,
+        "spread_absolute": -6000
+      }
+    }
+  },
+  "warnings": []
+}

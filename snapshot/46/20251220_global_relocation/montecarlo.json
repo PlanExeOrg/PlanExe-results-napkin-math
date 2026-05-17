@@ -1,0 +1,318 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Split Evenly",
+    "plan_type": "geopolitical_partition"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "total_severance_stabilization_cost_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1278277610110.744,
+      "std": 350285561269.47314,
+      "min": 337300185088.92065,
+      "p05": 738536443911.4384,
+      "p25": 1018961919788.9677,
+      "p50": 1257369159568.5134,
+      "p75": 1516992565642.8389,
+      "p95": 1884622858723.9268,
+      "max": 2391602161256.28
+    },
+    "initial_budget_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 10721722389889.256,
+      "std": 350285561269.4732,
+      "min": 9608397838743.72,
+      "p05": 10115377141276.074,
+      "p25": 10483007434357.16,
+      "p50": 10742630840431.486,
+      "p75": 10981038080211.033,
+      "p95": 11261463556088.56,
+      "max": 11662699814911.08
+    },
+    "infrastructure_transfer_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.08268714963601485,
+      "std": 0.062124494779952355,
+      "min": -0.24944267996500835,
+      "p05": -0.19489670584577792,
+      "p25": -0.12698433414437776,
+      "p50": -0.07636876688455091,
+      "p75": -0.036451164376486184,
+      "p95": 0.010777630890004263,
+      "max": 0.046911175293212315
+    },
+    "wave1_verification_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.04264545502105849,
+      "std": 0.061488477463675424,
+      "min": -0.19725773634931232,
+      "p05": -0.1474980669642642,
+      "p25": -0.08755902840921917,
+      "p50": -0.03938293023977102,
+      "p75": 0.0024869017623733725,
+      "p95": 0.05691636798630923,
+      "max": 0.09841632735274564
+    },
+    "northern_density_margin_persons_per_km2": {
+      "unit": "persons_per_km2",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -47.0048,
+      "std": 2201.4156174554955,
+      "min": -6684.0,
+      "p05": -3743.05,
+      "p25": -1563.5,
+      "p50": -55.5,
+      "p75": 1522.25,
+      "p95": 3565.0999999999985,
+      "max": 6555.0
+    }
+  },
+  "thresholds": {
+    "initial_budget_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "infrastructure_transfer_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 862,
+      "valid_count": 10000,
+      "probability": 0.0862
+    },
+    "wave1_verification_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2618,
+      "valid_count": 10000,
+      "probability": 0.2618
+    },
+    "northern_density_margin_persons_per_km2": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4910,
+      "valid_count": 10000,
+      "probability": 0.491
+    }
+  },
+  "sensitivity": {
+    "total_severance_stabilization_cost_usd": {
+      "top_inputs": [
+        {
+          "id": "legacy_system_monthly_maintenance_cost_usd",
+          "correlation": 0.8525
+        },
+        {
+          "id": "specialized_cip_replacement_cost_usd",
+          "correlation": 0.5202
+        }
+      ]
+    },
+    "initial_budget_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "legacy_system_monthly_maintenance_cost_usd",
+          "correlation": -0.8525
+        },
+        {
+          "id": "specialized_cip_replacement_cost_usd",
+          "correlation": -0.5202
+        }
+      ]
+    },
+    "infrastructure_transfer_margin": {
+      "top_inputs": [
+        {
+          "id": "infrastructure_transfer_actual_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "wave1_verification_margin": {
+      "top_inputs": [
+        {
+          "id": "wave1_verification_actual_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "northern_density_margin_persons_per_km2": {
+      "top_inputs": [
+        {
+          "id": "northern_hub_projected_density_persons_per_km2",
+          "correlation": -0.9302
+        },
+        {
+          "id": "northern_density_cap_persons_per_km2",
+          "correlation": 0.3763
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "initial_budget_surplus_usd": [
+      {
+        "id": "specialized_cip_replacement_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "legacy_system_monthly_maintenance_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "infrastructure_transfer_margin": [
+      {
+        "id": "infrastructure_transfer_actual_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.3448,
+        "delta_pp": 34.48
+      }
+    ],
+    "wave1_verification_margin": [
+      {
+        "id": "wave1_verification_actual_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "northern_density_margin_persons_per_km2": [
+      {
+        "id": "northern_hub_projected_density_persons_per_km2",
+        "p_pass_low_quartile": 0.9976009596161536,
+        "p_pass_high_quartile": 0.0036,
+        "delta_pp": -99.4
+      },
+      {
+        "id": "northern_density_cap_persons_per_km2",
+        "p_pass_low_quartile": 0.3076,
+        "p_pass_high_quartile": 0.67585931254996,
+        "delta_pp": 36.83
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "infrastructure_transfer_margin": [
+      {
+        "id": "infrastructure_transfer_actual_share",
+        "direction": "above",
+        "input_percentile_cutoff": 90,
+        "cutoff_value": 0.8964615432390926,
+        "conditional_pass_prob": 0.862,
+        "admitted_fraction": 0.1
+      }
+    ],
+    "wave1_verification_margin": [
+      {
+        "id": "wave1_verification_actual_share",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 0.8524869017623733,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.25
+      }
+    ],
+    "northern_density_margin_persons_per_km2": [
+      {
+        "id": "northern_hub_projected_density_persons_per_km2",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 13037.5,
+        "conditional_pass_prob": 0.873,
+        "admitted_fraction": 0.5
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "northern_hub_projected_density_persons_per_km2",
+      "score": 38.9189,
+      "worst_gate": "northern_density_margin_persons_per_km2",
+      "bound_width_ratio": 0.7692,
+      "source": "assumption"
+    },
+    {
+      "id": "wave1_verification_actual_share",
+      "score": 27.0073,
+      "worst_gate": "wave1_verification_margin",
+      "bound_width_ratio": 0.3659,
+      "source": "assumption"
+    },
+    {
+      "id": "infrastructure_transfer_actual_share",
+      "score": 11.1204,
+      "worst_gate": "infrastructure_transfer_margin",
+      "bound_width_ratio": 0.3529,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "total_severance_stabilization_cost_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 2.7,
+      "reasons": [
+        "0/2 input bounds anchored in data; 2/2 are assumptions",
+        "average bound-width-to-base ratio = 2.70"
+      ]
+    },
+    "initial_budget_surplus_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 2.7,
+      "reasons": [
+        "0/2 input bounds anchored in data; 2/2 are assumptions",
+        "average bound-width-to-base ratio = 2.70"
+      ]
+    },
+    "infrastructure_transfer_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.3529,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.35"
+      ]
+    },
+    "wave1_verification_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.3659,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.37"
+      ]
+    },
+    "northern_density_margin_persons_per_km2": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.5385,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.54"
+      ]
+    }
+  },
+  "warnings": []
+}
