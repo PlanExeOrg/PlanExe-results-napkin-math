@@ -421,14 +421,20 @@ def intro_slide_distribution(stats: DeckStats) -> str:
 
 
 def intro_slide_roster(plans: list[Plan]) -> str:
-    sorted_plans = sorted(plans, key=lambda p: (p.worst_pass_rate, p.slug))
+    INTRO_SLIDES = 3
+    PER_PLAN = 3
+    indexed = list(enumerate(plans))
+    sorted_indexed = sorted(indexed, key=lambda ip: (ip[1].worst_pass_rate, ip[1].slug))
     rows = []
-    for p in sorted_plans:
+    for orig_idx, p in sorted_indexed:
         band = BAND_LABEL.get(p.overall_band, p.overall_band.upper())
         color = BAND_COLOR.get(p.overall_band, "#666")
         pct = p.worst_pass_rate * 100
+        target_slide = INTRO_SLIDES + orig_idx * PER_PLAN  # 0-based
         rows.append(
-            f"<tr>"
+            f"<tr class='roster-row' data-target='{target_slide}' "
+            f"tabindex='0' role='link' "
+            f"aria-label='Jump to {esc(p.name)}'>"
             f"<td class='plan-cell'>"
             f"<div class='plan-name'>{esc(p.name)}</div>"
             f"<code class='plan-slug'>{esc(p.slug)}</code>"
@@ -647,6 +653,10 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
   color: var(--muted); font-weight: 600;
 }
+.roster tbody tr.roster-row { cursor: pointer; transition: background-color 0.12s; }
+.roster tbody tr.roster-row:hover { background: #f1f1ef; }
+.roster tbody tr.roster-row:focus { outline: 2px solid #1c1c1c; outline-offset: -2px; background: #f1f1ef; }
+.roster tbody tr.roster-row:hover .plan-name { text-decoration: underline; }
 .roster td.plan-cell { line-height: 1.3; }
 .roster .plan-name { font-weight: 500; font-size: 13px; color: var(--ink); }
 .roster .plan-slug { font-size: 10.5px; color: var(--muted); display: block; margin-top: 2px; }
@@ -732,6 +742,15 @@ document.addEventListener('keydown', (e) => {
   else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(idx - 1); }
   else if (e.key === 'Home') { e.preventDefault(); show(0); }
   else if (e.key === 'End') { e.preventDefault(); show(slides.length - 1); }
+});
+// roster row click-to-jump
+document.querySelectorAll('tr.roster-row').forEach((row) => {
+  const target = parseInt(row.dataset.target, 10);
+  if (!Number.isFinite(target)) return;
+  row.addEventListener('click', () => show(target));
+  row.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(target); }
+  });
 });
 // hash-based deep link on load
 const m = (location.hash || '').match(/^#s(\d+)$/);
