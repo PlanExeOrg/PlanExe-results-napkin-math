@@ -429,8 +429,10 @@ def intro_slide_roster(plans: list[Plan]) -> str:
         pct = p.worst_pass_rate * 100
         rows.append(
             f"<tr>"
-            f"<td class='slug'><code>{esc(p.slug)}</code></td>"
-            f"<td class='name'>{esc(p.name)}</td>"
+            f"<td class='plan-cell'>"
+            f"<div class='plan-name'>{esc(p.name)}</div>"
+            f"<code class='plan-slug'>{esc(p.slug)}</code>"
+            f"</td>"
             f"<td><span class='band-pill' style='background:{color}'>{esc(band)}</span></td>"
             f"<td class='num'>{pct:.1f}%</td>"
             f"<td class='bar-cell'>"
@@ -449,7 +451,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
   </header>
   <table class="roster">
     <thead><tr>
-      <th>Slug</th><th>Plan</th><th>Band</th><th>Worst pass rate</th><th>Visualization</th><th>Worst gate</th>
+      <th>Plan</th><th>Band</th><th>Worst pass rate</th><th>Visualization</th><th>Worst gate</th>
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
@@ -645,7 +647,9 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
   color: var(--muted); font-weight: 600;
 }
-.roster td.slug code { font-size: 11px; color: var(--muted); }
+.roster td.plan-cell { line-height: 1.3; }
+.roster .plan-name { font-weight: 500; font-size: 13px; color: var(--ink); }
+.roster .plan-slug { font-size: 10.5px; color: var(--muted); display: block; margin-top: 2px; }
 .roster td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
 .roster td.bar-cell { width: 220px; }
 .roster .wg { font-size: 11px; }
