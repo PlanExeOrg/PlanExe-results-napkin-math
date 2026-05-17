@@ -717,7 +717,10 @@ const counter = document.getElementById('counter');
 const progress = document.getElementById('progress-bar');
 const select = document.getElementById('plan-select');
 let idx = 0;
-function show(i) {
+// pushHistory=true adds a new history entry (used for explicit jumps so the
+// browser back button returns to the previous slide). Continuous navigation
+// (arrow keys, prev/next buttons) uses replaceState to avoid polluting history.
+function show(i, pushHistory) {
   idx = Math.max(0, Math.min(slides.length - 1, i));
   slides.forEach((s, k) => s.classList.toggle('active', k === idx));
   counter.textContent = (idx + 1) + ' / ' + slides.length;
@@ -729,32 +732,49 @@ function show(i) {
     targetSelectIdx = Math.floor((idx - INTRO_SLIDES) / PER_PLAN) + 1;
   }
   if (select.selectedIndex !== targetSelectIdx) select.selectedIndex = targetSelectIdx;
-  history.replaceState(null, '', '#s' + (idx + 1));
+  const hash = '#s' + (idx + 1);
+  const state = { idx };
+  if (pushHistory && location.hash !== hash) {
+    history.pushState(state, '', hash);
+  } else {
+    history.replaceState(state, '', hash);
+  }
 }
-document.getElementById('prev').addEventListener('click', () => show(idx - 1));
-document.getElementById('next').addEventListener('click', () => show(idx + 1));
+document.getElementById('prev').addEventListener('click', () => show(idx - 1, false));
+document.getElementById('next').addEventListener('click', () => show(idx + 1, false));
 select.addEventListener('change', (e) => {
   const si = e.target.selectedIndex;
-  show(si === 0 ? 0 : INTRO_SLIDES + (si - 1) * PER_PLAN);
+  show(si === 0 ? 0 : INTRO_SLIDES + (si - 1) * PER_PLAN, true);
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(idx + 1); }
-  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(idx - 1); }
-  else if (e.key === 'Home') { e.preventDefault(); show(0); }
-  else if (e.key === 'End') { e.preventDefault(); show(slides.length - 1); }
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(idx + 1, false); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(idx - 1, false); }
+  else if (e.key === 'Home') { e.preventDefault(); show(0, false); }
+  else if (e.key === 'End') { e.preventDefault(); show(slides.length - 1, false); }
 });
-// roster row click-to-jump
+// roster row click-to-jump (explicit nav → push history)
 document.querySelectorAll('tr.roster-row').forEach((row) => {
   const target = parseInt(row.dataset.target, 10);
   if (!Number.isFinite(target)) return;
-  row.addEventListener('click', () => show(target));
+  row.addEventListener('click', () => show(target, true));
   row.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(target); }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(target, true); }
   });
 });
-// hash-based deep link on load
-const m = (location.hash || '').match(/^#s(\d+)$/);
-show(m ? parseInt(m[1], 10) - 1 : 0);
+// browser back/forward — restore slide from state (or fall back to hash)
+window.addEventListener('popstate', (e) => {
+  let target;
+  if (e.state && Number.isFinite(e.state.idx)) {
+    target = e.state.idx;
+  } else {
+    const m = (location.hash || '').match(/^#s(\d+)$/);
+    target = m ? parseInt(m[1], 10) - 1 : 0;
+  }
+  show(target, false);
+});
+// initial load — hash-based deep link
+const initial = (location.hash || '').match(/^#s(\d+)$/);
+show(initial ? parseInt(initial[1], 10) - 1 : 0, false);
 """
 
 
