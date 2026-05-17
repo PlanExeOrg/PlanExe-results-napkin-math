@@ -354,12 +354,10 @@ def render_band_bar_chart(band_counts: dict[str, int]) -> str:
             bars.append(f'<rect x="{x:.1f}" y="{pad_top + plot_h - 2:.1f}" '
                         f'width="{bar_w:.1f}" height="2" fill="{color}" opacity="0.25"/>')
         bars.append(
-            f'<text x="{cx:.1f}" y="{max(y - 12, pad_top + 14):.1f}" font-size="28" '
-            f'font-weight="700" fill="#222" text-anchor="middle">{count}</text>'
-        )
-        bars.append(
-            f'<text x="{cx:.1f}" y="{max(y - 36, pad_top - 4):.1f}" font-size="12" '
-            f'fill="#666" text-anchor="middle">{pct:.0f}%</text>'
+            f'<text x="{cx:.1f}" y="{max(y - 14, pad_top + 18):.1f}" font-size="24" '
+            f'font-weight="700" fill="#222" text-anchor="middle">'
+            f'{count} <tspan font-size="14" font-weight="500" fill="#666">'
+            f'({pct:.0f}%)</tspan></text>'
         )
         bars.append(
             f'<text x="{cx:.1f}" y="{pad_top + plot_h + 26:.1f}" font-size="14" '
@@ -399,18 +397,12 @@ def intro_slide_headline(stats: DeckStats) -> str:
 
 def intro_slide_distribution(stats: DeckStats) -> str:
     chart = render_band_bar_chart(stats.band_counts)
-    doom = stats.band_counts.get("doom", 0)
-    frag = stats.band_counts.get("fragile", 0)
-    marg = stats.band_counts.get("marginal", 0)
-    viab = stats.band_counts.get("viable", 0)
-    summary = (f"<strong>{doom}</strong> DOOM, <strong>{frag}</strong> FRAGILE, "
-               f"<strong>{marg}</strong> MARGINAL, <strong>{viab}</strong> ROBUST")
     return f"""
 <section class="slide">
   <header class="slide-head">
     <div class="kicker">Snapshot 46 &middot; verdict distribution</div>
     <h1>How many plans are doomed?</h1>
-    <p class="lede">Each plan's overall risk band is set by its worst declared gate. {summary} of {stats.total_plans} plans.</p>
+    <p class="lede">Each plan's overall risk band is set by its worst declared gate.</p>
   </header>
   <div class="chart-wrap big">
     {chart}
