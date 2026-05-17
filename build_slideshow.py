@@ -57,6 +57,15 @@ class UnmodelledGate:
 
 
 @dataclass
+class DeckStats:
+    total_plans: int
+    band_counts: dict[str, int]
+    total_declared_gates: int
+    total_failed_gates: int
+    total_unmodelled: int
+
+
+@dataclass
 class Plan:
     slug: str
     name: str
@@ -289,6 +298,166 @@ def render_verdict_badge(band: str, worst_gate: str, worst_pr: float) -> str:
     )
 
 
+def compute_stats(plans: list[Plan]) -> DeckStats:
+    counts: dict[str, int] = {"doom": 0, "fragile": 0, "marginal": 0, "viable": 0}
+    for p in plans:
+        key = p.overall_band if p.overall_band in counts else "unknown"
+        counts[key] = counts.get(key, 0) + 1
+    return DeckStats(
+        total_plans=len(plans),
+        band_counts=counts,
+        total_declared_gates=sum(len(p.gate_verdicts) for p in plans),
+        total_failed_gates=sum(len(p.failed_gates) for p in plans),
+        total_unmodelled=sum(len(p.unmodelled_gate_names) for p in plans),
+    )
+
+
+def render_band_bar_chart(band_counts: dict[str, int]) -> str:
+    bands = [("doom", "DOOM", "<20%"), ("fragile", "FRAGILE", "20–50%"),
+             ("marginal", "MARGINAL", "50–80%"), ("viable", "ROBUST", "≥80%")]
+    total = sum(band_counts.values()) or 1
+    max_count = max(max(band_counts.values()), 1)
+    chart_w, chart_h = 760, 360
+    pad_top, pad_bottom, pad_l, pad_r = 56, 88, 60, 30
+    plot_w = chart_w - pad_l - pad_r
+    plot_h = chart_h - pad_top - pad_bottom
+    slot = plot_w / len(bands)
+    bar_w = slot * 0.58
+
+    # Y-axis grid lines at integer counts
+    grid = []
+    for n in range(max_count + 1):
+        y = pad_top + plot_h - (n / max_count) * plot_h
+        grid.append(
+            f'<line x1="{pad_l}" y1="{y:.1f}" x2="{pad_l + plot_w:.1f}" y2="{y:.1f}" '
+            f'stroke="#eee" stroke-width="1"/>'
+        )
+        grid.append(
+            f'<text x="{pad_l - 8}" y="{y + 4:.1f}" font-size="11" fill="#999" '
+            f'text-anchor="end" font-variant-numeric="tabular-nums">{n}</text>'
+        )
+
+    bars = []
+    for i, (key, label, thresh) in enumerate(bands):
+        count = band_counts.get(key, 0)
+        h = (count / max_count) * plot_h if count > 0 else 0
+        cx = pad_l + i * slot + slot / 2
+        x = cx - bar_w / 2
+        y = pad_top + plot_h - h
+        color = BAND_COLOR.get(key, "#666")
+        pct = count / total * 100
+        if count > 0:
+            bars.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_w:.1f}" '
+                        f'height="{h:.1f}" fill="{color}" rx="3"/>')
+        else:
+            # tiny stub so zero is visible
+            bars.append(f'<rect x="{x:.1f}" y="{pad_top + plot_h - 2:.1f}" '
+                        f'width="{bar_w:.1f}" height="2" fill="{color}" opacity="0.25"/>')
+        bars.append(
+            f'<text x="{cx:.1f}" y="{max(y - 12, pad_top + 14):.1f}" font-size="28" '
+            f'font-weight="700" fill="#222" text-anchor="middle">{count}</text>'
+        )
+        bars.append(
+            f'<text x="{cx:.1f}" y="{max(y - 36, pad_top - 4):.1f}" font-size="12" '
+            f'fill="#666" text-anchor="middle">{pct:.0f}%</text>'
+        )
+        bars.append(
+            f'<text x="{cx:.1f}" y="{pad_top + plot_h + 26:.1f}" font-size="14" '
+            f'font-weight="600" fill="{color}" text-anchor="middle">{label}</text>'
+        )
+        bars.append(
+            f'<text x="{cx:.1f}" y="{pad_top + plot_h + 46:.1f}" font-size="11" '
+            f'fill="#888" text-anchor="middle">pass rate {thresh}</text>'
+        )
+
+    baseline = (f'<line x1="{pad_l}" y1="{pad_top + plot_h:.1f}" '
+                f'x2="{pad_l + plot_w:.1f}" y2="{pad_top + plot_h:.1f}" stroke="#444" stroke-width="1.5"/>')
+
+    return (f'<svg viewBox="0 0 {chart_w} {chart_h}" width="100%" '
+            f'preserveAspectRatio="xMidYMid meet" role="img" aria-label="Plans per verdict band">'
+            + "".join(grid) + "".join(bars) + baseline + "</svg>")
+
+
+def intro_slide_headline(stats: DeckStats) -> str:
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">PlanExe &middot; snapshot 46</div>
+    <h1>Napkin-math assessment overview</h1>
+    <p class="lede">Monte-Carlo viability stress tests for each plan. Pass rates are taken over 10,000 simulated runs per declared gate; verdict bands: DOOM &lt;20%, FRAGILE 20–50%, MARGINAL 50–80%, ROBUST ≥80%. Each plan is profiled across the three slides that follow this overview.</p>
+  </header>
+  <div class="intro-metrics">
+    <div class="big-metric"><div class="bm-num">{stats.total_plans}</div><div class="bm-cap">plans assessed</div></div>
+    <div class="big-metric"><div class="bm-num">{stats.total_declared_gates}</div><div class="bm-cap">declared gates total</div></div>
+    <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
+    <div class="big-metric warn"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
+  </div>
+  <footer class="slide-foot"><span>Overview 1 / 3 &middot; headline figures</span></footer>
+</section>
+"""
+
+
+def intro_slide_distribution(stats: DeckStats) -> str:
+    chart = render_band_bar_chart(stats.band_counts)
+    doom = stats.band_counts.get("doom", 0)
+    frag = stats.band_counts.get("fragile", 0)
+    marg = stats.band_counts.get("marginal", 0)
+    viab = stats.band_counts.get("viable", 0)
+    summary = (f"<strong>{doom}</strong> DOOM, <strong>{frag}</strong> FRAGILE, "
+               f"<strong>{marg}</strong> MARGINAL, <strong>{viab}</strong> ROBUST")
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">Snapshot 46 &middot; verdict distribution</div>
+    <h1>How many plans are doomed?</h1>
+    <p class="lede">Each plan's overall risk band is set by its worst declared gate. {summary} of {stats.total_plans} plans.</p>
+  </header>
+  <div class="chart-wrap big">
+    {chart}
+  </div>
+  <footer class="slide-foot"><span>Overview 2 / 3 &middot; verdict band distribution</span></footer>
+</section>
+"""
+
+
+def intro_slide_roster(plans: list[Plan]) -> str:
+    sorted_plans = sorted(plans, key=lambda p: (p.worst_pass_rate, p.slug))
+    rows = []
+    for p in sorted_plans:
+        band = BAND_LABEL.get(p.overall_band, p.overall_band.upper())
+        color = BAND_COLOR.get(p.overall_band, "#666")
+        pct = p.worst_pass_rate * 100
+        rows.append(
+            f"<tr>"
+            f"<td class='slug'><code>{esc(p.slug)}</code></td>"
+            f"<td class='name'>{esc(p.name)}</td>"
+            f"<td><span class='band-pill' style='background:{color}'>{esc(band)}</span></td>"
+            f"<td class='num'>{pct:.1f}%</td>"
+            f"<td class='bar-cell'>"
+            f"<div class='mini-bar'><div class='mini-bar-fill' "
+            f"style='width:{max(pct, 0.5):.1f}%;background:{color}'></div></div>"
+            f"</td>"
+            f"<td><code class='wg'>{esc(p.worst_gate)}</code></td>"
+            f"</tr>"
+        )
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">Snapshot 46 &middot; plan roster</div>
+    <h1>Plans ranked by worst-gate pass rate</h1>
+    <p class="lede">Most doomed at the top. The bar shows the worst gate's pass rate; the verdict band is determined by where that pass rate falls.</p>
+  </header>
+  <table class="roster">
+    <thead><tr>
+      <th>Slug</th><th>Plan</th><th>Band</th><th>Worst pass rate</th><th>Visualization</th><th>Worst gate</th>
+    </tr></thead>
+    <tbody>{''.join(rows)}</tbody>
+  </table>
+  <footer class="slide-foot"><span>Overview 3 / 3 &middot; plan roster</span></footer>
+</section>
+"""
+
+
 def slide_overview(plan: Plan) -> str:
     badge = render_verdict_badge(plan.overall_band, plan.worst_gate, plan.worst_pass_rate)
     failed_n = len(plan.failed_gates)
@@ -452,11 +621,46 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .legend { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12px; color: var(--muted); margin-top: 8px; }
 .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
 
+/* Intro slides */
+.intro-metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 28px;
+}
+.big-metric {
+  padding: 22px 22px 20px; background: #fafaf8; border-radius: 6px;
+  border: 1px solid var(--rule);
+}
+.big-metric.warn { background: #fff7f0; border-color: #ef6c00; }
+.bm-num { font-size: 46px; font-weight: 700; line-height: 1; }
+.bm-cap {
+  font-size: 11px; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.08em; margin-top: 12px;
+}
+.chart-wrap.big { padding: 18px 0 8px; }
+.roster { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.roster th, .roster td {
+  padding: 9px 10px; border-bottom: 1px solid var(--rule);
+  text-align: left; vertical-align: middle;
+}
+.roster th {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600;
+}
+.roster td.slug code { font-size: 11px; color: var(--muted); }
+.roster td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.roster td.bar-cell { width: 220px; }
+.roster .wg { font-size: 11px; }
+.band-pill {
+  display: inline-block; padding: 3px 10px; border-radius: 12px;
+  color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+}
+.mini-bar { width: 100%; height: 10px; background: var(--rule); border-radius: 5px; overflow: hidden; }
+.mini-bar-fill { height: 100%; }
+
 /* Drivers slide */
-.drivers-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; }
+.drivers-grid { display: flex; flex-direction: column; gap: 22px; }
 .panel h3 { margin: 0 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink); }
 .panel.warn h3 { color: #b3300f; }
-.panel.warn { background: #fff7f0; border-left: 3px solid #ef6c00; padding: 16px 18px; border-radius: 0 4px 4px 0; }
+.panel.warn { background: #fff7f0; border: 1px solid #ef6c00; border-left-width: 3px; padding: 14px 18px 16px; border-radius: 0 4px 4px 0; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
 .data-table th, .data-table td {
   text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--rule); vertical-align: top;
@@ -492,6 +696,8 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em
 """
 
 JS = r"""
+const INTRO_SLIDES = 3;
+const PER_PLAN = 3;
 const slides = Array.from(document.querySelectorAll('.slide'));
 const counter = document.getElementById('counter');
 const progress = document.getElementById('progress-bar');
@@ -502,14 +708,21 @@ function show(i) {
   slides.forEach((s, k) => s.classList.toggle('active', k === idx));
   counter.textContent = (idx + 1) + ' / ' + slides.length;
   progress.style.width = ((idx + 1) / slides.length * 100) + '%';
-  const planIdx = Math.floor(idx / 3);
-  if (select.selectedIndex !== planIdx) select.selectedIndex = planIdx;
-  // sync url hash for deep-linking
+  let targetSelectIdx;
+  if (idx < INTRO_SLIDES) {
+    targetSelectIdx = 0;
+  } else {
+    targetSelectIdx = Math.floor((idx - INTRO_SLIDES) / PER_PLAN) + 1;
+  }
+  if (select.selectedIndex !== targetSelectIdx) select.selectedIndex = targetSelectIdx;
   history.replaceState(null, '', '#s' + (idx + 1));
 }
 document.getElementById('prev').addEventListener('click', () => show(idx - 1));
 document.getElementById('next').addEventListener('click', () => show(idx + 1));
-select.addEventListener('change', (e) => show(e.target.selectedIndex * 3));
+select.addEventListener('change', (e) => {
+  const si = e.target.selectedIndex;
+  show(si === 0 ? 0 : INTRO_SLIDES + (si - 1) * PER_PLAN);
+});
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(idx + 1); }
   else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(idx - 1); }
@@ -523,8 +736,13 @@ show(m ? parseInt(m[1], 10) - 1 : 0);
 
 
 def render_html(plans: list[Plan]) -> str:
-    slides_html = []
-    options = []
+    stats = compute_stats(plans)
+    slides_html = [
+        intro_slide_headline(stats),
+        intro_slide_distribution(stats),
+        intro_slide_roster(plans),
+    ]
+    options = ['<option value="overview">— Overview —</option>']
     for i, plan in enumerate(plans):
         slides_html.append(slide_overview(plan))
         slides_html.append(slide_gate_chart(plan))
@@ -551,7 +769,7 @@ def render_html(plans: list[Plan]) -> str:
   <select id="plan-select" aria-label="Jump to plan">
     {''.join(options)}
   </select>
-  <span class="counter" id="counter">1 / {len(plans) * 3}</span>
+  <span class="counter" id="counter">1 / {3 + len(plans) * 3}</span>
   <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
   <span class="help">← / → keys</span>
 </div>
@@ -568,7 +786,8 @@ def main() -> None:
     )
     plans = [parse_assessment(d.name, d / "assessment.md") for d in plan_dirs]
     OUTPUT_PATH.write_text(render_html(plans), encoding="utf-8")
-    print(f"Wrote {OUTPUT_PATH} with {len(plans)} plans × 3 slides = {len(plans) * 3} slides.")
+    total = 3 + len(plans) * 3
+    print(f"Wrote {OUTPUT_PATH}: 3 overview + {len(plans)} plans × 3 = {total} slides.")
 
 
 if __name__ == "__main__":
