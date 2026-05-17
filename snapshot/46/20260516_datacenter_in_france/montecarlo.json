@@ -1,0 +1,321 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Datacenter Campus",
+    "plan_type": "hyperscale_infrastructure"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "buffer_annual_holding_cost_eur": {
+      "unit": "EUR_per_year",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 818981714.2066227,
+      "std": 184698694.18794936,
+      "min": 387885985.1093867,
+      "p05": 520247438.7753463,
+      "p25": 685509094.3107666,
+      "p50": 809682998.2467232,
+      "p75": 950035368.877903,
+      "p95": 1141008308.4479926,
+      "max": 1284351296.3015783
+    },
+    "buffer_total_holding_cost_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1228472571.3099341,
+      "std": 277048041.28192407,
+      "min": 581828977.66408,
+      "p05": 780371158.1630195,
+      "p25": 1028263641.4661498,
+      "p50": 1214524497.3700848,
+      "p75": 1425053053.3168545,
+      "p95": 1711512462.6719887,
+      "max": 1926526944.4523675
+    },
+    "phase1_budget_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1525992653.4282105,
+      "std": 1241095581.4300854,
+      "min": -2358702591.1721845,
+      "p05": -559830710.9999663,
+      "p25": 647195808.1293011,
+      "p50": 1570795318.5900855,
+      "p75": 2411991225.6682506,
+      "p95": 3536472235.9474263,
+      "max": 4903057988.905697
+    },
+    "phase2_fid_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.04887324979237486,
+      "std": 0.11353388444078666,
+      "min": -0.2992453851053425,
+      "p05": -0.22538978701152465,
+      "p25": -0.13343600103617664,
+      "p50": -0.05947664178886192,
+      "p75": 0.03100934298889449,
+      "p95": 0.1506452666904014,
+      "max": 0.24217565481263148
+    },
+    "phase1_pue_margin": {
+      "unit": "ratio",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.014349695104177686,
+      "std": 0.05685981913658077,
+      "min": -0.1821751681609447,
+      "p05": -0.10913708932798069,
+      "p25": -0.05384003639417717,
+      "p50": -0.013598841355342617,
+      "p75": 0.02589949172194589,
+      "p95": 0.0778764811596283,
+      "max": 0.15419427302326927
+    }
+  },
+  "thresholds": {
+    "phase1_budget_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 8795,
+      "valid_count": 10000,
+      "probability": 0.8795
+    },
+    "phase2_fid_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3256,
+      "valid_count": 10000,
+      "probability": 0.3256
+    },
+    "phase1_pue_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4056,
+      "valid_count": 10000,
+      "probability": 0.4056
+    }
+  },
+  "sensitivity": {
+    "buffer_annual_holding_cost_eur": {
+      "top_inputs": [
+        {
+          "id": "buffer_annual_holding_cost_per_ha_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "buffer_total_holding_cost_eur": {
+      "top_inputs": [
+        {
+          "id": "buffer_annual_holding_cost_per_ha_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "phase1_budget_surplus_eur": {
+      "top_inputs": [
+        {
+          "id": "phase1_baseline_capex_eur",
+          "correlation": -0.9137
+        },
+        {
+          "id": "brownfield_remediation_actual_eur",
+          "correlation": -0.3379
+        },
+        {
+          "id": "buffer_annual_holding_cost_per_ha_eur",
+          "correlation": -0.2188
+        }
+      ]
+    },
+    "phase2_fid_margin": {
+      "top_inputs": [
+        {
+          "id": "tenant_take_or_pay_actual_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "phase1_pue_margin": {
+      "top_inputs": [
+        {
+          "id": "phase1_pue_actual",
+          "correlation": -0.8402
+        },
+        {
+          "id": "phase1_pue_target_max",
+          "correlation": 0.5569
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "phase1_budget_surplus_eur": [
+      {
+        "id": "phase1_baseline_capex_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.546,
+        "delta_pp": -45.4
+      },
+      {
+        "id": "brownfield_remediation_actual_eur",
+        "p_pass_low_quartile": 0.95,
+        "p_pass_high_quartile": 0.7764,
+        "delta_pp": -17.36
+      },
+      {
+        "id": "buffer_annual_holding_cost_per_ha_eur",
+        "p_pass_low_quartile": 0.934,
+        "p_pass_high_quartile": 0.8108,
+        "delta_pp": -12.32
+      }
+    ],
+    "phase2_fid_margin": [
+      {
+        "id": "tenant_take_or_pay_actual_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "phase1_pue_margin": [
+      {
+        "id": "phase1_pue_actual",
+        "p_pass_low_quartile": 0.9068,
+        "p_pass_high_quartile": 0.0212,
+        "delta_pp": -88.56
+      },
+      {
+        "id": "phase1_pue_target_max",
+        "p_pass_low_quartile": 0.1416,
+        "p_pass_high_quartile": 0.7144,
+        "delta_pp": 57.28
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "phase2_fid_margin": [
+      {
+        "id": "tenant_take_or_pay_actual_share",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 0.5982404800299679,
+        "conditional_pass_prob": 0.9867,
+        "admitted_fraction": 0.33
+      }
+    ],
+    "phase1_pue_margin": [
+      {
+        "id": "phase1_pue_actual",
+        "direction": "below",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 1.2068872652902418,
+        "conditional_pass_prob": 0.8421,
+        "admitted_fraction": 0.33
+      },
+      {
+        "id": "phase1_pue_target_max",
+        "direction": "above",
+        "input_percentile_cutoff": 95,
+        "cutoff_value": 1.2722730718615254,
+        "conditional_pass_prob": 0.834,
+        "admitted_fraction": 0.05
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "tenant_take_or_pay_actual_share",
+      "score": 74.184,
+      "worst_gate": "phase2_fid_margin",
+      "bound_width_ratio": 1.1,
+      "source": "assumption"
+    },
+    {
+      "id": "phase1_pue_actual",
+      "score": 9.9239,
+      "worst_gate": "phase1_pue_margin",
+      "bound_width_ratio": 0.1885,
+      "source": "data"
+    },
+    {
+      "id": "brownfield_remediation_actual_eur",
+      "score": 5.5783,
+      "worst_gate": "phase1_budget_surplus_eur",
+      "bound_width_ratio": 2.6667,
+      "source": "data"
+    },
+    {
+      "id": "phase1_baseline_capex_eur",
+      "score": 5.0148,
+      "worst_gate": "phase1_budget_surplus_eur",
+      "bound_width_ratio": 0.9167,
+      "source": "data"
+    },
+    {
+      "id": "buffer_annual_holding_cost_per_ha_eur",
+      "score": 1.732,
+      "worst_gate": "phase1_budget_surplus_eur",
+      "bound_width_ratio": 1.1667,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "buffer_annual_holding_cost_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.1667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.17"
+      ]
+    },
+    "buffer_total_holding_cost_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.1667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.17"
+      ]
+    },
+    "phase1_budget_surplus_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.5833,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 1.58"
+      ]
+    },
+    "phase2_fid_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.1,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.10"
+      ]
+    },
+    "phase1_pue_margin": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.1568,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.16"
+      ]
+    }
+  },
+  "warnings": []
+}

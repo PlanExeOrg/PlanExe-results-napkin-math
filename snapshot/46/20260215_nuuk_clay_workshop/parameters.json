@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "small_business_community_hub",
+    "primary_goal": "Establish a community clay workshop near Katuaq Cultural Centre in Nuuk, operational by 2026-09-15, surviving Year 1 within a 2,000,000 DKK budget under the 'Builder's Balance' low-risk strategy.",
+    "modelling_frame": "Tests the Year-1 budget surplus after ring-fencing the 15% contingency; the monthly off-peak rental revenue against monthly utility overhead; and the Taster-Session conversion margin against the 15% target. Greenlandic labor-law contractor viability, commercial lease execution by 2026-07-01, and Nuuk utility-variance approval by 2026-08-15 are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "year1_budget_dkk",
+      "label": "Year 1 total budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 2000000,
+      "comment": "Year 1 capital and operating ceiling under the Builder's Balance strategy.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Year 1 budget envelope: 2 million DKK — initial capital and operating ceiling."
+    },
+    {
+      "id": "contingency_share",
+      "label": "Ring-fenced contingency share of Year 1 budget",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.15,
+      "comment": "15% of the Year 1 budget is ring-fenced as an untouchable operating contingency; depletion below zero triggers loss of operational agility.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Contingency reserve amount: 15% of the total Year 1 budget — operational buffer size."
+    },
+    {
+      "id": "min_viable_hourly_rate_dkk",
+      "label": "Minimum viable off-peak hourly rental rate",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "DKK_per_hour",
+      "value": 165,
+      "comment": "165 DKK/hour is the floor needed for off-peak studio rentals to cover direct utility/heating overhead; below this the rental stream is loss-making.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Target minimum hourly rental rate for non-enrolled users: 165 DKK/hour — sensitivity driver for off-peak revenue."
+    },
+    {
+      "id": "taster_conversion_target_share",
+      "label": "Taster-Session conversion target",
+      "category": "conversion",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.15,
+      "comment": "Free Taster Sessions must convert 15% of attendees to paying memberships or courses within 90 days to secure year-round local patronage.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Conversion Rate Target: 15% of Taster Session attendees convert to course/membership within 90 days."
+    },
+    {
+      "id": "operating_months_year1",
+      "label": "Year 1 operating months",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 12,
+      "comment": "Standard 12-month accounting horizon for Year 1 from operational readiness on 2026-09-15.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Operational readiness targeted for September 15, 2026, with foundational setup activities commencing immediately."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "monthly_fixed_operating_cost_dkk",
+      "label": "Monthly fixed operating cost (staffing, rent, admin, utilities, materials amortised)",
+      "unit": "DKK_per_month",
+      "why_needed": "Required to test whether the 2,000,000 DKK Year 1 envelope (less the 15% contingency) covers 12 months of fixed operations under the Builder's Balance staffing model.",
+      "suggested_estimation_method": "Sum monthly instructor pay (2 FTE-equivalent across 4 part-time roles) + lease + heating/utilities + admin + materials amortisation; cross-check against the implicit 142K DKK/month ceiling implied by 1.7M DKK / 12 months."
+    },
+    {
+      "id": "off_peak_hours_per_month",
+      "label": "Available off-peak studio hours per month (Nov–Feb)",
+      "unit": "hours_per_month",
+      "why_needed": "Denominator for the off-peak rental revenue calculation; pairs with the 165 DKK/hour rate and low-season utilization to project revenue against utility overhead.",
+      "suggested_estimation_method": "Total weekly open-studio hours × 4.33 weeks/month; subtract instructor-led course hours to isolate genuinely available rental capacity."
+    },
+    {
+      "id": "low_season_utilization_actual_share",
+      "label": "Actual off-peak studio utilization share (Nov–Feb)",
+      "unit": "fraction",
+      "why_needed": "Risk 1 names speculative off-peak hourly rentals as the most fragile revenue assumption; this fraction determines whether the rental stream covers utility overhead.",
+      "suggested_estimation_method": "Per Data Item 2 trial: one-month dual-pricing test at 165 DKK/hr; project Nov–Feb utilization based on observed local demand at that rate."
+    },
+    {
+      "id": "monthly_utility_overhead_dkk",
+      "label": "Monthly utility overhead during low season",
+      "unit": "DKK_per_month",
+      "why_needed": "Benchmark against which off-peak rental revenue must clear; Review Issue 1 names utility volatility as the largest variable-cost risk.",
+      "suggested_estimation_method": "Confirmed Nuuk commercial DKK/kWh tariff × estimated kWh/month for centralized kiln + drying + workshop heating during Nov–Feb."
+    },
+    {
+      "id": "taster_conversion_actual_share",
+      "label": "Achieved Taster-Session conversion share",
+      "unit": "fraction",
+      "why_needed": "Below the 15% target the local membership pipeline starves and winter revenue collapses; the Expert Criticism gate at <12.5% triggers Taster budget redirection to digital outreach.",
+      "suggested_estimation_method": "Track 30-day and 90-day conversions across early Taster cohorts; sensitivity to local-group reach and follow-up intensity."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "total_year1_fixed_operating_cost_dkk",
+      "label": "Total Year 1 fixed operating cost",
+      "formula_hint": "total_year1_fixed_operating_cost_dkk = monthly_fixed_operating_cost_dkk * operating_months_year1",
+      "output_name": "total_year1_fixed_operating_cost_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["monthly_fixed_operating_cost_dkk", "operating_months_year1"],
+      "why_first": "Aggregates the monthly burn over the 12-month Year-1 window so the net surplus against the post-contingency envelope is one subtraction."
+    },
+    {
+      "id": "year1_budget_surplus_dkk",
+      "label": "Year 1 budget surplus after ring-fencing contingency",
+      "formula_hint": "year1_budget_surplus_dkk = year1_budget_dkk * (1 - contingency_share) - total_year1_fixed_operating_cost_dkk",
+      "output_name": "year1_budget_surplus_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_budget_dkk", "contingency_share", "total_year1_fixed_operating_cost_dkk"],
+      "why_first": "Tests the central financial claim that 1.7M DKK (2M minus the 15% ring-fenced contingency) is enough to cover 12 months of Year-1 fixed operations under the Builder's Balance staffing model."
+    },
+    {
+      "id": "monthly_off_peak_rental_revenue_dkk",
+      "label": "Projected monthly off-peak rental revenue",
+      "formula_hint": "monthly_off_peak_rental_revenue_dkk = min_viable_hourly_rate_dkk * off_peak_hours_per_month * low_season_utilization_actual_share",
+      "output_name": "monthly_off_peak_rental_revenue_dkk",
+      "output_unit": "DKK_per_month",
+      "depends_on": ["min_viable_hourly_rate_dkk", "off_peak_hours_per_month", "low_season_utilization_actual_share"],
+      "why_first": "Materialises the speculative off-peak rental revenue stream flagged as the most fragile assumption (Risk 1, Expert Issue 2); needed for the overhead-coverage gate below."
+    },
+    {
+      "id": "monthly_off_peak_rental_overhead_margin_dkk",
+      "label": "Monthly off-peak rental margin against utility overhead",
+      "formula_hint": "monthly_off_peak_rental_overhead_margin_dkk = monthly_off_peak_rental_revenue_dkk - monthly_utility_overhead_dkk",
+      "output_name": "monthly_off_peak_rental_overhead_margin_dkk",
+      "output_unit": "DKK_per_month",
+      "depends_on": ["monthly_off_peak_rental_revenue_dkk", "monthly_utility_overhead_dkk"],
+      "why_first": "Positive margin means the 165 DKK/hr off-peak rental stream covers utility/heating overhead during the Nov–Feb shoulder season; negative margin forces the pivot to low-margin co-op slots (Mitigation Plan)."
+    },
+    {
+      "id": "taster_conversion_margin",
+      "label": "Taster-Session conversion margin against the 15% target",
+      "formula_hint": "taster_conversion_margin = taster_conversion_actual_share - taster_conversion_target_share",
+      "output_name": "taster_conversion_margin",
+      "output_unit": "fraction",
+      "depends_on": ["taster_conversion_actual_share", "taster_conversion_target_share"],
+      "why_first": "Below zero the local membership pipeline starves the winter revenue base; below the Expert-Criticism 12.5% cut-off the entire Taster outreach budget must redirect to digital assets."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "greenlandic_labor_law_contractor_gate",
+      "label": "Greenlandic labor law permits the part-time contractor staffing model",
+      "why_it_matters": "Expert Issue 3 and Risk 4 name this as the single most critical staffing assumption; if Greenlandic labor law mandates employee classification, fixed labor cost rises 20–35% and consumes 60–90% of the contingency before any operational stress.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Fixed labor cost rises 20–35% in Year 1, exhausting 60–90% of the 300K DKK contingency and delaying essential infrastructure improvements; staffing must pivot to a salaried model with full severance exposure."
+    },
+    {
+      "id": "commercial_lease_by_july_2026_gate",
+      "label": "Commercial lease near Katuaq secured by 2026-07-01",
+      "why_it_matters": "Without a lease executed by 2026-07-01 the 10-week fit-out cannot complete by the 2026-09-15 operational readiness target; the Q3 peak revenue window slips and Year-1 revenue mix assumptions collapse.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Operational readiness slips past 2026-09-15; Year-1 revenue base loses the Q3 peak; material-buffer order may auto-reduce to 3 months per the Expert Criticism gate, weakening supply-chain resilience."
+    },
+    {
+      "id": "utility_variance_approval_gate",
+      "label": "Nuuk municipal utility variance approved by 2026-08-15",
+      "why_it_matters": "C1 zoning requires an 8–12 week variance review for the high-draw centralized kiln; without approval by 2026-08-15 the kiln cannot operate at planned load and the fit-out must stop to avoid rework.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Up to 6 weeks delay to full capacity, ~150,000 DKK in lost revenue per Risk 4; potential pivot to the industrial-zone Location 3 with cultural-visibility tradeoffs."
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026–2027",
+    "plan_type": "national_governance_program",
+    "primary_goal": "Execute India's postponed decennial census across 1.4B people / 240M+ households between April 2026 and April 2027 under the Pioneer's Gambit strategy, achieving 99%+ coverage, publishing provisional totals within 6 months, and releasing the full caste-inclusive dataset within 18 months of Phase 2 completion.",
+    "modelling_frame": "Tests the budget overrun margin against the ₹15,000 crore ceiling; the household-coverage margin against the 99% target; the provisional-publish timing margin against the 6-month deadline; the cloud-ingestion MTTR margin against the 4-hour ceiling; and the device-audit-failure margin against the 1% threshold. Caste-methodology Q4 2025 lockdown, Judicial Review Board constitution by Q3 2025, and state-government MoU cooperation are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "budget_high_inr",
+      "label": "Budget ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "INR",
+      "value": 150000000000,
+      "comment": "Upper bound of the ₹12,000–15,000 crore envelope; budget overrun >5% (₹750 crore) forces austerity cuts to quality-assurance processes per Risk 7.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "budget high estimate: 15,000 crore ₹ — core project cost ceiling."
+    },
+    {
+      "id": "household_coverage_target_share",
+      "label": "Household enumeration coverage target",
+      "category": "coverage",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.99,
+      "comment": "Below 99% the primary viability gate fails; the Pioneer's Gambit hybrid digital/paper redundancy exists specifically to defend this metric.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "household coverage success target: 99% of households — viability gate."
+    },
+    {
+      "id": "provisional_publish_target_months",
+      "label": "Provisional-total publication deadline",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 6,
+      "comment": "Provisional totals must publish within 6 months of Phase 2 completion (≈Oct 2027) to feed Lok Sabha delimitation; missing this triggers political crisis.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If provisional population totals are not published within 6 months of Phase 2 completion, then the success criterion fails immediately."
+    },
+    {
+      "id": "mttr_max_hours",
+      "label": "Maximum tolerable cloud-ingestion MTTR",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hours",
+      "value": 4,
+      "comment": "Cloud architecture must restore from a system-wide ingestion failure within 4 hours; longer outages delay validation and salary payouts, risking enumerator attrition.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Cloud synchronization pipeline can achieve a maximum restoration time objective of four (4) hours."
+    },
+    {
+      "id": "device_audit_failure_threshold_share",
+      "label": "Device audit-failure trigger threshold",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.01,
+      "comment": "Above 1% device-audit failure (chain-of-custody loss/theft/damage) supervisory penalties trigger; the 10% emergency-procurement scenario costs ₹400–600 crore.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If device audit failures exceed 1%, then this metric triggers supervisory penalties linked to performance metrics."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_total_census_spend_inr",
+      "label": "Projected end-to-end census spend",
+      "unit": "INR",
+      "why_needed": "Required to test whether the ₹15,000 crore ceiling absorbs Phase 1+2 execution including satellite hubs, paper audits, security overhead, and the ₹400–600 crore device-replacement scenario named in Risk 5.",
+      "suggested_estimation_method": "Bottom-up: device CapEx (3M units) + enumerator pay × 3M + satellite contract + paper audit logistics + security + DAMF + contingency; sensitivity to Risk 5 emergency procurement and Risk 7 austerity scenarios."
+    },
+    {
+      "id": "actual_household_coverage_share",
+      "label": "Projected household enumeration coverage achieved",
+      "unit": "fraction",
+      "why_needed": "Drives whether the Pioneer's Gambit redundancy clears the 99% gate against Risk 1 (tech failures, 2–5% coverage drop) and Risk 6 (fluid-population undercount, 5–10% downside).",
+      "suggested_estimation_method": "Project Phase 1 pilot coverage scaled by district-level connectivity profile; sensitivity to satellite-hub failure rate and the 72-hour paper-audit capacity confirmed by state MoUs."
+    },
+    {
+      "id": "actual_provisional_publish_months",
+      "label": "Achieved months from Phase 2 to provisional release",
+      "unit": "months",
+      "why_needed": "Below the 6-month deadline triggers political crisis around delimitation; Risk 2 names a 2–3 month JRB arbitration slip as the dominant timing pressure.",
+      "suggested_estimation_method": "Phase 2 close-out plus aggregation + JRB review + statistical-body credibility review timeline; sensitivity to state non-cooperation (Risk 2) and cloud-MTTR cascading delays."
+    },
+    {
+      "id": "actual_mttr_hours",
+      "label": "Observed cloud-ingestion MTTR under peak 3x load",
+      "unit": "hours",
+      "why_needed": "Expert Issue 3 sensitivity: MTTR > 4 hours produces a 10-day supervisor-review delay and a 2-week salary delay, cascading into 2–4 week project slip and 0.5% data-integrity drop.",
+      "suggested_estimation_method": "Per Data Item 4: dedicated JMeter peak-load simulation at 3× average daily volume for 72 continuous hours with planned failover injections; benchmark against major national digital-transaction systems."
+    },
+    {
+      "id": "actual_device_audit_failure_share",
+      "label": "Projected device audit-failure rate across the 3M-unit fleet",
+      "unit": "fraction",
+      "why_needed": "Risk 5 models a 10% device loss/failure as the worst case (₹400–600 crore emergency procurement); the 1% threshold is the supervisory-penalty trigger.",
+      "suggested_estimation_method": "Three-supplier diversification × GPS chain-of-custody integrity rate × theft/damage incidence in high-risk zones; calibrate on 2021 NRC-style trial deployments where available."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "budget_overrun_margin_inr",
+      "label": "Budget overrun margin against the ₹15,000 crore ceiling",
+      "formula_hint": "budget_overrun_margin_inr = budget_high_inr - actual_total_census_spend_inr",
+      "output_name": "budget_overrun_margin_inr",
+      "output_unit": "INR",
+      "depends_on": ["budget_high_inr", "actual_total_census_spend_inr"],
+      "why_first": "Positive margin keeps the project within budget; negative margin forces austerity that the Risk 7 mitigation says will cut verification-survey quality assurance."
+    },
+    {
+      "id": "household_coverage_margin",
+      "label": "Household coverage margin against the 99% target",
+      "formula_hint": "household_coverage_margin = actual_household_coverage_share - household_coverage_target_share",
+      "output_name": "household_coverage_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_household_coverage_share", "household_coverage_target_share"],
+      "why_first": "Positive margin satisfies the primary viability criterion; negative margin invalidates the entire Pioneer's Gambit thesis and the methodological-credibility metric tied to statistical-body acceptance."
+    },
+    {
+      "id": "provisional_publish_timing_margin_months",
+      "label": "Provisional-publish timing margin",
+      "formula_hint": "provisional_publish_timing_margin_months = provisional_publish_target_months - actual_provisional_publish_months",
+      "output_name": "provisional_publish_timing_margin_months",
+      "output_unit": "months",
+      "depends_on": ["provisional_publish_target_months", "actual_provisional_publish_months"],
+      "why_first": "Positive margin clears the 6-month deadline for delimitation data; negative margin triggers the political-crisis path that the data-sequencing strategy (population before caste) is designed to prevent."
+    },
+    {
+      "id": "mttr_margin_hours",
+      "label": "Cloud-ingestion MTTR margin against the 4-hour ceiling",
+      "formula_hint": "mttr_margin_hours = mttr_max_hours - actual_mttr_hours",
+      "output_name": "mttr_margin_hours",
+      "output_unit": "hours",
+      "depends_on": ["mttr_max_hours", "actual_mttr_hours"],
+      "why_first": "Positive margin keeps salary validation and real-time monitoring intact; negative margin triggers the Expert Issue 3 cascade of supervisor-review delay, salary delay, attrition, and timeline slip."
+    },
+    {
+      "id": "device_audit_failure_margin",
+      "label": "Device-audit-failure margin against the 1% threshold",
+      "formula_hint": "device_audit_failure_margin = device_audit_failure_threshold_share - actual_device_audit_failure_share",
+      "output_name": "device_audit_failure_margin",
+      "output_unit": "fraction",
+      "depends_on": ["device_audit_failure_threshold_share", "actual_device_audit_failure_share"],
+      "why_first": "Positive margin keeps supervisory penalties dormant and the chain-of-custody intact; negative margin escalates toward the Risk 5 10% loss scenario and the ₹400–600 crore emergency-procurement spend."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "caste_methodology_q4_2025_lockdown_gate",
+      "label": "ECI and NSC sign off on the final caste methodology by Q4 2025",
+      "why_it_matters": "Expert Issue 1 and Assumption Issue 1 name this as the load-bearing political-credibility assumption; training 3M enumerators on a moving methodology invalidates the entire data-integrity argument regardless of any operational margin the model evaluates.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Retraining and manual reprint costs ₹50–100 crore per Issue 1 sensitivity; quality-validation error rates spike from 5% to 15–20%; statistical-body credibility rejection invalidates the caste-table milestone."
+    },
+    {
+      "id": "judicial_review_board_constitution_gate",
+      "label": "Judicial Review Board legally constituted with statutory authority by Q3 2025",
+      "why_it_matters": "Decision 4 routes all data-sequencing disputes through the JRB; without statutory authority before Phase 1, the 6-month provisional-release deadline cannot be defended against state non-cooperation (Risk 2).",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Provisional release slips past 6 months per Risk 2 sensitivity (2–3 month aggregation delay); delimitation deadline missed; political crisis around constituency boundaries."
+    },
+    {
+      "id": "state_government_mou_cooperation_gate",
+      "label": "State governments commit 80% of local staff to paper audits and dual supervision",
+      "why_it_matters": "Decision 6 and Assumption Q7 treat state-machinery cooperation as binary; without 80% local-staff dedication the 72-hour paper-audit window collapses and the Pioneer's Gambit redundancy fails on the 10% of blocks the satellite hubs cover.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Paper-audit capacity falls below the 72-hour window; digital-failure scenarios cascade directly into coverage gaps; the 99% target becomes unreachable in non-cooperating states (Risk 2)."
+    }
+  ]
+}

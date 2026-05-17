@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "Containerized Dark Data Ingestor Network (CDDIN)",
+    "plan_type": "industrial_preservation_program",
+    "primary_goal": "Deploy a 30-unit Containerized Dark Data Ingestor Network to recover 200+ petabytes of at-risk historical media over 10 years on a $250M budget, sustaining fleet uptime >90% and human review load <17.5%.",
+    "modelling_frame": "Tests the $250M budget surplus against bottom-up lifetime OpEx (annual OpEx/MIU × average active fleet × 10 years); the fleet uptime margin against the 90% operational target; the human review-load margin against the 17.5% safety-buffer; and the modular-replacement MTBF improvement margin against the 30%-over-OEM R&D commitment. Archive-partner liability acceptance, zero-legal-incident compliance, and long-term data-escrow format independence are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "total_budget_usd",
+      "label": "10-year total program budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 250000000,
+      "comment": "Phased $60M + $120M + $70M envelope covering CapEx (≈30 MIUs) plus lifetime OpEx; the financing ceiling against which projected lifetime burn must clear.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total project budget over ten years is $250 million — explicit input for total capital expenditure."
+    },
+    {
+      "id": "pilot_duration_years",
+      "label": "Program duration",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "years",
+      "value": 10,
+      "comment": "Full deployment horizon from initial 3 pilots in Year 2 to a 30-MIU fleet by Year 10; the OpEx multiplier in lifetime cost projections.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "The full 30-unit network and comprehensive digitization targets must be achieved within a 10-year timeframe."
+    },
+    {
+      "id": "target_uptime_share",
+      "label": "Fleet uptime target",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.90,
+      "comment": "Below this fleet-wide uptime the maintenance program is judged unsuccessful and Phase 2 scaling CapEx funding is withheld.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Equipment Uptime target greater than 90 percent — capacity maintenance gate."
+    },
+    {
+      "id": "safety_buffer_review_share",
+      "label": "Human review-load safety buffer",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.175,
+      "comment": "Total review load must stay below 17.5% to avoid surge staffing; the 15% override is supposed to absorb AI miscalibration within this buffer.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If the human review load exceeds 17.5 percent, then surge staffing must be funded."
+    },
+    {
+      "id": "modular_mtbf_improvement_target_share",
+      "label": "Modular-replacement MTBF improvement target over OEM",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.30,
+      "comment": "Modular assemblies must exceed OEM MTBF by 30% within 18 months for the Builder strategy to deliver; below this the pivot to cannibalization is forced.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Modular replacement MTBF must exceed original part MTBF by 30% within 18 months."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "avg_annual_opex_per_miu_usd",
+      "label": "Average annual operating cost per Mobile Ingest Unit",
+      "unit": "USD_per_year",
+      "why_needed": "Risk 4 names a $2–3M baseline that could rise 20% (+$400–600K) per MIU due to logistics and engineer rotation; required for the lifetime burn-rate test against the $250M envelope.",
+      "suggested_estimation_method": "Bottom-up: 14–17 staff per MIU at burdened rates + logistics + maintenance + power; cross-check against the $2–3M selected-scenario number with sensitivity to the Risk 4 escalation scenario."
+    },
+    {
+      "id": "avg_active_fleet_size_units",
+      "label": "Average active MIU count across the 10-year horizon",
+      "unit": "units",
+      "why_needed": "Fleet ramps from 3 pilots in Year 2 to 30 units by Year 10; the time-weighted average determines lifetime OpEx burden against the budget.",
+      "suggested_estimation_method": "Trapezoidal integration of the deployment schedule (3 → 30 over years 2–10); sensitivity to Phase-2 launch slip (Risk 2/3) that flattens the ramp."
+    },
+    {
+      "id": "actual_uptime_share",
+      "label": "Projected fleet-wide uptime under modular maintenance",
+      "unit": "fraction",
+      "why_needed": "Drives whether the Phase 2 funding gate (90% uptime) clears at the Month-18 Go/No-Go review; Risk 1 names 3–6 month downtime per MIU as the dominant operational shock.",
+      "suggested_estimation_method": "Reliability modeling from MIL-HDBK-217F baseline for modular parts × cannibalization-yield × MTTR projection; calibrate on first-3-pilots field data once available."
+    },
+    {
+      "id": "actual_review_load_share",
+      "label": "Projected total human review load under the 15% override",
+      "unit": "fraction",
+      "why_needed": "Review Issue 3 sensitivity: if AI FPR runs 15% (vs assumed 10%) the override pushes total load to ~17.25%, dangerously close to the 17.5% buffer ceiling.",
+      "suggested_estimation_method": "AI FPR on the 10,000-segment audit set × (1 + override) + FNR-driven manual escalations; sensitivity to legal-taxonomy strictness."
+    },
+    {
+      "id": "modular_mtbf_actual_improvement_share",
+      "label": "Achieved modular-replacement MTBF improvement over OEM",
+      "unit": "fraction",
+      "why_needed": "Issue 1 names the in-house R&D capability as a load-bearing assumption; failure forces pivot to the fragile cannibalization-only path and Phase 2 fleet uptime collapses.",
+      "suggested_estimation_method": "MTBF test data on the first 5 modular prototypes vs. documented OEM rates; sensitivity to material-substitution risk and accelerated-life-test calibration."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "estimated_total_lifetime_opex_usd",
+      "label": "Projected 10-year fleet OpEx burden",
+      "formula_hint": "estimated_total_lifetime_opex_usd = avg_annual_opex_per_miu_usd * avg_active_fleet_size_units * pilot_duration_years",
+      "output_name": "estimated_total_lifetime_opex_usd",
+      "output_unit": "USD",
+      "depends_on": ["avg_annual_opex_per_miu_usd", "avg_active_fleet_size_units", "pilot_duration_years"],
+      "why_first": "Materialises the dominant operating-cost pressure on the $250M envelope; the rest of the budget (~$100–150M) must cover CapEx, parts, and contingency."
+    },
+    {
+      "id": "budget_opex_surplus_usd",
+      "label": "Budget surplus after projected lifetime OpEx",
+      "formula_hint": "budget_opex_surplus_usd = total_budget_usd - estimated_total_lifetime_opex_usd",
+      "output_name": "budget_opex_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["total_budget_usd", "estimated_total_lifetime_opex_usd"],
+      "why_first": "Positive surplus leaves room for the ~30-MIU CapEx and parts inventory; negative surplus means OpEx alone exceeds the program envelope before any equipment is built."
+    },
+    {
+      "id": "uptime_margin",
+      "label": "Fleet uptime margin against the 90% target",
+      "formula_hint": "uptime_margin = actual_uptime_share - target_uptime_share",
+      "output_name": "uptime_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_uptime_share", "target_uptime_share"],
+      "why_first": "Positive margin unlocks the Month-18 Phase 2 scaling CapEx; negative margin triggers the technical-failure path that the Builder strategy's modular R&D is designed to prevent."
+    },
+    {
+      "id": "review_load_margin",
+      "label": "Review-load margin against the 17.5% safety buffer",
+      "formula_hint": "review_load_margin = safety_buffer_review_share - actual_review_load_share",
+      "output_name": "review_load_margin",
+      "output_unit": "fraction",
+      "depends_on": ["safety_buffer_review_share", "actual_review_load_share"],
+      "why_first": "Positive margin means current staffing absorbs the AI override workload; negative margin forces surge staffing and risks the 20% bottleneck breach flagged in Risk 3."
+    },
+    {
+      "id": "modular_mtbf_improvement_margin",
+      "label": "Modular-MTBF improvement margin over OEM",
+      "formula_hint": "modular_mtbf_improvement_margin = modular_mtbf_actual_improvement_share - modular_mtbf_improvement_target_share",
+      "output_name": "modular_mtbf_improvement_margin",
+      "output_unit": "fraction",
+      "depends_on": ["modular_mtbf_actual_improvement_share", "modular_mtbf_improvement_target_share"],
+      "why_first": "Positive margin validates the central technical bet of the Builder strategy; negative margin forces the Issue-1 pivot to cannibalization and a 50–100% MTTR increase on complex repairs."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "archive_partner_liability_acceptance_gate",
+      "label": "Pilot archives accept Tier-3 financial-penalty clauses and PTM staffing",
+      "why_it_matters": "Issue 2 names this as a load-bearing assumption: without contractual liability for pre-treatment failures the reduced on-board MIU crew size is invalidated and hardware-damage costs flow back into Phase 1 OpEx.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "On-board crew must absorb pre-treatment risk; OpEx per MIU rises by the $400K/year/MIU savings the Builder strategy assumed, and the Phase 3 budget collapses."
+    },
+    {
+      "id": "zero_legal_compliance_incidents_gate",
+      "label": "Zero legal or privacy incidents across the 10-year deployment",
+      "why_it_matters": "The plan's primary compliance metric is binary; a single GDPR or copyright incident invalidates the legal framework and exposes the project to claw-backs and partner termination regardless of any operational margin the model evaluates.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Loss of state-archive partnerships; possible termination of the entire pilot at the Phase 2 funding gate; reputational damage that the simulation cannot quantify but that closes the path to 200 PB."
+    },
+    {
+      "id": "data_escrow_long_term_format_independence_gate",
+      "label": "Three cloud-escrow providers maintain format independence and migration access through Year 10",
+      "why_it_matters": "Risk 7 names this as a Low/High exposure: cloud policy shifts could lock data into a single vendor and erase the societal value of the entire 10-year preservation effort.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Forced single-vendor migration at Year 10 with ~50% hosting cost inflation; the decentralized-escrow theory of post-project resilience fails and long-term societal access depends on a single counterparty."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "European Faraday Enclosure Launch (Tallinn-anchored)",
+    "plan_type": "consumer_hardware_startup"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "net_cash_target_month12_eur": 50000,
+        "sell_through_target_share": 0.75,
+        "mil_std_cert_cost_eur": 120000,
+        "presale_conversion_target_share": 0.03,
+        "eu_emc_cert_budget_eur": 70000,
+        "actual_net_cash_month12_eur": -100000,
+        "actual_sellthrough_share": 0.30,
+        "actual_year1_gross_profit_eur": 30000,
+        "actual_presale_conversion_share": 0.01,
+        "actual_eu_emc_cert_cost_eur": 60000
+      },
+      "outputs": {
+        "month12_net_cash_margin_eur": -150000,
+        "iso_run_sellthrough_margin": -0.45,
+        "milstd_funding_margin_eur": -90000,
+        "presale_conversion_margin": -0.02,
+        "eu_emc_cert_budget_margin_eur": 10000
+      }
+    },
+    "base": {
+      "inputs": {
+        "net_cash_target_month12_eur": 50000,
+        "sell_through_target_share": 0.75,
+        "mil_std_cert_cost_eur": 120000,
+        "presale_conversion_target_share": 0.05,
+        "eu_emc_cert_budget_eur": 80000,
+        "actual_net_cash_month12_eur": 30000,
+        "actual_sellthrough_share": 0.65,
+        "actual_year1_gross_profit_eur": 90000,
+        "actual_presale_conversion_share": 0.04,
+        "actual_eu_emc_cert_cost_eur": 95000
+      },
+      "outputs": {
+        "month12_net_cash_margin_eur": -20000,
+        "iso_run_sellthrough_margin": -0.10,
+        "milstd_funding_margin_eur": -30000,
+        "presale_conversion_margin": -0.01,
+        "eu_emc_cert_budget_margin_eur": -15000
+      }
+    },
+    "high": {
+      "inputs": {
+        "net_cash_target_month12_eur": 50000,
+        "sell_through_target_share": 0.75,
+        "mil_std_cert_cost_eur": 120000,
+        "presale_conversion_target_share": 0.08,
+        "eu_emc_cert_budget_eur": 110000,
+        "actual_net_cash_month12_eur": 120000,
+        "actual_sellthrough_share": 0.90,
+        "actual_year1_gross_profit_eur": 180000,
+        "actual_presale_conversion_share": 0.10,
+        "actual_eu_emc_cert_cost_eur": 140000
+      },
+      "outputs": {
+        "month12_net_cash_margin_eur": 70000,
+        "iso_run_sellthrough_margin": 0.15,
+        "milstd_funding_margin_eur": 60000,
+        "presale_conversion_margin": 0.02,
+        "eu_emc_cert_budget_margin_eur": -30000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "month12_net_cash_margin_eur": {
+        "low": -150000,
+        "base": -20000,
+        "high": 70000,
+        "unit": "EUR",
+        "spread_ratio": -0.4666666666666667,
+        "spread_absolute": 220000
+      },
+      "iso_run_sellthrough_margin": {
+        "low": -0.45,
+        "base": -0.10,
+        "high": 0.15,
+        "unit": "fraction",
+        "spread_ratio": -0.3333333333333333,
+        "spread_absolute": 0.60
+      },
+      "milstd_funding_margin_eur": {
+        "low": -90000,
+        "base": -30000,
+        "high": 60000,
+        "unit": "EUR",
+        "spread_ratio": -0.6666666666666666,
+        "spread_absolute": 150000
+      },
+      "presale_conversion_margin": {
+        "low": -0.02,
+        "base": -0.01,
+        "high": 0.02,
+        "unit": "fraction",
+        "spread_ratio": -1.0,
+        "spread_absolute": 0.04
+      },
+      "eu_emc_cert_budget_margin_eur": {
+        "low": 10000,
+        "base": -15000,
+        "high": -30000,
+        "unit": "EUR",
+        "spread_ratio": -3.0,
+        "spread_absolute": -40000
+      }
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,79 @@
+{
+  "actual_net_cash_month12_eur": {
+    "unit": "EUR",
+    "low": -100000,
+    "base": 30000,
+    "high": 120000,
+    "rationale": "Year-1 cash from 1,500-unit sell-through at €99 × ~45% gross margin ≈ €67k less ~€140k overhead = negative; base just below the €50k trigger reflects realistic Pragmatic Foundation execution.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": false,
+    "default_pass_probability": null
+  },
+  "actual_sellthrough_share": {
+    "unit": "fraction",
+    "low": 0.30,
+    "base": 0.65,
+    "high": 0.90,
+    "rationale": "Risk 2 names 50% sell-through as the binary-bet failure scenario; base just below the 75% target reflects realistic prepper-market depth against the €99/€149 two-tier offer.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_year1_gross_profit_eur": {
+    "unit": "EUR",
+    "low": 30000,
+    "base": 90000,
+    "high": 180000,
+    "rationale": "Plan estimates €89k gross profit at €99 baseline; base near that figure; upper bound captures two-tier success where €149 enclosures dominate the mix per Risk 4 mitigation.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_presale_conversion_share": {
+    "unit": "fraction",
+    "low": 0.01,
+    "base": 0.04,
+    "high": 0.10,
+    "rationale": "Expert Issue 1 sensitivity: 2% conversion (vs assumed 5%) yields only 600 pre-sales of 1,500 needed; base just below the 5% floor; upper bound reflects strong prepper-forum traction.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_eu_emc_cert_cost_eur": {
+    "unit": "EUR",
+    "low": 60000,
+    "base": 95000,
+    "high": 140000,
+    "rationale": "Issue 2 names a 30–50% cost-escalation scenario if the product fails initial tests; base reflects a single re-test cycle; upper bound captures a combo-SKU redesign trigger (Risk 8).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "presale_conversion_target_share": {
+    "unit": "fraction",
+    "low": 0.03,
+    "base": 0.05,
+    "high": 0.08,
+    "rationale": "Expert Issue 1 recommends 5% as the production-justification floor; spread reflects how strictly downstream production-commitment decisions interpret the threshold.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "eu_emc_cert_budget_eur": {
+    "unit": "EUR",
+    "low": 70000,
+    "base": 80000,
+    "high": 110000,
+    "rationale": "Plan budgets €80k; Issue 2 recommends a 40% contingency (€32k) on top, raising the realistic ceiling to ~€110k; spread captures whether the contingency is formalized.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

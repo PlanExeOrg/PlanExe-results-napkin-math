@@ -1,0 +1,120 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Through-Ticketing Program",
+    "plan_type": "regulatory_coordination_program"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "adoption_target_share": 0.40,
+        "coordination_budget_eur": 1500000000,
+        "initial_clearing_float_eur": 200000000,
+        "safety_buffer_multiplier": 1.50,
+        "binding_standards_deadline_months": 18,
+        "complaint_reduction_target_share": 0.50,
+        "actual_adoption_share": 0.15,
+        "actual_total_project_cost_eur": 1200000000,
+        "peak_daily_clearing_obligation_eur": 50000000,
+        "actual_binding_standards_months": 14,
+        "actual_complaint_reduction_share": 0.15
+      },
+      "outputs": {
+        "adoption_margin": -0.25,
+        "coordination_budget_surplus_eur": 300000000,
+        "clearing_float_coverage_eur": 125000000,
+        "binding_standards_timing_margin_months": 4,
+        "complaint_reduction_margin": -0.35
+      }
+    },
+    "base": {
+      "inputs": {
+        "adoption_target_share": 0.40,
+        "coordination_budget_eur": 1500000000,
+        "initial_clearing_float_eur": 200000000,
+        "safety_buffer_multiplier": 1.50,
+        "binding_standards_deadline_months": 18,
+        "complaint_reduction_target_share": 0.50,
+        "actual_adoption_share": 0.32,
+        "actual_total_project_cost_eur": 1500000000,
+        "peak_daily_clearing_obligation_eur": 130000000,
+        "actual_binding_standards_months": 20,
+        "actual_complaint_reduction_share": 0.40
+      },
+      "outputs": {
+        "adoption_margin": -0.08,
+        "coordination_budget_surplus_eur": 0,
+        "clearing_float_coverage_eur": 5000000,
+        "binding_standards_timing_margin_months": -2,
+        "complaint_reduction_margin": -0.10
+      }
+    },
+    "high": {
+      "inputs": {
+        "adoption_target_share": 0.40,
+        "coordination_budget_eur": 1500000000,
+        "initial_clearing_float_eur": 200000000,
+        "safety_buffer_multiplier": 1.50,
+        "binding_standards_deadline_months": 18,
+        "complaint_reduction_target_share": 0.50,
+        "actual_adoption_share": 0.55,
+        "actual_total_project_cost_eur": 1900000000,
+        "peak_daily_clearing_obligation_eur": 250000000,
+        "actual_binding_standards_months": 30,
+        "actual_complaint_reduction_share": 0.70
+      },
+      "outputs": {
+        "adoption_margin": 0.15,
+        "coordination_budget_surplus_eur": -400000000,
+        "clearing_float_coverage_eur": -175000000,
+        "binding_standards_timing_margin_months": -12,
+        "complaint_reduction_margin": 0.20
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "adoption_margin": {
+        "low": -0.25,
+        "base": -0.08,
+        "high": 0.15,
+        "unit": "fraction",
+        "spread_ratio": -0.6,
+        "spread_absolute": 0.40
+      },
+      "coordination_budget_surplus_eur": {
+        "low": 300000000,
+        "base": 0,
+        "high": -400000000,
+        "unit": "EUR",
+        "spread_ratio": -1.3333333333333333,
+        "spread_absolute": -700000000
+      },
+      "clearing_float_coverage_eur": {
+        "low": 125000000,
+        "base": 5000000,
+        "high": -175000000,
+        "unit": "EUR",
+        "spread_ratio": -1.4,
+        "spread_absolute": -300000000
+      },
+      "binding_standards_timing_margin_months": {
+        "low": 4,
+        "base": -2,
+        "high": -12,
+        "unit": "months",
+        "spread_ratio": -3.0,
+        "spread_absolute": -16
+      },
+      "complaint_reduction_margin": {
+        "low": -0.35,
+        "base": -0.10,
+        "high": 0.20,
+        "unit": "fraction",
+        "spread_ratio": -0.5714285714285714,
+        "spread_absolute": 0.55
+      }
+    }
+  },
+  "warnings": []
+}

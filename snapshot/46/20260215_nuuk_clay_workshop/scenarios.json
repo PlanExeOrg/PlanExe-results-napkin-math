@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "small_business_community_hub"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "year1_budget_dkk": 2000000,
+        "contingency_share": 0.15,
+        "operating_months_year1": 12,
+        "min_viable_hourly_rate_dkk": 130,
+        "taster_conversion_target_share": 0.10,
+        "monthly_fixed_operating_cost_dkk": 100000,
+        "off_peak_hours_per_month": 60,
+        "low_season_utilization_actual_share": 0.10,
+        "monthly_utility_overhead_dkk": 10000,
+        "taster_conversion_actual_share": 0.05
+      },
+      "outputs": {
+        "total_year1_fixed_operating_cost_dkk": 1200000,
+        "year1_budget_surplus_dkk": 500000,
+        "monthly_off_peak_rental_revenue_dkk": 780,
+        "monthly_off_peak_rental_overhead_margin_dkk": -9220,
+        "taster_conversion_margin": -0.05
+      }
+    },
+    "base": {
+      "inputs": {
+        "year1_budget_dkk": 2000000,
+        "contingency_share": 0.15,
+        "operating_months_year1": 12,
+        "min_viable_hourly_rate_dkk": 165,
+        "taster_conversion_target_share": 0.15,
+        "monthly_fixed_operating_cost_dkk": 140000,
+        "off_peak_hours_per_month": 100,
+        "low_season_utilization_actual_share": 0.25,
+        "monthly_utility_overhead_dkk": 25000,
+        "taster_conversion_actual_share": 0.13
+      },
+      "outputs": {
+        "total_year1_fixed_operating_cost_dkk": 1680000,
+        "year1_budget_surplus_dkk": 20000,
+        "monthly_off_peak_rental_revenue_dkk": 4125,
+        "monthly_off_peak_rental_overhead_margin_dkk": -20875,
+        "taster_conversion_margin": -0.02
+      }
+    },
+    "high": {
+      "inputs": {
+        "year1_budget_dkk": 2000000,
+        "contingency_share": 0.15,
+        "operating_months_year1": 12,
+        "min_viable_hourly_rate_dkk": 200,
+        "taster_conversion_target_share": 0.20,
+        "monthly_fixed_operating_cost_dkk": 200000,
+        "off_peak_hours_per_month": 160,
+        "low_season_utilization_actual_share": 0.50,
+        "monthly_utility_overhead_dkk": 50000,
+        "taster_conversion_actual_share": 0.25
+      },
+      "outputs": {
+        "total_year1_fixed_operating_cost_dkk": 2400000,
+        "year1_budget_surplus_dkk": -700000,
+        "monthly_off_peak_rental_revenue_dkk": 16000,
+        "monthly_off_peak_rental_overhead_margin_dkk": -34000,
+        "taster_conversion_margin": 0.05
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "total_year1_fixed_operating_cost_dkk": {
+        "low": 1200000,
+        "base": 1680000,
+        "high": 2400000,
+        "unit": "DKK",
+        "spread_ratio": 2.0,
+        "spread_absolute": 1200000
+      },
+      "year1_budget_surplus_dkk": {
+        "low": 500000,
+        "base": 20000,
+        "high": -700000,
+        "unit": "DKK",
+        "spread_ratio": -1.4,
+        "spread_absolute": -1200000
+      },
+      "monthly_off_peak_rental_revenue_dkk": {
+        "low": 780,
+        "base": 4125,
+        "high": 16000,
+        "unit": "DKK_per_month",
+        "spread_ratio": 20.512820512820515,
+        "spread_absolute": 15220
+      },
+      "monthly_off_peak_rental_overhead_margin_dkk": {
+        "low": -9220,
+        "base": -20875,
+        "high": -34000,
+        "unit": "DKK_per_month",
+        "spread_ratio": 3.687635574837311,
+        "spread_absolute": -24780
+      },
+      "taster_conversion_margin": {
+        "low": -0.05,
+        "base": -0.02,
+        "high": 0.05,
+        "unit": "fraction",
+        "spread_ratio": -1.0,
+        "spread_absolute": 0.1
+      }
+    }
+  },
+  "warnings": []
+}

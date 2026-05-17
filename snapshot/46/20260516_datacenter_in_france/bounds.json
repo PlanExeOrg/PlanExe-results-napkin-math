@@ -1,0 +1,68 @@
+{
+  "phase1_baseline_capex_eur": {
+    "unit": "EUR",
+    "low": 3500000000,
+    "base": 6000000000,
+    "high": 9000000000,
+    "rationale": "Bottom-up: liquid-cooling fit-out + substations + civil works + hardware (70% hedged) for 500 MW–1 GW; base sits at the midpoint of the €5–10B Phase 1 envelope after notionally reserving room for remediation and buffer holding.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "brownfield_remediation_actual_eur": {
+    "unit": "EUR",
+    "low": 250000000,
+    "base": 750000000,
+    "high": 2250000000,
+    "rationale": "Risk 9 names a €250–750M baseline budget and a €500M–€2.25B blow-out scenario if hazardous materials require advanced handling; bounds span both regimes.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "buffer_annual_holding_cost_per_ha_eur": {
+    "unit": "EUR_per_ha_per_year",
+    "low": 30000,
+    "base": 60000,
+    "high": 100000,
+    "rationale": "Review Issue 2 names a €50k–75k/ha/year regional estimate with a €20k/ha overrun-sensitivity bracket; bounds extend on the upside to capture a less favourable cadastral-charge regime.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "tenant_take_or_pay_actual_share": {
+    "unit": "fraction",
+    "low": 0.30,
+    "base": 0.50,
+    "high": 0.85,
+    "rationale": "Plan target is 60%; base just below to reflect realistic LOI-to-take-or-pay slippage in a high-CAPEX AI compute market; downside captures Risk 3 stranded-capital scenario.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "phase1_pue_actual": {
+    "unit": "ratio",
+    "low": 1.12,
+    "base": 1.22,
+    "high": 1.35,
+    "rationale": "Risk 2 names a 1.25–1.35 brownfield drift scenario at 1 GW; base sits just above the 1.20 target to reflect realistic integration friction; lower tail captures best-case digital-twin-validated liquid cooling.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "phase1_pue_target_max": {
+    "unit": "ratio",
+    "low": 1.15,
+    "base": 1.20,
+    "high": 1.30,
+    "rationale": "Plan commits to 1.20 ceiling under liquid cooling; spread reflects how strictly tenant SLA escalator clauses (Risk 2) interpret the target — stricter at the lower end, relaxed at the upper.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

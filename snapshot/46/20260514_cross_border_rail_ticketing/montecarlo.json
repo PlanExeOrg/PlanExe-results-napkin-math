@@ -1,0 +1,343 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Through-Ticketing Program",
+    "plan_type": "regulatory_coordination_program"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "adoption_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.06113147925237127,
+      "std": 0.08106475608062326,
+      "min": -0.24834620403883415,
+      "p05": -0.19071131955194026,
+      "p25": -0.12032744501680269,
+      "p50": -0.06602341230325692,
+      "p75": -0.0033865116109506183,
+      "p95": 0.08133268897665863,
+      "max": 0.1450051682175576
+    },
+    "coordination_budget_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -33096840.623230867,
+      "std": 144739314.75538895,
+      "min": -396020590.81817484,
+      "p05": -283898253.91161627,
+      "p25": -137007002.31579143,
+      "p50": -25074584.064938426,
+      "p75": 73828915.4451021,
+      "p95": 199119962.05123606,
+      "max": 297419430.1221943
+    },
+    "clearing_float_coverage_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -14651953.111527994,
+      "std": 61615084.415196605,
+      "min": -173558040.99883443,
+      "p05": -122327259.41016252,
+      "p25": -58433159.2050886,
+      "p50": -9633972.068713084,
+      "p75": 31314822.169854663,
+      "p95": 81532352.40434991,
+      "max": 123598524.78654814
+    },
+    "binding_standards_timing_margin_months": {
+      "unit": "months",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -3.3934,
+      "std": 3.3168111854611197,
+      "min": -12.0,
+      "p05": -9.0,
+      "p25": -6.0,
+      "p50": -3.0,
+      "p75": -1.0,
+      "p95": 2.0,
+      "max": 4.0
+    },
+    "complaint_reduction_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.08219429373335725,
+      "std": 0.11220965331966923,
+      "min": -0.349156314899356,
+      "p05": -0.2665832459710157,
+      "p25": -0.16377578785634322,
+      "p50": -0.08651969537823831,
+      "p75": -0.002745951923278256,
+      "p95": 0.10801539089443221,
+      "max": 0.1927560639579755
+    }
+  },
+  "thresholds": {
+    "adoption_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2381,
+      "valid_count": 10000,
+      "probability": 0.2381
+    },
+    "coordination_budget_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4285,
+      "valid_count": 10000,
+      "probability": 0.4285
+    },
+    "clearing_float_coverage_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4381,
+      "valid_count": 10000,
+      "probability": 0.4381
+    },
+    "binding_standards_timing_margin_months": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2048,
+      "valid_count": 10000,
+      "probability": 0.2048
+    },
+    "complaint_reduction_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2438,
+      "valid_count": 10000,
+      "probability": 0.2438
+    }
+  },
+  "sensitivity": {
+    "adoption_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_adoption_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "coordination_budget_surplus_eur": {
+      "top_inputs": [
+        {
+          "id": "actual_total_project_cost_eur",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "clearing_float_coverage_eur": {
+      "top_inputs": [
+        {
+          "id": "peak_daily_clearing_obligation_eur",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "binding_standards_timing_margin_months": {
+      "top_inputs": [
+        {
+          "id": "actual_binding_standards_months",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "complaint_reduction_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_complaint_reduction_share",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "adoption_margin": [
+      {
+        "id": "actual_adoption_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.9524,
+        "delta_pp": 95.24
+      }
+    ],
+    "coordination_budget_surplus_eur": [
+      {
+        "id": "actual_total_project_cost_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "clearing_float_coverage_eur": [
+      {
+        "id": "peak_daily_clearing_obligation_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "binding_standards_timing_margin_months": [
+      {
+        "id": "actual_binding_standards_months",
+        "p_pass_low_quartile": 0.6699378475629703,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -66.99
+      }
+    ],
+    "complaint_reduction_margin": [
+      {
+        "id": "actual_complaint_reduction_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.9752,
+        "delta_pp": 97.52
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "adoption_margin": [
+      {
+        "id": "actual_adoption_share",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 0.3966134883890494,
+        "conditional_pass_prob": 0.9524,
+        "admitted_fraction": 0.25
+      }
+    ],
+    "coordination_budget_surplus_eur": [
+      {
+        "id": "actual_total_project_cost_eur",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 1525074584.0649385,
+        "conditional_pass_prob": 0.857,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "clearing_float_coverage_eur": [
+      {
+        "id": "peak_daily_clearing_obligation_eur",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 139755981.37914205,
+        "conditional_pass_prob": 0.8762,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "binding_standards_timing_margin_months": [
+      {
+        "id": "actual_binding_standards_months",
+        "direction": "below",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 18.0,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.2048
+      }
+    ],
+    "complaint_reduction_margin": [
+      {
+        "id": "actual_complaint_reduction_share",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 0.49725404807672174,
+        "conditional_pass_prob": 0.9752,
+        "admitted_fraction": 0.25
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_complaint_reduction_share",
+      "score": 101.3989,
+      "worst_gate": "complaint_reduction_margin",
+      "bound_width_ratio": 1.375,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_adoption_share",
+      "score": 90.7042,
+      "worst_gate": "adoption_margin",
+      "bound_width_ratio": 1.25,
+      "source": "assumption"
+    },
+    {
+      "id": "peak_daily_clearing_obligation_eur",
+      "score": 86.4462,
+      "worst_gate": "clearing_float_coverage_eur",
+      "bound_width_ratio": 1.5385,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_binding_standards_months",
+      "score": 42.6164,
+      "worst_gate": "binding_standards_timing_margin_months",
+      "bound_width_ratio": 0.8,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_total_project_cost_eur",
+      "score": 26.67,
+      "worst_gate": "coordination_budget_surplus_eur",
+      "bound_width_ratio": 0.4667,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "adoption_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.25,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.25"
+      ]
+    },
+    "coordination_budget_surplus_eur": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.4667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.47"
+      ]
+    },
+    "clearing_float_coverage_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.5385,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.54"
+      ]
+    },
+    "binding_standards_timing_margin_months": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.8,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.80"
+      ]
+    },
+    "complaint_reduction_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.375,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.37"
+      ]
+    }
+  },
+  "warnings": []
+}

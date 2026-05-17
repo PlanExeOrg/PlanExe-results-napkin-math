@@ -1,0 +1,68 @@
+{
+  "actual_total_census_spend_inr": {
+    "unit": "INR",
+    "low": 120000000000,
+    "base": 145000000000,
+    "high": 175000000000,
+    "rationale": "Plan envelope is ₹12,000–15,000 crore; base sits just below the ceiling reflecting realistic Pioneer's Gambit overhead; upside captures Risk 5 emergency procurement (₹400–600 crore) plus Risk 7 overrun scenarios.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_household_coverage_share": {
+    "unit": "fraction",
+    "low": 0.88,
+    "base": 0.97,
+    "high": 0.995,
+    "rationale": "Risk 1 names 2–5% coverage drop from tech failures; Risk 6 names 5–10% undercount of fluid populations; base just below the 99% target reflects realistic Pioneer's Gambit performance.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_provisional_publish_months": {
+    "unit": "months",
+    "low": 4,
+    "base": 7,
+    "high": 10,
+    "rationale": "Plan target is 6 months; Risk 2 names a 2–3 month state non-cooperation slip; Risk 4 monsoon contributes 1–2 months; upper bound captures combined slip plus JRB arbitration delay.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_mttr_hours": {
+    "unit": "hours",
+    "low": 1,
+    "base": 4.5,
+    "high": 12,
+    "rationale": "Expert Issue 3 names MTTR > 4 hours as the salary-delay trigger; base sits just over the target reflecting realistic peak-load friction; upper bound captures sustained ingestion failure scenarios.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_device_audit_failure_share": {
+    "unit": "fraction",
+    "low": 0.005,
+    "base": 0.02,
+    "high": 0.10,
+    "rationale": "Plan target is <1% device failures; Risk 5 names a 10% loss/failure scenario costing ₹400–600 crore in emergency procurement; base just above the threshold reflects realistic chain-of-custody slippage.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "mttr_max_hours": {
+    "unit": "hours",
+    "low": 2,
+    "base": 4,
+    "high": 8,
+    "rationale": "Plan commits to a 4-hour MTTR ceiling under the 3× burst-capacity model; spread reflects how strictly downstream salary-validation contracts treat the threshold (stricter at the lower end).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

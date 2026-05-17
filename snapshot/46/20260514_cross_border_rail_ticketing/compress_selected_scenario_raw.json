@@ -1,0 +1,652 @@
+{
+  "section_summary": "This chosen scenario, 'The Builder: Pragmatic Harmonization and Shared Burden,' selects the specific quantitative commitments, timelines, and governance models that define the baseline execution parameters for the multi-year European rail integration program. The model must incorporate the structural choices regarding liability mechanisms, the phased standardization schedule, and the cost-sharing mechanisms defined by this selection for all subsequent budget and risk analysis.",
+  "numeric_values": [
+    {
+      "line_english": "Public coordination budget is \u20ac1.5 billion \u2014 public funding input.",
+      "line_original": "Public-side coordination budget is \u20ac1.5 billion",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Public-side coordination budget is \u20ac1.5 billion",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Binding standards adoption deadline is 18 months from start \u2014 timeline gate.",
+      "line_original": "binding standards within eighteen months",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "binding standards within eighteen months",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Mandatory API exposure deadline is 30 months from start \u2014 timeline gate.",
+      "line_original": "mandatory API exposure within thirty",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "mandatory API exposure within thirty",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Full corridor through-ticketing deadline is 60 months from start \u2014 timeline gate.",
+      "line_original": "full corridor through-ticketing within sixty",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "full corridor through-ticketing within sixty",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Provisional binding status for technical specs is 6 months from start \u2014 phased timeline gate.",
+      "line_original": "provisional binding status at six months",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "provisional binding status at six months",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Success target is 40% of cross-border journeys sold as single tickets \u2014 outcome KPI.",
+      "line_original": "Success means 40% of cross-border journeys sold as single through-tickets",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "40% of cross-border journeys sold as single through-tickets",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "Success means the train becomes the more attractive option than flying on competitive routes.",
+      "line_original": "the train becoming the more attractive option than flying on competitive short-haul routes",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "train becoming the more attractive option than flying",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The chosen plan is The Builder scenario, explicitly avoiding the most aggressive option.",
+      "line_original": "Pick a realistic scenario, not the most aggressive one.",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "Pick a realistic scenario, not the most aggressive one",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Carriers will accept the tiered liability model where segment failure causes maximum initial liability.",
+      "line_original": "carrier whose segment experienced the technical failure bears one hundred percent",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "carrier whose segment experienced the technical failure bears one hundred percent",
+      "quote_verified": true
+    },
+    {
+      "line_english": "National operators must permit access to real-time inventory on non-discriminatory commercial terms.",
+      "line_original": "non-discriminatory commercial terms",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "non-discriminatory commercial terms",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Distributor complaints must be reduced by half relative to the current baseline.",
+      "line_original": "distributor complaints halved",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "distributor complaints halved",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The overall time to achieve the scope targets is five years from the project start date.",
+      "line_original": "Horizon is five years",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "Horizon is five years",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If core OSDM standards are not provisionally binding by six months, then regulatory finalization is delayed.",
+      "line_original": "technical specifications achieve provisional binding status at six months",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "provisional binding status at six months",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If binding status for core standards is not achieved within eighteen months, then market access is restricted.",
+      "line_original": "binding standards within eighteen months",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "binding standards within eighteen months",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If API exposure is not mandatory within thirty months, then through-ticketing rollout is delayed.",
+      "line_original": "mandatory API exposure within thirty",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "mandatory API exposure within thirty",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If full corridor through-ticketing is not achieved within sixty months, then the five-year success target is jeopardized.",
+      "line_original": "full corridor through-ticketing within sixty",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "full corridor through-ticketing within sixty",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If carrier negligence is proven, then the liability model dictates the segment carrier bears one hundred percent of costs.",
+      "line_original": "carrier whose segment experienced the technical failure bears one hundred percent",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "carrier whose segment experienced the technical failure bears one hundred percent",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If carrier activity does not result in 40% of journeys sold as single tickets, then the five-year outcome goal is missed.",
+      "line_original": "Success means 40% of cross-border journeys sold as single through-tickets",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "40% of cross-border journeys sold as single through-tickets",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "If the pooled backstop is undercapitalized: failure to pay passenger upfront claims.",
+      "line_original": "pooled, mandatory insurance or reserve fund",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "inferred",
+      "source_quote": "pooled, mandatory insurance or reserve fund",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If small platforms lack capital due to commercial terms: market power concentrates with incumbents.",
+      "line_original": "smaller innovative platforms may lack the capital to rapidly integrate",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "inferred",
+      "source_quote": "smaller innovative platforms may lack the capital",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure of incumbent carriers to expose real-time inventory: slow distributor adoption and market penetration.",
+      "line_original": "inconsistent access to real-time inventory",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "inconsistent access to real-time inventory",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Missed connection due to carrier delay: loss of passenger-rights protection for the customer.",
+      "line_original": "lose passenger-rights protection the moment a connection is missed",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "lose passenger-rights protection the moment a connection is missed",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If incumbent carrier IT freezes development due to aggressive standards timeline: costly rework upon amendment.",
+      "line_original": "forces carriers to freeze development on unverified specifications",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "forces carriers to freeze development on unverified specifications",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If initiating distributor retains un-capped liability: discouragement of innovative third-party platform market entry.",
+      "line_original": "retains full, un-capped liability for the entire journey",
+      "modelling_relevance": 3,
+      "source_evidence": 5,
+      "source_status": "inferred",
+      "source_quote": "retains full, un-capped liability for the entire journey",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "The monetary cost estimate for private carrier IT investment not covered by the public budget \u2014 required for a full project cost waterfall.",
+      "line_original": "estimate the larger private carrier IT investment separately",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "missing",
+      "source_quote": "estimate the larger private carrier IT investment separately",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The fixed or variable cost per ticket transaction used for the transactional fee model capitalization of the clearing mechanism \u2014 required for the Builder scenario cash-flow model.",
+      "line_original": "transactional fee model",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "missing",
+      "source_quote": "transactional fee model",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The marginal cost of train travel versus air travel on target short-haul routes \u2014 required to model modal shift impact.",
+      "line_original": "train becoming the more attractive option than flying on competitive short-haul routes",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "missing",
+      "source_quote": "train becoming the more attractive option than flying",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The average cost impact (in Euro or comparable currency) per validated distributor complaint \u2014 required to calculate the impact of halving complaints.",
+      "line_original": "distributor complaints halved",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Total annual revenue value of all cross-border journeys initially subject to through-ticketing pilot \u2014 required to calculate the monetary impact of achieving 40% adoption.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "The baseline number of annual cross-border journeys for the target corridors \u2014 required to convert 40% target into an absolute ticket count.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 13,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 503,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nDeliver a coordinated European program to make cross-border train travel as easy to search, book, and refund, aligned with the European Commission's proposed Regulation on Digital Booking and Ticketing Services for Rail. Today, travelling by rail across two or more EU member states means stitching together itineraries from disconnected national operators (SNCF, Deutsche Bahn, Trenitalia, Renfe, \u00d6BB, NS, SJ and roughly twenty more), each with its own fares, booking system, refund policy and disruption handling, while distributors face inconsistent access to real-time inventory and post-sale operations; passengers cannot reliably buy a single through-ticket from Lisbon to Tallinn and lose passenger-rights protection the moment a connection is missed. The objective is to stand up the technical, commercial and governance arrangements that let any compliant distributor \u2014 incumbent operator, third-party platform like Trainline or Omio, or a new public European booking service \u2014 sell through-tickets across all participating carriers with continuity-of-journey rights, single-payment settlement, harmonised refunds, reduction cards, accessibility for persons with reduced mobility, and bicycle reservations. Scope covers a shared real-time data layer exposed through OSDM-compatible APIs on non-discriminatory commercial terms, an inter-carrier clearing and settlement mechanism, a passenger-rights backstop, and integration hooks for buses, ferries and short-haul air; rollout starts with the busiest cross-border corridors (Paris\u2013Brussels\u2013Amsterdam\u2013K\u00f6ln, Wien\u2013M\u00fcnchen\u2013Z\u00fcrich, Madrid\u2013Barcelona\u2013Lyon, Copenhagen\u2013Hamburg\u2013Berlin) before extending to the full TEN-T network. Stakeholders are DG MOVE, the EU Agency for Railways, CER and national operators, independent distributors, BEUC, national regulators and disability-rights bodies. Horizon is five years: binding standards within eighteen months, mandatory API exposure within thirty, full corridor through-ticketing within sixty. Public-side coordination budget is \u20ac1.5 billion covering standards work, conformance testing, the clearing mechanism, a public reference distributor, member-state capacity building and consumer-side rollout (apps, multilingual support, complaint handling); estimate the larger private carrier IT investment separately. Success means 40% of cross-border journeys sold as single through-tickets within five years, distributor complaints halved, and the train becoming the more attractive option than flying on competitive short-haul routes so that fewer travellers choose the plane. Pick a realistic scenario, not the most aggressive one.\n\nToday's date:\n2026-May-14\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Developing and implementing a unified technical, commercial, and governance framework for seamless cross-border train travel across the EU, aimed at improving market efficiency, passenger rights, and modal shift from air travel. This involves creating shared APIs, clearing mechanisms, and standardization aligned with EU regulation.\n\n**Topic:** Coordinated European cross-border rail booking and ticketing infrastructure\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan is to develop and implement a complex, multi-year program that creates shared technical standards (OSDM-compatible APIs), governance structures, and new financial clearing mechanisms across multiple European countries. This effort requires extensive physical collaboration between stakeholders (DG MOVE, EU Agency for Railways, national operators, regulators) in physical meetings, workshops, and governance bodies to define standards, perform conformance testing, and manage the rollout. Furthermore, the ultimate success relies on physical integration into real-world operator IT systems and testing the end-to-end process of purchasing, journey execution, and refunds, which is inherently a physical process involving physical rail networks and passengers. Even the budget allocation and capacity building imply physical coordination efforts. Therefore, this plan is overwhelmingly `physical` due to the required implementation, physical governance, and real-world system integration.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"1f32c7c8-c66d-46fe-bf44-e0c87ba19003\",\"name\":\"Defining Liability and Passenger Rights Backstop Scope\",\"consequences\":\"When a single ticket is sold but the journey involves multiple operators, determining who pays compensation for delays or cancellations becomes critical for consumer trust. Establishing a single, overarching backstop funded by all carriers significantly simplifies this for the passenger by making the distributor's interaction clear. This, however, forces high-performing carriers to subsidize the systemic failures of poorly managed operators within the clearing pool.\",\"options\":[\"Establish a pooled, mandatory insurance or reserve fund managed operationally by the EU Agency for Railways, which pays the passenger upfront for all validated rights claims, then recoups costs based on fault attribution.\",\"Require the initial seller (distributor) to assume 100% of the passenger rights liability for the entire journey, irrespective of fault, forcing them to negotiate complex secondary reinsurance contracts with every carrier separately.\",\"Limit the EU backstop only to instances where the connecting failure occurs between the first and last known segments, leaving disputes regarding segments managed entirely within existing national compensation frameworks.\"],\"review\":\"A unified EU backstop maximizes passenger confidence and distribution simplicity, but risks creating a moral hazard where the most reliable national carriers pay disproportionately for others' systemic delays.\",\"description\":\"This lever defines the financial and operational commitment for insulating passengers from complex inter-carrier disputes when journey segments fail. The goal is to establish a simple, consolidated EU backstop mechanism, likely pooled, to ensure immediate compensation payout aligning with consumer expectation. Key metrics involve the speed of fault attribution versus passenger payout, and the overall financial stability of the pool, crucial for underpinning passenger trust metrics.\",\"synergy_text\":\"Directly supports Defining Continuity-of-Journey Failure Thresholds by providing the mechanism through which penalties and payouts for exceeding those thresholds are actually managed and executed.\",\"conflict_text\":\"Creates tension with Enforcement Posture for Non-Compliant Operator IT Integration, as a robust backstop can reduce the immediate financial penalty risk for carriers whose systems cause validated failures.\"},{\"lever_id\":\"c4680d31-2fda-49c5-9471-36fac751a32d\",\"name\":\"Governing Commercial Terms for Data Exposure and API Access\",\"consequences\":\"The commercial terms dictating access fees for real-time inventory directly influence the pace and scope of independent distributor participation, which is vital for hitting the adoption target. If the terms are strictly cost-recovery only, smaller innovative platforms may lack the capital to rapidly integrate, concentrating market power with incumbents who already have legacy access. Conversely, heavily subsidized API access might lead to disputes over preferential treatment versus the non-discriminatory principle.\",\"options\":[\"Implement a standardized, capped royalty structure based on transaction volume, ensuring all API access fees are strictly cost-recovery for the national carrier's data provisioning, overseen by the regulators.\",\"Offer the first two years of API access entirely free of charge for all certified third-party distributors to maximize market penetration initially, shifting the cost burden entirely onto the \\u20ac1.5 billion public budget.\",\"Empower national regulators to impose maximum commercial fees on inventory access, with any carrier exceeding this threshold being temporarily barred from the centralized clearing settlement mechanism until compliance is confirmed.\"],\"review\":\"Free initial API access strongly stimulates distributor adoption and competitive pricing, but it places the cost burden onto taxpayer funding rather than the commercial value generated by the data access.\",\"description\":\"This concerns setting the non-discriminatory cost structure for commercial access to real-time inventory data held by national operators. The objective is to balance recovering essential IT costs for data providers against ensuring low barriers to entry for competing distributors. Success rests on establishing transparent, regulator-approved pricing that maximizes the diversity of distributors selling through-tickets, directly supporting the market uptake goal.\",\"synergy_text\":\"Works to enable Incentivizing Early Carrier Participation in the Shared Data Layer by ensuring that, once data is exposed, the commercial relationship between provider and consumer is clear and fair.\",\"conflict_text\":\"Creates a trade-off with Cost Allocation for Public Reference Distributor Operation; heavily subsidized API access may be viewed as unfair competition against a publicly funded distributor operating under cost-recovery terms.\"},{\"lever_id\":\"7e10ade0-7b0b-4c1b-bf46-0f46d50263f2\",\"name\":\"Mechanism for Handling Incomplete Cross-Border Journey Data\",\"consequences\":\"When a booking fails mid-chain or an operator fails to transmit required disruption data, the common passenger rights backstop must intervene, requiring an agreed liability split among parties. A 'maximum residual liability' cap placed on the initiating distributor simplifies their risk model but incentivizes them to offload complex failure scenarios onto the public backstop, straining its solvency. High operator-borne initial liability strongly encourages compliance but may discourage newer carriers from joining the network initially.\",\"options\":[\"Establish a strict, tiered liability model where the carrier whose segment experienced the technical failure bears one hundred percent of compensation costs unless gross distributor negligence is proven.\",\"Create a mandatory collective insurance pool, pre-funded by all participants proportional to journey volume, to cover all unknown-cause or multi-party failure compensation claims up to a defined ceiling.\",\"Insist that the initial distributor (the entity contracting with the passenger) retains full, un-capped liability for the entire journey, regardless of failure point, promoting rigorous downstream vetting.\"],\"review\":\"Placing un-capped liability on the initiating distributor heavily penalizes innovative third-party platforms lacking control over backend carrier fulfillment, which discourages market entry despite the primary objective.\",\"description\":\"This lever addresses financial exposure when a multi-carrier journey fails due to technical faults or data lapses. Defining liability division is crucial for motivating carrier compliance and ensuring passenger compensation funds remain solvent. The goal is balancing risk assignment to incentivize data quality versus ensuring the backstop remains viable and doesn't unduly deter new market entrants from embracing the unified system.\",\"synergy_text\":\"This lever is strongly amplified by Defining Liability and Passenger Rights Backstop Scope, as the data failures addressed here directly inform the structure and required capitalization of the backstop.\",\"conflict_text\":\"It conflicts with Incentivizing Early Carrier Participation in the Shared Data Layer; overly punitive liability models may cause potential participants to delay joining the shared data layer until risk models stabilize.\"},{\"lever_id\":\"aabd9b95-58b1-4d9c-ab1e-487c8549949b\",\"name\":\"Pacing the Binding Standard Adoption Timeline\",\"consequences\":\"Establishing binding technical standards within the first eighteen months allows distributors to rapidly gain access to necessary API functionality for the initial four corridors. However, this aggressive timeline forces carriers to freeze development on unverified specifications, potentially requiring costly re-engineering if DG MOVE mandates late-stage amendments based on early corridor feedback.\",\"options\":[\"Mandate that all core OSDM data exchange and transaction processing standards achieve full formal binding status within twelve months, necessitating immediate, high-risk operator system modification.\",\"Implement a phased standardization approach where technical specifications achieve provisional binding status at six months, followed by regulatory finalization after the first set of corridors demonstrate operational stability at eighteen months.\",\"Defer the formal binding adoption of reduction card and accessibility reservation schemas until the full TEN-T network integration phase, allowing initial corridors to operate with nationally negotiated, non-harmonized parameters.\"],\"review\":\"Accelerating binding standards commits operators to potentially incomplete specifications, requiring rework; deferring harmonization of critical features like accessibility risks undermining legislative intent for an equitable system from the outset.\",\"description\":\"This lever sets the timeline pressure for formalizing the technical exchange specifications (OSDM) into mandatory requirements. An aggressive timeline forces immediate system modifications across operators, aligning development quickly but raising rework risk if the standards prove brittle. The pace must balance the need for quick market access against ensuring technical specifications are validated through early implementation phases.\",\"synergy_text\":\"An accelerated timeline accelerates the foundation for Financing the Inter-Carrier Clearing Mechanism Capitalization, as clearing mechanisms rely on finalized data exchange protocols.\",\"conflict_text\":\"It creates tension with Governance Structure for Binding vs. Non-Binding Standards Amendments; binding standards established too early reduce the governance body's flexibility post-launch for necessary pivots.\"},{\"lever_id\":\"7e412293-f431-4566-be78-c84535afc0b1\",\"name\":\"Financing the Inter-Carrier Clearing Mechanism Capitalization\",\"consequences\":\"Deciding how to capitalize the clearing mechanism dictates the initial cash flow impact on participating national carriers versus the program budget. A system financed primarily through prepaid collateral requires large upfront capital lockup from operators, restricting their liquidity for other IT modernization projects.\",\"options\":[\"Capitalize the initial float required for the settlement mechanism entirely through the \\u20ac1.5 billion public coordination budget, treating it as infrastructure investment to minimize carrier working capital strain.\",\"Implement a transactional fee model where each ticket sale contributes a small, variable percentage to a rolling reserve fund, requiring carriers to provide conditional third-party bank guarantees instead of direct capital injection.\",\"Require that only the initiating carrier posts 100% of the required settlement collateral for a given transaction, with automated subrogation mechanisms to reclaim funds from downstream carriers within seven business days.\"],\"review\":\"Funding float via the public budget eases carrier capital constraint but centralizes a significant financial risk within the EU program funding structure; relying solely on bank guarantees adds external financing overhead to the core payment process.\",\"description\":\"This lever determines the source of funds to capitalize the critical inter-carrier clearing mechanism, which facilitates single-payment settlement and automated fund transfers. The choice significantly impacts carrier liquidity versus program expenditure. Success hinges on establishing a self-sustaining, solvent structure that processes billions in payments without burdening operators' working capital during the critical integration phase.\",\"synergy_text\":\"Financing the Inter-Carrier Clearing Mechanism Capitalization synergizes with Cost Allocation for Public Reference Distributor Operation, as public funding of one mechanism can free up private funds for the other.\",\"conflict_text\":\"This lever conflicts with Enforcement Posture for Non-Compliant Operator IT Integration; demanding large upfront capital locks up carrier funds needed to pay for necessary IT upgrades and compliance efforts.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer: Maximum Dominance & Risk Absorption\",\"strategic_logic\":\"This path aggressively pursues complete harmonization and passenger trust by centralizing risk and forcing rapid technological adoption. It prioritizes market disruption and regulatory success over short-term cost containment or operational comfort for incumbent carriers.\",\"lever_settings\":{\"Defining Liability and Passenger Rights Backstop Scope\":\"Establish a pooled, mandatory insurance or reserve fund managed operationally by the EU Agency for Railways, which pays the passenger upfront for all validated rights claims, then recoups costs based on fault attribution.\",\"Governing Commercial Terms for Data Exposure and API Access\":\"Offer the first two years of API access entirely free of charge for all certified third-party distributors to maximize market penetration initially, shifting the cost burden entirely onto the \\u20ac1.5 billion public budget.\",\"Mechanism for Handling Incomplete Cross-Border Journey Data\":\"Create a mandatory collective insurance pool, pre-funded by all participants proportional to journey volume, to cover all unknown-cause or multi-party failure compensation claims up to a defined ceiling.\",\"Pacing the Binding Standard Adoption Timeline\":\"Mandate that all core OSDM data exchange and transaction processing standards achieve full formal binding status within twelve months, necessitating immediate, high-risk operator system modification.\",\"Financing the Inter-Carrier Clearing Mechanism Capitalization\":\"Capitalize the initial float required for the settlement mechanism entirely through the \\u20ac1.5 billion public coordination budget, treating it as infrastructure investment to minimize carrier working capital strain.\"}},{\"scenario_name\":\"The Builder: Pragmatic Harmonization and Shared Burden\",\"strategic_logic\":\"This scenario aims for scalable, verifiable progress by balancing public investment with carrier accountability. It enforces high standards through structured timelines and cost-sharing models that promote sustainability without freezing out market players.\",\"lever_settings\":{\"Defining Liability and Passenger Rights Backstop Scope\":\"Limit the EU backstop only to instances where the connecting failure occurs between the first and last known segments, leaving disputes regarding segments managed entirely within existing national compensation frameworks.\",\"Governing Commercial Terms for Data Exposure and API Access\":\"Implement a standardized, capped royalty structure based on transaction volume, ensuring all API access fees are strictly cost-recovery for the national carrier's data provisioning, overseen by the regulators.\",\"Mechanism for Handling Incomplete Cross-Border Journey Data\":\"Establish a strict, tiered liability model where the carrier whose segment experienced the technical failure bears one hundred percent of compensation costs unless gross distributor negligence is proven.\",\"Pacing the Binding Standard Adoption Timeline\":\"Implement a phased standardization approach where technical specifications achieve provisional binding status at six months, followed by regulatory finalization after the first set of corridors demonstrate operational stability at eighteen months.\",\"Financing the Inter-Carrier Clearing Mechanism Capitalization\":\"Implement a transactional fee model where each ticket sale contributes a small, variable percentage to a rolling reserve fund, requiring carriers to provide conditional third-party bank guarantees instead of direct capital injection.\"}},{\"scenario_name\":\"The Consolidator: Stability and Cost Control\",\"strategic_logic\":\"This conservative path prioritizes minimizing public financial outlay and avoiding operational surprises by favoring established best practices and delayed adoption of complex elements. It relies heavily on existing regulatory structures and national liability frameworks.\",\"lever_settings\":{\"Defining Liability and Passenger Rights Backstop Scope\":\"Require the initial seller (distributor) to assume 100% of the passenger rights liability for the entire journey, irrespective of fault, forcing them to negotiate complex secondary reinsurance contracts with every carrier separately.\",\"Governing Commercial Terms for Data Exposure and API Access\":\"Empower national regulators to impose maximum commercial fees on inventory access, with any carrier exceeding this threshold being temporarily barred from the centralized clearing settlement mechanism until compliance is confirmed.\",\"Mechanism for Handling Incomplete Cross-Border Journey Data\":\"Insist that the initial distributor (the entity contracting with the passenger) retains full, un-capped liability for the entire journey, regardless of failure point, promoting rigorous downstream vetting.\",\"Pacing the Binding Standard Adoption Timeline\":\"Defer the formal binding adoption of reduction card and accessibility reservation schemas until the full TEN-T network integration phase, allowing initial corridors to operate with nationally negotiated, non-harmonized parameters.\",\"Financing the Inter-Carrier Clearing Mechanism Capitalization\":\"Require that only the initiating carrier posts 100% of the required settlement collateral for a given transaction, with automated subrogation mechanisms to reclaim funds from downstream carriers within seven business days.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"High ambition: Creating a coordinated, integrated technical and commercial framework for pan-European cross-border rail travel, mandated by EU regulation, aiming for significant modal shift.\",\"risk_and_novelty\":\"High risk/Novelty: Requires complex IT integration (OSDM APIs), new financial clearing mechanisms, and harmonizing divergent national policies across numerous established operators.\",\"complexity_and_constraints\":\"Very high complexity: Involves numerous sovereign stakeholders (DG MOVE, regulators, 20+ national operators), stringent timeline (five years total, 18 months for binding standards), a large public budget (\\u20ac1.5B), and deep technical/legal harmonization requirements.\",\"domain_and_tone\":\"Public Policy, Regulatory, and Large-Scale Infrastructure/IT implementation. Tone is urgent, comprehensive, and regulatory-driven.\",\"holistic_profile_of_the_plan\":\"A mandated, highly complex, multi-year regulatory effort to overhaul cross-border rail ticketing infrastructure across the EU, involving significant technical integration, governance challenges, and balancing public funding with commercial imperatives. The constraint is explicit: 'Pick a realistic scenario, not the most aggressive one.'\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer: Maximum Dominance & Risk Absorption\",\"fit_score\":6,\"fit_assessment\":\"This scenario matches the high ambition and novelty of the plan but is explicitly rejected by the instruction to avoid the 'most aggressive' approach. It mandates the fastest timelines (12 months binding) and centralizes nearly all risk onto the public budget.\"},{\"scenario_name\":\"The Builder: Pragmatic Harmonization and Shared Burden\",\"fit_score\":10,\"fit_assessment\":\"This scenario perfectly aligns with the requirement for a 'realistic' approach while matching the plan's required scope. It utilizes phased standardization, capped cost recovery for data, and shared liability, balancing ambition with operational reality across complex, diverse stakeholders.\"},{\"scenario_name\":\"The Consolidator: Stability and Cost Control\",\"fit_score\":3,\"fit_assessment\":\"This scenario is too conservative. It shifts excessive liability to distributors, defers harmonization of key features (accessibility), and would likely fail to meet the mandated five-year goal of 40% single ticketing penetration due to operational friction.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Builder: Pragmatic Harmonization and Shared Burden\",\"justification\":\"The plan is highly ambitious, involving massive regulatory overhaul and technical risk, yet explicitly requires a *realistic* path over the 'most aggressive' one. The Builder scenario is the superior fit because it manages this tension.\\n\\n*   **Alignment with Realism:** It adopts a phased standardization timeline (provisional binding at 6 months, finalization after corridor testing), aligning perfectly with the request to avoid overly aggressive adoption, unlike The Pioneer's 12-month hard mandate.\\n*   **Shared Burden:** It implements cost-recovery royalties for data access and a tiered liability model, balancing the need for market entry with carrier accountability, which is more sustainable than The Pioneer's complete reliance on the public budget.\\n*   **Contrast with Other Scenarios:** The Pioneer is too aggressive, demanding immediate freezing of core standards and socializing all financial risk. The Consolidator is too passive, pushing excessive liability onto distributors and deferring critical harmonization elements, jeopardizing the core objective of seamless, equitable travel.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 2517,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "Public coordination budget is \u20ac1.5 billion \u2014 public funding input.",
+            "line_original": "Public-side coordination budget is \u20ac1.5 billion",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Public-side coordination budget is \u20ac1.5 billion",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Binding standards adoption deadline is 18 months from start \u2014 timeline gate.",
+            "line_original": "binding standards within eighteen months",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "binding standards within eighteen months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Mandatory API exposure deadline is 30 months from start \u2014 timeline gate.",
+            "line_original": "mandatory API exposure within thirty",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "mandatory API exposure within thirty",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Full corridor through-ticketing deadline is 60 months from start \u2014 timeline gate.",
+            "line_original": "full corridor through-ticketing within sixty",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "full corridor through-ticketing within sixty",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Success target is 40% of cross-border journeys sold as single tickets \u2014 outcome KPI.",
+            "line_original": "Success means 40% of cross-border journeys sold as single through-tickets",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "40% of cross-border journeys sold as single through-tickets",
+            "quote_verified": true
+          },
+          {
+            "line_english": "A realistic scenario was selected, avoiding the most aggressive one \u2014 scenario selection flag.",
+            "line_original": "Pick a realistic scenario, not the most aggressive one.",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Pick a realistic scenario, not the most aggressive one",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Provisional binding status for technical specs is 6 months from start \u2014 phased timeline gate.",
+            "line_original": "provisional binding status at six months",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "provisional binding status at six months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Finalization of technical specs is 18 months from start \u2014 phased timeline gate.",
+            "line_original": "regulatory finalization after the first set of corridors demonstrate operational stability at eighteen months",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "regulatory finalization at eighteen months",
+            "quote_verified": false
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 2664,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "Success means the train becomes the more attractive option than flying on competitive routes.",
+            "line_original": "the train becoming the more attractive option than flying on competitive short-haul routes",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "train becoming the more attractive option than flying",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen plan is The Builder scenario, explicitly avoiding the most aggressive option.",
+            "line_original": "Pick a realistic scenario, not the most aggressive one.",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Pick a realistic scenario, not the most aggressive one",
+            "quote_verified": true
+          },
+          {
+            "line_english": "National operators must permit access to real-time inventory on non-discriminatory commercial terms.",
+            "line_original": "non-discriminatory commercial terms",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "non-discriminatory commercial terms",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The governance structure will be finalized after corridor stability is demonstrated at eighteen months.",
+            "line_original": "regulatory finalization after eighteen months",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "regulatory finalization at eighteen months",
+            "quote_verified": false
+          },
+          {
+            "line_english": "The initial corridors requiring integration are Paris\u2013Brussels\u2013Amsterdam\u2013K\u00f6ln and two others.",
+            "line_original": "busiest cross-border corridors (Paris\u2013Brussels\u2013Amsterdam\u2013K\u00f6ln, Wien\u2013M\u00fcnchen\u2013Z\u00fcrich, Madrid\u2013Barcelona\u2013Lyon, Copenhagen\u2013Hamburg\u2013Berlin)",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "explicit",
+            "source_quote": "busiest cross-border corridors",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Distributor complaints must be reduced by half relative to the current baseline.",
+            "line_original": "distributor complaints halved",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "distributor complaints halved",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Carriers will accept the tiered liability model where segment failure causes maximum initial liability.",
+            "line_original": "carrier whose segment experienced the technical failure bears one hundred percent",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "carrier whose segment experienced the technical failure bears one hundred percent",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The overall time to achieve the scope targets is five years from the project start date.",
+            "line_original": "Horizon is five years",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Horizon is five years",
+            "quote_verified": true
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 3,
+        "response_byte_count": 2463,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "If core OSDM standards are not provisionally binding by six months, then regulatory finalization is delayed.",
+            "line_original": "technical specifications achieve provisional binding status at six months",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "provisional binding status at six months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If binding status for core standards is not achieved within eighteen months, then market access is restricted.",
+            "line_original": "binding standards within eighteen months",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "binding standards within eighteen months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If API exposure is not mandatory within thirty months, then through-ticketing rollout is delayed.",
+            "line_original": "mandatory API exposure within thirty",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "mandatory API exposure within thirty",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If full corridor through-ticketing is not achieved within sixty months, then the five-year success target is jeopardized.",
+            "line_original": "full corridor through-ticketing within sixty",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "full corridor through-ticketing within sixty",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If carrier activity does not result in 40% of journeys sold as single tickets, then the five-year outcome goal is missed.",
+            "line_original": "Success means 40% of cross-border journeys sold as single through-tickets",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "40% of cross-border journeys sold as single through-tickets",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If carrier negligence is proven, then the liability model dictates the segment carrier bears one hundred percent of costs.",
+            "line_original": "carrier whose segment experienced the technical failure bears one hundred percent",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "carrier whose segment experienced the technical failure bears one hundred percent",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If regulatory fees exceed cost-recovery oversight, then the regulator implements maximum commercial fee caps.",
+            "line_original": "carrier exceeding this threshold being temporarily barred",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "exceeding this threshold being temporarily barred",
+            "quote_verified": true
+          }
+        ]
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 2070,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "Failure of incumbent carriers to expose real-time inventory: slow distributor adoption and market penetration.",
+            "line_original": "inconsistent access to real-time inventory",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "inconsistent access to real-time inventory",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Missed connection due to carrier delay: loss of passenger-rights protection for the customer.",
+            "line_original": "lose passenger-rights protection the moment a connection is missed",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "lose passenger-rights protection the moment a connection is missed",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the pooled backstop is undercapitalized: failure to pay passenger upfront claims.",
+            "line_original": "pooled, mandatory insurance or reserve fund",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "pooled, mandatory insurance or reserve fund",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If incumbent carrier IT freezes development due to aggressive standards timeline: costly rework upon amendment.",
+            "line_original": "forces carriers to freeze development on unverified specifications",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "forces carriers to freeze development on unverified specifications",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If small platforms lack capital due to commercial terms: market power concentrates with incumbents.",
+            "line_original": "smaller innovative platforms may lack the capital to rapidly integrate",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "smaller innovative platforms may lack the capital",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If initiating distributor retains un-capped liability: discouragement of innovative third-party platform market entry.",
+            "line_original": "retains full, un-capped liability for the entire journey",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "retains full, un-capped liability for the entire journey",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 3,
+        "response_byte_count": 2102,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "Total annual revenue value of all cross-border journeys initially subject to through-ticketing pilot \u2014 required to calculate the monetary impact of achieving 40% adoption.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "The monetary cost estimate for private carrier IT investment not covered by the public budget \u2014 required for a full project cost waterfall.",
+            "line_original": "estimate the larger private carrier IT investment separately",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "missing",
+            "source_quote": "estimate the larger private carrier IT investment separately",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The baseline number of annual cross-border journeys for the target corridors \u2014 required to convert 40% target into an absolute ticket count.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "The average cost impact (in Euro or comparable currency) per validated distributor complaint \u2014 required to calculate the impact of halving complaints.",
+            "line_original": "distributor complaints halved",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "The marginal cost of train travel versus air travel on target short-haul routes \u2014 required to model modal shift impact.",
+            "line_original": "train becoming the more attractive option than flying on competitive short-haul routes",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "missing",
+            "source_quote": "train becoming the more attractive option than flying",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The fixed or variable cost per ticket transaction used for the transactional fee model capitalization of the clearing mechanism \u2014 required for the Builder scenario cash-flow model.",
+            "line_original": "transactional fee model",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "missing",
+            "source_quote": "transactional fee model",
+            "quote_verified": true
+          }
+        ]
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

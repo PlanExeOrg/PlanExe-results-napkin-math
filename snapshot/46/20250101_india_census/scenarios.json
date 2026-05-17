@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026–2027",
+    "plan_type": "national_governance_program"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "budget_high_inr": 150000000000,
+        "household_coverage_target_share": 0.99,
+        "provisional_publish_target_months": 6,
+        "device_audit_failure_threshold_share": 0.01,
+        "mttr_max_hours": 2,
+        "actual_total_census_spend_inr": 120000000000,
+        "actual_household_coverage_share": 0.88,
+        "actual_provisional_publish_months": 4,
+        "actual_mttr_hours": 1,
+        "actual_device_audit_failure_share": 0.005
+      },
+      "outputs": {
+        "budget_overrun_margin_inr": 30000000000,
+        "household_coverage_margin": -0.11,
+        "provisional_publish_timing_margin_months": 2,
+        "mttr_margin_hours": 1,
+        "device_audit_failure_margin": 0.005
+      }
+    },
+    "base": {
+      "inputs": {
+        "budget_high_inr": 150000000000,
+        "household_coverage_target_share": 0.99,
+        "provisional_publish_target_months": 6,
+        "device_audit_failure_threshold_share": 0.01,
+        "mttr_max_hours": 4,
+        "actual_total_census_spend_inr": 145000000000,
+        "actual_household_coverage_share": 0.97,
+        "actual_provisional_publish_months": 7,
+        "actual_mttr_hours": 4.5,
+        "actual_device_audit_failure_share": 0.02
+      },
+      "outputs": {
+        "budget_overrun_margin_inr": 5000000000,
+        "household_coverage_margin": -0.02,
+        "provisional_publish_timing_margin_months": -1,
+        "mttr_margin_hours": -0.5,
+        "device_audit_failure_margin": -0.01
+      }
+    },
+    "high": {
+      "inputs": {
+        "budget_high_inr": 150000000000,
+        "household_coverage_target_share": 0.99,
+        "provisional_publish_target_months": 6,
+        "device_audit_failure_threshold_share": 0.01,
+        "mttr_max_hours": 8,
+        "actual_total_census_spend_inr": 175000000000,
+        "actual_household_coverage_share": 0.995,
+        "actual_provisional_publish_months": 10,
+        "actual_mttr_hours": 12,
+        "actual_device_audit_failure_share": 0.10
+      },
+      "outputs": {
+        "budget_overrun_margin_inr": -25000000000,
+        "household_coverage_margin": 0.005,
+        "provisional_publish_timing_margin_months": -4,
+        "mttr_margin_hours": -4,
+        "device_audit_failure_margin": -0.09
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "budget_overrun_margin_inr": {
+        "low": 30000000000,
+        "base": 5000000000,
+        "high": -25000000000,
+        "unit": "INR",
+        "spread_ratio": -0.8333333333333334,
+        "spread_absolute": -55000000000
+      },
+      "household_coverage_margin": {
+        "low": -0.11,
+        "base": -0.02,
+        "high": 0.005,
+        "unit": "fraction",
+        "spread_ratio": -0.04545454545454546,
+        "spread_absolute": 0.115
+      },
+      "provisional_publish_timing_margin_months": {
+        "low": 2,
+        "base": -1,
+        "high": -4,
+        "unit": "months",
+        "spread_ratio": -2.0,
+        "spread_absolute": -6
+      },
+      "mttr_margin_hours": {
+        "low": 1,
+        "base": -0.5,
+        "high": -4,
+        "unit": "hours",
+        "spread_ratio": -4.0,
+        "spread_absolute": -5
+      },
+      "device_audit_failure_margin": {
+        "low": 0.005,
+        "base": -0.01,
+        "high": -0.09,
+        "unit": "fraction",
+        "spread_ratio": -18.0,
+        "spread_absolute": -0.095
+      }
+    }
+  },
+  "warnings": []
+}

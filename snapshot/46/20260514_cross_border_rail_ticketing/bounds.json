@@ -1,0 +1,57 @@
+{
+  "actual_adoption_share": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.32,
+    "high": 0.55,
+    "rationale": "Risk 7 names 20% adoption as the catastrophic-miss scenario; base just below the 40% target reflects realistic distributor uptake friction under Pragmatic Harmonization timelines.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_total_project_cost_eur": {
+    "unit": "EUR",
+    "low": 1200000000,
+    "base": 1500000000,
+    "high": 1900000000,
+    "rationale": "IT-capacity grants (€900M) + Public Reference Distributor (€150M) + testing/audit FTE + clearing top-ups + governance overhead; base at the ceiling reflects realistic Builder-scenario execution; upper bound captures Risk 3 €200M working-capital shock.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "peak_daily_clearing_obligation_eur": {
+    "unit": "EUR",
+    "low": 50000000,
+    "base": 130000000,
+    "high": 250000000,
+    "rationale": "Baseline cross-border ticket volume × peak-day multiplier at Year-5 scale; base near the float break-even (€200M / 1.5 buffer ≈ €133M) reflects design intent; upper bound captures Risk 3 velocity-spike scenarios.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_binding_standards_months": {
+    "unit": "months",
+    "low": 14,
+    "base": 20,
+    "high": 30,
+    "rationale": "Plan target is 18 months with provisional binding at Month 6; base just over target reflects realistic incumbent-lobbying friction (Risk 6); upper bound captures Risk 1 enforcement-failure cascade.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_complaint_reduction_share": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.40,
+    "high": 0.70,
+    "rationale": "Plan targets 50% reduction; base just below target reflects realistic OSDM data-layer stability (Risk 2); upper bound reflects Public Reference Distributor uptime above 90% target.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

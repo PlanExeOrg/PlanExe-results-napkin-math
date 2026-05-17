@@ -1,0 +1,79 @@
+{
+  "monthly_fixed_operating_cost_dkk": {
+    "unit": "DKK_per_month",
+    "low": 100000,
+    "base": 140000,
+    "high": 200000,
+    "rationale": "Bottom-up: 2 FTE-equivalent instructor pay at Greenlandic rates plus lease, utilities baseline, admin, and amortised materials; base sits near the implicit 142K DKK/month ceiling (1.7M DKK / 12 months).",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "off_peak_hours_per_month": {
+    "unit": "hours_per_month",
+    "low": 60,
+    "base": 100,
+    "high": 160,
+    "rationale": "Open-studio capacity outside instructor-led courses; base assumes ~5 hr/day × 5 days/week × 4.33 weeks net of course time, with wide spread for scheduling flexibility.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "low_season_utilization_actual_share": {
+    "unit": "fraction",
+    "low": 0.10,
+    "base": 0.25,
+    "high": 0.50,
+    "rationale": "Risk 1 names Nov–Feb off-peak utilization as the most speculative revenue input; base reflects a realistic shoulder-season demand under local-resident-only patronage.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "monthly_utility_overhead_dkk": {
+    "unit": "DKK_per_month",
+    "low": 10000,
+    "base": 25000,
+    "high": 50000,
+    "rationale": "Nuuk arctic heating plus centralized kiln firing during low season; Review Issue 1 flags 10% annual tariff escalation risk, so spread is wide to capture rate-volatility scenarios.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "taster_conversion_actual_share": {
+    "unit": "fraction",
+    "low": 0.05,
+    "base": 0.13,
+    "high": 0.25,
+    "rationale": "Expert Criticism names a 12.5% cut-off at which Taster outreach must redirect to digital; base sits just below the 15% target to reflect realistic conversion friction with non-arts groups.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "min_viable_hourly_rate_dkk": {
+    "unit": "DKK_per_hour",
+    "low": 130,
+    "base": 165,
+    "high": 200,
+    "rationale": "Plan names 165 DKK/hr as the minimum viable floor; spread captures sensitivity to local resistance vs. tourist willingness-to-pay at the upper end.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "taster_conversion_target_share": {
+    "unit": "fraction",
+    "low": 0.10,
+    "base": 0.15,
+    "high": 0.20,
+    "rationale": "Plan commits to a 15% conversion target; spread reflects sensitivity to the Expert-Criticism 12.5% pivot trigger at the lower end and a stretch goal at the upper end.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

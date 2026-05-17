@@ -1,0 +1,363 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "European Faraday Enclosure Launch (Tallinn-anchored)",
+    "plan_type": "consumer_hardware_startup"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "month12_net_cash_margin_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -33592.526183693706,
+      "std": 45144.10002325941,
+      "min": -148750.84253578982,
+      "p05": -111256.58454420601,
+      "p25": -66496.88981359798,
+      "p50": -31185.906740295126,
+      "p75": -584.7273617478932,
+      "p95": 38105.071660378635,
+      "max": 69126.85046390542
+    },
+    "iso_run_sellthrough_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.13111509195400045,
+      "std": 0.12281108928134779,
+      "min": -0.4488462848529607,
+      "p05": -0.34608118107504177,
+      "p25": -0.21777244230530546,
+      "p50": -0.12355474534305078,
+      "p75": -0.04205340149422285,
+      "p95": 0.06646979667599048,
+      "max": 0.14792657014433774
+    },
+    "milstd_funding_margin_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -19691.719109039765,
+      "std": 30779.727688275434,
+      "min": -89784.15087859696,
+      "p05": -68658.58594195296,
+      "p25": -42356.23748185585,
+      "p50": -21955.743187558044,
+      "p75": 2006.7959160506143,
+      "p95": 33688.834929438504,
+      "max": 57927.953395512595
+    },
+    "presale_conversion_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.0029612577403593117,
+      "std": 0.021523711225569828,
+      "min": -0.06124921132777238,
+      "p05": -0.036345059976826986,
+      "p25": -0.018652182825025614,
+      "p50": -0.004139027915322401,
+      "p75": 0.012059625776147376,
+      "p95": 0.0342897900891466,
+      "max": 0.06295807491556367
+    },
+    "eu_emc_cert_budget_margin_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -11631.839487605066,
+      "std": 18692.175191811006,
+      "min": -64463.42960216747,
+      "p05": -43336.93306203124,
+      "p25": -24743.190177964334,
+      "p50": -11519.72689395985,
+      "p75": 1875.8056304187921,
+      "p95": 18412.84004194059,
+      "max": 45218.61515678636
+    }
+  },
+  "thresholds": {
+    "month12_net_cash_margin_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2468,
+      "valid_count": 10000,
+      "probability": 0.2468
+    },
+    "iso_run_sellthrough_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1544,
+      "valid_count": 10000,
+      "probability": 0.1544
+    },
+    "milstd_funding_margin_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2686,
+      "valid_count": 10000,
+      "probability": 0.2686
+    },
+    "presale_conversion_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4283,
+      "valid_count": 10000,
+      "probability": 0.4283
+    },
+    "eu_emc_cert_budget_margin_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2812,
+      "valid_count": 10000,
+      "probability": 0.2812
+    }
+  },
+  "sensitivity": {
+    "month12_net_cash_margin_eur": {
+      "top_inputs": [
+        {
+          "id": "actual_net_cash_month12_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "iso_run_sellthrough_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_sellthrough_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "milstd_funding_margin_eur": {
+      "top_inputs": [
+        {
+          "id": "actual_year1_gross_profit_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "presale_conversion_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_presale_conversion_share",
+          "correlation": 0.8816
+        },
+        {
+          "id": "presale_conversion_target_share",
+          "correlation": -0.4874
+        }
+      ]
+    },
+    "eu_emc_cert_budget_margin_eur": {
+      "top_inputs": [
+        {
+          "id": "actual_eu_emc_cert_cost_eur",
+          "correlation": -0.8885
+        },
+        {
+          "id": "eu_emc_cert_budget_eur",
+          "correlation": 0.4643
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "month12_net_cash_margin_eur": [
+      {
+        "id": "actual_net_cash_month12_eur",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.9872,
+        "delta_pp": 98.72
+      }
+    ],
+    "iso_run_sellthrough_margin": [
+      {
+        "id": "actual_sellthrough_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.6176,
+        "delta_pp": 61.76
+      }
+    ],
+    "milstd_funding_margin_eur": [
+      {
+        "id": "actual_year1_gross_profit_eur",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "presale_conversion_margin": [
+      {
+        "id": "actual_presale_conversion_share",
+        "p_pass_low_quartile": 0.0052,
+        "p_pass_high_quartile": 0.954,
+        "delta_pp": 94.88
+      },
+      {
+        "id": "presale_conversion_target_share",
+        "p_pass_low_quartile": 0.668,
+        "p_pass_high_quartile": 0.2044,
+        "delta_pp": -46.36
+      }
+    ],
+    "eu_emc_cert_budget_margin_eur": [
+      {
+        "id": "actual_eu_emc_cert_cost_eur",
+        "p_pass_low_quartile": 0.8044,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -80.44
+      },
+      {
+        "id": "eu_emc_cert_budget_eur",
+        "p_pass_low_quartile": 0.1076,
+        "p_pass_high_quartile": 0.528,
+        "delta_pp": 42.04
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "month12_net_cash_margin_eur": [
+      {
+        "id": "actual_net_cash_month12_eur",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 49415.27263825211,
+        "conditional_pass_prob": 0.9872,
+        "admitted_fraction": 0.25
+      }
+    ],
+    "iso_run_sellthrough_margin": [
+      {
+        "id": "actual_sellthrough_share",
+        "direction": "above",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 0.7525073036957052,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.15
+      }
+    ],
+    "milstd_funding_margin_eur": [
+      {
+        "id": "actual_year1_gross_profit_eur",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 113328.93091891684,
+        "conditional_pass_prob": 0.8139,
+        "admitted_fraction": 0.33
+      }
+    ],
+    "presale_conversion_margin": [
+      {
+        "id": "actual_presale_conversion_share",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 0.05790449013554809,
+        "conditional_pass_prob": 0.9085,
+        "admitted_fraction": 0.33
+      }
+    ],
+    "eu_emc_cert_budget_margin_eur": [
+      {
+        "id": "actual_eu_emc_cert_cost_eur",
+        "direction": "below",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 86206.83320318875,
+        "conditional_pass_prob": 0.8044,
+        "admitted_fraction": 0.25
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_net_cash_month12_eur",
+      "score": 545.2766,
+      "worst_gate": "month12_net_cash_margin_eur",
+      "bound_width_ratio": 7.3333,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_presale_conversion_share",
+      "score": 122.0465,
+      "worst_gate": "presale_conversion_margin",
+      "bound_width_ratio": 2.25,
+      "source": "data"
+    },
+    {
+      "id": "actual_year1_gross_profit_eur",
+      "score": 121.9,
+      "worst_gate": "milstd_funding_margin_eur",
+      "bound_width_ratio": 1.6667,
+      "source": "data"
+    },
+    {
+      "id": "actual_eu_emc_cert_cost_eur",
+      "score": 48.6908,
+      "worst_gate": "eu_emc_cert_budget_margin_eur",
+      "bound_width_ratio": 0.8421,
+      "source": "data"
+    },
+    {
+      "id": "actual_sellthrough_share",
+      "score": 48.207,
+      "worst_gate": "iso_run_sellthrough_margin",
+      "bound_width_ratio": 0.9231,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "month12_net_cash_margin_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 7.3333,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 7.33"
+      ]
+    },
+    "iso_run_sellthrough_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.9231,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.92"
+      ]
+    },
+    "milstd_funding_margin_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.6667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.67"
+      ]
+    },
+    "presale_conversion_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.625,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.62"
+      ]
+    },
+    "eu_emc_cert_budget_margin_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6711,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.67"
+      ]
+    }
+  },
+  "warnings": []
+}

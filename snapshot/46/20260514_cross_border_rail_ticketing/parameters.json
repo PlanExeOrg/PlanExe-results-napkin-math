@@ -1,0 +1,214 @@
+{
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Through-Ticketing Program",
+    "plan_type": "regulatory_coordination_program",
+    "primary_goal": "Deliver a coordinated European program under the Pragmatic Harmonization strategy that makes cross-border train travel as easy to search/book/refund as national travel, reaching 40% single-through-ticket adoption within 5 years on a €1.5B coordination budget.",
+    "modelling_frame": "Tests the adoption margin against the 40% target; the coordination-budget surplus against bottom-up project cost; the clearing-float coverage against peak daily settlement obligation under a 150% safety buffer; the binding-standards timing margin against the 18-month deadline; and the distributor-complaint reduction margin against the 50% target. DG MOVE legal enforcement of 'Three Strikes', incumbent-carrier political compliance, and national-regulator alignment are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "adoption_target_share",
+      "label": "5-year through-ticket adoption target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.40,
+      "comment": "Below 40% single-through-ticket adoption by Year 5 the program's core success metric is missed; the modal-shift case against air travel weakens substantially.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Success target is 40% of cross-border journeys sold as single tickets — outcome KPI."
+    },
+    {
+      "id": "coordination_budget_eur",
+      "label": "Public coordination budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 1500000000,
+      "comment": "€1.5B public envelope covering standards work, testing, clearing fund, IT-capacity grants, and the public reference distributor; private carrier IT spend is separate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Public coordination budget is €1.5 billion — public funding input."
+    },
+    {
+      "id": "initial_clearing_float_eur",
+      "label": "Initial inter-carrier clearing float",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 200000000,
+      "comment": "€200M initial float for the inter-carrier clearing mechanism; backed by a ring-fenced €300M Emergency Float Reserve triggered if the float drops below the safety buffer.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Initial capitalization requirement (float): €200 million."
+    },
+    {
+      "id": "safety_buffer_multiplier",
+      "label": "Clearing safety-buffer multiplier",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "ratio",
+      "value": 1.50,
+      "comment": "Operational float must hold ≥150% of peak daily obligation; below this the Emergency Float Reserve activates per the Decision-5 transactional-fee model safeguard.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Emergency Float Reserve available if operational float drops below 150% of peak daily obligation, ring-fenced at €300 million."
+    },
+    {
+      "id": "binding_standards_deadline_months",
+      "label": "Binding standards deadline",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 18,
+      "comment": "OSDM v1.0 must reach binding status by Month 18 (provisionally binding at Month 6); slippage cascades into the 30-month API-exposure and 60-month full-corridor deadlines.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Binding standards adoption deadline is 18 months from start — timeline gate."
+    },
+    {
+      "id": "complaint_reduction_target_share",
+      "label": "Distributor complaint-reduction target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.50,
+      "comment": "50% reduction in distributor complaints relative to current baseline; the secondary success metric attesting to OSDM data-layer stability and clearing reliability.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Distributor complaints must be reduced by half relative to the current baseline."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_adoption_share",
+      "label": "Achieved single-through-ticket share at Year 5",
+      "unit": "fraction",
+      "why_needed": "Drives whether the 40% adoption target clears at Year 5; Risk 7 names 20% adoption as the catastrophic miss scenario invalidating the €1.5B investment thesis.",
+      "suggested_estimation_method": "Funnel projection from corridor go-live dates × distributor uptake × passenger conversion; sensitivity to incumbent compliance friction (Risk 1) and data-layer stability (Risk 2)."
+    },
+    {
+      "id": "actual_total_project_cost_eur",
+      "label": "Bottom-up total project cost on the public budget",
+      "unit": "EUR",
+      "why_needed": "Tests whether the €1.5B envelope absorbs IT-capacity grants (€900M baseline), Public Reference Distributor (€150M), clearing-fund top-ups, and conformance-testing overhead.",
+      "suggested_estimation_method": "Sum of grant disbursements + clearing-fund capital + testing/audit FTE × cost × 5 years + PRD operations; sensitivity to Risk 3 €50–200M working-capital top-ups."
+    },
+    {
+      "id": "peak_daily_clearing_obligation_eur",
+      "label": "Peak daily inter-carrier clearing obligation at Year 5 scale",
+      "unit": "EUR",
+      "why_needed": "Determines whether the €200M float (× 150% buffer requirement) covers peak settlement load; Risk 3 names a €50–200M working-capital gap if velocity exceeds float coverage.",
+      "suggested_estimation_method": "Baseline cross-border journey count × average ticket value × peak-day multiplier × clearing-window length; benchmark against existing B2B rail-clearing systems."
+    },
+    {
+      "id": "actual_binding_standards_months",
+      "label": "Achieved months to OSDM v1.0 binding status",
+      "unit": "months",
+      "why_needed": "Below the 18-month deadline the 30-month API-exposure and 60-month full-corridor deadlines cascade; the 'Three Strikes' enforcement timeline depends on this anchor.",
+      "suggested_estimation_method": "Workshop schedule + national-regulator review × accessibility-schema concurrence × Technical Steering Committee 65% consensus threshold; sensitivity to incumbent lobbying (Risk 6)."
+    },
+    {
+      "id": "actual_complaint_reduction_share",
+      "label": "Achieved distributor complaint-reduction share",
+      "unit": "fraction",
+      "why_needed": "Below the 50% target the secondary success metric fails; signals OSDM data-layer instability (Risk 2) and undermines the modal-shift case against air travel.",
+      "suggested_estimation_method": "Project from Public Reference Distributor uptime data (90%+ target) + conformance test pass rates; sensitivity to ancillary-service grace-period slippage (Risk 4)."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "adoption_margin",
+      "label": "Adoption margin against the 40% target",
+      "formula_hint": "adoption_margin = actual_adoption_share - adoption_target_share",
+      "output_name": "adoption_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_adoption_share", "adoption_target_share"],
+      "why_first": "Positive margin validates the €1.5B investment thesis and modal-shift case; negative margin produces the Risk 7 'economic justification diminishes' scenario at Year 5."
+    },
+    {
+      "id": "coordination_budget_surplus_eur",
+      "label": "Coordination-budget surplus",
+      "formula_hint": "coordination_budget_surplus_eur = coordination_budget_eur - actual_total_project_cost_eur",
+      "output_name": "coordination_budget_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["coordination_budget_eur", "actual_total_project_cost_eur"],
+      "why_first": "Positive surplus preserves the Emergency Float Reserve and contingency headroom; negative surplus forces EU-budget top-ups per Risk 3 working-capital scenarios."
+    },
+    {
+      "id": "clearing_float_coverage_eur",
+      "label": "Clearing-float coverage against the 150% buffer requirement",
+      "formula_hint": "clearing_float_coverage_eur = initial_clearing_float_eur - peak_daily_clearing_obligation_eur * safety_buffer_multiplier",
+      "output_name": "clearing_float_coverage_eur",
+      "output_unit": "EUR",
+      "depends_on": ["initial_clearing_float_eur", "peak_daily_clearing_obligation_eur", "safety_buffer_multiplier"],
+      "why_first": "Positive coverage means the €200M float holds ≥150% of peak daily obligation; negative coverage triggers the €300M Emergency Float Reserve and signals clearing-mechanism instability."
+    },
+    {
+      "id": "binding_standards_timing_margin_months",
+      "label": "Binding-standards timing margin against the 18-month deadline",
+      "formula_hint": "binding_standards_timing_margin_months = binding_standards_deadline_months - actual_binding_standards_months",
+      "output_name": "binding_standards_timing_margin_months",
+      "output_unit": "months",
+      "depends_on": ["binding_standards_deadline_months", "actual_binding_standards_months"],
+      "why_first": "Positive margin keeps the 30-month API-exposure and 60-month full-corridor deadlines reachable; negative margin cascades schedule slippage into the Year-5 adoption gate."
+    },
+    {
+      "id": "complaint_reduction_margin",
+      "label": "Distributor complaint-reduction margin",
+      "formula_hint": "complaint_reduction_margin = actual_complaint_reduction_share - complaint_reduction_target_share",
+      "output_name": "complaint_reduction_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_complaint_reduction_share", "complaint_reduction_target_share"],
+      "why_first": "Positive margin attests to OSDM data-layer stability and clearing reliability; negative margin signals the Risk 2 'data layer unstable' failure mode and weakens distributor uptake."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "dg_move_three_strikes_legal_authorization_gate",
+      "label": "DG MOVE legally pre-approves the 'Three Strikes' enforcement template",
+      "why_it_matters": "Risk 1 and the Decision-12 enforcement posture name this as the binary legal hook; without legally-unambiguous suspension authority, incumbent compliance becomes voluntary regardless of any operational margin the model evaluates.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Enforcement collapses to political negotiation; SNCF/DB/ÖBB compliance slips past deadlines; 40% adoption target unreachable; €1.5B investment thesis fails."
+    },
+    {
+      "id": "incumbent_carrier_political_compliance_gate",
+      "label": "SNCF, DB, and ÖBB politically accept the tiered liability and API-exposure mandates",
+      "why_it_matters": "Risk 6 and the Coordinated-Lobbying diverse-risk name a Medium/High likelihood-severity of incumbent operators lobbying to weaken the Passenger Rights Backstop; without acceptance the liability model collapses and distributor uptake stalls.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Backstop liability pushed to distributors/passengers; consumer-complaint goal fails; distributor adoption falls toward the Risk 7 20% scenario."
+    },
+    {
+      "id": "national_regulator_alignment_gate",
+      "label": "National Competent Authorities enforce OSDM and PRM mandates uniformly across member states",
+      "why_it_matters": "Mandating non-discriminatory commercial terms and PRM accessibility schemas across 20+ carriers requires consistent national-regulator enforcement; uneven enforcement creates compliance arbitrage that the EU-level simulation cannot resolve.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Compliance arbitrage between strict and permissive member states; OSDM data-layer fragmentation by jurisdiction; the 50% complaint-reduction target becomes structurally unreachable."
+    }
+  ]
+}

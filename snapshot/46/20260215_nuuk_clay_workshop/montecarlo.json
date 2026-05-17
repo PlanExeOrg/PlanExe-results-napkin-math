@@ -1,0 +1,339 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "small_business_community_hub"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "total_year1_fixed_operating_cost_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1758607.812446112,
+      "std": 246460.33766078643,
+      "min": 1205605.9008538076,
+      "p05": 1373870.5903826004,
+      "p25": 1574740.7113205811,
+      "p50": 1738535.8882748527,
+      "p75": 1933732.636820354,
+      "p95": 2189309.03764065,
+      "max": 2394232.1639953377
+    },
+    "year1_budget_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -58607.812446111966,
+      "std": 246460.33766078643,
+      "min": -694232.1639953377,
+      "p05": -489309.0376406501,
+      "p25": -233732.63682035415,
+      "p50": -38535.888274852536,
+      "p75": 125259.28867941885,
+      "p95": 326129.4096173995,
+      "max": 494394.0991461924
+    },
+    "monthly_off_peak_rental_revenue_dkk": {
+      "unit": "DKK_per_month",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 5010.180741702534,
+      "std": 1810.8283047847647,
+      "min": 1145.4619904162032,
+      "p05": 2462.0091623871526,
+      "p25": 3651.8757176707322,
+      "p50": 4796.826128658729,
+      "p75": 6136.263202944296,
+      "p95": 8354.735954673994,
+      "max": 12914.470456418558
+    },
+    "monthly_off_peak_rental_overhead_margin_dkk": {
+      "unit": "DKK_per_month",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -23422.65416145766,
+      "std": 8477.892414975111,
+      "min": -47405.33788909469,
+      "p05": -38424.168106605495,
+      "p25": -29394.18101375604,
+      "p50": -22726.04896869738,
+      "p75": -17082.079925099817,
+      "p95": -10352.727026319899,
+      "max": 400.09419164005703
+    },
+    "taster_conversion_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.006698306991395793,
+      "std": 0.046518726105675874,
+      "min": -0.14007925229281182,
+      "p05": -0.08011951265094541,
+      "p25": -0.040659599934903104,
+      "p50": -0.008141751280546769,
+      "p75": 0.025832402089227803,
+      "p95": 0.07294640862509187,
+      "max": 0.13289561344883372
+    }
+  },
+  "thresholds": {
+    "year1_budget_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4381,
+      "valid_count": 10000,
+      "probability": 0.4381
+    },
+    "monthly_off_peak_rental_overhead_margin_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1,
+      "valid_count": 10000,
+      "probability": 0.0001
+    },
+    "taster_conversion_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4326,
+      "valid_count": 10000,
+      "probability": 0.4326
+    }
+  },
+  "sensitivity": {
+    "total_year1_fixed_operating_cost_dkk": {
+      "top_inputs": [
+        {
+          "id": "monthly_fixed_operating_cost_dkk",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "year1_budget_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "monthly_fixed_operating_cost_dkk",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "monthly_off_peak_rental_revenue_dkk": {
+      "top_inputs": [
+        {
+          "id": "low_season_utilization_actual_share",
+          "correlation": 0.7965
+        },
+        {
+          "id": "off_peak_hours_per_month",
+          "correlation": 0.5172
+        },
+        {
+          "id": "min_viable_hourly_rate_dkk",
+          "correlation": 0.2453
+        }
+      ]
+    },
+    "monthly_off_peak_rental_overhead_margin_dkk": {
+      "top_inputs": [
+        {
+          "id": "monthly_utility_overhead_dkk",
+          "correlation": -0.9769
+        },
+        {
+          "id": "low_season_utilization_actual_share",
+          "correlation": 0.1621
+        },
+        {
+          "id": "off_peak_hours_per_month",
+          "correlation": 0.1138
+        },
+        {
+          "id": "min_viable_hourly_rate_dkk",
+          "correlation": 0.0702
+        }
+      ]
+    },
+    "taster_conversion_margin": {
+      "top_inputs": [
+        {
+          "id": "taster_conversion_actual_share",
+          "correlation": 0.8965
+        },
+        {
+          "id": "taster_conversion_target_share",
+          "correlation": -0.4495
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "year1_budget_surplus_dkk": [
+      {
+        "id": "monthly_fixed_operating_cost_dkk",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "monthly_off_peak_rental_overhead_margin_dkk": [
+      {
+        "id": "min_viable_hourly_rate_dkk",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0004,
+        "delta_pp": 0.04
+      },
+      {
+        "id": "off_peak_hours_per_month",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.00039824771007566706,
+        "delta_pp": 0.04
+      },
+      {
+        "id": "low_season_utilization_actual_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0004,
+        "delta_pp": 0.04
+      },
+      {
+        "id": "monthly_utility_overhead_dkk",
+        "p_pass_low_quartile": 0.0004,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -0.04
+      }
+    ],
+    "taster_conversion_margin": [
+      {
+        "id": "taster_conversion_actual_share",
+        "p_pass_low_quartile": 0.0056,
+        "p_pass_high_quartile": 0.9684,
+        "delta_pp": 96.28
+      },
+      {
+        "id": "taster_conversion_target_share",
+        "p_pass_low_quartile": 0.664,
+        "p_pass_high_quartile": 0.2256,
+        "delta_pp": -43.84
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "year1_budget_surplus_dkk": [
+      {
+        "id": "monthly_fixed_operating_cost_dkk",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 144877.99068957104,
+        "conditional_pass_prob": 0.8762,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "taster_conversion_margin": [
+      {
+        "id": "taster_conversion_actual_share",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 0.16113829298584414,
+        "conditional_pass_prob": 0.9239,
+        "admitted_fraction": 0.33
+      },
+      {
+        "id": "taster_conversion_target_share",
+        "direction": "below",
+        "input_percentile_cutoff": 95,
+        "cutoff_value": 0.11556612779979723,
+        "conditional_pass_prob": 0.802,
+        "admitted_fraction": 0.05
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "taster_conversion_actual_share",
+      "score": 84.045,
+      "worst_gate": "taster_conversion_margin",
+      "bound_width_ratio": 1.5385,
+      "source": "assumption"
+    },
+    {
+      "id": "monthly_fixed_operating_cost_dkk",
+      "score": 40.1357,
+      "worst_gate": "year1_budget_surplus_dkk",
+      "bound_width_ratio": 0.7143,
+      "source": "assumption"
+    },
+    {
+      "id": "low_season_utilization_actual_share",
+      "score": 0.064,
+      "worst_gate": "monthly_off_peak_rental_overhead_margin_dkk",
+      "bound_width_ratio": 1.6,
+      "source": "assumption"
+    },
+    {
+      "id": "monthly_utility_overhead_dkk",
+      "score": 0.064,
+      "worst_gate": "monthly_off_peak_rental_overhead_margin_dkk",
+      "bound_width_ratio": 1.6,
+      "source": "assumption"
+    },
+    {
+      "id": "off_peak_hours_per_month",
+      "score": 0.04,
+      "worst_gate": "monthly_off_peak_rental_overhead_margin_dkk",
+      "bound_width_ratio": 1.0,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "total_year1_fixed_operating_cost_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.7143,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.71"
+      ]
+    },
+    "year1_budget_surplus_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.7143,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.71"
+      ]
+    },
+    "monthly_off_peak_rental_revenue_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.3333,
+      "average_bound_width_ratio": 1.0081,
+      "reasons": [
+        "1/3 input bounds anchored in data; 2/3 are assumptions",
+        "average bound-width-to-base ratio = 1.01"
+      ]
+    },
+    "monthly_off_peak_rental_overhead_margin_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.25,
+      "average_bound_width_ratio": 1.1561,
+      "reasons": [
+        "1/4 input bounds anchored in data; 3/4 are assumptions",
+        "average bound-width-to-base ratio = 1.16"
+      ]
+    },
+    "taster_conversion_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.1026,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.10"
+      ]
+    }
+  },
+  "warnings": []
+}

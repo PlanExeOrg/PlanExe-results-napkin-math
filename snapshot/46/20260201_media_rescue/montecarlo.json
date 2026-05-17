@@ -1,0 +1,332 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Containerized Dark Data Ingestor Network (CDDIN)",
+    "plan_type": "industrial_preservation_program"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "estimated_total_lifetime_opex_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 404667658.2621015,
+      "std": 75381903.99360856,
+      "min": 200503675.6663999,
+      "p05": 291403729.17323166,
+      "p25": 349841253.73541594,
+      "p50": 399249610.6974904,
+      "p75": 453781684.66798836,
+      "p95": 538226544.7781866,
+      "max": 672506647.9826038
+    },
+    "budget_opex_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -154667658.26210147,
+      "std": 75381903.99360856,
+      "min": -422506647.9826038,
+      "p05": -288226544.7781865,
+      "p25": -203781684.66798836,
+      "p50": -149249610.6974904,
+      "p75": -99841253.73541595,
+      "p95": -41403729.17323169,
+      "max": 49496324.333600104
+    },
+    "uptime_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.03924947398134758,
+      "std": 0.041320470765286325,
+      "min": -0.14959404712534108,
+      "p05": -0.11343452421335941,
+      "p25": -0.06828707037165299,
+      "p50": -0.03513508738545157,
+      "p75": -0.008673283321401493,
+      "p95": 0.024481101363511587,
+      "max": 0.04936655671588308
+    },
+    "review_load_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.0046917191090397525,
+      "std": 0.030779727688275433,
+      "min": -0.07292795339551258,
+      "p05": -0.048688834929438526,
+      "p25": -0.017006795916050615,
+      "p50": 0.006955743187558011,
+      "p75": 0.02735623748185583,
+      "p95": 0.05365858594195292,
+      "max": 0.07478415087859695
+    },
+    "modular_mtbf_improvement_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.02487347930576255,
+      "std": 0.1124991712540602,
+      "min": -0.30560127551157035,
+      "p05": -0.19734625888028934,
+      "p25": -0.10940941743294084,
+      "p50": -0.03333271571182206,
+      "p75": 0.054548997948998076,
+      "p95": 0.17233571141781492,
+      "max": 0.3145092725702933
+    }
+  },
+  "thresholds": {
+    "budget_opex_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 59,
+      "valid_count": 10000,
+      "probability": 0.0059
+    },
+    "uptime_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1824,
+      "valid_count": 10000,
+      "probability": 0.1824
+    },
+    "review_load_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5808,
+      "valid_count": 10000,
+      "probability": 0.5808
+    },
+    "modular_mtbf_improvement_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3927,
+      "valid_count": 10000,
+      "probability": 0.3927
+    }
+  },
+  "sensitivity": {
+    "estimated_total_lifetime_opex_usd": {
+      "top_inputs": [
+        {
+          "id": "avg_active_fleet_size_units",
+          "correlation": 0.7365
+        },
+        {
+          "id": "avg_annual_opex_per_miu_usd",
+          "correlation": 0.6675
+        }
+      ]
+    },
+    "budget_opex_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "avg_active_fleet_size_units",
+          "correlation": -0.7365
+        },
+        {
+          "id": "avg_annual_opex_per_miu_usd",
+          "correlation": -0.6675
+        }
+      ]
+    },
+    "uptime_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_uptime_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "review_load_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_review_load_share",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "modular_mtbf_improvement_margin": {
+      "top_inputs": [
+        {
+          "id": "modular_mtbf_actual_improvement_share",
+          "correlation": 0.9333
+        },
+        {
+          "id": "modular_mtbf_improvement_target_share",
+          "correlation": -0.3758
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "budget_opex_surplus_usd": [
+      {
+        "id": "avg_active_fleet_size_units",
+        "p_pass_low_quartile": 0.023524720893141945,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -2.35
+      },
+      {
+        "id": "avg_annual_opex_per_miu_usd",
+        "p_pass_low_quartile": 0.0212,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -2.12
+      }
+    ],
+    "uptime_margin": [
+      {
+        "id": "actual_uptime_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.7296,
+        "delta_pp": 72.96
+      }
+    ],
+    "review_load_margin": [
+      {
+        "id": "actual_review_load_share",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "modular_mtbf_improvement_margin": [
+      {
+        "id": "modular_mtbf_actual_improvement_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.9776,
+        "delta_pp": 97.76
+      },
+      {
+        "id": "modular_mtbf_improvement_target_share",
+        "p_pass_low_quartile": 0.57,
+        "p_pass_high_quartile": 0.2328,
+        "delta_pp": -33.72
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "uptime_margin": [
+      {
+        "id": "actual_uptime_share",
+        "direction": "above",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 0.9049402369821623,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.15
+      }
+    ],
+    "review_load_margin": [
+      {
+        "id": "actual_review_load_share",
+        "direction": "below",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 0.18332893091891683,
+        "conditional_pass_prob": 0.8669,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "modular_mtbf_improvement_margin": [
+      {
+        "id": "modular_mtbf_actual_improvement_share",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 0.31730831403484755,
+        "conditional_pass_prob": 0.9303,
+        "admitted_fraction": 0.33
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "modular_mtbf_actual_improvement_share",
+      "score": 134.931,
+      "worst_gate": "modular_mtbf_improvement_margin",
+      "bound_width_ratio": 2.2727,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_review_load_share",
+      "score": 39.3,
+      "worst_gate": "review_load_margin",
+      "bound_width_ratio": 0.9375,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_uptime_share",
+      "score": 13.5573,
+      "worst_gate": "uptime_margin",
+      "bound_width_ratio": 0.2273,
+      "source": "assumption"
+    },
+    {
+      "id": "avg_active_fleet_size_units",
+      "score": 1.5574,
+      "worst_gate": "budget_opex_surplus_usd",
+      "bound_width_ratio": 0.6667,
+      "source": "assumption"
+    },
+    {
+      "id": "avg_annual_opex_per_miu_usd",
+      "score": 1.3488,
+      "worst_gate": "budget_opex_surplus_usd",
+      "bound_width_ratio": 0.64,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "estimated_total_lifetime_opex_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.6533,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.65"
+      ]
+    },
+    "budget_opex_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.6533,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.65"
+      ]
+    },
+    "uptime_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.2273,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.23"
+      ]
+    },
+    "review_load_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.9375,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.94"
+      ]
+    },
+    "modular_mtbf_improvement_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.4697,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.47"
+      ]
+    }
+  },
+  "warnings": []
+}

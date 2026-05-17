@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Datacenter Campus",
+    "plan_type": "hyperscale_infrastructure"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "phase1_budget_max_eur": 10000000000,
+        "phase2_take_or_pay_threshold_share": 0.60,
+        "buffer_area_km2": 128.8,
+        "buffer_holding_period_months": 18,
+        "phase1_pue_target_max": 1.15,
+        "phase1_baseline_capex_eur": 3500000000,
+        "brownfield_remediation_actual_eur": 250000000,
+        "buffer_annual_holding_cost_per_ha_eur": 30000,
+        "tenant_take_or_pay_actual_share": 0.30,
+        "phase1_pue_actual": 1.12
+      },
+      "outputs": {
+        "buffer_annual_holding_cost_eur": 386400000,
+        "buffer_total_holding_cost_eur": 579600000,
+        "phase1_budget_surplus_eur": 5670400000,
+        "phase2_fid_margin": -0.30,
+        "phase1_pue_margin": 0.03
+      }
+    },
+    "base": {
+      "inputs": {
+        "phase1_budget_max_eur": 10000000000,
+        "phase2_take_or_pay_threshold_share": 0.60,
+        "buffer_area_km2": 128.8,
+        "buffer_holding_period_months": 18,
+        "phase1_pue_target_max": 1.20,
+        "phase1_baseline_capex_eur": 6000000000,
+        "brownfield_remediation_actual_eur": 750000000,
+        "buffer_annual_holding_cost_per_ha_eur": 60000,
+        "tenant_take_or_pay_actual_share": 0.50,
+        "phase1_pue_actual": 1.22
+      },
+      "outputs": {
+        "buffer_annual_holding_cost_eur": 772800000,
+        "buffer_total_holding_cost_eur": 1159200000,
+        "phase1_budget_surplus_eur": 2090800000,
+        "phase2_fid_margin": -0.10,
+        "phase1_pue_margin": -0.02
+      }
+    },
+    "high": {
+      "inputs": {
+        "phase1_budget_max_eur": 10000000000,
+        "phase2_take_or_pay_threshold_share": 0.60,
+        "buffer_area_km2": 128.8,
+        "buffer_holding_period_months": 18,
+        "phase1_pue_target_max": 1.30,
+        "phase1_baseline_capex_eur": 9000000000,
+        "brownfield_remediation_actual_eur": 2250000000,
+        "buffer_annual_holding_cost_per_ha_eur": 100000,
+        "tenant_take_or_pay_actual_share": 0.85,
+        "phase1_pue_actual": 1.35
+      },
+      "outputs": {
+        "buffer_annual_holding_cost_eur": 1288000000,
+        "buffer_total_holding_cost_eur": 1932000000,
+        "phase1_budget_surplus_eur": -3182000000,
+        "phase2_fid_margin": 0.25,
+        "phase1_pue_margin": -0.05
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "buffer_annual_holding_cost_eur": {
+        "low": 386400000,
+        "base": 772800000,
+        "high": 1288000000,
+        "unit": "EUR_per_year",
+        "spread_ratio": 3.333333333333333,
+        "spread_absolute": 901600000
+      },
+      "buffer_total_holding_cost_eur": {
+        "low": 579600000,
+        "base": 1159200000,
+        "high": 1932000000,
+        "unit": "EUR",
+        "spread_ratio": 3.333333333333333,
+        "spread_absolute": 1352400000
+      },
+      "phase1_budget_surplus_eur": {
+        "low": 5670400000,
+        "base": 2090800000,
+        "high": -3182000000,
+        "unit": "EUR",
+        "spread_ratio": -0.5611916257054778,
+        "spread_absolute": -8852400000
+      },
+      "phase2_fid_margin": {
+        "low": -0.30,
+        "base": -0.10,
+        "high": 0.25,
+        "unit": "fraction",
+        "spread_ratio": -0.8333333333333334,
+        "spread_absolute": 0.55
+      },
+      "phase1_pue_margin": {
+        "low": 0.03,
+        "base": -0.02,
+        "high": -0.05,
+        "unit": "ratio",
+        "spread_ratio": -1.6666666666666667,
+        "spread_absolute": -0.08
+      }
+    }
+  },
+  "warnings": []
+}

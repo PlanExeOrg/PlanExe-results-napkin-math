@@ -1,0 +1,68 @@
+{
+  "avg_annual_opex_per_miu_usd": {
+    "unit": "USD_per_year",
+    "low": 2000000,
+    "base": 2500000,
+    "high": 3600000,
+    "rationale": "Plan names $2–3M as the baseline; Risk 4 names a 20% escalation scenario (+$400–600K/MIU) due to logistics and engineer-rotation costs, captured at the upper bound.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "avg_active_fleet_size_units": {
+    "unit": "units",
+    "low": 10,
+    "base": 15,
+    "high": 20,
+    "rationale": "Fleet ramps from 3 pilots in Year 2 to 30 units by Year 10; time-weighted average is mid-teens, with downside reflecting Phase-2 launch slip and upside reflecting accelerated scaling.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_uptime_share": {
+    "unit": "fraction",
+    "low": 0.75,
+    "base": 0.88,
+    "high": 0.95,
+    "rationale": "Plan targets >90%; Risk 1 names 'uptime drops below 80%' as the dominant operational shock if cannibalization fails; base sits just below the 90% target reflecting realistic field friction.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_review_load_share": {
+    "unit": "fraction",
+    "low": 0.10,
+    "base": 0.16,
+    "high": 0.25,
+    "rationale": "Issue 3 sensitivity: at AI FPR 10% the override produces ~11.5% load; at FPR 15% it reaches ~17.25%; upper tail captures the Risk 3 30–40 reviewers/MIU collapse scenario.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "modular_mtbf_actual_improvement_share": {
+    "unit": "fraction",
+    "low": 0.05,
+    "base": 0.22,
+    "high": 0.55,
+    "rationale": "Issue 1 names the 30% target as Builder's central R&D bet; downside reflects mostly-failed R&D where modular parts barely match OEM, upside reflects accelerated-life-test validation exceeding spec.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "modular_mtbf_improvement_target_share": {
+    "unit": "fraction",
+    "low": 0.20,
+    "base": 0.30,
+    "high": 0.40,
+    "rationale": "Plan commits to a 30% MTBF improvement over OEM as the Go/No-Go threshold; spread reflects how strictly the Month-18 review treats the target (stricter at the upper end).",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

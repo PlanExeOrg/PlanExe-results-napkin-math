@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "European Faraday Enclosure Launch (Tallinn-anchored)",
+    "plan_type": "consumer_hardware_startup",
+    "primary_goal": "Design, certify, and distribute a single-SKU consumer Faraday enclosure under the Pragmatic Foundation strategy, reaching €50k net cash from operations by Month 12 to unlock the €350k follow-on funding for a server-grade B2B pivot.",
+    "modelling_frame": "Tests the Month-12 net-cash margin against the €50k funder trigger; the 2,000-unit ISO-run sell-through margin against the 75% threshold; the Year-1 gross-profit margin against the €120k MIL-STD certification budget; the pre-sale conversion margin against the 5% Issue-1 floor; and the EU EMC certification budget margin against the €80k allocation. Funder trigger renegotiation, EU EMC certification pass, and conductive-gasket supply continuity are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "net_cash_target_month12_eur",
+      "label": "Funder Month-12 net-cash trigger",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 50000,
+      "comment": "Below €50k net cash from operations by Month 12 the funder may withhold €350k follow-on; this is the central financial gate of the Pragmatic Foundation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Negotiate a specific, measurable funding trigger: '€50k net cash from operations by Month 12, excluding the initial €400k investment'."
+    },
+    {
+      "id": "sell_through_target_share",
+      "label": "ISO-run sell-through target",
+      "category": "conversion",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.75,
+      "comment": "Below 75% sell-through (1,500 of 2,000 units) within 6 months the project is stuck with unsold inventory and the server-grade pivot has no cash.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Sell-through at 75% of 2,000 units funds the pivot — success threshold for binary production bet."
+    },
+    {
+      "id": "mil_std_cert_cost_eur",
+      "label": "MIL-STD-461 certification cost",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 120000,
+      "comment": "Year-1 gross profit must clear the €120k MIL-STD certification cost to fund the server-grade pivot; the two-tier pricing strategy exists to close this gap.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Planned €99 retail price generates only €89k gross profit, insufficient to fund the €120k MIL-STD certification."
+    },
+    {
+      "id": "presale_conversion_target_share",
+      "label": "Pre-sale conversion target",
+      "category": "conversion",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.05,
+      "comment": "Expert Issue 1 names 5% pre-sale conversion as the floor needed to justify the ISO run; below this the production bet collapses to inventory overhang.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Aim for a conversion rate of at least 5% from targeted traffic to justify the 2,000-unit run."
+    },
+    {
+      "id": "eu_emc_cert_budget_eur",
+      "label": "EU EMC certification budget allocation",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 80000,
+      "comment": "Year-1 budget allocates €80k for CE/EMC certification; Expert Issue 2 names a 30–50% cost-escalation scenario if the product fails initial tests.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "EU EMC certification: €80k."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_net_cash_month12_eur",
+      "label": "Achieved Month-12 net cash from operations",
+      "unit": "EUR",
+      "why_needed": "Below the €50k funder trigger the €350k follow-on is withheld; Risk 1 names this as the single largest governance risk in the plan.",
+      "suggested_estimation_method": "Year-1 cash-flow model with realistic retailer net-60 terms + 40% wholesale discount + payment-processor fund holds (per Data Item 4); sensitivity to a 2-month payment delay."
+    },
+    {
+      "id": "actual_sellthrough_share",
+      "label": "Achieved sell-through on the 2,000-unit ISO run within 6 months",
+      "unit": "fraction",
+      "why_needed": "Drives whether the binary 2,000-unit bet generates the cash needed for the server-grade pivot; Risk 2 names a €75k+ unsold-inventory scenario if sell-through falls to 50%.",
+      "suggested_estimation_method": "Pre-sale conversion × retailer pull-through × organic D2C; sensitivity to the SurvivalAid.de white-label volume and the €149 premium-tier price elasticity."
+    },
+    {
+      "id": "actual_year1_gross_profit_eur",
+      "label": "Achieved Year-1 gross profit across both pricing tiers",
+      "unit": "EUR",
+      "why_needed": "Below the €120k MIL-STD certification cost the server-grade pivot cannot be funded; the two-tier pricing model exists specifically to close this gap.",
+      "suggested_estimation_method": "Bottom-up: (pouch units × €79 × pouch_gross_margin) + (enclosure units × €149 × enclosure_gross_margin) - shared overhead; sensitivity to the two-tier mix and €99 baseline cannibalisation."
+    },
+    {
+      "id": "actual_presale_conversion_share",
+      "label": "Observed pre-sale landing-page conversion rate",
+      "unit": "fraction",
+      "why_needed": "Issue 1 sensitivity: at 2% conversion (vs assumed 5%) pre-sales are 600 not 1,500 units, leaving 1,400 unsold and €105k holding costs.",
+      "suggested_estimation_method": "Per Data Item 3 + 4: A/B test of 10% vs 50% deposits on a pre-order landing page; benchmark against direct-to-consumer European hardware launches in the prepper niche."
+    },
+    {
+      "id": "actual_eu_emc_cert_cost_eur",
+      "label": "Achieved EU EMC certification cost including any re-test cycles",
+      "unit": "EUR",
+      "why_needed": "Expert Issue 2 names a 30–50% cost-escalation scenario if the product fails initial tests; certification cost depletion forces a contingency drawdown that erodes the Month-12 net-cash trigger.",
+      "suggested_estimation_method": "Notified-body quote (TÜV SÜD/Eurofins) × probability-weighted re-test cycles; include pre-compliance testing budget per Issue 2 recommendation."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "month12_net_cash_margin_eur",
+      "label": "Month-12 net-cash margin against the €50k funder trigger",
+      "formula_hint": "month12_net_cash_margin_eur = actual_net_cash_month12_eur - net_cash_target_month12_eur",
+      "output_name": "month12_net_cash_margin_eur",
+      "output_unit": "EUR",
+      "depends_on": ["actual_net_cash_month12_eur", "net_cash_target_month12_eur"],
+      "why_first": "Positive margin unlocks the €350k follow-on funding and the server-grade pivot path; negative margin closes the entire growth pathway regardless of any other operational metric."
+    },
+    {
+      "id": "iso_run_sellthrough_margin",
+      "label": "ISO-run sell-through margin against the 75% threshold",
+      "formula_hint": "iso_run_sellthrough_margin = actual_sellthrough_share - sell_through_target_share",
+      "output_name": "iso_run_sellthrough_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_sellthrough_share", "sell_through_target_share"],
+      "why_first": "Positive margin clears the production-cash recovery threshold; negative margin produces the €75k+ unsold-inventory scenario that Risk 2 names as the operational failure mode."
+    },
+    {
+      "id": "milstd_funding_margin_eur",
+      "label": "MIL-STD certification funding margin",
+      "formula_hint": "milstd_funding_margin_eur = actual_year1_gross_profit_eur - mil_std_cert_cost_eur",
+      "output_name": "milstd_funding_margin_eur",
+      "output_unit": "EUR",
+      "depends_on": ["actual_year1_gross_profit_eur", "mil_std_cert_cost_eur"],
+      "why_first": "Positive margin self-funds the €120k MIL-STD pivot path; negative margin forces reliance on the €350k follow-on (already gated by the Month-12 trigger) and risks stalling the B2B strategy entirely."
+    },
+    {
+      "id": "presale_conversion_margin",
+      "label": "Pre-sale conversion margin against the 5% floor",
+      "formula_hint": "presale_conversion_margin = actual_presale_conversion_share - presale_conversion_target_share",
+      "output_name": "presale_conversion_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_presale_conversion_share", "presale_conversion_target_share"],
+      "why_first": "Positive margin justifies the 2,000-unit ISO commitment; negative margin invalidates the entire production-scale decision per Expert Issue 1's sensitivity model."
+    },
+    {
+      "id": "eu_emc_cert_budget_margin_eur",
+      "label": "EU EMC certification budget margin",
+      "formula_hint": "eu_emc_cert_budget_margin_eur = eu_emc_cert_budget_eur - actual_eu_emc_cert_cost_eur",
+      "output_name": "eu_emc_cert_budget_margin_eur",
+      "output_unit": "EUR",
+      "depends_on": ["eu_emc_cert_budget_eur", "actual_eu_emc_cert_cost_eur"],
+      "why_first": "Positive margin preserves the €20k contingency for marketing and supply-chain surprises; negative margin (Expert Issue 2's 30–50% re-test scenario) directly threatens the Month-12 net-cash trigger."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "funding_trigger_renegotiation_gate",
+      "label": "Funder agrees to renegotiate 'positive cash flow' to '€50k net cash by Month 12' by Month 6",
+      "why_it_matters": "Risk 1 names the vague trigger as the single largest governance risk; without renegotiation the €350k follow-on is at the funder's discretion regardless of any quantitative margin the model evaluates.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "A single late retailer payment or certification slip pushes 'cash flow' negative under the loose definition; funder withholds €350k; server-grade pivot path closes and the €400k Year-1 capital is stranded."
+    },
+    {
+      "id": "eu_emc_certification_passes_gate",
+      "label": "Product passes EU EMC certification without requiring fundamental redesign",
+      "why_it_matters": "Risk 8 and Issue 2 name a redesign event as a €20–40k unbudgeted cost plus 3–6 month delay; certification failure is a binary event the simulation models only via cost overrun, not as a redesign-triggered restart.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Combo-SKU redesign costs €20–40k; market entry delays 3–6 months; the Year-1 revenue window collapses and the Month-12 trigger becomes unreachable regardless of pre-sale conversion."
+    },
+    {
+      "id": "gasket_supply_continuity_gate",
+      "label": "Conductive-gasket and copper-beryllium finger-stock supply remains continuous",
+      "why_it_matters": "Risk 6 and Issue 3 name an 8–12 week gasket-supply delay as the dominant supply-chain shock; the plan single-sources from a German supplier and the mitigation (qualify two backup suppliers) takes 8–12 weeks itself.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Production halts 4–8 weeks; pre-sale delivery slippage triggers chargeback exposure (Risk 9); cash-flow trigger missed; pivot path closed before Month 12."
+    }
+  ]
+}

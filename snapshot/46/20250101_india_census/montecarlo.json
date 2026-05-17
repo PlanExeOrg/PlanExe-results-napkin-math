@@ -1,0 +1,333 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026\u20132027",
+    "plan_type": "national_governance_program"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "budget_overrun_margin_inr": {
+      "unit": "INR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 3354152418.3655205,
+      "std": 11349427249.132719,
+      "min": -24694520863.641754,
+      "p05": -16087455573.367973,
+      "p25": -4811356377.28228,
+      "p50": 3781129817.383957,
+      "p75": 11698833071.681725,
+      "p95": 21837053715.912643,
+      "max": 29791187099.814926
+    },
+    "household_coverage_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.04180906259117645,
+      "std": 0.024694398906208958,
+      "min": -0.10924854263427519,
+      "p05": -0.0866930705281425,
+      "p25": -0.0597669196972109,
+      "p50": -0.038524843272367715,
+      "p75": -0.021990534383926952,
+      "p95": -0.007153684553023282,
+      "max": 0.004667283026432489
+    },
+    "provisional_publish_timing_margin_months": {
+      "unit": "months",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -1.0246,
+      "std": 1.260077315088245,
+      "min": -4.0,
+      "p05": -3.0,
+      "p25": -2.0,
+      "p50": -1.0,
+      "p75": 0.0,
+      "p95": 1.0,
+      "max": 2.0
+    },
+    "mttr_margin_hours": {
+      "unit": "hours",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -1.2075169610596164,
+      "std": 2.5886330425055033,
+      "min": -9.467805880415824,
+      "p05": -5.673861408096755,
+      "p25": -2.963330302888753,
+      "p50": -1.0568645619240264,
+      "p75": 0.6475002939413945,
+      "p95": 2.8574778682775386,
+      "max": 6.253050416926522
+    },
+    "device_audit_failure_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.03191468718135605,
+      "std": 0.02099718723920238,
+      "min": -0.08930089902406042,
+      "p05": -0.07098103844881516,
+      "p25": -0.04695353944326243,
+      "p50": -0.028716923029340903,
+      "p75": -0.014396103987615297,
+      "p95": -0.0037760206778009323,
+      "max": 0.0045416137823718694
+    }
+  },
+  "thresholds": {
+    "budget_overrun_margin_inr": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6240,
+      "valid_count": 10000,
+      "probability": 0.624
+    },
+    "household_coverage_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 98,
+      "valid_count": 10000,
+      "probability": 0.0098
+    },
+    "provisional_publish_timing_margin_months": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3381,
+      "valid_count": 10000,
+      "probability": 0.3381
+    },
+    "mttr_margin_hours": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3412,
+      "valid_count": 10000,
+      "probability": 0.3412
+    },
+    "device_audit_failure_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 142,
+      "valid_count": 10000,
+      "probability": 0.0142
+    }
+  },
+  "sensitivity": {
+    "budget_overrun_margin_inr": {
+      "top_inputs": [
+        {
+          "id": "actual_total_census_spend_inr",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "household_coverage_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_household_coverage_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "provisional_publish_timing_margin_months": {
+      "top_inputs": [
+        {
+          "id": "actual_provisional_publish_months",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "mttr_margin_hours": {
+      "top_inputs": [
+        {
+          "id": "actual_mttr_hours",
+          "correlation": -0.8792
+        },
+        {
+          "id": "mttr_max_hours",
+          "correlation": 0.4643
+        }
+      ]
+    },
+    "device_audit_failure_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_device_audit_failure_share",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "budget_overrun_margin_inr": [
+      {
+        "id": "actual_total_census_spend_inr",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "household_coverage_margin": [
+      {
+        "id": "actual_household_coverage_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0392,
+        "delta_pp": 3.92
+      }
+    ],
+    "provisional_publish_timing_margin_months": [
+      {
+        "id": "actual_provisional_publish_months",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "mttr_margin_hours": [
+      {
+        "id": "actual_mttr_hours",
+        "p_pass_low_quartile": 0.8564,
+        "p_pass_high_quartile": 0.0012,
+        "delta_pp": -85.52
+      },
+      {
+        "id": "mttr_max_hours",
+        "p_pass_low_quartile": 0.124,
+        "p_pass_high_quartile": 0.5948,
+        "delta_pp": 47.08
+      }
+    ],
+    "device_audit_failure_margin": [
+      {
+        "id": "actual_device_audit_failure_share",
+        "p_pass_low_quartile": 0.0568,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -5.68
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "budget_overrun_margin_inr": [
+      {
+        "id": "actual_total_census_spend_inr",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 154811356377.2823,
+        "conditional_pass_prob": 0.832,
+        "admitted_fraction": 0.75
+      }
+    ],
+    "provisional_publish_timing_margin_months": [
+      {
+        "id": "actual_provisional_publish_months",
+        "direction": "below",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 6.0,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.3381
+      }
+    ],
+    "mttr_margin_hours": [
+      {
+        "id": "actual_mttr_hours",
+        "direction": "below",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 4.1161270854679834,
+        "conditional_pass_prob": 0.8564,
+        "admitted_fraction": 0.25
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_mttr_hours",
+      "score": 137.7214,
+      "worst_gate": "mttr_margin_hours",
+      "bound_width_ratio": 2.4444,
+      "source": "data"
+    },
+    {
+      "id": "actual_provisional_publish_months",
+      "score": 56.7343,
+      "worst_gate": "provisional_publish_timing_margin_months",
+      "bound_width_ratio": 0.8571,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_device_audit_failure_share",
+      "score": 26.5969,
+      "worst_gate": "device_audit_failure_margin",
+      "bound_width_ratio": 4.75,
+      "source": "data"
+    },
+    {
+      "id": "actual_total_census_spend_inr",
+      "score": 14.2621,
+      "worst_gate": "budget_overrun_margin_inr",
+      "bound_width_ratio": 0.3793,
+      "source": "data"
+    },
+    {
+      "id": "actual_household_coverage_share",
+      "score": 0.4602,
+      "worst_gate": "household_coverage_margin",
+      "bound_width_ratio": 0.1186,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "budget_overrun_margin_inr": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.3793,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.38"
+      ]
+    },
+    "household_coverage_margin": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.1186,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.12"
+      ]
+    },
+    "provisional_publish_timing_margin_months": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.8571,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.86"
+      ]
+    },
+    "mttr_margin_hours": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.9722,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.97"
+      ]
+    },
+    "device_audit_failure_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 4.75,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 4.75"
+      ]
+    }
+  },
+  "warnings": []
+}
