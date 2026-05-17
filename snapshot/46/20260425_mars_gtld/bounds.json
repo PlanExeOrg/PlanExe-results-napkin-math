@@ -1,0 +1,79 @@
+{
+  "actual_year1_registrations_units": {
+    "unit": "domains",
+    "low": 1000,
+    "base": 3500,
+    "high": 8000,
+    "rationale": "Issue 2 names 3,000 domains as the realistic downside scenario at $50/domain; base just below the 5,000 break-even threshold; upper bound captures aggressive defensive-trademark plus speculative early-registration uptake.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_delegation_months": {
+    "unit": "months",
+    "low": 16,
+    "base": 22,
+    "high": 30,
+    "rationale": "Plan target is 18 months; Risk 1 names 6–12 month delay from sovereign objections, Risk 5 names 3–6 month delay from political backlash; upper bound captures combined cascade.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_year1_total_cost_usd": {
+    "unit": "USD",
+    "low": 25000000,
+    "base": 50000000,
+    "high": 95000000,
+    "rationale": "Plan envelope is $25–100M+; base reflects realistic Builder-strategy Year-1 spend including 5 FTE × 18 months + ICANN fees + outreach; upper bound captures Risk 3 $10–20M overrun scenario.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_mars_endpoint_kbps": {
+    "unit": "kbps",
+    "low": 30,
+    "base": 80,
+    "high": 200,
+    "rationale": "Mars relay capacity is highly uncertain in 2027–2028; base just below the 100 kbps target reflects realistic relay-network constraints; downside captures dust-storm-degraded operation.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_hsm_capex_usd": {
+    "unit": "USD",
+    "low": 3000000,
+    "base": 6000000,
+    "high": 10000000,
+    "rationale": "Issue 3 names $5–10M for FIPS 140-2 Level 3 HSM procurement; base just above the $5M floor reflects realistic vendor pricing; downside captures partial procurement or reverted Decision-4 choice.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "year1_breakeven_threshold_units": {
+    "unit": "domains",
+    "low": 3000,
+    "base": 5000,
+    "high": 8000,
+    "rationale": "Issue 2 names 5,000 domains as the break-even floor at $50/domain; spread reflects price-elasticity assumptions — lower break-even at higher prices, higher break-even at lower prices.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "mars_mos_kbps": {
+    "unit": "kbps",
+    "low": 50,
+    "base": 100,
+    "high": 200,
+    "rationale": "Plan commits to 100 kbps as the MOS floor; spread reflects how strictly the High-Freshness tier is interpreted — looser at the lower end (Beta Tier), stricter at the upper end.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

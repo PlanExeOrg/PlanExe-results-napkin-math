@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": ".mars gTLD ICANN Delegation (Builder's Pragmatic Infrastructure)",
+    "plan_type": "internet_governance_program",
+    "primary_goal": "Secure ICANN delegation of the .mars gTLD into the DNS root zone by 2027-11-02 under the Builder's Pragmatic Infrastructure Leadership scenario, on a $25–100M+ budget, with internal HSM custody and a validated 100 kbps Mars MOS.",
+    "modelling_frame": "Tests the Year-1 registration-volume margin against the 5,000-domain break-even threshold; the ICANN delegation timing margin against the 18-month deadline; the budget surplus against bottom-up Year-1 cost; the Mars MOS margin against the 100 kbps sustained-downlink requirement; and the HSM-CapEx adequacy margin against the $5M minimum sovereignty floor. ICANN application approval, major space-agency endorsement, and string-contention resolution are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "budget_high_usd",
+      "label": "High-end budget envelope",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 100000000,
+      "comment": "Upper bound of the $25–100M+ Builder envelope; absorbs string-contention contingency ($10–20M), HSM CapEx ($5M+), and OpEx through ICANN delegation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "High-end budget envelope: USD 25M–100M or more — input to financial projection model."
+    },
+    {
+      "id": "delegation_deadline_months",
+      "label": "ICANN delegation deadline",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 18,
+      "comment": "Target delegation into the DNS root by 2027-11-02 (18 months from start); slippage past this triggers Risk 1/5 political-cost and Risk 3 financial-strain cascades.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Within 18 months of project start (Target Completion: 2027-November-02)."
+    },
+    {
+      "id": "year1_breakeven_threshold_units",
+      "label": "Year-1 break-even registration volume threshold",
+      "category": "conversion",
+      "value_type": "explicit",
+      "unit": "domains",
+      "value": 5000,
+      "comment": "Issue 2 names 5,000 domains as the Year-1 break-even floor at $50/domain; below this the 50% revenue pledge converts to a fixed annual contribution.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Required Year 1 registration volume to cover base overhead: 5,000 registrations — trigger for environmental pledge suspension."
+    },
+    {
+      "id": "mars_mos_kbps",
+      "label": "Mars Minimum Operational Specification",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "kbps",
+      "value": 100,
+      "comment": "Sustained downlink floor required from Mars synchronization endpoints; below this the 60-minute freshness window cannot hold and Beta-Tier restriction policy activates.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Minimum sustained downlink bandwidth required from Mars endpoints: 100kbps."
+    },
+    {
+      "id": "hsm_capex_min_usd",
+      "label": "Minimum HSM-procurement CapEx for cryptographic sovereignty",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 5000000,
+      "comment": "Issue 3 names $5M+ as mandatory floor for internal FIPS 140-2 Level 3 HSM procurement; below this Decision-4 external KSK delegation persists.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Cost to procure internal Hardware Security Modules: $5M+ — mandatory capital expenditure for security sovereignty."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_year1_registrations_units",
+      "label": "Achieved Year-1 .mars domain registration volume",
+      "unit": "domains",
+      "why_needed": "Drives whether the 5,000-domain break-even floor clears at the $50/domain assumption; Issue 2 sensitivity: 3,000 domains yields only $150k net revenue against $25M+ overhead.",
+      "suggested_estimation_method": "Anchor on ICANN historical new-gTLD adoption curves × Mars-specific demand from space-industry entities + speculative early registrations; sensitivity to defensive trademark purchases."
+    },
+    {
+      "id": "actual_delegation_months",
+      "label": "Achieved months from start to ICANN root-zone delegation",
+      "unit": "months",
+      "why_needed": "Below the 18-month deadline keeps the political-cost cascade dormant; above triggers Risk 1 (6–12 mo, $5–10M) and Risk 5 (3–6 mo, $2–4M) delay scenarios.",
+      "suggested_estimation_method": "Sum application + ICANN review + objection-response + technical conformance windows; sensitivity to GAC early-warning outcomes and string-contention auctions."
+    },
+    {
+      "id": "actual_year1_total_cost_usd",
+      "label": "Bottom-up Year-1 total cost including HSM CapEx and contingency",
+      "unit": "USD",
+      "why_needed": "Tests whether the $100M ceiling absorbs $25M base overhead + $5–10M HSM CapEx + $10–20M contingency + political-outreach overhead.",
+      "suggested_estimation_method": "Bottom-up: 5 FTE × loaded rate × 18 months + ICANN fees + legal/political outreach + HSM + DNSSEC outsourcing + Tier-1 cloud; sensitivity to Risk 3 cost-overrun scenarios."
+    },
+    {
+      "id": "actual_mars_endpoint_kbps",
+      "label": "Achieved sustained Mars endpoint downlink",
+      "unit": "kbps",
+      "why_needed": "Issue 1 sensitivity: 95% availability nullifies the 60-minute sync window; below the 100 kbps MOS the High-Freshness tier cannot launch as planned.",
+      "suggested_estimation_method": "Model relay-network capacity for first-five Mars users × dust-storm-adjusted uptime; benchmark against Mars Reconnaissance Orbiter and projected commercial relay throughput."
+    },
+    {
+      "id": "actual_hsm_capex_usd",
+      "label": "Achieved HSM-procurement CapEx",
+      "unit": "USD",
+      "why_needed": "Issue 3 names a $5M+ floor for FIPS 140-2 Level 3 sovereign key custody; below this the external-KSK-delegation political risk persists.",
+      "suggested_estimation_method": "Quotation from FIPS 140-2 Level 3 HSM vendors (Thales, Entrust, etc.) + secure-facility build + 12-month training; cross-check against Issue 3's $5–10M envelope."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "year1_registration_volume_margin_units",
+      "label": "Year-1 registration-volume margin against the 5,000-domain break-even floor",
+      "formula_hint": "year1_registration_volume_margin_units = actual_year1_registrations_units - year1_breakeven_threshold_units",
+      "output_name": "year1_registration_volume_margin_units",
+      "output_unit": "domains",
+      "depends_on": ["actual_year1_registrations_units", "year1_breakeven_threshold_units"],
+      "why_first": "Positive margin clears the Issue-2 break-even floor and keeps the 50% revenue pledge intact; negative margin forces conversion of the pledge to a fixed annual contribution and shrinks the Mars environmental commitment."
+    },
+    {
+      "id": "delegation_timing_margin_months",
+      "label": "ICANN delegation timing margin against the 18-month deadline",
+      "formula_hint": "delegation_timing_margin_months = delegation_deadline_months - actual_delegation_months",
+      "output_name": "delegation_timing_margin_months",
+      "output_unit": "months",
+      "depends_on": ["delegation_deadline_months", "actual_delegation_months"],
+      "why_first": "Positive margin secures first-mover advantage in interplanetary digital governance; negative margin triggers Risk 1/5 political-cost cascade and Risk 3 cost-overrun pressure on the budget envelope."
+    },
+    {
+      "id": "budget_surplus_usd",
+      "label": "Year-1 budget surplus against the $100M envelope",
+      "formula_hint": "budget_surplus_usd = budget_high_usd - actual_year1_total_cost_usd",
+      "output_name": "budget_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["budget_high_usd", "actual_year1_total_cost_usd"],
+      "why_first": "Positive surplus preserves the contingency reserve for string-contention auctions and extended political negotiation; negative surplus triggers Risk-3 cost-overrun austerity that cuts political outreach or HSM procurement."
+    },
+    {
+      "id": "mars_mos_margin_kbps",
+      "label": "Mars MOS margin against the 100 kbps requirement",
+      "formula_hint": "mars_mos_margin_kbps = actual_mars_endpoint_kbps - mars_mos_kbps",
+      "output_name": "mars_mos_margin_kbps",
+      "output_unit": "kbps",
+      "depends_on": ["actual_mars_endpoint_kbps", "mars_mos_kbps"],
+      "why_first": "Positive margin validates the 60-minute synchronization tier; negative margin forces the Beta-Tier restriction policy and the 15–25% Year-1 ROI loss flagged by Issue 1."
+    },
+    {
+      "id": "hsm_capex_adequacy_margin_usd",
+      "label": "HSM-CapEx adequacy margin against the $5M sovereignty floor",
+      "formula_hint": "hsm_capex_adequacy_margin_usd = actual_hsm_capex_usd - hsm_capex_min_usd",
+      "output_name": "hsm_capex_adequacy_margin_usd",
+      "output_unit": "USD",
+      "depends_on": ["actual_hsm_capex_usd", "hsm_capex_min_usd"],
+      "why_first": "Positive margin secures internal KSK custody and aligns with Issue-3 political-risk mitigation; negative margin leaves Decision-4 external delegation in place and exposes the project to the 9–15 month ICANN-delay scenario."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "icann_application_approval_gate",
+      "label": "ICANN approves the .mars gTLD application via the New gTLD Program",
+      "why_it_matters": "ICANN approval is the binary delegation event; without it the entire project's commercial premise collapses regardless of any operational margin the model evaluates.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "All Year-1 capital and political-outreach spending becomes sunk cost; first-mover advantage forfeited; the Builder strategy thesis fails entirely."
+    },
+    {
+      "id": "major_space_agency_endorsement_gate",
+      "label": "At least two major space agencies provide non-objection / observer support",
+      "why_it_matters": "Risk 1/5 names sovereign objection as the High/High blocking risk; without two major-agency endorsements the ICANN review panel faces unmitigated political controversy regardless of technical compliance.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "6–12 month delay per Risk 1 + $5–10M extra lobbying cost; ICANN may withhold delegation pending consensus that cannot be manufactured under the Builder strategy timeline."
+    },
+    {
+      "id": "string_contention_resolution_gate",
+      "label": "No competing .mars gTLD application reaches private-auction stage or contention resolves favourably",
+      "why_it_matters": "Risk 3 names $10–20M as the contingency for string-contention defense; an aggressive competing applicant could trigger a private auction far above the contingency ceiling, exhausting the entire $100M envelope without delegation.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Contingency drawdown beyond $20M; project must choose between auction exit (forfeiting strategy) or capital call to defend; either path threatens delegation timing and Year-1 budget surplus."
+    }
+  ]
+}

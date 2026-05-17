@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Denmark DKK→EUR Adoption (Builder's Blueprint)",
+    "plan_type": "national_monetary_transition"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "max_budget_dkk": 25000000000,
+        "timeline_max_years": 8,
+        "deficit_criterion_share": 0.03,
+        "referendum_support_threshold": 0.50,
+        "public_awareness_threshold": 0.60,
+        "actual_total_transition_cost_dkk": 14000000000,
+        "actual_timeline_years": 5,
+        "actual_referendum_support_share": 0.40,
+        "actual_deficit_share": 0.01,
+        "actual_public_awareness_share": 0.45
+      },
+      "outputs": {
+        "budget_surplus_dkk": 11000000000,
+        "timeline_margin_years": 3,
+        "referendum_support_margin": -0.10,
+        "deficit_compliance_margin": 0.02,
+        "public_awareness_margin": -0.15
+      }
+    },
+    "base": {
+      "inputs": {
+        "max_budget_dkk": 25000000000,
+        "timeline_max_years": 8,
+        "deficit_criterion_share": 0.03,
+        "referendum_support_threshold": 0.60,
+        "public_awareness_threshold": 0.70,
+        "actual_total_transition_cost_dkk": 22000000000,
+        "actual_timeline_years": 7,
+        "actual_referendum_support_share": 0.55,
+        "actual_deficit_share": 0.025,
+        "actual_public_awareness_share": 0.65
+      },
+      "outputs": {
+        "budget_surplus_dkk": 3000000000,
+        "timeline_margin_years": 1,
+        "referendum_support_margin": -0.05,
+        "deficit_compliance_margin": 0.005,
+        "public_awareness_margin": -0.05
+      }
+    },
+    "high": {
+      "inputs": {
+        "max_budget_dkk": 25000000000,
+        "timeline_max_years": 8,
+        "deficit_criterion_share": 0.03,
+        "referendum_support_threshold": 0.65,
+        "public_awareness_threshold": 0.80,
+        "actual_total_transition_cost_dkk": 35000000000,
+        "actual_timeline_years": 10,
+        "actual_referendum_support_share": 0.70,
+        "actual_deficit_share": 0.045,
+        "actual_public_awareness_share": 0.85
+      },
+      "outputs": {
+        "budget_surplus_dkk": -10000000000,
+        "timeline_margin_years": -2,
+        "referendum_support_margin": 0.05,
+        "deficit_compliance_margin": -0.015,
+        "public_awareness_margin": 0.05
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "budget_surplus_dkk": {
+        "low": 11000000000,
+        "base": 3000000000,
+        "high": -10000000000,
+        "unit": "DKK",
+        "spread_ratio": -0.9090909090909091,
+        "spread_absolute": -21000000000
+      },
+      "timeline_margin_years": {
+        "low": 3,
+        "base": 1,
+        "high": -2,
+        "unit": "years",
+        "spread_ratio": -0.6666666666666666,
+        "spread_absolute": -5
+      },
+      "referendum_support_margin": {
+        "low": -0.10,
+        "base": -0.05,
+        "high": 0.05,
+        "unit": "fraction",
+        "spread_ratio": -0.5,
+        "spread_absolute": 0.15
+      },
+      "deficit_compliance_margin": {
+        "low": 0.02,
+        "base": 0.005,
+        "high": -0.015,
+        "unit": "fraction",
+        "spread_ratio": -0.75,
+        "spread_absolute": -0.035
+      },
+      "public_awareness_margin": {
+        "low": -0.15,
+        "base": -0.05,
+        "high": 0.05,
+        "unit": "fraction",
+        "spread_ratio": -0.3333333333333333,
+        "spread_absolute": 0.20
+      }
+    }
+  },
+  "warnings": []
+}

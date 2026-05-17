@@ -1,0 +1,344 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": ".mars gTLD ICANN Delegation (Builder's Pragmatic Infrastructure)",
+    "plan_type": "internet_governance_program"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "year1_registration_volume_margin_units": {
+      "unit": "domains",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -1160.3945,
+      "std": 1768.8775346726945,
+      "min": -6511.0,
+      "p05": -4015.0,
+      "p25": -2414.25,
+      "p50": -1200.0,
+      "p75": 49.0,
+      "p95": 1840.0499999999993,
+      "max": 4575.0
+    },
+    "delegation_timing_margin_months": {
+      "unit": "months",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -4.7205,
+      "std": 2.882842304046477,
+      "min": -12.0,
+      "p05": -10.0,
+      "p25": -7.0,
+      "p50": -5.0,
+      "p75": -3.0,
+      "p95": 0.0,
+      "max": 2.0
+    },
+    "budget_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 43189975.73149816,
+      "std": 14467654.016148647,
+      "min": 6000893.599376321,
+      "p05": 17709500.188956212,
+      "p25": 33013378.96997208,
+      "p50": 44588385.0348284,
+      "p75": 53991075.47559502,
+      "p95": 65589320.962658286,
+      "max": 74904819.4840093
+    },
+    "mars_mos_margin_kbps": {
+      "unit": "kbps",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -12.870316040512092,
+      "std": 47.62353939040495,
+      "min": -144.23257739796844,
+      "p05": -91.09125924873791,
+      "p25": -46.05314681794178,
+      "p50": -13.720453594265166,
+      "p75": 19.155917465418003,
+      "p95": 68.38810530918285,
+      "max": 130.35643565581915
+    },
+    "hsm_capex_adequacy_margin_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1330215.6291083181,
+      "std": 1449768.4589716438,
+      "min": -1960126.249404645,
+      "p05": -987892.6799485883,
+      "p25": 269578.33067029784,
+      "p50": 1253626.8629620927,
+      "p75": 2367526.259525472,
+      "p95": 3849614.7373812497,
+      "max": 4933350.356434496
+    }
+  },
+  "thresholds": {
+    "year1_registration_volume_margin_units": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2581,
+      "valid_count": 10000,
+      "probability": 0.2581
+    },
+    "delegation_timing_margin_months": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 706,
+      "valid_count": 10000,
+      "probability": 0.0706
+    },
+    "budget_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "mars_mos_margin_kbps": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3883,
+      "valid_count": 10000,
+      "probability": 0.3883
+    },
+    "hsm_capex_adequacy_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 8045,
+      "valid_count": 10000,
+      "probability": 0.8045
+    }
+  },
+  "sensitivity": {
+    "year1_registration_volume_margin_units": {
+      "top_inputs": [
+        {
+          "id": "actual_year1_registrations_units",
+          "correlation": 0.8185
+        },
+        {
+          "id": "year1_breakeven_threshold_units",
+          "correlation": -0.5748
+        }
+      ]
+    },
+    "delegation_timing_margin_months": {
+      "top_inputs": [
+        {
+          "id": "actual_delegation_months",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "budget_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_year1_total_cost_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "mars_mos_margin_kbps": {
+      "top_inputs": [
+        {
+          "id": "actual_mars_endpoint_kbps",
+          "correlation": 0.7505
+        },
+        {
+          "id": "mars_mos_kbps",
+          "correlation": -0.6581
+        }
+      ]
+    },
+    "hsm_capex_adequacy_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_hsm_capex_usd",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "year1_registration_volume_margin_units": [
+      {
+        "id": "actual_year1_registrations_units",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.7348,
+        "delta_pp": 73.48
+      },
+      {
+        "id": "year1_breakeven_threshold_units",
+        "p_pass_low_quartile": 0.4924,
+        "p_pass_high_quartile": 0.06190095846645367,
+        "delta_pp": -43.05
+      }
+    ],
+    "delegation_timing_margin_months": [
+      {
+        "id": "actual_delegation_months",
+        "p_pass_low_quartile": 0.2010250569476082,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -20.1
+      }
+    ],
+    "budget_surplus_usd": [
+      {
+        "id": "actual_year1_total_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "mars_mos_margin_kbps": [
+      {
+        "id": "actual_mars_endpoint_kbps",
+        "p_pass_low_quartile": 0.0288,
+        "p_pass_high_quartile": 0.8324,
+        "delta_pp": 80.36
+      },
+      {
+        "id": "mars_mos_kbps",
+        "p_pass_low_quartile": 0.7132,
+        "p_pass_high_quartile": 0.0948,
+        "delta_pp": -61.84
+      }
+    ],
+    "hsm_capex_adequacy_margin_usd": [
+      {
+        "id": "actual_hsm_capex_usd",
+        "p_pass_low_quartile": 0.218,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 78.2
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "year1_registration_volume_margin_units": [
+      {
+        "id": "actual_year1_registrations_units",
+        "direction": "above",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 5806.15,
+        "conditional_pass_prob": 0.8347,
+        "admitted_fraction": 0.15
+      }
+    ],
+    "delegation_timing_margin_months": [
+      {
+        "id": "actual_delegation_months",
+        "direction": "below",
+        "input_percentile_cutoff": 95,
+        "cutoff_value": 18.0,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.0706
+      }
+    ],
+    "mars_mos_margin_kbps": [
+      {
+        "id": "actual_mars_endpoint_kbps",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 129.47457118188504,
+        "conditional_pass_prob": 0.8324,
+        "admitted_fraction": 0.25
+      },
+      {
+        "id": "mars_mos_kbps",
+        "direction": "below",
+        "input_percentile_cutoff": 90,
+        "cutoff_value": 77.14918900450517,
+        "conditional_pass_prob": 0.813,
+        "admitted_fraction": 0.1
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_year1_registrations_units",
+      "score": 109.0296,
+      "worst_gate": "year1_registration_volume_margin_units",
+      "bound_width_ratio": 2.0,
+      "source": "data"
+    },
+    {
+      "id": "actual_mars_endpoint_kbps",
+      "score": 104.457,
+      "worst_gate": "mars_mos_margin_kbps",
+      "bound_width_ratio": 2.125,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_hsm_capex_usd",
+      "score": 17.8361,
+      "worst_gate": "hsm_capex_adequacy_margin_usd",
+      "bound_width_ratio": 1.1667,
+      "source": "data"
+    },
+    {
+      "id": "actual_delegation_months",
+      "score": 11.8879,
+      "worst_gate": "delegation_timing_margin_months",
+      "bound_width_ratio": 0.6364,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "year1_registration_volume_margin_units": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.5,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.50"
+      ]
+    },
+    "delegation_timing_margin_months": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6364,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.64"
+      ]
+    },
+    "budget_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.4,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.40"
+      ]
+    },
+    "mars_mos_margin_kbps": {
+      "grade": "LOW",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.8125,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.81"
+      ]
+    },
+    "hsm_capex_adequacy_margin_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.1667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.17"
+      ]
+    }
+  },
+  "warnings": []
+}

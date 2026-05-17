@@ -1,0 +1,79 @@
+{
+  "actual_zone_zero_compliance_share": {
+    "unit": "fraction",
+    "low": 0.75,
+    "base": 0.93,
+    "high": 0.99,
+    "rationale": "Contraflow throughput on US-191/US-20 under landslide-blockage risk; base just below the 98% target reflects realistic execution; downside captures Risk-1 secondary-incident cascade.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_drf_spend_usd": {
+    "unit": "USD",
+    "low": 200000000,
+    "base": 450000000,
+    "high": 700000000,
+    "rationale": "Bottom-up estimate of 24-hour spend on contraflow, airlift, N95, fuel caches, and National Guard activation; base just below the $500M ceiling; upper bound captures Risk-2 emergency-mobilization overrun.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_n95_staging_share": {
+    "unit": "fraction",
+    "low": 0.05,
+    "base": 0.20,
+    "high": 0.45,
+    "rationale": "10 CH-47 sorties × payload × utilization; base just below the 30% target reflects Issue-1 sensitivity; downside captures airborne-visibility grounding scenario.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_c2_fuel_endurance_hours": {
+    "unit": "hours",
+    "low": 24,
+    "base": 60,
+    "high": 90,
+    "rationale": "Issue 2 names 24 hours as the UPS-only baseline without engineering diversion; base reflects partial cache build by T+6 under jurisdictional friction; upper bound assumes full cache + tanker resupply.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_public_compliance_share": {
+    "unit": "fraction",
+    "low": 0.50,
+    "base": 0.72,
+    "high": 0.92,
+    "rationale": "IPAWS reach × Decision-8 messaging effectiveness × historical evacuation-compliance rates; base just above the 70% threshold reflects realistic execution under Decision-8 Choice-1 messaging.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "n95_staging_target_share": {
+    "unit": "fraction",
+    "low": 0.20,
+    "base": 0.30,
+    "high": 0.45,
+    "rationale": "Plan commits to 30% N95/water staging by T+16; spread reflects how strictly downstream Zone-One commitments interpret the target — looser at the lower end, stricter at the upper.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "public_compliance_threshold": {
+    "unit": "fraction",
+    "low": 0.65,
+    "base": 0.70,
+    "high": 0.80,
+    "rationale": "Plan names 70% as the panic-floor threshold; spread reflects how strictly congestion-mitigation planners treat the threshold — looser at the lower end, stricter at the upper.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

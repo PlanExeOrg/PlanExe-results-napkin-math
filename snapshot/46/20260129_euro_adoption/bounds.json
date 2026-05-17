@@ -1,0 +1,79 @@
+{
+  "actual_total_transition_cost_dkk": {
+    "unit": "DKK",
+    "low": 14000000000,
+    "base": 22000000000,
+    "high": 35000000000,
+    "rationale": "Plan envelope is DKK 15–25B; base near the ceiling reflects realistic Builder's Blueprint execution; upper bound captures Issue 2's inflation erosion (DKK 2.2B per 2pp inflation) plus Risk-3 fiscal-adjustment overrun.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_timeline_years": {
+    "unit": "years",
+    "low": 5,
+    "base": 7,
+    "high": 10,
+    "rationale": "Plan window is 4–8 years; base near the ceiling reflects Issue 1's sequencing friction; upper bound captures combined Risk-1 (12–24 month EU delay) + Risk-3 (6–18 month convergence delay) cascading.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_referendum_support_share": {
+    "unit": "fraction",
+    "low": 0.40,
+    "base": 0.55,
+    "high": 0.70,
+    "rationale": "Historical Danish EU-treaty referenda show wide swings; base just below the 60% threshold reflects pre-campaign polling volatility; downside captures Risk-2 termination scenario.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_deficit_share": {
+    "unit": "fraction",
+    "low": 0.01,
+    "base": 0.025,
+    "high": 0.045,
+    "rationale": "Denmark's historical fiscal track is strong (often surplus); base just below the 3% threshold reflects realistic business-cycle pressure across 24+ months; upside captures Risk-3 fiscal-adjustment breach scenario.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_public_awareness_share": {
+    "unit": "fraction",
+    "low": 0.45,
+    "base": 0.65,
+    "high": 0.85,
+    "rationale": "Plan targets 70% awareness; base just below the threshold reflects realistic campaign reach at 0.5% budget allocation; upside captures aggressive Strategy-11 communication uplift.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "referendum_support_threshold": {
+    "unit": "fraction",
+    "low": 0.50,
+    "base": 0.60,
+    "high": 0.65,
+    "rationale": "Plan names 60% as inferred mandate floor; spread reflects how strictly downstream political commentary treats the threshold — simple majority at the lower bound, super-majority at the upper.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "public_awareness_threshold": {
+    "unit": "fraction",
+    "low": 0.60,
+    "base": 0.70,
+    "high": 0.80,
+    "rationale": "Plan names 70% as the campaign-pacing trigger; spread reflects how strictly downstream campaign managers interpret the threshold — looser early, stricter close to the vote.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

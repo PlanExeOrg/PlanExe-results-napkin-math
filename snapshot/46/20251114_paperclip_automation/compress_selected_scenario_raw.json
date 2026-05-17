@@ -1,0 +1,670 @@
+{
+  "section_summary": "This section locks in the 'The Builder: Pragmatic Integration and Internalization' scenario as the baseline plan to model, specifying the location, physical footprint, and ultimate functional goal of achieving zero human intervention for regular orders, constrained by the overall budget allowance.",
+  "numeric_values": [
+    {
+      "line_english": "Total project budget range minimum: $300,000 \u2014 input to financial model.",
+      "line_original": "My total budget range is $300,000-$500,000.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "My total budget range is $300,000-$500,000.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Total project budget range maximum: $500,000 \u2014 input to financial model.",
+      "line_original": "My total budget range is $300,000-$500,000.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "My total budget range is $300,000-$500,000.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Wire bending machine budget minimum: $20,000 \u2014 capital expenditure input.",
+      "line_original": "Budget: $20,000\u2013$40,000.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget: $20,000\u2013$40,000.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Wire bending machine budget maximum: $40,000 \u2014 capital expenditure input.",
+      "line_original": "Budget: $20,000\u2013$40,000.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget: $20,000\u2013$40,000.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Paperclip packing machine budget threshold: $10,000 minimum cost \u2014 capital expenditure input.",
+      "line_original": "Budget: $10,000\u2013$30,000.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget: $10,000\u2013$30,000.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Paperclip packing machine budget cap: $30,000 maximum cost \u2014 capital expenditure input.",
+      "line_original": "Budget: $10,000\u2013$30,000.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget: $10,000\u2013$30,000.",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "The primary goal is demonstrating a working, demonstrable autonomous flow, not revenue target achievement.",
+      "line_original": "the goal is a working, demonstrable autonomous flow. I'm not targeting revenue",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "goal is a working, demonstrable autonomous flow",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The chosen strategy relies on using OPC UA for pragmatic, standardized integration.",
+      "line_original": "Develop a middleware abstraction layer utilizing OPC UA as the standardized language",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "utilizing OPC UA as the standardized language",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The internal software developer will focus on API and order queue management.",
+      "line_original": "Dedicate the internal software developer entirely to the REST API, order queue management",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Dedicate the internal software developer entirely to",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Manual intervention for system exceptions must not exceed two (2) hours per week.",
+      "line_original": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The used wire bender acquisition assumes an expert tuning service for two (2) weeks.",
+      "line_original": "Negotiate a phased acquisition where the seller provides on-site expert tuning services for two weeks",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "seller provides on-site expert tuning services for two weeks",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The project requires obtaining building, electrical, and OSHA permits prior to Phase 2.",
+      "line_original": "Obtain building/electrical/OSHA permits.",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "Obtain building/electrical/OSHA permits.",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If manual work for exceptions exceeds two (2) hours per week, then the autonomy goal is breached.",
+      "line_original": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the API call successfully triggers the full flow, then Phase 6 end-to-end demo is complete.",
+      "line_original": "A single REST API call creates an order.",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "A single REST API call creates an order.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If API command execution is not verified by the end of Phase 4, then software integration milestone is missed.",
+      "line_original": "At the end of this phase, an API call should start the full forming+packing flow.",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "API call should start the full forming+packing flow.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the packaging machine counting mechanism fails to count exactly 100 paperclips, then Phase 3 commission fails.",
+      "line_original": "Automatically counts exactly 100 paperclips.",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "Automatically counts exactly 100 paperclips.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the used wire bender commission requires more than two (2) weeks of expert tuning, contractors must be retained for troubleshooting.",
+      "line_original": "If the chosen machine requires extensive custom sensor retrofitting to signal step completion, the software development timeline will extend significantly",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "software development timeline will extend significantly",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If permits are not obtained for building/electrical/OSHA by the start date, then Phase 1 is not complete.",
+      "line_original": "Obtain building/electrical/OSHA permits.",
+      "modelling_relevance": 3,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "Obtain building/electrical/OSHA permits.",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Failure of UPS/FedEx API integration during Phase 6: inability to generate labels or manifest shipments.",
+      "line_original": "Integrate backend with UPS/FedEx APIs for: Label generation.",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "Integrate backend with UPS/FedEx APIs for:",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure of the used wire bender's I/O or PLC interface: extended commissioning and program tuning time.",
+      "line_original": "Expert commissioning and program tuning for stable paperclip production.",
+      "modelling_relevance": 5,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "Expert commissioning and program tuning for stable",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure of the packing machine to count exactly 100 paperclips: unreliable bagging output quality.",
+      "line_original": "Automatically counts exactly 100 paperclips.",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "Automatically counts exactly 100 paperclips.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure of custom control logic implementation by internal developer: slippage in Phase 4 software milestones.",
+      "line_original": "Implement REST API, backend job queue, and control logic.",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "backend job queue, and control logic.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Custom sensor retrofitting for the used wire bender: extension of the software development timeline.",
+      "line_original": "custom sensor retrofitting to signal step completion, the software development timeline will extend significantly",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "software development timeline will extend significantly",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure of mechanical integration between former and packer: blockage of the production flow.",
+      "line_original": "Mechanically integrate wire former output to the packer",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "Mechanically integrate wire former output to the packer",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Paperclip production throughput target clips/hour \u2014 required to assess utilization of the pilot line.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Projected revenue per period $ \u2014 required to scale manual exception hours threshold constraint.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Paperclip quality metric threshold failures/1000 units \u2014 required to stress test rework loop impact.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Uptime requirement percentage % \u2014 required to calculate capacity impacts of downtime shocks.",
+      "line_original": "no requirements for uptime",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Expected weekly service cost for consultant support $ per week \u2014 required to model variable operational expenditure.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Paperclip packing machine counting error budget $ for replacement inventory \u2014 required to model material waste cost.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 2,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 15,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 320,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nBuild a fully automated pilot paperclip factory in my existing 15,000 sq ft building in Cleveland (St. Clair\u2013Superior, E 55th\u2013E 79th corridor), where there is a mix of legacy warehouses and light-industrial buildings. Using roughly 4,000 sq ft for the pilot line. The system must be able to produce, pack, label, and stage paperclips for UPS/FedEx pickup without any human intervention between the API call and the carrier pickup. I'm not targeting revenue; the goal is a working, demonstrable autonomous flow. I have no throughput target, no requirements for uptime, no quality metrics. My goal is to see it works end-to-end. No manual touches for regular orders; manual only for exceptions. Acceptable manual work is  \u22642 hr/week for exceptions. My total budget range is $300,000-$500,000.\n\nSite and infrastructure\n\t\u2022\tBuilding: 15,000 sq ft, industrial, legacy warehouse/light-industrial.\n\t\u2022\tArea reserved: ~4,000 sq ft for the pilot.\n\t\u2022\tPower: 3-phase available; noise is not a concern.\n\t\u2022\tAccess: suitable for machinery delivery and regular parcel carrier pickup.\n\nMajor equipment\n1.\tWire bending machine\n\t\u2022\tUsed industrial wire bending / forming machine capable of producing standard paperclips.\n\t\u2022\tBudget: $20,000\u2013$40,000.\n\t\u2022\tRequirements:\n\t\u2022\tSuitable I/O or PLC interface for external control.\n\t\u2022\tDocumentation and vendor support for commissioning.\n\t\u2022\tServices needed:\n\t\u2022\tProfessional transport and rigging into my building.\n\t\u2022\tElectrical hookup and safety integration.\n\t\u2022\tExpert commissioning and program tuning for stable paperclip production.\n2.\tPaperclip packing machine\n\t\u2022\tNew small-parts / hardware packing machine that:\n\t\u2022\tAutomatically counts exactly 100 paperclips.\n\t\u2022\tBags and seals them in individual plastic bags.\n\t\u2022\tBudget: $10,000\u2013$30,000.\n\t\u2022\tServices needed:\n\t\u2022\tTransport and installation.\n\t\u2022\tIntegration of feed system from wire former output (via hopper/conveyor).\n\t\u2022\tTuning for reliable counting and bagging.\n3.\tOutbound automation and labeling\n\t\u2022\tIndustrial print-and-apply label system that can:\n\t\u2022\tReceive shipping label data from my backend.\n\t\u2022\tPrint and apply labels without any manual steps.\n\t\u2022\tMechanical system to:\n\t\u2022\tTake sealed paperclip bags from the packer.\n\t\u2022\tInsert them into shipping mailers or boxes.\n\t\u2022\tSeal the mailer/box.\n\t\u2022\tPresent labeled parcels on a conveyor or at a fixed pickup zone for UPS/FedEx.\n\t\u2022\tIntegration with UPS/FedEx APIs for:\n\t\u2022\tLabel generation.\n\t\u2022\tShipment creation and manifesting.\n\t\u2022\tDaily or scheduled pickup, so the only human involved is the carrier driver.\n\nControl software\n\nI'm a software developer myself. I want to implement as much as possible myself. I'm likely to encounter things that I can't figure out, and will delegate it to someone with the skills.\n\t\u2022\tA REST API, backend services, and a frontend dashboard.\n\t\u2022\tAPI triggers will:\n\t\u2022\tCreate an order.\n\t\u2022\tSchedule and execute production of the required number of bags.\n\t\u2022\tGenerate and send shipping data/labels to the labeling system.\n\t\u2022\tTrack machine status, errors, and order completion.\n\nPhases\n\nPhase 1\n\t\u2022\tObtain building/electrical/OSHA permits.\n\nPhase 2 \u2013 Wire forming cell\n\t\u2022\tSelect, purchase, transport, and install the used wire bending machine.\n\t\u2022\tCommission it to reliably produce paperclips, without a human operator.\n\t\u2022\tImplement basic I/O or PLC integration so the machine can later be controlled from the backend.\n\nPhase 3 \u2013 Packaging cell\n\t\u2022\tSelect and install the new paperclip packing machine.\n\t\u2022\tMechanically integrate wire former output to the packer (via bins, hoppers, conveyors).\n\t\u2022\tCommission counting/bagging so the machine produces sealed bags of 100 paperclips, continuously, without a human operator.\n\nPhase 4 \u2013 Software control layer\n\t\u2022\tImplement REST API, backend job queue, and control logic.\n\t\u2022\tIntegrate with the PLCs/machine controllers of the forming and packaging cells.\n\t\u2022\tBuild a basic frontend dashboard for monitoring and manual overrides.\n\t\u2022\tAt the end of this phase, an API call should start the full forming+packing flow.\n\nPhase 5 \u2013 Outbound automation\n\t\u2022\tDesign and install mechanisms to:\n\t\u2022\tTake filled bags from the packaging machine.\n\t\u2022\tInsert each bag into a shipping mailer/box.\n\t\u2022\tSeal the mailer/box.\n\t\u2022\tInstall and integrate an industrial print-and-apply label system that:\n\t\u2022\tReceives label data from the backend.\n\t\u2022\tPrints and applies labels to each parcel.\n\t\u2022\tImplement conveyors or equivalent material-handling to move labeled parcels to a fixed pickup zone.\n\nPhase 6 \u2013 Carrier integration and end-to-end demo\n\t\u2022\tIntegrate backend with UPS/FedEx APIs for:\n\t\u2022\tLabel generation.\n\t\u2022\tShipment creation and manifesting.\n\t\u2022\tScheduled pickups at the factory.\n\t\u2022\tRun end-to-end tests where:\n\t\u2022\tA single REST API call creates an order.\n\t\u2022\tThe system forms wire, produces paperclips, packs them into 100-count bags, inserts the bags into parcels, applies labels, and stages them for pickup.\n\t\u2022\tThe only human involvement is the carrier driver collecting parcels.\n\nBanned words: blockchain, digital twin, ai, self-healing.\n\nToday's date:\n2026-May-17\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Designing and implementing a fully automated, end-to-end production and fulfillment system for paperclips, focusing on proving the feasibility of the autonomous process flow rather than achieving profit, sales targets, or meeting standard operational metrics (throughput, uptime).\n\n**Topic:** Automated paperclip manufacturing and fulfillment system\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan involves the physical construction and setup of an industrial production line within a 15,000 sq ft building. This requires multiple physical activities across several phases: obtaining permits, purchasing, rigging, installing, and commissioning physical machinery (wire bender, packer), running conveyors, performing electrical hookups, and physically staging parcels for carrier pickup. Even the software development phases are dependent on having the physical hardware installed and integrated in the designated building space. This is overwhelmingly a physical project.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"862ed52f-69f5-436c-82d7-f087d981761f\",\"name\":\"Wire Bending Equipment Commissioning Strategy\",\"consequences\":\"Prioritizing the acquisition of a used wire bender with guaranteed modern PLC interfacing drastically simplifies control integration but may consume a larger share of the machinery budget. If the chosen machine requires extensive custom sensor retrofitting to signal step completion, the software development timeline will extend significantly due to low-level driver development, straining the budget dedicated to outbound automation.\",\"options\":[\"Select a well-documented, higher-cost used bender that offers pre-existing industrial fieldbus or robust serial communication ports for seamless backend control integration.\",\"Acquire the cheapest functional used bender available, allocating internal software development resources to engineer custom sensor arrays and interface logic to bridge communication gaps.\",\"Negotiate a phased acquisition where the seller provides on-site expert tuning services for two weeks post-installation to stabilize cycle timing before contractor withdrawal.\"],\"review\":\"Focusing solely on the machine's I/O capabilities trades integration complexity for upfront hardware cost, requiring a careful assessment of whether retained software engineering time offsets the specialist commissioning expense.\",\"description\":\"This strategy dictates the complexity of integrating the core production machine with the control software. Prioritizing modern PLC interfacing minimizes custom driver development, offering higher upfront cost but reducing Phase 4 software risk. Success is measured by the stability and speed of I/O communication established, ideally requiring minimal on-site tuning post-delivery.\",\"synergy_text\":\"This synergy directly enables PLC and Control Abstraction Layer by providing a known communication standard, minimizing low-level debugging efforts.\",\"conflict_text\":\"Over-investing here constrains Budget Allocation for Expert Commissioning if the higher-cost bender choice reduces remaining funds for specialized tuning support.\"},{\"lever_id\":\"d60856b4-2696-48cd-96ab-fbdd89165360\",\"name\":\"Software Expertise Allocation\",\"consequences\":\"Immediately outsourcing the PLC/hardware interface layer to external specialists ensures rapid machine control activation, allowing the internal developer to focus purely on the business logic API and front-end dashboard. Conversely, forcing internal implementation of machine control risks significant schedule slippage, as debugging undocumented industrial protocols often consumes time without guaranteed resolution within the current budgetary margin.\",\"options\":[\"Retain outside consultants exclusively for writing and validating the initial control code that bridges the backend API to the wire former and packer PLCs.\",\"Dedicate the internal software developer entirely to the REST API, order queue management, and carrier integration, accepting that custom hardware integration will require substantial research time.\",\"Bundle the software development contract to include guaranteed response times for emergency integration fixes during the first month post-Phase 6 completion.\"],\"review\":\"Outsourcing critical PLC integration accelerates project timeline certainty but significantly increases fixed costs, potentially consuming the buffer needed for unforeseen equipment integration failures further downstream.\",\"description\":\"This controls the division of labor between internal development and external specialists for control logic. Outsourcing hardware interface (PLC) ensures speed, but maintaining internal focus allows for rapid iteration on the business API. Success is tracked by the time taken from machine installation to verified API command execution in Phase 4.\",\"synergy_text\":\"Outsourcing hardware interfacing frees the internal developer to accelerate Backend Infrastructure Residency and API development for order processing.\",\"conflict_text\":\"Outsourcing PLC work significantly impacts the Budget Allocation for Expert Commissioning, potentially straining funds intended for final system tuning and integration support.\"},{\"lever_id\":\"299cce51-4c4e-4a13-8438-343635b14f84\",\"name\":\"Control System Protocol Selection\",\"consequences\":\"The choice of communication protocol between the custom backend (Phase 4) and the existing machine PLCs affects both development time and long-term maintainability. Opting for a high-level, standardized protocol like OPC UA may abstract hardware specifics but introduces latency and dependency on stable networking infrastructure not typically native to older machines. Conversely, relying solely on proprietary Modbus RTU requires deep, custom integration per machine, complicating future hardware swaps.\",\"options\":[\"Mandate that all new equipment purchases include modern networking hardware capable of supporting MQTT over TCP/IP for lightweight, state-driven messaging from the controller.\",\"Develop a middleware abstraction layer utilizing OPC UA as the standardized language, requiring vendor translation layers for any legacy equipment using serial protocols.\",\"Force all machine control integration down to the lowest common denominator physical layer, using discrete Digital I/O signals mapped directly by the primary process control server.\"],\"review\":\"Mandating MQTT simplifies software integration and monitoring but risks exceeding the limited computational budget of potentially old PLCs, potentially requiring expensive control board upgrades.\",\"description\":\"This lever governs the communication standard chosen between the custom software backend (Phase 4) and the physical machine controllers. The choice dictates coupling; robust protocols like OPC UA offer abstraction but risk latency, while low-level protocols like Modbus increase dependency on specific hardware interfaces. Success is measured by reliable, low-latency data exchange supporting both status reporting and command execution across all integrated physical assets.\",\"synergy_text\":\"It strongly synergizes with PLC and Control Abstraction Layer by defining the exact language used within that abstraction, enabling seamless data mapping.\",\"conflict_text\":\"It conflicts with Backend Infrastructure Residency, as high-level protocols like OPC UA may place higher demands on the server hardware hosting the backend services.\"},{\"lever_id\":\"b0342067-b426-4209-8d39-c37ea9a51cd7\",\"name\":\"Budget Allocation for Expert Commissioning\",\"consequences\":\"Given the tight budget and the uncertainty surrounding a used wire bender, the level of available expertise for commissioning directly trades against acquisition cost. Spending less on the used machine forces a larger portion of the budget toward expert integration and tuning, which may result in lower initial CAPEX but higher reliance on external, non-scalable knowledge. Conversely, overspending on the machine to guarantee better documentation limits funds for the critical software-hardware interface development.\",\"options\":[\"Allocate the maximum feasible portion of the budget reserve\\u2014up to one-third of the remaining capital\\u2014specifically for temporary, on-site PLC/controls experts during the 4-week commissioning window.\",\"Restrict expert engagement only to remote consultation for troubleshooting PLC logic, thus funneling the majority of that reserve capital into purchasing a newer, better-documented used wire former.\",\"Engage a single, multi-disciplinary integration firm to handle Phases 2, 3, and 5 mechanics and software integration under one fixed-price contract, absorbing all scheduling uncertainty internally.\"],\"review\":\"Allocating maximum reserves to on-site experts stabilizes the unreliable used machinery commissioning phase but drastically increases the risk of budget overruns if the expected 2-week tuning period extends beyond the allotted time.\",\"description\":\"This lever manages the trade-off between purchasing a more reliable (and potentially more expensive) used wire former versus investing accumulated capital reserves into high-cost, on-site integration specialists. The goal is balancing initial CAPEX against the risk of commissioning delays associated with older, less-documented industrial equipment in Phase 2.\",\"synergy_text\":\"This lever's funding directly impacts the success of Wire Bending Equipment Commissioning Strategy, as adequate expert allocation mitigates risks associated with used machinery selection.\",\"conflict_text\":\"Increasing the allocation here directly constrains the available capital for Physical Handoff Mechanism Definition, potentially forcing reliance on less capable, cheaper material handling components in later phases.\"},{\"lever_id\":\"57bd3f68-ee66-4097-9e33-ba88fb30d39b\",\"name\":\"PLC and Control Abstraction Layer\",\"consequences\":\"Deciding to use the existing, proprietary PLC on the used bender as the primary control point forces reliance on that vendor's specific I/O mapping and programming language, increasing the difficulty of custom software integration later. This constricts software flexibility, compelling the developer to write complex, brittle translation layers instead of straightforward fieldbus communication protocols.\",\"options\":[\"Replace the used machine's proprietary controller with a standard, open industrial PC or unified PLC platform to ensure consistent future debugging and API integration.\",\"Directly interface the existing PLC via proprietary protocols, fully accepting the limitations and high customization cost imposed by the legacy hardware manufacturer's architecture.\",\"Develop a custom hardware interface board that sits between the existing PLC and the new software backend, translating commands into simple electrical pulses to avoid deep PLC reprogramming.\"],\"review\":\"Relying on legacy PLC programming creates a hard dependency on obscure vendor knowledge, significantly escalating the risk that the $\\\\le 2$ hours exception limit is breached during complex failure diagnostics.\",\"description\":\"This defines whether the software layer (Phase 4) integrates with the existing proprietary controllers of the purchased machinery or replaces them with an open standard platform. Choosing open standards maximizes flexibility for future development and debugging; proprietariness risks hard dependencies on legacy systems. This choice dictates the complexity of the required abstraction layer for API communication.\",\"synergy_text\":\"Directly enables Software Expertise Allocation by providing a standard framework, simplifying the ability of the developer to interface with hardware controls via the Control System Protocol Selection.\",\"conflict_text\":\"Constrains Control System Protocol Selection; utilizing proprietary PLCs forces the project away from using open industrial standards, risking integration friction with custom software.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer: Aggressive Autonomy and Open Standards\",\"strategic_logic\":\"This path commits fully to technological leadership and rapid integration via modern, open standards. We prioritize upfront investment in superior hardware and software infrastructure (MQTT, open PC controllers) to minimize reliance on proprietary vendor expertise, accepting the highest initial capital outlay for the best potential for long-term scalability and control.\",\"lever_settings\":{\"Wire Bending Equipment Commissioning Strategy\":\"Select a well-documented, higher-cost used bender that offers pre-existing industrial fieldbus or robust serial communication ports for seamless backend control integration.\",\"Software Expertise Allocation\":\"Retain outside consultants exclusively for writing and validating the initial control code that bridges the backend API to the wire former and packer PLCs.\",\"Control System Protocol Selection\":\"Mandate that all new equipment purchases include modern networking hardware capable of supporting MQTT over TCP/IP for lightweight, state-driven messaging from the controller.\",\"Budget Allocation for Expert Commissioning\":\"Allocate the maximum feasible portion of the budget reserve\\u2014up to one-third of the remaining capital\\u2014specifically for temporary, on-site PLC/controls experts during the 4-week commissioning window.\",\"PLC and Control Abstraction Layer\":\"Replace the used machine's proprietary controller with a standard, open industrial PC or unified PLC platform to ensure consistent future debugging and API integration.\"}},{\"scenario_name\":\"The Builder: Pragmatic Integration and Internalization\",\"strategic_logic\":\"This scenario seeks the sweet spot by internalizing most software development while relying on standardized, platform-agnostic integration methods (OPC UA). Initial costs are controlled by focusing external help only where necessary (middleware), maximizing the internal developer's efficiency across defined industrial standards.\",\"lever_settings\":{\"Wire Bending Equipment Commissioning Strategy\":\"Negotiate a phased acquisition where the seller provides on-site expert tuning services for two weeks post-installation to stabilize cycle timing before contractor withdrawal.\",\"Software Expertise Allocation\":\"Dedicate the internal software developer entirely to the REST API, order queue management, and carrier integration, accepting that custom hardware integration will require substantial research time.\",\"Control System Protocol Selection\":\"Develop a middleware abstraction layer utilizing OPC UA as the standardized language, requiring vendor translation layers for any legacy equipment using serial protocols.\",\"Budget Allocation for Expert Commissioning\":\"Restrict expert engagement only to remote consultation for troubleshooting PLC logic, thus funneling the majority of that reserve capital into purchasing a newer, better-documented used wire former.\",\"PLC and Control Abstraction Layer\":\"Develop a custom hardware interface board that sits between the existing PLC and the new software backend, translating commands into simple electrical pulses to avoid deep PLC reprogramming.\"}},{\"scenario_name\":\"The Consolidator: Cost Control and Minimal Risk Exposure\",\"strategic_logic\":\"This path is risk-averse, prioritizing staying well within the lower end of the budget by minimizing external expertise and avoiding complex protocol investments. Control relies on the most basic, universally understood physical signaling (Discrete I/O), accepting increased complexity in software mapping to avoid unpredictable vendor service charges.\",\"lever_settings\":{\"Wire Bending Equipment Commissioning Strategy\":\"Acquire the cheapest functional used bender available, allocating internal software development resources to engineer custom sensor arrays and interface logic to bridge communication gaps.\",\"Software Expertise Allocation\":\"Bundle the software development contract to include guaranteed response times for emergency integration fixes during the first month post-Phase 6 completion.\",\"Control System Protocol Selection\":\"Force all machine control integration down to the lowest common denominator physical layer, using discrete Digital I/O signals mapped directly by the primary process control server.\",\"Budget Allocation for Expert Commissioning\":\"Engage a single, multi-disciplinary integration firm to handle Phases 2, 3, and 5 mechanics and software integration under one fixed-price contract, absorbing all scheduling uncertainty internally.\",\"PLC and Control Abstraction Layer\":\"Directly interface the existing PLC via proprietary protocols, fully accepting the limitations and high customization cost imposed by the legacy hardware manufacturer's architecture.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"Medium-scale physical implementation (4,000 sq ft pilot line in existing building) focused on proving a novel, end-to-end autonomous workflow (zero human intervention for standard orders).\",\"risk_and_novelty\":\"High novelty due to the full scope (production, packing, labeling, fulfillment, API control) being automated end-to-end for the first time by the integrator. The use of a 'used industrial wire bending machine' introduces significant technical integration risk (Phases 2/4).\",\"complexity_and_constraints\":\"High complexity involving mechanical integration (3 different machine types + conveying), custom PLC/HMI integration (Phase 4), and external API integration (Phase 6). Budget ($300k-$500k) is sufficient but requires careful allocation, especially given the uncertain nature of the used equipment.\",\"domain_and_tone\":\"Engineering/Industrial Automation focused on physical implementation, with a key component (API/Control Software) delegated to the internal software developer. The tone is goal-oriented (must work end-to-end) rather than profit-driven.\",\"holistic_profile_of_the_plan\":\"\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer: Aggressive Autonomy and Open Standards\",\"fit_score\":7,\"fit_assessment\":\"This scenario aligns well with the high novelty and ambition of achieving full autonomy. Investing in open standards and replacing proprietary controllers (high upfront cost/risk) tackles the inherent integration risk of the used bender proactively, fitting the project's technical demonstration goal.\"},{\"scenario_name\":\"The Builder: Pragmatic Integration and Internalization\",\"fit_score\":9,\"fit_assessment\":\"This scenario offers the best balance. It supports the internal software developer's role (internalization) while using OPC UA as a powerful, pragmatic bridge for complex hardware integration (Phase 4). It avoids the extreme cost of 'Pioneer' while mitigating the high integration risk described in the core plan.\"},{\"scenario_name\":\"The Consolidator: Cost Control and Minimal Risk Exposure\",\"fit_score\":3,\"fit_assessment\":\"This scenario is a poor fit. Relying on the cheapest bender and proprietary I/O ('lowest common denominator') directly conflicts with the goal of achieving seamless, non-manual end-to-end control, especially where the internal developer must manage integration gaps.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Builder: Pragmatic Integration and Internalization\",\"justification\":\"The Builder scenario is the optimal fit because it strategically manages the plan's high complexity and high technical risk profile while respecting the internal resource structure.\\n\\n*   **Alignment with Profile:** The plan is driven by complex physical integration (High Complexity) where the internal developer anchors the system (Internalization). The Builder's core logic supports this by using OPC UA for pragmatic, standardized integration, which is safer than the Pioneer's aggressive open-source mandate, given the use of legacy components.\\n*   **Managing Risk:** The plan relies on stabilizing a used wire bender (high integration risk). This scenario mitigates this by focusing expertise on remote troubleshooting and using OPC UA abstraction, avoiding the high CAPEX commitment of The Pioneer.\\n*   **Comparative Weakness of Others:** The Pioneer is too costly and aggressive for a pilot with a capped budget, over-investing in infrastructure when the primary task is demonstrating flow. The Consolidator fails by embracing proprietary protocols and the cheapest inputs, guaranteeing excessive manual debugging for the internal developer, undermining the seamless automation goal.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 2196,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "Total project budget range minimum: $300,000 \u2014 input to financial model.",
+            "line_original": "My total budget range is $300,000-$500,000.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "My total budget range is $300,000-$500,000.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total project budget range maximum: $500,000 \u2014 input to financial model.",
+            "line_original": "My total budget range is $300,000-$500,000.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "My total budget range is $300,000-$500,000.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Pilot line area reserved: 4,000 sq ft \u2014 physical footprint constraint.",
+            "line_original": "Using roughly 4,000 sq ft for the pilot line.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Using roughly 4,000 sq ft for the pilot line.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total building area: 15,000 sq ft \u2014 physical footprint constraint.",
+            "line_original": "existing 15,000 sq ft building",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "existing 15,000 sq ft building",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Wire bending machine budget minimum: $20,000 \u2014 capital expenditure input.",
+            "line_original": "Budget: $20,000\u2013$40,000.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget: $20,000\u2013$40,000.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Wire bending machine budget maximum: $40,000 \u2014 capital expenditure input.",
+            "line_original": "Budget: $20,000\u2013$40,000.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget: $20,000\u2013$40,000.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Paperclip packing machine budget threshold: $10,000 minimum cost \u2014 capital expenditure input.",
+            "line_original": "Budget: $10,000\u2013$30,000.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget: $10,000\u2013$30,000.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Paperclip packing machine budget cap: $30,000 maximum cost \u2014 capital expenditure input.",
+            "line_original": "Budget: $10,000\u2013$30,000.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget: $10,000\u2013$30,000.",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 2741,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "The primary goal is demonstrating a working, demonstrable autonomous flow, not revenue target achievement.",
+            "line_original": "the goal is a working, demonstrable autonomous flow. I'm not targeting revenue",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "goal is a working, demonstrable autonomous flow",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Manual intervention for system exceptions must not exceed two (2) hours per week.",
+            "line_original": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen strategy relies on using OPC UA for pragmatic, standardized integration.",
+            "line_original": "Develop a middleware abstraction layer utilizing OPC UA as the standardized language",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "utilizing OPC UA as the standardized language",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The internal software developer will focus on API and order queue management.",
+            "line_original": "Dedicate the internal software developer entirely to the REST API, order queue management",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Dedicate the internal software developer entirely to",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The used wire bender acquisition assumes an expert tuning service for two (2) weeks.",
+            "line_original": "Negotiate a phased acquisition where the seller provides on-site expert tuning services for two weeks",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "seller provides on-site expert tuning services for two weeks",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The control system will map to the existing PLC via proprietary protocols.",
+            "line_original": "Directly interface the existing PLC via proprietary protocols",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Directly interface the existing PLC via proprietary protocols",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Expert engagement for PLC troubleshooting will be restricted to remote consultation only.",
+            "line_original": "Restrict expert engagement only to remote consultation for troubleshooting PLC logic",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Restrict expert engagement only to remote consultation",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The project requires obtaining building, electrical, and OSHA permits prior to Phase 2.",
+            "line_original": "Obtain building/electrical/OSHA permits.",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Obtain building/electrical/OSHA permits.",
+            "quote_verified": true
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 3,
+        "response_byte_count": 2535,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "If the used wire bender commission requires more than two (2) weeks of expert tuning, contractors must be retained for troubleshooting.",
+            "line_original": "If the chosen machine requires extensive custom sensor retrofitting to signal step completion, the software development timeline will extend significantly",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "software development timeline will extend significantly",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the budget reserve is fully consumed by expert commissioning, then future outbound automation funding is constrained.",
+            "line_original": "Spending less on the used machine forces a larger portion of the budget toward expert integration",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Restricting funds for Expert Commissioning",
+            "quote_verified": false
+          },
+          {
+            "line_english": "If the packaging machine counting mechanism fails to count exactly 100 paperclips, then Phase 3 commission fails.",
+            "line_original": "Automatically counts exactly 100 paperclips.",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Automatically counts exactly 100 paperclips.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If permits are not obtained for building/electrical/OSHA by the start date, then Phase 1 is not complete.",
+            "line_original": "Obtain building/electrical/OSHA permits.",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Obtain building/electrical/OSHA permits.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the API call successfully triggers the full flow, then Phase 6 end-to-end demo is complete.",
+            "line_original": "A single REST API call creates an order.",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "A single REST API call creates an order.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If manual work for exceptions exceeds two (2) hours per week, then the autonomy goal is breached.",
+            "line_original": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Acceptable manual work is  \u22642 hr/week for exceptions.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If API command execution is not verified by the end of Phase 4, then software integration milestone is missed.",
+            "line_original": "At the end of this phase, an API call should start the full forming+packing flow.",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "API call should start the full forming+packing flow.",
+            "quote_verified": true
+          }
+        ]
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 2784,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "Custom sensor retrofitting for the used wire bender: extension of the software development timeline.",
+            "line_original": "custom sensor retrofitting to signal step completion, the software development timeline will extend significantly",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "software development timeline will extend significantly",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure of the used wire bender's I/O or PLC interface: extended commissioning and program tuning time.",
+            "line_original": "Expert commissioning and program tuning for stable paperclip production.",
+            "modelling_relevance": 5,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Expert commissioning and program tuning for stable",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure of the packing machine to count exactly 100 paperclips: unreliable bagging output quality.",
+            "line_original": "Automatically counts exactly 100 paperclips.",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Automatically counts exactly 100 paperclips.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure of mechanical integration between former and packer: blockage of the production flow.",
+            "line_original": "Mechanically integrate wire former output to the packer",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Mechanically integrate wire former output to the packer",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure of the print-and-apply label system integration: inability to stage labeled parcels for carrier pickup.",
+            "line_original": "Install and integrate an industrial print-and-apply label system",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Install and integrate an industrial print-and-apply label system",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure of UPS/FedEx API integration during Phase 6: inability to generate labels or manifest shipments.",
+            "line_original": "Integrate backend with UPS/FedEx APIs for: Label generation.",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "Integrate backend with UPS/FedEx APIs for:",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Unforeseen instability in documentation/support for the used wire bending machine: increased expert commissioning reliance.",
+            "line_original": "Documentation and vendor support for commissioning.",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "vendor support for commissioning.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure of custom control logic implementation by internal developer: slippage in Phase 4 software milestones.",
+            "line_original": "Implement REST API, backend job queue, and control logic.",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "backend job queue, and control logic.",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 2,
+        "response_byte_count": 1593,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "scored_items": [
+          {
+            "line_english": "Projected revenue per period $ \u2014 required to scale manual exception hours threshold constraint.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Paperclip production throughput target clips/hour \u2014 required to assess utilization of the pilot line.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Paperclip quality metric threshold failures/1000 units \u2014 required to stress test rework loop impact.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Expected weekly service cost for consultant support $ per week \u2014 required to model variable operational expenditure.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Paperclip packing machine counting error budget $ for replacement inventory \u2014 required to model material waste cost.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 2,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Uptime requirement percentage % \u2014 required to calculate capacity impacts of downtime shocks.",
+            "line_original": "no requirements for uptime",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          }
+        ]
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

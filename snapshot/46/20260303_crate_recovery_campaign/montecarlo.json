@@ -1,0 +1,361 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Arla 'Crate Escape' Milk-Crate Recovery (Pioneer Aggressive Volume)",
+    "plan_type": "consumer_csr_reverse_logistics"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "crate_recovery_volume_margin_units": {
+      "unit": "crates",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 3479.5438,
+      "std": 33169.51004979545,
+      "min": -67307.0,
+      "p05": -46508.85,
+      "p25": -21680.75,
+      "p50": -236.5,
+      "p75": 26981.75,
+      "p95": 62620.94999999998,
+      "max": 91196.0
+    },
+    "budget_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 55852.73440694542,
+      "std": 614264.0401199583,
+      "min": -1487909.9302542973,
+      "p05": -1012939.4026510533,
+      "p25": -380145.8546457761,
+      "p50": 84915.18898998969,
+      "p75": 499225.0851130021,
+      "p95": 1052166.2106031852,
+      "max": 1495028.1129873479
+    },
+    "donation_margin_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 219020.96652149878,
+      "std": 238126.47706505738,
+      "min": -298456.8506993521,
+      "p05": -147425.88728438172,
+      "p25": 40614.95516968955,
+      "p50": 194923.4388409792,
+      "p75": 386457.2728604794,
+      "p95": 639693.4752325278,
+      "max": 833438.022627377
+    },
+    "social_impressions_margin": {
+      "unit": "impressions",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2827984.4763,
+      "std": 10042644.464174401,
+      "min": -21238780.0,
+      "p05": -12153163.1,
+      "p25": -4848940.0,
+      "p50": 1773511.5,
+      "p75": 9945322.5,
+      "p95": 20814397.1,
+      "max": 32152813.0
+    },
+    "per_crate_handling_cost_margin_dkk": {
+      "unit": "DKK_per_crate",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.6623999037266576,
+      "std": 2.906151643669578,
+      "min": -9.047764102982766,
+      "p05": -5.591035256051095,
+      "p25": -2.662421647549085,
+      "p50": -0.6282708984957841,
+      "p75": 1.420575550441178,
+      "p95": 4.004688730336737,
+      "max": 8.245131981284898
+    }
+  },
+  "thresholds": {
+    "crate_recovery_volume_margin_units": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4965,
+      "valid_count": 10000,
+      "probability": 0.4965
+    },
+    "budget_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5521,
+      "valid_count": 10000,
+      "probability": 0.5521
+    },
+    "donation_margin_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 8087,
+      "valid_count": 10000,
+      "probability": 0.8087
+    },
+    "social_impressions_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5678,
+      "valid_count": 10000,
+      "probability": 0.5678
+    },
+    "per_crate_handling_cost_margin_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4204,
+      "valid_count": 10000,
+      "probability": 0.4204
+    }
+  },
+  "sensitivity": {
+    "crate_recovery_volume_margin_units": {
+      "top_inputs": [
+        {
+          "id": "actual_crate_recovery_units",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "budget_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "actual_program_spend_dkk",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "donation_margin_dkk": {
+      "top_inputs": [
+        {
+          "id": "actual_donation_dkk",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "social_impressions_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_social_impressions",
+          "correlation": 0.9517
+        },
+        {
+          "id": "target_impressions",
+          "correlation": -0.3232
+        }
+      ]
+    },
+    "per_crate_handling_cost_margin_dkk": {
+      "top_inputs": [
+        {
+          "id": "actual_per_crate_handling_cost_dkk",
+          "correlation": -0.8594
+        },
+        {
+          "id": "per_crate_handling_cost_threshold_dkk",
+          "correlation": 0.5166
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "crate_recovery_volume_margin_units": [
+      {
+        "id": "actual_crate_recovery_units",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "budget_surplus_dkk": [
+      {
+        "id": "actual_program_spend_dkk",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "donation_margin_dkk": [
+      {
+        "id": "actual_donation_dkk",
+        "p_pass_low_quartile": 0.2348,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 76.52
+      }
+    ],
+    "social_impressions_margin": [
+      {
+        "id": "actual_social_impressions",
+        "p_pass_low_quartile": 0.0064,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 99.36
+      },
+      {
+        "id": "target_impressions",
+        "p_pass_low_quartile": 0.7292,
+        "p_pass_high_quartile": 0.398,
+        "delta_pp": -33.12
+      }
+    ],
+    "per_crate_handling_cost_margin_dkk": [
+      {
+        "id": "actual_per_crate_handling_cost_dkk",
+        "p_pass_low_quartile": 0.9364,
+        "p_pass_high_quartile": 0.0136,
+        "delta_pp": -92.28
+      },
+      {
+        "id": "per_crate_handling_cost_threshold_dkk",
+        "p_pass_low_quartile": 0.1824,
+        "p_pass_high_quartile": 0.708,
+        "delta_pp": 52.56
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "crate_recovery_volume_margin_units": [
+      {
+        "id": "actual_crate_recovery_units",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 107763.5,
+        "conditional_pass_prob": 0.993,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "budget_surplus_dkk": [
+      {
+        "id": "actual_program_spend_dkk",
+        "direction": "below",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 4210786.797842038,
+        "conditional_pass_prob": 0.824,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "social_impressions_margin": [
+      {
+        "id": "actual_social_impressions",
+        "direction": "above",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 18897876.15,
+        "conditional_pass_prob": 0.8299,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "per_crate_handling_cost_margin_dkk": [
+      {
+        "id": "actual_per_crate_handling_cost_dkk",
+        "direction": "below",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 10.407004441313466,
+        "conditional_pass_prob": 0.8724,
+        "admitted_fraction": 0.33
+      },
+      {
+        "id": "per_crate_handling_cost_threshold_dkk",
+        "direction": "above",
+        "input_percentile_cutoff": 95,
+        "cutoff_value": 13.701943017199767,
+        "conditional_pass_prob": 0.824,
+        "admitted_fraction": 0.05
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_social_impressions",
+      "score": 107.3585,
+      "worst_gate": "social_impressions_margin",
+      "bound_width_ratio": 2.5,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_crate_recovery_units",
+      "score": 84.8,
+      "worst_gate": "crate_recovery_volume_margin_units",
+      "bound_width_ratio": 1.6842,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_per_crate_handling_cost_dkk",
+      "score": 58.3478,
+      "worst_gate": "per_crate_handling_cost_margin_dkk",
+      "bound_width_ratio": 1.0909,
+      "source": "data"
+    },
+    {
+      "id": "actual_program_spend_dkk",
+      "score": 35.3605,
+      "worst_gate": "budget_surplus_dkk",
+      "bound_width_ratio": 0.7895,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_donation_dkk",
+      "score": 28.0567,
+      "worst_gate": "donation_margin_dkk",
+      "bound_width_ratio": 1.9167,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "crate_recovery_volume_margin_units": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.6842,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.68"
+      ]
+    },
+    "budget_surplus_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.7895,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.79"
+      ]
+    },
+    "donation_margin_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.9167,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.92"
+      ]
+    },
+    "social_impressions_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.625,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.62"
+      ]
+    },
+    "per_crate_handling_cost_margin_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8955,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.90"
+      ]
+    }
+  },
+  "warnings": []
+}

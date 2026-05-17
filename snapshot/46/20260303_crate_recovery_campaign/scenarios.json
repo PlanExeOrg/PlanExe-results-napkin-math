@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Arla 'Crate Escape' Milk-Crate Recovery (Pioneer Aggressive Volume)",
+    "plan_type": "consumer_csr_reverse_logistics"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_budget_dkk": 4000000,
+        "target_recovery_units": 108000,
+        "min_donation_dkk": 500000,
+        "target_impressions": 15000000,
+        "per_crate_handling_cost_threshold_dkk": 8,
+        "actual_crate_recovery_units": 40000,
+        "actual_program_spend_dkk": 2500000,
+        "actual_donation_dkk": 200000,
+        "actual_social_impressions": 5000000,
+        "actual_per_crate_handling_cost_dkk": 6
+      },
+      "outputs": {
+        "crate_recovery_volume_margin_units": -68000,
+        "budget_surplus_dkk": 1500000,
+        "donation_margin_dkk": -300000,
+        "social_impressions_margin": -10000000,
+        "per_crate_handling_cost_margin_dkk": 2
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_budget_dkk": 4000000,
+        "target_recovery_units": 108000,
+        "min_donation_dkk": 500000,
+        "target_impressions": 20000000,
+        "per_crate_handling_cost_threshold_dkk": 10,
+        "actual_crate_recovery_units": 95000,
+        "actual_program_spend_dkk": 3800000,
+        "actual_donation_dkk": 600000,
+        "actual_social_impressions": 18000000,
+        "actual_per_crate_handling_cost_dkk": 11
+      },
+      "outputs": {
+        "crate_recovery_volume_margin_units": -13000,
+        "budget_surplus_dkk": 200000,
+        "donation_margin_dkk": 100000,
+        "social_impressions_margin": -2000000,
+        "per_crate_handling_cost_margin_dkk": -1
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_budget_dkk": 4000000,
+        "target_recovery_units": 108000,
+        "min_donation_dkk": 500000,
+        "target_impressions": 30000000,
+        "per_crate_handling_cost_threshold_dkk": 15,
+        "actual_crate_recovery_units": 200000,
+        "actual_program_spend_dkk": 5500000,
+        "actual_donation_dkk": 1350000,
+        "actual_social_impressions": 50000000,
+        "actual_per_crate_handling_cost_dkk": 18
+      },
+      "outputs": {
+        "crate_recovery_volume_margin_units": 92000,
+        "budget_surplus_dkk": -1500000,
+        "donation_margin_dkk": 850000,
+        "social_impressions_margin": 20000000,
+        "per_crate_handling_cost_margin_dkk": -3
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "crate_recovery_volume_margin_units": {
+        "low": -68000,
+        "base": -13000,
+        "high": 92000,
+        "unit": "crates",
+        "spread_ratio": -1.3529411764705883,
+        "spread_absolute": 160000
+      },
+      "budget_surplus_dkk": {
+        "low": 1500000,
+        "base": 200000,
+        "high": -1500000,
+        "unit": "DKK",
+        "spread_ratio": -1.0,
+        "spread_absolute": -3000000
+      },
+      "donation_margin_dkk": {
+        "low": -300000,
+        "base": 100000,
+        "high": 850000,
+        "unit": "DKK",
+        "spread_ratio": -2.8333333333333335,
+        "spread_absolute": 1150000
+      },
+      "social_impressions_margin": {
+        "low": -10000000,
+        "base": -2000000,
+        "high": 20000000,
+        "unit": "impressions",
+        "spread_ratio": -2.0,
+        "spread_absolute": 30000000
+      },
+      "per_crate_handling_cost_margin_dkk": {
+        "low": 2,
+        "base": -1,
+        "high": -3,
+        "unit": "DKK_per_crate",
+        "spread_ratio": -1.5,
+        "spread_absolute": -5
+      }
+    }
+  },
+  "warnings": []
+}

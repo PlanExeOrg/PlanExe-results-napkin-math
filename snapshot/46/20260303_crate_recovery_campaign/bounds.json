@@ -1,0 +1,79 @@
+{
+  "actual_crate_recovery_units": {
+    "unit": "crates",
+    "low": 40000,
+    "base": 95000,
+    "high": 200000,
+    "rationale": "Risk 1 names >216K returns as the budget-exhaustion scenario at the 5 DKK incentive; base just below the 108K target reflects realistic dual-channel participation under tiered incentive deceleration.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_program_spend_dkk": {
+    "unit": "DKK",
+    "low": 2500000,
+    "base": 3800000,
+    "high": 5500000,
+    "rationale": "Bottom-up: donation × volume + logistics + marketing; base near the DKK 4M ceiling; upper bound captures Risk 1 budget-exhaustion + Risk 8 logistics-overrun combined scenario.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_donation_dkk": {
+    "unit": "DKK",
+    "low": 200000,
+    "base": 600000,
+    "high": 1350000,
+    "rationale": "Donation = volume × incentive capped at the DKK 1.35M pool ceiling; base just above the DKK 500K floor reflects mid-range volume and tiered-incentive deceleration policy.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_social_impressions": {
+    "unit": "impressions",
+    "low": 5000000,
+    "base": 18000000,
+    "high": 50000000,
+    "rationale": "Risk 3 names a 50% impression drop if irreverent marketing alienates partners; base just below 20M target reflects realistic execution; upside captures aggressive viral pickup.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_per_crate_handling_cost_dkk": {
+    "unit": "DKK_per_crate",
+    "low": 6,
+    "base": 11,
+    "high": 18,
+    "rationale": "Q1 budget breakdown implies DKK ~15 as the channel-overrun trigger; Risk 8 names DKK 10 as the review trigger; base just above the threshold reflects realistic centralized-hub cost structure.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "target_impressions": {
+    "unit": "impressions",
+    "low": 15000000,
+    "base": 20000000,
+    "high": 30000000,
+    "rationale": "Plan commits to 20M organic impressions; spread reflects how strictly the success-metric definition treats the threshold — looser at the lower end (paid amplification offsets), stricter at the upper.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "per_crate_handling_cost_threshold_dkk": {
+    "unit": "DKK_per_crate",
+    "low": 8,
+    "base": 10,
+    "high": 15,
+    "rationale": "Risk 8 names DKK 10 as the channel-prioritization review trigger; Q1 names DKK 15 as the 30%-overrun trigger; spread captures how strictly downstream decision rules interpret the threshold.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

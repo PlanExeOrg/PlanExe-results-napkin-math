@@ -1,0 +1,353 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Denmark DKK\u2192EUR Adoption (Builder's Blueprint)",
+    "plan_type": "national_monetary_transition"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "budget_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1357767616.3612995,
+      "std": 4324788948.053052,
+      "min": -9897473211.019737,
+      "p05": -6254840147.950718,
+      "p25": -1711814359.066187,
+      "p50": 1757926429.6076164,
+      "p75": 4600083968.495541,
+      "p95": 8030594367.835276,
+      "max": 10904261016.586973
+    },
+    "timeline_margin_years": {
+      "unit": "years",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.6492,
+      "std": 1.0677730845081272,
+      "min": -2.0,
+      "p05": -1.0,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "p95": 2.0,
+      "max": 3.0
+    },
+    "referendum_support_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.03234692253419342,
+      "std": 0.06804199479453323,
+      "min": -0.23176936229503764,
+      "p05": -0.14557233681165252,
+      "p25": -0.08044609739417893,
+      "p50": -0.03263368179675341,
+      "p75": 0.01566400597562248,
+      "p95": 0.08011777725355612,
+      "max": 0.18577760458235448
+    },
+    "deficit_compliance_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.003248255976074404,
+      "std": 0.007192337853602074,
+      "min": -0.014787830900920562,
+      "p05": -0.009227964090140092,
+      "p25": -0.0019358947144841182,
+      "p50": 0.003598708451530378,
+      "p75": 0.008591746753932959,
+      "p95": 0.01467315748427029,
+      "max": 0.019721770118561535
+    },
+    "public_awareness_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.05015376461713644,
+      "std": 0.09255278941318382,
+      "min": -0.3298986834292701,
+      "p05": -0.20155893479931006,
+      "p25": -0.11689638479606443,
+      "p50": -0.0493618916118051,
+      "p75": 0.014759851768504723,
+      "p95": 0.10335218637119754,
+      "max": 0.21800876614897746
+    }
+  },
+  "thresholds": {
+    "budget_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6338,
+      "valid_count": 10000,
+      "probability": 0.6338
+    },
+    "timeline_margin_years": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 8456,
+      "valid_count": 10000,
+      "probability": 0.8456
+    },
+    "referendum_support_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3192,
+      "valid_count": 10000,
+      "probability": 0.3192
+    },
+    "deficit_compliance_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6754,
+      "valid_count": 10000,
+      "probability": 0.6754
+    },
+    "public_awareness_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3017,
+      "valid_count": 10000,
+      "probability": 0.3017
+    }
+  },
+  "sensitivity": {
+    "budget_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "actual_total_transition_cost_dkk",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "timeline_margin_years": {
+      "top_inputs": [
+        {
+          "id": "actual_timeline_years",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "referendum_support_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_referendum_support_share",
+          "correlation": 0.8911
+        },
+        {
+          "id": "referendum_support_threshold",
+          "correlation": -0.4404
+        }
+      ]
+    },
+    "deficit_compliance_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_deficit_share",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "public_awareness_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_public_awareness_share",
+          "correlation": 0.8954
+        },
+        {
+          "id": "public_awareness_threshold",
+          "correlation": -0.4519
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "budget_surplus_dkk": [
+      {
+        "id": "actual_total_transition_cost_dkk",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "timeline_margin_years": [
+      {
+        "id": "actual_timeline_years",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.6338629357363055,
+        "delta_pp": -36.61
+      }
+    ],
+    "referendum_support_margin": [
+      {
+        "id": "actual_referendum_support_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.8764,
+        "delta_pp": 87.64
+      },
+      {
+        "id": "referendum_support_threshold",
+        "p_pass_low_quartile": 0.5404,
+        "p_pass_high_quartile": 0.1456,
+        "delta_pp": -39.48
+      }
+    ],
+    "deficit_compliance_margin": [
+      {
+        "id": "actual_deficit_share",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "public_awareness_margin": [
+      {
+        "id": "actual_public_awareness_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.85,
+        "delta_pp": 85.0
+      },
+      {
+        "id": "public_awareness_threshold",
+        "p_pass_low_quartile": 0.5148,
+        "p_pass_high_quartile": 0.1192,
+        "delta_pp": -39.56
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "budget_surplus_dkk": [
+      {
+        "id": "actual_total_transition_cost_dkk",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 26711814359.066185,
+        "conditional_pass_prob": 0.8451,
+        "admitted_fraction": 0.75
+      }
+    ],
+    "referendum_support_margin": [
+      {
+        "id": "actual_referendum_support_share",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 0.5941193798040674,
+        "conditional_pass_prob": 0.8764,
+        "admitted_fraction": 0.25
+      }
+    ],
+    "deficit_compliance_margin": [
+      {
+        "id": "actual_deficit_share",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 0.03193589471448412,
+        "conditional_pass_prob": 0.9005,
+        "admitted_fraction": 0.75
+      }
+    ],
+    "public_awareness_margin": [
+      {
+        "id": "actual_public_awareness_share",
+        "direction": "above",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 0.7092883597637865,
+        "conditional_pass_prob": 0.85,
+        "admitted_fraction": 0.25
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_deficit_share",
+      "score": 45.444,
+      "worst_gate": "deficit_compliance_margin",
+      "bound_width_ratio": 1.4,
+      "source": "data"
+    },
+    {
+      "id": "actual_public_awareness_share",
+      "score": 36.5265,
+      "worst_gate": "public_awareness_margin",
+      "bound_width_ratio": 0.6154,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_total_transition_cost_dkk",
+      "score": 34.9555,
+      "worst_gate": "budget_surplus_dkk",
+      "bound_width_ratio": 0.9545,
+      "source": "data"
+    },
+    {
+      "id": "actual_referendum_support_share",
+      "score": 32.5447,
+      "worst_gate": "referendum_support_margin",
+      "bound_width_ratio": 0.5455,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_timeline_years",
+      "score": 4.0376,
+      "worst_gate": "timeline_margin_years",
+      "bound_width_ratio": 0.7143,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "budget_surplus_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.9545,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.95"
+      ]
+    },
+    "timeline_margin_years": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.7143,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.71"
+      ]
+    },
+    "referendum_support_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.3977,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.40"
+      ]
+    },
+    "deficit_compliance_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.4,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.40"
+      ]
+    },
+    "public_awareness_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.4505,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.45"
+      ]
+    }
+  },
+  "warnings": []
+}

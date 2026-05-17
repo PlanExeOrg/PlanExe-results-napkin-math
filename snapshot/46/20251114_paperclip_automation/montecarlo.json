@@ -1,0 +1,343 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Paperclip Automation Pilot Line (Builder Pragmatic Integration)",
+    "plan_type": "industrial_automation_pilot"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "manual_intervention_margin_hours": {
+      "unit": "hours_per_week",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -1.810394058923376,
+      "std": 1.5418037094415735,
+      "min": -5.899157736169053,
+      "p05": -4.613653593076268,
+      "p25": -2.903230429831107,
+      "p50": -1.6386339148153963,
+      "p75": -0.6532489676088006,
+      "p95": 0.5154949134594046,
+      "max": 1.4725382564839762
+    },
+    "budget_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 36808.824908622744,
+      "std": 57742.675430778196,
+      "min": -98565.20361488767,
+      "p05": -58138.92013074314,
+      "p25": -5176.526176160391,
+      "p50": 35381.05286063082,
+      "p75": 78853.21607807909,
+      "p95": 134885.0755147611,
+      "max": 178845.93406650762
+    },
+    "opc_ua_bid_margin_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 6754.496171236131,
+      "std": 15581.76137944649,
+      "min": -34620.01043864462,
+      "p05": -21119.51409440939,
+      "p25": -4281.94028648729,
+      "p50": 8577.774656490728,
+      "p75": 18619.38116606105,
+      "p95": 30079.912037573853,
+      "max": 39680.15850492002
+    },
+    "api_latency_margin_ms": {
+      "unit": "milliseconds",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1.018867793391224,
+      "std": 37.7187683108369,
+      "min": -99.1969640699491,
+      "p05": -67.64889136207917,
+      "p25": -25.618037443038833,
+      "p50": 5.271836276609619,
+      "p75": 29.577809983474705,
+      "p95": 57.4367241935351,
+      "max": 79.74950068395655
+    },
+    "onsite_expert_budget_margin_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2619.580669570025,
+      "std": 4762.529541301147,
+      "min": -9668.76045254754,
+      "p05": -5793.869504650558,
+      "p25": -729.1454572095872,
+      "p50": 3101.5312231804164,
+      "p75": 6187.700896606209,
+      "p95": 9948.517745687632,
+      "max": 12969.137013987041
+    }
+  },
+  "thresholds": {
+    "manual_intervention_margin_hours": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1161,
+      "valid_count": 10000,
+      "probability": 0.1161
+    },
+    "budget_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 7239,
+      "valid_count": 10000,
+      "probability": 0.7239
+    },
+    "opc_ua_bid_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6743,
+      "valid_count": 10000,
+      "probability": 0.6743
+    },
+    "api_latency_margin_ms": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5498,
+      "valid_count": 10000,
+      "probability": 0.5498
+    },
+    "onsite_expert_budget_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 7084,
+      "valid_count": 10000,
+      "probability": 0.7084
+    }
+  },
+  "sensitivity": {
+    "manual_intervention_margin_hours": {
+      "top_inputs": [
+        {
+          "id": "actual_manual_intervention_hours_per_week",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "budget_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_total_project_cost_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "opc_ua_bid_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_opc_ua_bid_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "api_latency_margin_ms": {
+      "top_inputs": [
+        {
+          "id": "actual_api_p99_latency_ms",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "onsite_expert_budget_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_onsite_expert_cost_usd",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "manual_intervention_margin_hours": [
+      {
+        "id": "actual_manual_intervention_hours_per_week",
+        "p_pass_low_quartile": 0.4644,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -46.44
+      }
+    ],
+    "budget_surplus_usd": [
+      {
+        "id": "actual_total_project_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "opc_ua_bid_margin_usd": [
+      {
+        "id": "actual_opc_ua_bid_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "api_latency_margin_ms": [
+      {
+        "id": "actual_api_p99_latency_ms",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "onsite_expert_budget_margin_usd": [
+      {
+        "id": "actual_onsite_expert_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "manual_intervention_margin_hours": [
+      {
+        "id": "actual_manual_intervention_hours_per_week",
+        "direction": "below",
+        "input_percentile_cutoff": 90,
+        "cutoff_value": 1.9047838841040385,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.1
+      }
+    ],
+    "budget_surplus_usd": [
+      {
+        "id": "actual_total_project_cost_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 10,
+        "cutoff_value": 541118.626624795,
+        "conditional_pass_prob": 0.8043,
+        "admitted_fraction": 0.9
+      }
+    ],
+    "opc_ua_bid_margin_usd": [
+      {
+        "id": "actual_opc_ua_bid_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 79281.94028648728,
+        "conditional_pass_prob": 0.8991,
+        "admitted_fraction": 0.75
+      }
+    ],
+    "api_latency_margin_ms": [
+      {
+        "id": "actual_api_p99_latency_ms",
+        "direction": "below",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 114.36901981505721,
+        "conditional_pass_prob": 0.8206,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "onsite_expert_budget_margin_usd": [
+      {
+        "id": "actual_onsite_expert_cost_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 15,
+        "cutoff_value": 27909.49485430623,
+        "conditional_pass_prob": 0.8334,
+        "admitted_fraction": 0.85
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_api_p99_latency_ms",
+      "score": 108.048,
+      "worst_gate": "api_latency_margin_ms",
+      "bound_width_ratio": 2.4,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_manual_intervention_hours_per_week",
+      "score": 102.6208,
+      "worst_gate": "manual_intervention_margin_hours",
+      "bound_width_ratio": 2.5,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_opc_ua_bid_usd",
+      "score": 40.7125,
+      "worst_gate": "opc_ua_bid_margin_usd",
+      "bound_width_ratio": 1.25,
+      "source": "data"
+    },
+    {
+      "id": "actual_onsite_expert_cost_usd",
+      "score": 33.534,
+      "worst_gate": "onsite_expert_budget_margin_usd",
+      "bound_width_ratio": 1.15,
+      "source": "data"
+    },
+    {
+      "id": "actual_total_project_cost_usd",
+      "score": 16.4485,
+      "worst_gate": "budget_surplus_usd",
+      "bound_width_ratio": 0.5957,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "manual_intervention_margin_hours": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 2.5,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 2.50"
+      ]
+    },
+    "budget_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.5957,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.60"
+      ]
+    },
+    "opc_ua_bid_margin_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.25,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.25"
+      ]
+    },
+    "api_latency_margin_ms": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 2.4,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 2.40"
+      ]
+    },
+    "onsite_expert_budget_margin_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.15,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.15"
+      ]
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,57 @@
+{
+  "actual_manual_intervention_hours_per_week": {
+    "unit": "hours_per_week",
+    "low": 0.5,
+    "base": 3.0,
+    "high": 8.0,
+    "rationale": "Issue 2 names exception-handling on used machinery as the dominant ceiling; base just above 2 hr/week reflects realistic Phase-6 execution with documented exceptions; upper bound captures Risk 5 grading-protocol variance.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_total_project_cost_usd": {
+    "unit": "USD",
+    "low": 320000,
+    "base": 470000,
+    "high": 600000,
+    "rationale": "Plan envelope is $300–500K; Risk 3 names a $20–50K overrun scenario; Issue 1 adds 15% spare-parts buffer; base just below the $500K ceiling; upper bound captures combined overrun.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_opc_ua_bid_usd": {
+    "unit": "USD",
+    "low": 35000,
+    "base": 60000,
+    "high": 110000,
+    "rationale": "Plan assumes ~$50K for OPC UA middleware; premortem trigger sits at $75K; base just above plan assumption reflects realistic vendor pricing; upper bound captures wire-bender protocol-complexity premium.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_api_p99_latency_ms": {
+    "unit": "milliseconds",
+    "low": 20,
+    "base": 75,
+    "high": 200,
+    "rationale": "Plan budgets on-premise edge compute for low-latency control; base well within 100 ms target reflects realistic edge-compute performance; upper bound captures Risk 4 local-server-failure cloud-failover scenario.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_onsite_expert_cost_usd": {
+    "unit": "USD",
+    "low": 12000,
+    "base": 20000,
+    "high": 35000,
+    "rationale": "Issue 3 names $15K baseline; review-plan gate caps at $25K; base captures realistic 1-week PLC specialist rate including mobilization; upper bound captures premium for obscure wire-bender protocols.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

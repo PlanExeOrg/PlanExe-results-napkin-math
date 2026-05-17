@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "Denmark DKK→EUR Adoption (Builder's Blueprint)",
+    "plan_type": "national_monetary_transition",
+    "primary_goal": "Replace the Danish Krone with the Euro within 4–8 years under the Builder's Blueprint, sequencing 24+ months of ERM II convergence before securing the binding referendum and opt-out repeal, all within a DKK 15–25B public-finance envelope.",
+    "modelling_frame": "Tests the DKK 25B budget surplus against bottom-up transition cost; the 8-year timeline margin against projected start-to-Euro-Day duration; the referendum-support margin against the 60% mandate threshold; the deficit-compliance margin against the 3%-of-GDP Maastricht criterion; and the public-awareness margin against the 70% campaign threshold. EU unanimous opt-out repeal, completion of the 24-month ERM II period without exit, and Folketinget passage of enabling treaty legislation are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "max_budget_dkk",
+      "label": "Upper bound of the public-finance envelope",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 25000000000,
+      "comment": "Upper bound of the DKK 15–25B reference range; Issue 2 names inflation erosion over 6–8 years as the dominant real-value risk to this envelope.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Budget estimate is DKK 15–25 Billion."
+    },
+    {
+      "id": "timeline_max_years",
+      "label": "Timeline ceiling",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "years",
+      "value": 8,
+      "comment": "8-year ceiling from political decision to full euro adoption; slippage beyond 8 years invalidates the Builder's Blueprint and triggers political-fatigue risk per Issue 1.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "4 to 8 years from the initial political decision to full euro adoption."
+    },
+    {
+      "id": "referendum_support_threshold",
+      "label": "Referendum support threshold",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.60,
+      "comment": "60% support is the inferred political floor for a credible Yes mandate; below this the Risk-2 sunk-cost write-off (DKK 500M–1B) materialises.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "If the referendum support levels drop below 60%, then the vote mandate may be insufficient."
+    },
+    {
+      "id": "deficit_criterion_share",
+      "label": "Maastricht deficit criterion",
+      "category": "compliance",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.03,
+      "comment": "Deficit must stay below 3% of GDP throughout the ERM II window; Risk 3 names a 6–18 month delay if convergence criteria slip.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Failure to meet primary convergence criteria (e.g., deficit < 3% GDP) during ERM II window, delaying ECB approval."
+    },
+    {
+      "id": "public_awareness_threshold",
+      "label": "Public-awareness campaign threshold",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.70,
+      "comment": "70% public awareness of referendum details is the campaign-pacing trigger; below this the campaign must accelerate to defend the 60% Yes mandate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If public awareness of referendum details reaches less than 70%, then the campaign pacing must be adjusted."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_total_transition_cost_dkk",
+      "label": "Bottom-up total transition cost in DKK",
+      "unit": "DKK",
+      "why_needed": "Required to test whether the DKK 15–25B envelope absorbs Nationalbank IT integration, public info campaign, cash logistics, EU diplomacy, and the DKK 50M+ ring-fenced contingency over a 6–8 year horizon.",
+      "suggested_estimation_method": "Sum of IT/logistics (Decision 8 buckets) + Shadow Integration Team FTE × 6–8 years + public-info 0.5% × budget + cash-distribution + EU/legal counsel; inflate per Issue 2's real-indexation factor."
+    },
+    {
+      "id": "actual_timeline_years",
+      "label": "Achieved years from political decision to Euro Day",
+      "unit": "years",
+      "why_needed": "Drives whether the project clears the 8-year ceiling; Issue 1 names a 12–18 month sequencing delay if EU demands opt-out resolution precede ERM II completion.",
+      "suggested_estimation_method": "Trapezoidal sum of phases: opt-out negotiation + 24+ months ERM II + referendum scheduling + cash logistics; sensitivity to Risk 1 (12–24 month EU delay) and Risk 3 (6–18 month convergence delay)."
+    },
+    {
+      "id": "actual_referendum_support_share",
+      "label": "Achieved Yes-vote share in the national referendum",
+      "unit": "fraction",
+      "why_needed": "Below 60% the mandate is insufficient (or contested); below 50% the project terminates with DKK 500M–1B sunk-cost write-off.",
+      "suggested_estimation_method": "Pre-referendum polling × turnout × correction for known polling bias on EU questions in Denmark; sensitivity to economic conditions in the 90 days pre-vote."
+    },
+    {
+      "id": "actual_deficit_share",
+      "label": "Achieved peak deficit-to-GDP during ERM II",
+      "unit": "fraction",
+      "why_needed": "Below 3% GDP the deficit criterion holds and ECB convergence approval proceeds; above 3% Risk 3 forces painful last-minute fiscal adjustments and 6–18 month slip.",
+      "suggested_estimation_method": "Project Ministry of Finance baseline fiscal model × business-cycle sensitivity over 24+ months; benchmark against Eurozone accession history for similar small open economies."
+    },
+    {
+      "id": "actual_public_awareness_share",
+      "label": "Achieved pre-referendum public-awareness share",
+      "unit": "fraction",
+      "why_needed": "Below 70% the Risk 6 'public confusion / inconsistent pricing' failure mode escalates and the 60% Yes mandate becomes vulnerable to last-week swings.",
+      "suggested_estimation_method": "Tracking polls during Public Information campaign + sectoral readiness surveys; sensitivity to campaign spend (0.5% of total budget per Q1 assumption)."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "budget_surplus_dkk",
+      "label": "Budget surplus against the DKK 25B ceiling",
+      "formula_hint": "budget_surplus_dkk = max_budget_dkk - actual_total_transition_cost_dkk",
+      "output_name": "budget_surplus_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["max_budget_dkk", "actual_total_transition_cost_dkk"],
+      "why_first": "Positive surplus preserves the DKK 50M+ contingency and Issue 2's inflation buffer; negative surplus forces austerity that delays Shadow Integration Team funding and cascades into Risk 4 timeline slip."
+    },
+    {
+      "id": "timeline_margin_years",
+      "label": "Timeline margin against the 8-year ceiling",
+      "formula_hint": "timeline_margin_years = timeline_max_years - actual_timeline_years",
+      "output_name": "timeline_margin_years",
+      "output_unit": "years",
+      "depends_on": ["timeline_max_years", "actual_timeline_years"],
+      "why_first": "Positive margin keeps the Builder's Blueprint thesis intact; negative margin triggers Issue 1's political-fatigue path and erodes referendum support before the vote can be scheduled."
+    },
+    {
+      "id": "referendum_support_margin",
+      "label": "Referendum support margin against the 60% mandate threshold",
+      "formula_hint": "referendum_support_margin = actual_referendum_support_share - referendum_support_threshold",
+      "output_name": "referendum_support_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_referendum_support_share", "referendum_support_threshold"],
+      "why_first": "Positive margin secures a credible Yes mandate for treaty change; negative margin terminates the project per Risk 2 with DKK 500M–1B sunk-cost write-off."
+    },
+    {
+      "id": "deficit_compliance_margin",
+      "label": "Maastricht deficit-criterion margin",
+      "formula_hint": "deficit_compliance_margin = deficit_criterion_share - actual_deficit_share",
+      "output_name": "deficit_compliance_margin",
+      "output_unit": "fraction",
+      "depends_on": ["deficit_criterion_share", "actual_deficit_share"],
+      "why_first": "Positive margin (deficit below 3% GDP) clears the ECB convergence audit; negative margin triggers Risk 3's 6–18 month delay and painful last-minute fiscal adjustments."
+    },
+    {
+      "id": "public_awareness_margin",
+      "label": "Public-awareness campaign margin",
+      "formula_hint": "public_awareness_margin = actual_public_awareness_share - public_awareness_threshold",
+      "output_name": "public_awareness_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_public_awareness_share", "public_awareness_threshold"],
+      "why_first": "Positive margin defends the 60% Yes mandate against late-stage misinformation; negative margin forces the Strategy-11 campaign to accelerate and consumes contingency reserves."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "eu_unanimous_optout_repeal_gate",
+      "label": "EU Council unanimously agrees to amend the TEU protocol lifting the Danish opt-out",
+      "why_it_matters": "Risk 1 names this as the central treaty-level political dependency; without unanimous EU agreement on the protocol amendment the entire Builder's Blueprint legal sequence stalls regardless of any operational margin the model evaluates.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "12–24 month delay per Risk 1; political-capital burnout in Copenhagen and Brussels; forced fallback to an uncertain legal pathway with no clear precedent for unwinding a permanent opt-out."
+    },
+    {
+      "id": "erm2_24month_completion_gate",
+      "label": "Denmark completes the mandatory 24-month ERM II participation without forced exit",
+      "why_it_matters": "The minimum 24-month ERM II window is a hard ECB requirement; a speculative-attack-driven exit or DKK realignment during the window resets the convergence clock and adds 24+ months to the timeline regardless of fiscal performance.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Convergence clock restarts; 2+ additional years added to timeline; Risk 8 speculative-pressure scenario materialises with reserve depletion and unfavourable conversion-rate negotiation."
+    },
+    {
+      "id": "folketinget_enabling_legislation_passage_gate",
+      "label": "Folketinget passes enabling treaty-change legislation by qualified majority",
+      "why_it_matters": "Danish constitutional practice requires Folketinget approval before the referendum can ratify treaty change; without enabling legislation the referendum cannot be scheduled regardless of EU progress or convergence compliance.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Project termination per Risk 2; DKK 500M–1B sunk costs; return to permanent opt-out and a likely multi-decade political moratorium on euro adoption."
+    }
+  ]
+}

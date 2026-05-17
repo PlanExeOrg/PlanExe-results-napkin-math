@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "Arla 'Crate Escape' Milk-Crate Recovery (Pioneer Aggressive Volume)",
+    "plan_type": "consumer_csr_reverse_logistics",
+    "primary_goal": "Recover at least 108,000 lost Arla milk crates (40% of annual loss) across Denmark in 2026 under the Pioneer Aggressive Volume strategy on a DKK 4M budget, with ≥DKK 500K to Arla Foundation and ≥20M organic social-media impressions.",
+    "modelling_frame": "Tests the crate-recovery volume margin against the 108,000-unit Year-1 target; the budget surplus against bottom-up program spend; the donation margin against the DKK 500K floor; the social-impressions margin against the 20M organic threshold; and the per-crate handling-cost margin against the DKK 10 channel-review trigger. Supermarket-partner irreverent-marketing signoff, municipal liability MoU execution, and third-party food-grade cleaning capacity are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "total_budget_dkk",
+      "label": "Program budget ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 4000000,
+      "comment": "Hard DKK 4M ceiling covering donation pool (DKK 1.35M), reverse logistics (DKK 1.65M), and marketing (DKK 1.0M); overrun forces premature campaign halt per Risk 1.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total program budget ceiling of 4 million DKK — maximum expenditure allocation."
+    },
+    {
+      "id": "target_recovery_units",
+      "label": "Year-1 crate recovery target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "crates",
+      "value": 108000,
+      "comment": "40% of the 270,000-unit annual loss volume; the primary viability metric of the Pioneer strategy and the basis for the 2027 production-reduction claim.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Year one target recovery volume of 108,000 crates — derived annual return goal."
+    },
+    {
+      "id": "min_donation_dkk",
+      "label": "Minimum Arla Foundation donation floor",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 500000,
+      "comment": "Below DKK 500K to Arla Foundation the charitable-impact success metric fails and the CSR narrative collapses regardless of volume achieved.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Minimum success criteria for donation of 500,000 DKK — financial threshold."
+    },
+    {
+      "id": "target_impressions",
+      "label": "Organic social-media impressions target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "impressions",
+      "value": 20000000,
+      "comment": "20 million organic impressions justify the irreverent marketing posture (Decision 5 Choice 2); below this the reputational risk to supermarket partners is not earned back.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If organic social media impressions fall below 20 million, the virality goal is not achieved."
+    },
+    {
+      "id": "per_crate_handling_cost_threshold_dkk",
+      "label": "Per-crate handling cost channel-review trigger",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "DKK_per_crate",
+      "value": 10,
+      "comment": "Risk 8 names DKK 10/crate as the channel-prioritization review trigger; above this logistics consumes >60% of the non-donation envelope and the economic-viability case collapses.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If per-crate handling cost exceeds 10 DKK, revise Channel Prioritization (Decision 2) pre-Q3 rollout."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_crate_recovery_units",
+      "label": "Achieved crate recovery volume in 2026",
+      "unit": "crates",
+      "why_needed": "Drives whether the 108,000-unit Year-1 target clears; Risk 1 names the 5 DKK incentive triggering >216,000 returns which exhausts the donation budget; the inverse risk (low engagement) misses 40%.",
+      "suggested_estimation_method": "Funnel from Q2 pilot pull-through × supermarket/municipal channel mix × tiered-incentive deceleration policy; sensitivity to Risk 7 consumer-fatigue post-Q3."
+    },
+    {
+      "id": "actual_program_spend_dkk",
+      "label": "Achieved total program spend across all components",
+      "unit": "DKK",
+      "why_needed": "Tests whether the DKK 4M envelope holds against donation outlay + logistics + marketing + contingency; Risk 8 names a >60% logistics share (DKK 1.59M) as the channel-prioritization trigger.",
+      "suggested_estimation_method": "Bottom-up: actual_crate_recovery_units × DKK 5 incentive + per-crate handling × volume + marketing fixed + IT tracking; sensitivity to Risk 1 budget-exhaustion scenario."
+    },
+    {
+      "id": "actual_donation_dkk",
+      "label": "Achieved Arla Foundation donation",
+      "unit": "DKK",
+      "why_needed": "Below the DKK 500K floor the charitable-impact success metric fails; donation = min(volume × incentive, donation pool ceiling DKK 1.35M).",
+      "suggested_estimation_method": "actual_crate_recovery_units × per-crate incentive (decelerating from DKK 5 to DKK 3 if pilot >40K units per Decision 1 Choice 2); cap at DKK 1.35M donation pool."
+    },
+    {
+      "id": "actual_social_impressions",
+      "label": "Achieved organic social-media impressions",
+      "unit": "impressions",
+      "why_needed": "Drives whether the 20M virality target clears; Risk 3 names a 50% impression drop if the irreverent marketing alienates partners or public.",
+      "suggested_estimation_method": "Project from Q1 creative pre-tests + organic reach benchmarks for Danish CSR campaigns + irreverent-tone-amplification factor; sensitivity to Risk 3 partner-alienation scenario."
+    },
+    {
+      "id": "actual_per_crate_handling_cost_dkk",
+      "label": "Achieved per-crate handling cost across collection-cleaning-redistribution",
+      "unit": "DKK_per_crate",
+      "why_needed": "Q1 Assumption flags DKK 15/crate as the 30%-overrun trigger; the Decision-2 channel-prioritization review activates at DKK 10/crate per Risk 8.",
+      "suggested_estimation_method": "Bottom-up: transport per pickup + third-party food-grade washing + quality inspection FTE / weekly throughput; sensitivity to centralized-hub bottleneck (Risk 2) and grading-protocol inconsistency (Risk 5)."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "crate_recovery_volume_margin_units",
+      "label": "Crate-recovery volume margin against the 108,000-unit target",
+      "formula_hint": "crate_recovery_volume_margin_units = actual_crate_recovery_units - target_recovery_units",
+      "output_name": "crate_recovery_volume_margin_units",
+      "output_unit": "crates",
+      "depends_on": ["actual_crate_recovery_units", "target_recovery_units"],
+      "why_first": "Positive margin clears the 40%-recovery success metric and supports the 2027 production-reduction claim; negative margin invalidates the Pioneer strategy thesis and the environmental rationale."
+    },
+    {
+      "id": "budget_surplus_dkk",
+      "label": "Program budget surplus against the DKK 4M ceiling",
+      "formula_hint": "budget_surplus_dkk = total_budget_dkk - actual_program_spend_dkk",
+      "output_name": "budget_surplus_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["total_budget_dkk", "actual_program_spend_dkk"],
+      "why_first": "Positive surplus preserves residual funds for Decision-15 Q1-2027 habit-bridging; negative surplus triggers premature campaign halt per Risk 1 budget-exhaustion path."
+    },
+    {
+      "id": "donation_margin_dkk",
+      "label": "Arla Foundation donation margin against the DKK 500K floor",
+      "formula_hint": "donation_margin_dkk = actual_donation_dkk - min_donation_dkk",
+      "output_name": "donation_margin_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["actual_donation_dkk", "min_donation_dkk"],
+      "why_first": "Positive margin secures the charitable-impact success metric; negative margin invalidates the CSR narrative regardless of volume or impressions achieved."
+    },
+    {
+      "id": "social_impressions_margin",
+      "label": "Social-impressions margin against the 20M virality target",
+      "formula_hint": "social_impressions_margin = actual_social_impressions - target_impressions",
+      "output_name": "social_impressions_margin",
+      "output_unit": "impressions",
+      "depends_on": ["actual_social_impressions", "target_impressions"],
+      "why_first": "Positive margin earns back the irreverent-marketing posture risk; negative margin means the Risk-3 reputational exposure was incurred without virality compensation."
+    },
+    {
+      "id": "per_crate_handling_cost_margin_dkk",
+      "label": "Per-crate handling-cost margin against the DKK 10 channel-review trigger",
+      "formula_hint": "per_crate_handling_cost_margin_dkk = per_crate_handling_cost_threshold_dkk - actual_per_crate_handling_cost_dkk",
+      "output_name": "per_crate_handling_cost_margin_dkk",
+      "output_unit": "DKK_per_crate",
+      "depends_on": ["per_crate_handling_cost_threshold_dkk", "actual_per_crate_handling_cost_dkk"],
+      "why_first": "Positive margin keeps logistics within the non-donation envelope; negative margin triggers the Decision-2 channel-prioritization review and the Risk-8 economic-viability collapse path."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "supermarket_partner_irreverent_signoff_gate",
+      "label": "Salling Group, Coop Danmark, and Rema 1000 sign off on irreverent marketing creatives",
+      "why_it_matters": "Risk 3 names supermarket-partner alienation as the binary reputational hinge; without retailer signoff the entire dual-channel collection model collapses regardless of consumer demand for the 5 DKK incentive.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Supermarkets reduce support; 50% reduction in organic impressions per Risk 3; DKK 500K marketing-cost increase needed to backfill virality; dual-channel collection collapses to municipal-only."
+    },
+    {
+      "id": "municipal_indemnity_mou_q1_gate",
+      "label": "≥50% of Tier-1 municipalities sign liability-transfer MoUs by end of Q1 2026",
+      "why_it_matters": "Decision 12 routes triage liability to municipal waste authorities under signed MoU; without Q1 signoff Risk 4 caps Q3 rollout capacity below the 108K target regardless of supermarket-channel performance.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Municipal channel curtailed for Q3 rollout; capacity caps the 108K target per Risk 4; legal exposure for ambiguous-crate triage falls back onto Arla."
+    },
+    {
+      "id": "third_party_food_grade_cleaning_capacity_gate",
+      "label": "Third-party food-grade washing facilities deliver ≥7,000 crates/week throughput",
+      "why_it_matters": "Risk 2 names cleaning-hub bottleneck as High/High; below 7K/week the 2027 production-reduction metric fails regardless of how many crates are collected, because crates can't return to circulation.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Throughput stall of 4–8 weeks per Risk 2 sensitivity; 2027 new-crate production reduction target fails; recovered crates accumulate as backlog inventory."
+    }
+  ]
+}
