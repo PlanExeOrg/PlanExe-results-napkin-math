@@ -1030,6 +1030,35 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
 
     plans_with_any = len({p.slug for p, _ in failing})
 
+    # Build the takeaway dynamically from the actual top categories. If the
+    # set of plans changes, this still names the dominant classes correctly.
+    real_classes = [
+        (label, members) for label, members in sorted_classes
+        if members and label != "Other"
+    ]
+    top_names = [
+        label.lower().replace(" / ", "/")
+        for label, _ in real_classes[:3]
+    ]
+    if len(top_names) == 0:
+        takeaway_html = ""
+    else:
+        if len(top_names) == 1:
+            cluster_phrase = top_names[0]
+        elif len(top_names) == 2:
+            cluster_phrase = f"{top_names[0]} and {top_names[1]}"
+        else:
+            cluster_phrase = (
+                ", ".join(top_names[:-1]) + f", and {top_names[-1]}"
+            )
+        takeaway_html = (
+            f'<p class="muted small synthesis-takeaway">'
+            f'<strong>Takeaway:</strong> '
+            f'Most failures cluster around {esc(cluster_phrase)}. '
+            f'These are the plan-generation areas to improve first.'
+            f'</p>'
+        )
+
     return f"""
 <section class="slide">
   <header class="slide-head">
@@ -1037,6 +1066,7 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
     <h1>Common failure classes</h1>
     <p class="lede">Every failing gate (DOOM or FRAGILE) across {plans_with_any} of {len(plans)} plans, grouped by failure type. Useful for spotting recurring weaknesses in the plans the generator produces &mdash; not just diagnosing them one at a time.</p>
   </header>
+  {takeaway_html}
   <table class="failure-class-table">
     <thead>
       <tr><th>Failure class</th><th class='num'>Failing gates</th><th>Examples (worst first)</th></tr>
@@ -1843,6 +1873,12 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .failure-class-table td.fc-examples code { color: var(--ink); font-size: 11.5px; }
 .fc-plan { color: var(--muted); }
 .fc-ex { white-space: nowrap; }
+.synthesis-takeaway {
+  margin: 6px 0 16px; padding: 10px 14px;
+  background: #fafaf8; border-left: 3px solid var(--ink);
+  border-radius: 0 4px 4px 0; line-height: 1.55;
+}
+.synthesis-takeaway strong { color: var(--ink); }
 
 /* Most-fixable triage table */
 .fix-table td.fix-shape code { font-size: 11px; }
