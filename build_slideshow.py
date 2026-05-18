@@ -317,8 +317,8 @@ def render_band_bar_chart(band_counts: dict[str, int]) -> str:
              ("marginal", "MARGINAL", "50–80%"), ("viable", "ROBUST", "≥80%")]
     total = sum(band_counts.values()) or 1
     max_count = max(max(band_counts.values()), 1)
-    chart_w, chart_h = 760, 360
-    pad_top, pad_bottom, pad_l, pad_r = 56, 88, 60, 30
+    chart_w, chart_h = 760, 380
+    pad_top, pad_bottom, pad_l, pad_r = 70, 88, 60, 30
     plot_w = chart_w - pad_l - pad_r
     plot_h = chart_h - pad_top - pad_bottom
     slot = plot_w / len(bands)
@@ -353,8 +353,11 @@ def render_band_bar_chart(band_counts: dict[str, int]) -> str:
             # tiny stub so zero is visible
             bars.append(f'<rect x="{x:.1f}" y="{pad_top + plot_h - 2:.1f}" '
                         f'width="{bar_w:.1f}" height="2" fill="{color}" opacity="0.25"/>')
+        # Label baseline: 12px above bar top, but clamped so the ascender
+        # (~22px for 24px font) doesn't fall off the top of the SVG.
+        label_y = max(y - 12, 30)
         bars.append(
-            f'<text x="{cx:.1f}" y="{max(y - 14, pad_top + 18):.1f}" font-size="24" '
+            f'<text x="{cx:.1f}" y="{label_y:.1f}" font-size="24" '
             f'font-weight="700" fill="#222" text-anchor="middle">'
             f'{count} <tspan font-size="14" font-weight="500" fill="#666">'
             f'({pct:.0f}%)</tspan></text>'
@@ -806,7 +809,6 @@ def render_html(plans: list[Plan]) -> str:
   </select>
   <span class="counter" id="counter">1 / {3 + len(plans) * 3}</span>
   <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
-  <span class="help">← / → keys</span>
 </div>
 <script>{JS}</script>
 </body>
