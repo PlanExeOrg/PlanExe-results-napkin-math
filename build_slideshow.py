@@ -333,8 +333,71 @@ def esc(text: str) -> str:
     return html.escape(text, quote=True)
 
 
+# Suffix tokens that are units — stripped from gate IDs for short labels.
+# Ordered longest-first so multi-token units are stripped before their suffixes.
+_UNIT_SUFFIXES = (
+    "persons_per_km2", "hours_per_week", "hours_per_month",
+    "per_week", "per_month", "per_day", "per_year", "per_crate",
+    "milliseconds", "seconds", "minutes", "tonnes", "persons",
+    "hours", "days", "months", "weeks", "years", "ms", "kbps", "mbps", "gbps",
+    "inr", "usd", "eur", "dkk", "gbp", "jpy", "cny",
+    "share", "fraction", "pct", "ratio", "count", "units", "pp", "tons",
+    "kg", "kwh", "mwh", "mw", "gw", "km2", "bps",
+)
+
+# Tokens that should be rendered uppercase as recognized acronyms.
+_ACRONYMS = {
+    "mttr", "mtbf", "pue", "fid", "opex", "capex", "kpi", "roi", "ev",
+    "opc", "ua", "mou", "rte", "anssi", "dgsi", "nsc", "eci",
+    "tld", "icann", "gsa", "doi", "aml", "osha", "io", "api", "p99",
+    "uk", "us", "eu", "dkk", "usd", "eur", "inr", "ai", "ml",
+    "c2", "n95", "hsm", "emc", "mos", "drf", "milstd", "noi",
+}
+
+
+def short_gate_label(gate_id: str) -> str:
+    """Compact, human-readable label from a snake_case gate ID.
+
+    Strips trailing unit tokens (e.g. `_hours`, `_inr`) and a final
+    `_margin`, then renders acronyms in uppercase. Full ID is preserved
+    elsewhere (detail table, SVG <title>, aria-label).
+    """
+    s = (gate_id or "").lower()
+    # Strip unit suffix tokens (greedy, in case multiple stack)
+    changed = True
+    while changed:
+        changed = False
+        for u in _UNIT_SUFFIXES:
+            suffix = "_" + u
+            if s.endswith(suffix):
+                s = s[: -len(suffix)]
+                changed = True
+                break
+    # Strip trailing `_margin`
+    if s.endswith("_margin"):
+        s = s[: -len("_margin")]
+    if not s:
+        return gate_id
+    tokens = s.split("_")
+    out: list[str] = []
+    for t in tokens:
+        if t in _ACRONYMS:
+            out.append(t.upper())
+        elif t.startswith("phase") and t[5:].isdigit():
+            out.append("Phase " + t[5:])
+        elif t.startswith("year") and t[4:].isdigit():
+            out.append("Year " + t[4:])
+        else:
+            out.append(t)
+    return " ".join(out)
+
+
 def render_gate_bar_chart(gates: list[Gate]) -> str:
-    """Inline SVG horizontal bar chart, threshold lines at 20/50/80."""
+    """Inline SVG horizontal bar chart, threshold lines at 20/50/80.
+
+    Uses short labels in the chart for readability; full gate IDs are kept
+    in the SVG <title> element (browser tooltip) and aria-label.
+    """
     if not gates:
         return '<p class="muted">No gate data.</p>'
     n = len(gates)
@@ -347,7 +410,7 @@ def render_gate_bar_chart(gates: list[Gate]) -> str:
     total_w = label_w + chart_w + 80
 
     threshold_lines = []
-    for pct, label in [(20, "DOOM"), (50, "FRAGILE"), (80, "MARGINAL/ROBUST")]:
+    for pct in (20, 50, 80):
         x = label_w + (pct / 100) * chart_w
         threshold_lines.append(
             f'<line x1="{x:.1f}" y1="{pad_top - 6}" x2="{x:.1f}" y2="{pad_top + n * row_h + 2}" '
@@ -360,19 +423,24 @@ def render_gate_bar_chart(gates: list[Gate]) -> str:
         y = pad_top + i * row_h
         bar_w = max(2.0, g.pass_rate * chart_w)
         color = VERDICT_COLORS.get(g.verdict, "#999")
-        label = esc(g.name)
+        short = esc(short_gate_label(g.name))
+        full_id = esc(g.name)
         verdict_label = esc(g.verdict)
         pct_label = f"{g.pass_rate * 100:.1f}%"
+        # Wrap the whole row in a <g> with a <title> so hovering shows the full
+        # gate ID as a native browser tooltip.
         bars.append(
-            f'<text x="{label_w - 10}" y="{y + row_h / 2 + 5}" font-size="13" font-family="ui-monospace, monospace" '
-            f'fill="#222" text-anchor="end">{label}</text>'
+            f'<g aria-label="{full_id}"><title>{full_id}</title>'
+            f'<text x="{label_w - 10}" y="{y + row_h / 2 + 5}" font-size="13" '
+            f'font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif" '
+            f'fill="#222" text-anchor="end">{short}</text>'
             f'<rect x="{label_w}" y="{y + 8}" width="{bar_w:.1f}" height="{row_h - 16}" fill="{color}" '
             f'rx="3" ry="3"/>'
             f'<text x="{label_w + bar_w + 8:.1f}" y="{y + row_h / 2 + 5}" font-size="13" fill="#222">'
             f'{pct_label} <tspan fill="{color}" font-weight="600">{verdict_label}</tspan></text>'
+            f'</g>'
         )
 
-    # x-axis baseline
     axis = (
         f'<line x1="{label_w}" y1="{pad_top + n * row_h + 4}" '
         f'x2="{label_w + chart_w}" y2="{pad_top + n * row_h + 4}" stroke="#444" stroke-width="1"/>'
