@@ -11,6 +11,9 @@ from pathlib import Path
 SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / "46"
 OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 
+INTRO_SLIDES = 4
+PER_PLAN = 3
+
 VERDICT_COLORS = {
     "ROBUST": "#2e7d32",
     "MARGINAL": "#f9a825",
@@ -414,7 +417,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
     <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
     <div class="big-metric warn"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
   </div>
-  <footer class="slide-foot"><span>Overview 1 / 3 &middot; headline figures</span></footer>
+  <footer class="slide-foot"><span>Overview 1 / 4 &middot; headline figures</span></footer>
 </section>
 """
 
@@ -435,14 +438,12 @@ def intro_slide_distribution(stats: DeckStats) -> str:
   <div class="chart-wrap big">
     {chart}
   </div>
-  <footer class="slide-foot"><span>Overview 2 / 3 &middot; verdict band distribution</span></footer>
+  <footer class="slide-foot"><span>Overview 2 / 4 &middot; verdict band distribution</span></footer>
 </section>
 """
 
 
 def intro_slide_roster(plans: list[Plan]) -> str:
-    INTRO_SLIDES = 3
-    PER_PLAN = 3
     indexed = list(enumerate(plans))
     sorted_indexed = sorted(indexed, key=lambda ip: (ip[1].worst_pass_rate, ip[1].slug))
     rows = []
@@ -481,7 +482,80 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 3 / 3 &middot; plan roster</span></footer>
+  <footer class="slide-foot"><span>Overview 3 / 4 &middot; plan roster</span></footer>
+</section>
+"""
+
+
+def per_plan_verdict_distribution(gates: list[Gate]) -> str:
+    """Stacked horizontal bar showing this plan's gate-verdict distribution."""
+    order = ["DOOM", "FRAGILE", "MARGINAL", "ROBUST"]
+    counts = {v: 0 for v in order}
+    for g in gates:
+        if g.verdict in counts:
+            counts[g.verdict] += 1
+    if sum(counts.values()) == 0:
+        return "<div class='vdist-bar empty'></div>"
+    segs = []
+    for v in order:
+        c = counts[v]
+        if c == 0:
+            continue
+        color = VERDICT_COLORS[v]
+        title = f"{c} {v.lower()} gate{'s' if c != 1 else ''}"
+        segs.append(
+            f'<div class="vdist-seg" style="background:{color};flex:{c};" '
+            f'title="{title}">{c}</div>'
+        )
+    return f'<div class="vdist-bar">{"".join(segs)}</div>'
+
+
+def intro_slide_histogram(plans: list[Plan]) -> str:
+    indexed = list(enumerate(plans))
+    sorted_indexed = sorted(indexed, key=lambda ip: (ip[1].worst_pass_rate, ip[1].slug))
+    rows = []
+    for orig_idx, p in sorted_indexed:
+        band = BAND_LABEL.get(p.overall_band, p.overall_band.upper())
+        color = BAND_COLOR.get(p.overall_band, "#666")
+        target_slide = INTRO_SLIDES + orig_idx * PER_PLAN
+        bar = per_plan_verdict_distribution(p.gate_verdicts)
+        n_gates = len(p.gate_verdicts)
+        rows.append(
+            f"<tr class='roster-row' data-target='{target_slide}' "
+            f"tabindex='0' role='link' "
+            f"aria-label='Jump to {esc(p.name)}'>"
+            f"<td class='plan-cell'>"
+            f"<div class='plan-name'>{esc(p.name)}</div>"
+            f"<code class='plan-slug'>{esc(p.slug)}</code>"
+            f"</td>"
+            f"<td><span class='band-pill' style='background:{color}'>{esc(band)}</span></td>"
+            f"<td class='num'>{n_gates}</td>"
+            f"<td class='vdist-cell'>{bar}</td>"
+            f"</tr>"
+        )
+    legend = (
+        '<div class="legend">'
+        '<span><span class="sw" style="background:#c62828"></span>DOOM &lt;20%</span>'
+        '<span><span class="sw" style="background:#ef6c00"></span>FRAGILE 20–50%</span>'
+        '<span><span class="sw" style="background:#f9a825"></span>MARGINAL 50–80%</span>'
+        '<span><span class="sw" style="background:#2e7d32"></span>ROBUST ≥80%</span>'
+        '</div>'
+    )
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">per-plan gate histogram</div>
+    <h1>Plans histogram</h1>
+    <p class="lede">Each row's bar shows how that plan's declared gates distribute across verdict bands. Click a row to jump to the plan.</p>
+  </header>
+  {legend}
+  <table class="roster">
+    <thead><tr>
+      <th>Plan</th><th>Overall</th><th>Gates</th><th>Gate verdict distribution</th>
+    </tr></thead>
+    <tbody>{''.join(rows)}</tbody>
+  </table>
+  <footer class="slide-foot"><span>Overview 4 / 4 &middot; per-plan gate histogram</span></footer>
 </section>
 """
 
@@ -728,6 +802,18 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 }
 .mini-bar { width: 100%; height: 10px; background: var(--rule); border-radius: 5px; overflow: hidden; }
 .mini-bar-fill { height: 100%; }
+.vdist-cell { width: 280px; }
+.vdist-bar {
+  display: flex; height: 26px; width: 100%;
+  border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--rule);
+}
+.vdist-bar.empty { background: var(--rule); }
+.vdist-seg {
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 11px; font-weight: 600;
+  min-width: 0; padding: 0 2px;
+}
 
 /* Drivers slide */
 .drivers-grid { display: flex; flex-direction: column; gap: 22px; }
@@ -768,9 +854,9 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em
 .help { font-size: 11px; color: var(--muted); }
 """
 
-JS = r"""
-const INTRO_SLIDES = 3;
-const PER_PLAN = 3;
+JS_TEMPLATE = r"""
+const INTRO_SLIDES = __INTRO_SLIDES__;
+const PER_PLAN = __PER_PLAN__;
 const slides = Array.from(document.querySelectorAll('.slide'));
 const counter = document.getElementById('counter');
 const progress = document.getElementById('progress-bar');
@@ -843,6 +929,7 @@ def render_html(plans: list[Plan]) -> str:
         intro_slide_headline(stats),
         intro_slide_distribution(stats),
         intro_slide_roster(plans),
+        intro_slide_histogram(plans),
     ]
     options = ['<option value="overview">— Overview —</option>']
     for i, plan in enumerate(plans):
@@ -854,6 +941,10 @@ def render_html(plans: list[Plan]) -> str:
             f'<option value="{i}">{esc(plan.slug)} — {esc(plan.name)} [{esc(band_label)}]</option>'
         )
 
+    total_slides = INTRO_SLIDES + len(plans) * PER_PLAN
+    js = (JS_TEMPLATE
+          .replace("__INTRO_SLIDES__", str(INTRO_SLIDES))
+          .replace("__PER_PLAN__", str(PER_PLAN)))
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -874,10 +965,10 @@ def render_html(plans: list[Plan]) -> str:
   <select id="plan-select" aria-label="Jump to plan">
     {''.join(options)}
   </select>
-  <span class="counter" id="counter">1 / {3 + len(plans) * 3}</span>
+  <span class="counter" id="counter">1 / {total_slides}</span>
   <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
 </div>
-<script>{JS}</script>
+<script>{js}</script>
 </body>
 </html>
 """
@@ -890,8 +981,9 @@ def main() -> None:
     )
     plans = [parse_assessment(d.name, d / "assessment.md") for d in plan_dirs]
     OUTPUT_PATH.write_text(render_html(plans), encoding="utf-8")
-    total = 3 + len(plans) * 3
-    print(f"Wrote {OUTPUT_PATH}: 3 overview + {len(plans)} plans × 3 = {total} slides.")
+    total = INTRO_SLIDES + len(plans) * PER_PLAN
+    print(f"Wrote {OUTPUT_PATH}: {INTRO_SLIDES} overview + "
+          f"{len(plans)} plans × {PER_PLAN} = {total} slides.")
 
 
 if __name__ == "__main__":
