@@ -700,7 +700,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     <tbody>{''.join(rows)}</tbody>
   </table>
   <p class="muted small roster-footnote"><strong>Base case</strong> = the worst gate's value at the deterministic <em>base</em> input scenario. FAIL means the plan fails its own central assumptions, not only in tail cases.</p>
-  <footer class="slide-foot"><span>Overview 5 / 9 &middot; plan roster</span></footer>
+  <footer class="slide-foot"><span>Overview 3 / 9 &middot; plan roster</span></footer>
 </section>
 """
 
@@ -855,7 +855,7 @@ def intro_slide_base_case_failure(plans: list[Plan]) -> str:
   </div>
   {examples_html}
   {unknown_note}
-  <footer class="slide-foot"><span>Overview 6 / 9 &middot; base-case failure</span></footer>
+  <footer class="slide-foot"><span>Overview 4 / 9 &middot; base-case failure</span></footer>
 </section>
 """
 
@@ -910,7 +910,7 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 7 / 9 &middot; gate verdicts by plan</span></footer>
+  <footer class="slide-foot"><span>Overview 9 / 9 &middot; gate verdicts by plan</span></footer>
 </section>
 """
 
@@ -1029,7 +1029,7 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
     <tbody>{''.join(rows)}</tbody>
   </table>
   <p class="muted small">{total_failing} failing gates total. Examples show short labels with the plan in parentheses; classification is by keyword on the full gate ID (first-match-wins). Some gates legitimately span categories; the priority order picks one.</p>
-  <footer class="slide-foot"><span>Overview 8 / 9 &middot; common failure classes</span></footer>
+  <footer class="slide-foot"><span>Overview 5 / 9 &middot; common failure classes</span></footer>
 </section>
 """
 
@@ -1121,7 +1121,7 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 9 / 9 &middot; closest to viability</span></footer>
+  <footer class="slide-foot"><span>Overview 6 / 9 &middot; closest to viability</span></footer>
 </section>
 """
 
@@ -2012,19 +2012,20 @@ show(initial ? parseInt(initial[1], 10) - 1 : 0, false);
 def render_html(plans: list[Plan]) -> str:
     stats = compute_stats(plans)
     methodology = extract_slides(METHODOLOGY_PATH) if METHODOLOGY_PATH.exists() else []
+    # Findings → triage first; methodology + reference views at the end.
     methodology_html = [
-        slide_methodology(m, 3 + i, INTRO_SLIDES)
+        slide_methodology(m, 7 + i, INTRO_SLIDES)
         for i, m in enumerate(methodology[:2])  # only Slide A & Slide B
     ]
     slides_html = [
-        intro_slide_headline(stats),
-        intro_slide_distribution(stats),
-        *methodology_html,
-        intro_slide_roster(plans),
-        intro_slide_base_case_failure(plans),
-        intro_slide_histogram(plans),
-        intro_slide_failure_clustering(plans),
-        intro_slide_most_fixable(plans),
+        intro_slide_headline(stats),               # 1/9 — Headline figures
+        intro_slide_distribution(stats),           # 2/9 — Verdict distribution
+        intro_slide_roster(plans),                 # 3/9 — Plan roster
+        intro_slide_base_case_failure(plans),      # 4/9 — Base-case finding
+        intro_slide_failure_clustering(plans),     # 5/9 — Common failure classes
+        intro_slide_most_fixable(plans),           # 6/9 — Most-fixable triage
+        *methodology_html,                         # 7/9, 8/9 — Methodology A, B
+        intro_slide_histogram(plans),              # 9/9 — Gate verdicts by plan
     ]
     options = ['<option value="overview">— Overview —</option>']
     for i, plan in enumerate(plans):
