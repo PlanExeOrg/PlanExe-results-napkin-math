@@ -8,10 +8,13 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from methodology_slides import MethodologySlide, extract_slides
+
 SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / "46"
 OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
+METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
-INTRO_SLIDES = 4
+INTRO_SLIDES = 6
 PER_PLAN = 3
 
 VERDICT_COLORS = {
@@ -417,7 +420,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
     <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
     <div class="big-metric warn"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
   </div>
-  <footer class="slide-foot"><span>Overview 1 / 4 &middot; headline figures</span></footer>
+  <footer class="slide-foot"><span>Overview 1 / 6 &middot; headline figures</span></footer>
 </section>
 """
 
@@ -438,7 +441,7 @@ def intro_slide_distribution(stats: DeckStats) -> str:
   <div class="chart-wrap big">
     {chart}
   </div>
-  <footer class="slide-foot"><span>Overview 2 / 4 &middot; verdict band distribution</span></footer>
+  <footer class="slide-foot"><span>Overview 2 / 6 &middot; verdict band distribution</span></footer>
 </section>
 """
 
@@ -482,7 +485,22 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 3 / 4 &middot; plan roster</span></footer>
+  <footer class="slide-foot"><span>Overview 5 / 6 &middot; plan roster</span></footer>
+</section>
+"""
+
+
+def slide_methodology(slide: MethodologySlide, index: int, total: int) -> str:
+    return f"""
+<section class="slide methodology-slide">
+  <header class="slide-head">
+    <div class="kicker">methodology &middot; slide {esc(slide.key)}</div>
+    <h1>{esc(slide.title)}</h1>
+  </header>
+  <div class="methodology-body">
+    {slide.body_html}
+  </div>
+  <footer class="slide-foot"><span>Overview {index} / {total} &middot; methodology</span></footer>
 </section>
 """
 
@@ -560,7 +578,7 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 4 / 4 &middot; gate verdicts by plan</span></footer>
+  <footer class="slide-foot"><span>Overview 6 / 6 &middot; gate verdicts by plan</span></footer>
 </section>
 """
 
@@ -822,6 +840,27 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   min-width: 0; padding: 0 2px;
 }
 
+/* Methodology slides */
+.methodology-body { max-width: 78ch; font-size: 14px; line-height: 1.6; color: var(--ink); }
+.methodology-body h3 {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--muted); margin: 22px 0 10px; font-weight: 600;
+}
+.methodology-body p { margin: 0 0 14px; }
+.methodology-body ul { padding-left: 22px; margin: 0 0 14px; }
+.methodology-body li { margin-bottom: 8px; }
+.methodology-body ul ul { margin: 8px 0 0; padding-left: 22px; }
+.methodology-body code {
+  font-size: 0.88em; padding: 1px 5px; background: #f0f0ec;
+  border-radius: 3px; color: var(--ink);
+}
+.methodology-body em { color: var(--muted); }
+.methodology-body p > em:only-child {
+  display: block; padding: 12px 16px; background: #fafaf8;
+  border-left: 3px solid var(--rule); border-radius: 0 4px 4px 0;
+  color: var(--muted); font-size: 13px; font-style: italic; margin-top: 6px;
+}
+
 /* Drivers slide */
 .drivers-grid { display: flex; flex-direction: column; gap: 22px; }
 .panel h3 { margin: 0 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink); }
@@ -941,9 +980,15 @@ show(initial ? parseInt(initial[1], 10) - 1 : 0, false);
 
 def render_html(plans: list[Plan]) -> str:
     stats = compute_stats(plans)
+    methodology = extract_slides(METHODOLOGY_PATH) if METHODOLOGY_PATH.exists() else []
+    methodology_html = [
+        slide_methodology(m, 3 + i, INTRO_SLIDES)
+        for i, m in enumerate(methodology[:2])  # only Slide A & Slide B
+    ]
     slides_html = [
         intro_slide_headline(stats),
         intro_slide_distribution(stats),
+        *methodology_html,
         intro_slide_roster(plans),
         intro_slide_histogram(plans),
     ]
