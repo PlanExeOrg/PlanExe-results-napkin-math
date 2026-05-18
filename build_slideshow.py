@@ -760,20 +760,33 @@ def _evaluate_base_case(plan: Plan) -> tuple[str, str, str, str]:
     return (status, formatted, sc.unit, plan.worst_gate)
 
 
-def _pick_diverse_examples(items: list[tuple], k: int = 3) -> list[tuple]:
-    """Pick up to k items, preferring unit diversity. Items are tuples whose
-    3rd element (index 2) is the unit string."""
-    seen_units: set[str] = set()
+def _pick_examples_by_class(items: list[tuple], k: int = 4) -> list[tuple]:
+    """Pick up to k examples covering different failure classes.
+
+    items: list of (plan, formatted_value, unit, gate) tuples.
+    Returns: list of (class_label, plan, formatted_value, unit, gate) sorted
+    by the most-populated class first. Within each class, picks the worst-
+    pass-rate plan as the representative.
+    """
+    by_class: dict[str, list[tuple]] = {}
+    for item in items:
+        gate = item[3]
+        cls = classify_gate_class(gate)
+        by_class.setdefault(cls, []).append(item)
+    # Order classes by how many plans fail in that class (most first), so
+    # the most representative class examples come first. "Other" pushed last.
+    sorted_classes = sorted(
+        by_class.items(),
+        key=lambda kv: (kv[0] == "Other", -len(kv[1])),
+    )
     chosen: list[tuple] = []
-    for item in items:
-        unit = item[2]
-        if unit and unit not in seen_units and len(chosen) < k:
-            chosen.append(item)
-            seen_units.add(unit)
-    for item in items:
-        if item not in chosen and len(chosen) < k:
-            chosen.append(item)
-    return chosen[:k]
+    for cls, members in sorted_classes:
+        if len(chosen) >= k:
+            break
+        # Within the class, pick the worst-pass-rate plan as canonical example.
+        member = min(members, key=lambda x: x[0].worst_pass_rate)
+        chosen.append((cls, *member))
+    return chosen
 
 
 def intro_slide_base_case_failure(plans: list[Plan]) -> str:
@@ -805,33 +818,35 @@ def intro_slide_base_case_failure(plans: list[Plan]) -> str:
         headline_h1 = "No plans assessed"
         big_num = "0 / 0"
 
-    examples = _pick_diverse_examples(
-        sorted(fail_examples, key=lambda x: x[0].worst_pass_rate),
-        k=3,
-    )
+    examples = _pick_examples_by_class(fail_examples, k=4)
     if examples:
         rows = []
-        for plan, formatted, unit, gate in examples:
-            unit_cell = f"<span class='muted small'>{esc(unit)}</span>" if unit else ""
+        for cls, plan, formatted, unit, gate in examples:
+            unit_cell = (
+                f"<span class='muted small'>{esc(unit)}</span>" if unit else ""
+            )
             rows.append(
                 f"<tr>"
+                f"<td class='bc-class'>{esc(cls)}</td>"
                 f"<td class='plan-cell'>"
                 f"<div class='plan-name'>{esc(plan.name)}</div>"
                 f"<code class='plan-slug'>{esc(plan.slug)}</code>"
                 f"</td>"
-                f"<td><code>{esc(gate)}</code></td>"
+                f"<td><code>{esc(short_gate_label(gate))}</code></td>"
                 f"<td class='num bc-val'>{esc(formatted)}</td>"
                 f"<td>{unit_cell}</td>"
                 f"</tr>"
             )
         examples_html = f"""
-        <h3 class="bc-section-title">Examples</h3>
+        <h3 class="bc-section-title">One example per failure class</h3>
         <table class="roster bc-examples">
           <thead><tr>
-            <th>Plan</th><th>Worst gate</th><th class='num'>Base value</th><th>Unit</th>
+            <th>Class</th><th>Plan</th><th>Worst gate</th>
+            <th class='num'>Base value</th><th>Unit</th>
           </tr></thead>
           <tbody>{''.join(rows)}</tbody>
-        </table>"""
+        </table>
+        <p class='muted small'>One canonical failing plan per failure class &mdash; not a ranking. Picked as the worst-failing plan within each class.</p>"""
     else:
         examples_html = ""
 
@@ -1826,6 +1841,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   letter-spacing: 0.1em; color: var(--muted); font-weight: 600;
 }
 .bc-examples td.bc-val { color: #b3300f; font-weight: 700; }
+.bc-examples td.bc-class { font-weight: 600; font-size: 12px; width: 180px; }
 
 /* Drivers slide */
 .drivers-grid { display: flex; flex-direction: column; gap: 22px; }
