@@ -73,6 +73,21 @@ class MissingInput:
 
 
 @dataclass
+class ScenarioRow:
+    """Output values at deterministic low/base/high input scenarios."""
+    low: float | None
+    base: float | None
+    high: float | None
+    unit: str
+
+
+@dataclass
+class GateCondition:
+    operator: str  # ">=", ">", "<=", "<", "=="
+    value: float
+
+
+@dataclass
 class DeckStats:
     total_plans: int
     band_counts: dict[str, int]
@@ -97,6 +112,8 @@ class Plan:
     failure_drivers: list[Driver] = field(default_factory=list)
     unmodelled_gates: list[UnmodelledGate] = field(default_factory=list)
     missing_inputs: list[MissingInput] = field(default_factory=list)
+    scenarios: dict[str, ScenarioRow] = field(default_factory=dict)
+    gate_conditions: dict[str, GateCondition] = field(default_factory=dict)
     next_actions: list[str] = field(default_factory=list)
 
 
@@ -135,6 +152,15 @@ def parse_md_table(section: str) -> list[list[str]]:
         return []
     # rows[0] header, rows[1] separator, rows[2:] data
     return [rows[0]] + rows[2:]
+
+
+def _maybe_float(v) -> float | None:
+    if v is None:
+        return None
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
 
 
 def parse_pct(text: str) -> float:
@@ -221,10 +247,11 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         if m:
             actions.append(strip_md_inline(m.group(1)))
 
-    # Missing-value priority — read from raw montecarlo.json so it tracks
-    # the simulation result, not the markdown's rendering of it.
+    # Raw simulation data — pulled directly from JSON, not from the markdown.
     missing_inputs: list[MissingInput] = []
+    gate_conditions: dict[str, GateCondition] = {}
     mc_path = md_path.parent / "montecarlo.json"
+    output_units: dict[str, str] = {}
     if mc_path.exists():
         mc = json.loads(mc_path.read_text(encoding="utf-8"))
         for rank, entry in enumerate(mc.get("missing_value_priority", []), start=1):
@@ -236,6 +263,32 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
                 bound_width_ratio=float(entry.get("bound_width_ratio", 0.0)),
                 source=entry.get("source", ""),
             ))
+        for gname, th in mc.get("thresholds", {}).items():
+            gate_conditions[gname] = GateCondition(
+                operator=str(th.get("operator", ">=")),
+                value=float(th.get("value", 0.0)),
+            )
+        for gname, out in mc.get("outputs", {}).items():
+            unit = out.get("unit") if isinstance(out, dict) else None
+            if unit:
+                output_units[gname] = unit
+
+    scenarios: dict[str, ScenarioRow] = {}
+    sc_path = md_path.parent / "scenarios.json"
+    if sc_path.exists():
+        sc = json.loads(sc_path.read_text(encoding="utf-8"))
+        sc_data = sc.get("scenarios", {}) if isinstance(sc, dict) else {}
+        low_out = sc_data.get("low", {}).get("outputs", {}) if isinstance(sc_data, dict) else {}
+        base_out = sc_data.get("base", {}).get("outputs", {}) if isinstance(sc_data, dict) else {}
+        high_out = sc_data.get("high", {}).get("outputs", {}) if isinstance(sc_data, dict) else {}
+        gate_names = set(low_out) | set(base_out) | set(high_out)
+        for gname in gate_names:
+            scenarios[gname] = ScenarioRow(
+                low=_maybe_float(low_out.get(gname)),
+                base=_maybe_float(base_out.get(gname)),
+                high=_maybe_float(high_out.get(gname)),
+                unit=output_units.get(gname, ""),
+            )
 
     return Plan(
         slug=slug,
@@ -252,6 +305,8 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         failure_drivers=drivers,
         unmodelled_gates=unmodelled,
         missing_inputs=missing_inputs,
+        scenarios=scenarios,
+        gate_conditions=gate_conditions,
         next_actions=actions,
     )
 
@@ -634,9 +689,56 @@ def slide_overview(plan: Plan) -> str:
 """
 
 
+def _basis_pill_class(basis: str) -> str:
+    """Map threshold_basis values to a CSS class."""
+    b = (basis or "").lower()
+    if "explicit" in b:
+        return "basis-explicit"
+    if "inferred" in b:
+        return "basis-inferred"
+    if "derived" in b:
+        return "basis-derived"
+    if "model" in b or "assumption" in b:
+        return "basis-model"
+    return "basis-unknown"
+
+
+def _format_scenario_value(v: float | None, condition: GateCondition | None) -> tuple[str, str]:
+    """Return (display_str, css_class). Class flags fail/pass against the gate condition."""
+    if v is None:
+        return ("—", "")
+    sign = "+" if v >= 0 else ""
+    abs_v = abs(v)
+    if abs_v >= 1_000_000_000:
+        s = f"{sign}{v / 1_000_000_000:.2f}B"
+    elif abs_v >= 1_000_000:
+        s = f"{sign}{v / 1_000_000:.2f}M"
+    elif abs_v >= 1_000:
+        s = f"{sign}{v / 1_000:.2f}k"
+    elif abs_v < 1:
+        s = f"{sign}{v:.4f}"
+    else:
+        s = f"{sign}{v:.2f}"
+    # Evaluate against condition: e.g. ">= 0" — fail if v < 0
+    cls = ""
+    if condition is not None:
+        op, thr = condition.operator, condition.value
+        passes = {
+            ">=": v >= thr,
+            ">": v > thr,
+            "<=": v <= thr,
+            "<": v < thr,
+            "==": v == thr,
+        }.get(op, None)
+        if passes is True:
+            cls = "sc-pass"
+        elif passes is False:
+            cls = "sc-fail"
+    return (s, cls)
+
+
 def slide_gate_chart(plan: Plan) -> str:
     chart = render_gate_bar_chart(plan.gate_verdicts)
-    # Legend
     legend = """
     <div class="legend">
       <span><span class="sw" style="background:#c62828"></span>DOOM &lt;20%</span>
@@ -644,6 +746,54 @@ def slide_gate_chart(plan: Plan) -> str:
       <span><span class="sw" style="background:#f9a825"></span>MARGINAL 50–80%</span>
       <span><span class="sw" style="background:#2e7d32"></span>ROBUST ≥80%</span>
     </div>
+    """
+    # Supplementary detail table: threshold condition, basis pill,
+    # and low/base/high scenario outputs per gate.
+    detail_rows = []
+    for g in plan.gate_verdicts:
+        cond = plan.gate_conditions.get(g.name)
+        cond_str = (
+            f"{cond.operator} {cond.value:g}" if cond else "—"
+        )
+        basis_cls = _basis_pill_class(g.threshold_basis)
+        basis_label = (g.threshold_basis or "unknown").replace("_", " ")
+        sc = plan.scenarios.get(g.name)
+        if sc is None:
+            low_disp, base_disp, high_disp = ("—", ""), ("—", ""), ("—", "")
+            unit = ""
+        else:
+            low_disp = _format_scenario_value(sc.low, cond)
+            base_disp = _format_scenario_value(sc.base, cond)
+            high_disp = _format_scenario_value(sc.high, cond)
+            unit = sc.unit
+        unit_cell = f"<span class='muted small'>{esc(unit)}</span>" if unit else ""
+        detail_rows.append(
+            f"<tr>"
+            f"<td><code>{esc(g.name)}</code></td>"
+            f"<td class='cond'>{esc(cond_str)}</td>"
+            f"<td><span class='basis-pill {basis_cls}'>{esc(basis_label)}</span></td>"
+            f"<td class='num scen {low_disp[1]}'>{esc(low_disp[0])}</td>"
+            f"<td class='num scen {base_disp[1]}'>{esc(base_disp[0])}</td>"
+            f"<td class='num scen {high_disp[1]}'>{esc(high_disp[0])}</td>"
+            f"<td>{unit_cell}</td>"
+            f"</tr>"
+        )
+    detail_table = f"""
+    <table class="gate-detail">
+      <thead>
+        <tr>
+          <th>Gate</th>
+          <th>Condition</th>
+          <th>Threshold basis</th>
+          <th class='num'>Low</th>
+          <th class='num'>Base</th>
+          <th class='num'>High</th>
+          <th>Unit</th>
+        </tr>
+      </thead>
+      <tbody>{''.join(detail_rows)}</tbody>
+    </table>
+    <p class="muted small">Scenario columns show each output at the <em>low</em>, <em>base</em>, and <em>high</em> deterministic input scenarios. Green = the gate passes its condition; red = the gate fails. The <strong>base</strong> column is the most telling: red there means the plan already fails under its own central assumptions, not just in tail cases.</p>
     """
     return f"""
 <section class="slide">
@@ -655,6 +805,7 @@ def slide_gate_chart(plan: Plan) -> str:
     {chart}
   </div>
   {legend}
+  {detail_table}
   <footer class="slide-foot"><span>Slide 2 / 5 &middot; gate pass rates</span></footer>
 </section>
 """
@@ -947,6 +1098,30 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 }
 .basis-pill.src-assumption { background: #fff7f0; color: #b3300f; border-color: #ef6c00; }
 .basis-pill.src-data { background: #f1f4ef; color: #1e6d2c; border-color: #c8d4c0; }
+.basis-pill.basis-explicit { background: #eef2ee; color: #1e4d2c; border-color: #b8c7b3; }
+.basis-pill.basis-inferred { background: #f0f0f4; color: #3a3a78; border-color: #b9b9d0; }
+.basis-pill.basis-derived  { background: #f4f0eb; color: #6b4a23; border-color: #d3c1a8; }
+.basis-pill.basis-model    { background: #fff7f0; color: #b3300f; border-color: #ef6c00; }
+.basis-pill.basis-unknown  { background: #f3f3f1; color: #555; border-color: #d8d8d4; }
+
+/* Gate detail table on slide 2 */
+.gate-detail {
+  width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 16px;
+}
+.gate-detail th, .gate-detail td {
+  padding: 6px 10px; border-bottom: 1px solid var(--rule); vertical-align: middle;
+}
+.gate-detail th {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600; text-align: left;
+}
+.gate-detail th.num, .gate-detail td.num {
+  text-align: right; font-variant-numeric: tabular-nums;
+}
+.gate-detail td.cond { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+.gate-detail td.scen { font-weight: 600; }
+.gate-detail td.scen.sc-pass { color: #1e6d2c; }
+.gate-detail td.scen.sc-fail { color: #b3300f; }
 .um-list { list-style: none; padding: 0; margin: 0; }
 .um-list li { margin-bottom: 14px; }
 .um-why { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 3px; }
