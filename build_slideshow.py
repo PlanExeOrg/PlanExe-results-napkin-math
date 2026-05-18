@@ -375,16 +375,41 @@ def render_gate_bar_chart(gates: list[Gate]) -> str:
     )
 
 
-def render_verdict_badge(band: str, worst_gate: str, worst_pr: float) -> str:
+def render_verdict_badge(
+    band: str, worst_gate: str, worst_pr: float,
+    n_unmodelled: int = 0, unmodelled_heavy: bool = False,
+) -> str:
     color = BAND_COLOR.get(band, "#666")
     label = BAND_LABEL.get(band, band.upper())
     pct = f"{worst_pr * 100:.1f}%" if worst_pr is not None else "—"
+
+    if n_unmodelled == 0:
+        caveat_html = (
+            '<div class="verdict-caveat">'
+            'Not a whole-plan probability &mdash; the verdict reflects the worst declared gate.'
+            '</div>'
+        )
+    else:
+        gate_word = "gate" if n_unmodelled == 1 else "gates"
+        heavy_html = (
+            '<div class="verdict-caveat-headline">Unmodelled-heavy &mdash; '
+            'verdict is highly conditional.</div>' if unmodelled_heavy else ''
+        )
+        caveat_html = (
+            f'<div class="verdict-caveat">'
+            f'{heavy_html}'
+            f'Conditional on {n_unmodelled} unmodelled existential {gate_word} holding. '
+            f'Not a whole-plan probability.'
+            f'</div>'
+        )
+
     return (
         f'<div class="verdict" style="background:{color};">'
         f'<div class="verdict-label">VERDICT</div>'
         f'<div class="verdict-band">{esc(label)}</div>'
         f'<div class="verdict-sub">worst gate: <code>{esc(worst_gate or "n/a")}</code></div>'
         f'<div class="verdict-sub">pass rate: <strong>{pct}</strong></div>'
+        f'{caveat_html}'
         f"</div>"
     )
 
@@ -736,9 +761,14 @@ def classify_failure_shape(plan: Plan) -> tuple[str, str, str]:
 
 
 def slide_overview(plan: Plan) -> str:
-    badge = render_verdict_badge(plan.overall_band, plan.worst_gate, plan.worst_pass_rate)
     failed_n = len(plan.failed_gates)
     unmod_n = len(plan.unmodelled_gate_names)
+    declared_n = len(plan.gate_verdicts)
+    unmodelled_heavy = unmod_n > 0 and unmod_n >= declared_n
+    badge = render_verdict_badge(
+        plan.overall_band, plan.worst_gate, plan.worst_pass_rate,
+        n_unmodelled=unmod_n, unmodelled_heavy=unmodelled_heavy,
+    )
     shape, label, interp = classify_failure_shape(plan)
     return f"""
 <section class="slide">
@@ -1160,6 +1190,16 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .verdict-band { font-size: 56px; font-weight: 700; line-height: 1; margin: 8px 0 18px; letter-spacing: -0.01em; }
 .verdict-sub { font-size: 13px; margin-top: 4px; opacity: 0.95; }
 .verdict-sub code { background: rgba(255,255,255,0.18); padding: 1px 6px; border-radius: 3px; }
+.verdict-caveat {
+  margin-top: 16px; padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.30);
+  font-size: 11px; line-height: 1.55;
+  color: rgba(255,255,255,0.92);
+}
+.verdict-caveat-headline {
+  font-weight: 700; letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
 
 /* Failure shape / fixability card on plan overview slide */
 .failure-shape {
