@@ -624,7 +624,7 @@ def slide_gate_chart(plan: Plan) -> str:
     return f"""
 <section class="slide">
   <header class="slide-head">
-    <div class="kicker">{esc(plan.slug)}</div>
+    <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
     <h1>Gate pass rates</h1>
     <p class="lede">Pass rate per declared gate over 10,000 Monte-Carlo runs. Verdict band determined by pass rate.</p>
   </header>
@@ -666,7 +666,7 @@ def slide_drivers(plan: Plan) -> str:
     return f"""
 <section class="slide">
   <header class="slide-head">
-    <div class="kicker">{esc(plan.slug)}</div>
+    <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
     <h1>Drivers &amp; out-of-model risks</h1>
   </header>
   <div class="drivers-grid">
