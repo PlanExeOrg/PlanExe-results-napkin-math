@@ -383,7 +383,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
     return f"""
 <section class="slide">
   <header class="slide-head">
-    <div class="kicker">PlanExe &middot; snapshot 46</div>
+    <div class="kicker">PlanExe</div>
     <h1>Napkin-math assessment overview</h1>
     <p class="lede">Monte-Carlo viability stress tests for each plan. Pass rates are taken over 10,000 simulated runs per declared gate; verdict bands: DOOM &lt;20%, FRAGILE 20–50%, MARGINAL 50–80%, ROBUST ≥80%. Each plan is profiled across the three slides that follow this overview.</p>
   </header>
@@ -403,7 +403,7 @@ def intro_slide_distribution(stats: DeckStats) -> str:
     return f"""
 <section class="slide">
   <header class="slide-head">
-    <div class="kicker">Snapshot 46 &middot; verdict distribution</div>
+    <div class="kicker">verdict distribution</div>
     <h1>How many plans are doomed?</h1>
     <p class="lede">Each plan's overall risk band is set by its worst declared gate.</p>
   </header>
@@ -446,7 +446,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     return f"""
 <section class="slide">
   <header class="slide-head">
-    <div class="kicker">Snapshot 46 &middot; plan roster</div>
+    <div class="kicker">plan roster</div>
     <h1>Plans ranked by worst-gate pass rate</h1>
     <p class="lede">Most doomed at the top. The bar shows the worst gate's pass rate; the verdict band is determined by where that pass rate falls.</p>
   </header>
@@ -577,6 +577,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
 .deck { position: relative; }
 .slide {
+  position: relative;
   width: min(1100px, 96vw);
   min-height: 88vh;
   margin: 24px auto;
@@ -589,12 +590,20 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   scroll-margin-top: 16px;
 }
 .slide.active { display: flex; }
-.slide-head { border-bottom: 1px solid var(--rule); padding-bottom: 16px; margin-bottom: 22px; }
+.slide-head { border-bottom: 1px solid var(--rule); padding-bottom: 16px; margin-bottom: 22px; padding-right: 160px; }
 .slide-head .kicker {
   font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--kicker); font-family: ui-monospace, "SF Mono", Menlo, monospace;
 }
 .slide-head h1 { font-size: 28px; margin: 6px 0 0; font-weight: 600; line-height: 1.25; }
+.snapshot-link {
+  position: fixed; top: 62px; right: calc(max(0px, (100vw - min(1100px, 96vw)) / 2) + 48px);
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--kicker); font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  text-decoration: none; z-index: 5; padding: 4px 6px; margin: -4px -6px;
+  border-radius: 3px;
+}
+.snapshot-link:hover { color: var(--ink); background: rgba(0,0,0,0.04); }
 .slide-head .lede { color: var(--muted); margin: 8px 0 0; font-size: 14px; max-width: 70ch; }
 .slide-foot {
   margin-top: auto; padding-top: 18px; border-top: 1px solid var(--rule);
@@ -621,7 +630,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 
 /* Chart slide */
 .chart-wrap { padding: 8px 0; }
-.legend { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12px; color: var(--muted); margin-top: 8px; }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; font-size: 12px; color: var(--muted); margin-top: 8px; }
 .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
 
 /* Intro slides */
@@ -798,6 +807,9 @@ def render_html(plans: list[Plan]) -> str:
 <style>{CSS}</style>
 </head>
 <body>
+<a class="snapshot-link"
+   href="https://github.com/PlanExeOrg/PlanExe-results-napkin-math/tree/main/snapshot/46"
+   target="_blank" rel="noopener">Snapshot 46</a>
 <div class="deck">
 {''.join(slides_html)}
 </div>
