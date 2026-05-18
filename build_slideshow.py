@@ -525,6 +525,31 @@ def intro_slide_distribution(stats: DeckStats) -> str:
 """
 
 
+def _base_case_cell(plan: Plan) -> str:
+    """Render the 'Base case' roster cell for a plan: pass/fail badge + value."""
+    cond = plan.gate_conditions.get(plan.worst_gate)
+    sc = plan.scenarios.get(plan.worst_gate)
+    if sc is None or sc.base is None or cond is None:
+        return "<td class='base-cell'><span class='muted'>—</span></td>"
+    val_str, val_cls = _format_scenario_value(sc.base, cond)
+    if "pass" in val_cls:
+        pf_label, pf_cls = "PASS", "pf-pass"
+    elif "fail" in val_cls:
+        pf_label, pf_cls = "FAIL", "pf-fail"
+    else:
+        pf_label, pf_cls = "?", "pf-unknown"
+    unit_span = (
+        f"<span class='base-unit'>{esc(sc.unit)}</span>" if sc.unit else ""
+    )
+    return (
+        f"<td class='base-cell'>"
+        f"<span class='pass-fail {pf_cls}'>{pf_label}</span>"
+        f"<span class='base-val'>{esc(val_str)}</span>"
+        f"{unit_span}"
+        f"</td>"
+    )
+
+
 def intro_slide_roster(plans: list[Plan]) -> str:
     indexed = list(enumerate(plans))
     sorted_indexed = sorted(indexed, key=lambda ip: (ip[1].worst_pass_rate, ip[1].slug))
@@ -534,6 +559,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
         color = BAND_COLOR.get(p.overall_band, "#666")
         pct = p.worst_pass_rate * 100
         target_slide = INTRO_SLIDES + orig_idx * PER_PLAN  # 0-based
+        base_cell = _base_case_cell(p)
         rows.append(
             f"<tr class='roster-row' data-target='{target_slide}' "
             f"tabindex='0' role='link' "
@@ -543,6 +569,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
             f"<code class='plan-slug'>{esc(p.slug)}</code>"
             f"</td>"
             f"<td><span class='band-pill' style='background:{color}'>{esc(band)}</span></td>"
+            f"{base_cell}"
             f"<td class='num'>{pct:.1f}%</td>"
             f"<td class='bar-cell'>"
             f"<div class='mini-bar'><div class='mini-bar-fill' "
@@ -560,10 +587,11 @@ def intro_slide_roster(plans: list[Plan]) -> str:
   </header>
   <table class="roster">
     <thead><tr>
-      <th>Plan</th><th>Band</th><th>Worst pass rate</th><th>Visualization</th><th>Worst gate</th>
+      <th>Plan</th><th>Band</th><th>Base case</th><th>Worst pass rate</th><th>Visualization</th><th>Worst gate</th>
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
+  <p class="muted small roster-footnote"><strong>Base case</strong> = the worst gate's value at the deterministic <em>base</em> input scenario. FAIL means the plan fails its own central assumptions, not only in tail cases.</p>
   <footer class="slide-foot"><span>Overview 5 / 6 &middot; plan roster</span></footer>
 </section>
 """
@@ -1125,6 +1153,20 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 }
 .mini-bar { width: 100%; height: 10px; background: var(--rule); border-radius: 5px; overflow: hidden; }
 .mini-bar-fill { height: 100%; }
+.roster td.base-cell { white-space: nowrap; }
+.pass-fail {
+  display: inline-block; padding: 2px 7px; border-radius: 4px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+}
+.pass-fail.pf-pass { background: #e8f4ea; color: #1e6d2c; }
+.pass-fail.pf-fail { background: #fdecec; color: #b3300f; }
+.pass-fail.pf-unknown { background: #f0f0ee; color: #555; }
+.base-val {
+  margin-left: 8px; font-weight: 600;
+  font-variant-numeric: tabular-nums; font-size: 12px;
+}
+.base-unit { margin-left: 6px; color: var(--muted); font-size: 11px; }
+.roster-footnote { margin-top: 12px; }
 .vdist-cell { width: 280px; }
 .vdist-bar {
   display: flex; height: 26px; width: 100%;
