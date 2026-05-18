@@ -290,7 +290,7 @@ def render_verdict_badge(band: str, worst_gate: str, worst_pr: float) -> str:
     pct = f"{worst_pr * 100:.1f}%" if worst_pr is not None else "—"
     return (
         f'<div class="verdict" style="background:{color};">'
-        f'<div class="verdict-label">OVERALL</div>'
+        f'<div class="verdict-label">VERDICT</div>'
         f'<div class="verdict-band">{esc(label)}</div>'
         f'<div class="verdict-sub">worst gate: <code>{esc(worst_gate or "n/a")}</code></div>'
         f'<div class="verdict-sub">pass rate: <strong>{pct}</strong></div>'
