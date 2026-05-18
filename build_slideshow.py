@@ -1739,8 +1739,8 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .conf-c.conf-high { color: #1e6d2c; }
 
 /* Chart slide */
-.chart-wrap { padding: 8px 0; }
-.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; font-size: 12px; color: var(--muted); margin-top: 8px; }
+.chart-wrap { padding: 8px 0 0; }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; font-size: 12px; color: var(--muted); margin-top: 0; margin-bottom: 36px; }
 .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
 
 /* Intro slides */
@@ -1934,7 +1934,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 
 /* Gate detail table on slide 2 */
 .gate-detail {
-  width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 16px;
+  width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 0;
 }
 .gate-detail th, .gate-detail td {
   padding: 6px 10px; border-bottom: 1px solid var(--rule); vertical-align: middle;
