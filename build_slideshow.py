@@ -1050,31 +1050,54 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
 
 
 def _fixability_reason(plan: Plan) -> str:
-    """One-line synthesis of why this plan is relatively easy to fix."""
+    """Specific synthesis of *why* this plan's failure shape is narrow or wide.
+
+    Describes the shape in concrete terms (counts of DOOM/FRAGILE/MARGINAL/
+    ROBUST + supporting gates) rather than generic categories. The actual
+    blocker gate name is shown in the adjacent "First fix" column, so this
+    function deliberately omits the gate name to avoid duplication.
+    """
     counts = {v: 0 for v in ("DOOM", "FRAGILE", "MARGINAL", "ROBUST")}
     for g in plan.gate_verdicts:
         if g.verdict in counts:
             counts[g.verdict] += 1
+    d, f, m, r = counts["DOOM"], counts["FRAGILE"], counts["MARGINAL"], counts["ROBUST"]
     high_conf = sum(1 for g in plan.gate_verdicts if g.confidence_grade == "HIGH")
     low_conf = sum(1 for g in plan.gate_verdicts if g.confidence_grade == "LOW")
     n_unmod = len(plan.unmodelled_gate_names)
     pct = plan.worst_pass_rate * 100
-    reasons: list[str] = []
-    if counts["DOOM"] == 0:
-        reasons.append("no DOOM gates")
-    elif counts["DOOM"] == 1 and counts["MARGINAL"] + counts["ROBUST"] >= counts["FRAGILE"]:
-        reasons.append("single hard blocker")
-    if plan.worst_pass_rate >= 0.30:
-        reasons.append(f"worst gate at {pct:.0f}%")
-    elif plan.worst_pass_rate >= 0.20:
-        reasons.append(f"worst gate near threshold ({pct:.0f}%)")
+
+    parts: list[str] = []
+
+    # Shape description (the leading clause).
+    if d == 0 and f == 0:
+        parts.append("no failing gates")
+    elif d == 0:
+        parts.append(f"no DOOM gates; weakest at {pct:.0f}%")
+    elif d == 1 and m + r > f:
+        # Single hard blocker with supporting gates near or above threshold.
+        supports = []
+        if m:
+            supports.append(f"{m} marginal")
+        if r:
+            supports.append(f"{r} robust")
+        parts.append(
+            "single hard blocker, " + " + ".join(supports)
+            if supports
+            else "single hard blocker"
+        )
+    elif d == 1:
+        parts.append(f"1 DOOM + {f} FRAGILE")
+    else:
+        parts.append(f"{d} DOOM + {f} FRAGILE blockers")
+
+    # Trust-calibration modifiers.
     if high_conf >= 2 and high_conf >= low_conf:
-        reasons.append("data-anchored gates")
+        parts.append("data-anchored")
     if n_unmod <= 2:
-        reasons.append("few out-of-model risks")
-    if not reasons:
-        return "multiple modelled blockers"
-    return "; ".join(reasons[:3])
+        parts.append("few unmodelled risks")
+
+    return "; ".join(parts[:3])
 
 
 def intro_slide_most_fixable(plans: list[Plan]) -> str:
@@ -1104,6 +1127,7 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
         shape, _, _ = classify_failure_shape(p)
         n_unmod = len(p.unmodelled_gate_names)
         reason = _fixability_reason(p)
+        first_fix = short_gate_label(p.worst_gate) if p.worst_gate else "—"
         target_slide = INTRO_SLIDES + orig_idx * PER_PLAN
         rows.append(
             f"<tr class='roster-row' data-target='{target_slide}' "
@@ -1117,6 +1141,7 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
             f"<td class='fix-shape'><code>{esc(shape)}</code></td>"
             f"<td class='num'>{pct:.1f}%</td>"
             f"<td class='num'>{n_unmod}</td>"
+            f"<td class='fix-first'><code title='{esc(p.worst_gate)}'>{esc(first_fix)}</code></td>"
             f"<td class='fix-why'>{esc(reason)}</td>"
             f"</tr>"
         )
@@ -1132,7 +1157,7 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
     <thead><tr>
       <th>Plan</th><th>Band</th><th>Failure shape</th>
       <th class='num'>Worst pass rate</th><th class='num'>Unmodelled</th>
-      <th>Why fixable</th>
+      <th>First fix</th><th>Why fixable</th>
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
@@ -1821,7 +1846,11 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 
 /* Most-fixable triage table */
 .fix-table td.fix-shape code { font-size: 11px; }
-.fix-table td.fix-why { font-size: 12px; color: var(--ink); line-height: 1.5; max-width: 320px; }
+.fix-table td.fix-first code {
+  font-size: 11.5px; font-weight: 600;
+  background: #fff7f0; color: #b3300f; padding: 2px 6px; border-radius: 3px;
+}
+.fix-table td.fix-why { font-size: 12px; color: var(--ink); line-height: 1.5; max-width: 280px; }
 
 /* Base-case finding slide */
 .bc-headline {
