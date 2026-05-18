@@ -60,6 +60,8 @@ class Driver:
 class UnmodelledGate:
     name: str
     why: str
+    consequence: str = ""
+    source_anchor: str = ""
 
 
 @dataclass
@@ -224,20 +226,20 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
                 )
             )
 
-    # Unmodelled existential gates table
+    # Unmodelled existential gates — read from parameters.json for the
+    # consequence_if_false field (which the assessment.md table renders but
+    # the parameters file is the source of truth).
     unmodelled: list[UnmodelledGate] = []
-    um_section = extract_section(md, "Known unmodelled existential gates")
-    table = parse_md_table(um_section)
-    if table:
-        for row in table[1:]:
-            if len(row) < 2:
-                continue
-            unmodelled.append(
-                UnmodelledGate(
-                    name=strip_md_inline(row[0]),
-                    why=strip_md_inline(row[1]),
-                )
-            )
+    params_path = md_path.parent / "parameters.json"
+    if params_path.exists():
+        params = json.loads(params_path.read_text(encoding="utf-8"))
+        for um_entry in params.get("unmodelled_gates", []):
+            unmodelled.append(UnmodelledGate(
+                name=um_entry.get("id", ""),
+                why=um_entry.get("why_it_matters", ""),
+                consequence=um_entry.get("consequence_if_false", ""),
+                source_anchor=um_entry.get("source_anchor", ""),
+            ))
 
     # Suggested next actions — numbered list
     actions: list[str] = []
@@ -974,13 +976,39 @@ def slide_missing_inputs(plan: Plan) -> str:
 """
 
 
+def _truncate(text: str, limit: int) -> str:
+    text = text or ""
+    return text if len(text) <= limit else (text[:limit].rstrip() + "…")
+
+
 def slide_unmodelled_gates(plan: Plan) -> str:
     if plan.unmodelled_gates:
-        um_items = "".join(
-            f"<li><code>{esc(g.name)}</code><div class='um-why'>{esc(g.why[:280] + ('…' if len(g.why) > 280 else ''))}</div></li>"
-            for g in plan.unmodelled_gates
-        )
-        um_block = f"<ul class='um-list'>{um_items}</ul>"
+        cards = []
+        for g in plan.unmodelled_gates:
+            why_html = (
+                f"<div class='um-section'>"
+                f"<div class='um-label'>Why it matters</div>"
+                f"<div class='um-text'>{esc(_truncate(g.why, 320))}</div>"
+                f"</div>" if g.why else ""
+            )
+            cons_html = (
+                f"<div class='um-section'>"
+                f"<div class='um-label um-label-cons'>If false</div>"
+                f"<div class='um-text'>{esc(_truncate(g.consequence, 320))}</div>"
+                f"</div>" if g.consequence else ""
+            )
+            source_html = (
+                f"<div class='um-source'>source: {esc(g.source_anchor)}</div>"
+                if g.source_anchor else ""
+            )
+            cards.append(
+                f"<li class='um-card'>"
+                f"<div class='um-gate'><code>{esc(g.name)}</code>{source_html}</div>"
+                f"{why_html}"
+                f"{cons_html}"
+                f"</li>"
+            )
+        um_block = f"<ul class='um-list'>{''.join(cards)}</ul>"
     else:
         um_block = '<p class="muted">No unmodelled existential gates flagged.</p>'
 
@@ -1312,9 +1340,27 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .gate-detail td.scen { font-weight: 600; }
 .gate-detail td.scen.sc-pass { color: #1e6d2c; }
 .gate-detail td.scen.sc-fail { color: #b3300f; }
-.um-list { list-style: none; padding: 0; margin: 0; }
-.um-list li { margin-bottom: 14px; }
-.um-why { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 3px; }
+.um-list { list-style: none; padding: 0; margin: 8px 0 0; }
+.um-card {
+  padding: 14px 0; border-bottom: 1px solid var(--rule);
+}
+.um-card:last-child { border-bottom: none; padding-bottom: 4px; }
+.um-gate {
+  font-size: 14px; margin-bottom: 10px;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+}
+.um-source {
+  font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); font-family: ui-monospace, monospace;
+}
+.um-section { margin-bottom: 8px; }
+.um-section:last-child { margin-bottom: 0; }
+.um-label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600; margin-bottom: 3px;
+}
+.um-label.um-label-cons { color: #b3300f; }
+.um-text { font-size: 13px; line-height: 1.5; color: var(--ink); }
 
 /* What to change next */
 .action-list { padding-left: 28px; margin: 0; }
