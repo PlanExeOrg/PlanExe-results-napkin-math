@@ -14,7 +14,7 @@ SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / "46"
 OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
-INTRO_SLIDES = 8
+INTRO_SLIDES = 9
 PER_PLAN = 6
 
 VERDICT_COLORS = {
@@ -611,7 +611,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
     <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
   </div>
-  <footer class="slide-foot"><span>Overview 1 / 8 &middot; headline figures</span></footer>
+  <footer class="slide-foot"><span>Overview 1 / 9 &middot; headline figures</span></footer>
 </section>
 """
 
@@ -628,7 +628,7 @@ def intro_slide_distribution(stats: DeckStats) -> str:
   <div class="chart-wrap big">
     {chart}
   </div>
-  <footer class="slide-foot"><span>Overview 2 / 8 &middot; verdict band distribution</span></footer>
+  <footer class="slide-foot"><span>Overview 2 / 9 &middot; verdict band distribution</span></footer>
 </section>
 """
 
@@ -700,7 +700,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     <tbody>{''.join(rows)}</tbody>
   </table>
   <p class="muted small roster-footnote"><strong>Base case</strong> = the worst gate's value at the deterministic <em>base</em> input scenario. FAIL means the plan fails its own central assumptions, not only in tail cases.</p>
-  <footer class="slide-foot"><span>Overview 5 / 8 &middot; plan roster</span></footer>
+  <footer class="slide-foot"><span>Overview 5 / 9 &middot; plan roster</span></footer>
 </section>
 """
 
@@ -855,7 +855,7 @@ def intro_slide_base_case_failure(plans: list[Plan]) -> str:
   </div>
   {examples_html}
   {unknown_note}
-  <footer class="slide-foot"><span>Overview 6 / 8 &middot; base-case failure</span></footer>
+  <footer class="slide-foot"><span>Overview 6 / 9 &middot; base-case failure</span></footer>
 </section>
 """
 
@@ -910,7 +910,7 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 7 / 8 &middot; gate verdicts by plan</span></footer>
+  <footer class="slide-foot"><span>Overview 7 / 9 &middot; gate verdicts by plan</span></footer>
 </section>
 """
 
@@ -1029,7 +1029,99 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
     <tbody>{''.join(rows)}</tbody>
   </table>
   <p class="muted small">{total_failing} failing gates total. Examples show short labels with the plan in parentheses; classification is by keyword on the full gate ID (first-match-wins). Some gates legitimately span categories; the priority order picks one.</p>
-  <footer class="slide-foot"><span>Overview 8 / 8 &middot; common failure classes</span></footer>
+  <footer class="slide-foot"><span>Overview 8 / 9 &middot; common failure classes</span></footer>
+</section>
+"""
+
+
+def _fixability_reason(plan: Plan) -> str:
+    """One-line synthesis of why this plan is relatively easy to fix."""
+    counts = {v: 0 for v in ("DOOM", "FRAGILE", "MARGINAL", "ROBUST")}
+    for g in plan.gate_verdicts:
+        if g.verdict in counts:
+            counts[g.verdict] += 1
+    high_conf = sum(1 for g in plan.gate_verdicts if g.confidence_grade == "HIGH")
+    low_conf = sum(1 for g in plan.gate_verdicts if g.confidence_grade == "LOW")
+    n_unmod = len(plan.unmodelled_gate_names)
+    pct = plan.worst_pass_rate * 100
+    reasons: list[str] = []
+    if counts["DOOM"] == 0:
+        reasons.append("no DOOM gates")
+    elif counts["DOOM"] == 1 and counts["MARGINAL"] + counts["ROBUST"] >= counts["FRAGILE"]:
+        reasons.append("single hard blocker")
+    if plan.worst_pass_rate >= 0.30:
+        reasons.append(f"worst gate at {pct:.0f}%")
+    elif plan.worst_pass_rate >= 0.20:
+        reasons.append(f"worst gate near threshold ({pct:.0f}%)")
+    if high_conf >= 2 and high_conf >= low_conf:
+        reasons.append("data-anchored gates")
+    if n_unmod <= 2:
+        reasons.append("few out-of-model risks")
+    if not reasons:
+        return "multiple modelled blockers"
+    return "; ".join(reasons[:3])
+
+
+def intro_slide_most_fixable(plans: list[Plan]) -> str:
+    """Triage: rank plans by how close they are to viability."""
+    indexed = list(enumerate(plans))
+
+    def fix_key(ip: tuple[int, Plan]):
+        _, p = ip
+        n_doom = sum(1 for g in p.gate_verdicts if g.verdict == "DOOM")
+        high_conf = sum(1 for g in p.gate_verdicts if g.confidence_grade == "HIGH")
+        # Ascending sort = most-fixable first.
+        return (
+            n_doom,
+            -p.worst_pass_rate,
+            len(p.unmodelled_gate_names),
+            -high_conf,
+            p.slug,
+        )
+
+    sorted_indexed = sorted(indexed, key=fix_key)
+
+    rows = []
+    for orig_idx, p in sorted_indexed:
+        band = BAND_LABEL.get(p.overall_band, p.overall_band.upper())
+        color = BAND_COLOR.get(p.overall_band, "#666")
+        pct = p.worst_pass_rate * 100
+        shape, _, _ = classify_failure_shape(p)
+        n_unmod = len(p.unmodelled_gate_names)
+        reason = _fixability_reason(p)
+        target_slide = INTRO_SLIDES + orig_idx * PER_PLAN
+        rows.append(
+            f"<tr class='roster-row' data-target='{target_slide}' "
+            f"tabindex='0' role='link' "
+            f"aria-label='Jump to {esc(p.name)}'>"
+            f"<td class='plan-cell'>"
+            f"<div class='plan-name'>{esc(p.name)}</div>"
+            f"<code class='plan-slug'>{esc(p.slug)}</code>"
+            f"</td>"
+            f"<td><span class='band-pill' style='background:{color}'>{esc(band)}</span></td>"
+            f"<td class='fix-shape'><code>{esc(shape)}</code></td>"
+            f"<td class='num'>{pct:.1f}%</td>"
+            f"<td class='num'>{n_unmod}</td>"
+            f"<td class='fix-why'>{esc(reason)}</td>"
+            f"</tr>"
+        )
+
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">triage</div>
+    <h1>Closest to viability</h1>
+    <p class="lede">Plans ranked by fixability &mdash; least bad first. <strong>None of these plans currently pass</strong>; this is a relative ranking of where remediation effort would be cheapest. Sort: fewest DOOM gates &rarr; highest worst-gate pass rate &rarr; fewest unmodelled risks &rarr; highest data confidence.</p>
+  </header>
+  <table class="roster fix-table">
+    <thead><tr>
+      <th>Plan</th><th>Band</th><th>Failure shape</th>
+      <th class='num'>Worst pass rate</th><th class='num'>Unmodelled</th>
+      <th>Why fixable</th>
+    </tr></thead>
+    <tbody>{''.join(rows)}</tbody>
+  </table>
+  <footer class="slide-foot"><span>Overview 9 / 9 &middot; closest to viability</span></footer>
 </section>
 """
 
@@ -1712,6 +1804,10 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .fc-plan { color: var(--muted); }
 .fc-ex { white-space: nowrap; }
 
+/* Most-fixable triage table */
+.fix-table td.fix-shape code { font-size: 11px; }
+.fix-table td.fix-why { font-size: 12px; color: var(--ink); line-height: 1.5; max-width: 320px; }
+
 /* Base-case finding slide */
 .bc-headline {
   display: flex; align-items: center; gap: 28px;
@@ -1928,6 +2024,7 @@ def render_html(plans: list[Plan]) -> str:
         intro_slide_base_case_failure(plans),
         intro_slide_histogram(plans),
         intro_slide_failure_clustering(plans),
+        intro_slide_most_fixable(plans),
     ]
     options = ['<option value="overview">— Overview —</option>']
     for i, plan in enumerate(plans):
