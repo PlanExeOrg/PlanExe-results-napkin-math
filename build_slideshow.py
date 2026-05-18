@@ -15,7 +15,7 @@ OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
 INTRO_SLIDES = 6
-PER_PLAN = 3
+PER_PLAN = 4
 
 VERDICT_COLORS = {
     "ROBUST": "#2e7d32",
@@ -601,7 +601,7 @@ def slide_overview(plan: Plan) -> str:
     </div>
     {badge}
   </div>
-  <footer class="slide-foot"><span>Slide 1 / 3 &middot; overview &amp; verdict</span></footer>
+  <footer class="slide-foot"><span>Slide 1 / 4 &middot; overview &amp; verdict</span></footer>
 </section>
 """
 
@@ -627,13 +627,12 @@ def slide_gate_chart(plan: Plan) -> str:
     {chart}
   </div>
   {legend}
-  <footer class="slide-foot"><span>Slide 2 / 3 &middot; gate pass rates</span></footer>
+  <footer class="slide-foot"><span>Slide 2 / 4 &middot; gate pass rates</span></footer>
 </section>
 """
 
 
-def slide_drivers(plan: Plan) -> str:
-    # Failure drivers
+def slide_failure_drivers(plan: Plan) -> str:
     if plan.failure_drivers:
         drv_rows = "".join(
             f"<tr><td><code>{esc(d.gate)}</code></td><td><code>{esc(d.top_driver)}</code></td>"
@@ -648,7 +647,21 @@ def slide_drivers(plan: Plan) -> str:
     else:
         drv_table = '<p class="muted">No failing gates — nothing to drive.</p>'
 
-    # Unmodelled gates
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
+    <h1>Failure drivers</h1>
+  </header>
+  <div class="panel">
+    {drv_table}
+  </div>
+  <footer class="slide-foot"><span>Slide 3 / 4 &middot; failure drivers (modelled)</span></footer>
+</section>
+"""
+
+
+def slide_unmodelled_gates(plan: Plan) -> str:
     if plan.unmodelled_gates:
         um_items = "".join(
             f"<li><code>{esc(g.name)}</code><div class='um-why'>{esc(g.why[:280] + ('…' if len(g.why) > 280 else ''))}</div></li>"
@@ -662,20 +675,13 @@ def slide_drivers(plan: Plan) -> str:
 <section class="slide">
   <header class="slide-head">
     <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
-    <h1>Drivers &amp; out-of-model risks</h1>
+    <h1>Unmodelled existential gates</h1>
   </header>
-  <div class="drivers-grid">
-    <div class="panel">
-      <h3>Failure drivers (modelled)</h3>
-      {drv_table}
-    </div>
-    <div class="panel warn">
-      <h3>Unmodelled existential gates</h3>
-      <p class="muted small">The simulation does not test these. Treat all modelled pass rates as conditional on them holding.</p>
-      {um_block}
-    </div>
+  <div class="panel">
+    <p class="muted small">The simulation does not test these. Treat all modelled pass rates as conditional on them holding.</p>
+    {um_block}
   </div>
-  <footer class="slide-foot"><span>Slide 3 / 3 &middot; drivers &amp; out-of-model risks</span></footer>
+  <footer class="slide-foot"><span>Slide 4 / 4 &middot; unmodelled existential gates</span></footer>
 </section>
 """
 
@@ -980,7 +986,8 @@ def render_html(plans: list[Plan]) -> str:
     for i, plan in enumerate(plans):
         slides_html.append(slide_overview(plan))
         slides_html.append(slide_gate_chart(plan))
-        slides_html.append(slide_drivers(plan))
+        slides_html.append(slide_failure_drivers(plan))
+        slides_html.append(slide_unmodelled_gates(plan))
         band_label = BAND_LABEL.get(plan.overall_band, plan.overall_band.upper())
         options.append(
             f'<option value="{i}">{esc(plan.slug)} — {esc(plan.name)} [{esc(band_label)}]</option>'
