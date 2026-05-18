@@ -46,6 +46,7 @@ class Gate:
     pass_rate: float  # 0..1
     verdict: str
     threshold_basis: str = ""
+    confidence_grade: str = ""  # LOW / MEDIUM / HIGH / "" — from montecarlo.json/model_confidence
 
 
 @dataclass
@@ -274,6 +275,15 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
             unit = out.get("unit") if isinstance(out, dict) else None
             if unit:
                 output_units[gname] = unit
+        # Populate per-gate confidence grade by mutating already-parsed `gates`.
+        mc_conf = mc.get("model_confidence", {})
+        if isinstance(mc_conf, dict):
+            for g in gates:
+                info = mc_conf.get(g.name)
+                if isinstance(info, dict):
+                    grade = info.get("grade")
+                    if isinstance(grade, str):
+                        g.confidence_grade = grade.upper()
 
     scenarios: dict[str, ScenarioRow] = {}
     sc_path = md_path.parent / "scenarios.json"
@@ -760,6 +770,27 @@ def classify_failure_shape(plan: Plan) -> tuple[str, str, str]:
     return shape, label, interp
 
 
+def _format_confidence_counts(plan: Plan) -> str:
+    """Render per-gate confidence counts as e.g. '2 LOW · 3 MEDIUM · 0 HIGH'.
+    Returns empty string if no confidence data is available."""
+    counts = {"LOW": 0, "MEDIUM": 0, "HIGH": 0}
+    unknown = 0
+    for g in plan.gate_verdicts:
+        grade = (g.confidence_grade or "").upper()
+        if grade in counts:
+            counts[grade] += 1
+        else:
+            unknown += 1
+    # If no gate has any grade, show no data
+    if sum(counts.values()) == 0 and unknown == len(plan.gate_verdicts):
+        return ""
+    parts = [
+        f"<span class='conf-c conf-{grade.lower()}'>{counts[grade]} {grade}</span>"
+        for grade in ("LOW", "MEDIUM", "HIGH")
+    ]
+    return " &middot; ".join(parts)
+
+
 def slide_overview(plan: Plan) -> str:
     failed_n = len(plan.failed_gates)
     unmod_n = len(plan.unmodelled_gate_names)
@@ -770,6 +801,14 @@ def slide_overview(plan: Plan) -> str:
         n_unmodelled=unmod_n, unmodelled_heavy=unmodelled_heavy,
     )
     shape, label, interp = classify_failure_shape(plan)
+    conf_html = _format_confidence_counts(plan)
+    confidence_block = (
+        f"<div class='fs-block'>"
+        f"<div class='fs-label'>Model confidence</div>"
+        f"<div class='fs-confidence'>{conf_html}</div>"
+        f"</div>"
+        if conf_html else ""
+    )
     return f"""
 <section class="slide">
   <header class="slide-head">
@@ -799,6 +838,7 @@ def slide_overview(plan: Plan) -> str:
         <span class="fs-interp">{interp}</span>
       </div>
     </div>
+    {confidence_block}
   </div>
   <footer class="slide-foot"><span>Slide 1 / 6 &middot; overview &amp; verdict</span></footer>
 </section>
@@ -1206,7 +1246,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   margin-top: 22px; padding: 14px 18px;
   background: #fafaf8; border-left: 3px solid var(--ink);
   border-radius: 0 4px 4px 0;
-  display: grid; grid-template-columns: auto 1fr; gap: 28px;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 28px;
   align-items: start;
 }
 .fs-block { min-width: 0; }
@@ -1223,6 +1263,11 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
 }
 .fs-interp { color: var(--muted); font-size: 13px; }
+.fs-confidence { font-size: 13px; font-family: ui-monospace, monospace; white-space: nowrap; }
+.conf-c { font-weight: 600; }
+.conf-c.conf-low { color: #b3300f; }
+.conf-c.conf-medium { color: #8a6d0a; }
+.conf-c.conf-high { color: #1e6d2c; }
 
 /* Chart slide */
 .chart-wrap { padding: 8px 0; }
