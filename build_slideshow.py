@@ -662,10 +662,54 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
 """
 
 
+def classify_failure_shape(plan: Plan) -> tuple[str, str, str]:
+    """Return (shape_counts, label, interpretation) for a plan's gate verdicts.
+
+    shape_counts: e.g. "1 DOOM + 4 MARGINAL"
+    label: short tag like "Single blocker"
+    interpretation: one-sentence reading
+    """
+    counts = {v: 0 for v in ("DOOM", "FRAGILE", "MARGINAL", "ROBUST")}
+    for g in plan.gate_verdicts:
+        if g.verdict in counts:
+            counts[g.verdict] += 1
+    f = counts["DOOM"] + counts["FRAGILE"]
+    m = counts["MARGINAL"]
+    r = counts["ROBUST"]
+    u = len(plan.unmodelled_gate_names)
+
+    parts = [f"{counts[v]} {v}" for v in ("DOOM", "FRAGILE", "MARGINAL", "ROBUST") if counts[v] > 0]
+    shape = " + ".join(parts) if parts else "no declared gates"
+
+    if f == 0 and (m + r) > 0:
+        label = "Mostly robust"
+        interp = "no failing gates under current bounds"
+    elif f == 1 and (m + r) >= 1:
+        label = "Single blocker"
+        interp = "one primary blocker, otherwise on track"
+    elif f >= 2 and f <= (m + r):
+        label = "Multiple blockers"
+        interp = "several failing gates, but more passing than not"
+    elif f > 0 and f > (m + r):
+        label = "Broadly weak"
+        interp = "majority of declared gates fail under current bounds"
+    else:
+        label = "Mixed"
+        interp = ""
+
+    if u > 0 and u >= f + m + r:
+        label = f"{label} &middot; unmodelled-heavy"
+        extra = f"{u} out-of-model risks not simulated"
+        interp = f"{interp} &middot; {extra}" if interp else extra
+
+    return shape, label, interp
+
+
 def slide_overview(plan: Plan) -> str:
     badge = render_verdict_badge(plan.overall_band, plan.worst_gate, plan.worst_pass_rate)
     failed_n = len(plan.failed_gates)
     unmod_n = len(plan.unmodelled_gate_names)
+    shape, label, interp = classify_failure_shape(plan)
     return f"""
 <section class="slide">
   <header class="slide-head">
@@ -683,6 +727,18 @@ def slide_overview(plan: Plan) -> str:
       </div>
     </div>
     {badge}
+  </div>
+  <div class="failure-shape">
+    <div class="fs-block">
+      <div class="fs-label">Failure shape</div>
+      <div class="fs-counts"><code>{esc(shape)}</code></div>
+    </div>
+    <div class="fs-block">
+      <div class="fs-label">Fixability</div>
+      <div class="fs-tag-row"><span class="fs-tag">{label}</span>
+        <span class="fs-interp">{interp}</span>
+      </div>
+    </div>
   </div>
   <footer class="slide-foot"><span>Slide 1 / 5 &middot; overview &amp; verdict</span></footer>
 </section>
@@ -979,6 +1035,29 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .verdict-band { font-size: 56px; font-weight: 700; line-height: 1; margin: 8px 0 18px; letter-spacing: -0.01em; }
 .verdict-sub { font-size: 13px; margin-top: 4px; opacity: 0.95; }
 .verdict-sub code { background: rgba(255,255,255,0.18); padding: 1px 6px; border-radius: 3px; }
+
+/* Failure shape / fixability card on plan overview slide */
+.failure-shape {
+  margin-top: 22px; padding: 14px 18px;
+  background: #fafaf8; border-left: 3px solid var(--ink);
+  border-radius: 0 4px 4px 0;
+  display: grid; grid-template-columns: auto 1fr; gap: 28px;
+  align-items: start;
+}
+.fs-block { min-width: 0; }
+.fs-label {
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600; margin-bottom: 6px;
+}
+.fs-counts { font-size: 14px; }
+.fs-counts code { font-family: ui-monospace, monospace; font-size: 13px; }
+.fs-tag-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.fs-tag {
+  background: var(--ink); color: white;
+  padding: 4px 12px; border-radius: 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.fs-interp { color: var(--muted); font-size: 13px; }
 
 /* Chart slide */
 .chart-wrap { padding: 8px 0; }
