@@ -434,10 +434,6 @@ def intro_slide_distribution(stats: DeckStats) -> str:
     <h1>How many plans are doomed?</h1>
     <p class="lede">Each plan's overall risk band is set by its worst declared gate.</p>
   </header>
-  <div class="sim-callout">
-    <div class="sim-num">10,000</div>
-    <div class="sim-text">Monte-Carlo simulations per declared gate &middot; pass rate = share of runs above the threshold</div>
-  </div>
   <div class="chart-wrap big">
     {chart}
   </div>
@@ -789,17 +785,6 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   letter-spacing: 0.08em; margin-top: 12px;
 }
 .chart-wrap.big { padding: 8px 0 8px; }
-.sim-callout {
-  display: flex; align-items: baseline; gap: 18px;
-  margin: 4px 0 16px; padding: 12px 18px;
-  background: #fafaf8; border-left: 3px solid var(--ink);
-  border-radius: 0 4px 4px 0;
-}
-.sim-num {
-  font-size: 36px; font-weight: 700; line-height: 1;
-  font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
-}
-.sim-text { font-size: 13px; color: var(--muted); line-height: 1.4; }
 .roster { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
 .roster th, .roster td {
   padding: 9px 10px; border-bottom: 1px solid var(--rule);
