@@ -379,14 +379,36 @@ def render_band_bar_chart(band_counts: dict[str, int]) -> str:
             + "".join(grid) + "".join(bars) + baseline + "</svg>")
 
 
+def render_distribution_strip(band_counts: dict[str, int], total: int) -> str:
+    bands = [("doom", "DOOM"), ("fragile", "FRAGILE"),
+             ("marginal", "MARGINAL"), ("viable", "ROBUST")]
+    total = total or 1
+    segments = []
+    for key, label in bands:
+        count = band_counts.get(key, 0)
+        if count == 0:
+            continue
+        pct = count / total * 100
+        color = BAND_COLOR.get(key, "#666")
+        segments.append(
+            f'<div class="strip-seg" style="background:{color};flex:{count};">'
+            f'<div class="strip-label">{esc(label)}</div>'
+            f'<div class="strip-count">{count}<span class="strip-pct">({pct:.0f}%)</span></div>'
+            f"</div>"
+        )
+    return f'<div class="dist-strip">{"".join(segments)}</div>'
+
+
 def intro_slide_headline(stats: DeckStats) -> str:
+    strip = render_distribution_strip(stats.band_counts, stats.total_plans)
     return f"""
-<section class="slide">
+<section class="slide title-slide">
   <header class="slide-head">
     <div class="kicker">PlanExe</div>
     <h1>Napkin-math assessment overview</h1>
-    <p class="lede">Monte-Carlo viability stress tests for each plan. Pass rates are taken over 10,000 simulated runs per declared gate; verdict bands: DOOM &lt;20%, FRAGILE 20–50%, MARGINAL 50–80%, ROBUST ≥80%. Each plan is profiled across the three slides that follow this overview.</p>
+    <p class="lede">Monte-Carlo viability stress tests for {stats.total_plans} plans. Pass rates are taken over 10,000 simulated runs per declared gate; verdict bands: DOOM &lt;20%, FRAGILE 20–50%, MARGINAL 50–80%, ROBUST ≥80%.</p>
   </header>
+  {strip}
   <div class="intro-metrics">
     <div class="big-metric"><div class="bm-num">{stats.total_plans}</div><div class="bm-cap">plans assessed</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_declared_gates}</div><div class="bm-cap">declared gates total</div></div>
@@ -634,6 +656,25 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
 
 /* Intro slides */
+.title-slide .slide-head h1 { font-size: 42px; letter-spacing: -0.01em; }
+.title-slide .slide-head .lede { font-size: 15px; max-width: 80ch; }
+.dist-strip {
+  display: flex; height: 150px; margin: 32px 0 28px;
+  border-radius: 6px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.strip-seg {
+  color: white; padding: 18px 24px; min-width: 0;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.strip-label {
+  font-size: 12px; letter-spacing: 0.14em; font-weight: 600; opacity: 0.92;
+}
+.strip-count {
+  font-size: 52px; font-weight: 700; line-height: 1;
+  display: flex; align-items: baseline; gap: 12px;
+}
+.strip-pct { font-size: 18px; font-weight: 500; opacity: 0.85; }
 .intro-metrics {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 28px;
 }
