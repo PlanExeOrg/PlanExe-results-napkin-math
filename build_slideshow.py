@@ -15,7 +15,7 @@ OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
 INTRO_SLIDES = 6
-PER_PLAN = 5
+PER_PLAN = 6
 
 VERDICT_COLORS = {
     "ROBUST": "#2e7d32",
@@ -768,7 +768,7 @@ def slide_overview(plan: Plan) -> str:
       </div>
     </div>
   </div>
-  <footer class="slide-foot"><span>Slide 1 / 5 &middot; overview &amp; verdict</span></footer>
+  <footer class="slide-foot"><span>Slide 1 / 6 &middot; overview &amp; verdict</span></footer>
 </section>
 """
 
@@ -890,7 +890,7 @@ def slide_gate_chart(plan: Plan) -> str:
   </div>
   {legend}
   {detail_table}
-  <footer class="slide-foot"><span>Slide 2 / 5 &middot; gate pass rates</span></footer>
+  <footer class="slide-foot"><span>Slide 2 / 6 &middot; gate pass rates</span></footer>
 </section>
 """
 
@@ -919,7 +919,7 @@ def slide_failure_drivers(plan: Plan) -> str:
   <div class="panel">
     {drv_table}
   </div>
-  <footer class="slide-foot"><span>Slide 3 / 5 &middot; failure drivers (modelled)</span></footer>
+  <footer class="slide-foot"><span>Slide 3 / 6 &middot; failure drivers (modelled)</span></footer>
 </section>
 """
 
@@ -969,7 +969,7 @@ def slide_missing_inputs(plan: Plan) -> str:
   <div class="panel">
     {body}
   </div>
-  <footer class="slide-foot"><span>Slide 4 / 5 &middot; what to measure next</span></footer>
+  <footer class="slide-foot"><span>Slide 4 / 6 &middot; what to measure next</span></footer>
 </section>
 """
 
@@ -994,7 +994,76 @@ def slide_unmodelled_gates(plan: Plan) -> str:
     <p class="muted small">The simulation does not test these. Treat all modelled pass rates as conditional on them holding.</p>
     {um_block}
   </div>
-  <footer class="slide-foot"><span>Slide 5 / 5 &middot; unmodelled existential gates</span></footer>
+  <footer class="slide-foot"><span>Slide 5 / 6 &middot; unmodelled existential gates</span></footer>
+</section>
+"""
+
+
+def slide_what_to_change_next(plan: Plan) -> str:
+    """Synthesizing slide: prescriptive actions derived from failing gates +
+    failure drivers + unmodelled gates."""
+    # Failing modelled gates, worst-first
+    failing = sorted(
+        (g for g in plan.gate_verdicts if g.verdict in ("DOOM", "FRAGILE")),
+        key=lambda g: g.pass_rate,
+    )
+    drivers_by_gate = {d.gate: d for d in plan.failure_drivers}
+
+    items: list[str] = []
+    for g in failing:
+        drv = drivers_by_gate.get(g.name)
+        is_worst = g.name == plan.worst_gate
+        tag_label = "WORST GATE" if is_worst else g.verdict
+        tag_cls = "tag-worst" if is_worst else f"tag-{g.verdict.lower()}"
+        if drv and drv.top_driver and "saturated" not in drv.top_driver.lower():
+            req = drv.pass_requires or f"move {drv.top_driver} into the passing range"
+            action = (
+                f"Bring <code>{esc(drv.top_driver)}</code> into the passing range "
+                f"&mdash; {esc(req)}."
+            )
+        elif drv and "saturated" in (drv.top_driver or "").lower():
+            action = (
+                "Re-examine the input bounds and threshold &mdash; "
+                "no single input restriction can lift the pass rate from current bounds."
+            )
+        else:
+            action = (
+                f"Investigate failure paths for <code>{esc(g.name)}</code> "
+                f"(verdict {g.verdict})."
+            )
+        items.append(
+            f"<li><div class='action-head'>"
+            f"<code>{esc(g.name)}</code> "
+            f"<span class='action-tag {tag_cls}'>{tag_label}</span>"
+            f"</div><div class='action-do'>{action}</div></li>"
+        )
+
+    # Out-of-model risks: convert unmodelled gates into acceptance criteria
+    for um in plan.unmodelled_gates[:3]:
+        items.append(
+            f"<li><div class='action-head'>"
+            f"<code>{esc(um.name)}</code> "
+            f"<span class='action-tag tag-unmod'>UNMODELLED</span>"
+            f"</div><div class='action-do'>Convert this assumption into an explicit "
+            f"acceptance criterion before the next commit point.</div></li>"
+        )
+
+    if not items:
+        body = '<p class="muted">No actionable blockers identified for this plan.</p>'
+    else:
+        body = f'<ol class="action-list">{"".join(items)}</ol>'
+
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
+    <h1>What to change next</h1>
+    <p class="lede">Prescriptive synthesis &mdash; one action per blocker, derived from the failure drivers and the out-of-model risks. Modelled blockers come first (worst gate at the top), then unmodelled gates to lock down.</p>
+  </header>
+  <div class="panel">
+    {body}
+  </div>
+  <footer class="slide-foot"><span>Slide 6 / 6 &middot; what to change next</span></footer>
 </section>
 """
 
@@ -1246,6 +1315,22 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .um-list { list-style: none; padding: 0; margin: 0; }
 .um-list li { margin-bottom: 14px; }
 .um-why { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 3px; }
+
+/* What to change next */
+.action-list { padding-left: 28px; margin: 0; }
+.action-list li { margin-bottom: 18px; line-height: 1.5; }
+.action-head { font-size: 13px; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.action-head code { font-size: 12px; }
+.action-do { font-size: 14px; }
+.action-do code { font-family: ui-monospace, monospace; font-size: 0.92em; }
+.action-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+}
+.action-tag.tag-worst { background: #c62828; color: white; }
+.action-tag.tag-doom { background: #fdecec; color: #b3300f; border: 1px solid #c62828; }
+.action-tag.tag-fragile { background: #fdf1e7; color: #8a3d0a; border: 1px solid #ef6c00; }
+.action-tag.tag-unmod { background: #f0f0ee; color: #555; border: 1px solid #b8b8b4; }
 code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
 .muted { color: var(--muted); }
 .small { font-size: 12px; }
@@ -1370,6 +1455,7 @@ def render_html(plans: list[Plan]) -> str:
         slides_html.append(slide_failure_drivers(plan))
         slides_html.append(slide_missing_inputs(plan))
         slides_html.append(slide_unmodelled_gates(plan))
+        slides_html.append(slide_what_to_change_next(plan))
         band_label = BAND_LABEL.get(plan.overall_band, plan.overall_band.upper())
         options.append(
             f'<option value="{i}">{esc(plan.slug)} — {esc(plan.name)} [{esc(band_label)}]</option>'
