@@ -117,6 +117,7 @@ class Plan:
     missing_inputs: list[MissingInput] = field(default_factory=list)
     scenarios: dict[str, ScenarioRow] = field(default_factory=dict)
     gate_conditions: dict[str, GateCondition] = field(default_factory=dict)
+    gate_anchors: dict[str, str] = field(default_factory=dict)  # gate → threshold param label
     next_actions: list[str] = field(default_factory=list)
     commit_id: str = ""  # from meta.json; pinpoints the PlanExe-web blob
 
@@ -232,6 +233,7 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
     # consequence_if_false field (which the assessment.md table renders but
     # the parameters file is the source of truth).
     unmodelled: list[UnmodelledGate] = []
+    gate_anchors: dict[str, str] = {}
     params_path = md_path.parent / "parameters.json"
     if params_path.exists():
         params = json.loads(params_path.read_text(encoding="utf-8"))
@@ -242,6 +244,29 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
                 consequence=um_entry.get("consequence_if_false", ""),
                 source_anchor=um_entry.get("source_anchor", ""),
             ))
+        # Build gate → threshold-parameter label map by joining
+        # recommended_first_calculations with key_values. Threshold params
+        # are the non-actual_* deps of each calc.
+        kv_by_id: dict[str, dict] = {
+            k.get("id", ""): k
+            for k in params.get("key_values", [])
+            if isinstance(k, dict) and k.get("id")
+        }
+        for calc in params.get("recommended_first_calculations", []):
+            if not isinstance(calc, dict):
+                continue
+            output_name = calc.get("output_name", "")
+            if not output_name:
+                continue
+            for dep in calc.get("depends_on", []):
+                if dep.startswith("actual_"):
+                    continue
+                kv = kv_by_id.get(dep)
+                if not kv:
+                    continue
+                label = kv.get("label") or ""
+                if label and output_name not in gate_anchors:
+                    gate_anchors[output_name] = label
 
     # Source-of-truth pointer — used to link the per-plan slide to the
     # exact commit of report.html in PlanExe-web that the snapshot came from.
@@ -331,6 +356,7 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         missing_inputs=missing_inputs,
         scenarios=scenarios,
         gate_conditions=gate_conditions,
+        gate_anchors=gate_anchors,
         next_actions=actions,
         commit_id=commit_id,
     )
@@ -469,6 +495,7 @@ def render_gate_bar_chart(gates: list[Gate]) -> str:
 def render_verdict_badge(
     band: str, worst_gate: str, worst_pr: float,
     n_unmodelled: int = 0, unmodelled_heavy: bool = False,
+    low_confidence_majority: bool = False,
 ) -> str:
     color = BAND_COLOR.get(band, "#666")
     label = BAND_LABEL.get(band, band.upper())
@@ -478,22 +505,28 @@ def render_verdict_badge(
         "Pass rates and margins are model-derived from report anchors "
         "&mdash; not directly stated in the linked report."
     )
+    headlines: list[str] = []
+    if unmodelled_heavy:
+        headlines.append("Unmodelled-heavy &mdash; verdict is highly conditional.")
+    if low_confidence_majority:
+        headlines.append("Low-confidence quantification.")
+    headline_html = "".join(
+        f'<div class="verdict-caveat-headline">{h}</div>' for h in headlines
+    )
+
     if n_unmodelled == 0:
         caveat_html = (
             f'<div class="verdict-caveat">'
+            f'{headline_html}'
             f'{model_derived} '
             f'The verdict reflects the worst declared gate, not a whole-plan probability.'
             f'</div>'
         )
     else:
         gate_word = "gate" if n_unmodelled == 1 else "gates"
-        heavy_html = (
-            '<div class="verdict-caveat-headline">Unmodelled-heavy &mdash; '
-            'verdict is highly conditional.</div>' if unmodelled_heavy else ''
-        )
         caveat_html = (
             f'<div class="verdict-caveat">'
-            f'{heavy_html}'
+            f'{headline_html}'
             f'{model_derived} '
             f'Conditional on {n_unmodelled} unmodelled existential {gate_word} holding. '
             f'Not a whole-plan probability.'
@@ -1291,9 +1324,16 @@ def slide_overview(plan: Plan) -> str:
     unmod_n = len(plan.unmodelled_gate_names)
     declared_n = len(plan.gate_verdicts)
     unmodelled_heavy = unmod_n > 0 and unmod_n >= declared_n
+    low_count = sum(1 for g in plan.gate_verdicts if g.confidence_grade == "LOW")
+    other_count = sum(
+        1 for g in plan.gate_verdicts
+        if g.confidence_grade in ("MEDIUM", "HIGH")
+    )
+    low_conf_majority = low_count > other_count and low_count >= 2
     badge = render_verdict_badge(
         plan.overall_band, plan.worst_gate, plan.worst_pass_rate,
         n_unmodelled=unmod_n, unmodelled_heavy=unmodelled_heavy,
+        low_confidence_majority=low_conf_majority,
     )
     shape, label, interp = classify_failure_shape(plan)
     conf_html = _format_confidence_counts(plan)
@@ -1429,9 +1469,15 @@ def slide_gate_chart(plan: Plan) -> str:
             high_disp = _format_scenario_value(sc.high, cond)
             unit = sc.unit
         unit_cell = f"<span class='muted small'>{esc(unit)}</span>" if unit else ""
+        anchor = plan.gate_anchors.get(g.name, "")
+        anchor_cell = (
+            f"<span class='report-anchor'>{esc(anchor)}</span>"
+            if anchor else "<span class='muted'>—</span>"
+        )
         detail_rows.append(
             f"<tr>"
             f"<td><code>{esc(g.name)}</code></td>"
+            f"<td>{anchor_cell}</td>"
             f"<td class='cond'>{esc(cond_str)}</td>"
             f"<td><span class='basis-pill {basis_cls}'>{esc(basis_label)}</span></td>"
             f"<td class='num scen {low_disp[1]}'>{esc(low_disp[0])}</td>"
@@ -1445,6 +1491,7 @@ def slide_gate_chart(plan: Plan) -> str:
       <thead>
         <tr>
           <th>Gate</th>
+          <th>Report anchor</th>
           <th>Condition</th>
           <th>Threshold basis</th>
           <th class='num'>Low</th>
@@ -1455,7 +1502,7 @@ def slide_gate_chart(plan: Plan) -> str:
       </thead>
       <tbody>{''.join(detail_rows)}</tbody>
     </table>
-    <p class="muted small">Scenario columns show each output at the <em>low</em>, <em>base</em>, and <em>high</em> deterministic input scenarios. Green = the gate passes its condition; red = the gate fails. The <strong>base</strong> column is the most telling: red there means the plan already fails under its own central assumptions, not just in tail cases.</p>
+    <p class="muted small">Scenario columns show each output at the <em>low</em>, <em>base</em>, and <em>high</em> deterministic input scenarios. Green = the gate passes its condition; red = the gate fails. The <strong>base</strong> column is the most telling: red there means the plan already fails under its own central assumptions, not just in tail cases. The <strong>report anchor</strong> column shows the human-readable label of the threshold parameter in the linked report.</p>
     """
     return f"""
 <section class="slide">
@@ -1542,7 +1589,7 @@ def slide_missing_inputs(plan: Plan) -> str:
   <header class="slide-head">
     <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
     <h1>What to measure next</h1>
-    <p class="lede">Missing inputs ranked by their impact on the simulation. Replacing a high-scoring assumption with a measured value is the cheapest win for the model's predictive value.</p>
+    <p class="lede">Missing or weakly anchored inputs ranked by their impact on the simulation. Replacing a high-scoring assumption with report-backed evidence is the cheapest win for the model's predictive value.</p>
   </header>
   <div class="panel">
     {body}
@@ -1604,9 +1651,10 @@ def slide_unmodelled_gates(plan: Plan) -> str:
 
 
 def slide_what_to_change_next(plan: Plan) -> str:
-    """Synthesizing slide: prescriptive actions derived from failing gates +
-    failure drivers + unmodelled gates."""
-    # Failing modelled gates, worst-first
+    """Validation checklist: each failing gate gets an evidence/anchor check,
+    not a prescriptive 'fix the plan' instruction. The verdict is a model
+    output; the action items audit whether the model's inputs are defensible.
+    """
     failing = sorted(
         (g for g in plan.gate_verdicts if g.verdict in ("DOOM", "FRAGILE")),
         key=lambda g: g.pass_rate,
@@ -1620,20 +1668,22 @@ def slide_what_to_change_next(plan: Plan) -> str:
         tag_label = "WORST GATE" if is_worst else g.verdict
         tag_cls = "tag-worst" if is_worst else f"tag-{g.verdict.lower()}"
         if drv and drv.top_driver and "saturated" not in drv.top_driver.lower():
-            req = drv.pass_requires or f"move {drv.top_driver} into the passing range"
+            req = drv.pass_requires or f"{drv.top_driver} in the passing range"
             action = (
-                f"Bring <code>{esc(drv.top_driver)}</code> into the passing range "
-                f"&mdash; {esc(req)}."
+                f"Validate whether the linked report supports a distribution "
+                f"where <code>{esc(drv.top_driver)}</code> clears the threshold "
+                f"({esc(req)}); otherwise mark this input as a model assumption."
             )
         elif drv and "saturated" in (drv.top_driver or "").lower():
             action = (
-                "Re-examine the input bounds and threshold &mdash; "
-                "no single input restriction can lift the pass rate from current bounds."
+                "Re-examine the input bounds and threshold against the linked "
+                "report &mdash; no single input restriction lifts the pass rate, "
+                "so either the bounds or the threshold lack report support."
             )
         else:
             action = (
-                f"Investigate failure paths for <code>{esc(g.name)}</code> "
-                f"(verdict {g.verdict})."
+                f"Check the report's coverage of <code>{esc(g.name)}</code> "
+                f"(verdict {g.verdict}); confirm the model's failure path is real."
             )
         items.append(
             f"<li><div class='action-head'>"
@@ -1642,18 +1692,18 @@ def slide_what_to_change_next(plan: Plan) -> str:
             f"</div><div class='action-do'>{action}</div></li>"
         )
 
-    # Out-of-model risks: convert unmodelled gates into acceptance criteria
+    # Out-of-model risks: ask the user to validate them in the report.
     for um in plan.unmodelled_gates[:3]:
         items.append(
             f"<li><div class='action-head'>"
             f"<code>{esc(um.name)}</code> "
             f"<span class='action-tag tag-unmod'>UNMODELLED</span>"
-            f"</div><div class='action-do'>Convert this assumption into an explicit "
-            f"acceptance criterion before the next commit point.</div></li>"
+            f"</div><div class='action-do'>Confirm the linked report addresses this assumption; "
+            f"if not stated explicitly, treat the modelled verdict as conditional on it.</div></li>"
         )
 
     if not items:
-        body = '<p class="muted">No actionable blockers identified for this plan.</p>'
+        body = '<p class="muted">No assessment-quality checks needed for this plan.</p>'
     else:
         body = f'<ol class="action-list">{"".join(items)}</ol>'
 
@@ -1661,13 +1711,13 @@ def slide_what_to_change_next(plan: Plan) -> str:
 <section class="slide">
   <header class="slide-head">
     <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
-    <h1>What to change next</h1>
-    <p class="lede">Prescriptive synthesis &mdash; one action per blocker, derived from the failure drivers and the out-of-model risks. Modelled blockers come first (worst gate at the top), then unmodelled gates to lock down.</p>
+    <h1>What to validate next</h1>
+    <p class="lede">Assessment-quality checklist &mdash; each action is about validating evidence in the linked report, not changing the plan itself. The verdict is a model output; these items audit whether its inputs are defensible.</p>
   </header>
   <div class="panel">
     {body}
   </div>
-  <footer class="slide-foot"><span>Slide 6 / 6 &middot; what to change next</span></footer>
+  <footer class="slide-foot"><span>Slide 6 / 6 &middot; what to validate next</span></footer>
 </section>
 """
 
@@ -1998,6 +2048,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .gate-detail td.scen { font-weight: 600; }
 .gate-detail td.scen.sc-pass { color: #1e6d2c; }
 .gate-detail td.scen.sc-fail { color: #b3300f; }
+.report-anchor { font-size: 12px; color: var(--ink); }
 .um-list {
   list-style: none; padding: 0; margin: 16px 0 0;
   display: flex; flex-direction: column; gap: 14px;
@@ -2037,7 +2088,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 }
 .um-cons-text { color: var(--ink); }
 
-/* What to change next */
+/* What to validate next */
 .action-list { padding-left: 28px; margin: 0; }
 .action-list li { margin-bottom: 18px; line-height: 1.5; }
 .action-head { font-size: 13px; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
