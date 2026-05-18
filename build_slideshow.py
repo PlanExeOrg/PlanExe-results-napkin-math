@@ -474,11 +474,16 @@ def render_verdict_badge(
     label = BAND_LABEL.get(band, band.upper())
     pct = f"{worst_pr * 100:.1f}%" if worst_pr is not None else "—"
 
+    model_derived = (
+        "Pass rates and margins are model-derived from report anchors "
+        "&mdash; not directly stated in the linked report."
+    )
     if n_unmodelled == 0:
         caveat_html = (
-            '<div class="verdict-caveat">'
-            'Not a whole-plan probability &mdash; the verdict reflects the worst declared gate.'
-            '</div>'
+            f'<div class="verdict-caveat">'
+            f'{model_derived} '
+            f'The verdict reflects the worst declared gate, not a whole-plan probability.'
+            f'</div>'
         )
     else:
         gate_word = "gate" if n_unmodelled == 1 else "gates"
@@ -489,6 +494,7 @@ def render_verdict_badge(
         caveat_html = (
             f'<div class="verdict-caveat">'
             f'{heavy_html}'
+            f'{model_derived} '
             f'Conditional on {n_unmodelled} unmodelled existential {gate_word} holding. '
             f'Not a whole-plan probability.'
             f'</div>'
@@ -1462,7 +1468,7 @@ def slide_gate_chart(plan: Plan) -> str:
   </div>
   {legend}
   {detail_table}
-  <footer class="slide-foot"><span>Slide 2 / 6 &middot; gate pass rates</span></footer>
+  <footer class="slide-foot"><span>Slide 3 / 6 &middot; gate pass rates</span></footer>
 </section>
 """
 
@@ -1491,7 +1497,7 @@ def slide_failure_drivers(plan: Plan) -> str:
   <div class="panel">
     {drv_table}
   </div>
-  <footer class="slide-foot"><span>Slide 3 / 6 &middot; failure drivers (modelled)</span></footer>
+  <footer class="slide-foot"><span>Slide 4 / 6 &middot; failure drivers (modelled)</span></footer>
 </section>
 """
 
@@ -1541,7 +1547,7 @@ def slide_missing_inputs(plan: Plan) -> str:
   <div class="panel">
     {body}
   </div>
-  <footer class="slide-foot"><span>Slide 4 / 6 &middot; what to measure next</span></footer>
+  <footer class="slide-foot"><span>Slide 2 / 6 &middot; what to measure next</span></footer>
 </section>
 """
 
@@ -2170,9 +2176,9 @@ def render_html(plans: list[Plan]) -> str:
     options = ['<option value="overview">— Overview —</option>']
     for i, plan in enumerate(plans):
         slides_html.append(slide_overview(plan))
+        slides_html.append(slide_missing_inputs(plan))   # promoted to #2
         slides_html.append(slide_gate_chart(plan))
         slides_html.append(slide_failure_drivers(plan))
-        slides_html.append(slide_missing_inputs(plan))
         slides_html.append(slide_unmodelled_gates(plan))
         slides_html.append(slide_what_to_change_next(plan))
         band_label = BAND_LABEL.get(plan.overall_band, plan.overall_band.upper())
