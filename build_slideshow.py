@@ -528,7 +528,7 @@ def render_verdict_badge(
             f'<div class="verdict-caveat">'
             f'{headline_html}'
             f'{model_derived} '
-            f'Conditional on {n_unmodelled} unmodelled existential {gate_word} holding. '
+            f'Conditional on {n_unmodelled} unmodelled {gate_word} holding. '
             f'Not a whole-plan probability.'
             f'</div>'
         )
@@ -1529,7 +1529,7 @@ def slide_failure_drivers(plan: Plan) -> str:
         )
         drv_table = f"""
         <table class="data-table">
-          <thead><tr><th>Failing gate</th><th>Top driver</th><th>Δ-pp</th><th>To reach ROBUST in model</th></tr></thead>
+          <thead><tr><th>Failing gate</th><th>Top driver</th><th>Δ-pp</th><th>Model threshold for ROBUST</th></tr></thead>
           <tbody>{drv_rows}</tbody>
         </table>"""
     else:
