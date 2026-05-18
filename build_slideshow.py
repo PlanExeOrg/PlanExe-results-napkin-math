@@ -15,7 +15,7 @@ OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
 INTRO_SLIDES = 6
-PER_PLAN = 4
+PER_PLAN = 5
 
 VERDICT_COLORS = {
     "ROBUST": "#2e7d32",
@@ -63,6 +63,16 @@ class UnmodelledGate:
 
 
 @dataclass
+class MissingInput:
+    rank: int
+    input_id: str
+    worst_gate: str
+    score: float
+    bound_width_ratio: float
+    source: str  # e.g. "assumption", "data" — from montecarlo.json/missing_value_priority[i].source
+
+
+@dataclass
 class DeckStats:
     total_plans: int
     band_counts: dict[str, int]
@@ -86,6 +96,7 @@ class Plan:
     gate_verdicts: list[Gate] = field(default_factory=list)
     failure_drivers: list[Driver] = field(default_factory=list)
     unmodelled_gates: list[UnmodelledGate] = field(default_factory=list)
+    missing_inputs: list[MissingInput] = field(default_factory=list)
     next_actions: list[str] = field(default_factory=list)
 
 
@@ -210,6 +221,22 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         if m:
             actions.append(strip_md_inline(m.group(1)))
 
+    # Missing-value priority — read from raw montecarlo.json so it tracks
+    # the simulation result, not the markdown's rendering of it.
+    missing_inputs: list[MissingInput] = []
+    mc_path = md_path.parent / "montecarlo.json"
+    if mc_path.exists():
+        mc = json.loads(mc_path.read_text(encoding="utf-8"))
+        for rank, entry in enumerate(mc.get("missing_value_priority", []), start=1):
+            missing_inputs.append(MissingInput(
+                rank=rank,
+                input_id=entry.get("id", ""),
+                worst_gate=entry.get("worst_gate", ""),
+                score=float(entry.get("score", 0.0)),
+                bound_width_ratio=float(entry.get("bound_width_ratio", 0.0)),
+                source=entry.get("source", ""),
+            ))
+
     return Plan(
         slug=slug,
         name=info.get("plan_name", slug),
@@ -224,6 +251,7 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         gate_verdicts=gates,
         failure_drivers=drivers,
         unmodelled_gates=unmodelled,
+        missing_inputs=missing_inputs,
         next_actions=actions,
     )
 
@@ -601,7 +629,7 @@ def slide_overview(plan: Plan) -> str:
     </div>
     {badge}
   </div>
-  <footer class="slide-foot"><span>Slide 1 / 4 &middot; overview &amp; verdict</span></footer>
+  <footer class="slide-foot"><span>Slide 1 / 5 &middot; overview &amp; verdict</span></footer>
 </section>
 """
 
@@ -627,7 +655,7 @@ def slide_gate_chart(plan: Plan) -> str:
     {chart}
   </div>
   {legend}
-  <footer class="slide-foot"><span>Slide 2 / 4 &middot; gate pass rates</span></footer>
+  <footer class="slide-foot"><span>Slide 2 / 5 &middot; gate pass rates</span></footer>
 </section>
 """
 
@@ -656,7 +684,57 @@ def slide_failure_drivers(plan: Plan) -> str:
   <div class="panel">
     {drv_table}
   </div>
-  <footer class="slide-foot"><span>Slide 3 / 4 &middot; failure drivers (modelled)</span></footer>
+  <footer class="slide-foot"><span>Slide 3 / 5 &middot; failure drivers (modelled)</span></footer>
+</section>
+"""
+
+
+def slide_missing_inputs(plan: Plan) -> str:
+    if plan.missing_inputs:
+        rows = []
+        for mi in plan.missing_inputs:
+            source = mi.source or "unknown"
+            # "assumption" → louder, since these are pure model guesses;
+            # "data" → quieter, anchored in the report's narrative.
+            cls = "src-assumption" if "assumption" in source.lower() else "src-data"
+            label = source.replace("_", " ")
+            rows.append(
+                f"<tr>"
+                f"<td class='num'>{mi.rank}</td>"
+                f"<td><code>{esc(mi.input_id)}</code></td>"
+                f"<td><code>{esc(mi.worst_gate)}</code></td>"
+                f"<td class='num'>{mi.score:.1f}</td>"
+                f"<td class='num'>{mi.bound_width_ratio:.2f}</td>"
+                f"<td><span class='basis-pill {cls}'>{esc(label)}</span></td>"
+                f"</tr>"
+            )
+        body = f"""
+        <table class="data-table">
+          <thead><tr>
+            <th>Rank</th>
+            <th>Missing input</th>
+            <th>Worst-affected gate</th>
+            <th class='num'>Score</th>
+            <th class='num'>Bound width &divide; base</th>
+            <th>Basis</th>
+          </tr></thead>
+          <tbody>{''.join(rows)}</tbody>
+        </table>
+        <p class="muted small">Higher score = more decision value from pinning down this input. <strong>Assumption</strong> bounds have no narrative anchor; <strong>data</strong> bounds are anchored in the source report (but still not empirical ground truth).</p>
+        """
+    else:
+        body = '<p class="muted">No missing inputs ranked for this plan.</p>'
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
+    <h1>What to measure next</h1>
+    <p class="lede">Missing inputs ranked by their impact on the simulation. Replacing a high-scoring assumption with a measured value is the cheapest win for the model's predictive value.</p>
+  </header>
+  <div class="panel">
+    {body}
+  </div>
+  <footer class="slide-foot"><span>Slide 4 / 5 &middot; what to measure next</span></footer>
 </section>
 """
 
@@ -681,7 +759,7 @@ def slide_unmodelled_gates(plan: Plan) -> str:
     <p class="muted small">The simulation does not test these. Treat all modelled pass rates as conditional on them holding.</p>
     {um_block}
   </div>
-  <footer class="slide-foot"><span>Slide 4 / 4 &middot; unmodelled existential gates</span></footer>
+  <footer class="slide-foot"><span>Slide 5 / 5 &middot; unmodelled existential gates</span></footer>
 </section>
 """
 
@@ -861,7 +939,14 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--rule); vertical-align: top;
 }
 .data-table th { font-weight: 600; color: var(--muted); text-transform: uppercase; font-size: 10px; letter-spacing: 0.08em; }
-.data-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.data-table th.num, .data-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.basis-pill {
+  display: inline-block; padding: 2px 8px; border-radius: 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid transparent;
+}
+.basis-pill.src-assumption { background: #fff7f0; color: #b3300f; border-color: #ef6c00; }
+.basis-pill.src-data { background: #f1f4ef; color: #1e6d2c; border-color: #c8d4c0; }
 .um-list { list-style: none; padding: 0; margin: 0; }
 .um-list li { margin-bottom: 14px; }
 .um-why { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 3px; }
@@ -987,6 +1072,7 @@ def render_html(plans: list[Plan]) -> str:
         slides_html.append(slide_overview(plan))
         slides_html.append(slide_gate_chart(plan))
         slides_html.append(slide_failure_drivers(plan))
+        slides_html.append(slide_missing_inputs(plan))
         slides_html.append(slide_unmodelled_gates(plan))
         band_label = BAND_LABEL.get(plan.overall_band, plan.overall_band.upper())
         options.append(
