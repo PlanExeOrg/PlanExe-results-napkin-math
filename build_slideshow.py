@@ -418,7 +418,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
     <div class="big-metric"><div class="bm-num">{stats.total_plans}</div><div class="bm-cap">plans assessed</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_declared_gates}</div><div class="bm-cap">declared gates total</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
-    <div class="big-metric warn"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
+    <div class="big-metric"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
   </div>
   <footer class="slide-foot"><span>Overview 1 / 6 &middot; headline figures</span></footer>
 </section>
@@ -622,7 +622,6 @@ def slide_gate_chart(plan: Plan) -> str:
   <header class="slide-head">
     <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
     <h1>Gate pass rates</h1>
-    <p class="lede">Pass rate per declared gate over 10,000 Monte-Carlo runs. Verdict band determined by pass rate.</p>
   </header>
   <div class="chart-wrap">
     {chart}
