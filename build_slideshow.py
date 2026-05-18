@@ -1546,66 +1546,98 @@ def slide_gate_chart(plan: Plan) -> str:
 """
 
 
+def _short_input_label(input_id: str) -> str:
+    """Like short_gate_label but also strips the `actual_` prefix common to
+    every simulation input variable, since it adds no information."""
+    s = input_id or ""
+    if s.startswith("actual_"):
+        s = s[7:]
+    return short_gate_label(s)
+
+
 def render_tornado_chart(entries: list[QuartileEntry]) -> str:
     """Horizontal tornado chart: each input's Δ-pp on the gate's pass rate.
 
-    Positive Δ-pp (input pushes pass rate UP at top quartile) renders right of
-    centerline in green. Negative renders left in red. Sorted by |Δ-pp|.
+    Each entry occupies one vertical row containing: a centered label sitting
+    above the bar, then the bar extending left (negative Δ-pp, red) or right
+    (positive Δ-pp, green) from the center axis, with the Δ-pp value at the
+    far end. Sorted by |Δ-pp| descending.
+
+    The centered-label layout (rather than left-aligned labels with bars to
+    the right) keeps labels from colliding with value annotations when there
+    are only 1–2 entries.
     """
     if not entries:
         return ""
     sorted_entries = sorted(entries, key=lambda e: -abs(e.delta_pp))
     n = len(sorted_entries)
-    row_h = 38
-    label_w = 280
-    chart_w = 460
-    pad_top = 28
-    pad_bottom = 16
+
+    # Each row = label + bar + bottom gap.
+    label_h = 18
+    bar_h = 22
+    row_gap = 12
+    row_h = label_h + bar_h + row_gap
+
+    chart_w = 720          # horizontal range for the bars (split around midpoint)
+    side_pad = 70          # extra room outside bars for the +/- pp value labels
+    pad_top = 30
+    pad_bottom = 12
     total_h = pad_top + n * row_h + pad_bottom
-    total_w = label_w + chart_w + 100
+    total_w = chart_w + side_pad * 2
+
+    center_x = total_w / 2
+    half_w = chart_w / 2
 
     max_abs = max(max(abs(e.delta_pp) for e in sorted_entries), 1.0)
-    center_x = label_w + chart_w / 2
 
     top_left = (
-        f'<text x="{label_w + 4}" y="{pad_top - 10}" font-size="10" fill="#888">'
-        f'← decreases pass rate</text>'
+        f'<text x="{center_x - half_w:.1f}" y="{pad_top - 10}" font-size="10" '
+        f'fill="#888">&larr; decreases pass rate</text>'
     )
     top_right = (
-        f'<text x="{label_w + chart_w - 4}" y="{pad_top - 10}" font-size="10" '
-        f'fill="#888" text-anchor="end">increases pass rate →</text>'
+        f'<text x="{center_x + half_w:.1f}" y="{pad_top - 10}" font-size="10" '
+        f'fill="#888" text-anchor="end">increases pass rate &rarr;</text>'
     )
     axis = (
         f'<line x1="{center_x:.1f}" y1="{pad_top - 4}" x2="{center_x:.1f}" '
-        f'y2="{pad_top + n * row_h + 2:.1f}" stroke="#aaa" stroke-width="1"/>'
+        f'y2="{pad_top + n * row_h - row_gap + 2:.1f}" stroke="#aaa" '
+        f'stroke-width="1"/>'
     )
 
     bars = []
     for i, e in enumerate(sorted_entries):
-        y = pad_top + i * row_h
-        bar_h = row_h - 16
-        bar_w = abs(e.delta_pp) / max_abs * (chart_w / 2)
+        # Label is centered above the bar at the center axis.
+        y_label_baseline = pad_top + i * row_h + label_h - 4
+        y_bar = pad_top + i * row_h + label_h
+
+        bar_w_scaled = abs(e.delta_pp) / max_abs * half_w
         if e.delta_pp >= 0:
             bar_x = center_x
             color = "#2e7d32"
-            label_anchor = "start"
-            label_x = bar_x + bar_w + 6
+            value_x = bar_x + bar_w_scaled + 6
+            value_anchor = "start"
         else:
-            bar_x = center_x - bar_w
+            bar_x = center_x - bar_w_scaled
             color = "#c62828"
-            label_anchor = "end"
-            label_x = bar_x - 6
-        short = esc(short_gate_label(e.input_id))
+            value_x = bar_x - 6
+            value_anchor = "end"
+
+        short = esc(_short_input_label(e.input_id))
         full_id = esc(e.input_id)
         pp_label = f"{e.delta_pp:+.1f} pp"
+
         bars.append(
             f'<g aria-label="{full_id}"><title>{full_id}</title>'
-            f'<text x="{label_w - 8}" y="{y + row_h / 2 + 4:.1f}" font-size="12" '
-            f'fill="#222" text-anchor="end" font-family="ui-monospace, monospace">{short}</text>'
-            f'<rect x="{bar_x:.1f}" y="{y + 8}" width="{bar_w:.1f}" '
+            # Centered label above the bar
+            f'<text x="{center_x:.1f}" y="{y_label_baseline:.1f}" font-size="12" '
+            f'font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif" '
+            f'fill="#222" text-anchor="middle">{short}</text>'
+            # Bar
+            f'<rect x="{bar_x:.1f}" y="{y_bar}" width="{bar_w_scaled:.1f}" '
             f'height="{bar_h}" fill="{color}" rx="3"/>'
-            f'<text x="{label_x:.1f}" y="{y + row_h / 2 + 4:.1f}" font-size="12" '
-            f'fill="#222" text-anchor="{label_anchor}" '
+            # Value at the bar's far end
+            f'<text x="{value_x:.1f}" y="{y_bar + bar_h / 2 + 4:.1f}" '
+            f'font-size="12" fill="#222" text-anchor="{value_anchor}" '
             f'font-variant-numeric="tabular-nums">{pp_label}</text>'
             f'</g>'
         )
@@ -1638,22 +1670,41 @@ def slide_failure_drivers(plan: Plan) -> str:
     tornado_html = ""
     if worst_entries:
         worst_short = short_gate_label(plan.worst_gate)
-        chart = render_tornado_chart(worst_entries)
-        if len(worst_entries) == 1:
-            note = (
-                "<p class='muted small'>Only one input driver in the simulation &mdash; "
-                "this gate's pass rate depends entirely on this single variable.</p>"
+        max_abs = max(abs(e.delta_pp) for e in worst_entries)
+        # Saturation threshold: if even the strongest driver shifts the pass
+        # rate by less than 1 pp, the tornado is just noise and the bars all
+        # round to "0.0 pp". Show a clear explanation instead of empty bars.
+        if max_abs < 1.0:
+            body = (
+                f'<div class="tornado-saturated">'
+                f'<strong>Saturated gate</strong> &mdash; no modelled input '
+                f'meaningfully changes this gate&rsquo;s pass rate '
+                f'(strongest effect across {len(worst_entries)} input'
+                f'{"s" if len(worst_entries) != 1 else ""}: '
+                f'<strong>{max_abs:.2f} pp</strong>). The failure is dominated '
+                f'by the input bounds or the threshold itself, not by any single '
+                f'variable. Tornado chart omitted &mdash; audit '
+                f'<code>bounds.json</code> or the threshold value to understand '
+                f'this gate.'
+                f'</div>'
             )
         else:
-            note = (
-                f"<p class='muted small'>Each bar shows how the pass rate of the worst gate "
-                f"(<code>{esc(plan.worst_gate)}</code>) changes when that input moves from "
-                f"its bottom quartile to its top quartile. Bars sorted by magnitude.</p>"
-            )
+            chart = render_tornado_chart(worst_entries)
+            if len(worst_entries) == 1:
+                note = (
+                    "<p class='muted small'>Only one input driver in the simulation &mdash; "
+                    "this gate's pass rate depends entirely on this single variable.</p>"
+                )
+            else:
+                note = (
+                    f"<p class='muted small'>Each bar shows how the pass rate of the worst gate "
+                    f"(<code>{esc(plan.worst_gate)}</code>) changes when that input moves from "
+                    f"its bottom quartile to its top quartile. Bars sorted by magnitude.</p>"
+                )
+            body = f'<div class="tornado-wrap">{chart}</div>\n        {note}'
         tornado_html = f"""
         <div class="fd-section-title">Worst-gate sensitivity: <code>{esc(worst_short)}</code></div>
-        <div class="tornado-wrap">{chart}</div>
-        {note}
+        {body}
         """
 
     return f"""
@@ -2174,7 +2225,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 
 /* Tornado chart on failure-drivers slide */
 .fd-section-title {
-  margin: 28px 0 8px; font-size: 10px; text-transform: uppercase;
+  margin: 56px 0 8px; font-size: 10px; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--muted); font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
@@ -2183,6 +2234,14 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   color: var(--ink); font-weight: 500; text-transform: none; letter-spacing: 0;
 }
 .tornado-wrap { padding: 4px 0 0; }
+.tornado-saturated {
+  margin: 4px 0 0; padding: 14px 18px;
+  background: #fafaf8; border-left: 3px solid #888;
+  border-radius: 0 4px 4px 0;
+  font-size: 13px; line-height: 1.55; color: var(--ink);
+}
+.tornado-saturated strong { font-weight: 700; }
+.tornado-saturated code { font-size: 12px; }
 .um-list {
   list-style: none; padding: 0; margin: 16px 0 0;
   display: flex; flex-direction: column; gap: 14px;
