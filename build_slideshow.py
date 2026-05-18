@@ -520,6 +520,8 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
         target_slide = INTRO_SLIDES + orig_idx * PER_PLAN
         bar = per_plan_verdict_distribution(p.gate_verdicts)
         n_gates = len(p.gate_verdicts)
+        n_drivers = len(p.failure_drivers)
+        n_unmodelled = len(p.unmodelled_gate_names)
         rows.append(
             f"<tr class='roster-row' data-target='{target_slide}' "
             f"tabindex='0' role='link' "
@@ -531,6 +533,8 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
             f"<td><span class='band-pill' style='background:{color}'>{esc(band)}</span></td>"
             f"<td class='num'>{n_gates}</td>"
             f"<td class='vdist-cell'>{bar}</td>"
+            f"<td class='num'>{n_drivers}</td>"
+            f"<td class='num warn-num'>{n_unmodelled}</td>"
             f"</tr>"
         )
     legend = (
@@ -552,6 +556,7 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
   <table class="roster">
     <thead><tr>
       <th>Plan</th><th>Overall</th><th>Gates</th><th>Gate verdict distribution</th>
+      <th class='num'>Failure drivers</th><th class='num'>Unmodelled gates</th>
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
@@ -793,7 +798,9 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .roster td.plan-cell { line-height: 1.3; }
 .roster .plan-name { font-weight: 500; font-size: 13px; color: var(--ink); }
 .roster .plan-slug { font-size: 10.5px; color: var(--muted); display: block; margin-top: 2px; }
-.roster td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.roster th.num, .roster td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.roster td.num { font-weight: 600; }
+.roster td.warn-num { color: #b3300f; }
 .roster td.bar-cell { width: 220px; }
 .roster .wg { font-size: 11px; }
 .band-pill {
