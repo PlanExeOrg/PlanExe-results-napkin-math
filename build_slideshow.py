@@ -91,6 +91,15 @@ class GateCondition:
 
 
 @dataclass
+class QuartileEntry:
+    """One input's effect on a gate's pass rate, from quartile_analysis."""
+    input_id: str
+    p_pass_low_q: float   # pass-rate when this input is in its bottom quartile
+    p_pass_high_q: float  # pass-rate when this input is in its top quartile
+    delta_pp: float       # high_q - low_q, in percentage points
+
+
+@dataclass
 class DeckStats:
     total_plans: int
     band_counts: dict[str, int]
@@ -118,6 +127,7 @@ class Plan:
     scenarios: dict[str, ScenarioRow] = field(default_factory=dict)
     gate_conditions: dict[str, GateCondition] = field(default_factory=dict)
     gate_anchors: dict[str, str] = field(default_factory=dict)  # gate → threshold param label
+    gate_quartiles: dict[str, list[QuartileEntry]] = field(default_factory=dict)
     next_actions: list[str] = field(default_factory=list)
     commit_id: str = ""  # from meta.json; pinpoints the PlanExe-web blob
 
@@ -287,6 +297,7 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
     # Raw simulation data — pulled directly from JSON, not from the markdown.
     missing_inputs: list[MissingInput] = []
     gate_conditions: dict[str, GateCondition] = {}
+    gate_quartiles: dict[str, list[QuartileEntry]] = {}
     mc_path = md_path.parent / "montecarlo.json"
     output_units: dict[str, str] = {}
     if mc_path.exists():
@@ -309,6 +320,20 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
             unit = out.get("unit") if isinstance(out, dict) else None
             if unit:
                 output_units[gname] = unit
+        # Per-gate input-driver quartile decomposition (for tornado charts).
+        for gname, entries in mc.get("quartile_analysis", {}).items():
+            if not isinstance(entries, list):
+                continue
+            gate_quartiles[gname] = [
+                QuartileEntry(
+                    input_id=e.get("id", ""),
+                    p_pass_low_q=float(e.get("p_pass_low_quartile", 0.0)),
+                    p_pass_high_q=float(e.get("p_pass_high_quartile", 0.0)),
+                    delta_pp=float(e.get("delta_pp", 0.0)),
+                )
+                for e in entries if isinstance(e, dict)
+            ]
+
         # Populate per-gate confidence grade by mutating already-parsed `gates`.
         # IMPORTANT: don't shadow the outer `info` variable (the assessment JSON
         # block) — that regression once silently emptied plan_name / failed_gates
@@ -357,6 +382,7 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         scenarios=scenarios,
         gate_conditions=gate_conditions,
         gate_anchors=gate_anchors,
+        gate_quartiles=gate_quartiles,
         next_actions=actions,
         commit_id=commit_id,
     )
@@ -1520,6 +1546,78 @@ def slide_gate_chart(plan: Plan) -> str:
 """
 
 
+def render_tornado_chart(entries: list[QuartileEntry]) -> str:
+    """Horizontal tornado chart: each input's Δ-pp on the gate's pass rate.
+
+    Positive Δ-pp (input pushes pass rate UP at top quartile) renders right of
+    centerline in green. Negative renders left in red. Sorted by |Δ-pp|.
+    """
+    if not entries:
+        return ""
+    sorted_entries = sorted(entries, key=lambda e: -abs(e.delta_pp))
+    n = len(sorted_entries)
+    row_h = 38
+    label_w = 280
+    chart_w = 460
+    pad_top = 28
+    pad_bottom = 16
+    total_h = pad_top + n * row_h + pad_bottom
+    total_w = label_w + chart_w + 100
+
+    max_abs = max(max(abs(e.delta_pp) for e in sorted_entries), 1.0)
+    center_x = label_w + chart_w / 2
+
+    top_left = (
+        f'<text x="{label_w + 4}" y="{pad_top - 10}" font-size="10" fill="#888">'
+        f'← decreases pass rate</text>'
+    )
+    top_right = (
+        f'<text x="{label_w + chart_w - 4}" y="{pad_top - 10}" font-size="10" '
+        f'fill="#888" text-anchor="end">increases pass rate →</text>'
+    )
+    axis = (
+        f'<line x1="{center_x:.1f}" y1="{pad_top - 4}" x2="{center_x:.1f}" '
+        f'y2="{pad_top + n * row_h + 2:.1f}" stroke="#aaa" stroke-width="1"/>'
+    )
+
+    bars = []
+    for i, e in enumerate(sorted_entries):
+        y = pad_top + i * row_h
+        bar_h = row_h - 16
+        bar_w = abs(e.delta_pp) / max_abs * (chart_w / 2)
+        if e.delta_pp >= 0:
+            bar_x = center_x
+            color = "#2e7d32"
+            label_anchor = "start"
+            label_x = bar_x + bar_w + 6
+        else:
+            bar_x = center_x - bar_w
+            color = "#c62828"
+            label_anchor = "end"
+            label_x = bar_x - 6
+        short = esc(short_gate_label(e.input_id))
+        full_id = esc(e.input_id)
+        pp_label = f"{e.delta_pp:+.1f} pp"
+        bars.append(
+            f'<g aria-label="{full_id}"><title>{full_id}</title>'
+            f'<text x="{label_w - 8}" y="{y + row_h / 2 + 4:.1f}" font-size="12" '
+            f'fill="#222" text-anchor="end" font-family="ui-monospace, monospace">{short}</text>'
+            f'<rect x="{bar_x:.1f}" y="{y + 8}" width="{bar_w:.1f}" '
+            f'height="{bar_h}" fill="{color}" rx="3"/>'
+            f'<text x="{label_x:.1f}" y="{y + row_h / 2 + 4:.1f}" font-size="12" '
+            f'fill="#222" text-anchor="{label_anchor}" '
+            f'font-variant-numeric="tabular-nums">{pp_label}</text>'
+            f'</g>'
+        )
+
+    return (
+        f'<svg viewBox="0 0 {total_w} {total_h}" width="100%" '
+        f'preserveAspectRatio="xMidYMid meet" role="img" '
+        f'aria-label="Tornado chart of input drivers">'
+        + top_left + top_right + axis + "".join(bars) + "</svg>"
+    )
+
+
 def slide_failure_drivers(plan: Plan) -> str:
     if plan.failure_drivers:
         drv_rows = "".join(
@@ -1533,7 +1631,30 @@ def slide_failure_drivers(plan: Plan) -> str:
           <tbody>{drv_rows}</tbody>
         </table>"""
     else:
-        drv_table = '<p class="muted">No failing gates — nothing to drive.</p>'
+        drv_table = '<p class="muted">No failing gates &mdash; nothing to drive.</p>'
+
+    # Tornado chart for the worst gate (the highest-leverage gate to audit).
+    worst_entries = plan.gate_quartiles.get(plan.worst_gate, [])
+    tornado_html = ""
+    if worst_entries:
+        worst_short = short_gate_label(plan.worst_gate)
+        chart = render_tornado_chart(worst_entries)
+        if len(worst_entries) == 1:
+            note = (
+                "<p class='muted small'>Only one input driver in the simulation &mdash; "
+                "this gate's pass rate depends entirely on this single variable.</p>"
+            )
+        else:
+            note = (
+                f"<p class='muted small'>Each bar shows how the pass rate of the worst gate "
+                f"(<code>{esc(plan.worst_gate)}</code>) changes when that input moves from "
+                f"its bottom quartile to its top quartile. Bars sorted by magnitude.</p>"
+            )
+        tornado_html = f"""
+        <h3 class="fd-section-title">Worst-gate sensitivity: <code>{esc(worst_short)}</code></h3>
+        <div class="tornado-wrap">{chart}</div>
+        {note}
+        """
 
     return f"""
 <section class="slide">
@@ -1543,6 +1664,7 @@ def slide_failure_drivers(plan: Plan) -> str:
   </header>
   <div class="panel">
     {drv_table}
+    {tornado_html}
   </div>
   <footer class="slide-foot"><span>Slide 4 / 6 &middot; failure drivers (modelled)</span></footer>
 </section>
@@ -2049,6 +2171,14 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .gate-detail td.scen.sc-pass { color: #1e6d2c; }
 .gate-detail td.scen.sc-fail { color: #b3300f; }
 .report-anchor { font-size: 12px; color: var(--ink); }
+
+/* Tornado chart on failure-drivers slide */
+.fd-section-title {
+  margin: 26px 0 8px; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--muted); font-weight: 600;
+}
+.fd-section-title code { font-size: 11px; }
+.tornado-wrap { padding: 4px 0 0; }
 .um-list {
   list-style: none; padding: 0; margin: 16px 0 0;
   display: flex; flex-direction: column; gap: 14px;
