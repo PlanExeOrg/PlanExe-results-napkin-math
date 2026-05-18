@@ -1367,7 +1367,7 @@ def slide_overview(plan: Plan) -> str:
       <p>{esc(plan.primary_goal)}</p>
       <div class="metric-row">
         <div class="metric"><span class="metric-num">{failed_n}</span><span class="metric-cap">failed gates</span></div>
-        <div class="metric"><span class="metric-num">{unmod_n}</span><span class="metric-cap">unmodelled existential gates</span></div>
+        <div class="metric"><span class="metric-num">{unmod_n}</span><span class="metric-cap">unmodelled gates assumed true</span></div>
         <div class="metric"><span class="metric-num">{len(plan.gate_verdicts)}</span><span class="metric-cap">declared gates</span></div>
       </div>
     </div>
@@ -1529,7 +1529,7 @@ def slide_failure_drivers(plan: Plan) -> str:
         )
         drv_table = f"""
         <table class="data-table">
-          <thead><tr><th>Failing gate</th><th>Top driver</th><th>Δ-pp</th><th>80% pass requires</th></tr></thead>
+          <thead><tr><th>Failing gate</th><th>Top driver</th><th>Δ-pp</th><th>To reach ROBUST in model</th></tr></thead>
           <tbody>{drv_rows}</tbody>
         </table>"""
     else:
