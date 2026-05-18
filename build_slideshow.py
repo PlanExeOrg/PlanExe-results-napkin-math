@@ -276,12 +276,15 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
             if unit:
                 output_units[gname] = unit
         # Populate per-gate confidence grade by mutating already-parsed `gates`.
+        # IMPORTANT: don't shadow the outer `info` variable (the assessment JSON
+        # block) — that regression once silently emptied plan_name / failed_gates
+        # / unmodelled_gate_names for every plan.
         mc_conf = mc.get("model_confidence", {})
         if isinstance(mc_conf, dict):
             for g in gates:
-                info = mc_conf.get(g.name)
-                if isinstance(info, dict):
-                    grade = info.get("grade")
+                conf_entry = mc_conf.get(g.name)
+                if isinstance(conf_entry, dict):
+                    grade = conf_entry.get("grade")
                     if isinstance(grade, str):
                         g.confidence_grade = grade.upper()
 
@@ -1625,12 +1628,47 @@ def render_html(plans: list[Plan]) -> str:
 """
 
 
+def validate_plans(plans: list[Plan]) -> list[str]:
+    """Check parsed plans for silent-regression smells. Returns a list of
+    human-readable problem strings; empty list means OK."""
+    problems: list[str] = []
+    for p in plans:
+        # Plan name should not fall back to the slug.
+        if p.name == p.slug:
+            problems.append(
+                f"{p.slug}: plan_name fell back to slug — JSON block may be unreadable"
+            )
+        # Verdict band must be one of the known values.
+        if p.overall_band not in ("doom", "fragile", "marginal", "viable", "unknown"):
+            problems.append(f"{p.slug}: unexpected overall_band={p.overall_band!r}")
+        # Confidence counts (when present) should sum to declared gate count.
+        graded = sum(
+            1 for g in p.gate_verdicts
+            if (g.confidence_grade or "").upper() in ("LOW", "MEDIUM", "HIGH")
+        )
+        if graded > 0 and graded != len(p.gate_verdicts):
+            problems.append(
+                f"{p.slug}: confidence grades cover {graded}/{len(p.gate_verdicts)} "
+                "declared gates"
+            )
+    return problems
+
+
 def main() -> None:
     plan_dirs = sorted(
         d for d in SNAPSHOT_DIR.iterdir()
         if d.is_dir() and (d / "assessment.md").exists()
     )
     plans = [parse_assessment(d.name, d / "assessment.md") for d in plan_dirs]
+    problems = validate_plans(plans)
+    if problems:
+        print("VALIDATION PROBLEMS:")
+        for p in problems:
+            print(f"  - {p}")
+        raise SystemExit(
+            f"Refusing to write slideshow: {len(problems)} validation problem(s). "
+            "Fix the parser or run with relaxed validation."
+        )
     OUTPUT_PATH.write_text(render_html(plans), encoding="utf-8")
     total = INTRO_SLIDES + len(plans) * PER_PLAN
     print(f"Wrote {OUTPUT_PATH}: {INTRO_SLIDES} overview + "
