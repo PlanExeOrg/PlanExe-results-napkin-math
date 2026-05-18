@@ -696,10 +696,10 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 }
 .slide-head h1 { font-size: 28px; margin: 6px 0 0; font-weight: 600; line-height: 1.25; }
 .snapshot-link {
-  position: fixed; top: 62px; right: calc(max(0px, (100vw - min(1100px, 96vw)) / 2) + 48px);
+  position: absolute; top: 38px; right: 48px;
   font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--kicker); font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  text-decoration: none; z-index: 5; padding: 4px 6px; margin: -4px -6px;
+  text-decoration: none; padding: 4px 6px; margin: -4px -6px;
   border-radius: 3px;
 }
 .snapshot-link:hover { color: var(--ink); background: rgba(0,0,0,0.04); }
@@ -855,6 +855,15 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em
 """
 
 JS_TEMPLATE = r"""
+// Move the snapshot link inside each slide so it scrolls with the slide content
+// rather than being pinned to the viewport.
+{
+  const link = document.querySelector('.snapshot-link');
+  if (link) {
+    document.querySelectorAll('.slide').forEach((s) => s.appendChild(link.cloneNode(true)));
+    link.remove();
+  }
+}
 const INTRO_SLIDES = __INTRO_SLIDES__;
 const PER_PLAN = __PER_PLAN__;
 const slides = Array.from(document.querySelectorAll('.slide'));
