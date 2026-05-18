@@ -14,7 +14,7 @@ SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / "46"
 OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
-INTRO_SLIDES = 7
+INTRO_SLIDES = 8
 PER_PLAN = 6
 
 VERDICT_COLORS = {
@@ -611,7 +611,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
     <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
   </div>
-  <footer class="slide-foot"><span>Overview 1 / 7 &middot; headline figures</span></footer>
+  <footer class="slide-foot"><span>Overview 1 / 8 &middot; headline figures</span></footer>
 </section>
 """
 
@@ -628,7 +628,7 @@ def intro_slide_distribution(stats: DeckStats) -> str:
   <div class="chart-wrap big">
     {chart}
   </div>
-  <footer class="slide-foot"><span>Overview 2 / 7 &middot; verdict band distribution</span></footer>
+  <footer class="slide-foot"><span>Overview 2 / 8 &middot; verdict band distribution</span></footer>
 </section>
 """
 
@@ -700,7 +700,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     <tbody>{''.join(rows)}</tbody>
   </table>
   <p class="muted small roster-footnote"><strong>Base case</strong> = the worst gate's value at the deterministic <em>base</em> input scenario. FAIL means the plan fails its own central assumptions, not only in tail cases.</p>
-  <footer class="slide-foot"><span>Overview 5 / 7 &middot; plan roster</span></footer>
+  <footer class="slide-foot"><span>Overview 5 / 8 &middot; plan roster</span></footer>
 </section>
 """
 
@@ -855,7 +855,7 @@ def intro_slide_base_case_failure(plans: list[Plan]) -> str:
   </div>
   {examples_html}
   {unknown_note}
-  <footer class="slide-foot"><span>Overview 6 / 7 &middot; base-case failure</span></footer>
+  <footer class="slide-foot"><span>Overview 6 / 8 &middot; base-case failure</span></footer>
 </section>
 """
 
@@ -910,7 +910,126 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 7 / 7 &middot; gate verdicts by plan</span></footer>
+  <footer class="slide-foot"><span>Overview 7 / 8 &middot; gate verdicts by plan</span></footer>
+</section>
+"""
+
+
+# Failure-class keyword groups. First-match-wins on a gate ID's tokens.
+# Order matters — more specific / financial categories first so that gates
+# like `monthly_off_peak_rental_overhead_margin_dkk` land in Budget rather
+# than Operations (matched on `overhead`).
+_FAILURE_CLASSES: list[tuple[str, tuple[str, ...]]] = [
+    ("Budget / margin", (
+        "budget", "surplus", "overrun", "capex", "opex", "funding",
+        "donation", "noi", "float", "cash", "drf", "milstd", "rental",
+        "cost", "profitability_trigger", "profitability",
+    )),
+    ("Governance / regulatory", (
+        "compliance", "regulatory", "cert", "license", "authorization",
+        "aml", "zone_zero", "deficit",
+    )),
+    ("Market / adoption", (
+        "adoption", "conversion", "sellthrough", "awareness", "participation",
+        "social_impressions", "impressions", "registration", "presale",
+        "taster", "referendum", "support",
+    )),
+    ("Schedule / timing", (
+        "timing", "publish", "deadline", "window", "timeline", "delegation",
+    )),
+    ("Technical integration", (
+        "api", "bid", "mos", "kbps", "protocol", "fieldbus", "integration",
+        "fid",
+    )),
+    ("Operations / throughput", (
+        "uptime", "mttr", "throughput", "intervention", "audit", "endurance",
+        "coverage", "density", "pue", "staging", "recovery", "verification",
+        "productivity", "complaint", "overhead", "review_load", "latency",
+        "mtbf",
+    )),
+]
+
+
+def classify_gate_class(gate_id: str) -> str:
+    """Return a failure-class label for a gate ID. First-match-wins."""
+    s = (gate_id or "").lower()
+    for label, keywords in _FAILURE_CLASSES:
+        for k in keywords:
+            if k in s:
+                return label
+    return "Other"
+
+
+def _plan_short_name(p: Plan) -> str:
+    """Compact display name for a plan — strip trailing parens, truncate."""
+    name = re.sub(r"\s*\([^)]*\)\s*$", "", p.name or "").strip() or p.slug
+    return name if len(name) <= 32 else name[:29].rstrip() + "…"
+
+
+def intro_slide_failure_clustering(plans: list[Plan]) -> str:
+    """Cross-plan synthesis: every failing gate grouped by category."""
+    # Collect every failing gate together with its plan.
+    failing: list[tuple[Plan, Gate]] = []
+    for p in plans:
+        for g in p.gate_verdicts:
+            if g.verdict in ("DOOM", "FRAGILE"):
+                failing.append((p, g))
+
+    # Bucket by class.
+    by_class: dict[str, list[tuple[Plan, Gate]]] = {
+        label: [] for label, _ in _FAILURE_CLASSES
+    }
+    by_class["Other"] = []
+    for p, g in failing:
+        cls = classify_gate_class(g.name)
+        by_class.setdefault(cls, []).append((p, g))
+
+    # Sort categories: largest count first, "Other" last.
+    sorted_classes = sorted(
+        by_class.items(),
+        key=lambda kv: (kv[0] == "Other", -len(kv[1])),
+    )
+
+    total_failing = len(failing)
+    rows = []
+    for cls_label, members in sorted_classes:
+        if not members:
+            continue
+        # Up to 4 example gate+plan pairs (worst-failing first).
+        members_sorted = sorted(members, key=lambda pg: pg[1].pass_rate)[:4]
+        examples_html = ", ".join(
+            f"<span class='fc-ex'><code>{esc(short_gate_label(g.name))}</code>"
+            f" <span class='fc-plan'>({esc(_plan_short_name(p))})</span></span>"
+            for p, g in members_sorted
+        )
+        more = len(members) - len(members_sorted)
+        if more > 0:
+            examples_html += f" <span class='muted small'>+ {more} more</span>"
+        rows.append(
+            f"<tr>"
+            f"<td class='fc-category'>{esc(cls_label)}</td>"
+            f"<td class='num'>{len(members)}</td>"
+            f"<td class='fc-examples'>{examples_html}</td>"
+            f"</tr>"
+        )
+
+    plans_with_any = len({p.slug for p, _ in failing})
+
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">cross-plan synthesis</div>
+    <h1>Common failure classes</h1>
+    <p class="lede">Every failing gate (DOOM or FRAGILE) across {plans_with_any} of {len(plans)} plans, grouped by failure type. Useful for spotting recurring weaknesses in the plans the generator produces &mdash; not just diagnosing them one at a time.</p>
+  </header>
+  <table class="failure-class-table">
+    <thead>
+      <tr><th>Failure class</th><th class='num'>Failing gates</th><th>Examples (worst first)</th></tr>
+    </thead>
+    <tbody>{''.join(rows)}</tbody>
+  </table>
+  <p class="muted small">{total_failing} failing gates total. Examples show short labels with the plan in parentheses; classification is by keyword on the full gate ID (first-match-wins). Some gates legitimately span categories; the priority order picks one.</p>
+  <footer class="slide-foot"><span>Overview 8 / 8 &middot; common failure classes</span></footer>
 </section>
 """
 
@@ -1571,6 +1690,28 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   color: var(--muted); font-size: 13px; font-style: italic; margin-top: 6px;
 }
 
+/* Common failure classes slide */
+.failure-class-table {
+  width: 100%; border-collapse: collapse; font-size: 13px; margin: 4px 0 12px;
+}
+.failure-class-table th, .failure-class-table td {
+  padding: 12px 14px; border-bottom: 1px solid var(--rule);
+  text-align: left; vertical-align: top;
+}
+.failure-class-table th {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600;
+}
+.failure-class-table th.num, .failure-class-table td.num {
+  text-align: right; font-variant-numeric: tabular-nums;
+}
+.failure-class-table td.num { font-weight: 700; font-size: 20px; width: 70px; }
+.failure-class-table td.fc-category { font-weight: 600; font-size: 14px; width: 220px; }
+.failure-class-table td.fc-examples { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.failure-class-table td.fc-examples code { color: var(--ink); font-size: 11.5px; }
+.fc-plan { color: var(--muted); }
+.fc-ex { white-space: nowrap; }
+
 /* Base-case finding slide */
 .bc-headline {
   display: flex; align-items: center; gap: 28px;
@@ -1786,6 +1927,7 @@ def render_html(plans: list[Plan]) -> str:
         intro_slide_roster(plans),
         intro_slide_base_case_failure(plans),
         intro_slide_histogram(plans),
+        intro_slide_failure_clustering(plans),
     ]
     options = ['<option value="overview">— Overview —</option>']
     for i, plan in enumerate(plans):
