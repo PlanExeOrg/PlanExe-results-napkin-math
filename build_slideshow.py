@@ -2132,8 +2132,15 @@ def main() -> None:
         )
     OUTPUT_PATH.write_text(render_html(plans), encoding="utf-8")
     total = INTRO_SLIDES + len(plans) * PER_PLAN
+    stats = compute_stats(plans)
     print(f"Wrote {OUTPUT_PATH}: {INTRO_SLIDES} overview + "
           f"{len(plans)} plans × {PER_PLAN} = {total} slides.")
+    print(
+        f"Validation passed: {stats.total_plans} plans · "
+        f"{stats.total_declared_gates} declared gates · "
+        f"{stats.total_failed_gates} failed · "
+        f"{stats.total_unmodelled} unmodelled"
+    )
 
 
 if __name__ == "__main__":
