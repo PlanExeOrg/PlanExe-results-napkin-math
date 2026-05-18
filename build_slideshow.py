@@ -473,7 +473,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
   <header class="slide-head">
     <div class="kicker">plan roster</div>
     <h1>Plans ranked by worst-gate pass rate</h1>
-    <p class="lede">Most doomed at the top. The bar shows the worst gate's pass rate; the verdict band is determined by where that pass rate falls.</p>
+    <p class="lede">The &ldquo;worst gate wins&rdquo; rule is defensible, but harsh: it catches fatal bottlenecks, but it can hide whether a plan is one fix away from viability or broadly broken. A plan with one failed gate and four marginal gates is very different from a plan with five failing gates.</p>
   </header>
   <table class="roster">
     <thead><tr>
