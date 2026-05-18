@@ -568,7 +568,7 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
   <header class="slide-head">
     <div class="kicker">gate verdicts by plan</div>
     <h1>Gate verdicts by plan</h1>
-    <p class="lede">Each row's bar shows how that plan's declared gates distribute across verdict bands. Click a row to jump to the plan.</p>
+    <p class="lede">Each row's bar shows how that plan's declared gates distribute across verdict bands.</p>
   </header>
   {legend}
   <table class="roster">
@@ -595,7 +595,7 @@ def slide_overview(plan: Plan) -> str:
   </header>
   <div class="overview">
     <div class="goal">
-      <h3>Primary goal</h3>
+      <h3>Goal</h3>
       <p>{esc(plan.primary_goal)}</p>
       <div class="metric-row">
         <div class="metric"><span class="metric-num">{failed_n}</span><span class="metric-cap">failed gates</span></div>
