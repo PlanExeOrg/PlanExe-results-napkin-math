@@ -14,7 +14,7 @@ SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / "46"
 OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
-INTRO_SLIDES = 6
+INTRO_SLIDES = 7
 PER_PLAN = 6
 
 VERDICT_COLORS = {
@@ -543,7 +543,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
     <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
   </div>
-  <footer class="slide-foot"><span>Overview 1 / 6 &middot; headline figures</span></footer>
+  <footer class="slide-foot"><span>Overview 1 / 7 &middot; headline figures</span></footer>
 </section>
 """
 
@@ -560,7 +560,7 @@ def intro_slide_distribution(stats: DeckStats) -> str:
   <div class="chart-wrap big">
     {chart}
   </div>
-  <footer class="slide-foot"><span>Overview 2 / 6 &middot; verdict band distribution</span></footer>
+  <footer class="slide-foot"><span>Overview 2 / 7 &middot; verdict band distribution</span></footer>
 </section>
 """
 
@@ -632,7 +632,7 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     <tbody>{''.join(rows)}</tbody>
   </table>
   <p class="muted small roster-footnote"><strong>Base case</strong> = the worst gate's value at the deterministic <em>base</em> input scenario. FAIL means the plan fails its own central assumptions, not only in tail cases.</p>
-  <footer class="slide-foot"><span>Overview 5 / 6 &middot; plan roster</span></footer>
+  <footer class="slide-foot"><span>Overview 5 / 7 &middot; plan roster</span></footer>
 </section>
 """
 
@@ -673,6 +673,123 @@ def per_plan_verdict_distribution(gates: list[Gate]) -> str:
             f'title="{title}">{c}</div>'
         )
     return f'<div class="vdist-bar">{"".join(segs)}</div>'
+
+
+def _evaluate_base_case(plan: Plan) -> tuple[str, str, str, str]:
+    """Return (status, formatted_value, unit, gate_name) for a plan's worst gate
+    at the base scenario. status ∈ {"pass", "fail", "unknown"}."""
+    cond = plan.gate_conditions.get(plan.worst_gate)
+    sc = plan.scenarios.get(plan.worst_gate)
+    if cond is None or sc is None or sc.base is None:
+        return ("unknown", "—", "", plan.worst_gate)
+    formatted, css_cls = _format_scenario_value(sc.base, cond)
+    if "fail" in css_cls:
+        status = "fail"
+    elif "pass" in css_cls:
+        status = "pass"
+    else:
+        status = "unknown"
+    return (status, formatted, sc.unit, plan.worst_gate)
+
+
+def _pick_diverse_examples(items: list[tuple], k: int = 3) -> list[tuple]:
+    """Pick up to k items, preferring unit diversity. Items are tuples whose
+    3rd element (index 2) is the unit string."""
+    seen_units: set[str] = set()
+    chosen: list[tuple] = []
+    for item in items:
+        unit = item[2]
+        if unit and unit not in seen_units and len(chosen) < k:
+            chosen.append(item)
+            seen_units.add(unit)
+    for item in items:
+        if item not in chosen and len(chosen) < k:
+            chosen.append(item)
+    return chosen[:k]
+
+
+def intro_slide_base_case_failure(plans: list[Plan]) -> str:
+    """Cross-plan finding: which plans fail their worst gate at base inputs."""
+    n_fail = 0
+    n_pass = 0
+    n_unknown = 0
+    fail_examples: list[tuple] = []  # (plan, formatted_value, unit, gate)
+    for p in plans:
+        status, formatted, unit, gate = _evaluate_base_case(p)
+        if status == "fail":
+            n_fail += 1
+            fail_examples.append((p, formatted, unit, gate))
+        elif status == "pass":
+            n_pass += 1
+        else:
+            n_unknown += 1
+    total = len(plans)
+
+    if n_fail == total and total > 0:
+        headline_h1 = f"All {total} plans fail their worst gate under base inputs"
+        big_num = f"{total} / {total}"
+    elif total > 0:
+        headline_h1 = (
+            f"{n_fail} of {total} plans fail their worst gate under base inputs"
+        )
+        big_num = f"{n_fail} / {total}"
+    else:
+        headline_h1 = "No plans assessed"
+        big_num = "0 / 0"
+
+    examples = _pick_diverse_examples(
+        sorted(fail_examples, key=lambda x: x[0].worst_pass_rate),
+        k=3,
+    )
+    if examples:
+        rows = []
+        for plan, formatted, unit, gate in examples:
+            unit_cell = f"<span class='muted small'>{esc(unit)}</span>" if unit else ""
+            rows.append(
+                f"<tr>"
+                f"<td class='plan-cell'>"
+                f"<div class='plan-name'>{esc(plan.name)}</div>"
+                f"<code class='plan-slug'>{esc(plan.slug)}</code>"
+                f"</td>"
+                f"<td><code>{esc(gate)}</code></td>"
+                f"<td class='num bc-val'>{esc(formatted)}</td>"
+                f"<td>{unit_cell}</td>"
+                f"</tr>"
+            )
+        examples_html = f"""
+        <h3 class="bc-section-title">Examples</h3>
+        <table class="roster bc-examples">
+          <thead><tr>
+            <th>Plan</th><th>Worst gate</th><th class='num'>Base value</th><th>Unit</th>
+          </tr></thead>
+          <tbody>{''.join(rows)}</tbody>
+        </table>"""
+    else:
+        examples_html = ""
+
+    unknown_note = (
+        f"<p class='muted small'>{n_unknown} plan(s) excluded — base-scenario data unavailable.</p>"
+        if n_unknown > 0 else ""
+    )
+
+    return f"""
+<section class="slide">
+  <header class="slide-head">
+    <div class="kicker">base-case finding</div>
+    <h1>{esc(headline_h1)}</h1>
+  </header>
+  <div class="bc-headline">
+    <div class="bc-num">{esc(big_num)}</div>
+    <div class="bc-text">
+      <strong>plans whose worst gate fails at deterministic base inputs.</strong><br>
+      The Monte Carlo is not merely exposing tail risk &mdash; the central assumptions already miss at least one declared commitment in every flagged plan.
+    </div>
+  </div>
+  {examples_html}
+  {unknown_note}
+  <footer class="slide-foot"><span>Overview 6 / 7 &middot; base-case failure</span></footer>
+</section>
+"""
 
 
 def intro_slide_histogram(plans: list[Plan]) -> str:
@@ -725,7 +842,7 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 6 / 6 &middot; gate verdicts by plan</span></footer>
+  <footer class="slide-foot"><span>Overview 7 / 7 &middot; gate verdicts by plan</span></footer>
 </section>
 """
 
@@ -1386,6 +1503,25 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   color: var(--muted); font-size: 13px; font-style: italic; margin-top: 6px;
 }
 
+/* Base-case finding slide */
+.bc-headline {
+  display: flex; align-items: center; gap: 28px;
+  margin: 24px 0; padding: 26px 28px;
+  background: #fdecec; border-left: 5px solid #c62828; border-radius: 0 6px 6px 0;
+}
+.bc-num {
+  font-size: 64px; font-weight: 800; line-height: 1;
+  color: #c62828; letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.bc-text { font-size: 15px; line-height: 1.55; max-width: 55ch; }
+.bc-text strong { font-size: 16px; }
+.bc-section-title {
+  margin: 22px 0 10px; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--muted); font-weight: 600;
+}
+.bc-examples td.bc-val { color: #b3300f; font-weight: 700; }
+
 /* Drivers slide */
 .drivers-grid { display: flex; flex-direction: column; gap: 22px; }
 .panel h3 { margin: 0 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink); }
@@ -1580,6 +1716,7 @@ def render_html(plans: list[Plan]) -> str:
         intro_slide_distribution(stats),
         *methodology_html,
         intro_slide_roster(plans),
+        intro_slide_base_case_failure(plans),
         intro_slide_histogram(plans),
     ]
     options = ['<option value="overview">— Overview —</option>']
