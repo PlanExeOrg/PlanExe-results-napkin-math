@@ -118,6 +118,7 @@ class Plan:
     scenarios: dict[str, ScenarioRow] = field(default_factory=dict)
     gate_conditions: dict[str, GateCondition] = field(default_factory=dict)
     next_actions: list[str] = field(default_factory=list)
+    commit_id: str = ""  # from meta.json; pinpoints the PlanExe-web blob
 
 
 # ---------- parsing ----------
@@ -242,6 +243,14 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
                 source_anchor=um_entry.get("source_anchor", ""),
             ))
 
+    # Source-of-truth pointer — used to link the per-plan slide to the
+    # exact commit of report.html in PlanExe-web that the snapshot came from.
+    commit_id = ""
+    meta_path = md_path.parent / "meta.json"
+    if meta_path.exists():
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        commit_id = meta.get("commit_id", "") if isinstance(meta, dict) else ""
+
     # Suggested next actions — numbered list
     actions: list[str] = []
     sa_section = extract_section(md, "Suggested next actions")
@@ -323,6 +332,7 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         scenarios=scenarios,
         gate_conditions=gate_conditions,
         next_actions=actions,
+        commit_id=commit_id,
     )
 
 
@@ -1260,6 +1270,16 @@ def _format_confidence_counts(plan: Plan) -> str:
     return " &middot; ".join(parts)
 
 
+def _plan_report_url(plan: Plan) -> str:
+    """GitHub blob URL for the plan's report.html at the snapshot commit."""
+    if not plan.commit_id:
+        return ""
+    return (
+        f"https://github.com/PlanExeOrg/PlanExe-web/blob/"
+        f"{plan.commit_id}/{plan.slug}_report.html"
+    )
+
+
 def slide_overview(plan: Plan) -> str:
     failed_n = len(plan.failed_gates)
     unmod_n = len(plan.unmodelled_gate_names)
@@ -1278,11 +1298,22 @@ def slide_overview(plan: Plan) -> str:
         f"</div>"
         if conf_html else ""
     )
+    report_url = _plan_report_url(plan)
+    if report_url:
+        title_html = (
+            f'<a class="plan-title-link" href="{esc(report_url)}" '
+            f'target="_blank" rel="noopener" '
+            f'title="Open the full plan report on GitHub">'
+            f'{esc(plan.name)}<span class="ext-arrow" aria-hidden="true">&#x2197;</span>'
+            f'</a>'
+        )
+    else:
+        title_html = esc(plan.name)
     return f"""
 <section class="slide">
   <header class="slide-head">
     <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
-    <h1>{esc(plan.name)}</h1>
+    <h1>{title_html}</h1>
   </header>
   <div class="overview">
     <div class="goal">
@@ -1668,6 +1699,17 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   color: var(--kicker); font-family: ui-monospace, "SF Mono", Menlo, monospace;
 }
 .slide-head h1 { font-size: 28px; margin: 6px 0 0; font-weight: 600; line-height: 1.25; }
+.plan-title-link {
+  color: inherit; text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: border-bottom-color 0.12s, color 0.12s;
+}
+.plan-title-link:hover { border-bottom-color: var(--muted); }
+.plan-title-link .ext-arrow {
+  font-size: 0.55em; vertical-align: super;
+  margin-left: 6px; color: var(--muted); font-weight: 500;
+}
+.plan-title-link:hover .ext-arrow { color: var(--ink); }
 .snapshot-link {
   position: absolute; top: 38px; right: 48px;
   font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
