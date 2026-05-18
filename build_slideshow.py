@@ -1651,7 +1651,7 @@ def slide_failure_drivers(plan: Plan) -> str:
                 f"its bottom quartile to its top quartile. Bars sorted by magnitude.</p>"
             )
         tornado_html = f"""
-        <h3 class="fd-section-title">Worst-gate sensitivity: <code>{esc(worst_short)}</code></h3>
+        <div class="fd-section-title">Worst-gate sensitivity: <code>{esc(worst_short)}</code></div>
         <div class="tornado-wrap">{chart}</div>
         {note}
         """
@@ -2174,10 +2174,14 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 
 /* Tornado chart on failure-drivers slide */
 .fd-section-title {
-  margin: 26px 0 8px; font-size: 11px; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--muted); font-weight: 600;
+  margin: 28px 0 8px; font-size: 10px; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--muted); font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
-.fd-section-title code { font-size: 11px; }
+.fd-section-title code {
+  font-size: 11px; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--ink); font-weight: 500; text-transform: none; letter-spacing: 0;
+}
 .tornado-wrap { padding: 4px 0 0; }
 .um-list {
   list-style: none; padding: 0; margin: 16px 0 0;
