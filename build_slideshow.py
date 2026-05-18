@@ -1524,25 +1524,27 @@ def slide_unmodelled_gates(plan: Plan) -> str:
     if plan.unmodelled_gates:
         cards = []
         for g in plan.unmodelled_gates:
+            source_html = (
+                f"<span class='um-source-tag'>{esc(g.source_anchor)}</span>"
+                if g.source_anchor else ""
+            )
             why_html = (
-                f"<div class='um-section'>"
-                f"<div class='um-label'>Why it matters</div>"
-                f"<div class='um-text'>{esc(_truncate(g.why, 320))}</div>"
-                f"</div>" if g.why else ""
+                f"<p class='um-why'>{esc(_truncate(g.why, 320))}</p>"
+                if g.why else ""
             )
             cons_html = (
-                f"<div class='um-section'>"
-                f"<div class='um-label um-label-cons'>If false</div>"
-                f"<div class='um-text'>{esc(_truncate(g.consequence, 320))}</div>"
-                f"</div>" if g.consequence else ""
-            )
-            source_html = (
-                f"<div class='um-source'>source: {esc(g.source_anchor)}</div>"
-                if g.source_anchor else ""
+                f"<div class='um-consequence'>"
+                f"<span class='um-cons-tag'>If false</span> "
+                f"<span class='um-cons-text'>{esc(_truncate(g.consequence, 320))}</span>"
+                f"</div>"
+                if g.consequence else ""
             )
             cards.append(
                 f"<li class='um-card'>"
-                f"<div class='um-gate'><code>{esc(g.name)}</code>{source_html}</div>"
+                f"<div class='um-card-head'>"
+                f"<code class='um-gate-id'>{esc(g.name)}</code>"
+                f"{source_html}"
+                f"</div>"
                 f"{why_html}"
                 f"{cons_html}"
                 f"</li>"
@@ -1556,11 +1558,9 @@ def slide_unmodelled_gates(plan: Plan) -> str:
   <header class="slide-head">
     <div class="kicker">{esc(plan.slug)} &middot; {esc(plan.plan_type)}</div>
     <h1>Unmodelled existential gates</h1>
+    <p class="lede">The simulation does not test these. Treat the modelled verdict as conditional on each of them holding.</p>
   </header>
-  <div class="panel">
-    <p class="muted small">The simulation does not test these. Treat all modelled pass rates as conditional on them holding.</p>
-    {um_block}
-  </div>
+  {um_block}
   <footer class="slide-foot"><span>Slide 5 / 6 &middot; unmodelled existential gates</span></footer>
 </section>
 """
@@ -1950,27 +1950,44 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
 .gate-detail td.scen { font-weight: 600; }
 .gate-detail td.scen.sc-pass { color: #1e6d2c; }
 .gate-detail td.scen.sc-fail { color: #b3300f; }
-.um-list { list-style: none; padding: 0; margin: 8px 0 0; }
+.um-list {
+  list-style: none; padding: 0; margin: 16px 0 0;
+  display: flex; flex-direction: column; gap: 14px;
+}
 .um-card {
-  padding: 14px 0; border-bottom: 1px solid var(--rule);
+  background: #fafaf8;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 16px 20px 18px;
+  display: flex; flex-direction: column; gap: 10px;
 }
-.um-card:last-child { border-bottom: none; padding-bottom: 4px; }
-.um-gate {
-  font-size: 14px; margin-bottom: 10px;
-  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+.um-card-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 14px; flex-wrap: wrap;
 }
-.um-source {
-  font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+.um-gate-id {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px; color: var(--ink); font-weight: 500;
+}
+.um-source-tag {
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--muted); font-family: ui-monospace, monospace;
 }
-.um-section { margin-bottom: 8px; }
-.um-section:last-child { margin-bottom: 0; }
-.um-label {
-  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--muted); font-weight: 600; margin-bottom: 3px;
+.um-why {
+  font-size: 14px; line-height: 1.55; color: var(--ink); margin: 0;
 }
-.um-label.um-label-cons { color: #b3300f; }
-.um-text { font-size: 13px; line-height: 1.5; color: var(--ink); }
+.um-consequence {
+  font-size: 13px; line-height: 1.55; color: var(--ink);
+  padding: 8px 12px 8px 14px; margin: 0;
+  border-left: 3px solid #ef6c00;
+  background: #fffaf5;
+  border-radius: 0 4px 4px 0;
+}
+.um-cons-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #b3300f; margin-right: 6px;
+}
+.um-cons-text { color: var(--ink); }
 
 /* What to change next */
 .action-list { padding-left: 28px; margin: 0; }
