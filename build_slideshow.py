@@ -548,8 +548,8 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     return f"""
 <section class="slide">
   <header class="slide-head">
-    <div class="kicker">per-plan gate histogram</div>
-    <h1>Plans histogram</h1>
+    <div class="kicker">gate verdicts by plan</div>
+    <h1>Gate verdicts by plan</h1>
     <p class="lede">Each row's bar shows how that plan's declared gates distribute across verdict bands. Click a row to jump to the plan.</p>
   </header>
   {legend}
@@ -560,7 +560,7 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <footer class="slide-foot"><span>Overview 4 / 4 &middot; per-plan gate histogram</span></footer>
+  <footer class="slide-foot"><span>Overview 4 / 4 &middot; gate verdicts by plan</span></footer>
 </section>
 """
 
