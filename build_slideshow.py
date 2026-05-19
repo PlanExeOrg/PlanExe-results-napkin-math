@@ -2268,7 +2268,12 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   font-size: 11px; font-family: ui-monospace, "SF Mono", Menlo, monospace;
   color: var(--ink); font-weight: 500; text-transform: none; letter-spacing: 0;
 }
-.tornado-wrap { padding: 4px 0 0; }
+.tornado-wrap {
+  padding: 14px 16px 12px;
+  background: #fafaf8;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
 .tornado-label { text-align: center; margin-bottom: 10px; }
 .tornado-label-title {
   font-size: 12px; font-weight: 600; color: var(--ink); letter-spacing: 0.03em;
