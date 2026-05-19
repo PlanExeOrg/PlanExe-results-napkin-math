@@ -1726,7 +1726,17 @@ def slide_failure_drivers(plan: Plan) -> str:
                 note = base_note + interp
             else:
                 note = base_note
-            body = f'<div class="tornado-wrap">{chart}</div>\n        {note}'
+            chart_label = (
+                '<div class="tornado-label">'
+                '<div class="tornado-label-title">Tornado chart</div>'
+                '<div class="tornado-label-sub">Wider bars mean larger '
+                'Δ-pp impact on gate pass rate.</div>'
+                '</div>'
+            )
+            body = (
+                f'<div class="tornado-wrap">{chart_label}{chart}</div>\n'
+                f'        {note}'
+            )
         tornado_html = f"""
         <div class="fd-section-title">Worst-gate sensitivity: <code>{esc(worst_short)}</code></div>
         {body}
@@ -2259,6 +2269,13 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   color: var(--ink); font-weight: 500; text-transform: none; letter-spacing: 0;
 }
 .tornado-wrap { padding: 4px 0 0; }
+.tornado-label { text-align: center; margin-bottom: 10px; }
+.tornado-label-title {
+  font-size: 12px; font-weight: 600; color: var(--ink); letter-spacing: 0.03em;
+}
+.tornado-label-sub {
+  font-size: 11px; color: var(--muted); margin-top: 2px;
+}
 .tornado-saturated {
   margin: 4px 0 0; padding: 14px 18px;
   background: #fafaf8; border-left: 3px solid #888;
