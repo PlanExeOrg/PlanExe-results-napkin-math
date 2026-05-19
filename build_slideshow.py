@@ -1661,7 +1661,8 @@ def slide_failure_drivers(plan: Plan) -> str:
         <table class="data-table">
           <thead><tr><th>Failing gate</th><th>Top driver</th><th>Δ-pp</th><th>Model threshold for ROBUST</th></tr></thead>
           <tbody>{drv_rows}</tbody>
-        </table>"""
+        </table>
+        <p class="muted small">Δ-pp = percentage-point change in the gate&rsquo;s pass rate between simulations where the listed driver is in its bottom quartile versus its top quartile, with other inputs sampled as usual.</p>"""
     else:
         drv_table = '<p class="muted">No failing gates &mdash; nothing to drive.</p>'
 
@@ -1690,17 +1691,41 @@ def slide_failure_drivers(plan: Plan) -> str:
             )
         else:
             chart = render_tornado_chart(worst_entries)
+            sorted_by_mag = sorted(worst_entries, key=lambda e: -abs(e.delta_pp))
+            top_mag = abs(sorted_by_mag[0].delta_pp)
+            second_mag = (
+                abs(sorted_by_mag[1].delta_pp) if len(sorted_by_mag) > 1 else 0.0
+            )
+            # "Dominant" = either the only driver, or the top driver is at
+            # least 3× the size of the second-highest. Used to add an
+            # interpretation line so the reader doesn't have to reverse-
+            # engineer the chart's meaning.
+            dominant = len(worst_entries) == 1 or (
+                second_mag == 0 or top_mag / max(second_mag, 0.01) >= 3.0
+            )
             if len(worst_entries) == 1:
-                note = (
+                base_note = (
                     "<p class='muted small'>Only one input driver in the simulation &mdash; "
                     "this gate's pass rate depends entirely on this single variable.</p>"
                 )
             else:
-                note = (
+                base_note = (
                     f"<p class='muted small'>Each bar shows how the pass rate of the worst gate "
                     f"(<code>{esc(plan.worst_gate)}</code>) changes when that input moves from "
                     f"its bottom quartile to its top quartile. Bars sorted by magnitude.</p>"
                 )
+            if dominant and len(worst_entries) > 1:
+                top_label = _short_input_label(sorted_by_mag[0].input_id)
+                interp = (
+                    f"<p class='muted small'>"
+                    f"<strong>Interpretation:</strong> the worst gate is primarily a "
+                    f"{esc(top_label)} problem &mdash; other modelled inputs have only "
+                    f"secondary effect on this gate."
+                    f"</p>"
+                )
+                note = base_note + interp
+            else:
+                note = base_note
             body = f'<div class="tornado-wrap">{chart}</div>\n        {note}'
         tornado_html = f"""
         <div class="fd-section-title">Worst-gate sensitivity: <code>{esc(worst_short)}</code></div>
