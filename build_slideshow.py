@@ -1,7 +1,11 @@
-"""Build snapshot/46/slideshow.html from every assessment.md in snapshot/46/."""
+"""Build snapshot/<N>/slideshow.html from every assessment.md in snapshot/<N>/.
+
+The snapshot number defaults to the latest (49). Override with --snapshot.
+"""
 
 from __future__ import annotations
 
+import argparse
 import html
 import json
 import re
@@ -10,33 +14,29 @@ from pathlib import Path
 
 from methodology_slides import MethodologySlide, extract_slides
 
-SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / "46"
+DEFAULT_SNAPSHOT_NUMBER = "49"
+# These three are bound by main() once the CLI argument is parsed. Defining
+# them at module import keeps the existing top-level constants working for
+# anyone importing the module without a CLI invocation.
+SNAPSHOT_NUMBER = DEFAULT_SNAPSHOT_NUMBER
+SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / SNAPSHOT_NUMBER
 OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
 METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
 
 INTRO_SLIDES = 9
 PER_PLAN = 6
 
+# Verdict labels match the upstream PlanExe display convention (commits
+# 88722d8a / fa88c8c0): Critical / Fragile / Marginal / Robust. The
+# overall plan band is derived from the parsed gate verdicts via the
+# "worst gate wins" rule, so this script never reads the lowercase
+# legacy `overall_risk_band` enum from assessment.md.
 VERDICT_COLORS = {
-    "ROBUST": "#2e7d32",
-    "MARGINAL": "#f9a825",
-    "FRAGILE": "#ef6c00",
-    "DOOM": "#c62828",
-    "UNKNOWN": "#616161",
-}
-BAND_LABEL = {
-    "viable": "VIABLE",
-    "marginal": "MARGINAL",
-    "fragile": "FRAGILE",
-    "doom": "DOOM",
-    "unknown": "UNKNOWN",
-}
-BAND_COLOR = {
-    "viable": VERDICT_COLORS["ROBUST"],
-    "marginal": VERDICT_COLORS["MARGINAL"],
-    "fragile": VERDICT_COLORS["FRAGILE"],
-    "doom": VERDICT_COLORS["DOOM"],
-    "unknown": VERDICT_COLORS["UNKNOWN"],
+    "Critical": "#c62828",
+    "Fragile":  "#ef6c00",
+    "Marginal": "#f9a825",
+    "Robust":   "#2e7d32",
+    "Unknown":  "#616161",
 }
 
 
@@ -218,7 +218,11 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
             if not name:
                 continue
             pr = parse_pct(row[idx_pr])
-            vd = strip_md_inline(row[idx_vd]).upper()
+            # Verdict labels are title-case in the upstream pipeline
+            # (Critical / Fragile / Marginal / Robust). Strip markdown bold
+            # markers but keep the case as-is so downstream comparisons
+            # against VERDICT_COLORS keys etc. match.
+            vd = strip_md_inline(row[idx_vd]).strip("*")
             tb = strip_md_inline(row[idx_tb])
             gates.append(Gate(name=name, pass_rate=pr, verdict=vd, threshold_basis=tb))
 
@@ -369,7 +373,9 @@ def parse_assessment(slug: str, md_path: Path) -> Plan:
         name=info.get("plan_name", slug),
         plan_type=plan_type,
         primary_goal=goal,
-        overall_band=pmr.get("overall_risk_band", "unknown"),
+        overall_band=(
+            min(gates, key=lambda g: g.pass_rate).verdict if gates else "Unknown"
+        ),
         worst_gate=pmr.get("worst_gate", ""),
         worst_pass_rate=pmr.get("worst_gate_pass_rate", 0.0),
         failed_gates=info.get("primary_failed_gates", []),
@@ -523,8 +529,8 @@ def render_verdict_badge(
     n_unmodelled: int = 0, unmodelled_heavy: bool = False,
     low_confidence_majority: bool = False,
 ) -> str:
-    color = BAND_COLOR.get(band, "#666")
-    label = BAND_LABEL.get(band, band.upper())
+    color = VERDICT_COLORS.get(band, "#666")
+    label = band
     pct = f"{worst_pr * 100:.1f}%" if worst_pr is not None else "—"
 
     model_derived = (
@@ -571,9 +577,9 @@ def render_verdict_badge(
 
 
 def compute_stats(plans: list[Plan]) -> DeckStats:
-    counts: dict[str, int] = {"doom": 0, "fragile": 0, "marginal": 0, "viable": 0}
+    counts: dict[str, int] = {"Critical": 0, "Fragile": 0, "Marginal": 0, "Robust": 0}
     for p in plans:
-        key = p.overall_band if p.overall_band in counts else "unknown"
+        key = p.overall_band if p.overall_band in counts else "Unknown"
         counts[key] = counts.get(key, 0) + 1
     return DeckStats(
         total_plans=len(plans),
@@ -585,8 +591,8 @@ def compute_stats(plans: list[Plan]) -> DeckStats:
 
 
 def render_band_bar_chart(band_counts: dict[str, int]) -> str:
-    bands = [("doom", "DOOM", "<20%"), ("fragile", "FRAGILE", "20–50%"),
-             ("marginal", "MARGINAL", "50–80%"), ("viable", "ROBUST", "≥80%")]
+    bands = [("Critical", "<20%"), ("Fragile", "20–50%"),
+             ("Marginal", "50–80%"), ("Robust", "≥80%")]
     total = sum(band_counts.values()) or 1
     max_count = max(max(band_counts.values()), 1)
     chart_w, chart_h = 760, 380
@@ -610,13 +616,13 @@ def render_band_bar_chart(band_counts: dict[str, int]) -> str:
         )
 
     bars = []
-    for i, (key, label, thresh) in enumerate(bands):
-        count = band_counts.get(key, 0)
+    for i, (label, thresh) in enumerate(bands):
+        count = band_counts.get(label, 0)
         h = (count / max_count) * plot_h if count > 0 else 0
         cx = pad_l + i * slot + slot / 2
         x = cx - bar_w / 2
         y = pad_top + plot_h - h
-        color = BAND_COLOR.get(key, "#666")
+        color = VERDICT_COLORS.get(label, "#666")
         pct = count / total * 100
         if count > 0:
             bars.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_w:.1f}" '
@@ -652,16 +658,15 @@ def render_band_bar_chart(band_counts: dict[str, int]) -> str:
 
 
 def render_distribution_strip(band_counts: dict[str, int], total: int) -> str:
-    bands = [("doom", "DOOM"), ("fragile", "FRAGILE"),
-             ("marginal", "MARGINAL"), ("viable", "ROBUST")]
+    bands = ["Critical", "Fragile", "Marginal", "Robust"]
     total = total or 1
     segments = []
-    for key, label in bands:
-        count = band_counts.get(key, 0)
+    for label in bands:
+        count = band_counts.get(label, 0)
         if count == 0:
             continue
         pct = count / total * 100
-        color = BAND_COLOR.get(key, "#666")
+        color = VERDICT_COLORS.get(label, "#666")
         segments.append(
             f'<div class="strip-seg" style="background:{color};flex:{count};">'
             f'<div class="strip-label">{esc(label)}</div>'
@@ -683,7 +688,7 @@ def intro_slide_headline(stats: DeckStats) -> str:
   <div class="intro-metrics">
     <div class="big-metric"><div class="bm-num">{stats.total_plans}</div><div class="bm-cap">plans assessed</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_declared_gates}</div><div class="bm-cap">declared gates total</div></div>
-    <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (DOOM or FRAGILE)</div></div>
+    <div class="big-metric"><div class="bm-num">{stats.total_failed_gates}</div><div class="bm-cap">failed gates (Critical or Fragile)</div></div>
     <div class="big-metric"><div class="bm-num">{stats.total_unmodelled}</div><div class="bm-cap">unmodelled existential gates</div></div>
   </div>
   <footer class="slide-foot"><span>Overview 1 / 9 &middot; headline figures</span></footer>
@@ -697,7 +702,7 @@ def intro_slide_distribution(stats: DeckStats) -> str:
 <section class="slide">
   <header class="slide-head">
     <div class="kicker">verdict distribution</div>
-    <h1>How many plans are doomed?</h1>
+    <h1>How do plans distribute across verdict bands?</h1>
     <p class="lede">Each plan's overall risk band is set by its worst declared gate.</p>
   </header>
   <div class="chart-wrap big">
@@ -738,8 +743,8 @@ def intro_slide_roster(plans: list[Plan]) -> str:
     sorted_indexed = sorted(indexed, key=lambda ip: (ip[1].worst_pass_rate, ip[1].slug))
     rows = []
     for orig_idx, p in sorted_indexed:
-        band = BAND_LABEL.get(p.overall_band, p.overall_band.upper())
-        color = BAND_COLOR.get(p.overall_band, "#666")
+        band = p.overall_band
+        color = VERDICT_COLORS.get(p.overall_band, "#666")
         pct = p.worst_pass_rate * 100
         target_slide = INTRO_SLIDES + orig_idx * PER_PLAN  # 0-based
         base_cell = _base_case_cell(p)
@@ -797,7 +802,7 @@ def slide_methodology(slide: MethodologySlide, index: int, total: int) -> str:
 
 def per_plan_verdict_distribution(gates: list[Gate]) -> str:
     """Stacked horizontal bar showing this plan's gate-verdict distribution."""
-    order = ["DOOM", "FRAGILE", "MARGINAL", "ROBUST"]
+    order = ["Critical", "Fragile", "Marginal", "Robust"]
     counts = {v: 0 for v in order}
     for g in gates:
         if g.verdict in counts:
@@ -955,8 +960,8 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
     sorted_indexed = sorted(indexed, key=lambda ip: (ip[1].worst_pass_rate, ip[1].slug))
     rows = []
     for orig_idx, p in sorted_indexed:
-        band = BAND_LABEL.get(p.overall_band, p.overall_band.upper())
-        color = BAND_COLOR.get(p.overall_band, "#666")
+        band = p.overall_band
+        color = VERDICT_COLORS.get(p.overall_band, "#666")
         target_slide = INTRO_SLIDES + orig_idx * PER_PLAN
         bar = per_plan_verdict_distribution(p.gate_verdicts)
         n_gates = len(p.gate_verdicts)
@@ -979,10 +984,10 @@ def intro_slide_histogram(plans: list[Plan]) -> str:
         )
     legend = (
         '<div class="legend">'
-        '<span><span class="sw" style="background:#c62828"></span>DOOM &lt;20%</span>'
-        '<span><span class="sw" style="background:#ef6c00"></span>FRAGILE 20–50%</span>'
-        '<span><span class="sw" style="background:#f9a825"></span>MARGINAL 50–80%</span>'
-        '<span><span class="sw" style="background:#2e7d32"></span>ROBUST ≥80%</span>'
+        '<span><span class="sw" style="background:#c62828"></span>Critical &lt;20%</span>'
+        '<span><span class="sw" style="background:#ef6c00"></span>Fragile 20–50%</span>'
+        '<span><span class="sw" style="background:#f9a825"></span>Marginal 50–80%</span>'
+        '<span><span class="sw" style="background:#2e7d32"></span>Robust ≥80%</span>'
         '</div>'
     )
     return f"""
@@ -1062,7 +1067,7 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
     failing: list[tuple[Plan, Gate]] = []
     for p in plans:
         for g in p.gate_verdicts:
-            if g.verdict in ("DOOM", "FRAGILE"):
+            if g.verdict in ("Critical", "Fragile"):
                 failing.append((p, g))
 
     # Bucket by class.
@@ -1139,7 +1144,7 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
   <header class="slide-head">
     <div class="kicker">cross-plan synthesis</div>
     <h1>Common failure classes</h1>
-    <p class="lede">Every failing gate (DOOM or FRAGILE) across {plans_with_any} of {len(plans)} plans, grouped by failure type. Useful for spotting recurring weaknesses in the plans the generator produces &mdash; not just diagnosing them one at a time.</p>
+    <p class="lede">Every failing gate (Critical or Fragile) across {plans_with_any} of {len(plans)} plans, grouped by failure type. Useful for spotting recurring weaknesses in the plans the generator produces &mdash; not just diagnosing them one at a time.</p>
   </header>
   {takeaway_html}
   <table class="failure-class-table">
@@ -1157,16 +1162,17 @@ def intro_slide_failure_clustering(plans: list[Plan]) -> str:
 def _fixability_reason(plan: Plan) -> str:
     """Specific synthesis of *why* this plan's failure shape is narrow or wide.
 
-    Describes the shape in concrete terms (counts of DOOM/FRAGILE/MARGINAL/
-    ROBUST + supporting gates) rather than generic categories. The actual
-    blocker gate name is shown in the adjacent "First fix" column, so this
-    function deliberately omits the gate name to avoid duplication.
+    Describes the shape in concrete terms (counts of Critical / Fragile /
+    Marginal / Robust + supporting gates) rather than generic categories.
+    The actual blocker gate name is shown in the adjacent "First fix"
+    column, so this function deliberately omits the gate name to avoid
+    duplication.
     """
-    counts = {v: 0 for v in ("DOOM", "FRAGILE", "MARGINAL", "ROBUST")}
+    counts = {v: 0 for v in ("Critical", "Fragile", "Marginal", "Robust")}
     for g in plan.gate_verdicts:
         if g.verdict in counts:
             counts[g.verdict] += 1
-    d, f, m, r = counts["DOOM"], counts["FRAGILE"], counts["MARGINAL"], counts["ROBUST"]
+    d, f, m, r = counts["Critical"], counts["Fragile"], counts["Marginal"], counts["Robust"]
     high_conf = sum(1 for g in plan.gate_verdicts if g.confidence_grade == "HIGH")
     low_conf = sum(1 for g in plan.gate_verdicts if g.confidence_grade == "LOW")
     n_unmod = len(plan.unmodelled_gate_names)
@@ -1178,7 +1184,7 @@ def _fixability_reason(plan: Plan) -> str:
     if d == 0 and f == 0:
         parts.append("no failing gates")
     elif d == 0:
-        parts.append(f"no DOOM gates; weakest at {pct:.0f}%")
+        parts.append(f"no Critical gates; weakest at {pct:.0f}%")
     elif d == 1 and m + r > f:
         # Single hard blocker with supporting gates near or above threshold.
         supports = []
@@ -1192,9 +1198,9 @@ def _fixability_reason(plan: Plan) -> str:
             else "single hard blocker"
         )
     elif d == 1:
-        parts.append(f"1 DOOM + {f} FRAGILE")
+        parts.append(f"1 Critical + {f} Fragile")
     else:
-        parts.append(f"{d} DOOM + {f} FRAGILE blockers")
+        parts.append(f"{d} Critical + {f} Fragile blockers")
 
     # Trust-calibration modifiers.
     if high_conf >= 2 and high_conf >= low_conf:
@@ -1211,11 +1217,11 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
 
     def fix_key(ip: tuple[int, Plan]):
         _, p = ip
-        n_doom = sum(1 for g in p.gate_verdicts if g.verdict == "DOOM")
+        n_critical = sum(1 for g in p.gate_verdicts if g.verdict == "Critical")
         high_conf = sum(1 for g in p.gate_verdicts if g.confidence_grade == "HIGH")
         # Ascending sort = most-fixable first.
         return (
-            n_doom,
+            n_critical,
             -p.worst_pass_rate,
             len(p.unmodelled_gate_names),
             -high_conf,
@@ -1226,8 +1232,8 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
 
     rows = []
     for orig_idx, p in sorted_indexed:
-        band = BAND_LABEL.get(p.overall_band, p.overall_band.upper())
-        color = BAND_COLOR.get(p.overall_band, "#666")
+        band = p.overall_band
+        color = VERDICT_COLORS.get(p.overall_band, "#666")
         pct = p.worst_pass_rate * 100
         shape, _, _ = classify_failure_shape(p)
         n_unmod = len(p.unmodelled_gate_names)
@@ -1256,7 +1262,7 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
   <header class="slide-head">
     <div class="kicker">triage</div>
     <h1>Closest to viability</h1>
-    <p class="lede">Plans ranked by fixability &mdash; least bad first. <strong>None of these plans currently pass</strong>; this is a relative ranking of where remediation effort would be cheapest. Sort: fewest DOOM gates &rarr; highest worst-gate pass rate &rarr; fewest unmodelled risks &rarr; highest data confidence.</p>
+    <p class="lede">Plans ranked by fixability &mdash; least bad first. <strong>None of these plans currently pass</strong>; this is a relative ranking of where remediation effort would be cheapest. Sort: fewest Critical gates &rarr; highest worst-gate pass rate &rarr; fewest unmodelled risks &rarr; highest data confidence.</p>
   </header>
   <table class="roster fix-table">
     <thead><tr>
@@ -1274,20 +1280,20 @@ def intro_slide_most_fixable(plans: list[Plan]) -> str:
 def classify_failure_shape(plan: Plan) -> tuple[str, str, str]:
     """Return (shape_counts, label, interpretation) for a plan's gate verdicts.
 
-    shape_counts: e.g. "1 DOOM + 4 MARGINAL"
+    shape_counts: e.g. "1 Critical + 4 Marginal"
     label: short tag like "Single blocker"
     interpretation: one-sentence reading
     """
-    counts = {v: 0 for v in ("DOOM", "FRAGILE", "MARGINAL", "ROBUST")}
+    counts = {v: 0 for v in ("Critical", "Fragile", "Marginal", "Robust")}
     for g in plan.gate_verdicts:
         if g.verdict in counts:
             counts[g.verdict] += 1
-    f = counts["DOOM"] + counts["FRAGILE"]
-    m = counts["MARGINAL"]
-    r = counts["ROBUST"]
+    f = counts["Critical"] + counts["Fragile"]
+    m = counts["Marginal"]
+    r = counts["Robust"]
     u = len(plan.unmodelled_gate_names)
 
-    parts = [f"{counts[v]} {v}" for v in ("DOOM", "FRAGILE", "MARGINAL", "ROBUST") if counts[v] > 0]
+    parts = [f"{counts[v]} {v}" for v in ("Critical", "Fragile", "Marginal", "Robust") if counts[v] > 0]
     shape = " + ".join(parts) if parts else "no declared gates"
 
     if f == 0 and (m + r) > 0:
@@ -1469,10 +1475,10 @@ def slide_gate_chart(plan: Plan) -> str:
     chart = render_gate_bar_chart(plan.gate_verdicts)
     legend = """
     <div class="legend">
-      <span><span class="sw" style="background:#c62828"></span>DOOM &lt;20%</span>
-      <span><span class="sw" style="background:#ef6c00"></span>FRAGILE 20–50%</span>
-      <span><span class="sw" style="background:#f9a825"></span>MARGINAL 50–80%</span>
-      <span><span class="sw" style="background:#2e7d32"></span>ROBUST ≥80%</span>
+      <span><span class="sw" style="background:#c62828"></span>Critical &lt;20%</span>
+      <span><span class="sw" style="background:#ef6c00"></span>Fragile 20–50%</span>
+      <span><span class="sw" style="background:#f9a825"></span>Marginal 50–80%</span>
+      <span><span class="sw" style="background:#2e7d32"></span>Robust ≥80%</span>
     </div>
     """
     # Supplementary detail table: threshold condition, basis pill,
@@ -1659,7 +1665,7 @@ def slide_failure_drivers(plan: Plan) -> str:
         )
         drv_table = f"""
         <table class="data-table">
-          <thead><tr><th>Failing gate</th><th>Top driver</th><th>Δ-pp</th><th>Model threshold for ROBUST</th></tr></thead>
+          <thead><tr><th>Failing gate</th><th>Top driver</th><th>Δ-pp</th><th>Model threshold for Robust</th></tr></thead>
           <tbody>{drv_rows}</tbody>
         </table>
         <p class="muted small">Δ-pp = percentage-point change in the gate&rsquo;s pass rate between simulations where the listed driver is in its bottom quartile versus its top quartile, with other inputs sampled as usual.</p>"""
@@ -1864,7 +1870,7 @@ def slide_what_to_change_next(plan: Plan) -> str:
     output; the action items audit whether the model's inputs are defensible.
     """
     failing = sorted(
-        (g for g in plan.gate_verdicts if g.verdict in ("DOOM", "FRAGILE")),
+        (g for g in plan.gate_verdicts if g.verdict in ("Critical", "Fragile")),
         key=lambda g: g.pass_rate,
     )
     drivers_by_gate = {d.gate: d for d in plan.failure_drivers}
@@ -2340,7 +2346,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
   font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
 }
 .action-tag.tag-worst { background: #c62828; color: white; }
-.action-tag.tag-doom { background: #fdecec; color: #b3300f; border: 1px solid #c62828; }
+.action-tag.tag-critical { background: #fdecec; color: #b3300f; border: 1px solid #c62828; }
 .action-tag.tag-fragile { background: #fdf1e7; color: #8a3d0a; border: 1px solid #ef6c00; }
 .action-tag.tag-unmod { background: #f0f0ee; color: #555; border: 1px solid #b8b8b4; }
 code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
@@ -2472,7 +2478,7 @@ def render_html(plans: list[Plan]) -> str:
         slides_html.append(slide_failure_drivers(plan))
         slides_html.append(slide_unmodelled_gates(plan))
         slides_html.append(slide_what_to_change_next(plan))
-        band_label = BAND_LABEL.get(plan.overall_band, plan.overall_band.upper())
+        band_label = plan.overall_band
         options.append(
             f'<option value="{i}">{esc(plan.slug)} — {esc(plan.name)} [{esc(band_label)}]</option>'
         )
@@ -2485,13 +2491,13 @@ def render_html(plans: list[Plan]) -> str:
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>PlanExe snapshot 46 — assessment slideshow</title>
+<title>PlanExe snapshot {SNAPSHOT_NUMBER} — assessment slideshow</title>
 <style>{CSS}</style>
 </head>
 <body>
 <a class="snapshot-link"
-   href="https://github.com/PlanExeOrg/PlanExe-results-napkin-math/tree/main/snapshot/46"
-   target="_blank" rel="noopener">Snapshot 46</a>
+   href="https://github.com/PlanExeOrg/PlanExe-results-napkin-math/tree/main/snapshot/{SNAPSHOT_NUMBER}"
+   target="_blank" rel="noopener">Snapshot {SNAPSHOT_NUMBER}</a>
 <div class="deck">
 {''.join(slides_html)}
 </div>
@@ -2521,7 +2527,7 @@ def validate_plans(plans: list[Plan]) -> list[str]:
                 f"{p.slug}: plan_name fell back to slug — JSON block may be unreadable"
             )
         # Verdict band must be one of the known values.
-        if p.overall_band not in ("doom", "fragile", "marginal", "viable", "unknown"):
+        if p.overall_band not in ("Critical", "Fragile", "Marginal", "Robust", "Unknown"):
             problems.append(f"{p.slug}: unexpected overall_band={p.overall_band!r}")
         # Confidence counts (when present) should sum to declared gate count.
         graded = sum(
@@ -2537,6 +2543,21 @@ def validate_plans(plans: list[Plan]) -> list[str]:
 
 
 def main() -> None:
+    global SNAPSHOT_NUMBER, SNAPSHOT_DIR, OUTPUT_PATH, METHODOLOGY_PATH
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--snapshot",
+        default=DEFAULT_SNAPSHOT_NUMBER,
+        help=f"Snapshot number under snapshot/ (default: {DEFAULT_SNAPSHOT_NUMBER}).",
+    )
+    args = parser.parse_args()
+    SNAPSHOT_NUMBER = args.snapshot
+    SNAPSHOT_DIR = Path(__file__).parent / "snapshot" / SNAPSHOT_NUMBER
+    OUTPUT_PATH = SNAPSHOT_DIR / "slideshow.html"
+    METHODOLOGY_PATH = SNAPSHOT_DIR / "methology.md"
+    if not SNAPSHOT_DIR.is_dir():
+        raise SystemExit(f"Snapshot directory not found: {SNAPSHOT_DIR}")
+
     plan_dirs = sorted(
         d for d in SNAPSHOT_DIR.iterdir()
         if d.is_dir() and (d / "assessment.md").exists()
