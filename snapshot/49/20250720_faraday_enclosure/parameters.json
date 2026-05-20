@@ -1,0 +1,205 @@
+{
+  "plan_summary": {
+    "plan_name": "European Faraday Enclosure Launch (Pragmatic Foundation)",
+    "plan_type": "commercial_consumer_hardware_launch",
+    "primary_goal": "Design, certify, and distribute a single-SKU Faraday enclosure on a €400K Year-1 budget, hitting €50K net cash from operations by Month 12 to unlock €350K follow-on funding for the MIL-STD server-grade pivot.",
+    "modelling_frame": "Tests five gates: Year-1 net-cash margin against the €50K Month-12 funding trigger; ISO-run sell-through margin against the 1,500-unit pivot threshold; gross-profit margin against the €120K MIL-STD certification cost; Year-1 budget surplus against the €400K ceiling; and validated-demand margin against the 1,000-unit Tallinn ISO commitment threshold. Funder cash-flow trigger renegotiation, EU EMC certification pass, single-source gasket continuity, and European utility-model filing are unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "funding_trigger_net_cash_eur",
+      "label": "Month-12 funding-trigger net-cash threshold",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 50000,
+      "comment": "€50K net cash from operations by Month 12 (excluding initial €400K investment) is the renegotiated funding trigger; below it the €350K follow-on is withheld.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "negotiate a specific '€50k net cash from operations by Month 12'."
+    },
+    {
+      "id": "iso_run_sell_through_units_target",
+      "label": "ISO-run sell-through pivot-funding threshold",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "units",
+      "value": 1500,
+      "comment": "75% sell-through of the 2,000-unit ISO run = 1,500 units funds the server-grade pivot; below this Risk 2 leaves €75K+ unsold inventory.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If pre-sales fall short of 1,500 units within 6 months, then the project is left with 2,000 unsold enclosures."
+    },
+    {
+      "id": "mil_std_certification_cost_eur",
+      "label": "MIL-STD-461 certification cost for the server-grade pivot",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 120000,
+      "comment": "€120K MIL-STD-461 certification is the spend the Year-1 gross profit must cover to unlock the server-grade pivot; below it the B2B pivot is delayed.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If the €99 price yields gross profit less than €120k, then the server-grade pivot certification cannot be funded."
+    },
+    {
+      "id": "year1_budget_ceiling_eur",
+      "label": "Year-1 burn-commitment ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 400000,
+      "comment": "Year-1 €400K envelope (€150K production + €80K cert + €100K marketing + €50K ops + €20K contingency); above it the contingency-cut cascade begins.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Year-1 budget burn commitment: €400 k — initial cash input for Monte Carlo."
+    },
+    {
+      "id": "iso_commit_demand_threshold_units",
+      "label": "Tallinn-ISO-commitment demand-validation threshold",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "units",
+      "value": 1000,
+      "comment": "Demand confirmed post-Latvian-500-run must exceed 1,000 units to commit to the full 2,000-unit Tallinn ISO run; below it the project stays at 500-unit batches.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If demand confirmed post-Latvian run falls below 1,000 units, then commitment to the Tallinn ISO facility is delayed."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_year1_net_cash_eur",
+      "label": "Achieved Year-1 net cash from operations at Month 12",
+      "unit": "EUR",
+      "why_needed": "Drives whether the €50K funding trigger clears; Issue 2 names 2-month cert delay reducing revenue by €150K, Risk 1 names single-late-payment killing the trigger.",
+      "suggested_estimation_method": "Year-1 revenue (two-tier pricing × sell-through × wholesale-mix) minus COGS minus opex; sensitivity to certification timing (Issue 2), retailer payment terms (Data Item 4), and chargeback rate (Risk 9)."
+    },
+    {
+      "id": "actual_iso_run_sell_through_units",
+      "label": "Achieved units sold from the 2,000-unit ISO run within 6 months",
+      "unit": "units",
+      "why_needed": "Above 1,500 units the pivot is funded; below it Risk 2's €75K unsold-inventory scenario activates and the server-grade pivot stalls.",
+      "suggested_estimation_method": "European prepper TAM (15K–20K active buyers) × conversion rate (Issue 1 names 2–5%) × wholesale-channel uplift; sensitivity to single-SKU phone/laptop compromise risk."
+    },
+    {
+      "id": "actual_gross_profit_eur",
+      "label": "Achieved Year-1 gross profit across two-tier pricing mix",
+      "unit": "EUR",
+      "why_needed": "Above €120K the MIL-STD-461 server-grade certification is funded; below it the pivot is delayed and the binary-bet failure mode named in Risk 4 activates.",
+      "suggested_estimation_method": "Revenue (units × blended ARPU) × gross-margin mix (45% at €99 vs 55% D2C uplift on €149 enclosure); sensitivity to Risk 4 (€99 → €89K profit gap) and Risk 10 wholesale-discount erosion."
+    },
+    {
+      "id": "actual_year1_spend_eur",
+      "label": "Achieved Year-1 total spend across production, certification, marketing, opex",
+      "unit": "EUR",
+      "why_needed": "Tests whether the €400K Year-1 envelope holds; Issue 2 names 40% cert overrun (+€32K), Risk 6 names 12% material premium for supplier diversification.",
+      "suggested_estimation_method": "Sum production (€150K) + cert (€80K + Issue-2 contingency) + marketing (€100K) + opex (€50K) + Risk-6 material premium + Risk-7 fulfillment-transition cost; sensitivity to Risks 2, 6, 7."
+    },
+    {
+      "id": "actual_validated_demand_units",
+      "label": "Achieved confirmed demand units after the 500-unit Latvian batch",
+      "unit": "units",
+      "why_needed": "Above 1,000 units the Tallinn ISO commitment proceeds; below it the project defaults to smaller batches and delays the B2B pivot.",
+      "suggested_estimation_method": "Pre-order conversion rate × 500-unit-launch reach × repeat-purchase signal + B2B Letter-of-Intent unit-equivalent; sensitivity to Issue 1 conversion-rate variance and Risk 3 phone/laptop SKU compromise."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "funding_trigger_margin_eur",
+      "label": "Year-1 net-cash margin against the €50K funding trigger",
+      "formula_hint": "funding_trigger_margin_eur = actual_year1_net_cash_eur - funding_trigger_net_cash_eur",
+      "output_name": "funding_trigger_margin_eur",
+      "output_unit": "EUR",
+      "depends_on": ["actual_year1_net_cash_eur", "funding_trigger_net_cash_eur"],
+      "why_first": "Positive margin unlocks the €350K follow-on funding for the server-grade pivot; negative margin kills the entire pivot thesis regardless of operational success."
+    },
+    {
+      "id": "sell_through_margin_units",
+      "label": "ISO-run sell-through margin against the 1,500-unit pivot threshold",
+      "formula_hint": "sell_through_margin_units = actual_iso_run_sell_through_units - iso_run_sell_through_units_target",
+      "output_name": "sell_through_margin_units",
+      "output_unit": "units",
+      "depends_on": ["actual_iso_run_sell_through_units", "iso_run_sell_through_units_target"],
+      "why_first": "Positive margin clears inventory and funds the next stage; negative margin triggers Risk 2's €75K unsold-inventory scenario and depletes the cash runway."
+    },
+    {
+      "id": "certification_funding_margin_eur",
+      "label": "Gross-profit margin against the €120K MIL-STD certification cost",
+      "formula_hint": "certification_funding_margin_eur = actual_gross_profit_eur - mil_std_certification_cost_eur",
+      "output_name": "certification_funding_margin_eur",
+      "output_unit": "EUR",
+      "depends_on": ["actual_gross_profit_eur", "mil_std_certification_cost_eur"],
+      "why_first": "Positive margin funds the server-grade pivot certification internally; negative margin forces the binary-bet pricing problem named in Risk 4 (€89K at €99) and stalls the B2B pivot."
+    },
+    {
+      "id": "year1_budget_surplus_eur",
+      "label": "Year-1 budget surplus against the €400K Year-1 ceiling",
+      "formula_hint": "year1_budget_surplus_eur = year1_budget_ceiling_eur - actual_year1_spend_eur",
+      "output_name": "year1_budget_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["year1_budget_ceiling_eur", "actual_year1_spend_eur"],
+      "why_first": "Positive surplus preserves the 5% contingency for cert re-test or supplier resilience; negative surplus forces marketing cuts that depress the very pre-sales the pivot trigger depends on."
+    },
+    {
+      "id": "iso_commit_demand_margin_units",
+      "label": "Validated-demand margin against the 1,000-unit Tallinn ISO commitment threshold",
+      "formula_hint": "iso_commit_demand_margin_units = actual_validated_demand_units - iso_commit_demand_threshold_units",
+      "output_name": "iso_commit_demand_margin_units",
+      "output_unit": "units",
+      "depends_on": ["actual_validated_demand_units", "iso_commit_demand_threshold_units"],
+      "why_first": "Positive margin justifies committing €150K to the 2,000-unit ISO run; negative margin keeps production at the 500-unit Latvian-batch level and delays the certification-funded pivot."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "funder_cash_flow_trigger_renegotiation_gate",
+      "label": "Funder agrees to renegotiate 'positive cash flow' to '€50K net cash by Month 12' by Month 6",
+      "why_it_matters": "Risk 1 names this as the single biggest governance risk: without renegotiation the funder retains unilateral interpretation of the trigger, and a single late retailer payment can withhold the €350K follow-on regardless of operational success.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "€350K follow-on lost; server-grade pivot defunded; project terminates with €400K sunk Year-1 investment."
+    },
+    {
+      "id": "eu_emc_certification_pass_gate",
+      "label": "EU EMC Directive certification (CE mark) achieved before Year-1 retail launch",
+      "why_it_matters": "Risk 5 / Issue 2 name certification as a hard prerequisite for consumer market entry; Issue 2 specifically names 30–50% cost escalation on test failure and 3-month delay killing the funding trigger.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Consumer retail launch blocked; Year-1 revenue collapses to near-zero; funding trigger unreachable."
+    },
+    {
+      "id": "single_source_gasket_continuity_gate",
+      "label": "Conductive gasket / copper-beryllium finger stock supply continuity for the ISO run",
+      "why_it_matters": "Risk 6 names 4-8 week production delay on single-source German supplier failure; Issue 3 names 8-12 week typical lead time. The plan's split-production schedule has no slack for either.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Production halts for weeks; pre-order chargebacks per Risk 9 trigger; funding trigger missed."
+    },
+    {
+      "id": "european_utility_model_filing_gate",
+      "label": "European utility model for the gasket-channel manufacturing process filed before Month 6",
+      "why_it_matters": "Risk 13 names 6-month reverse-engineering window; without filing the design can be copied by Chinese manufacturers undercutting by 50%, eroding both Year-1 and B2B pivot margins.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Price erosion 50%; gross-profit margin collapses; pivot trigger and Year-1 net cash both miss."
+    }
+  ]
+}

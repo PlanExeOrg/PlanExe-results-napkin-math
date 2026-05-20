@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026-27 (Pioneer's Gambit)",
+    "plan_type": "mega_scale_national_logistics"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "household_coverage_target": 0.99,
+        "budget_ceiling_crore": 15000,
+        "provisional_release_deadline_months": 6,
+        "ingestion_mttr_target_hours": 4,
+        "device_audit_failure_threshold": 0.01,
+        "actual_household_coverage_share": 0.85,
+        "actual_total_cost_crore": 12500,
+        "actual_provisional_release_months": 5,
+        "actual_ingestion_mttr_hours": 2,
+        "actual_device_audit_failure_share": 0.005
+      },
+      "outputs": {
+        "household_coverage_margin": -0.14,
+        "budget_surplus_crore": 2500,
+        "provisional_release_timing_margin_months": 1,
+        "ingestion_mttr_margin_hours": 2,
+        "device_integrity_margin": 0.005
+      }
+    },
+    "base": {
+      "inputs": {
+        "household_coverage_target": 0.99,
+        "budget_ceiling_crore": 15000,
+        "provisional_release_deadline_months": 6,
+        "ingestion_mttr_target_hours": 4,
+        "device_audit_failure_threshold": 0.01,
+        "actual_household_coverage_share": 0.99,
+        "actual_total_cost_crore": 15000,
+        "actual_provisional_release_months": 6,
+        "actual_ingestion_mttr_hours": 4,
+        "actual_device_audit_failure_share": 0.01
+      },
+      "outputs": {
+        "household_coverage_margin": 0.0,
+        "budget_surplus_crore": 0,
+        "provisional_release_timing_margin_months": 0,
+        "ingestion_mttr_margin_hours": 0,
+        "device_integrity_margin": 0.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "household_coverage_target": 0.99,
+        "budget_ceiling_crore": 15000,
+        "provisional_release_deadline_months": 6,
+        "ingestion_mttr_target_hours": 4,
+        "device_audit_failure_threshold": 0.01,
+        "actual_household_coverage_share": 0.995,
+        "actual_total_cost_crore": 17000,
+        "actual_provisional_release_months": 9,
+        "actual_ingestion_mttr_hours": 12,
+        "actual_device_audit_failure_share": 0.04
+      },
+      "outputs": {
+        "household_coverage_margin": 0.005,
+        "budget_surplus_crore": -2000,
+        "provisional_release_timing_margin_months": -3,
+        "ingestion_mttr_margin_hours": -8,
+        "device_integrity_margin": -0.03
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "household_coverage_margin": {
+        "low": -0.14,
+        "base": 0.0,
+        "high": 0.005,
+        "unit": "fraction",
+        "spread_ratio": -0.03571428571428571,
+        "spread_absolute": 0.145
+      },
+      "budget_surplus_crore": {
+        "low": 2500,
+        "base": 0,
+        "high": -2000,
+        "unit": "INR_crore",
+        "spread_ratio": -0.8,
+        "spread_absolute": -4500
+      },
+      "provisional_release_timing_margin_months": {
+        "low": 1,
+        "base": 0,
+        "high": -3,
+        "unit": "months",
+        "spread_ratio": -3.0,
+        "spread_absolute": -4
+      },
+      "ingestion_mttr_margin_hours": {
+        "low": 2,
+        "base": 0,
+        "high": -8,
+        "unit": "hours",
+        "spread_ratio": -4.0,
+        "spread_absolute": -10
+      },
+      "device_integrity_margin": {
+        "low": 0.005,
+        "base": 0.0,
+        "high": -0.03,
+        "unit": "fraction",
+        "spread_ratio": -6.0,
+        "spread_absolute": -0.035
+      }
+    }
+  },
+  "warnings": []
+}

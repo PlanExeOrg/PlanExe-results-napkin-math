@@ -1,0 +1,57 @@
+{
+  "actual_household_coverage_share": {
+    "unit": "fraction",
+    "low": 0.85,
+    "base": 0.99,
+    "high": 0.995,
+    "rationale": "Base centered at the 99% commitment per the actual-vs-commitment default. Asymmetric downside captures Risk 1 (2–5% drop on satellite-hub failure) compounded by Risk 6 (5–10% fluid-population undercount); upside capped by mathematical near-ceiling.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_total_cost_crore": {
+    "unit": "INR_crore",
+    "low": 12500,
+    "base": 15000,
+    "high": 17000,
+    "rationale": "Base centered at the ₹15,000 crore committed ceiling — the Pioneer's Gambit envelope is sized to be spent. Low anchored on the plan's stated ₹12,000 crore minimum; upside captures Expert Criticism's 15% satellite-fee-runaway overrun scenario.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_provisional_release_months": {
+    "unit": "months",
+    "low": 5,
+    "base": 6,
+    "high": 9,
+    "rationale": "Base centered at the 6-month commitment per the actual-vs-commitment default. Asymmetric upside captures Risk 2 (state non-cooperation pushes Phase-2 aggregation +2-3 months) and JRB-arbitration-overrun stress test; downside reflects best-case fast aggregation.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_ingestion_mttr_hours": {
+    "unit": "hours",
+    "low": 2,
+    "base": 4,
+    "high": 12,
+    "rationale": "Base centered at the 4-hour Issue-3 target per the actual-vs-commitment default. Asymmetric upside captures the Issue-3 stress-test scenario where MTTR breaches force 10-day supervisor-review delay and 2-week pay delay; downside reflects modern hyperscale cloud headroom.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_device_audit_failure_share": {
+    "unit": "fraction",
+    "low": 0.005,
+    "base": 0.01,
+    "high": 0.04,
+    "rationale": "Base centered at the 1% Decision-7 penalty trigger as the de-facto commitment ceiling — the supervisory metric is calibrated to keep actuals at-or-below this. Asymmetric upside captures Risk 5 (10% device loss) propagating into the audit-failure metric.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "plan_summary": {
+    "plan_name": "Containerized Dark Data Ingestor Network (CDDIN)",
+    "plan_type": "Large-scale physical-digital infrastructure preservation program",
+    "primary_goal": "Recover 200+ petabytes of at-risk 1950-2000 archival media via 30 mobile ingest units over 10 years",
+    "modelling_frame": "Tests whether the $250M budget, 30-MIU fleet, AI-plus-human review buffer, uptime target, and pre-treatment reliability gates collectively support the 200 PB recovery mandate."
+  },
+  "key_values": [
+    {
+      "id": "total_program_budget_usd",
+      "label": "Total 10-year program budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 250000000,
+      "comment": "Hard cap on total capital and operating spend across the 10-year deployment; gates fleet sizing and OpEx.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total project budget over ten years is $250 million."
+    },
+    {
+      "id": "target_fleet_size_units",
+      "label": "Target operational fleet size",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "units",
+      "value": 30,
+      "comment": "Maximum simultaneous MIU count; sets aggregate throughput and aggregate annual OpEx denominator.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Target fleet size of 30 MIUs operating simultaneously worldwide."
+    },
+    {
+      "id": "annual_opex_per_miu_usd",
+      "label": "Annual operating cost per MIU",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 2500000,
+      "comment": "Mid-point of stated $2-3M range; drives fleet-wide 10-year OpEx and Phase 3 viability.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Annual operating cost per MIU is $2-3 million."
+    },
+    {
+      "id": "uptime_target_fraction",
+      "label": "Minimum equipment uptime threshold",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.9,
+      "comment": "Fleet must stay above this availability or the maintenance program is deemed unsuccessful.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If equipment uptime falls below 90%, then the maintenance program is deemed unsuccessful."
+    },
+    {
+      "id": "review_load_safety_buffer_fraction",
+      "label": "Human review load safety buffer",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.175,
+      "comment": "Post-pilot total review load must stay below this buffer or surge staffing is funded.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If human review load exceeds 17.5%, then surge staffing must be funded."
+    },
+    {
+      "id": "review_override_fraction",
+      "label": "Mandatory human review override",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.15,
+      "comment": "Watermark override applied on all AI flags; combines with AI flag rate to produce total review load.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Mandatory human review watermark override is 15 percent."
+    },
+    {
+      "id": "pretreatment_reliability_threshold_fraction",
+      "label": "Pre-treatment reliability threshold",
+      "category": "compliance",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.85,
+      "comment": "Below this, archive partners pay an augmentation fee; gate on archive operational dependency.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If archive sorting/pre-treatment reliability falls below 85 percent, partner archives pay augmentation fee."
+    },
+    {
+      "id": "program_duration_years",
+      "label": "Program duration",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "years",
+      "value": 10,
+      "comment": "Full deployment and recovery window; multiplies annual OpEx into fleet-lifetime OpEx total.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Recovered data volume target is over 200 petabytes across 10 years."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_phase3_opex_pressure",
+      "question": "Does the Phase 3 budget absorb fleet OpEx after the 20% logistics-rotation shock the premortem identifies?",
+      "why_it_matters": "Phase 3 funds the long-tail operational years; an OpEx overrun there would strand the recovery mandate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": ["annual_opex_per_miu_usd", "target_fleet_size_units"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "achieved_fleet_uptime_fraction",
+      "label": "Achieved fleet uptime",
+      "unit": "fraction",
+      "why_needed": "Required to test whether maintenance achieves the 90% gate; not stated as a realized value in the digest.",
+      "suggested_estimation_method": "Anchor near 0.90 with a wide downside tail reflecting MTTR risk and cannibalization-program failure scenarios."
+    },
+    {
+      "id": "ai_flag_rate_fraction",
+      "label": "AI pre-screening flag rate",
+      "unit": "fraction",
+      "why_needed": "Drives the total review load when combined with the 15% override; the digest assumes ~10% but does not commit.",
+      "suggested_estimation_method": "Center near 0.10 (digest assumption) with upside to 0.15 reflecting pilot FPR variability noted in Issue 3."
+    },
+    {
+      "id": "achieved_pretreatment_reliability_fraction",
+      "label": "Achieved pre-treatment reliability",
+      "unit": "fraction",
+      "why_needed": "Needed to test the 85% partner-archive reliability gate; the digest names the threshold but not realized performance.",
+      "suggested_estimation_method": "Anchor near 0.85 with downside reflecting passive non-compliance risks from Issue 2."
+    },
+    {
+      "id": "phase1_miu_capex_per_unit_usd",
+      "label": "Per-MIU Phase 1 CapEx",
+      "unit": "USD",
+      "why_needed": "Required to test Phase 1 budget coverage against 3 pilot MIUs plus vintage acquisition and pilot-year OpEx.",
+      "suggested_estimation_method": "Center near $3.5M (mid of $3-4M); add upside for the $450k-$1M retrofit shock from Risk 6."
+    },
+    {
+      "id": "phase1_vintage_acquisition_usd",
+      "label": "Phase 1 vintage hardware acquisition cost",
+      "unit": "USD",
+      "why_needed": "Captures the $20M hardware buy plus the $6M vintage units allocation; consumes Phase 1 budget alongside CapEx and pilot OpEx.",
+      "suggested_estimation_method": "Anchor near $20M from Question 1; upside for sourcing-feasibility risk on the 150-unit pool."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "fleet_lifetime_opex_budget_margin_usd",
+      "label": "Budget margin after fleet lifetime OpEx",
+      "formula_hint": "fleet_lifetime_opex_budget_margin_usd = total_program_budget_usd - (annual_opex_per_miu_usd * target_fleet_size_units * program_duration_years)",
+      "output_name": "fleet_lifetime_opex_budget_margin_usd",
+      "output_unit": "USD",
+      "depends_on": ["total_program_budget_usd", "annual_opex_per_miu_usd", "target_fleet_size_units", "program_duration_years"],
+      "why_first": "Tests whether the $250M envelope can absorb full-fleet OpEx for the full program; positive means the budget covers steady-state operations."
+    },
+    {
+      "id": "uptime_margin_fraction",
+      "label": "Uptime margin vs threshold",
+      "formula_hint": "uptime_margin_fraction = achieved_fleet_uptime_fraction - uptime_target_fraction",
+      "output_name": "uptime_margin_fraction",
+      "output_unit": "fraction",
+      "depends_on": ["achieved_fleet_uptime_fraction", "uptime_target_fraction"],
+      "why_first": "Direct read on the primary operational gate; positive means the maintenance program clears the 90% bar."
+    },
+    {
+      "id": "review_load_buffer_margin_fraction",
+      "label": "Review load buffer margin",
+      "formula_hint": "review_load_buffer_margin_fraction = review_load_safety_buffer_fraction - (ai_flag_rate_fraction + review_override_fraction * ai_flag_rate_fraction)",
+      "output_name": "review_load_buffer_margin_fraction",
+      "output_unit": "fraction",
+      "depends_on": ["review_load_safety_buffer_fraction", "ai_flag_rate_fraction", "review_override_fraction"],
+      "why_first": "Tests the AI-plus-override workflow against the 17.5% safety buffer; positive means surge staffing is not triggered."
+    },
+    {
+      "id": "pretreatment_reliability_margin_fraction",
+      "label": "Pre-treatment reliability margin",
+      "formula_hint": "pretreatment_reliability_margin_fraction = achieved_pretreatment_reliability_fraction - pretreatment_reliability_threshold_fraction",
+      "output_name": "pretreatment_reliability_margin_fraction",
+      "output_unit": "fraction",
+      "depends_on": ["achieved_pretreatment_reliability_fraction", "pretreatment_reliability_threshold_fraction"],
+      "why_first": "Direct read on the archive-partner gate; positive means partners stay above the augmentation-fee trigger."
+    },
+    {
+      "id": "phase1_budget_margin_usd",
+      "label": "Phase 1 budget margin",
+      "formula_hint": "phase1_budget_margin_usd = 60000000 - (3 * phase1_miu_capex_per_unit_usd + phase1_vintage_acquisition_usd + annual_opex_per_miu_usd * 3)",
+      "output_name": "phase1_budget_margin_usd",
+      "output_unit": "USD",
+      "depends_on": ["phase1_miu_capex_per_unit_usd", "phase1_vintage_acquisition_usd", "annual_opex_per_miu_usd"],
+      "why_first": "Tests whether $60M Phase 1 covers 3 pilot MIUs, vintage hardware acquisition, and one year of pilot OpEx; gates Phase 2 unlock."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "data_escrow_agreements_gate",
+      "label": "Binding three-provider data escrow agreements",
+      "why_it_matters": "Plan requires legally binding, irrevocable escrow with three global cloud providers to decentralize long-term data risk.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Long-term format independence and post-10-year value of recovered data are lost; recovery mandate is partially negated."
+    },
+    {
+      "id": "archive_tier3_liability_acceptance_gate",
+      "label": "Archive partner Tier 3 liability acceptance",
+      "why_it_matters": "Builder strategy assumes archives sign Tier 3 financial-penalty contracts covering pre-treatment failures causing >48h downtime.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Reduced on-board MIU crew assumption is invalidated and OpEx-saving $400k/year/MIU benefit collapses."
+    },
+    {
+      "id": "gdpr_marker_taxonomy_approval_gate",
+      "label": "Regulatory approval of PII/copyright marker taxonomy",
+      "why_it_matters": "Compliance specialist must finalize a GDPR-aligned international marker taxonomy accepted across host jurisdictions.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Zero-legal-incidents metric fails and human-review compliance framework loses regulatory standing."
+    },
+    {
+      "id": "transport_and_hazmat_licensing_gate",
+      "label": "Cross-border transport and hazmat licensing",
+      "why_it_matters": "Global MIU deployment requires international transport permits, hazmat handling licences, and export-import clearances per host country.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "MIUs cannot legally cross borders or operate generators on partner sites, halting fleet deployment."
+    }
+  ]
+}

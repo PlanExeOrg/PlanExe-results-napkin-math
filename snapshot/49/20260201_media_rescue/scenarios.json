@@ -1,0 +1,126 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Containerized Dark Data Ingestor Network (CDDIN)",
+    "plan_type": "Large-scale physical-digital infrastructure preservation program"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_program_budget_usd": 250000000,
+        "target_fleet_size_units": 30,
+        "annual_opex_per_miu_usd": 2000000,
+        "uptime_target_fraction": 0.9,
+        "review_load_safety_buffer_fraction": 0.175,
+        "review_override_fraction": 0.15,
+        "pretreatment_reliability_threshold_fraction": 0.85,
+        "program_duration_years": 10,
+        "achieved_fleet_uptime_fraction": 0.75,
+        "ai_flag_rate_fraction": 0.07,
+        "achieved_pretreatment_reliability_fraction": 0.70,
+        "phase1_miu_capex_per_unit_usd": 3000000,
+        "phase1_vintage_acquisition_usd": 20000000
+      },
+      "outputs": {
+        "fleet_lifetime_opex_budget_margin_usd": -350000000,
+        "uptime_margin_fraction": -0.15,
+        "review_load_buffer_margin_fraction": 0.0945,
+        "pretreatment_reliability_margin_fraction": -0.15,
+        "phase1_budget_margin_usd": 25000000
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_program_budget_usd": 250000000,
+        "target_fleet_size_units": 30,
+        "annual_opex_per_miu_usd": 2500000,
+        "uptime_target_fraction": 0.9,
+        "review_load_safety_buffer_fraction": 0.175,
+        "review_override_fraction": 0.15,
+        "pretreatment_reliability_threshold_fraction": 0.85,
+        "program_duration_years": 10,
+        "achieved_fleet_uptime_fraction": 0.90,
+        "ai_flag_rate_fraction": 0.10,
+        "achieved_pretreatment_reliability_fraction": 0.85,
+        "phase1_miu_capex_per_unit_usd": 3500000,
+        "phase1_vintage_acquisition_usd": 26000000
+      },
+      "outputs": {
+        "fleet_lifetime_opex_budget_margin_usd": -500000000,
+        "uptime_margin_fraction": 0.0,
+        "review_load_buffer_margin_fraction": 0.06,
+        "pretreatment_reliability_margin_fraction": 0.0,
+        "phase1_budget_margin_usd": 16000000
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_program_budget_usd": 250000000,
+        "target_fleet_size_units": 30,
+        "annual_opex_per_miu_usd": 3000000,
+        "uptime_target_fraction": 0.9,
+        "review_load_safety_buffer_fraction": 0.175,
+        "review_override_fraction": 0.15,
+        "pretreatment_reliability_threshold_fraction": 0.85,
+        "program_duration_years": 10,
+        "achieved_fleet_uptime_fraction": 0.97,
+        "ai_flag_rate_fraction": 0.15,
+        "achieved_pretreatment_reliability_fraction": 0.95,
+        "phase1_miu_capex_per_unit_usd": 4500000,
+        "phase1_vintage_acquisition_usd": 35000000
+      },
+      "outputs": {
+        "fleet_lifetime_opex_budget_margin_usd": -650000000,
+        "uptime_margin_fraction": 0.07,
+        "review_load_buffer_margin_fraction": 0.0025,
+        "pretreatment_reliability_margin_fraction": 0.10,
+        "phase1_budget_margin_usd": 2500000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "fleet_lifetime_opex_budget_margin_usd": {
+        "low": -350000000,
+        "base": -500000000,
+        "high": -650000000,
+        "unit": "USD",
+        "spread_ratio": 1.8571428571428572,
+        "spread_absolute": -300000000
+      },
+      "uptime_margin_fraction": {
+        "low": -0.15,
+        "base": 0.0,
+        "high": 0.07,
+        "unit": "fraction",
+        "spread_ratio": -0.4666666666666667,
+        "spread_absolute": 0.22
+      },
+      "review_load_buffer_margin_fraction": {
+        "low": 0.0945,
+        "base": 0.06,
+        "high": 0.0025,
+        "unit": "fraction",
+        "spread_ratio": 0.026455026455026458,
+        "spread_absolute": -0.092
+      },
+      "pretreatment_reliability_margin_fraction": {
+        "low": -0.15,
+        "base": 0.0,
+        "high": 0.10,
+        "unit": "fraction",
+        "spread_ratio": -0.6666666666666667,
+        "spread_absolute": 0.25
+      },
+      "phase1_budget_margin_usd": {
+        "low": 25000000,
+        "base": 16000000,
+        "high": 2500000,
+        "unit": "USD",
+        "spread_ratio": 0.1,
+        "spread_absolute": -22500000
+      }
+    }
+  },
+  "warnings": []
+}

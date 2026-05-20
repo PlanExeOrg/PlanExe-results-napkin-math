@@ -1,0 +1,265 @@
+{
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "commercial community venture",
+    "primary_goal": "Launch a financially viable community clay workshop in Nuuk by 2026-09-15 within a 2M DKK Year 1 budget.",
+    "modelling_frame": "Tests Year 1 viability of the 'Builder's Balance' plan against fixed labor cost, off-peak rental revenue, contingency depletion shocks, and Taster Session conversion."
+  },
+  "key_values": [
+    {
+      "id": "year1_budget_dkk",
+      "label": "Year 1 budget envelope",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 2000000,
+      "comment": "Total Year 1 capital and operating ceiling that all costs and reserves draw from.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Year 1 budget envelope: 2 million DKK — initial capital and operating ceiling."
+    },
+    {
+      "id": "contingency_fraction",
+      "label": "Contingency reserve fraction",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.15,
+      "comment": "Share of Year 1 budget ring-fenced as untouchable shock-absorbing reserve.",
+      "formula_hint": "contingency_reserve_dkk = year1_budget_dkk * contingency_fraction",
+      "output_name": "contingency_reserve_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_budget_dkk", "contingency_fraction"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Contingency reserve amount: 15% of the total Year 1 budget."
+    },
+    {
+      "id": "drop_in_revenue_share",
+      "label": "Drop-in/rental revenue share",
+      "category": "demand",
+      "value_type": "derived",
+      "unit": "fraction",
+      "value": 0.25,
+      "comment": "Share of Year 1 revenue that must come from hourly drop-in/rental users at the 165 DKK rate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Revenue mix target: 40% Courses, 35% Memberships, 25% Drop-ins."
+    },
+    {
+      "id": "minimum_viable_hourly_rate_dkk",
+      "label": "Minimum viable hourly rental rate",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "DKK_per_hour",
+      "value": 165,
+      "comment": "Rate non-enrolled users must pay to cover off-peak overhead; speculative if locals reject.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Target minimum hourly rental rate for non-enrolled users: 165 DKK/hour."
+    },
+    {
+      "id": "taster_conversion_rate",
+      "label": "Taster Session conversion rate",
+      "category": "conversion",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.15,
+      "comment": "Share of free Taster attendees expected to become paying members/course students within 90 days.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Taster Session outreach will successfully convert attendees to paid memberships or courses at a 15% rate."
+    },
+    {
+      "id": "rental_shortfall_stress_dkk",
+      "label": "Rental revenue shortfall stress",
+      "category": "sensitivity",
+      "value_type": "inferred",
+      "unit": "DKK",
+      "value": 200000,
+      "comment": "Midpoint of the 100k-300k DKK Q3 deficit if the high hourly rental model fails.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Reliance on high hourly rental rate model failing causes a deficit of 100,000-300,000 DKK by Q3."
+    },
+    {
+      "id": "labor_law_overrun_stress_dkk",
+      "label": "Labor-law non-compliance overrun",
+      "category": "sensitivity",
+      "value_type": "inferred",
+      "unit": "DKK",
+      "value": 300000,
+      "comment": "Approx. labor liability if contractor model is reclassified to mandated employee benefits/severance.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Potential labor liability cost impact: approx. 300,000 DKK — stress test for fixed cost overrun."
+    },
+    {
+      "id": "kiln_failure_loss_dkk",
+      "label": "Single-kiln failure revenue loss",
+      "category": "sensitivity",
+      "value_type": "inferred",
+      "unit": "DKK",
+      "value": 200000,
+      "comment": "Estimated 4-8 week revenue loss if the sole electric kiln fails during the operational year.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "medium",
+      "uncertainty": "high",
+      "source_text": "Single kiln breakdown halts all instructional revenue for 4-8 weeks, costing approximately 200,000 DKK."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_contingency_after_combined_shocks",
+      "question": "Does the 15% contingency reserve survive the combined labor-law, rental, and kiln shocks?",
+      "why_it_matters": "Plan explicitly relies on one contingency pool to absorb multiple stress scenarios; if it goes negative, operational agility is lost.",
+      "formula_hint": "contingency_after_combined_shocks_dkk = contingency_reserve_dkk - labor_law_overrun_stress_dkk - rental_shortfall_stress_dkk - kiln_failure_loss_dkk",
+      "output_name": "contingency_after_combined_shocks_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["contingency_reserve_dkk", "labor_law_overrun_stress_dkk", "rental_shortfall_stress_dkk", "kiln_failure_loss_dkk"]
+    },
+    {
+      "id": "q_taster_conversion_margin",
+      "question": "Does Taster Session conversion clear the 12.5% minimum required to continue the outreach program?",
+      "why_it_matters": "Below the threshold, Taster budget is reallocated; the program's community-integration premise depends on this margin.",
+      "formula_hint": "taster_conversion_margin = taster_conversion_rate - taster_conversion_minimum_threshold",
+      "output_name": "taster_conversion_margin",
+      "output_unit": "fraction",
+      "depends_on": ["taster_conversion_rate", "taster_conversion_minimum_threshold"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "year1_revenue_target_dkk",
+      "label": "Year 1 absolute revenue target",
+      "unit": "DKK",
+      "why_needed": "Revenue-mix shares (25% drop-ins, 35% memberships, 40% courses) require a revenue denominator distinct from the 2M DKK budget.",
+      "suggested_estimation_method": "Bound by total fixed costs plus contingency replenishment; benchmark against comparable Arctic community studios."
+    },
+    {
+      "id": "monthly_fixed_labor_cost_dkk",
+      "label": "Monthly fixed labor cost (2 FTE-equivalent)",
+      "unit": "DKK_per_month",
+      "why_needed": "Drives annual labor burden and the gate test against budget; not numerically specified in source.",
+      "suggested_estimation_method": "Estimate from Greenlandic part-time instructor salary norms multiplied by 2 FTE-equivalent."
+    },
+    {
+      "id": "drop_in_available_hours_per_year",
+      "label": "Off-peak drop-in hours available per year",
+      "unit": "hours_per_year",
+      "why_needed": "Combined with the 165 DKK/hr rate, produces achievable rental revenue to test against the 25% target.",
+      "suggested_estimation_method": "Open studio weekly hours minus scheduled course/membership use, multiplied by operating weeks."
+    },
+    {
+      "id": "drop_in_utilization_rate",
+      "label": "Drop-in utilization rate",
+      "unit": "fraction",
+      "why_needed": "Share of available off-peak hours actually paid for at 165 DKK; the speculative driver of the 25% drop-in mix.",
+      "suggested_estimation_method": "Bound low/base/high using analogous remote-community studio benchmarks; treat as the key sensitivity input."
+    },
+    {
+      "id": "taster_conversion_minimum_threshold",
+      "label": "Minimum acceptable Taster conversion rate",
+      "unit": "fraction",
+      "why_needed": "Explicit gate at 12.5% below which Taster budget is redirected; needed for conversion-margin calculation.",
+      "suggested_estimation_method": "Anchor at 0.125 per Expert Criticism gate; treat 0.10 as harder Premortem cancellation threshold."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "contingency_reserve_dkk",
+      "label": "Absolute contingency reserve",
+      "formula_hint": "contingency_reserve_dkk = year1_budget_dkk * contingency_fraction",
+      "output_name": "contingency_reserve_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_budget_dkk", "contingency_fraction"],
+      "why_first": "Anchors every downstream shock-absorption gate; the 15% rule is the central financial discipline of the plan."
+    },
+    {
+      "id": "drop_in_expected_revenue_dkk",
+      "label": "Bottom-up expected drop-in revenue",
+      "formula_hint": "drop_in_expected_revenue_dkk = minimum_viable_hourly_rate_dkk * drop_in_available_hours_per_year * drop_in_utilization_rate",
+      "output_name": "drop_in_expected_revenue_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["minimum_viable_hourly_rate_dkk", "drop_in_available_hours_per_year", "drop_in_utilization_rate"],
+      "why_first": "Tests whether the 165 DKK rate at realistic utilization can plausibly deliver the 25% revenue mix."
+    },
+    {
+      "id": "drop_in_revenue_surplus_dkk",
+      "label": "Drop-in revenue surplus vs target",
+      "formula_hint": "drop_in_revenue_surplus_dkk = drop_in_expected_revenue_dkk - (year1_revenue_target_dkk * drop_in_revenue_share)",
+      "output_name": "drop_in_revenue_surplus_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["drop_in_expected_revenue_dkk", "year1_revenue_target_dkk", "drop_in_revenue_share"],
+      "why_first": "Direct test of the highest-risk revenue stream; positive means the speculative rental segment clears its share."
+    },
+    {
+      "id": "annual_labor_cost_dkk",
+      "label": "Annual fixed labor cost",
+      "formula_hint": "annual_labor_cost_dkk = monthly_fixed_labor_cost_dkk * 12",
+      "output_name": "annual_labor_cost_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["monthly_fixed_labor_cost_dkk"],
+      "why_first": "Largest fixed cost line; required input to budget-margin gate."
+    },
+    {
+      "id": "budget_after_labor_margin_dkk",
+      "label": "Budget margin after labor",
+      "formula_hint": "budget_after_labor_margin_dkk = year1_budget_dkk - annual_labor_cost_dkk - contingency_reserve_dkk",
+      "output_name": "budget_after_labor_margin_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_budget_dkk", "annual_labor_cost_dkk", "contingency_reserve_dkk"],
+      "why_first": "Shows the residual budget for fit-out, materials, utilities once labor and contingency are honoured; positive = viable."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "contractor_labor_law_compliance_gate",
+      "label": "Greenlandic contractor staffing legality",
+      "why_it_matters": "Entire 2-FTE-equivalent fixed-cost base assumes contractor classification is lawful; if reclassified, salary and severance obligations would invalidate the budget structure.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Contracts must halt and the plan must pivot to a salaried structure with 20-35% higher fixed labor cost."
+    },
+    {
+      "id": "utility_variance_approval_gate",
+      "label": "Nuuk municipal utility variance approval",
+      "why_it_matters": "High-draw kiln requires a C1 zoning variance; without it, fit-out cannot complete and the September 2026 readiness date fails.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Fit-out stalls, Q3 peak revenue window is missed, and operational launch slips into low season."
+    },
+    {
+      "id": "commercial_lease_secured_gate",
+      "label": "Katuaq-area commercial lease secured by 2026-07-01",
+      "why_it_matters": "All location-dependent timelines (fit-out, utility, kiln install) anchor to the July lease date; without it the readiness target collapses.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Operational readiness target of 2026-09-15 is threatened and material buffer order is automatically halved."
+    }
+  ]
+}

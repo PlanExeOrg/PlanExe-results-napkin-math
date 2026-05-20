@@ -1,0 +1,249 @@
+{
+  "plan_summary": {
+    "plan_name": "4-Day Work Week Pilot India",
+    "plan_type": "public_policy_pilot",
+    "primary_goal": "Generate evidence over 48 months to inform national 4DWW labor reform via formal-sector pilots with 50% SME inclusion.",
+    "modelling_frame": "Tests whether the INR 2,000 crore envelope, 70/30 split, and 10% contingency can absorb the named stress-test shocks (post-incentive overrun, SME redesign, legal delay) while sustaining voluntary opt-in above the load-bearing threshold."
+  },
+  "key_values": [
+    {
+      "id": "total_program_budget_inr_crore",
+      "label": "Total program budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "INR_crore",
+      "value": 2000,
+      "comment": "Fixed envelope for the 48-month pilot covering formal track, informal track, and contingency.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total budget ceiling: INR 2,000 crore"
+    },
+    {
+      "id": "formal_sector_budget_share",
+      "label": "Formal sector budget share",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.7,
+      "comment": "Share of total budget routed to the formal pilot track (incentives and operations).",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Formal sector 4DWW budget allocation: 70%"
+    },
+    {
+      "id": "contingency_budget_share",
+      "label": "Contingency budget share",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.1,
+      "comment": "Ring-fenced reserve to absorb high-severity political or data-integrity shocks.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Contingency budget allocation: 10%"
+    },
+    {
+      "id": "post_incentive_overrun_shock_inr_crore",
+      "label": "Post-incentive adoption-failure overrun",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "INR_crore",
+      "value": 300,
+      "comment": "Stress-test cost of widespread adoption failure after incentives expire; up to 15% budget overrun.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Widespread adoption failure post-incentive causes up to 15% budget overrun, INR 300 crore"
+    },
+    {
+      "id": "sme_redesign_shock_inr_crore",
+      "label": "SME cohort failure redesign cost",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "INR_crore",
+      "value": 400,
+      "comment": "Stress-test cost if the 50% SME mandate triggers small-firm failure and forces toolkit re-design.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "50% SME mandate causes high small-firm failure, rollout toolkit becomes unusable, costing INR 400 crore"
+    },
+    {
+      "id": "legal_friction_shock_inr_crore",
+      "label": "Legal/regulatory friction sunk cost",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "INR_crore",
+      "value": 225,
+      "comment": "Midpoint of INR 150-300 crore sunk cost from failing to navigate concurrent state/central labor law.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "3-6 month pilot delay; potential cohort re-selection; INR 150-300 crore sunk cost"
+    },
+    {
+      "id": "voluntary_opt_in_threshold_share",
+      "label": "Required voluntary opt-in rate",
+      "category": "conversion",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.75,
+      "comment": "Load-bearing assumption: opt-in must remain above this share through the first 24 months.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Voluntary opt-in participation rates remain above seventy-five percent throughout the first twenty-four months"
+    },
+    {
+      "id": "sme_cohort_share_target",
+      "label": "Mandatory SME cohort share",
+      "category": "coverage",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.5,
+      "comment": "Minimum SME representation by company count; drives representativeness and administrative burden.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "SME cohort must be 50% minimum by count"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_opt_in_margin",
+      "question": "Does realized voluntary opt-in clear the 75% load-bearing threshold?",
+      "why_it_matters": "If opt-in falls below the threshold, the evidence base is too thin to support national reform.",
+      "formula_hint": "opt_in_margin = actual_voluntary_opt_in_rate - voluntary_opt_in_threshold_share",
+      "output_name": "opt_in_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_voluntary_opt_in_rate", "voluntary_opt_in_threshold_share"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_voluntary_opt_in_rate",
+      "label": "Realized voluntary opt-in rate",
+      "unit": "fraction",
+      "why_needed": "Needed to test whether the load-bearing 75% opt-in assumption actually holds in the pilot.",
+      "suggested_estimation_method": "Benchmark from analogous voluntary policy pilots; bound 0.55-0.90 with base near 0.75."
+    },
+    {
+      "id": "sme_admin_hours_per_week_actual",
+      "label": "Actual SME admin hours per week",
+      "unit": "hours_per_week",
+      "why_needed": "Compared against the 2-hour ASI target to test whether SME compliance is sustainable.",
+      "suggested_estimation_method": "Pre-pilot time-and-motion study on a sample SME cohort; bound 1.5-5 hours."
+    },
+    {
+      "id": "sme_admin_hours_per_week_target",
+      "label": "SME admin hours per week target",
+      "unit": "hours_per_week",
+      "why_needed": "The ASI threshold the SME compliance design must beat; ≤2 worker-hours per week.",
+      "suggested_estimation_method": "Use stated plan target of 2.0 hours; sensitivity bound 1.5-2.5."
+    },
+    {
+      "id": "actual_sme_cohort_share",
+      "label": "Realized SME cohort share",
+      "unit": "fraction",
+      "why_needed": "Compared against the 50% mandate to test whether selection bias risk materialized.",
+      "suggested_estimation_method": "Track confirmed signed MOUs; bound 0.35-0.6 with base near 0.5."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "formal_sector_budget_inr_crore",
+      "label": "Formal sector budget",
+      "formula_hint": "formal_sector_budget_inr_crore = total_program_budget_inr_crore * formal_sector_budget_share",
+      "output_name": "formal_sector_budget_inr_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["total_program_budget_inr_crore", "formal_sector_budget_share"],
+      "why_first": "Anchors the cost base from which post-incentive overruns and legal friction will be debited."
+    },
+    {
+      "id": "contingency_reserve_inr_crore",
+      "label": "Ring-fenced contingency reserve",
+      "formula_hint": "contingency_reserve_inr_crore = total_program_budget_inr_crore * contingency_budget_share",
+      "output_name": "contingency_reserve_inr_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["total_program_budget_inr_crore", "contingency_budget_share"],
+      "why_first": "Sizes the single named reserve that absorbs all high-severity shocks in the plan's risk register."
+    },
+    {
+      "id": "contingency_buffer_inr_crore",
+      "label": "Contingency buffer after combined shocks",
+      "formula_hint": "contingency_buffer_inr_crore = contingency_reserve_inr_crore - post_incentive_overrun_shock_inr_crore - sme_redesign_shock_inr_crore - legal_friction_shock_inr_crore",
+      "output_name": "contingency_buffer_inr_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["contingency_reserve_inr_crore", "post_incentive_overrun_shock_inr_crore", "sme_redesign_shock_inr_crore", "legal_friction_shock_inr_crore"],
+      "why_first": "Tests whether the ring-fenced reserve absorbs the named high-severity shocks; positive means coverage."
+    },
+    {
+      "id": "sme_admin_margin",
+      "label": "SME administrative simplicity margin",
+      "formula_hint": "sme_admin_margin = sme_admin_hours_per_week_target - sme_admin_hours_per_week_actual",
+      "output_name": "sme_admin_margin",
+      "output_unit": "hours_per_week",
+      "depends_on": ["sme_admin_hours_per_week_target", "sme_admin_hours_per_week_actual"],
+      "why_first": "Tests whether the SME compliance burden clears the ASI target; positive means within tolerance."
+    },
+    {
+      "id": "sme_cohort_representation_margin",
+      "label": "SME cohort representation margin",
+      "formula_hint": "sme_cohort_representation_margin = actual_sme_cohort_share - sme_cohort_share_target",
+      "output_name": "sme_cohort_representation_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_sme_cohort_share", "sme_cohort_share_target"],
+      "why_first": "Tests whether the 50% SME mandate is met; failure invalidates the generalizability of evidence."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "state_labor_department_sign_off_gate",
+      "label": "State Labor Department sign-off",
+      "why_it_matters": "Pilot launch requires written No Objection affidavits from State Labour Secretaries by Month 3 and joint sign-off on operational gates.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Pilots cannot legally operate in non-cooperating states; PMO loses tie-breaking authority and decision gates stall."
+    },
+    {
+      "id": "executive_notification_legal_gate",
+      "label": "Executive notification legal validity",
+      "why_it_matters": "The pilot relies on executive notifications rather than legislative amendment to alter workday/overtime definitions for 24 months.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Jurisdictional litigation invalidates the INR 2,000 crore evidence mandate."
+    },
+    {
+      "id": "pii_tokenization_compliance_gate",
+      "label": "PII tokenization compliance",
+      "why_it_matters": "Data privacy compliance under NITI Aayog/MeitY rules is required for third-party auditor access to UMF data.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Audit pipeline blocked; evidence cannot be independently verified and the pilot's central deliverable fails."
+    }
+  ]
+}

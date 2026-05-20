@@ -1,0 +1,68 @@
+{
+  "total_transition_budget_dkk": {
+    "unit": "DKK",
+    "low": 15000000000,
+    "base": 20000000000,
+    "high": 25000000000,
+    "rationale": "Source text states budgeted public financing range DKK 15-25 billion; central estimate used as base with stated endpoints as low/high.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_referendum_support": {
+    "unit": "fraction",
+    "low": 0.45,
+    "base": 0.60,
+    "high": 0.72,
+    "rationale": "Base centered on committed support threshold 0.60 (DEFAULT, no anchored shift). Spread reflects historical Danish euro-referendum volatility; can overshoot target so triangular is appropriate.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_public_awareness": {
+    "unit": "fraction",
+    "low": 0.40,
+    "base": 0.70,
+    "high": 0.90,
+    "rationale": "Base centered on plan's 0.70 awareness threshold (DEFAULT). Suggested estimation method bounds 0.4-0.9, consistent with analogous EU member referendum awareness surveys.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "cash_logistics_shock_cost_dkk": {
+    "unit": "DKK",
+    "low": 30000000,
+    "base": 100000000,
+    "high": 200000000,
+    "rationale": "Suggested estimation method anchors on stated DKK 100M overhead scenario with bound DKK 30M to 200M for dual-circulation cash logistics shock.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "annual_real_indexation_factor": {
+    "unit": "ratio",
+    "low": 1.005,
+    "base": 1.015,
+    "high": 1.025,
+    "rationale": "Base from plan's proposed factor 1.015; medium-uncertainty spread of approx +/- 1 percentage point reflects negotiation latitude around the proposal.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "baseline_annual_inflation_rate": {
+    "unit": "fraction",
+    "low": 0.01,
+    "base": 0.02,
+    "high": 0.04,
+    "rationale": "Suggested estimation method anchors on ECB/Danish CPI projections central 0.02 with 0.01-0.04 range for stress over multi-year transition.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

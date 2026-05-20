@@ -1,0 +1,268 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "4-Day Work Week Pilot India",
+    "plan_type": "public_policy_pilot"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "formal_sector_budget_inr_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1400.0,
+      "std": 0.0,
+      "min": 1400.0,
+      "p05": 1400.0,
+      "p25": 1400.0,
+      "p50": 1400.0,
+      "p75": 1400.0,
+      "p95": 1400.0,
+      "max": 1400.0
+    },
+    "contingency_reserve_inr_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 200.0,
+      "std": 0.0,
+      "min": 200.0,
+      "p05": 200.0,
+      "p25": 200.0,
+      "p50": 200.0,
+      "p75": 200.0,
+      "p95": 200.0,
+      "max": 200.0
+    },
+    "contingency_buffer_inr_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -723.8495978521388,
+      "std": 106.86851485069083,
+      "min": -1075.6949802741472,
+      "p05": -900.7109064335368,
+      "p25": -798.9793992470248,
+      "p50": -724.079863555264,
+      "p75": -648.5210787642654,
+      "p95": -548.7629895409633,
+      "max": -341.90935029422735
+    },
+    "sme_admin_margin": {
+      "unit": "hours_per_week",
+      "count": 0,
+      "missing_count": 10000,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "p05": null,
+      "p25": null,
+      "p50": null,
+      "p75": null,
+      "p95": null,
+      "max": null
+    },
+    "sme_cohort_representation_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.01610068396487686,
+      "std": 0.05140215195795735,
+      "min": -0.14764852831909675,
+      "p05": -0.10497996383562286,
+      "p25": -0.053582662300660305,
+      "p50": -0.01227199893192546,
+      "p75": 0.02192703803697371,
+      "p95": 0.06550548773214974,
+      "max": 0.09873204711381778
+    }
+  },
+  "thresholds": {
+    "formal_sector_budget_inr_crore": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "contingency_reserve_inr_crore": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "contingency_buffer_inr_crore": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "sme_admin_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 0,
+      "probability": null
+    },
+    "sme_cohort_representation_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4039,
+      "valid_count": 10000,
+      "probability": 0.4039
+    }
+  },
+  "sensitivity": {
+    "formal_sector_budget_inr_crore": {
+      "top_inputs": []
+    },
+    "contingency_reserve_inr_crore": {
+      "top_inputs": []
+    },
+    "contingency_buffer_inr_crore": {
+      "top_inputs": [
+        {
+          "id": "sme_redesign_shock_inr_crore",
+          "correlation": -0.7726
+        },
+        {
+          "id": "post_incentive_overrun_shock_inr_crore",
+          "correlation": -0.5698
+        },
+        {
+          "id": "legal_friction_shock_inr_crore",
+          "correlation": -0.2831
+        }
+      ]
+    },
+    "sme_admin_margin": {
+      "top_inputs": []
+    },
+    "sme_cohort_representation_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_sme_cohort_share",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "contingency_buffer_inr_crore": [
+      {
+        "id": "post_incentive_overrun_shock_inr_crore",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "sme_redesign_shock_inr_crore",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "legal_friction_shock_inr_crore",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "sme_cohort_representation_margin": [
+      {
+        "id": "actual_sme_cohort_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "sme_cohort_representation_margin": [
+      {
+        "id": "actual_sme_cohort_share",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 0.48772800106807457,
+        "conditional_pass_prob": 0.8078,
+        "admitted_fraction": 0.5
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_sme_cohort_share",
+      "score": 29.805,
+      "worst_gate": "sme_cohort_representation_margin",
+      "bound_width_ratio": 0.5,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "formal_sector_budget_inr_crore": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "contingency_reserve_inr_crore": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "contingency_buffer_inr_crore": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.3333,
+      "average_bound_width_ratio": 0.8889,
+      "reasons": [
+        "1/3 input bounds anchored in data; 2/3 are assumptions",
+        "average bound-width-to-base ratio = 0.89"
+      ]
+    },
+    "sme_admin_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.75,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.75"
+      ]
+    },
+    "sme_cohort_representation_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.5,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.50"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": [
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'opt_in_margin' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "output 'sme_admin_margin' had 10000 non-finite runs; collapse_rate=1.0000.",
+      "severity": "WARN"
+    }
+  ]
+}

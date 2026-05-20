@@ -1,0 +1,407 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": ".mars gTLD Application",
+    "plan_type": "commercial"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "year1_revenue_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1209145.9494162889,
+      "std": 721164.797955205,
+      "min": 73485.82751139035,
+      "p05": 329601.61258874345,
+      "p25": 652705.3075130732,
+      "p50": 1057170.3794100531,
+      "p75": 1621972.4136998365,
+      "p95": 2604983.976120683,
+      "max": 4390255.80114503
+    },
+    "year1_revenue_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -6302634.385774333,
+      "std": 1243501.4578869916,
+      "min": -9785366.164154032,
+      "p05": -8313626.62453001,
+      "p25": -7182533.062276081,
+      "p50": -6339124.0573079325,
+      "p75": -5451106.103970572,
+      "p95": -4222769.703405445,
+      "max": -1411670.1658181213
+    },
+    "registration_volume_margin": {
+      "unit": "domains",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 4645.6967,
+      "std": 5443.682787425173,
+      "min": -6931.0,
+      "p05": -2975.0,
+      "p25": 300.0,
+      "p50": 3830.0,
+      "p75": 8454.5,
+      "p95": 14658.099999999999,
+      "max": 20545.0
+    },
+    "budget_after_critical_draws_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 58961802.721166916,
+      "std": 20393009.51558113,
+      "min": 2192894.753456179,
+      "p05": 21351041.537675615,
+      "p25": 44462556.51093522,
+      "p50": 61801575.3927761,
+      "p75": 75306281.91517982,
+      "p95": 87740996.56514658,
+      "max": 100636544.74716234
+    },
+    "pledge_coverage_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -5406395.203790323,
+      "std": 946916.0553182537,
+      "min": -8373929.721081745,
+      "p05": -6981139.301386303,
+      "p25": -6069073.495556833,
+      "p50": -5387566.617735549,
+      "p75": -4728361.889717469,
+      "p95": -3877800.1781754466,
+      "max": -2226928.4808470486
+    },
+    "mos_compliance_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.044864999999999974,
+      "std": 0.0686795586401077,
+      "min": -0.1499999999999999,
+      "p05": -0.1499999999999999,
+      "p25": -0.1499999999999999,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    }
+  },
+  "thresholds": {
+    "year1_revenue_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "year1_revenue_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "registration_volume_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 7709,
+      "valid_count": 10000,
+      "probability": 0.7709
+    },
+    "budget_after_critical_draws_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "pledge_coverage_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    }
+  },
+  "sensitivity": {
+    "year1_revenue_usd": {
+      "top_inputs": [
+        {
+          "id": "expected_year1_registrations",
+          "correlation": 0.863
+        },
+        {
+          "id": "avg_price_per_domain_usd",
+          "correlation": 0.4518
+        }
+      ]
+    },
+    "year1_revenue_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "year1_base_opex_usd",
+          "correlation": -0.8147
+        },
+        {
+          "id": "expected_year1_registrations",
+          "correlation": 0.4929
+        },
+        {
+          "id": "avg_price_per_domain_usd",
+          "correlation": 0.2551
+        }
+      ]
+    },
+    "registration_volume_margin": {
+      "top_inputs": [
+        {
+          "id": "expected_year1_registrations",
+          "correlation": 0.9733
+        },
+        {
+          "id": "year1_breakeven_registration_volume",
+          "correlation": -0.2246
+        }
+      ]
+    },
+    "budget_after_critical_draws_usd": {
+      "top_inputs": [
+        {
+          "id": "total_program_budget_usd",
+          "correlation": 0.9937
+        },
+        {
+          "id": "string_contention_contingency_usd",
+          "correlation": -0.1018
+        },
+        {
+          "id": "hsm_capex_usd",
+          "correlation": -0.0455
+        }
+      ]
+    },
+    "pledge_coverage_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "year1_base_opex_usd",
+          "correlation": -0.8626
+        },
+        {
+          "id": "registration_volume_buffer_fraction",
+          "correlation": -0.3371
+        },
+        {
+          "id": "expected_year1_registrations",
+          "correlation": 0.3183
+        },
+        {
+          "id": "avg_price_per_domain_usd",
+          "correlation": 0.1719
+        }
+      ]
+    },
+    "mos_compliance_margin": {
+      "top_inputs": [
+        {
+          "id": "observed_mos_compliance_rate",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "year1_revenue_usd": [
+      {
+        "id": "avg_price_per_domain_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "expected_year1_registrations",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "year1_revenue_surplus_usd": [
+      {
+        "id": "avg_price_per_domain_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "year1_base_opex_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "expected_year1_registrations",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "registration_volume_margin": [
+      {
+        "id": "expected_year1_registrations",
+        "p_pass_low_quartile": 0.2072,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 79.28
+      },
+      {
+        "id": "year1_breakeven_registration_volume",
+        "p_pass_low_quartile": 0.8876449420231908,
+        "p_pass_high_quartile": 0.6417433026789284,
+        "delta_pp": -24.59
+      }
+    ],
+    "budget_after_critical_draws_usd": [
+      {
+        "id": "total_program_budget_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "hsm_capex_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "string_contention_contingency_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "pledge_coverage_surplus_usd": [
+      {
+        "id": "avg_price_per_domain_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "year1_base_opex_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "expected_year1_registrations",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "registration_volume_buffer_fraction",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "registration_volume_margin": [
+      {
+        "id": "expected_year1_registrations",
+        "direction": "above",
+        "input_percentile_cutoff": 5,
+        "cutoff_value": 3163.95,
+        "conditional_pass_prob": 0.8115,
+        "admitted_fraction": 0.95
+      },
+      {
+        "id": "year1_breakeven_registration_volume",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 6571.0,
+        "conditional_pass_prob": 0.8136,
+        "admitted_fraction": 0.7505
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "expected_year1_registrations",
+      "score": 87.1826,
+      "worst_gate": "registration_volume_margin",
+      "bound_width_ratio": 4.8,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "year1_revenue_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 3.15,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 3.15"
+      ]
+    },
+    "year1_revenue_surplus_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 2.3222,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 2.32"
+      ]
+    },
+    "registration_volume_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 3.0,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 3.00"
+      ]
+    },
+    "budget_after_critical_draws_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.7611,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 0.76"
+      ]
+    },
+    "pledge_coverage_surplus_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.5267,
+      "reasons": [
+        "5/5 input bounds anchored in data; 0/5 are assumptions",
+        "average bound-width-to-base ratio = 1.53"
+      ]
+    },
+    "mos_compliance_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.1579,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.16"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

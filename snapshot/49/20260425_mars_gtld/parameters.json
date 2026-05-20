@@ -1,0 +1,240 @@
+{
+  "plan_summary": {
+    "plan_name": ".mars gTLD Application",
+    "plan_type": "commercial",
+    "primary_goal": "Secure ICANN delegation of the .mars gTLD within 18 months under the 'Builder' strategy, with internal HSM cryptographic sovereignty and a defined Mars endpoint MOS.",
+    "modelling_frame": "Tests Year 1 financial viability of the .mars registry: whether the planned budget covers base overhead plus mandatory HSM CapEx and string-contention contingency, whether projected registration revenue covers Year 1 OpEx, and whether MOS compliance clears the 95% gate."
+  },
+  "key_values": [
+    {
+      "id": "total_program_budget_usd",
+      "label": "Total program budget (high-end)",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 100000000,
+      "comment": "High-end envelope for the 18-month delegation effort. Lower bound is $25M; the model uses the upper anchor.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "high",
+      "source_text": "High-end budget envelope: USD 25M-100M or more"
+    },
+    {
+      "id": "hsm_capex_usd",
+      "label": "Internal HSM CapEx",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 7500000,
+      "comment": "Mandatory CapEx to reverse external key custody; stated as $5M-$10M, midpoint used.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "mandatory $5M-$10M CapEx immediately reallocated for internal HSM procurement"
+    },
+    {
+      "id": "string_contention_contingency_usd",
+      "label": "String contention contingency",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 15000000,
+      "comment": "Reserve for string contention, legal defense, lobbying; stated $10M-$20M, midpoint used.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Contingency budget for string contention defense costs: $10M-$20M range"
+    },
+    {
+      "id": "year1_breakeven_registration_volume",
+      "label": "Year 1 break-even registration volume",
+      "category": "demand",
+      "value_type": "inferred",
+      "unit": "domains",
+      "value": 5000,
+      "comment": "Required Year 1 domain count to cover base overhead; trigger for suspending the 50% revenue pledge.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "high",
+      "source_text": "Required Year 1 registration volume to cover base overhead: 5,000 registrations"
+    },
+    {
+      "id": "mos_compliance_threshold",
+      "label": "MOS High Freshness compliance threshold",
+      "category": "compliance",
+      "value_type": "derived",
+      "unit": "fraction",
+      "value": 0.95,
+      "comment": "Tripwire: if compliance for High Freshness validation drops below 95%, mission-critical registrations halt.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If the MOS compliance rate for High Freshness validation drops below 95%, then mission-critical registrations must be halted"
+    },
+    {
+      "id": "revenue_pledge_fraction",
+      "label": "Net revenue pledge fraction",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.5,
+      "comment": "Share of net registry revenue committed to the environmental/scientific fund once base overhead is covered.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Net registry revenue commitment: 50% to Mars environmental protection fund"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_budget_after_capex_and_contingency",
+      "question": "Does the program budget survive HSM CapEx and string-contention contingency draws?",
+      "why_it_matters": "If the budget cannot absorb both mandatory CapEx and the risk reserve, the Builder strategy cannot fund its critical pivots.",
+      "formula_hint": "budget_after_critical_draws_usd = total_program_budget_usd - hsm_capex_usd - string_contention_contingency_usd",
+      "output_name": "budget_after_critical_draws_usd",
+      "output_unit": "USD",
+      "depends_on": ["total_program_budget_usd", "hsm_capex_usd", "string_contention_contingency_usd"]
+    },
+    {
+      "id": "q_mos_compliance_margin",
+      "question": "Does observed MOS compliance clear the 95% mission-critical halt threshold?",
+      "why_it_matters": "Below this margin, high-freshness mission-critical registrations must be halted, undermining adoption.",
+      "formula_hint": "mos_compliance_margin = observed_mos_compliance_rate - mos_compliance_threshold",
+      "output_name": "mos_compliance_margin",
+      "output_unit": "fraction",
+      "depends_on": ["observed_mos_compliance_rate", "mos_compliance_threshold"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "avg_price_per_domain_usd",
+      "label": "Year 1 average price per .mars domain",
+      "unit": "USD",
+      "why_needed": "Drives Year 1 registry revenue and break-even feasibility against base overhead and pledge.",
+      "suggested_estimation_method": "Benchmark recent ICANN gTLD launches with similar political profile; assume premium $50-$200/domain range."
+    },
+    {
+      "id": "year1_base_opex_usd",
+      "label": "Year 1 base operating expense",
+      "unit": "USD",
+      "why_needed": "Required to compute break-even revenue and the surplus left for the 50% pledge.",
+      "suggested_estimation_method": "Sum 5 FTE loaded cost, cloud DNS hosting, compliance audits, outsourced ZSK signing; cross-check with stated $5M-$10M OpEx."
+    },
+    {
+      "id": "expected_year1_registrations",
+      "label": "Expected Year 1 .mars registrations",
+      "unit": "domains",
+      "why_needed": "Compared against break-even volume to test whether the pledge can be honoured without depleting reserves.",
+      "suggested_estimation_method": "Bottom-up from addressable space-industry buyers times adoption rate; sanity-check against early new-gTLD Year-1 volumes."
+    },
+    {
+      "id": "observed_mos_compliance_rate",
+      "label": "Observed MOS High-Freshness compliance rate",
+      "unit": "fraction",
+      "why_needed": "Tested against the 95% halt threshold to compute the MOS compliance margin.",
+      "suggested_estimation_method": "Simulate 100kbps endpoints under 60-minute sync window using ns-3; report 90-day mean compliance rate."
+    },
+    {
+      "id": "registration_volume_buffer_fraction",
+      "label": "Buffer fraction over break-even before triggering pledge",
+      "unit": "fraction",
+      "why_needed": "Plan demands a 30% buffer above break-even before the 50% net revenue pledge activates.",
+      "suggested_estimation_method": "Use stated 30% target as base; bound 20-40% from financial-model sensitivity to price and volume."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "year1_revenue_usd",
+      "label": "Year 1 registry revenue",
+      "formula_hint": "year1_revenue_usd = expected_year1_registrations * avg_price_per_domain_usd",
+      "output_name": "year1_revenue_usd",
+      "output_unit": "USD",
+      "depends_on": ["expected_year1_registrations", "avg_price_per_domain_usd"],
+      "why_first": "Top-line Year 1 revenue is the input to every viability and pledge-trigger test."
+    },
+    {
+      "id": "year1_revenue_surplus_usd",
+      "label": "Year 1 revenue surplus over base OpEx",
+      "formula_hint": "year1_revenue_surplus_usd = year1_revenue_usd - year1_base_opex_usd",
+      "output_name": "year1_revenue_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["year1_revenue_usd", "year1_base_opex_usd"],
+      "why_first": "Positive surplus is the precondition for honouring the 50% net revenue pledge without depleting capital reserves."
+    },
+    {
+      "id": "registration_volume_margin",
+      "label": "Registration volume margin over break-even",
+      "formula_hint": "registration_volume_margin = expected_year1_registrations - year1_breakeven_registration_volume",
+      "output_name": "registration_volume_margin",
+      "output_unit": "domains",
+      "depends_on": ["expected_year1_registrations", "year1_breakeven_registration_volume"],
+      "why_first": "Tests whether expected demand clears the 5,000-domain break-even threshold that controls pledge suspension."
+    },
+    {
+      "id": "budget_after_critical_draws_usd",
+      "label": "Budget surplus after HSM CapEx and contention contingency",
+      "formula_hint": "budget_after_critical_draws_usd = total_program_budget_usd - hsm_capex_usd - string_contention_contingency_usd",
+      "output_name": "budget_after_critical_draws_usd",
+      "output_unit": "USD",
+      "depends_on": ["total_program_budget_usd", "hsm_capex_usd", "string_contention_contingency_usd"],
+      "why_first": "Confirms the high-end budget envelope can absorb mandatory CapEx and the named risk reserve without going negative."
+    },
+    {
+      "id": "pledge_coverage_surplus_usd",
+      "label": "Surplus after pledge draw and 30% buffer",
+      "formula_hint": "pledge_coverage_surplus_usd = year1_revenue_surplus_usd - revenue_pledge_fraction * year1_revenue_surplus_usd - registration_volume_buffer_fraction * year1_base_opex_usd",
+      "output_name": "pledge_coverage_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["year1_revenue_surplus_usd", "revenue_pledge_fraction", "registration_volume_buffer_fraction", "year1_base_opex_usd"],
+      "why_first": "Plan requires a 30% buffer over OpEx after honouring the 50% net revenue pledge; positive = pledge sustainable."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "icann_delegation_approval_gate",
+      "label": "ICANN gTLD delegation approval",
+      "why_it_matters": "Without ICANN approving the application, no .mars registry exists regardless of financial or technical readiness.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Plan terminates; no delegation, no registry revenue, sunk capital on application and lobbying."
+    },
+    {
+      "id": "space_agency_non_objection_gate",
+      "label": "Major space agency non-objection",
+      "why_it_matters": "Builder strategy depends on at least two major space agencies offering public non-objection support during ICANN review.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "ICANN review momentum stalls; political legitimacy collapses; application likely rejected or delayed beyond the 18-month window."
+    },
+    {
+      "id": "government_objection_gate",
+      "label": "Absence of blocking governmental objection",
+      "why_it_matters": "Formal objections from governments to private operation of a planetary namespace could veto delegation regardless of technical readiness.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "6-12 month delay and $5M-$10M extra cost; potential outright application failure on political grounds."
+    },
+    {
+      "id": "fips_140_2_level_3_certification_gate",
+      "label": "FIPS 140-2 Level 3 HSM certification",
+      "why_it_matters": "Internal KSK custody must pass an independent FIPS 140-2 Level 3 audit by Q4 2026 to satisfy ICANN's cryptographic sovereignty expectations.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Loss of cryptographic sovereignty narrative; ICANN may reject delegation or force reversion to outsourced signing."
+    }
+  ]
+}

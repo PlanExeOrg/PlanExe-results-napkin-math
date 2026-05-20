@@ -1,0 +1,346 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "European Faraday Enclosure Launch (Pragmatic Foundation)",
+    "plan_type": "commercial_consumer_hardware_launch"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "funding_trigger_margin_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -10424.679848873382,
+      "std": 34528.60041725978,
+      "min": -99173.10201941706,
+      "p05": -70355.65977597011,
+      "p25": -35163.72250840133,
+      "p50": -8474.519439892254,
+      "p75": 14834.60430750306,
+      "p95": 45303.82988726926,
+      "max": 68203.61080774313
+    },
+    "sell_through_margin_units": {
+      "unit": "units",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -184.4508,
+      "std": 265.5560076130081,
+      "min": -894.0,
+      "p05": -666.05,
+      "p25": -377.0,
+      "p50": -152.0,
+      "p75": 21.0,
+      "p95": 205.0,
+      "max": 345.0
+    },
+    "certification_funding_margin_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 3206.590727373829,
+      "std": 22475.390198965044,
+      "min": -49452.20821431863,
+      "p05": -33009.888389575994,
+      "p25": -13381.463786968823,
+      "p50": 2187.548906304626,
+      "p75": 19247.8886570185,
+      "p95": 41585.4545373358,
+      "max": 59495.886880292994
+    },
+    "year1_budget_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -7098.534668603432,
+      "std": 24616.544247462847,
+      "min": -69509.33694196964,
+      "p05": -50233.1461134651,
+      "p25": -24551.87016578058,
+      "p50": -5677.845562058414,
+      "p75": 10746.378309823398,
+      "p95": 32434.513607841858,
+      "max": 49804.98654694698
+    },
+    "iso_commit_demand_margin_units": {
+      "unit": "units",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 36.0329,
+      "std": 265.1028853437661,
+      "min": -598.0,
+      "p05": -401.04999999999995,
+      "p25": -156.25,
+      "p50": 27.0,
+      "p75": 224.0,
+      "p95": 484.0,
+      "max": 683.0
+    }
+  },
+  "thresholds": {
+    "funding_trigger_margin_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4012,
+      "valid_count": 10000,
+      "probability": 0.4012
+    },
+    "sell_through_margin_units": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2817,
+      "valid_count": 10000,
+      "probability": 0.2817
+    },
+    "certification_funding_margin_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5408,
+      "valid_count": 10000,
+      "probability": 0.5408
+    },
+    "year1_budget_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4102,
+      "valid_count": 10000,
+      "probability": 0.4102
+    },
+    "iso_commit_demand_margin_units": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5419,
+      "valid_count": 10000,
+      "probability": 0.5419
+    }
+  },
+  "sensitivity": {
+    "funding_trigger_margin_eur": {
+      "top_inputs": [
+        {
+          "id": "actual_year1_net_cash_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "sell_through_margin_units": {
+      "top_inputs": [
+        {
+          "id": "actual_iso_run_sell_through_units",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "certification_funding_margin_eur": {
+      "top_inputs": [
+        {
+          "id": "actual_gross_profit_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "year1_budget_surplus_eur": {
+      "top_inputs": [
+        {
+          "id": "actual_year1_spend_eur",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "iso_commit_demand_margin_units": {
+      "top_inputs": [
+        {
+          "id": "actual_validated_demand_units",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "funding_trigger_margin_eur": [
+      {
+        "id": "actual_year1_net_cash_eur",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "sell_through_margin_units": [
+      {
+        "id": "actual_iso_run_sell_through_units",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "certification_funding_margin_eur": [
+      {
+        "id": "actual_gross_profit_eur",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "year1_budget_surplus_eur": [
+      {
+        "id": "actual_year1_spend_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "iso_commit_demand_margin_units": [
+      {
+        "id": "actual_validated_demand_units",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "funding_trigger_margin_eur": [
+      {
+        "id": "actual_year1_net_cash_eur",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 41525.480560107746,
+        "conditional_pass_prob": 0.8024,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "sell_through_margin_units": [
+      {
+        "id": "actual_iso_run_sell_through_units",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 1469.0,
+        "conditional_pass_prob": 0.8513,
+        "admitted_fraction": 0.3309
+      }
+    ],
+    "certification_funding_margin_eur": [
+      {
+        "id": "actual_gross_profit_eur",
+        "direction": "above",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 112468.58673335715,
+        "conditional_pass_prob": 0.8072,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "year1_budget_surplus_eur": [
+      {
+        "id": "actual_year1_spend_eur",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 405677.8455620584,
+        "conditional_pass_prob": 0.8204,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "iso_commit_demand_margin_units": [
+      {
+        "id": "actual_validated_demand_units",
+        "direction": "above",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 909.0,
+        "conditional_pass_prob": 0.8064,
+        "admitted_fraction": 0.672
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_year1_net_cash_eur",
+      "score": 203.592,
+      "worst_gate": "funding_trigger_margin_eur",
+      "bound_width_ratio": 3.4,
+      "source": "data"
+    },
+    {
+      "id": "actual_iso_run_sell_through_units",
+      "score": 59.8583,
+      "worst_gate": "sell_through_margin_units",
+      "bound_width_ratio": 0.8333,
+      "source": "data"
+    },
+    {
+      "id": "actual_validated_demand_units",
+      "score": 59.553,
+      "worst_gate": "iso_commit_demand_margin_units",
+      "bound_width_ratio": 1.3,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_gross_profit_eur",
+      "score": 42.0933,
+      "worst_gate": "certification_funding_margin_eur",
+      "bound_width_ratio": 0.9167,
+      "source": "data"
+    },
+    {
+      "id": "actual_year1_spend_eur",
+      "score": 17.694,
+      "worst_gate": "year1_budget_surplus_eur",
+      "bound_width_ratio": 0.3,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "funding_trigger_margin_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 3.4,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 3.40"
+      ]
+    },
+    "sell_through_margin_units": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8333,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.83"
+      ]
+    },
+    "certification_funding_margin_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.9167,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.92"
+      ]
+    },
+    "year1_budget_surplus_eur": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.3,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.30"
+      ]
+    },
+    "iso_commit_demand_margin_units": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.3,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.30"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

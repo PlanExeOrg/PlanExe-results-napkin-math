@@ -1,0 +1,68 @@
+{
+  "annual_opex_per_miu_usd": {
+    "unit": "USD",
+    "low": 2000000,
+    "base": 2500000,
+    "high": 3000000,
+    "rationale": "Digest states $2-3M range; base at mid-point. Bounds span the stated range without extrapolation.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "achieved_fleet_uptime_fraction": {
+    "unit": "fraction",
+    "low": 0.75,
+    "base": 0.90,
+    "high": 0.97,
+    "rationale": "Base centered on 0.90 commitment (DEFAULT, no anchored shift). Downside reflects MTTR risk and cannibalization-program failure scenarios noted in suggested estimation method; upside capped by realistic field maintenance.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "achieved_pretreatment_reliability_fraction": {
+    "unit": "fraction",
+    "low": 0.70,
+    "base": 0.85,
+    "high": 0.95,
+    "rationale": "Base centered on 0.85 threshold (DEFAULT). Downside reflects passive non-compliance risks from Issue 2; high capped below 1.0 by realistic archive-partner performance.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "ai_flag_rate_fraction": {
+    "unit": "fraction",
+    "low": 0.07,
+    "base": 0.10,
+    "high": 0.15,
+    "rationale": "Digest assumes ~0.10; upside to 0.15 reflects pilot FPR variability noted in Issue 3. Asymmetric: floor near digest assumption, upside captures stated tail.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "phase1_miu_capex_per_unit_usd": {
+    "unit": "USD",
+    "low": 3000000,
+    "base": 3500000,
+    "high": 4500000,
+    "rationale": "Base at mid of stated $3-4M; upside extended to $4.5M for $450k-$1M retrofit shock from Risk 6. Asymmetric: stated range floor at $3M, retrofit risk one-sided.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "phase1_vintage_acquisition_usd": {
+    "unit": "USD",
+    "low": 20000000,
+    "base": 26000000,
+    "high": 35000000,
+    "rationale": "Base combines $20M hardware buy and $6M vintage units allocation per digest. Upside reflects sourcing-feasibility risk on the 150-unit pool; low at the $20M hardware-only floor.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

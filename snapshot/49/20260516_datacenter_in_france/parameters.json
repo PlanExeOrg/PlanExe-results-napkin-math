@@ -1,0 +1,265 @@
+{
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Data Center - Pragmatic Scale-Up",
+    "plan_type": "Hyperscale infrastructure / industrial CAPEX programme",
+    "primary_goal": "Build Phase 1 (500 MW-1 GW) in 36 months at PUE <=1.20 and secure binding RTE + 60% tenant commitment before Phase 2 FID.",
+    "modelling_frame": "Tests Phase 1 CAPEX budget surplus, tenant take-or-pay margin vs the 60% gate, buildable-area capacity coverage, and land-holding cost buffer against the €1.3B overrun risk."
+  },
+  "key_values": [
+    {
+      "id": "phase1_capex_budget_max_eur",
+      "label": "Phase 1 CAPEX ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 10000000000.0,
+      "comment": "Upper Phase 1 CAPEX envelope for 500 MW-1 GW; ceiling against which holding and remediation overruns are tested.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Phase 1 budget maximum (500 MW-1 GW): EUR 10B"
+    },
+    {
+      "id": "phase2_takeorpay_gate_threshold",
+      "label": "Phase 2 take-or-pay tenant gate",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.6,
+      "comment": "Minimum signed take-or-pay share of the next 2 GW tranche required to release Phase 2 FID.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Phase 2 expansion FID requires minimum 60% take-or-pay commitment threshold."
+    },
+    {
+      "id": "total_footprint_km2",
+      "label": "Total contiguous footprint",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "km2",
+      "value": 161.0,
+      "comment": "Full contiguous land assembly target; denominator for buildable vs buffer split.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Total contiguous land assembly target: 161 km²"
+    },
+    {
+      "id": "buffer_share_fraction",
+      "label": "Mandatory buffer share of footprint",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.8,
+      "comment": "Hyper-dense model designates 80% of footprint as non-buildable buffer; drives holding cost and buildable area.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "80% of the 161 km² footprint must be designated as ecological buffer."
+    },
+    {
+      "id": "phase1_power_target_mw",
+      "label": "Phase 1 power target (upper)",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "MW",
+      "value": 1000.0,
+      "comment": "Upper Phase 1 power target (500 MW-1 GW); drives revenue and PUE energy cost exposure.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Phase 1 power target range maximum: 1 GW"
+    },
+    {
+      "id": "land_holding_cost_eur_per_ha_year",
+      "label": "Annual buffer land holding cost per hectare",
+      "category": "cost",
+      "value_type": "inferred",
+      "unit": "EUR_per_ha_year",
+      "value": 62500.0,
+      "comment": "Midpoint of EUR 50k-75k/ha/year cited by Review Issue 2; applied to 128.8 km² for 18-month holding.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Explicitly budget holding cost for 128.8 km² (EUR 50k-75k/ha annually)."
+    },
+    {
+      "id": "land_holding_cost_budget_envelope_eur",
+      "label": "Land holding cost overrun envelope",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 1300000000.0,
+      "comment": "Stated CAPEX overrun risk if 80% buffer holding cost remains unbudgeted within Phase 1 envelope.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Budget overrun (EUR 1.3B+) due to uncosted holding costs for buffer land."
+    },
+    {
+      "id": "phase1_holding_duration_months",
+      "label": "Phase 1 land holding duration",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 18.0,
+      "comment": "Plan ring-fences 18 months of buffer holding cost upfront; period over which holding cost accrues.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "medium",
+      "uncertainty": "low",
+      "source_text": "Explicitly budget holding costs for the 128.8 km² buffer for 18 months upfront."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_phase1_capex_buffer",
+      "question": "Does the Phase 1 CAPEX ceiling absorb both the stated holding-cost overrun envelope and the expected buffer holding cost?",
+      "why_it_matters": "Phase 1 viability fails if uncosted holding costs plus the cited overrun envelope eat the CAPEX ceiling.",
+      "formula_hint": "phase1_capex_buffer_eur = phase1_capex_budget_max_eur - land_holding_cost_budget_envelope_eur - phase1_buffer_holding_cost_eur",
+      "output_name": "phase1_capex_buffer_eur",
+      "output_unit": "EUR",
+      "depends_on": ["phase1_capex_budget_max_eur", "land_holding_cost_budget_envelope_eur", "phase1_buffer_holding_cost_eur"]
+    },
+    {
+      "id": "q_phase2_tenant_margin",
+      "question": "Do expected signed take-or-pay commitments clear the 60% Phase 2 gate?",
+      "why_it_matters": "Phase 2 FID is blocked unless signed tenant share exceeds the 60% threshold; primary financial gate.",
+      "formula_hint": "phase2_tenant_commitment_margin = expected_phase2_signed_commitment_fraction - phase2_takeorpay_gate_threshold",
+      "output_name": "phase2_tenant_commitment_margin",
+      "output_unit": "fraction",
+      "depends_on": ["expected_phase2_signed_commitment_fraction", "phase2_takeorpay_gate_threshold"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "annual_revenue_per_mw_eur",
+      "label": "Annual tenant revenue per MW",
+      "unit": "EUR_per_MW_year",
+      "why_needed": "Required to monetize Phase 1 capacity and benchmark the 60% take-or-pay tenant commitment in EUR terms.",
+      "suggested_estimation_method": "Benchmark against European hyperscale colocation lease rates per MW-year for AI-grade tenants."
+    },
+    {
+      "id": "expected_phase2_signed_commitment_fraction",
+      "label": "Expected Phase 2 signed take-or-pay share",
+      "unit": "fraction",
+      "why_needed": "Tested against the 60% gate to determine whether Phase 2 FID can proceed.",
+      "suggested_estimation_method": "Use LOI-to-signed conversion velocity on the 2 GW tranche from comparable European hyperscale pipelines."
+    },
+    {
+      "id": "buildable_area_utilization_fraction",
+      "label": "Buildable area actually used for compute in Phase 1",
+      "unit": "fraction",
+      "why_needed": "Combines with buildable land to express Phase 1 buildable capacity actually consumed by the 1 GW deployment.",
+      "suggested_estimation_method": "Benchmark km² per GW for liquid-cooled hyperscale campuses; bound 0.05-0.30."
+    },
+    {
+      "id": "remediation_cost_overrun_eur",
+      "label": "Brownfield remediation cost overrun",
+      "unit": "EUR",
+      "why_needed": "Pressure on the same Phase 1 CAPEX envelope as the holding-cost overrun; needed for combined viability test.",
+      "suggested_estimation_method": "Bound between EUR 0 and the cited EUR 1.5B doubling/tripling delta on the EUR 750M baseline."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "buildable_area_km2",
+      "label": "Buildable area after buffer designation",
+      "formula_hint": "buildable_area_km2 = total_footprint_km2 * (1 - buffer_share_fraction)",
+      "output_name": "buildable_area_km2",
+      "output_unit": "km2",
+      "depends_on": ["total_footprint_km2", "buffer_share_fraction"],
+      "why_first": "Sets the capacity ceiling that any Phase 1 buildable utilization must fit inside."
+    },
+    {
+      "id": "phase1_buffer_holding_cost_eur",
+      "label": "Phase 1 buffer land holding cost",
+      "formula_hint": "phase1_buffer_holding_cost_eur = total_footprint_km2 * buffer_share_fraction * 100 * land_holding_cost_eur_per_ha_year * (phase1_holding_duration_months / 12)",
+      "output_name": "phase1_buffer_holding_cost_eur",
+      "output_unit": "EUR",
+      "depends_on": ["total_footprint_km2", "buffer_share_fraction", "land_holding_cost_eur_per_ha_year", "phase1_holding_duration_months"],
+      "why_first": "Translates the unbudgeted 80% buffer into a EUR figure that pressures the Phase 1 CAPEX envelope."
+    },
+    {
+      "id": "phase1_expected_revenue_eur_year",
+      "label": "Phase 1 annual revenue at full deployment",
+      "formula_hint": "phase1_expected_revenue_eur_year = phase1_power_target_mw * annual_revenue_per_mw_eur",
+      "output_name": "phase1_expected_revenue_eur_year",
+      "output_unit": "EUR_per_year",
+      "depends_on": ["phase1_power_target_mw", "annual_revenue_per_mw_eur"],
+      "why_first": "Bottom-up Phase 1 revenue used to size the EUR value of the 60% take-or-pay tenant commitment."
+    },
+    {
+      "id": "phase1_capacity_surplus_km2",
+      "label": "Phase 1 buildable capacity surplus",
+      "formula_hint": "phase1_capacity_surplus_km2 = buildable_area_km2 - buildable_area_km2 * buildable_area_utilization_fraction",
+      "output_name": "phase1_capacity_surplus_km2",
+      "output_unit": "km2",
+      "depends_on": ["buildable_area_km2", "buildable_area_utilization_fraction"],
+      "why_first": "Confirms Phase 1 fits inside the 32.2 km² buildable envelope, with positive surplus for expansion."
+    },
+    {
+      "id": "phase1_capex_combined_surplus_eur",
+      "label": "Phase 1 CAPEX combined pressure surplus",
+      "formula_hint": "phase1_capex_combined_surplus_eur = phase1_capex_budget_max_eur - phase1_buffer_holding_cost_eur - remediation_cost_overrun_eur - land_holding_cost_budget_envelope_eur",
+      "output_name": "phase1_capex_combined_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["phase1_capex_budget_max_eur", "phase1_buffer_holding_cost_eur", "remediation_cost_overrun_eur", "land_holding_cost_budget_envelope_eur"],
+      "why_first": "Tests whether the same Phase 1 CAPEX envelope can absorb holding cost, the cited overrun reserve, and brownfield remediation overrun together."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "rte_binding_transmission_gate",
+      "label": "Binding RTE transmission allocation",
+      "why_it_matters": "Phase 1 construction financing cannot close unless RTE issues a binding transmission allocation for the Phase 2 3 GW expansion.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Phase 1 FID is blocked and EUR 1B-2B Phase 0/1 capital risks being stranded if tenants withdraw."
+    },
+    {
+      "id": "dgsi_anssi_sovereign_signoff_gate",
+      "label": "DGSI/ANSSI sovereign partition sign-off",
+      "why_it_matters": "Access to premium domestic sovereign revenue depends on a formal signed DGSI/ANSSI agreement before scaling load.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Loss of EUR 10B-20B in long-term premium contracted revenue and jeopardised 60% Phase 2 tenant commitment."
+    },
+    {
+      "id": "land_assembly_legal_consolidation_gate",
+      "label": "161 km² land assembly legal decree",
+      "why_it_matters": "Judicial challenge to the hyper-dense 80% buffer model could halt construction and shrink buildable area below 15 km².",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Phase 1 FID slips 12-24 months and the 9 GW long-term capacity ceiling is permanently reduced."
+    },
+    {
+      "id": "social_license_phase0_gate",
+      "label": "Credible social license before Phase 1",
+      "why_it_matters": "Project cannot proceed past Phase 0 without a credible social license covering workforce uplift and buffer land use.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Permitting stalls and the Prefecture may force a mandated footprint reduction independent of financial thresholds."
+    }
+  ]
+}

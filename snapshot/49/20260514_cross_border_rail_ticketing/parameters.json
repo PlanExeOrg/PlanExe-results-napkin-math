@@ -1,0 +1,256 @@
+{
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Single Through-Ticketing Program",
+    "plan_type": "Public-sector regulatory and infrastructure coordination program",
+    "primary_goal": "Achieve 40% of eligible cross-border journeys sold as single through-tickets within five years via OSDM standardization and inter-carrier clearing.",
+    "modelling_frame": "Five-year EU coordination program with a EUR 1.5B public budget; the model evaluates budget allocation coverage, clearing-float adequacy versus peak daily obligation, expected through-ticket volume and clearing revenue at the 40% adoption gate, and governance personnel burn."
+  },
+  "key_values": [
+    {
+      "id": "total_public_coordination_budget_eur",
+      "label": "Public coordination budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 1500000000,
+      "comment": "Five-year EU public envelope funding standards, testing, grants, clearing, and reference distributor.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Public coordination budget is EUR 1.5 billion - public funding input."
+    },
+    {
+      "id": "capacity_building_grants_eur",
+      "label": "Capacity building grants",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 900000000,
+      "comment": "60% of the public budget earmarked for national operator IT grants and testing support.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "60% (EUR 900M) allocated to capacity building (IT grants/testing)."
+    },
+    {
+      "id": "reference_distributor_budget_eur",
+      "label": "Public reference distributor budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 150000000,
+      "comment": "10% of public budget ring-fenced for the public reference distributor's establishment and five-year running costs.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "medium",
+      "uncertainty": "low",
+      "source_text": "10% (EUR 150M) reserved for the reference distributor."
+    },
+    {
+      "id": "emergency_float_reserve_eur",
+      "label": "Emergency Float Reserve",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 300000000,
+      "comment": "Ring-fenced reserve triggered when clearing float falls below 150% of peak daily obligation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Ring-fenced EUR 300 million Emergency Float Reserve available if operational float drops below 150% of peak daily obligation."
+    },
+    {
+      "id": "initial_clearing_float_eur",
+      "label": "Initial clearing mechanism float",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 200000000,
+      "comment": "Minimum required operational float for the inter-carrier clearing mechanism at T+3 settlement.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Initial float set at EUR 200 million based on busiest corridors."
+    },
+    {
+      "id": "through_ticket_adoption_target_fraction",
+      "label": "Through-ticket adoption target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.4,
+      "comment": "Share of eligible cross-border journeys that must be sold as single through-tickets within five years.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Success target is 40% of cross-border journeys sold as single tickets."
+    },
+    {
+      "id": "governance_ftes",
+      "label": "Governance and testing FTEs",
+      "category": "staffing",
+      "value_type": "explicit",
+      "unit": "people",
+      "value": 35,
+      "comment": "Dedicated headcount for first two years across standards, conformance testing, and stakeholder relations.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "medium",
+      "uncertainty": "low",
+      "source_text": "Total required FTEs: 35 (Standards: 10, Testing Coordination: 15, Relations: 10)."
+    },
+    {
+      "id": "liquidity_trigger_multiple",
+      "label": "Liquidity safety multiple",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "ratio",
+      "value": 1.5,
+      "comment": "Operational float must stay at or above 150% of peak daily clearing obligation; below this triggers reserve.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Collateral drops below 150% of peak daily obligation."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_clearing_revenue_sufficiency",
+      "question": "Is expected annual clearing-fee revenue sufficient to sustain the float without public top-up?",
+      "why_it_matters": "Settlement viability post initial float depends on transactional fee velocity outpacing the float-depletion curve.",
+      "formula_hint": "clearing_revenue_buffer_eur = expected_annual_clearing_revenue_eur - initial_clearing_float_eur",
+      "output_name": "clearing_revenue_buffer_eur",
+      "output_unit": "EUR",
+      "depends_on": ["expected_annual_clearing_revenue_eur", "initial_clearing_float_eur"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "annual_cross_border_journeys",
+      "label": "Annual eligible cross-border journeys",
+      "unit": "journeys_per_year",
+      "why_needed": "Denominator that converts the 40% adoption target into an absolute through-ticket volume.",
+      "suggested_estimation_method": "Use Eurostat cross-border passenger rail statistics for priority corridors as a baseline; cross-check with operator reported volumes."
+    },
+    {
+      "id": "peak_daily_clearing_obligation_eur",
+      "label": "Peak daily clearing obligation",
+      "unit": "EUR",
+      "why_needed": "Drives the 150% liquidity trigger and the Emergency Float Reserve buffer calculation.",
+      "suggested_estimation_method": "Estimate from peak-day cross-border ticket sales times average ticket value across all distributors."
+    },
+    {
+      "id": "average_fte_monthly_cost_eur",
+      "label": "Average governance FTE monthly cost",
+      "unit": "EUR_per_person_per_month",
+      "why_needed": "Required to budget two-year personnel cost for the 35 governance FTEs separately from IT grants.",
+      "suggested_estimation_method": "Benchmark against EU agency loaded-cost averages for senior technical and policy staff in Brussels."
+    },
+    {
+      "id": "clearing_fee_per_ticket_eur",
+      "label": "Clearing transactional fee per ticket",
+      "unit": "EUR_per_ticket",
+      "why_needed": "Capitalization of the clearing mechanism relies on the per-ticket fee; needed for clearing revenue projection.",
+      "suggested_estimation_method": "Benchmark against PSD2 interchange fees and existing rail distribution per-segment fees."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "expected_annual_through_tickets",
+      "label": "Expected annual through-ticket volume at target",
+      "formula_hint": "expected_annual_through_tickets = annual_cross_border_journeys * through_ticket_adoption_target_fraction",
+      "output_name": "expected_annual_through_tickets",
+      "output_unit": "tickets_per_year",
+      "depends_on": ["annual_cross_border_journeys", "through_ticket_adoption_target_fraction"],
+      "why_first": "Converts the headline 40% adoption gate into a volume that can drive revenue and clearing-velocity tests."
+    },
+    {
+      "id": "expected_annual_clearing_revenue_eur",
+      "label": "Expected annual clearing fee revenue",
+      "formula_hint": "expected_annual_clearing_revenue_eur = expected_annual_through_tickets * clearing_fee_per_ticket_eur",
+      "output_name": "expected_annual_clearing_revenue_eur",
+      "output_unit": "EUR",
+      "depends_on": ["expected_annual_through_tickets", "clearing_fee_per_ticket_eur"],
+      "why_first": "Sizes fee-funded capitalization of the clearing mechanism against the float requirement."
+    },
+    {
+      "id": "emergency_float_buffer_eur",
+      "label": "Emergency float buffer over 150% trigger",
+      "formula_hint": "emergency_float_buffer_eur = emergency_float_reserve_eur - liquidity_trigger_multiple * peak_daily_clearing_obligation_eur",
+      "output_name": "emergency_float_buffer_eur",
+      "output_unit": "EUR",
+      "depends_on": ["emergency_float_reserve_eur", "liquidity_trigger_multiple", "peak_daily_clearing_obligation_eur"],
+      "why_first": "Tests whether the EUR 300M reserve actually covers the 150%-of-peak liquidity trigger."
+    },
+    {
+      "id": "budget_allocation_surplus_eur",
+      "label": "Unallocated public budget surplus",
+      "formula_hint": "budget_allocation_surplus_eur = total_public_coordination_budget_eur - capacity_building_grants_eur - reference_distributor_budget_eur - emergency_float_reserve_eur - initial_clearing_float_eur",
+      "output_name": "budget_allocation_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["total_public_coordination_budget_eur", "capacity_building_grants_eur", "reference_distributor_budget_eur", "emergency_float_reserve_eur", "initial_clearing_float_eur"],
+      "why_first": "Shows residual headroom in the EUR 1.5B envelope after named allocations; positive means slack for governance, contingencies, or top-ups."
+    },
+    {
+      "id": "governance_personnel_cost_two_year_eur",
+      "label": "Two-year governance personnel cost",
+      "formula_hint": "governance_personnel_cost_two_year_eur = governance_ftes * average_fte_monthly_cost_eur * 24",
+      "output_name": "governance_personnel_cost_two_year_eur",
+      "output_unit": "EUR",
+      "depends_on": ["governance_ftes", "average_fte_monthly_cost_eur"],
+      "why_first": "Sizes the dedicated operational burn separate from the IT grants envelope; checks against budget surplus."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "dg_move_legal_mandate_gate",
+      "label": "DG MOVE legal mandate for OSDM exposure",
+      "why_it_matters": "Mandatory API exposure and three-strikes enforcement require legal authority from DG MOVE; without it, no compliance lever exists.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Operators face no enforceable obligation, three-strikes is unusable, and the 40% adoption target collapses."
+    },
+    {
+      "id": "three_strikes_political_acceptance_gate",
+      "label": "Political acceptance of three-strikes enforcement",
+      "why_it_matters": "Suspending sales for SNCF, DB, or OEBB risks coordinated political resistance the model cannot quantify.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Enforcement is blocked at Council level, allowing non-compliance to persist past the 18- and 30-month deadlines."
+    },
+    {
+      "id": "tiered_liability_legal_defensibility_gate",
+      "label": "Legal defensibility of tiered liability model",
+      "why_it_matters": "Strict tiered liability must survive operator legal challenge under EU passenger rights law; this is a binary legal outcome.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Backstop architecture collapses, forcing renegotiation and stalling rollout on contested corridors."
+    },
+    {
+      "id": "clearing_mechanism_banking_authorization_gate",
+      "label": "Authorization to operate centralized clearing/settlement float",
+      "why_it_matters": "Managing the centralized clearing float requires specific regulatory authorization that the model treats as given.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Clearing mechanism cannot legally hold the EUR 200M float, blocking single-payment settlement entirely."
+    }
+  ]
+}

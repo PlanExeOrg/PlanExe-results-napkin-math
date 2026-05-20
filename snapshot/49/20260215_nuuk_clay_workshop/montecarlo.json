@@ -1,0 +1,318 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "commercial community venture"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "contingency_reserve_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 300000.0,
+      "std": 0.0,
+      "min": 300000.0,
+      "p05": 300000.0,
+      "p25": 300000.0,
+      "p50": 300000.0,
+      "p75": 300000.0,
+      "p95": 300000.0,
+      "max": 300000.0
+    },
+    "drop_in_expected_revenue_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 66533.07724687745,
+      "std": 19870.05114322973,
+      "min": 16800.181619727973,
+      "p05": 36630.59312400528,
+      "p25": 51725.07677537398,
+      "p50": 65139.47055499365,
+      "p75": 79426.96523059614,
+      "p95": 101869.82583468847,
+      "max": 153985.55534012147
+    },
+    "drop_in_revenue_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -382251.0959863781,
+      "std": 97728.6450670469,
+      "min": -752155.5191973366,
+      "p05": -554084.159879519,
+      "p25": -446100.52517912514,
+      "p50": -377023.63773116807,
+      "p75": -311737.2573444887,
+      "p95": -230383.38994475544,
+      "max": -113970.28426024393
+    },
+    "annual_labor_cost_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1040044.1486154882,
+      "std": 134593.11436395725,
+      "min": 724330.3614548685,
+      "p05": 822018.7678698031,
+      "p25": 941101.408957595,
+      "p50": 1035153.7123504025,
+      "p75": 1138123.5514821566,
+      "p95": 1270321.108380293,
+      "max": 1373563.0202212282
+    },
+    "budget_after_labor_margin_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 659955.8513845118,
+      "std": 134593.11436395725,
+      "min": 326436.97977877175,
+      "p05": 429678.8916197069,
+      "p25": 561876.4485178434,
+      "p50": 664846.2876495975,
+      "p75": 758898.5910424049,
+      "p95": 877981.2321301969,
+      "max": 975669.6385451315
+    }
+  },
+  "thresholds": {
+    "contingency_reserve_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "drop_in_expected_revenue_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "drop_in_revenue_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "annual_labor_cost_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "budget_after_labor_margin_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    }
+  },
+  "sensitivity": {
+    "contingency_reserve_dkk": {
+      "top_inputs": []
+    },
+    "drop_in_expected_revenue_dkk": {
+      "top_inputs": [
+        {
+          "id": "drop_in_utilization_rate",
+          "correlation": 0.7767
+        },
+        {
+          "id": "drop_in_available_hours_per_year",
+          "correlation": 0.4608
+        },
+        {
+          "id": "minimum_viable_hourly_rate_dkk",
+          "correlation": 0.3946
+        }
+      ]
+    },
+    "drop_in_revenue_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "drop_in_revenue_share",
+          "correlation": -0.7389
+        },
+        {
+          "id": "year1_revenue_target_dkk",
+          "correlation": -0.6283
+        },
+        {
+          "id": "drop_in_utilization_rate",
+          "correlation": 0.1643
+        },
+        {
+          "id": "drop_in_available_hours_per_year",
+          "correlation": 0.0956
+        },
+        {
+          "id": "minimum_viable_hourly_rate_dkk",
+          "correlation": 0.0834
+        }
+      ]
+    },
+    "annual_labor_cost_dkk": {
+      "top_inputs": [
+        {
+          "id": "monthly_fixed_labor_cost_dkk",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "budget_after_labor_margin_dkk": {
+      "top_inputs": [
+        {
+          "id": "monthly_fixed_labor_cost_dkk",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "drop_in_expected_revenue_dkk": [
+      {
+        "id": "minimum_viable_hourly_rate_dkk",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "drop_in_available_hours_per_year",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "drop_in_utilization_rate",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "drop_in_revenue_surplus_dkk": [
+      {
+        "id": "drop_in_revenue_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "minimum_viable_hourly_rate_dkk",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "year1_revenue_target_dkk",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "drop_in_available_hours_per_year",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "drop_in_utilization_rate",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "annual_labor_cost_dkk": [
+      {
+        "id": "monthly_fixed_labor_cost_dkk",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "budget_after_labor_margin_dkk": [
+      {
+        "id": "monthly_fixed_labor_cost_dkk",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [],
+  "model_confidence": {
+    "contingency_reserve_dkk": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "drop_in_expected_revenue_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.785,
+      "reasons": [
+        "0/3 input bounds anchored in data; 3/3 are assumptions",
+        "average bound-width-to-base ratio = 0.78"
+      ]
+    },
+    "drop_in_revenue_surplus_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.7643,
+      "reasons": [
+        "0/5 input bounds anchored in data; 5/5 are assumptions",
+        "average bound-width-to-base ratio = 0.76"
+      ]
+    },
+    "annual_labor_cost_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.6471,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.65"
+      ]
+    },
+    "budget_after_labor_margin_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.6471,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.65"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": [
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'contingency_after_combined_shocks_dkk' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'taster_conversion_margin' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "Yellowstone Caldera VEI-6 Evacuation (Pioneer Strategy)",
+    "plan_type": "catastrophic_disaster_response",
+    "primary_goal": "Execute the Pioneer Maximum-Throughput-First strategy to clear 35,800 occupants from Zone Zero by T+6, sustain decentralized C2 through the T+6 to T+18 logistical vacuum, and stage 30% of N95/water requirements by T+16.",
+    "modelling_frame": "Tests four quantitative gates: Zone-Zero compliance margin vs. the 98% T+6 threshold; N95/water staging margin vs. the 30% T+16 target; C2 fuel-endurance margin vs. the 72-hour cache target; public-compliance margin vs. the 70% panic-floor threshold. Tests one budget gate: DRF surplus over the $500M envelope vs. bottom-up 24-hour spend. Governor jurisdictional-authority transfer, FAA/DoD airlift authorization, and National Guard T+3 mobilization are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "zone_zero_compliance_target",
+      "label": "Zone-Zero evacuation compliance target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.98,
+      "comment": "98% of registered vehicles must clear Zone Zero by T+6; below this the Pioneer thesis fails and the VEI-7 contingency activates per Decision 4.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "98% of registered vehicles exiting Zone Zero checkpoints by T+6 hours."
+    },
+    {
+      "id": "drf_usd",
+      "label": "Disaster Relief Fund immediate ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 500000000,
+      "comment": "$500M Stafford-Act DRF ceiling for the T+0 to T+24 window; the entire Pioneer-strategy financial envelope before any congressional supplemental.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Authorizes up to $500 million in immediate, no-bid expenditure for life-saving logistics."
+    },
+    {
+      "id": "n95_staging_target_share",
+      "label": "T+16 N95/water staging target share",
+      "category": "coverage",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.30,
+      "comment": "Hybrid Flow Model stages 30% of required N95/water at Bozeman/Idaho Falls by T+16 via 10 CH-47 sorties; defends the T+6 to T+18 ingress vacuum.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Logistical ingress gap mitigation aim is staging 30% required N95/water supplies by T+16 hours."
+    },
+    {
+      "id": "fuel_reserve_target_hours",
+      "label": "C2 fuel-cache endurance target",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hours",
+      "value": 72,
+      "comment": "Each decentralized C2 node must hold 72 hours of JP-8/diesel cache by T+6; below this Issue 2 forecasts a decision-latency spike and VEI-7 trigger risk.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Established 72-hour fuel reserves for three decentralized C2 nodes."
+    },
+    {
+      "id": "public_compliance_threshold",
+      "label": "Public-compliance panic-floor threshold",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.70,
+      "comment": "Below 70% Zone-One compliance the Risk-6 panic-and-bottleneck path opens with 8–10 hours of evacuation-route time lost on I-90/Bozeman staging.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If public panic causes compliance below 70%, then evacuation timeline loss is 8-10 hours."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_zone_zero_compliance_share",
+      "label": "Achieved Zone-Zero vehicle-exit compliance share by T+6",
+      "unit": "fraction",
+      "why_needed": "Drives whether the 98% Pioneer threshold clears; below it VEI-7 contingency activates and resources reroute away from VEI-6 response.",
+      "suggested_estimation_method": "Contraflow throughput on US-191/US-20 × landslide-blockage rate × panic-compliance multiplier; sensitivity to Risk-1 secondary-incident probability."
+    },
+    {
+      "id": "actual_drf_spend_usd",
+      "label": "Achieved Disaster Relief Fund spend over the 24-hour window",
+      "unit": "USD",
+      "why_needed": "Tests whether the $500M envelope absorbs contraflow enforcement + emergency airlift + N95 procurement + fuel caches + recovery contingencies.",
+      "suggested_estimation_method": "Bottom-up: wrecker contracts + 10 CH-47 sorties × per-hour cost + 100K N95 × unit cost + JP-8 caches + Guard activation; sensitivity to Risk-2 mobilization overrun."
+    },
+    {
+      "id": "actual_n95_staging_share",
+      "label": "Achieved N95/water staging share by T+16",
+      "unit": "fraction",
+      "why_needed": "Below the 30% target Zone-One life support fails per Risk 2; the Hybrid Flow Model exists specifically to defend this against Decision-1 zero-ingress.",
+      "suggested_estimation_method": "10 CH-47 sorties × payload × utilization × airfield offload rate; sensitivity to airborne-visibility grounding (<1.2 mi) and FAA/DoD authorization timing."
+    },
+    {
+      "id": "actual_c2_fuel_endurance_hours",
+      "label": "Achieved C2 fuel-cache endurance at remote nodes",
+      "unit": "hours",
+      "why_needed": "Issue 2 names a 24-hour baseline (UPS only) without engineering diversion; below 72 hours decision latency cascades into premature VEI-7 activation.",
+      "suggested_estimation_method": "JP-8/diesel volume at site / consumption rate at max load; sensitivity to ashfall-degraded generator efficiency and tanker-resupply availability."
+    },
+    {
+      "id": "actual_public_compliance_share",
+      "label": "Achieved public compliance with Zone-One evacuation orders by T+12",
+      "unit": "fraction",
+      "why_needed": "Drives whether the Risk-6 panic-bottleneck path opens; below 70% the I-90/Bozeman staging congestion delays Phase-2 by 8–10 hours.",
+      "suggested_estimation_method": "IPAWS reach × Decision-8 messaging effectiveness × historical Yellowstone-area emergency-evacuation rates; sensitivity to mobile-broadcast-trailer deployment timing."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "zone_zero_compliance_margin",
+      "label": "Zone-Zero compliance margin against the 98% T+6 threshold",
+      "formula_hint": "zone_zero_compliance_margin = actual_zone_zero_compliance_share - zone_zero_compliance_target",
+      "output_name": "zone_zero_compliance_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_zone_zero_compliance_share", "zone_zero_compliance_target"],
+      "why_first": "Positive margin validates the Pioneer Maximum-Throughput-First thesis at the T+6 measurement point; negative margin triggers the VEI-7 contingency and resource reallocation cascade."
+    },
+    {
+      "id": "drf_surplus_usd",
+      "label": "Disaster Relief Fund surplus over the 24-hour window",
+      "formula_hint": "drf_surplus_usd = drf_usd - actual_drf_spend_usd",
+      "output_name": "drf_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["drf_usd", "actual_drf_spend_usd"],
+      "why_first": "Positive surplus preserves the $500M envelope for Phase-2 expansion and post-eruption stabilization; negative surplus forces a congressional supplemental request mid-event."
+    },
+    {
+      "id": "n95_staging_margin",
+      "label": "N95/water staging margin against the 30% T+16 target",
+      "formula_hint": "n95_staging_margin = actual_n95_staging_share - n95_staging_target_share",
+      "output_name": "n95_staging_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_n95_staging_share", "n95_staging_target_share"],
+      "why_first": "Positive margin closes the T+6 to T+18 logistical vacuum; negative margin triggers the Issue-1 secondary-casualty path (10–20% increase in respiratory/dehydration cases)."
+    },
+    {
+      "id": "c2_fuel_endurance_margin_hours",
+      "label": "C2 fuel-endurance margin against the 72-hour cache target",
+      "formula_hint": "c2_fuel_endurance_margin_hours = actual_c2_fuel_endurance_hours - fuel_reserve_target_hours",
+      "output_name": "c2_fuel_endurance_margin_hours",
+      "output_unit": "hours",
+      "depends_on": ["actual_c2_fuel_endurance_hours", "fuel_reserve_target_hours"],
+      "why_first": "Positive margin keeps the decentralized UC operational through the post-grid-failure window; negative margin produces the Issue-2 decision-latency spike."
+    },
+    {
+      "id": "public_compliance_margin",
+      "label": "Public-compliance margin against the 70% panic-floor threshold",
+      "formula_hint": "public_compliance_margin = actual_public_compliance_share - public_compliance_threshold",
+      "output_name": "public_compliance_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_public_compliance_share", "public_compliance_threshold"],
+      "why_first": "Positive margin keeps evacuation routes orderly; negative margin triggers Risk-6 panic bottlenecks at I-90/Bozeman with 8–10 hours of staging delay."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "governor_jurisdictional_authority_transfer_gate",
+      "label": "MT/WY/ID Governors execute the dual-hat Jurisdictional Authority Transfer Protocol at T+0",
+      "why_it_matters": "Risk 3 names this as the binary governance hinge: without signed dual-hat MOUs the federal-to-state authority transfer collapses into 4–12 hour operational paralysis and ashfall-hardening assets cannot deploy under State control.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Operational paralysis 4–12 hours; ashfall-hardening delayed; 25–50% increase in regional grid-collapse likelihood; engineering assets cannot legally cross state boundaries to harden substations."
+    },
+    {
+      "id": "faa_dod_emergency_airlift_authorization_gate",
+      "label": "FAA/DoD authorize the 10 heavy-lift sorties for T+8 to T+16 emergency ingress",
+      "why_it_matters": "The Hybrid Flow Model that bridges the T+6 to T+18 logistical vacuum depends on FAA/DoD waiving Ground Stop in sectors ZLC/ZSE; without authorization the 30% N95 staging is unachievable by any modelled lever.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Zero airlift achievable; Zone-One life support fails per Risk 2; respiratory/dehydration casualties escalate as the entire ingress vacuum spans 12 hours unmitigated."
+    },
+    {
+      "id": "national_guard_t3_mobilization_gate",
+      "label": "Wyoming/Montana National Guard engineering platoons mobilize heavy equipment by T+3",
+      "why_it_matters": "The 72-hour C2 fuel-cache build and M88 breach-vehicle staging both depend on Ready-Reserve mobilization within 3 hours of trigger; the plan offers no alternative path if mobilization slips.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "C2 fuel-cache target missed; ashfall-hardening delayed; contraflow-breach assets unavailable for the 90-minute internal response time; Zone-Zero T+6 clearance becomes unreachable."
+    }
+  ]
+}

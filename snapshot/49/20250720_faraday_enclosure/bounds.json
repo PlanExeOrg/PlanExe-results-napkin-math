@@ -1,0 +1,57 @@
+{
+  "actual_year1_net_cash_eur": {
+    "unit": "EUR",
+    "low": -50000,
+    "base": 50000,
+    "high": 120000,
+    "rationale": "Base centered at the €50K renegotiated trigger per the actual-vs-commitment default. Asymmetric downside captures Issue 2 (3-month cert delay → −€150K revenue) and Risk 9 chargebacks; upside reflects two-tier pricing executing with strong B2B Letter-of-Intent.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": false,
+    "default_pass_probability": null
+  },
+  "actual_iso_run_sell_through_units": {
+    "unit": "units",
+    "low": 600,
+    "base": 1500,
+    "high": 1850,
+    "rationale": "Base centered at the 75%-sell-through commitment (1,500 units) per actual-vs-commitment default. Downside anchored on Issue 1 (2% conversion rate → ~600 units, vs the 5% planned); upside capped near full sell-through.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_gross_profit_eur": {
+    "unit": "EUR",
+    "low": 70000,
+    "base": 120000,
+    "high": 180000,
+    "rationale": "Base centered at the €120K MIL-STD cost — the commitment Year-1 profit must clear. Downside captures Risk 4 (€89K at €99 single-price) plus Risk 10 wholesale-discount erosion; upside reflects two-tier pricing capturing both segments at premium.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_year1_spend_eur": {
+    "unit": "EUR",
+    "low": 350000,
+    "base": 400000,
+    "high": 470000,
+    "rationale": "Base centered at the €400K Year-1 commitment ceiling per actual-vs-commitment default. Downside reflects lean execution with no re-tests; upside captures Issue 2 cert overrun (+€32K) plus Risk 6 12% material premium for supplier diversification.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_validated_demand_units": {
+    "unit": "units",
+    "low": 400,
+    "base": 1000,
+    "high": 1700,
+    "rationale": "Base centered at the 1,000-unit ISO-commitment threshold per actual-vs-commitment default. Downside captures Issue 1 conversion-rate variance (2% scenario from 500-unit Latvian launch); upside reflects strong prepper-network word-of-mouth plus early B2B LoI.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

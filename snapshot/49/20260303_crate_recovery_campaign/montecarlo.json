@@ -1,0 +1,293 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Arla 'Crate Escape' Milk Crate Recovery Campaign 2026",
+    "plan_type": "commercial_csr_reverse_logistics"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "projected_donation_spend_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 604383.581,
+      "std": 109539.8185821094,
+      "min": 377175.0,
+      "p05": 442427.25,
+      "p25": 520325.0,
+      "p50": 590630.0,
+      "p75": 681923.75,
+      "p95": 801458.25,
+      "max": 897300.0
+    },
+    "donation_ceiling_margin_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 745616.419,
+      "std": 109539.8185821094,
+      "min": 452700.0,
+      "p05": 548541.75,
+      "p25": 668076.25,
+      "p50": 759370.0,
+      "p75": 829675.0,
+      "p95": 907572.75,
+      "max": 972825.0
+    },
+    "volume_target_margin": {
+      "unit": "crates",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 12876.7162,
+      "std": 21907.963716421877,
+      "min": -32565.0,
+      "p05": -19514.55,
+      "p25": -3935.0,
+      "p50": 10126.0,
+      "p75": 28384.75,
+      "p95": 52291.649999999994,
+      "max": 71460.0
+    },
+    "total_projected_spend_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 3254383.581,
+      "std": 109539.8185821094,
+      "min": 3027175.0,
+      "p05": 3092427.25,
+      "p25": 3170325.0,
+      "p50": 3240630.0,
+      "p75": 3331923.75,
+      "p95": 3451458.25,
+      "max": 3547300.0
+    },
+    "program_budget_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 745616.419,
+      "std": 109539.8185821094,
+      "min": 452700.0,
+      "p05": 548541.75,
+      "p25": 668076.25,
+      "p50": 759370.0,
+      "p75": 829675.0,
+      "p95": 907572.75,
+      "max": 972825.0
+    }
+  },
+  "thresholds": {
+    "projected_donation_spend_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "donation_ceiling_margin_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "volume_target_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6830,
+      "valid_count": 10000,
+      "probability": 0.683
+    },
+    "total_projected_spend_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "program_budget_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    }
+  },
+  "sensitivity": {
+    "projected_donation_spend_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "donation_ceiling_margin_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "volume_target_margin": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "total_projected_spend_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "program_budget_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "projected_donation_spend_dkk": [
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "donation_ceiling_margin_dkk": [
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "volume_target_margin": [
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "total_projected_spend_dkk": [
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "program_budget_surplus_dkk": [
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "volume_target_margin": [
+      {
+        "id": "expected_recovered_crates",
+        "direction": "above",
+        "input_percentile_cutoff": 15,
+        "cutoff_value": 97862.4,
+        "conditional_pass_prob": 0.8035,
+        "admitted_fraction": 0.85
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "expected_recovered_crates",
+      "score": 30.8194,
+      "worst_gate": "volume_target_margin",
+      "bound_width_ratio": 0.9722,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "projected_donation_spend_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.9722,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.97"
+      ]
+    },
+    "donation_ceiling_margin_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.9722,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.97"
+      ]
+    },
+    "volume_target_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.9722,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.97"
+      ]
+    },
+    "total_projected_spend_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.9722,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.97"
+      ]
+    },
+    "program_budget_surplus_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.9722,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.97"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": [
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'donation_minimum_margin_dkk' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'logistics_budget_margin_dkk' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    }
+  ]
+}

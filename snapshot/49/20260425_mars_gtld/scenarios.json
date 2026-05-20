@@ -1,0 +1,131 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": ".mars gTLD Application",
+    "plan_type": "commercial"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_program_budget_usd": 25000000,
+        "hsm_capex_usd": 5000000,
+        "string_contention_contingency_usd": 10000000,
+        "year1_breakeven_registration_volume": 3000,
+        "mos_compliance_threshold": 0.95,
+        "revenue_pledge_fraction": 0.5,
+        "avg_price_per_domain_usd": 50,
+        "year1_base_opex_usd": 5000000,
+        "expected_year1_registrations": 1000,
+        "observed_mos_compliance_rate": 0.80,
+        "registration_volume_buffer_fraction": 0.20
+      },
+      "outputs": {
+        "year1_revenue_usd": 50000,
+        "year1_revenue_surplus_usd": -4950000,
+        "registration_volume_margin": -2000,
+        "budget_after_critical_draws_usd": 10000000,
+        "pledge_coverage_surplus_usd": -3475000,
+        "mos_compliance_margin": -0.15000000000000002
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_program_budget_usd": 100000000,
+        "hsm_capex_usd": 7500000,
+        "string_contention_contingency_usd": 15000000,
+        "year1_breakeven_registration_volume": 5000,
+        "mos_compliance_threshold": 0.95,
+        "revenue_pledge_fraction": 0.5,
+        "avg_price_per_domain_usd": 100,
+        "year1_base_opex_usd": 7500000,
+        "expected_year1_registrations": 5000,
+        "observed_mos_compliance_rate": 0.95,
+        "registration_volume_buffer_fraction": 0.30
+      },
+      "outputs": {
+        "year1_revenue_usd": 500000,
+        "year1_revenue_surplus_usd": -7000000,
+        "registration_volume_margin": 0,
+        "budget_after_critical_draws_usd": 77500000,
+        "pledge_coverage_surplus_usd": -5750000,
+        "mos_compliance_margin": 0.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_program_budget_usd": 120000000,
+        "hsm_capex_usd": 10000000,
+        "string_contention_contingency_usd": 20000000,
+        "year1_breakeven_registration_volume": 9000,
+        "mos_compliance_threshold": 0.95,
+        "revenue_pledge_fraction": 0.5,
+        "avg_price_per_domain_usd": 200,
+        "year1_base_opex_usd": 10000000,
+        "expected_year1_registrations": 25000,
+        "observed_mos_compliance_rate": 0.95,
+        "registration_volume_buffer_fraction": 0.40
+      },
+      "outputs": {
+        "year1_revenue_usd": 5000000,
+        "year1_revenue_surplus_usd": -5000000,
+        "registration_volume_margin": 16000,
+        "budget_after_critical_draws_usd": 90000000,
+        "pledge_coverage_surplus_usd": -6500000,
+        "mos_compliance_margin": 0.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "year1_revenue_usd": {
+        "low": 50000,
+        "base": 500000,
+        "high": 5000000,
+        "unit": "USD",
+        "spread_ratio": 100.0,
+        "spread_absolute": 4950000
+      },
+      "year1_revenue_surplus_usd": {
+        "low": -4950000,
+        "base": -7000000,
+        "high": -5000000,
+        "unit": "USD",
+        "spread_ratio": 1.0101010101010102,
+        "spread_absolute": -50000
+      },
+      "registration_volume_margin": {
+        "low": -2000,
+        "base": 0,
+        "high": 16000,
+        "unit": "domains",
+        "spread_ratio": -8.0,
+        "spread_absolute": 18000
+      },
+      "budget_after_critical_draws_usd": {
+        "low": 10000000,
+        "base": 77500000,
+        "high": 90000000,
+        "unit": "USD",
+        "spread_ratio": 9.0,
+        "spread_absolute": 80000000
+      },
+      "pledge_coverage_surplus_usd": {
+        "low": -3475000,
+        "base": -5750000,
+        "high": -6500000,
+        "unit": "USD",
+        "spread_ratio": 1.8705035971223022,
+        "spread_absolute": -3025000
+      },
+      "mos_compliance_margin": {
+        "low": -0.15000000000000002,
+        "base": 0.0,
+        "high": 0.0,
+        "unit": "fraction",
+        "spread_ratio": -0.0,
+        "spread_absolute": 0.15000000000000002
+      }
+    }
+  },
+  "warnings": []
+}

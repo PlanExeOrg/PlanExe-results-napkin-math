@@ -1,0 +1,207 @@
+{
+  "plan_summary": {
+    "plan_name": "Denmark DKK to EUR Adoption (Builder's Blueprint)",
+    "plan_type": "public_finance_transition",
+    "primary_goal": "Achieve full DKK to EUR currency adoption within 4-8 years via ERM II, referendum, and Eurosystem integration.",
+    "modelling_frame": "Tests budget allocation, referendum and awareness thresholds, contingency reserve vs cash shock, and real-budget protection against inflation."
+  },
+  "key_values": [
+    {
+      "id": "total_transition_budget_dkk",
+      "label": "Total national transition budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 20000000000,
+      "comment": "Budgeted public financing for the multi-year transition; stated range DKK 15-25 billion, central estimate used.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "reference range for budgeted public financing: DKK 15-25 Billion"
+    },
+    {
+      "id": "contingency_reserve_dkk",
+      "label": "Ring-fenced contingency reserve",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 50000000,
+      "comment": "Ring-fenced reserve for unbudgeted security enhancements during 30-day dual circulation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "contingency capital ring-fenced fund amount: DKK 50 million"
+    },
+    {
+      "id": "public_info_funding_share",
+      "label": "Public information funding share of budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.005,
+      "comment": "Minimum allocation share of total transition budget dedicated to public information campaign.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Public information funding: 0.5% of total national transition budget"
+    },
+    {
+      "id": "referendum_support_threshold",
+      "label": "Minimum referendum support threshold",
+      "category": "funding_gate",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.60,
+      "comment": "Minimum public support level required to interpret referendum mandate as sufficient.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "If referendum support levels drop below 60%, then the vote mandate may be insufficient."
+    },
+    {
+      "id": "public_awareness_threshold",
+      "label": "Minimum public awareness threshold",
+      "category": "coverage",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.70,
+      "comment": "Minimum awareness of referendum details required to keep campaign pacing on track.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "If public awareness of referendum details reaches less than 70%, then the campaign pacing must be adjusted."
+    },
+    {
+      "id": "annual_real_indexation_factor",
+      "label": "Annual real-indexation factor for budget",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "ratio",
+      "value": 1.015,
+      "comment": "Proposed annual uplift factor applied to budget to preserve real value over multi-year transition.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "proposed annual real-indexation factor for budget: 1.015"
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_referendum_support",
+      "label": "Actual public support level at referendum",
+      "unit": "fraction",
+      "why_needed": "Compared against support threshold to determine whether the referendum mandate is sufficient.",
+      "suggested_estimation_method": "Use rolling Danish opinion polls on euro adoption with confidence interval around campaign period."
+    },
+    {
+      "id": "actual_public_awareness",
+      "label": "Actual public awareness of referendum details",
+      "unit": "fraction",
+      "why_needed": "Compared against awareness threshold to test whether campaign pacing meets the gate.",
+      "suggested_estimation_method": "Estimate from analogous EU member referendum awareness surveys; bound 0.4 to 0.9."
+    },
+    {
+      "id": "baseline_annual_inflation_rate",
+      "label": "Baseline annual inflation rate over transition",
+      "unit": "fraction",
+      "why_needed": "Used to test whether the real-indexation factor keeps pace with actual budget erosion.",
+      "suggested_estimation_method": "Use ECB/Danish CPI projections; central around 0.02 with 0.01-0.04 range for stress."
+    },
+    {
+      "id": "cash_logistics_shock_cost_dkk",
+      "label": "Dual circulation cash logistics shock cost",
+      "unit": "DKK",
+      "why_needed": "Compared against contingency reserve to test whether the reserve can absorb the cash supply shock.",
+      "suggested_estimation_method": "Anchor on stated DKK 100M overhead scenario; bound DKK 30M to 200M."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "public_info_budget_dkk",
+      "label": "Public information campaign budget",
+      "formula_hint": "public_info_budget_dkk = total_transition_budget_dkk * public_info_funding_share",
+      "output_name": "public_info_budget_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["total_transition_budget_dkk", "public_info_funding_share"],
+      "why_first": "Sizes the campaign envelope and anchors downstream awareness and referendum-support work."
+    },
+    {
+      "id": "referendum_support_margin",
+      "label": "Referendum support margin over threshold",
+      "formula_hint": "referendum_support_margin = actual_referendum_support - referendum_support_threshold",
+      "output_name": "referendum_support_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_referendum_support", "referendum_support_threshold"],
+      "why_first": "Pass/fail gate determining whether the referendum mandate is strong enough for accession."
+    },
+    {
+      "id": "public_awareness_margin",
+      "label": "Public awareness margin over threshold",
+      "formula_hint": "public_awareness_margin = actual_public_awareness - public_awareness_threshold",
+      "output_name": "public_awareness_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_public_awareness", "public_awareness_threshold"],
+      "why_first": "Tests whether campaign pacing meets the awareness gate before referendum scheduling."
+    },
+    {
+      "id": "contingency_buffer_dkk",
+      "label": "Contingency reserve buffer against cash shock",
+      "formula_hint": "contingency_buffer_dkk = contingency_reserve_dkk - cash_logistics_shock_cost_dkk",
+      "output_name": "contingency_buffer_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["contingency_reserve_dkk", "cash_logistics_shock_cost_dkk"],
+      "why_first": "Tests whether the ring-fenced reserve covers the cash logistics shock scenario."
+    },
+    {
+      "id": "real_indexation_margin",
+      "label": "Real indexation margin over inflation",
+      "formula_hint": "real_indexation_margin = annual_real_indexation_factor - (1 + baseline_annual_inflation_rate)",
+      "output_name": "real_indexation_margin",
+      "output_unit": "ratio",
+      "depends_on": ["annual_real_indexation_factor", "baseline_annual_inflation_rate"],
+      "why_first": "Tests whether annual indexation keeps committed budget value above realised inflation."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "eu_protocol_amendment_gate",
+      "label": "EU Council opt-out protocol amendment",
+      "why_it_matters": "Requires unanimous EU agreement on a targeted protocol amendment to lift the Danish opt-out; outside any quantitative threshold.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Legal pathway stalls and the entire adoption sequence cannot proceed regardless of budget or convergence."
+    },
+    {
+      "id": "national_referendum_mandate_gate",
+      "label": "National referendum yields mandate",
+      "why_it_matters": "Binary Yes/No referendum mandate is a hard democratic gate independent of any modelled support margin.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Project terminates; sunk costs written off and EU opt-out remains in place."
+    },
+    {
+      "id": "ecb_convergence_approval_gate",
+      "label": "ECB convergence criteria approval",
+      "why_it_matters": "ECB must approve fulfilment of Maastricht convergence criteria after 24 months of ERM II participation.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Euro adoption is blocked or delayed pending further fiscal adjustment and re-assessment."
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "plan_summary": {
+    "plan_name": "Arla 'Crate Escape' Milk Crate Recovery Campaign 2026",
+    "plan_type": "commercial_csr_reverse_logistics",
+    "primary_goal": "Recover 40% (108,000) of annually lost Arla milk crates in 2026 within a 4M DKK budget while donating at least 500,000 DKK to the Arla Foundation.",
+    "modelling_frame": "Bottom-up viability of dual-channel recovery: per-crate handling cost vs logistics budget, donation spend vs donation ceiling, and combined budget surplus against the 4M DKK cap."
+  },
+  "key_values": [
+    {
+      "id": "total_program_budget_ceiling_dkk",
+      "label": "Total program budget ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 4000000,
+      "comment": "Hard cap on total campaign expenditure; breach forces de-scope or halt.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total program budget ceiling of 4 million DKK"
+    },
+    {
+      "id": "donation_outlay_ceiling_dkk",
+      "label": "Maximum charitable donation outlay",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 1350000,
+      "comment": "Hard ceiling on per-crate donation spend; exceeded if returns top ~270k crates.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Maximum donation outlay of 1.35 million DKK budget component"
+    },
+    {
+      "id": "logistics_budget_dkk",
+      "label": "Reverse logistics budget allocation",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 1650000,
+      "comment": "Non-donation budget for collection, cleaning, transport, IT tracking; bottleneck if per-crate cost is high.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Reverse Logistics Infrastructure: 1.65 million DKK"
+    },
+    {
+      "id": "marketing_budget_dkk",
+      "label": "Marketing and campaign execution budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 1000000,
+      "comment": "Allocated for social/marketing creative; reputational shock can require +500k DKK uplift.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Marketing/Campaign Execution (Incl. Social Media): 1.0 million DKK"
+    },
+    {
+      "id": "incentive_per_crate_dkk",
+      "label": "Per-crate charitable donation incentive",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 5,
+      "comment": "Primary behavioral nudge; drives donation outlay = incentive * crates returned.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Per-crate charitable donation anchor is 5 DKK"
+    },
+    {
+      "id": "target_recovered_crates",
+      "label": "Year-one target recovered crates",
+      "category": "outcome",
+      "value_type": "derived",
+      "unit": "crates",
+      "value": 108000,
+      "comment": "40% of 270,000 annual loss; pass/fail gate for primary volume KPI.",
+      "formula_hint": "target_recovered_crates = annual_crate_loss_volume * target_recovery_rate",
+      "output_name": "target_recovered_crates",
+      "output_unit": "crates",
+      "depends_on": ["annual_crate_loss_volume", "target_recovery_rate"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Year one target recovery volume of 108,000 crates"
+    },
+    {
+      "id": "annual_crate_loss_volume",
+      "label": "Annual crate loss volume baseline",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "crates",
+      "value": 270000,
+      "comment": "Denominator for recovery rate; upper-bound on returns if 100% recovered.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Annual crate loss volume target of 270,000 units"
+    },
+    {
+      "id": "target_recovery_rate",
+      "label": "Minimum success recovery rate",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.4,
+      "comment": "Threshold for year-one viability; below 40% the primary volume goal is failed.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Target minimum return volume is 40%"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_donation_minimum_margin",
+      "question": "Does projected donation spend clear the 500,000 DKK Arla Foundation minimum?",
+      "why_it_matters": "Donations below 500k DKK fail the charitable success metric even if volume succeeds.",
+      "formula_hint": "donation_minimum_margin_dkk = projected_donation_spend_dkk - 500000",
+      "output_name": "donation_minimum_margin_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["projected_donation_spend_dkk"]
+    },
+    {
+      "id": "q_logistics_budget_margin",
+      "question": "Does per-crate logistics cost stay within the 1.65M DKK logistics budget at target volume?",
+      "why_it_matters": "If per-crate handling exceeds budget capacity, the program fails economic viability before hitting the 4M cap.",
+      "formula_hint": "logistics_budget_margin_dkk = logistics_budget_dkk - (cost_per_crate_handling_dkk * target_recovered_crates)",
+      "output_name": "logistics_budget_margin_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["logistics_budget_dkk", "cost_per_crate_handling_dkk", "target_recovered_crates"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "cost_per_crate_handling_dkk",
+      "label": "Per-crate reverse-logistics handling cost",
+      "unit": "DKK_per_crate",
+      "why_needed": "Drives total logistics spend and determines whether the 1.65M DKK logistics budget is sufficient at target volume.",
+      "suggested_estimation_method": "Triangulate from Q2 pilot CPRC target (15.28 DKK/crate) and risk threshold (10 DKK/crate); 8-20 DKK range."
+    },
+    {
+      "id": "projected_donation_spend_dkk",
+      "label": "Projected year-one donation outlay",
+      "unit": "DKK",
+      "why_needed": "Tests whether actual recovered volume * 5 DKK incentive lands between 500k floor and 1.35M ceiling.",
+      "suggested_estimation_method": "Compute as incentive_per_crate_dkk * expected_recovered_crates using volume scenarios (0.5x-2x target)."
+    },
+    {
+      "id": "expected_recovered_crates",
+      "label": "Expected actual recovered crate volume",
+      "unit": "crates",
+      "why_needed": "Required to convert per-crate cost and incentive into projected total spend versus budget caps.",
+      "suggested_estimation_method": "Bound between 40% floor (108,000) and ~80% stress case (216,000); base near target."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "projected_donation_spend_calc",
+      "label": "Projected donation spend from expected returns",
+      "formula_hint": "projected_donation_spend_dkk = incentive_per_crate_dkk * expected_recovered_crates",
+      "output_name": "projected_donation_spend_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["incentive_per_crate_dkk", "expected_recovered_crates"],
+      "why_first": "Anchors donation budget pressure; feeds both the 500k minimum margin and the 1.35M ceiling margin."
+    },
+    {
+      "id": "donation_ceiling_margin_dkk",
+      "label": "Donation ceiling margin",
+      "formula_hint": "donation_ceiling_margin_dkk = donation_outlay_ceiling_dkk - projected_donation_spend_dkk",
+      "output_name": "donation_ceiling_margin_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["donation_outlay_ceiling_dkk", "projected_donation_spend_dkk"],
+      "why_first": "Positive value means donations fit within the 1.35M DKK ceiling; negative triggers tiered deceleration."
+    },
+    {
+      "id": "volume_target_margin",
+      "label": "Recovery volume margin vs 108k target",
+      "formula_hint": "volume_target_margin = expected_recovered_crates - target_recovered_crates",
+      "output_name": "volume_target_margin",
+      "output_unit": "crates",
+      "depends_on": ["expected_recovered_crates", "target_recovered_crates"],
+      "why_first": "Tests the primary 40% volume gate; positive means the year-one KPI is cleared."
+    },
+    {
+      "id": "total_projected_spend_dkk",
+      "label": "Total projected program spend",
+      "formula_hint": "total_projected_spend_dkk = projected_donation_spend_dkk + logistics_budget_dkk + marketing_budget_dkk",
+      "output_name": "total_projected_spend_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["projected_donation_spend_dkk", "logistics_budget_dkk", "marketing_budget_dkk"],
+      "why_first": "Aggregates all spend streams to test against the 4M DKK ceiling."
+    },
+    {
+      "id": "program_budget_surplus_dkk",
+      "label": "Program budget surplus vs 4M ceiling",
+      "formula_hint": "program_budget_surplus_dkk = total_program_budget_ceiling_dkk - total_projected_spend_dkk",
+      "output_name": "program_budget_surplus_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["total_program_budget_ceiling_dkk", "total_projected_spend_dkk"],
+      "why_first": "Combined viability gate: positive surplus means the 4M ceiling holds across donation + logistics + marketing."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "municipal_liability_transfer_gate",
+      "label": "Municipal triage liability transfer MoUs",
+      "why_it_matters": "Q3 national rollout depends on signed indemnity agreements with Tier 1 municipal waste authorities; legal failure curtails the municipal channel.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Municipal channel cannot operate; volume capped below 108,000 and Q3/Q4 capacity collapses."
+    },
+    {
+      "id": "supermarket_marketing_preapproval_gate",
+      "label": "Supermarket sign-off on irreverent marketing tone",
+      "why_it_matters": "Salling, Coop, and Rema 1000 must approve creatives or partnerships fracture, jeopardizing the primary collection channel.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Retail partners withdraw in-store drop-off support; primary collection channel and viral marketing both fail."
+    },
+    {
+      "id": "food_grade_cleaning_compliance_gate",
+      "label": "Food-grade sanitation certification for third-party cleaning hubs",
+      "why_it_matters": "Cleaned crates must pass Danish food-grade standards to re-enter the dairy supply chain; non-compliance blocks reuse entirely.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Recovered crates cannot be reintroduced; 2027 new-crate production reduction goal fails regardless of volume."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "valid": true,
+  "error_count": 0,
+  "warn_count": 0,
+  "violations": [],
+  "summary": {
+    "counts": {
+      "key_values": 8,
+      "derived_questions": 2,
+      "missing_values_to_estimate": 5,
+      "recommended_first_calculations": 5,
+      "unmodelled_gates": 3
+    },
+    "rule_id_breakdown": {},
+    "checks_performed": [
+      "json_parse",
+      "top_level_structure",
+      "required_fields",
+      "array_length_caps",
+      "global_id_uniqueness",
+      "snake_case_ids",
+      "depends_on_declared",
+      "formula_rhs_declared",
+      "fraction_value_range",
+      "comment_word_caps",
+      "source_text_word_caps",
+      "output_name_present_when_formula_hint",
+      "output_unit_present_when_formula_hint",
+      "no_dead_end_variables",
+      "threshold_friendly_naming",
+      "shared_pool_legitimacy"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Yellowstone Caldera VEI-6 Evacuation (Pioneer Strategy)",
+    "plan_type": "catastrophic_disaster_response"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "zone_zero_compliance_target": 0.98,
+        "drf_usd": 500000000,
+        "fuel_reserve_target_hours": 72,
+        "n95_staging_target_share": 0.30,
+        "public_compliance_threshold": 0.70,
+        "actual_zone_zero_compliance_share": 0.75,
+        "actual_drf_spend_usd": 200000000,
+        "actual_n95_staging_share": 0.05,
+        "actual_c2_fuel_endurance_hours": 24,
+        "actual_public_compliance_share": 0.50
+      },
+      "outputs": {
+        "zone_zero_compliance_margin": -0.23,
+        "drf_surplus_usd": 300000000,
+        "n95_staging_margin": -0.25,
+        "c2_fuel_endurance_margin_hours": -48,
+        "public_compliance_margin": -0.20
+      }
+    },
+    "base": {
+      "inputs": {
+        "zone_zero_compliance_target": 0.98,
+        "drf_usd": 500000000,
+        "fuel_reserve_target_hours": 72,
+        "n95_staging_target_share": 0.30,
+        "public_compliance_threshold": 0.70,
+        "actual_zone_zero_compliance_share": 0.98,
+        "actual_drf_spend_usd": 450000000,
+        "actual_n95_staging_share": 0.30,
+        "actual_c2_fuel_endurance_hours": 60,
+        "actual_public_compliance_share": 0.72
+      },
+      "outputs": {
+        "zone_zero_compliance_margin": 0.0,
+        "drf_surplus_usd": 50000000,
+        "n95_staging_margin": 0.0,
+        "c2_fuel_endurance_margin_hours": -12,
+        "public_compliance_margin": 0.02
+      }
+    },
+    "high": {
+      "inputs": {
+        "zone_zero_compliance_target": 0.98,
+        "drf_usd": 500000000,
+        "fuel_reserve_target_hours": 72,
+        "n95_staging_target_share": 0.30,
+        "public_compliance_threshold": 0.70,
+        "actual_zone_zero_compliance_share": 0.99,
+        "actual_drf_spend_usd": 700000000,
+        "actual_n95_staging_share": 0.45,
+        "actual_c2_fuel_endurance_hours": 90,
+        "actual_public_compliance_share": 0.92
+      },
+      "outputs": {
+        "zone_zero_compliance_margin": 0.01,
+        "drf_surplus_usd": -200000000,
+        "n95_staging_margin": 0.15,
+        "c2_fuel_endurance_margin_hours": 18,
+        "public_compliance_margin": 0.22
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "zone_zero_compliance_margin": {
+        "low": -0.23,
+        "base": 0.0,
+        "high": 0.01,
+        "unit": "fraction",
+        "spread_ratio": -0.043478260869565216,
+        "spread_absolute": 0.24
+      },
+      "drf_surplus_usd": {
+        "low": 300000000,
+        "base": 50000000,
+        "high": -200000000,
+        "unit": "USD",
+        "spread_ratio": -0.6666666666666666,
+        "spread_absolute": -500000000
+      },
+      "n95_staging_margin": {
+        "low": -0.25,
+        "base": 0.0,
+        "high": 0.15,
+        "unit": "fraction",
+        "spread_ratio": -0.6,
+        "spread_absolute": 0.40
+      },
+      "c2_fuel_endurance_margin_hours": {
+        "low": -48,
+        "base": -12,
+        "high": 18,
+        "unit": "hours",
+        "spread_ratio": -0.375,
+        "spread_absolute": 66
+      },
+      "public_compliance_margin": {
+        "low": -0.20,
+        "base": 0.02,
+        "high": 0.22,
+        "unit": "fraction",
+        "spread_ratio": -1.1,
+        "spread_absolute": 0.42
+      }
+    }
+  },
+  "warnings": []
+}

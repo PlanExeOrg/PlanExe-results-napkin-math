@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Paperclip Automation Pilot Line (Builder Pragmatic Integration)",
+    "plan_type": "industrial_automation_pilot"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "budget_max_usd": 500000,
+        "manual_intervention_threshold_hours_per_week": 2,
+        "opc_ua_bid_threshold_usd": 75000,
+        "api_latency_p99_threshold_ms": 100,
+        "onsite_expert_max_cost_usd": 25000,
+        "actual_manual_intervention_hours_per_week": 1.0,
+        "actual_total_project_cost_usd": 300000,
+        "actual_opc_ua_bid_usd": 30000,
+        "actual_api_p99_latency_ms": 25,
+        "actual_onsite_expert_cost_usd": 10000
+      },
+      "outputs": {
+        "manual_intervention_margin_hours": 1.0,
+        "budget_surplus_usd": 200000,
+        "opc_ua_bid_margin_usd": 45000,
+        "api_latency_margin_ms": 75,
+        "onsite_expert_budget_margin_usd": 15000
+      }
+    },
+    "base": {
+      "inputs": {
+        "budget_max_usd": 500000,
+        "manual_intervention_threshold_hours_per_week": 2,
+        "opc_ua_bid_threshold_usd": 75000,
+        "api_latency_p99_threshold_ms": 100,
+        "onsite_expert_max_cost_usd": 25000,
+        "actual_manual_intervention_hours_per_week": 2.0,
+        "actual_total_project_cost_usd": 500000,
+        "actual_opc_ua_bid_usd": 50000,
+        "actual_api_p99_latency_ms": 70,
+        "actual_onsite_expert_cost_usd": 15000
+      },
+      "outputs": {
+        "manual_intervention_margin_hours": 0.0,
+        "budget_surplus_usd": 0,
+        "opc_ua_bid_margin_usd": 25000,
+        "api_latency_margin_ms": 30,
+        "onsite_expert_budget_margin_usd": 10000
+      }
+    },
+    "high": {
+      "inputs": {
+        "budget_max_usd": 500000,
+        "manual_intervention_threshold_hours_per_week": 2,
+        "opc_ua_bid_threshold_usd": 75000,
+        "api_latency_p99_threshold_ms": 100,
+        "onsite_expert_max_cost_usd": 25000,
+        "actual_manual_intervention_hours_per_week": 4.5,
+        "actual_total_project_cost_usd": 575000,
+        "actual_opc_ua_bid_usd": 95000,
+        "actual_api_p99_latency_ms": 180,
+        "actual_onsite_expert_cost_usd": 32000
+      },
+      "outputs": {
+        "manual_intervention_margin_hours": -2.5,
+        "budget_surplus_usd": -75000,
+        "opc_ua_bid_margin_usd": -20000,
+        "api_latency_margin_ms": -80,
+        "onsite_expert_budget_margin_usd": -7000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "manual_intervention_margin_hours": {
+        "low": 1.0,
+        "base": 0.0,
+        "high": -2.5,
+        "unit": "hours_per_week",
+        "spread_ratio": -2.5,
+        "spread_absolute": -3.5
+      },
+      "budget_surplus_usd": {
+        "low": 200000,
+        "base": 0,
+        "high": -75000,
+        "unit": "USD",
+        "spread_ratio": -0.375,
+        "spread_absolute": -275000
+      },
+      "opc_ua_bid_margin_usd": {
+        "low": 45000,
+        "base": 25000,
+        "high": -20000,
+        "unit": "USD",
+        "spread_ratio": -0.4444444444444444,
+        "spread_absolute": -65000
+      },
+      "api_latency_margin_ms": {
+        "low": 75,
+        "base": 30,
+        "high": -80,
+        "unit": "milliseconds",
+        "spread_ratio": -1.0666666666666667,
+        "spread_absolute": -155
+      },
+      "onsite_expert_budget_margin_usd": {
+        "low": 15000,
+        "base": 10000,
+        "high": -7000,
+        "unit": "USD",
+        "spread_ratio": -0.4666666666666667,
+        "spread_absolute": -22000
+      }
+    }
+  },
+  "warnings": []
+}

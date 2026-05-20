@@ -1,0 +1,68 @@
+{
+  "post_incentive_overrun_shock_inr_crore": {
+    "unit": "INR_crore",
+    "low": 150,
+    "base": 300,
+    "high": 450,
+    "rationale": "Plan names up to 15% budget overrun (INR 300 crore) as the stress-test point estimate. Medium uncertainty: bracket ±50% around the named figure to span partial vs. fuller adoption failure.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "sme_redesign_shock_inr_crore": {
+    "unit": "INR_crore",
+    "low": 200,
+    "base": 400,
+    "high": 600,
+    "rationale": "Plan cites INR 400 crore redesign cost if the 50% SME mandate triggers small-firm failure. Medium uncertainty: ±50% spread reflects toolkit-rework scope unknowns.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "legal_friction_shock_inr_crore": {
+    "unit": "INR_crore",
+    "low": 150,
+    "base": 225,
+    "high": 300,
+    "rationale": "Plan states INR 150-300 crore sunk-cost band for state/central labor-law friction; base is the midpoint, low/high are the explicit endpoints.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_voluntary_opt_in_rate": {
+    "unit": "fraction",
+    "low": 0.55,
+    "base": 0.75,
+    "high": 0.90,
+    "rationale": "Base centered on the load-bearing 0.75 commitment (DEFAULT, no anchored shift). High uncertainty: voluntary policy pilots commonly land 0.55-0.90 depending on incentive salience and trust.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "sme_admin_hours_per_week_actual": {
+    "unit": "hours_per_week",
+    "low": 1.5,
+    "base": 2.0,
+    "high": 5.0,
+    "rationale": "Base centered on the 2.0-hour ASI target (DEFAULT, no named Risk/Issue/Premortem forecasting a gap). Asymmetric upside to 5 hours reflects compliance-overhead overrun risk; 1.5 is a practical floor.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_sme_cohort_share": {
+    "unit": "fraction",
+    "low": 0.35,
+    "base": 0.50,
+    "high": 0.60,
+    "rationale": "Base centered on the 50% mandate (DEFAULT, no anchored shift). Low-side spread to 0.35 reflects selection-bias risk if SME MOU signing lags; high capped near 0.6 by cohort balance.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

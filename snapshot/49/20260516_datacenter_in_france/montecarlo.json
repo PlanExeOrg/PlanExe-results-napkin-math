@@ -1,0 +1,353 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Data Center - Pragmatic Scale-Up",
+    "plan_type": "Hyperscale infrastructure / industrial CAPEX programme"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "buildable_area_km2": {
+      "unit": "km2",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 32.199999999999996,
+      "std": 0.0,
+      "min": 32.199999999999996,
+      "p05": 32.199999999999996,
+      "p25": 32.199999999999996,
+      "p50": 32.199999999999996,
+      "p75": 32.199999999999996,
+      "p95": 32.199999999999996,
+      "max": 32.199999999999996
+    },
+    "phase1_buffer_holding_cost_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1206942975.608201,
+      "std": 98557700.2971948,
+      "min": 968522704.046078,
+      "p05": 1044243274.9509326,
+      "p25": 1134636573.0204508,
+      "p50": 1205947966.8376675,
+      "p75": 1277679126.7693615,
+      "p95": 1371585704.0324306,
+      "max": 1446880720.8503053
+    },
+    "phase1_expected_revenue_eur_year": {
+      "unit": "EUR_per_year",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2224472579.8721614,
+      "std": 534268885.4012699,
+      "min": 864102686.2056386,
+      "p05": 1403242537.5427935,
+      "p25": 1836324830.4849195,
+      "p50": 2190091144.44442,
+      "p75": 2573204742.003857,
+      "p95": 3184518647.3584633,
+      "max": 3907975435.217139
+    },
+    "phase1_capacity_surplus_km2": {
+      "unit": "km2",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 26.83641455673166,
+      "std": 1.6725630127760505,
+      "min": 22.61853989586121,
+      "p05": 23.89561323201308,
+      "p25": 25.642105313302256,
+      "p50": 26.954723624906215,
+      "p75": 28.068485877237286,
+      "p95": 29.465543149679508,
+      "max": 30.54570004176766
+    },
+    "phase1_capex_combined_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 6631035056.809007,
+      "std": 723722593.8682028,
+      "min": 4319074957.443409,
+      "p05": 5427384953.783467,
+      "p25": 6127562363.718726,
+      "p50": 6635667539.261172,
+      "p75": 7127974364.81369,
+      "p95": 7833115338.564736,
+      "max": 8970970940.871824
+    },
+    "phase1_capex_buffer_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 7381131127.597303,
+      "std": 656730996.4675555,
+      "min": 5437880971.783543,
+      "p05": 6275806383.902321,
+      "p25": 6923525016.721175,
+      "p50": 7382721363.198853,
+      "p75": 7844639811.951821,
+      "p95": 8472520797.040841,
+      "max": 9422235237.190521
+    },
+    "phase2_tenant_commitment_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.03243609091244992,
+      "std": 0.082515921187576,
+      "min": -0.2461600628247882,
+      "p05": -0.17648258879708695,
+      "p25": -0.09255114685267038,
+      "p50": -0.02509111605981379,
+      "p75": 0.029049887411245673,
+      "p95": 0.09656133138042747,
+      "max": 0.14803569583521625
+    }
+  },
+  "thresholds": {
+    "buildable_area_km2": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "phase1_buffer_holding_cost_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "phase1_expected_revenue_eur_year": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "phase1_capacity_surplus_km2": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "phase1_capex_combined_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    }
+  },
+  "sensitivity": {
+    "buildable_area_km2": {
+      "top_inputs": []
+    },
+    "phase1_buffer_holding_cost_eur": {
+      "top_inputs": [
+        {
+          "id": "land_holding_cost_eur_per_ha_year",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "phase1_expected_revenue_eur_year": {
+      "top_inputs": [
+        {
+          "id": "annual_revenue_per_mw_eur",
+          "correlation": 0.7977
+        },
+        {
+          "id": "phase1_power_target_mw",
+          "correlation": 0.5886
+        }
+      ]
+    },
+    "phase1_capacity_surplus_km2": {
+      "top_inputs": [
+        {
+          "id": "buildable_area_utilization_fraction",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "phase1_capex_combined_surplus_eur": {
+      "top_inputs": [
+        {
+          "id": "phase1_capex_budget_max_eur",
+          "correlation": 0.8409
+        },
+        {
+          "id": "remediation_cost_overrun_eur",
+          "correlation": -0.4202
+        },
+        {
+          "id": "land_holding_cost_budget_envelope_eur",
+          "correlation": -0.3181
+        },
+        {
+          "id": "land_holding_cost_eur_per_ha_year",
+          "correlation": -0.137
+        }
+      ]
+    },
+    "phase1_capex_buffer_eur": {
+      "top_inputs": [
+        {
+          "id": "phase1_capex_budget_max_eur",
+          "correlation": 0.9266
+        },
+        {
+          "id": "land_holding_cost_budget_envelope_eur",
+          "correlation": -0.3551
+        },
+        {
+          "id": "land_holding_cost_eur_per_ha_year",
+          "correlation": -0.1471
+        }
+      ]
+    },
+    "phase2_tenant_commitment_margin": {
+      "top_inputs": [
+        {
+          "id": "expected_phase2_signed_commitment_fraction",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "phase1_buffer_holding_cost_eur": [
+      {
+        "id": "land_holding_cost_eur_per_ha_year",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "phase1_expected_revenue_eur_year": [
+      {
+        "id": "phase1_power_target_mw",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "annual_revenue_per_mw_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "phase1_capacity_surplus_km2": [
+      {
+        "id": "buildable_area_utilization_fraction",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "phase1_capex_combined_surplus_eur": [
+      {
+        "id": "phase1_capex_budget_max_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "land_holding_cost_eur_per_ha_year",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "land_holding_cost_budget_envelope_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "remediation_cost_overrun_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [],
+  "model_confidence": {
+    "buildable_area_km2": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "phase1_buffer_holding_cost_eur": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.4,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.40"
+      ]
+    },
+    "phase1_expected_revenue_eur_year": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.75,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.75"
+      ]
+    },
+    "phase1_capacity_surplus_km2": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.6667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.67"
+      ]
+    },
+    "phase1_capex_combined_surplus_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.75,
+      "average_bound_width_ratio": 0.8865,
+      "reasons": [
+        "3/4 input bounds anchored in data; 1/4 are assumptions",
+        "average bound-width-to-base ratio = 0.89"
+      ]
+    },
+    "phase1_capex_buffer_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.6667,
+      "average_bound_width_ratio": 0.5154,
+      "reasons": [
+        "2/3 input bounds anchored in data; 1/3 are assumptions",
+        "average bound-width-to-base ratio = 0.52"
+      ]
+    },
+    "phase2_tenant_commitment_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.6667,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.67"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

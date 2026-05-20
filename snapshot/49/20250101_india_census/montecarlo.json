@@ -1,0 +1,336 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026-27 (Pioneer's Gambit)",
+    "plan_type": "mega_scale_national_logistics"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "household_coverage_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.045339717193264725,
+      "std": 0.03332689472875729,
+      "min": -0.13909640152439617,
+      "p05": -0.10760594261237542,
+      "p25": -0.06914971026542618,
+      "p50": -0.039984899401110774,
+      "p75": -0.01708286042631338,
+      "p95": -0.0012211076988307057,
+      "max": 0.004556599727062238
+    },
+    "budget_surplus_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 169.11146295249824,
+      "std": 929.0834661845767,
+      "min": -1977.438870585549,
+      "p05": -1341.764970863793,
+      "p25": -508.9698533775686,
+      "p50": 133.1168850322274,
+      "p75": 844.5971656301972,
+      "p95": 1761.6337270506287,
+      "max": 2481.112162510004
+    },
+    "provisional_release_timing_margin_months": {
+      "unit": "months",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.6619000341968145,
+      "std": 0.8493250031153325,
+      "min": -2.978504544350841,
+      "p05": -2.2148011431994066,
+      "p25": -1.2623241337345499,
+      "p50": -0.5348688025100903,
+      "p75": 0.012471516862765375,
+      "p95": 0.5418107635606801,
+      "max": 0.9852271541374051
+    },
+    "ingestion_mttr_margin_hours": {
+      "unit": "hours",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -2.036728683781876,
+      "std": 2.165657424279197,
+      "min": -7.952116188587503,
+      "p05": -6.070952585016758,
+      "p25": -3.564716677941087,
+      "p50": -1.7228004791806009,
+      "p75": -0.2892687902567992,
+      "p95": 0.9858561703040774,
+      "max": 1.988740893038425
+    },
+    "device_integrity_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.008404363575171181,
+      "std": 0.0077338643374651826,
+      "min": -0.029422133810969905,
+      "p05": -0.02266216664464053,
+      "p25": -0.013826468110775618,
+      "p50": -0.007143635243359269,
+      "p75": -0.0019790249255178935,
+      "p95": 0.002024081991319942,
+      "max": 0.0049699012780599315
+    }
+  },
+  "thresholds": {
+    "household_coverage_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 331,
+      "valid_count": 10000,
+      "probability": 0.0331
+    },
+    "budget_surplus_crore": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5617,
+      "valid_count": 10000,
+      "probability": 0.5617
+    },
+    "provisional_release_timing_margin_months": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2545,
+      "valid_count": 10000,
+      "probability": 0.2545
+    },
+    "ingestion_mttr_margin_hours": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1937,
+      "valid_count": 10000,
+      "probability": 0.1937
+    },
+    "device_integrity_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1376,
+      "valid_count": 10000,
+      "probability": 0.1376
+    }
+  },
+  "sensitivity": {
+    "household_coverage_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_household_coverage_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "budget_surplus_crore": {
+      "top_inputs": [
+        {
+          "id": "actual_total_cost_crore",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "provisional_release_timing_margin_months": {
+      "top_inputs": [
+        {
+          "id": "actual_provisional_release_months",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "ingestion_mttr_margin_hours": {
+      "top_inputs": [
+        {
+          "id": "actual_ingestion_mttr_hours",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "device_integrity_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_device_audit_failure_share",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "household_coverage_margin": [
+      {
+        "id": "actual_household_coverage_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.1324,
+        "delta_pp": 13.24
+      }
+    ],
+    "budget_surplus_crore": [
+      {
+        "id": "actual_total_cost_crore",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "provisional_release_timing_margin_months": [
+      {
+        "id": "actual_provisional_release_months",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "ingestion_mttr_margin_hours": [
+      {
+        "id": "actual_ingestion_mttr_hours",
+        "p_pass_low_quartile": 0.7748,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -77.48
+      }
+    ],
+    "device_integrity_margin": [
+      {
+        "id": "actual_device_audit_failure_share",
+        "p_pass_low_quartile": 0.5504,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -55.04
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "budget_surplus_crore": [
+      {
+        "id": "actual_total_cost_crore",
+        "direction": "below",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 15281.436353240008,
+        "conditional_pass_prob": 0.8384,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "provisional_release_timing_margin_months": [
+      {
+        "id": "actual_provisional_release_months",
+        "direction": "below",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 5.987528483137234,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.25
+      }
+    ],
+    "ingestion_mttr_margin_hours": [
+      {
+        "id": "actual_ingestion_mttr_hours",
+        "direction": "below",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 3.759054388457599,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.15
+      }
+    ],
+    "device_integrity_margin": [
+      {
+        "id": "actual_device_audit_failure_share",
+        "direction": "below",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 0.010197739958103084,
+        "conditional_pass_prob": 0.9173,
+        "admitted_fraction": 0.15
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_device_audit_failure_share",
+      "score": 166.1327,
+      "worst_gate": "device_integrity_margin",
+      "bound_width_ratio": 3.5,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_ingestion_mttr_hours",
+      "score": 156.1803,
+      "worst_gate": "ingestion_mttr_margin_hours",
+      "bound_width_ratio": 2.5,
+      "source": "data"
+    },
+    {
+      "id": "actual_provisional_release_months",
+      "score": 49.7,
+      "worst_gate": "provisional_release_timing_margin_months",
+      "bound_width_ratio": 0.6667,
+      "source": "data"
+    },
+    {
+      "id": "actual_total_cost_crore",
+      "score": 13.149,
+      "worst_gate": "budget_surplus_crore",
+      "bound_width_ratio": 0.3,
+      "source": "data"
+    },
+    {
+      "id": "actual_household_coverage_share",
+      "score": 1.875,
+      "worst_gate": "household_coverage_margin",
+      "bound_width_ratio": 0.1465,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "household_coverage_margin": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.1465,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.15"
+      ]
+    },
+    "budget_surplus_crore": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.3,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.30"
+      ]
+    },
+    "provisional_release_timing_margin_months": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.67"
+      ]
+    },
+    "ingestion_mttr_margin_hours": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 2.5,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 2.50"
+      ]
+    },
+    "device_integrity_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 3.5,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 3.50"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

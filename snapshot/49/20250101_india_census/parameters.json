@@ -1,0 +1,205 @@
+{
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026-27 (Pioneer's Gambit)",
+    "plan_type": "mega_scale_national_logistics",
+    "primary_goal": "Execute the decennial population and caste census across 28 states and 8 UTs (1.4B people, 240M households, 3M enumerators) between April 2026 and April 2027, achieving 99%+ household coverage, releasing provisional totals within 6 months of Phase 2 and the full caste dataset within 18 months, on a ₹12,000–15,000 crore budget.",
+    "modelling_frame": "Tests the household-coverage margin against the 99% gate; the budget surplus against the ₹15,000 crore ceiling; the provisional-release-timing margin against the 6-month post-Phase-2 deadline; the ingestion-pipeline MTTR margin against the 4-hour Issue-3 target; and the device-audit-failure margin against the 1% supervisory-penalty trigger. ECI/NSC caste-methodology sign-off, Judicial Review Board statutory authority, and Census Act presidential authorization are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "household_coverage_target",
+      "label": "Household enumeration coverage target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.99,
+      "comment": "99%+ household enumeration coverage is the primary success criterion; below this the entire Pioneer's Gambit fails its viability gate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "household coverage success target: 99% of households — viability gate."
+    },
+    {
+      "id": "budget_ceiling_crore",
+      "label": "Census budget ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "INR_crore",
+      "value": 15000,
+      "comment": "Upper bound of the ₹12,000–15,000 crore Pioneer's Gambit envelope; Risk-7 names 5% overrun as the austerity-trigger that cuts QA processes.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "budget high estimate: 15,000 crore ₹ — core project cost ceiling."
+    },
+    {
+      "id": "provisional_release_deadline_months",
+      "label": "Provisional-totals release deadline after Phase 2",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 6,
+      "comment": "Provisional population totals must publish within 6 months post-Phase 2 for delimitation; missing it triggers Risk-2 political-crisis cascade.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "provisional total publication timeline: 6 months after Phase 2 completion — political constraint."
+    },
+    {
+      "id": "ingestion_mttr_target_hours",
+      "label": "Cloud-ingestion pipeline MTTR target",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hours",
+      "value": 4,
+      "comment": "Issue 3 mandates ≤4-hour MTTR for system-wide ingestion-pipeline failure under 3x peak load; above this validation and pay cascades fail.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Cloud synchronization pipeline can achieve a maximum restoration time objective of four (4) hours."
+    },
+    {
+      "id": "device_audit_failure_threshold",
+      "label": "Device audit-failure supervisory-penalty trigger",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.01,
+      "comment": "Decision-7 chain-of-custody penalty trigger: audit failures above 1% impact supervisory performance pay; gates device-fleet integrity.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If device audit failures exceed 1%, then this metric triggers supervisory penalties linked to performance metrics."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_household_coverage_share",
+      "label": "Achieved household enumeration coverage share at Phase-2 close",
+      "unit": "fraction",
+      "why_needed": "Drives whether the 99% Pioneer's Gambit gate clears; Risk 1 names 2–5% drop on satellite hub failure, Risk 6 names 5–10% fluid-population undercount.",
+      "suggested_estimation_method": "Combine satellite-hub success rate × paper-audit recovery rate × fluid-population coverage rate; sensitivity to Risk 1, Risk 4 (monsoon), Risk 6 (nomadic/migrant)."
+    },
+    {
+      "id": "actual_total_cost_crore",
+      "label": "Bottom-up total census spend in INR crore",
+      "unit": "INR_crore",
+      "why_needed": "Tests whether the ₹15,000 crore ceiling holds; Risk 7 names 5% overrun as austerity trigger, Expert Criticism names 15% overrun on satellite-fee runaway.",
+      "suggested_estimation_method": "Sum 40% tech allocation + satellite hubs + paper audits + emergency device procurement (Risk 5) + 5% contingency + DAMF; sensitivity to Risks 1, 5, 7."
+    },
+    {
+      "id": "actual_provisional_release_months",
+      "label": "Achieved months from Phase-2 close to provisional-totals publication",
+      "unit": "months",
+      "why_needed": "Above 6 months the delimitation deadline fails per Risk-2 (state non-cooperation +2-3 months) and JRB-arbitration-overrun stress test.",
+      "suggested_estimation_method": "Sum Phase-2 aggregation duration + JRB arbitration days + state-cooperation friction; sensitivity to Risk 2 state non-cooperation and JRB arbitration speed."
+    },
+    {
+      "id": "actual_ingestion_mttr_hours",
+      "label": "Achieved cloud-ingestion-pipeline MTTR under simulated 3x peak load",
+      "unit": "hours",
+      "why_needed": "Above 4 hours Issue-3 stress test predicts 10-day supervisor-review delay and 2-week salary delay, spiking attrition and 2-4 week timeline slip.",
+      "suggested_estimation_method": "Benchmark against national digital-transaction systems' peak load MTTR; sensitivity to burst-capacity headroom and database-replication recovery time."
+    },
+    {
+      "id": "actual_device_audit_failure_share",
+      "label": "Achieved device-audit failure share over Phase 1",
+      "unit": "fraction",
+      "why_needed": "Above 1% triggers Decision-7 supervisory penalty cascade; Risk 5 names 10% device loss as the catastrophic scenario forcing ₹400-600 crore emergency procurement.",
+      "suggested_estimation_method": "Combine GPS chain-of-custody compliance rate × theft-damage rate × diverse-supplier-pool failure rate; sensitivity to Risk 5 and high-risk-zone security incidents."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "household_coverage_margin",
+      "label": "Household coverage margin against the 99% Pioneer's Gambit gate",
+      "formula_hint": "household_coverage_margin = actual_household_coverage_share - household_coverage_target",
+      "output_name": "household_coverage_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_household_coverage_share", "household_coverage_target"],
+      "why_first": "Positive margin validates the Pioneer's Gambit at the primary success criterion; negative margin invalidates the credibility of the entire census regardless of timeline."
+    },
+    {
+      "id": "budget_surplus_crore",
+      "label": "Census budget surplus against the ₹15,000 crore ceiling",
+      "formula_hint": "budget_surplus_crore = budget_ceiling_crore - actual_total_cost_crore",
+      "output_name": "budget_surplus_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["budget_ceiling_crore", "actual_total_cost_crore"],
+      "why_first": "Positive surplus preserves the 5% contingency and DAMF reserves; negative surplus triggers Risk-7 austerity that cuts the verification-survey QA backstop."
+    },
+    {
+      "id": "provisional_release_timing_margin_months",
+      "label": "Provisional-totals release timing margin against the 6-month deadline",
+      "formula_hint": "provisional_release_timing_margin_months = provisional_release_deadline_months - actual_provisional_release_months",
+      "output_name": "provisional_release_timing_margin_months",
+      "output_unit": "months",
+      "depends_on": ["provisional_release_deadline_months", "actual_provisional_release_months"],
+      "why_first": "Positive margin secures the delimitation handoff to ECI on time; negative margin triggers Risk-2 political crisis and 6-month criterion failure."
+    },
+    {
+      "id": "ingestion_mttr_margin_hours",
+      "label": "Cloud-ingestion MTTR margin against the 4-hour Issue-3 target",
+      "formula_hint": "ingestion_mttr_margin_hours = ingestion_mttr_target_hours - actual_ingestion_mttr_hours",
+      "output_name": "ingestion_mttr_margin_hours",
+      "output_unit": "hours",
+      "depends_on": ["ingestion_mttr_target_hours", "actual_ingestion_mttr_hours"],
+      "why_first": "Positive margin keeps validation and 50% performance pay flowing; negative margin breaks the Decision-5 incentive structure and triggers attrition cascade."
+    },
+    {
+      "id": "device_integrity_margin",
+      "label": "Device-audit failure margin against the 1% supervisory-penalty trigger",
+      "formula_hint": "device_integrity_margin = device_audit_failure_threshold - actual_device_audit_failure_share",
+      "output_name": "device_integrity_margin",
+      "output_unit": "fraction",
+      "depends_on": ["device_audit_failure_threshold", "actual_device_audit_failure_share"],
+      "why_first": "Positive margin keeps device-fleet penalties from cascading into supervisory pay; negative margin compounds Risk-5 emergency procurement with morale collapse."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "eci_nsc_caste_methodology_signoff_gate",
+      "label": "ECI and NSC sign off on the finalized caste linkage logic and acceptance thresholds by Q4 2025",
+      "why_it_matters": "Issue 1 / Expert Criticism: training 3M enumerators on a moving methodology is catastrophic; without ECI/NSC lockdown by Dec 2025 the entire credibility-and-validation chain collapses regardless of operational success.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Caste-data invalidation by statistical bodies; retraining cost ₹50–100 crore; quality-validation error rates spike from 5% to 15-20%; ROI drops 3-5%."
+    },
+    {
+      "id": "judicial_review_board_statutory_authority_gate",
+      "label": "Judicial Review Board legally constituted with statutory authority over data disputes by Q3 2025",
+      "why_it_matters": "Decision 4 governance hinge: without the JRB the data-release-sequencing arbitration mechanism collapses; provisional-vs-caste sequencing becomes politically litigable mid-Phase-2.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "JRB arbitration delays exceed 6 months; provisional release missed; delimitation political crisis cascades."
+    },
+    {
+      "id": "state_mou_eighty_percent_staff_dedication_gate",
+      "label": "MoUs from MT/WY/ID state governments dedicating ≥80% of local staff to audit support and dual supervision",
+      "why_it_matters": "Risk 2 / Question 7: without signed state MoUs the paper-audit-within-72-hours commitment becomes unilateral federal action; states fearing delimitation impact can sabotage by withholding revenue staff.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Paper audits cannot meet 72-hour window; Pioneer's Gambit redundancy thesis collapses; coverage drops to digital-only success rate."
+    },
+    {
+      "id": "census_act_presidential_authorization_gate",
+      "label": "President of India authorizes execution under Census Act 1948 prior to Phase 1",
+      "why_it_matters": "Mandatory legal prerequisite — no field operation can begin without it; not a probabilistic gate but treated as a fixed input by the rest of the model.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "All field operations halt; ₹12,000-15,000 crore allocation cannot be drawn; constitutional/legal crisis."
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "4-Day Work Week Pilot India",
+    "plan_type": "public_policy_pilot"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_program_budget_inr_crore": 2000,
+        "formal_sector_budget_share": 0.7,
+        "contingency_budget_share": 0.1,
+        "post_incentive_overrun_shock_inr_crore": 150,
+        "sme_redesign_shock_inr_crore": 200,
+        "legal_friction_shock_inr_crore": 150,
+        "voluntary_opt_in_threshold_share": 0.75,
+        "sme_cohort_share_target": 0.5,
+        "actual_voluntary_opt_in_rate": 0.55,
+        "sme_admin_hours_per_week_actual": 1.5,
+        "actual_sme_cohort_share": 0.35,
+        "formal_sector_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_buffer_inr_crore": -300.0,
+        "sme_cohort_representation_margin": -0.15000000000000002
+      },
+      "outputs": {
+        "formal_sector_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_buffer_inr_crore": -300.0,
+        "sme_cohort_representation_margin": -0.15000000000000002
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_program_budget_inr_crore": 2000,
+        "formal_sector_budget_share": 0.7,
+        "contingency_budget_share": 0.1,
+        "post_incentive_overrun_shock_inr_crore": 300,
+        "sme_redesign_shock_inr_crore": 400,
+        "legal_friction_shock_inr_crore": 225,
+        "voluntary_opt_in_threshold_share": 0.75,
+        "sme_cohort_share_target": 0.5,
+        "actual_voluntary_opt_in_rate": 0.75,
+        "sme_admin_hours_per_week_actual": 2.0,
+        "actual_sme_cohort_share": 0.50,
+        "formal_sector_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_buffer_inr_crore": -725.0,
+        "sme_cohort_representation_margin": 0.0
+      },
+      "outputs": {
+        "formal_sector_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_buffer_inr_crore": -725.0,
+        "sme_cohort_representation_margin": 0.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_program_budget_inr_crore": 2000,
+        "formal_sector_budget_share": 0.7,
+        "contingency_budget_share": 0.1,
+        "post_incentive_overrun_shock_inr_crore": 450,
+        "sme_redesign_shock_inr_crore": 600,
+        "legal_friction_shock_inr_crore": 300,
+        "voluntary_opt_in_threshold_share": 0.75,
+        "sme_cohort_share_target": 0.5,
+        "actual_voluntary_opt_in_rate": 0.90,
+        "sme_admin_hours_per_week_actual": 5.0,
+        "actual_sme_cohort_share": 0.60,
+        "formal_sector_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_buffer_inr_crore": -1150.0,
+        "sme_cohort_representation_margin": 0.09999999999999998
+      },
+      "outputs": {
+        "formal_sector_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_buffer_inr_crore": -1150.0,
+        "sme_cohort_representation_margin": 0.09999999999999998
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "formal_sector_budget_inr_crore": {
+        "low": 1400.0,
+        "base": 1400.0,
+        "high": 1400.0,
+        "unit": "INR_crore",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "contingency_reserve_inr_crore": {
+        "low": 200.0,
+        "base": 200.0,
+        "high": 200.0,
+        "unit": "INR_crore",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "contingency_buffer_inr_crore": {
+        "low": -300.0,
+        "base": -725.0,
+        "high": -1150.0,
+        "unit": "INR_crore",
+        "spread_ratio": null,
+        "spread_absolute": -850.0
+      },
+      "sme_cohort_representation_margin": {
+        "low": -0.15000000000000002,
+        "base": 0.0,
+        "high": 0.09999999999999998,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.25
+      }
+    }
+  },
+  "warnings": [
+    {
+      "stage": "run_scenarios",
+      "scenario": "low",
+      "calculation": "sme_admin_margin",
+      "message": "Missing dependency 'sme_admin_hours_per_week_target' (declared in missing_values_to_estimate with no value and no bounds entry).",
+      "severity": "WARN"
+    },
+    {
+      "stage": "run_scenarios",
+      "scenario": "base",
+      "calculation": "sme_admin_margin",
+      "message": "Missing dependency 'sme_admin_hours_per_week_target' (declared in missing_values_to_estimate with no value and no bounds entry).",
+      "severity": "WARN"
+    },
+    {
+      "stage": "run_scenarios",
+      "scenario": "high",
+      "calculation": "sme_admin_margin",
+      "message": "Missing dependency 'sme_admin_hours_per_week_target' (declared in missing_values_to_estimate with no value and no bounds entry).",
+      "severity": "WARN"
+    }
+  ]
+}

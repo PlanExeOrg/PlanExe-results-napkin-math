@@ -1,0 +1,57 @@
+{
+  "actual_zone_zero_compliance_share": {
+    "unit": "fraction",
+    "low": 0.75,
+    "base": 0.98,
+    "high": 0.99,
+    "rationale": "Base centered at the 98% commitment per the actual-vs-commitment default. Asymmetric downside captures Risk 1 (contraflow blockage, 2–5% tech-failure drop) and Risk 6 (5–10% public-compliance shortfall propagating to vehicle exit); upside capped by the 100% mathematical ceiling.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_drf_spend_usd": {
+    "unit": "USD",
+    "low": 200000000,
+    "base": 450000000,
+    "high": 700000000,
+    "rationale": "Bottom-up estimate of 24-hour spend on contraflow enforcement, airlift, N95, fuel caches, and Guard activation; base just below the $500M envelope; upper bound captures Risk-2 emergency-mobilization overrun ($500K–$1.2M for airlift mitigation alone, scaled by event magnitude).",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_n95_staging_share": {
+    "unit": "fraction",
+    "low": 0.05,
+    "base": 0.30,
+    "high": 0.45,
+    "rationale": "Base centered at the 30% T+16 staging target per the actual-vs-commitment default. Asymmetric downside captures the airborne-visibility grounding scenario from Premortem (visibility < 1.2 mi grounds the entire airlift); upside reflects 10 CH-47 sorties × payload performing as planned.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_c2_fuel_endurance_hours": {
+    "unit": "hours",
+    "low": 24,
+    "base": 60,
+    "high": 90,
+    "rationale": "Base 60 hours sits below the 72-hour target — base-case gate failure. Anchored on Expert Issue 2: UPS-only baseline is 24 hours without engineering diversion to fuel caches. The Critical verdict on this gate is bounds-driven, not stochastic.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_public_compliance_share": {
+    "unit": "fraction",
+    "low": 0.50,
+    "base": 0.72,
+    "high": 0.92,
+    "rationale": "IPAWS reach × Decision-8 messaging effectiveness × historical Yellowstone-area evacuation rates; base just above the 70% panic-floor threshold reflects realistic execution under Decision-8 Choice-1 messaging.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Single Through-Ticketing Program",
+    "plan_type": "Public-sector regulatory and infrastructure coordination program"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_public_coordination_budget_eur": 1500000000,
+        "capacity_building_grants_eur": 900000000,
+        "reference_distributor_budget_eur": 150000000,
+        "emergency_float_reserve_eur": 300000000,
+        "initial_clearing_float_eur": 200000000,
+        "through_ticket_adoption_target_fraction": 0.4,
+        "governance_ftes": 35,
+        "liquidity_trigger_multiple": 1.5,
+        "annual_cross_border_journeys": 20000000,
+        "peak_daily_clearing_obligation_eur": 40000000,
+        "average_fte_monthly_cost_eur": 10000,
+        "clearing_fee_per_ticket_eur": 0.30
+      },
+      "outputs": {
+        "expected_annual_through_tickets": 8000000.0,
+        "expected_annual_clearing_revenue_eur": 2400000.0,
+        "emergency_float_buffer_eur": 240000000.0,
+        "budget_allocation_surplus_eur": -50000000.0,
+        "governance_personnel_cost_two_year_eur": 8400000.0,
+        "clearing_revenue_buffer_eur": -197600000.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_public_coordination_budget_eur": 1500000000,
+        "capacity_building_grants_eur": 900000000,
+        "reference_distributor_budget_eur": 150000000,
+        "emergency_float_reserve_eur": 300000000,
+        "initial_clearing_float_eur": 200000000,
+        "through_ticket_adoption_target_fraction": 0.4,
+        "governance_ftes": 35,
+        "liquidity_trigger_multiple": 1.5,
+        "annual_cross_border_journeys": 35000000,
+        "peak_daily_clearing_obligation_eur": 90000000,
+        "average_fte_monthly_cost_eur": 15000,
+        "clearing_fee_per_ticket_eur": 0.80
+      },
+      "outputs": {
+        "expected_annual_through_tickets": 14000000.0,
+        "expected_annual_clearing_revenue_eur": 11200000.0,
+        "emergency_float_buffer_eur": 165000000.0,
+        "budget_allocation_surplus_eur": -50000000.0,
+        "governance_personnel_cost_two_year_eur": 12600000.0,
+        "clearing_revenue_buffer_eur": -188800000.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_public_coordination_budget_eur": 1500000000,
+        "capacity_building_grants_eur": 900000000,
+        "reference_distributor_budget_eur": 150000000,
+        "emergency_float_reserve_eur": 300000000,
+        "initial_clearing_float_eur": 200000000,
+        "through_ticket_adoption_target_fraction": 0.4,
+        "governance_ftes": 35,
+        "liquidity_trigger_multiple": 1.5,
+        "annual_cross_border_journeys": 60000000,
+        "peak_daily_clearing_obligation_eur": 180000000,
+        "average_fte_monthly_cost_eur": 22000,
+        "clearing_fee_per_ticket_eur": 2.00
+      },
+      "outputs": {
+        "expected_annual_through_tickets": 24000000.0,
+        "expected_annual_clearing_revenue_eur": 48000000.0,
+        "emergency_float_buffer_eur": 30000000.0,
+        "budget_allocation_surplus_eur": -50000000.0,
+        "governance_personnel_cost_two_year_eur": 18480000.0,
+        "clearing_revenue_buffer_eur": -152000000.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "expected_annual_through_tickets": {
+        "low": 8000000.0,
+        "base": 14000000.0,
+        "high": 24000000.0,
+        "unit": "tickets_per_year",
+        "spread_ratio": 3.0,
+        "spread_absolute": 16000000.0
+      },
+      "expected_annual_clearing_revenue_eur": {
+        "low": 2400000.0,
+        "base": 11200000.0,
+        "high": 48000000.0,
+        "unit": "EUR",
+        "spread_ratio": 20.0,
+        "spread_absolute": 45600000.0
+      },
+      "emergency_float_buffer_eur": {
+        "low": 240000000.0,
+        "base": 165000000.0,
+        "high": 30000000.0,
+        "unit": "EUR",
+        "spread_ratio": 0.125,
+        "spread_absolute": -210000000.0
+      },
+      "budget_allocation_surplus_eur": {
+        "low": -50000000.0,
+        "base": -50000000.0,
+        "high": -50000000.0,
+        "unit": "EUR",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "governance_personnel_cost_two_year_eur": {
+        "low": 8400000.0,
+        "base": 12600000.0,
+        "high": 18480000.0,
+        "unit": "EUR",
+        "spread_ratio": 2.2,
+        "spread_absolute": 10080000.0
+      },
+      "clearing_revenue_buffer_eur": {
+        "low": -197600000.0,
+        "base": -188800000.0,
+        "high": -152000000.0,
+        "unit": "EUR",
+        "spread_ratio": 0.7692307692307693,
+        "spread_absolute": 45600000.0
+      }
+    }
+  },
+  "warnings": []
+}

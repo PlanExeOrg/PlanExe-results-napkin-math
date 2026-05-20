@@ -1,0 +1,57 @@
+{
+  "actual_manual_intervention_hours_per_week": {
+    "unit": "hours_per_week",
+    "low": 1.0,
+    "base": 2.0,
+    "high": 4.5,
+    "rationale": "Base centered at the 2 hr/week commitment per the actual-vs-commitment default. Upside anchored on Issue 2 (10% material variance plus Risk-5 grading-protocol variance combine to roughly double exception-handling time); 4.5 captures the breach-plus-variance case without speculating beyond cited drivers.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_total_project_cost_usd": {
+    "unit": "USD",
+    "low": 300000,
+    "base": 500000,
+    "high": 575000,
+    "rationale": "Base centered at the $500K committed ceiling per the actual-vs-commitment default — the Builder envelope is sized to be spent. Low anchored on the plan's stated $300K minimum; upside captures Risk-3 $20–50K overrun plus Issue-1 15% spare-parts buffer ($25K on hardware CAPEX).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_opc_ua_bid_usd": {
+    "unit": "USD",
+    "low": 30000,
+    "base": 50000,
+    "high": 95000,
+    "rationale": "Base centered at the $50K plan assumption for OPC UA middleware per the actual-vs-commitment default (the source-stated committed value). Upside reaches past the $75K trigger to capture wire-bender protocol-complexity premium named in Issue 2.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_api_p99_latency_ms": {
+    "unit": "milliseconds",
+    "low": 25,
+    "base": 70,
+    "high": 180,
+    "rationale": "Plan budgets on-premise edge compute for low-latency control; no source-named baseline value so this is assumption. Base 70 ms is typical edge-PLC OPC UA round-trip; upper 180 ms captures Risk-4 local-server cloud-failover scenario named in the diverse-risk register.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_onsite_expert_cost_usd": {
+    "unit": "USD",
+    "low": 10000,
+    "base": 15000,
+    "high": 32000,
+    "rationale": "Base centered at the $15K Issue-3 named baseline rate per the actual-vs-commitment default. Upside reaches past the $25K cap to capture the Risk-2 obscure-protocol mobilization-premium scenario; low captures the case where a local specialist underbids.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

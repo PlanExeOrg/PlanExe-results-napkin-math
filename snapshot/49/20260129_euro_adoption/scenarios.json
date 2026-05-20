@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Denmark DKK to EUR Adoption (Builder's Blueprint)",
+    "plan_type": "public_finance_transition"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_transition_budget_dkk": 15000000000,
+        "contingency_reserve_dkk": 50000000,
+        "public_info_funding_share": 0.005,
+        "referendum_support_threshold": 0.60,
+        "public_awareness_threshold": 0.70,
+        "annual_real_indexation_factor": 1.005,
+        "actual_referendum_support": 0.45,
+        "actual_public_awareness": 0.40,
+        "baseline_annual_inflation_rate": 0.01,
+        "cash_logistics_shock_cost_dkk": 30000000
+      },
+      "outputs": {
+        "public_info_budget_dkk": 75000000.0,
+        "referendum_support_margin": -0.15,
+        "public_awareness_margin": -0.30000000000000004,
+        "contingency_buffer_dkk": 20000000,
+        "real_indexation_margin": -0.0050000000000000044
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_transition_budget_dkk": 20000000000,
+        "contingency_reserve_dkk": 50000000,
+        "public_info_funding_share": 0.005,
+        "referendum_support_threshold": 0.60,
+        "public_awareness_threshold": 0.70,
+        "annual_real_indexation_factor": 1.015,
+        "actual_referendum_support": 0.60,
+        "actual_public_awareness": 0.70,
+        "baseline_annual_inflation_rate": 0.02,
+        "cash_logistics_shock_cost_dkk": 100000000
+      },
+      "outputs": {
+        "public_info_budget_dkk": 100000000.0,
+        "referendum_support_margin": 0.0,
+        "public_awareness_margin": 0.0,
+        "contingency_buffer_dkk": -50000000,
+        "real_indexation_margin": -0.0050000000000000044
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_transition_budget_dkk": 25000000000,
+        "contingency_reserve_dkk": 50000000,
+        "public_info_funding_share": 0.005,
+        "referendum_support_threshold": 0.60,
+        "public_awareness_threshold": 0.70,
+        "annual_real_indexation_factor": 1.025,
+        "actual_referendum_support": 0.72,
+        "actual_public_awareness": 0.90,
+        "baseline_annual_inflation_rate": 0.04,
+        "cash_logistics_shock_cost_dkk": 200000000
+      },
+      "outputs": {
+        "public_info_budget_dkk": 125000000.0,
+        "referendum_support_margin": 0.12,
+        "public_awareness_margin": 0.19999999999999996,
+        "contingency_buffer_dkk": -150000000,
+        "real_indexation_margin": -0.01499999999999991
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "public_info_budget_dkk": {
+        "low": 75000000.0,
+        "base": 100000000.0,
+        "high": 125000000.0,
+        "unit": "DKK",
+        "spread_ratio": 1.6666666666666667,
+        "spread_absolute": 50000000.0
+      },
+      "referendum_support_margin": {
+        "low": -0.15,
+        "base": 0.0,
+        "high": 0.12,
+        "unit": "fraction",
+        "spread_ratio": -0.7999999999999999,
+        "spread_absolute": 0.27
+      },
+      "public_awareness_margin": {
+        "low": -0.30000000000000004,
+        "base": 0.0,
+        "high": 0.19999999999999996,
+        "unit": "fraction",
+        "spread_ratio": -0.6666666666666664,
+        "spread_absolute": 0.5
+      },
+      "contingency_buffer_dkk": {
+        "low": 20000000,
+        "base": -50000000,
+        "high": -150000000,
+        "unit": "DKK",
+        "spread_ratio": -7.5,
+        "spread_absolute": -170000000
+      },
+      "real_indexation_margin": {
+        "low": -0.0050000000000000044,
+        "base": -0.0050000000000000044,
+        "high": -0.01499999999999991,
+        "unit": "ratio",
+        "spread_ratio": 2.9999999999999822,
+        "spread_absolute": -0.009999999999999905
+      }
+    }
+  },
+  "warnings": []
+}

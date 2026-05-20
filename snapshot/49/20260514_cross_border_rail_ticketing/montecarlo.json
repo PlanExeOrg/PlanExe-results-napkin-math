@@ -1,0 +1,288 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Single Through-Ticketing Program",
+    "plan_type": "Public-sector regulatory and infrastructure coordination program"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "expected_annual_through_tickets": {
+      "unit": "tickets_per_year",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 15286100.278280001,
+      "std": 3263572.7271319437,
+      "min": 8062138.800000001,
+      "p05": 10227680.700000001,
+      "p25": 12872246.3,
+      "p50": 14991201.0,
+      "p75": 17603340.3,
+      "p95": 21136375.200000003,
+      "max": 23791701.200000003
+    },
+    "expected_annual_clearing_revenue_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 15876882.720087072,
+      "std": 6491171.839636899,
+      "min": 2578805.8635052773,
+      "p05": 7022701.1351571325,
+      "p25": 10978885.780994684,
+      "p50": 14915758.193917021,
+      "p75": 19730674.798655286,
+      "p95": 28134957.57130007,
+      "max": 43069793.71235579
+    },
+    "emergency_float_buffer_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 145046859.53771898,
+      "std": 43857327.790425,
+      "min": 31266240.247913122,
+      "p05": 66943349.38501271,
+      "p25": 113683859.43018684,
+      "p50": 149300536.821091,
+      "p75": 178060497.56693706,
+      "p95": 212372863.8067424,
+      "max": 239293281.83335373
+    },
+    "budget_allocation_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -50000000.0,
+      "std": 0.0,
+      "min": -50000000.0,
+      "p05": -50000000.0,
+      "p25": -50000000.0,
+      "p50": -50000000.0,
+      "p75": -50000000.0,
+      "p95": -50000000.0,
+      "max": -50000000.0
+    },
+    "governance_personnel_cost_two_year_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 13148335.553102417,
+      "std": 2066139.1809282762,
+      "min": 8448060.588241613,
+      "p05": 9890629.79699842,
+      "p25": 11612732.350040624,
+      "p50": 13001415.757927671,
+      "p75": 14618135.110843226,
+      "p95": 16734949.639945667,
+      "max": 18432227.83082882
+    },
+    "clearing_revenue_buffer_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -184123117.27991295,
+      "std": 6491171.839636899,
+      "min": -197421194.13649473,
+      "p05": -192977298.86484286,
+      "p25": -189021114.21900532,
+      "p50": -185084241.80608296,
+      "p75": -180269325.2013447,
+      "p95": -171865042.42869994,
+      "max": -156930206.2876442
+    }
+  },
+  "thresholds": {
+    "expected_annual_through_tickets": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "expected_annual_clearing_revenue_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "emergency_float_buffer_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "budget_allocation_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "governance_personnel_cost_two_year_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    }
+  },
+  "sensitivity": {
+    "expected_annual_through_tickets": {
+      "top_inputs": [
+        {
+          "id": "annual_cross_border_journeys",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "expected_annual_clearing_revenue_eur": {
+      "top_inputs": [
+        {
+          "id": "clearing_fee_per_ticket_eur",
+          "correlation": 0.8321
+        },
+        {
+          "id": "annual_cross_border_journeys",
+          "correlation": 0.5156
+        }
+      ]
+    },
+    "emergency_float_buffer_eur": {
+      "top_inputs": [
+        {
+          "id": "peak_daily_clearing_obligation_eur",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "budget_allocation_surplus_eur": {
+      "top_inputs": []
+    },
+    "governance_personnel_cost_two_year_eur": {
+      "top_inputs": [
+        {
+          "id": "average_fte_monthly_cost_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "clearing_revenue_buffer_eur": {
+      "top_inputs": [
+        {
+          "id": "clearing_fee_per_ticket_eur",
+          "correlation": 0.8321
+        },
+        {
+          "id": "annual_cross_border_journeys",
+          "correlation": 0.5156
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "expected_annual_through_tickets": [
+      {
+        "id": "annual_cross_border_journeys",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "expected_annual_clearing_revenue_eur": [
+      {
+        "id": "annual_cross_border_journeys",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "clearing_fee_per_ticket_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "emergency_float_buffer_eur": [
+      {
+        "id": "peak_daily_clearing_obligation_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "governance_personnel_cost_two_year_eur": [
+      {
+        "id": "average_fte_monthly_cost_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [],
+  "model_confidence": {
+    "expected_annual_through_tickets": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.1429,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.14"
+      ]
+    },
+    "expected_annual_clearing_revenue_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.6339,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.63"
+      ]
+    },
+    "emergency_float_buffer_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.5556,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.56"
+      ]
+    },
+    "budget_allocation_surplus_eur": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "governance_personnel_cost_two_year_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.80"
+      ]
+    },
+    "clearing_revenue_buffer_eur": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.6339,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.63"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

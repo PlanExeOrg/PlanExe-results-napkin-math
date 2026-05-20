@@ -1,0 +1,57 @@
+{
+  "achieved_wave1_verification_fraction": {
+    "unit": "fraction",
+    "low": 0.55,
+    "base": 0.85,
+    "high": 0.85,
+    "rationale": "Gate variable cannot overshoot the 85% Wave 1 verification target by design; bernoulli_gate models execution risk. Low reflects partial-handover floor on miss. Pass probability 0.5 reflects unprecedented planetary severance scope with no comparable precedent.",
+    "source": "assumption",
+    "sampling_discipline": "bernoulli_gate",
+    "non_negative": true,
+    "default_pass_probability": 0.5
+  },
+  "total_relocation_headcount": {
+    "unit": "people",
+    "low": 200000000,
+    "base": 600000000,
+    "high": 1500000000,
+    "rationale": "No headcount disclosed in the plan; estimation method calls for registry audit between 3 deg S and 3 deg N plus designated personnel globally. Wide range reflects high uncertainty over which populations qualify as designated relocatees.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "total_24mo_severance_and_stabilization_cost_usd": {
+    "unit": "USD",
+    "low": 8000000000000,
+    "base": 14000000000000,
+    "high": 25000000000000,
+    "rationale": "Base modestly exceeds $12T allocation given replacement-labor, modular-housing, severance contracts, and IOB opex at planetary scale. High-side spread covers cost overruns drawing on the $18T residual envelope; low covers underspend scenario.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "achieved_machine_energy_contribution_fraction": {
+    "unit": "fraction",
+    "low": 0.03,
+    "base": 0.10,
+    "high": 0.10,
+    "rationale": "Gate variable cannot overshoot the 10% mandated contribution by design; bernoulli_gate models compliance pass/fail. Low reflects partial-metering shortfall floor. Pass probability 0.6 reflects machine-domain southern viability dependency flagged as an unmodelled gate.",
+    "source": "assumption",
+    "sampling_discipline": "bernoulli_gate",
+    "non_negative": true,
+    "default_pass_probability": 0.6
+  },
+  "achieved_northern_hub_density_per_km2": {
+    "unit": "persons_per_km2",
+    "low": 8000,
+    "base": 12000,
+    "high": 18000,
+    "rationale": "Base centered just under 13k/km^2 planning cap; high-side spread to 18k reflects influx-vs-housing-deployment risk that breaches humane mandate. Low reflects successful modular housing acceleration across the five largest hubs.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

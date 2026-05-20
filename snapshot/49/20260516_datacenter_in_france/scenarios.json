@@ -1,0 +1,123 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Data Center - Pragmatic Scale-Up",
+    "plan_type": "Hyperscale infrastructure / industrial CAPEX programme"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "phase1_capex_budget_max_eur": 8500000000.0,
+        "phase2_takeorpay_gate_threshold": 0.6,
+        "total_footprint_km2": 161.0,
+        "buffer_share_fraction": 0.8,
+        "phase1_power_target_mw": 500.0,
+        "land_holding_cost_eur_per_ha_year": 50000.0,
+        "land_holding_cost_budget_envelope_eur": 900000000.0,
+        "phase1_holding_duration_months": 18.0,
+        "annual_revenue_per_mw_eur": 1500000.0,
+        "expected_phase2_signed_commitment_fraction": 0.35,
+        "buildable_area_utilization_fraction": 0.05,
+        "remediation_cost_overrun_eur": 0.0
+      },
+      "outputs": {
+        "buildable_area_km2": 32.199999999999996,
+        "phase1_buffer_holding_cost_eur": 966000000.0000002,
+        "phase1_expected_revenue_eur_year": 750000000.0,
+        "phase1_capacity_surplus_km2": 30.589999999999996,
+        "phase1_capex_combined_surplus_eur": 6634000000.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "phase1_capex_budget_max_eur": 10000000000.0,
+        "phase2_takeorpay_gate_threshold": 0.6,
+        "total_footprint_km2": 161.0,
+        "buffer_share_fraction": 0.8,
+        "phase1_power_target_mw": 1000.0,
+        "land_holding_cost_eur_per_ha_year": 62500.0,
+        "land_holding_cost_budget_envelope_eur": 1300000000.0,
+        "phase1_holding_duration_months": 18.0,
+        "annual_revenue_per_mw_eur": 2500000.0,
+        "expected_phase2_signed_commitment_fraction": 0.6,
+        "buildable_area_utilization_fraction": 0.15,
+        "remediation_cost_overrun_eur": 750000000.0
+      },
+      "outputs": {
+        "buildable_area_km2": 32.199999999999996,
+        "phase1_buffer_holding_cost_eur": 1207500000.0000002,
+        "phase1_expected_revenue_eur_year": 2500000000.0,
+        "phase1_capacity_surplus_km2": 27.369999999999997,
+        "phase1_capex_combined_surplus_eur": 6742500000.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "phase1_capex_budget_max_eur": 11500000000.0,
+        "phase2_takeorpay_gate_threshold": 0.6,
+        "total_footprint_km2": 161.0,
+        "buffer_share_fraction": 0.8,
+        "phase1_power_target_mw": 1000.0,
+        "land_holding_cost_eur_per_ha_year": 75000.0,
+        "land_holding_cost_budget_envelope_eur": 2000000000.0,
+        "phase1_holding_duration_months": 18.0,
+        "annual_revenue_per_mw_eur": 4000000.0,
+        "expected_phase2_signed_commitment_fraction": 0.75,
+        "buildable_area_utilization_fraction": 0.3,
+        "remediation_cost_overrun_eur": 1500000000.0
+      },
+      "outputs": {
+        "buildable_area_km2": 32.199999999999996,
+        "phase1_buffer_holding_cost_eur": 1449000000.0000002,
+        "phase1_expected_revenue_eur_year": 4000000000.0,
+        "phase1_capacity_surplus_km2": 22.54,
+        "phase1_capex_combined_surplus_eur": 6551000000.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "buildable_area_km2": {
+        "low": 32.199999999999996,
+        "base": 32.199999999999996,
+        "high": 32.199999999999996,
+        "unit": "km2",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "phase1_buffer_holding_cost_eur": {
+        "low": 966000000.0000002,
+        "base": 1207500000.0000002,
+        "high": 1449000000.0000002,
+        "unit": "EUR",
+        "spread_ratio": 1.4999999999999998,
+        "spread_absolute": 483000000.0
+      },
+      "phase1_expected_revenue_eur_year": {
+        "low": 750000000.0,
+        "base": 2500000000.0,
+        "high": 4000000000.0,
+        "unit": "EUR_per_year",
+        "spread_ratio": 5.333333333333333,
+        "spread_absolute": 3250000000.0
+      },
+      "phase1_capacity_surplus_km2": {
+        "low": 30.589999999999996,
+        "base": 27.369999999999997,
+        "high": 22.54,
+        "unit": "km2",
+        "spread_ratio": 0.736842105263158,
+        "spread_absolute": -8.049999999999997
+      },
+      "phase1_capex_combined_surplus_eur": {
+        "low": 6634000000.0,
+        "base": 6742500000.0,
+        "high": 6551000000.0,
+        "unit": "EUR",
+        "spread_ratio": 0.9874886946035575,
+        "spread_absolute": -83000000.0
+      }
+    }
+  },
+  "warnings": []
+}

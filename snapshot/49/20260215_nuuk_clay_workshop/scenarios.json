@@ -1,0 +1,123 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "commercial community venture"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "year1_budget_dkk": 2000000,
+        "contingency_fraction": 0.15,
+        "drop_in_revenue_share": 0.15,
+        "minimum_viable_hourly_rate_dkk": 110,
+        "taster_conversion_rate": 0.05,
+        "rental_shortfall_stress_dkk": 100000,
+        "labor_law_overrun_stress_dkk": 150000,
+        "kiln_failure_loss_dkk": 120000,
+        "year1_revenue_target_dkk": 1200000,
+        "monthly_fixed_labor_cost_dkk": 60000,
+        "drop_in_available_hours_per_year": 800,
+        "drop_in_utilization_rate": 0.15
+      },
+      "outputs": {
+        "contingency_reserve_dkk": 300000.0,
+        "drop_in_expected_revenue_dkk": 13200.0,
+        "drop_in_revenue_surplus_dkk": -166800.0,
+        "annual_labor_cost_dkk": 720000.0,
+        "budget_after_labor_margin_dkk": 980000.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "year1_budget_dkk": 2000000,
+        "contingency_fraction": 0.15,
+        "drop_in_revenue_share": 0.25,
+        "minimum_viable_hourly_rate_dkk": 165,
+        "taster_conversion_rate": 0.15,
+        "rental_shortfall_stress_dkk": 200000,
+        "labor_law_overrun_stress_dkk": 300000,
+        "kiln_failure_loss_dkk": 200000,
+        "year1_revenue_target_dkk": 1800000,
+        "monthly_fixed_labor_cost_dkk": 85000,
+        "drop_in_available_hours_per_year": 1200,
+        "drop_in_utilization_rate": 0.35
+      },
+      "outputs": {
+        "contingency_reserve_dkk": 300000.0,
+        "drop_in_expected_revenue_dkk": 69300.0,
+        "drop_in_revenue_surplus_dkk": -380700.0,
+        "annual_labor_cost_dkk": 1020000.0,
+        "budget_after_labor_margin_dkk": 680000.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "year1_budget_dkk": 2000000,
+        "contingency_fraction": 0.15,
+        "drop_in_revenue_share": 0.35,
+        "minimum_viable_hourly_rate_dkk": 200,
+        "taster_conversion_rate": 0.25,
+        "rental_shortfall_stress_dkk": 300000,
+        "labor_law_overrun_stress_dkk": 500000,
+        "kiln_failure_loss_dkk": 300000,
+        "year1_revenue_target_dkk": 2400000,
+        "monthly_fixed_labor_cost_dkk": 115000,
+        "drop_in_available_hours_per_year": 1600,
+        "drop_in_utilization_rate": 0.55
+      },
+      "outputs": {
+        "contingency_reserve_dkk": 300000.0,
+        "drop_in_expected_revenue_dkk": 176000.0,
+        "drop_in_revenue_surplus_dkk": -664000.0,
+        "annual_labor_cost_dkk": 1380000.0,
+        "budget_after_labor_margin_dkk": 320000.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "contingency_reserve_dkk": {
+        "low": 300000.0,
+        "base": 300000.0,
+        "high": 300000.0,
+        "unit": "DKK",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "drop_in_expected_revenue_dkk": {
+        "low": 13200.0,
+        "base": 69300.0,
+        "high": 176000.0,
+        "unit": "DKK",
+        "spread_ratio": 13.333333333333334,
+        "spread_absolute": 162800.0
+      },
+      "drop_in_revenue_surplus_dkk": {
+        "low": -166800.0,
+        "base": -380700.0,
+        "high": -664000.0,
+        "unit": "DKK",
+        "spread_ratio": 3.980815347721823,
+        "spread_absolute": -497200.0
+      },
+      "annual_labor_cost_dkk": {
+        "low": 720000.0,
+        "base": 1020000.0,
+        "high": 1380000.0,
+        "unit": "DKK",
+        "spread_ratio": 1.9166666666666667,
+        "spread_absolute": 660000.0
+      },
+      "budget_after_labor_margin_dkk": {
+        "low": 980000.0,
+        "base": 680000.0,
+        "high": 320000.0,
+        "unit": "DKK",
+        "spread_ratio": 0.32653061224489793,
+        "spread_absolute": -660000.0
+      }
+    }
+  },
+  "warnings": []
+}

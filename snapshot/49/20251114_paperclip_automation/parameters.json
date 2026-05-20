@@ -1,0 +1,198 @@
+{
+  "plan_summary": {
+    "plan_name": "Paperclip Automation Pilot Line (Builder Pragmatic Integration)",
+    "plan_type": "industrial_automation_pilot",
+    "primary_goal": "Build a fully automated, end-to-end pilot paperclip line in 4,000 sq ft of the Cleveland building that takes API orders and stages labeled parcels for UPS/FedEx pickup with ≤2 hours/week of manual intervention, on a $300–500K budget under the Builder strategy.",
+    "modelling_frame": "Tests the manual-intervention-hours margin against the 2 hr/week ceiling; the budget surplus against bottom-up program spend; the OPC UA middleware bid margin against the $75K custom-IO-fallback trigger; the API p99 latency margin against the 100 ms HMI-pivot trigger; and the on-site PLC-expert contract margin against the $25K Phase-2 stabilization floor. Cleveland permits, used-wire-bender modern fieldbus availability, and UPS/FedEx fixed-table staging are treated as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "budget_max_usd",
+      "label": "Program budget ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 500000,
+      "comment": "Upper bound of the $300–500K Builder envelope; absorbs hardware (~50%), OPC UA middleware ($50K), on-site PLC tuning ($15K), and 10% contingency reserves.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total project budget range maximum: $500,000 — input to financial model."
+    },
+    {
+      "id": "manual_intervention_threshold_hours_per_week",
+      "label": "Manual-intervention ceiling for feasibility-proof",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hours_per_week",
+      "value": 2,
+      "comment": "Above 2 hr/week the end-to-end demonstration fails the feasibility metric; the primary success criterion of the Builder strategy.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If documented manual intervention time exceeds 120 minutes across a standard operational week, then the end-to-end demo fails feasibility proof."
+    },
+    {
+      "id": "opc_ua_bid_threshold_usd",
+      "label": "OPC UA middleware bid threshold for custom-IO pivot",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 75000,
+      "comment": "Premortem trigger: if the lowest qualified bid exceeds $75K the project reverts to the high-risk custom I/O translator path, breaking the Decision-3 abstraction-layer thesis.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If lowest qualified OPC UA middleware bid exceeds $75,000, project reverts to custom I/O translator model."
+    },
+    {
+      "id": "api_latency_p99_threshold_ms",
+      "label": "API job-queue p99 latency HMI-pivot trigger",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "milliseconds",
+      "value": 100,
+      "comment": "Premortem trigger: if 99th-percentile API job-queue latency exceeds 100 ms under stress test, the project pivots from API-only to HMI-controlled demonstration.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If the 99th percentile API job queue latency exceeds 100ms during stress testing, then the project pivots to HMI-controlled demonstration."
+    },
+    {
+      "id": "onsite_expert_max_cost_usd",
+      "label": "On-site PLC-expert contract cap for Phase-2 stabilization",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 25000,
+      "comment": "Review-plan gate: the mandatory 1-week on-site PLC integration contract must clear under $25K within 21 days; above this breaches the Issue-3 ring-fenced reserve.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Within 21 days, secure signed contract guaranteeing 1 week on-site PLC integration support, cost less than $25,000."
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_manual_intervention_hours_per_week",
+      "label": "Projected manual-intervention hours per week under Phase-6 demo conditions",
+      "unit": "hours_per_week",
+      "why_needed": "Drives whether the 2 hr/week feasibility-proof threshold clears; Issue 2 names a 10% material-variance scenario that pushes manual handling well above the ceiling.",
+      "suggested_estimation_method": "Bottom-up: exception rate × time-per-exception × shift hours; sensitivity to Risk 2 wire-bender PLC instability and Risk 5 grading-protocol variance."
+    },
+    {
+      "id": "actual_total_project_cost_usd",
+      "label": "Bottom-up total program cost across hardware, middleware, expert, and contingency",
+      "unit": "USD",
+      "why_needed": "Tests whether the $500K ceiling holds; Risk 3 names a $20–50K overrun, and Issue 1 adds a 15% spare-parts buffer on top of the hardware CAPEX.",
+      "suggested_estimation_method": "Sum machinery ($150–250K) + OPC UA middleware + on-site expert + edge compute + label/conveyor + permits + 10% contingency + 15% spare-parts buffer; sensitivity to Risks 1, 2, 3."
+    },
+    {
+      "id": "actual_opc_ua_bid_usd",
+      "label": "Lowest-qualified OPC UA middleware bid received",
+      "unit": "USD",
+      "why_needed": "Above $75K the project reverts to the custom-IO translator path per the premortem trigger, which the Builder strategy specifically exists to avoid.",
+      "suggested_estimation_method": "RFP to 3+ controls-integration specialists; benchmark against industry-standard OPC UA gateway+abstraction-layer engagements; sensitivity to wire-bender protocol complexity."
+    },
+    {
+      "id": "actual_api_p99_latency_ms",
+      "label": "Achieved API job-queue p99 latency under stress test",
+      "unit": "milliseconds",
+      "why_needed": "Above 100 ms the project pivots to HMI-controlled demonstration per the premortem trigger; this invalidates the API-only feasibility claim.",
+      "suggested_estimation_method": "Edge-compute hardware spec × OPC UA round-trip × queue backpressure modelling; benchmark against industry MQTT/REST control-loop latencies in similar pilots."
+    },
+    {
+      "id": "actual_onsite_expert_cost_usd",
+      "label": "Achieved on-site PLC-expert contract cost for the 1-week stabilization window",
+      "unit": "USD",
+      "why_needed": "Above $25K the contract breaches the review-plan Phase-2 stabilization budget and forces reallocation from spare-parts or contingency reserves.",
+      "suggested_estimation_method": "Solicit 2–3 quotes from specialized PLC integration contractors; sensitivity to mobilization-time premium and wire-bender protocol obscurity."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "manual_intervention_margin_hours",
+      "label": "Manual-intervention margin against the 2 hr/week feasibility ceiling",
+      "formula_hint": "manual_intervention_margin_hours = manual_intervention_threshold_hours_per_week - actual_manual_intervention_hours_per_week",
+      "output_name": "manual_intervention_margin_hours",
+      "output_unit": "hours_per_week",
+      "depends_on": ["manual_intervention_threshold_hours_per_week", "actual_manual_intervention_hours_per_week"],
+      "why_first": "Positive margin clears the feasibility-proof success metric; negative margin invalidates the central Builder thesis regardless of how clean the integration is otherwise."
+    },
+    {
+      "id": "budget_surplus_usd",
+      "label": "Program budget surplus against the $500K ceiling",
+      "formula_hint": "budget_surplus_usd = budget_max_usd - actual_total_project_cost_usd",
+      "output_name": "budget_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["budget_max_usd", "actual_total_project_cost_usd"],
+      "why_first": "Positive surplus preserves the Risk-3 contingency and Issue-1 spare-parts reserve; negative surplus forces scope cuts or sponsor capital call."
+    },
+    {
+      "id": "opc_ua_bid_margin_usd",
+      "label": "OPC UA middleware bid margin against the $75K custom-IO trigger",
+      "formula_hint": "opc_ua_bid_margin_usd = opc_ua_bid_threshold_usd - actual_opc_ua_bid_usd",
+      "output_name": "opc_ua_bid_margin_usd",
+      "output_unit": "USD",
+      "depends_on": ["opc_ua_bid_threshold_usd", "actual_opc_ua_bid_usd"],
+      "why_first": "Positive margin keeps the Decision-3 abstraction-layer strategy intact; negative margin forces the custom-IO translator pivot and scope creep onto the internal developer."
+    },
+    {
+      "id": "api_latency_margin_ms",
+      "label": "API p99 latency margin against the 100 ms HMI-pivot trigger",
+      "formula_hint": "api_latency_margin_ms = api_latency_p99_threshold_ms - actual_api_p99_latency_ms",
+      "output_name": "api_latency_margin_ms",
+      "output_unit": "milliseconds",
+      "depends_on": ["api_latency_p99_threshold_ms", "actual_api_p99_latency_ms"],
+      "why_first": "Positive margin preserves the API-only Phase-6 demonstration target; negative margin forces HMI-controlled fallback and invalidates the autonomous-flow feasibility claim."
+    },
+    {
+      "id": "onsite_expert_budget_margin_usd",
+      "label": "On-site PLC-expert contract margin against the $25K Phase-2 cap",
+      "formula_hint": "onsite_expert_budget_margin_usd = onsite_expert_max_cost_usd - actual_onsite_expert_cost_usd",
+      "output_name": "onsite_expert_budget_margin_usd",
+      "output_unit": "USD",
+      "depends_on": ["onsite_expert_max_cost_usd", "actual_onsite_expert_cost_usd"],
+      "why_first": "Positive margin secures the Issue-3 mandatory stabilization without reallocating reserves; negative margin reaches into the spare-parts or contingency pool and weakens later-phase resilience."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "cleveland_building_electrical_osha_permits_gate",
+      "label": "Building, electrical, and OSHA permits secured before Phase 2 rigging",
+      "why_it_matters": "Risk 1 names permitting as the primary regulatory blocker; without permits before Phase 2 the rigging crew cannot install machinery and the schedule slips 4–8 weeks regardless of integration progress.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "4–8 week schedule delay; $10–20K additional cost; possible stop-work order during rigging; entire 6-phase sequence cascades."
+    },
+    {
+      "id": "used_wire_bender_modern_fieldbus_gate",
+      "label": "A used wire bender within $20–40K supports a modern documented fieldbus (Modbus TCP / Ethernet/IP / Profinet)",
+      "why_it_matters": "The Decision-3 OPC UA abstraction layer presupposes a modern fieldbus on the used bender; without it the integration reverts to custom I/O translation and the Builder strategy thesis collapses regardless of budget.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Custom I/O translator path activated; $15–30K extra cost per Risk 2; 4–6 weeks development time; internal-developer scope creeps off API into low-level driver work."
+    },
+    {
+      "id": "carrier_fixed_table_staging_gate",
+      "label": "UPS/FedEx accept fixed-table parcel staging without dynamic conveyor integration",
+      "why_it_matters": "Premortem trigger: if carriers require dynamic conveyor staging beyond $40K mechanical redesign, the project pivots to B2B-volume-only shipment and the consumer-API feasibility claim is invalidated.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "$40K+ mechanical redesign required or pivot to B2B-only shipment; Phase 5/6 demonstration scope shifts; carrier-API integration narrative weakens."
+    }
+  ]
+}

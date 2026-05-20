@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "White House East Wing Container Casino (Pioneer's Gauntlet)",
+    "plan_type": "high_risk_political_commercial_venture"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "profitable_days_target": 90,
+        "daily_noi_target_usd": 50000,
+        "budget_ceiling_usd": 600000000,
+        "contingency_fund_target_usd": 90000000,
+        "blackout_target_days": 7,
+        "actual_continuous_profitable_days": 30,
+        "actual_daily_noi_usd": 20000,
+        "actual_total_spend_usd": 520000000,
+        "actual_segregated_contingency_usd": 60000000,
+        "actual_blackout_days": 5
+      },
+      "outputs": {
+        "continuous_profitable_days_margin": -60,
+        "daily_noi_margin_usd": -30000,
+        "budget_surplus_usd": 80000000,
+        "contingency_fund_margin_usd": -30000000,
+        "blackout_duration_margin_days": 2
+      }
+    },
+    "base": {
+      "inputs": {
+        "profitable_days_target": 90,
+        "daily_noi_target_usd": 50000,
+        "budget_ceiling_usd": 600000000,
+        "contingency_fund_target_usd": 90000000,
+        "blackout_target_days": 7,
+        "actual_continuous_profitable_days": 90,
+        "actual_daily_noi_usd": 50000,
+        "actual_total_spend_usd": 600000000,
+        "actual_segregated_contingency_usd": 90000000,
+        "actual_blackout_days": 7
+      },
+      "outputs": {
+        "continuous_profitable_days_margin": 0,
+        "daily_noi_margin_usd": 0,
+        "budget_surplus_usd": 0,
+        "contingency_fund_margin_usd": 0,
+        "blackout_duration_margin_days": 0
+      }
+    },
+    "high": {
+      "inputs": {
+        "profitable_days_target": 90,
+        "daily_noi_target_usd": 50000,
+        "budget_ceiling_usd": 600000000,
+        "contingency_fund_target_usd": 90000000,
+        "blackout_target_days": 7,
+        "actual_continuous_profitable_days": 95,
+        "actual_daily_noi_usd": 85000,
+        "actual_total_spend_usd": 700000000,
+        "actual_segregated_contingency_usd": 90000000,
+        "actual_blackout_days": 14
+      },
+      "outputs": {
+        "continuous_profitable_days_margin": 5,
+        "daily_noi_margin_usd": 35000,
+        "budget_surplus_usd": -100000000,
+        "contingency_fund_margin_usd": 0,
+        "blackout_duration_margin_days": -7
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "continuous_profitable_days_margin": {
+        "low": -60,
+        "base": 0,
+        "high": 5,
+        "unit": "days",
+        "spread_ratio": -0.08333333333333333,
+        "spread_absolute": 65
+      },
+      "daily_noi_margin_usd": {
+        "low": -30000,
+        "base": 0,
+        "high": 35000,
+        "unit": "USD",
+        "spread_ratio": -1.1666666666666667,
+        "spread_absolute": 65000
+      },
+      "budget_surplus_usd": {
+        "low": 80000000,
+        "base": 0,
+        "high": -100000000,
+        "unit": "USD",
+        "spread_ratio": -1.25,
+        "spread_absolute": -180000000
+      },
+      "contingency_fund_margin_usd": {
+        "low": -30000000,
+        "base": 0,
+        "high": 0,
+        "unit": "USD",
+        "spread_ratio": 0.0,
+        "spread_absolute": 30000000
+      },
+      "blackout_duration_margin_days": {
+        "low": 2,
+        "base": 0,
+        "high": -7,
+        "unit": "days",
+        "spread_ratio": -3.5,
+        "spread_absolute": -9
+      }
+    }
+  },
+  "warnings": []
+}

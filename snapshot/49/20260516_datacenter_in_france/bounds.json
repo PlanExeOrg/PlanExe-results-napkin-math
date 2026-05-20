@@ -1,0 +1,90 @@
+{
+  "phase1_capex_budget_max_eur": {
+    "unit": "EUR",
+    "low": 8500000000.0,
+    "base": 10000000000.0,
+    "high": 11500000000.0,
+    "rationale": "Plan-stated EUR 10B Phase 1 ceiling; +/-15% spread reflects medium uncertainty on the upper envelope for 500 MW-1 GW hyperscale CAPEX scoping.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "phase1_power_target_mw": {
+    "unit": "MW",
+    "low": 500.0,
+    "base": 1000.0,
+    "high": 1000.0,
+    "rationale": "Plan states Phase 1 target range 500 MW-1 GW; base at upper bound 1 GW per source_text, low at the stated 500 MW floor; asymmetry reflects the stated range endpoint.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "land_holding_cost_eur_per_ha_year": {
+    "unit": "EUR_per_ha_year",
+    "low": 50000.0,
+    "base": 62500.0,
+    "high": 75000.0,
+    "rationale": "Review Issue 2 cites EUR 50k-75k/ha/year range; base at midpoint per the inferred plan figure. Range matches the cited band exactly.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "land_holding_cost_budget_envelope_eur": {
+    "unit": "EUR",
+    "low": 900000000.0,
+    "base": 1300000000.0,
+    "high": 2000000000.0,
+    "rationale": "Plan cites EUR 1.3B+ overrun risk as the explicit envelope; '+' phrasing implies one-sided upside risk, hence asymmetric high to EUR 2B.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "expected_phase2_signed_commitment_fraction": {
+    "unit": "fraction",
+    "low": 0.35,
+    "base": 0.60,
+    "high": 0.75,
+    "rationale": "Base centered on the 60% plan gate target (DEFAULT, no anchored shift). Spread reflects LOI-to-signed conversion uncertainty on 2 GW hyperscale tranches, where pipeline attrition can drop signed share to 0.35-0.45.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "annual_revenue_per_mw_eur": {
+    "unit": "EUR_per_MW_year",
+    "low": 1500000.0,
+    "base": 2500000.0,
+    "high": 4000000.0,
+    "rationale": "European hyperscale AI-grade colocation lease benchmarks cluster around EUR 1.5M-4M per MW-year depending on tenant tier and power-included pricing.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "buildable_area_utilization_fraction": {
+    "unit": "fraction",
+    "low": 0.05,
+    "base": 0.15,
+    "high": 0.30,
+    "rationale": "Plan suggests benchmark 0.05-0.30 for km2 per GW on liquid-cooled hyperscale campuses; base at the lower-mid of the stated range to reflect dense liquid-cooled designs.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "remediation_cost_overrun_eur": {
+    "unit": "EUR",
+    "low": 0.0,
+    "base": 750000000.0,
+    "high": 1500000000.0,
+    "rationale": "Plan cites EUR 750M baseline with potential doubling/tripling delta up to EUR 1.5B on brownfield remediation; low at 0 reflects no-overrun floor.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

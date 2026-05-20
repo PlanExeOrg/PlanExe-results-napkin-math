@@ -1,0 +1,112 @@
+{
+  "minimum_viable_hourly_rate_dkk": {
+    "unit": "DKK_per_hour",
+    "low": 110,
+    "base": 165,
+    "high": 200,
+    "rationale": "Base at plan-stated 165 DKK/hr. Wide downside reflects high uncertainty around local willingness-to-pay in a remote Arctic market; upside capped near comparable Nordic studio rental ceilings.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "taster_conversion_rate": {
+    "unit": "fraction",
+    "low": 0.05,
+    "base": 0.15,
+    "high": 0.25,
+    "rationale": "Base at plan-stated 15%. High uncertainty per source; spread covers typical free-to-paid creative class conversion rates (5-25%) for community arts programs.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "rental_shortfall_stress_dkk": {
+    "unit": "DKK",
+    "low": 100000,
+    "base": 200000,
+    "high": 300000,
+    "rationale": "Range explicitly stated in source: 100k-300k DKK Q3 deficit if high hourly rental model fails. Base at midpoint per inferred declaration.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "labor_law_overrun_stress_dkk": {
+    "unit": "DKK",
+    "low": 150000,
+    "base": 300000,
+    "high": 500000,
+    "rationale": "Base at source-stated ~300k DKK contractor reclassification liability. High uncertainty; spread reflects severance/benefits variance for 2-FTE-equivalent under Greenlandic employment regimes.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "drop_in_revenue_share": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.25,
+    "high": 0.35,
+    "rationale": "Base at plan-stated 25% drop-in mix target. Medium-uncertainty derived value; spread reflects realistic deviation around the 40/35/25 revenue mix.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "year1_revenue_target_dkk": {
+    "unit": "DKK",
+    "low": 1200000,
+    "base": 1800000,
+    "high": 2400000,
+    "rationale": "Bracket around 2M DKK budget envelope: low covers under-target shortfall, high allows modest surplus to replenish contingency. Distinct from budget per source rationale.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "monthly_fixed_labor_cost_dkk": {
+    "unit": "DKK_per_month",
+    "low": 60000,
+    "base": 85000,
+    "high": 115000,
+    "rationale": "Greenlandic part-time instructor rates roughly 25-40k DKK/month per FTE-equivalent; 2 FTE total. Base mid-range; upside reflects Nuuk wage premium.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "drop_in_available_hours_per_year": {
+    "unit": "hours_per_year",
+    "low": 800,
+    "base": 1200,
+    "high": 1600,
+    "rationale": "Off-peak open-studio hours after course/membership scheduling: roughly 20-30 hrs/week over 40-48 operating weeks. Integer bounds for countable hours.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "drop_in_utilization_rate": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.35,
+    "high": 0.55,
+    "rationale": "Speculative key sensitivity per source. Remote-community studio analogs cluster at 20-50% off-peak fill; base mid-range, wide spread reflects high uncertainty.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "kiln_failure_loss_dkk": {
+    "unit": "DKK",
+    "low": 120000,
+    "base": 200000,
+    "high": 300000,
+    "rationale": "Source states 4-8 week shutdown ~200k DKK. Base at source value; spread reflects repair/replacement timing variance and seasonal revenue weight.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

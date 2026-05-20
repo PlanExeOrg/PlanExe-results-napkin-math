@@ -1,0 +1,329 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "White House East Wing Container Casino (Pioneer's Gauntlet)",
+    "plan_type": "high_risk_political_commercial_venture"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "continuous_profitable_days_margin": {
+      "unit": "days",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -18.4865,
+      "std": 14.644740275948903,
+      "min": -60.0,
+      "p05": -46.0,
+      "p25": -29.0,
+      "p50": -16.0,
+      "p75": -6.0,
+      "p95": 1.0,
+      "max": 5.0
+    },
+    "daily_noi_margin_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1641.356830831017,
+      "std": 13407.675106616998,
+      "min": -29751.330064392434,
+      "p05": -20278.95630474527,
+      "p25": -8205.608956273629,
+      "p50": 1204.6797092868,
+      "p75": 11294.131544040103,
+      "p95": 24534.73003268578,
+      "max": 34641.30090372193
+    },
+    "budget_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -6459118.45899916,
+      "std": 36802387.48160183,
+      "min": -99167484.58251667,
+      "p05": -69589379.04150201,
+      "p25": -32700103.088473648,
+      "p50": -4525879.259052336,
+      "p75": 20748291.011765927,
+      "p95": 52508645.813640825,
+      "max": 79113629.24824429
+    },
+    "contingency_fund_margin_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -9875295.47909186,
+      "std": 7032097.076778319,
+      "min": -29924471.614403933,
+      "p05": -23196916.373513844,
+      "p25": -14797137.691561963,
+      "p50": -8629141.575362787,
+      "p75": -3948264.0921863616,
+      "p95": -706037.6392165944,
+      "max": -429.91421706974506
+    },
+    "blackout_duration_margin_days": {
+      "unit": "days",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -1.6827,
+      "std": 1.9489537475271186,
+      "min": -7.0,
+      "p05": -5.0,
+      "p25": -3.0,
+      "p50": -1.0,
+      "p75": 0.0,
+      "p95": 1.0,
+      "max": 2.0
+    }
+  },
+  "thresholds": {
+    "continuous_profitable_days_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 885,
+      "valid_count": 10000,
+      "probability": 0.0885
+    },
+    "daily_noi_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5383,
+      "valid_count": 10000,
+      "probability": 0.5383
+    },
+    "budget_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4489,
+      "valid_count": 10000,
+      "probability": 0.4489
+    },
+    "contingency_fund_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "blackout_duration_margin_days": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3259,
+      "valid_count": 10000,
+      "probability": 0.3259
+    }
+  },
+  "sensitivity": {
+    "continuous_profitable_days_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_continuous_profitable_days",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "daily_noi_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_daily_noi_usd",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "budget_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_total_spend_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "contingency_fund_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_segregated_contingency_usd",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "blackout_duration_margin_days": {
+      "top_inputs": [
+        {
+          "id": "actual_blackout_days",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "continuous_profitable_days_margin": [
+      {
+        "id": "actual_continuous_profitable_days",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.3390804597701149,
+        "delta_pp": 33.91
+      }
+    ],
+    "daily_noi_margin_usd": [
+      {
+        "id": "actual_daily_noi_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "budget_surplus_usd": [
+      {
+        "id": "actual_total_spend_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "contingency_fund_margin_usd": [
+      {
+        "id": "actual_segregated_contingency_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "blackout_duration_margin_days": [
+      {
+        "id": "actual_blackout_days",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "continuous_profitable_days_margin": [
+      {
+        "id": "actual_continuous_profitable_days",
+        "direction": "above",
+        "input_percentile_cutoff": 95,
+        "cutoff_value": 91.0,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.0609
+      }
+    ],
+    "daily_noi_margin_usd": [
+      {
+        "id": "actual_daily_noi_usd",
+        "direction": "above",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 45238.72895936093,
+        "conditional_pass_prob": 0.8034,
+        "admitted_fraction": 0.67
+      }
+    ],
+    "budget_surplus_usd": [
+      {
+        "id": "actual_total_spend_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 604525879.2590523,
+        "conditional_pass_prob": 0.8978,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "blackout_duration_margin_days": [
+      {
+        "id": "actual_blackout_days",
+        "direction": "below",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 7.0,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.3259
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_blackout_days",
+      "score": 86.67,
+      "worst_gate": "blackout_duration_margin_days",
+      "bound_width_ratio": 1.2857,
+      "source": "data"
+    },
+    {
+      "id": "actual_daily_noi_usd",
+      "score": 60.021,
+      "worst_gate": "daily_noi_margin_usd",
+      "bound_width_ratio": 1.3,
+      "source": "data"
+    },
+    {
+      "id": "actual_continuous_profitable_days",
+      "score": 22.3231,
+      "worst_gate": "continuous_profitable_days_margin",
+      "bound_width_ratio": 0.7222,
+      "source": "data"
+    },
+    {
+      "id": "actual_total_spend_usd",
+      "score": 16.533,
+      "worst_gate": "budget_surplus_usd",
+      "bound_width_ratio": 0.3,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "continuous_profitable_days_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.7222,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.72"
+      ]
+    },
+    "daily_noi_margin_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.3,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.30"
+      ]
+    },
+    "budget_surplus_usd": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.3,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.30"
+      ]
+    },
+    "contingency_fund_margin_usd": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.3333,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.33"
+      ]
+    },
+    "blackout_duration_margin_days": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.2857,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.29"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

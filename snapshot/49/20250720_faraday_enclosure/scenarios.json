@@ -1,0 +1,117 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "European Faraday Enclosure Launch (Pragmatic Foundation)",
+    "plan_type": "commercial_consumer_hardware_launch"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "funding_trigger_net_cash_eur": 50000,
+        "iso_run_sell_through_units_target": 1500,
+        "mil_std_certification_cost_eur": 120000,
+        "year1_budget_ceiling_eur": 400000,
+        "iso_commit_demand_threshold_units": 1000,
+        "actual_year1_net_cash_eur": -50000,
+        "actual_iso_run_sell_through_units": 600,
+        "actual_gross_profit_eur": 70000,
+        "actual_year1_spend_eur": 350000,
+        "actual_validated_demand_units": 400
+      },
+      "outputs": {
+        "funding_trigger_margin_eur": -100000,
+        "sell_through_margin_units": -900,
+        "certification_funding_margin_eur": -50000,
+        "year1_budget_surplus_eur": 50000,
+        "iso_commit_demand_margin_units": -600
+      }
+    },
+    "base": {
+      "inputs": {
+        "funding_trigger_net_cash_eur": 50000,
+        "iso_run_sell_through_units_target": 1500,
+        "mil_std_certification_cost_eur": 120000,
+        "year1_budget_ceiling_eur": 400000,
+        "iso_commit_demand_threshold_units": 1000,
+        "actual_year1_net_cash_eur": 50000,
+        "actual_iso_run_sell_through_units": 1500,
+        "actual_gross_profit_eur": 120000,
+        "actual_year1_spend_eur": 400000,
+        "actual_validated_demand_units": 1000
+      },
+      "outputs": {
+        "funding_trigger_margin_eur": 0,
+        "sell_through_margin_units": 0,
+        "certification_funding_margin_eur": 0,
+        "year1_budget_surplus_eur": 0,
+        "iso_commit_demand_margin_units": 0
+      }
+    },
+    "high": {
+      "inputs": {
+        "funding_trigger_net_cash_eur": 50000,
+        "iso_run_sell_through_units_target": 1500,
+        "mil_std_certification_cost_eur": 120000,
+        "year1_budget_ceiling_eur": 400000,
+        "iso_commit_demand_threshold_units": 1000,
+        "actual_year1_net_cash_eur": 120000,
+        "actual_iso_run_sell_through_units": 1850,
+        "actual_gross_profit_eur": 180000,
+        "actual_year1_spend_eur": 470000,
+        "actual_validated_demand_units": 1700
+      },
+      "outputs": {
+        "funding_trigger_margin_eur": 70000,
+        "sell_through_margin_units": 350,
+        "certification_funding_margin_eur": 60000,
+        "year1_budget_surplus_eur": -70000,
+        "iso_commit_demand_margin_units": 700
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "funding_trigger_margin_eur": {
+        "low": -100000,
+        "base": 0,
+        "high": 70000,
+        "unit": "EUR",
+        "spread_ratio": -0.7,
+        "spread_absolute": 170000
+      },
+      "sell_through_margin_units": {
+        "low": -900,
+        "base": 0,
+        "high": 350,
+        "unit": "units",
+        "spread_ratio": -0.3888888888888889,
+        "spread_absolute": 1250
+      },
+      "certification_funding_margin_eur": {
+        "low": -50000,
+        "base": 0,
+        "high": 60000,
+        "unit": "EUR",
+        "spread_ratio": -1.2,
+        "spread_absolute": 110000
+      },
+      "year1_budget_surplus_eur": {
+        "low": 50000,
+        "base": 0,
+        "high": -70000,
+        "unit": "EUR",
+        "spread_ratio": -1.4,
+        "spread_absolute": -120000
+      },
+      "iso_commit_demand_margin_units": {
+        "low": -600,
+        "base": 0,
+        "high": 700,
+        "unit": "units",
+        "spread_ratio": -1.1666666666666667,
+        "spread_absolute": 1300
+      }
+    }
+  },
+  "warnings": []
+}

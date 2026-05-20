@@ -1,0 +1,35 @@
+{
+  "expected_recovered_crates": {
+    "unit": "crates",
+    "low": 75000,
+    "base": 108000,
+    "high": 180000,
+    "rationale": "Base centered on plan commitment 108,000 (40% of 270k annual loss). Spread reflects execution risk: low covers underperformance, high covers viral overshoot toward stress-case ~80% recovery indicated in missing_values estimation method.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "cost_per_crate_handling_dkk": {
+    "unit": "DKK_per_crate",
+    "low": 8,
+    "base": 15.28,
+    "high": 20,
+    "rationale": "Base anchored on Q2 pilot CPRC target (15.28 DKK/crate) per the suggested estimation method; low at 10 DKK risk threshold rounded to 8, high at 20 DKK upper bound of triangulation range.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "annual_crate_loss_volume": {
+    "unit": "crates",
+    "low": 200000,
+    "base": 270000,
+    "high": 340000,
+    "rationale": "Base from stated 270,000 baseline. Medium uncertainty (priority high): ~25% spread around baseline reflects measurement uncertainty in annual loss tracking before the IT tracking system is fully deployed.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

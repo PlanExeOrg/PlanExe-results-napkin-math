@@ -1,0 +1,57 @@
+{
+  "actual_continuous_profitable_days": {
+    "unit": "days",
+    "low": 30,
+    "base": 90,
+    "high": 95,
+    "rationale": "Base centered at the 90-day commitment per the actual-vs-commitment default. Downside captures Issue 2's blackout-overrun stress test (relocation breaks continuity, restart with depleted day-budget); upside is bounded just past the measurement window.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_daily_noi_usd": {
+    "unit": "USD",
+    "low": 20000,
+    "base": 50000,
+    "high": 85000,
+    "rationale": "Base centered at the $50K daily-NOI commitment per actual-vs-commitment default. Downside captures Premortem stress test ($5–10K/day operational outages) plus T2CA throughput drag; upside reflects 60% high-roller mix executing at upper yield.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_total_spend_usd": {
+    "unit": "USD",
+    "low": 520000000,
+    "base": 600000000,
+    "high": 700000000,
+    "rationale": "Base centered at the $600M committed ceiling — the Pioneer's Gauntlet envelope is sized to be deployed. Downside reflects lean execution; upside captures Review-plan $10M+ legal cost (Risk 1), $2M T2CA hardening (Issue 2), $2M supply-chain shock (Risk 3).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_segregated_contingency_usd": {
+    "unit": "USD",
+    "low": 60000000,
+    "base": 90000000,
+    "high": 90000000,
+    "rationale": "Base centered at the $90M (15%) ring-fenced commitment per actual-vs-commitment default. Downside captures Q6 competition (microgrid + $5M diplomatic-design drawdown pressure on the same envelope); upside capped at target since segregation has no overshoot meaning.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_blackout_days": {
+    "unit": "days",
+    "low": 5,
+    "base": 7,
+    "high": 14,
+    "rationale": "Base centered at the 7-day blackout commitment per actual-vs-commitment default. Downside reflects best-case pre-fabricated container move; upside captures Issue 2 stress test of blackout overrun breaking the 90-day continuous-profit window.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

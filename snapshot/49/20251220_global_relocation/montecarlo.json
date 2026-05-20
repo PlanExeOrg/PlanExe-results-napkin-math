@@ -1,0 +1,318 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hemispheric Partition (Builder Path)",
+    "plan_type": "geopolitical_megaproject"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "budget_24mo_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -3646808162082.992,
+      "std": 3517946137692.483,
+      "min": -12915145117633.766,
+      "p05": -9900370119368.83,
+      "p25": -6140397504047.951,
+      "p50": -3268714411340.124,
+      "p75": -986774396108.8584,
+      "p95": 1686257771938.369,
+      "max": 3925400785128.5293
+    },
+    "wave1_verification_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.14930999999999992,
+      "std": 0.14999841299160468,
+      "min": -0.29999999999999993,
+      "p05": -0.29999999999999993,
+      "p25": -0.29999999999999993,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "machine_energy_contribution_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.028245000000000006,
+      "std": 0.03434195648183138,
+      "min": -0.07,
+      "p05": -0.07,
+      "p25": -0.07,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "required_relocated_people": {
+      "unit": "people",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 724473087.248725,
+      "std": 255377724.4089135,
+      "min": 194344629.29999998,
+      "p05": 345755217.76,
+      "p25": 530658232.825,
+      "p50": 693147695.825,
+      "p75": 905351362.3,
+      "p95": 1192366281.3774998,
+      "max": 1408078319.75
+    },
+    "post_24mo_reserve_buffer_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 18000000000000.0,
+      "std": 0.0,
+      "min": 18000000000000.0,
+      "p05": 18000000000000.0,
+      "p25": 18000000000000.0,
+      "p50": 18000000000000.0,
+      "p75": 18000000000000.0,
+      "p95": 18000000000000.0,
+      "max": 18000000000000.0
+    }
+  },
+  "thresholds": {
+    "budget_24mo_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1570,
+      "valid_count": 10000,
+      "probability": 0.157
+    },
+    "wave1_verification_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5023,
+      "valid_count": 10000,
+      "probability": 0.5023
+    },
+    "machine_energy_contribution_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5965,
+      "valid_count": 10000,
+      "probability": 0.5965
+    },
+    "required_relocated_people": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "post_24mo_reserve_buffer_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    }
+  },
+  "sensitivity": {
+    "budget_24mo_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "total_24mo_severance_and_stabilization_cost_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "wave1_verification_margin": {
+      "top_inputs": [
+        {
+          "id": "achieved_wave1_verification_fraction",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "machine_energy_contribution_margin": {
+      "top_inputs": [
+        {
+          "id": "achieved_machine_energy_contribution_fraction",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "required_relocated_people": {
+      "top_inputs": [
+        {
+          "id": "total_relocation_headcount",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "post_24mo_reserve_buffer_usd": {
+      "top_inputs": []
+    }
+  },
+  "quartile_analysis": {
+    "budget_24mo_surplus_usd": [
+      {
+        "id": "total_24mo_severance_and_stabilization_cost_usd",
+        "p_pass_low_quartile": 0.628,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -62.8
+      }
+    ],
+    "wave1_verification_margin": [
+      {
+        "id": "achieved_wave1_verification_fraction",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "machine_energy_contribution_margin": [
+      {
+        "id": "achieved_machine_energy_contribution_fraction",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "required_relocated_people": [
+      {
+        "id": "total_relocation_headcount",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "budget_24mo_surplus_usd": [
+      {
+        "id": "total_24mo_severance_and_stabilization_cost_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 11922556755432.46,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.15
+      }
+    ],
+    "wave1_verification_margin": [
+      {
+        "id": "achieved_wave1_verification_fraction",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 0.85,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.5023
+      }
+    ],
+    "machine_energy_contribution_margin": [
+      {
+        "id": "achieved_machine_energy_contribution_fraction",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 0.1,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.5965
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "total_24mo_severance_and_stabilization_cost_usd",
+      "score": 64.2848,
+      "worst_gate": "budget_24mo_surplus_usd",
+      "bound_width_ratio": 1.2143,
+      "source": "assumption"
+    },
+    {
+      "id": "achieved_machine_energy_contribution_fraction",
+      "score": 28.245,
+      "worst_gate": "machine_energy_contribution_margin",
+      "bound_width_ratio": 0.7,
+      "source": "assumption"
+    },
+    {
+      "id": "achieved_wave1_verification_fraction",
+      "score": 17.5659,
+      "worst_gate": "wave1_verification_margin",
+      "bound_width_ratio": 0.3529,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "budget_24mo_surplus_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.2143,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.21"
+      ]
+    },
+    "wave1_verification_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.3529,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.35"
+      ]
+    },
+    "machine_energy_contribution_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.7,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.70"
+      ]
+    },
+    "required_relocated_people": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 2.1667,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 2.17"
+      ]
+    },
+    "post_24mo_reserve_buffer_usd": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": [
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'monthly_burn_rate_usd' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'iob_dissolution_transfer_margin' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    },
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "function 'northern_hub_density_margin' not found in calculations.py; skipped.",
+      "severity": "WARN"
+    }
+  ]
+}

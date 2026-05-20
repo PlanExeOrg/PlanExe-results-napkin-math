@@ -1,0 +1,112 @@
+{
+  "total_program_budget_usd": {
+    "unit": "USD",
+    "low": 25000000,
+    "base": 100000000,
+    "high": 120000000,
+    "rationale": "Plan states $25M-$100M envelope, modelling at high anchor. Low reflects stated minimum; high allows modest 20% overrun for political/legal escalation on a novel planetary-namespace application.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "hsm_capex_usd": {
+    "unit": "USD",
+    "low": 5000000,
+    "base": 7500000,
+    "high": 10000000,
+    "rationale": "Plan source text gives explicit $5M-$10M range for mandatory internal HSM procurement; midpoint as base.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "year1_breakeven_registration_volume": {
+    "unit": "domains",
+    "low": 3000,
+    "base": 5000,
+    "high": 9000,
+    "rationale": "Plan states 5,000 break-even; inferred quantity with high uncertainty driven by OpEx and price spread. Asymmetric high reflects upside risk if base OpEx lands at $10M ceiling.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "string_contention_contingency_usd": {
+    "unit": "USD",
+    "low": 10000000,
+    "base": 15000000,
+    "high": 20000000,
+    "rationale": "Plan source text gives explicit $10M-$20M range for string-contention defense, legal, lobbying; midpoint as base.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "avg_price_per_domain_usd": {
+    "unit": "USD",
+    "low": 50,
+    "base": 100,
+    "high": 200,
+    "rationale": "Plan suggests $50-$200 premium-gTLD band benchmarked against recent ICANN launches with similar political profile; base midpoint within the stated range.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "year1_base_opex_usd": {
+    "unit": "USD",
+    "low": 5000000,
+    "base": 7500000,
+    "high": 10000000,
+    "rationale": "Plan's stated $5M-$10M Year 1 OpEx for 5 FTE loaded cost, cloud DNS hosting, compliance audits, outsourced ZSK signing; midpoint as base.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "expected_year1_registrations": {
+    "unit": "domains",
+    "low": 1000,
+    "base": 5000,
+    "high": 25000,
+    "rationale": "High-uncertainty bottom-up estimate. Low reflects niche space-industry adoption only; base matches break-even target; high allows speculative crypto/branding adoption. Early new-gTLD Year 1 volumes typically span 1k-25k.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "revenue_pledge_fraction": {
+    "unit": "fraction",
+    "low": 0.5,
+    "base": 0.5,
+    "high": 0.5,
+    "rationale": "Explicit pinned plan commitment: 50% of net registry revenue to Mars environmental protection fund.",
+    "source": "data",
+    "sampling_discipline": "fixed",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "observed_mos_compliance_rate": {
+    "unit": "fraction",
+    "low": 0.80,
+    "base": 0.95,
+    "high": 0.95,
+    "rationale": "Plan commits to >=95% High-Freshness compliance gate. No named Risk/Issue forecasts a miss, so base=target. Bernoulli_gate avoids triangular peak-mass=0 pathology; pass=0.7 reflects realistic execution risk for a novel 100kbps Mars endpoint under 60-minute sync.",
+    "source": "assumption",
+    "sampling_discipline": "bernoulli_gate",
+    "non_negative": true,
+    "default_pass_probability": 0.7
+  },
+  "registration_volume_buffer_fraction": {
+    "unit": "fraction",
+    "low": 0.20,
+    "base": 0.30,
+    "high": 0.40,
+    "rationale": "Plan demands 30% buffer above break-even before activating pledge; suggested 20-40% sensitivity range from financial-model spread on price and volume.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

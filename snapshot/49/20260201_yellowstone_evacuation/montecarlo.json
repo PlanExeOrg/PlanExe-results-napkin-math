@@ -1,0 +1,346 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Yellowstone Caldera VEI-6 Evacuation (Pioneer Strategy)",
+    "plan_type": "catastrophic_disaster_response"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "zone_zero_compliance_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.07389445263315526,
+      "std": 0.05497108037989464,
+      "min": -0.22850996314849903,
+      "p05": -0.17658209306413106,
+      "p25": -0.11316763972682639,
+      "p50": -0.06507477090492364,
+      "p75": -0.0273092334806202,
+      "p95": -0.001153151181397886,
+      "max": 0.009193261889352433
+    },
+    "drf_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 50224559.046954565,
+      "std": 103030553.72626954,
+      "min": -197341145.39996922,
+      "p05": -122426257.8805439,
+      "p25": -24280412.061617717,
+      "p50": 50508613.37692216,
+      "p75": 125505219.9430985,
+      "p95": 222169361.00101385,
+      "max": 298009047.1152165
+    },
+    "n95_staging_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.033809611846949396,
+      "std": 0.08248151315427288,
+      "min": -0.2476642079775802,
+      "p05": -0.17755392067391657,
+      "p25": -0.09385803694975776,
+      "p50": -0.02783024227250963,
+      "p75": 0.027127761145949184,
+      "p95": 0.09447805637763756,
+      "max": 0.14848004175457852
+    },
+    "c2_fuel_endurance_margin_hours": {
+      "unit": "hours",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -13.757932309268343,
+      "std": 13.472354953038119,
+      "min": -47.877280898955476,
+      "p05": -36.94629746969528,
+      "p25": -23.29827254917139,
+      "p50": -13.27646508364186,
+      "p75": -4.065255927285669,
+      "p95": 8.403110282543372,
+      "max": 17.761781046018925
+    },
+    "public_compliance_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.014214172052782168,
+      "std": 0.08554521622401126,
+      "min": -0.1993083840249381,
+      "p05": -0.1316186102727068,
+      "p25": -0.047341573338746584,
+      "p50": 0.015470693771368504,
+      "p75": 0.07533953303773483,
+      "p95": 0.15436842323940347,
+      "max": 0.2148314076777199
+    }
+  },
+  "thresholds": {
+    "zone_zero_compliance_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 417,
+      "valid_count": 10000,
+      "probability": 0.0417
+    },
+    "drf_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6784,
+      "valid_count": 10000,
+      "probability": 0.6784
+    },
+    "n95_staging_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3750,
+      "valid_count": 10000,
+      "probability": 0.375
+    },
+    "c2_fuel_endurance_margin_hours": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1673,
+      "valid_count": 10000,
+      "probability": 0.1673
+    },
+    "public_compliance_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 5710,
+      "valid_count": 10000,
+      "probability": 0.571
+    }
+  },
+  "sensitivity": {
+    "zone_zero_compliance_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_zone_zero_compliance_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "drf_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_drf_spend_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "n95_staging_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_n95_staging_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "c2_fuel_endurance_margin_hours": {
+      "top_inputs": [
+        {
+          "id": "actual_c2_fuel_endurance_hours",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "public_compliance_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_public_compliance_share",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "zone_zero_compliance_margin": [
+      {
+        "id": "actual_zone_zero_compliance_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.1668,
+        "delta_pp": 16.68
+      }
+    ],
+    "drf_surplus_usd": [
+      {
+        "id": "actual_drf_spend_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "n95_staging_margin": [
+      {
+        "id": "actual_n95_staging_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "c2_fuel_endurance_margin_hours": [
+      {
+        "id": "actual_c2_fuel_endurance_hours",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.6692,
+        "delta_pp": 66.92
+      }
+    ],
+    "public_compliance_margin": [
+      {
+        "id": "actual_public_compliance_share",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "zone_zero_compliance_margin": [
+      {
+        "id": "actual_zone_zero_compliance_share",
+        "direction": "above",
+        "input_percentile_cutoff": 95,
+        "cutoff_value": 0.9788468488186021,
+        "conditional_pass_prob": 0.834,
+        "admitted_fraction": 0.05
+      }
+    ],
+    "drf_surplus_usd": [
+      {
+        "id": "actual_drf_spend_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 524280412.06161773,
+        "conditional_pass_prob": 0.9045,
+        "admitted_fraction": 0.75
+      }
+    ],
+    "n95_staging_margin": [
+      {
+        "id": "actual_n95_staging_share",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 0.30908542347594165,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.33
+      }
+    ],
+    "c2_fuel_endurance_margin_hours": [
+      {
+        "id": "actual_c2_fuel_endurance_hours",
+        "direction": "above",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 73.05437932346341,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.15
+      }
+    ],
+    "public_compliance_margin": [
+      {
+        "id": "actual_public_compliance_share",
+        "direction": "above",
+        "input_percentile_cutoff": 33,
+        "cutoff_value": 0.675307388643166,
+        "conditional_pass_prob": 0.8522,
+        "admitted_fraction": 0.67
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_n95_staging_share",
+      "score": 83.3333,
+      "worst_gate": "n95_staging_margin",
+      "bound_width_ratio": 1.3333,
+      "source": "data"
+    },
+    {
+      "id": "actual_c2_fuel_endurance_hours",
+      "score": 61.2967,
+      "worst_gate": "c2_fuel_endurance_margin_hours",
+      "bound_width_ratio": 1.1,
+      "source": "data"
+    },
+    {
+      "id": "actual_drf_spend_usd",
+      "score": 35.7333,
+      "worst_gate": "drf_surplus_usd",
+      "bound_width_ratio": 1.1111,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_public_compliance_share",
+      "score": 25.025,
+      "worst_gate": "public_compliance_margin",
+      "bound_width_ratio": 0.5833,
+      "source": "assumption"
+    },
+    {
+      "id": "actual_zone_zero_compliance_share",
+      "score": 3.9146,
+      "worst_gate": "zone_zero_compliance_margin",
+      "bound_width_ratio": 0.2449,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "zone_zero_compliance_margin": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.2449,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.24"
+      ]
+    },
+    "drf_surplus_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.1111,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.11"
+      ]
+    },
+    "n95_staging_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.3333,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.33"
+      ]
+    },
+    "c2_fuel_endurance_margin_hours": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.1,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.10"
+      ]
+    },
+    "public_compliance_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.5833,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.58"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

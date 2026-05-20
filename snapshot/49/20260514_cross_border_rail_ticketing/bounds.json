@@ -1,0 +1,46 @@
+{
+  "annual_cross_border_journeys": {
+    "unit": "journeys_per_year",
+    "low": 20000000,
+    "base": 35000000,
+    "high": 60000000,
+    "rationale": "Eurostat cross-border rail passenger statistics indicate roughly 25-50M annual journeys on priority EU corridors; range widened for definitional uncertainty about which journeys count as eligible.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "peak_daily_clearing_obligation_eur": {
+    "unit": "EUR",
+    "low": 40000000,
+    "base": 90000000,
+    "high": 180000000,
+    "rationale": "Peak-day cross-border ticket sales times average ticket value; speculative bottom-up estimate with high uncertainty given unknown peak-to-mean ratio and blended average fare across mixed corridors.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "clearing_fee_per_ticket_eur": {
+    "unit": "EUR_per_ticket",
+    "low": 0.30,
+    "base": 0.80,
+    "high": 2.00,
+    "rationale": "PSD2 interchange fees sit at 0.10-0.30 EUR while existing rail distribution per-segment fees run 0.50-2.00 EUR; spans both benchmarks given uncertainty over which model the clearing fee adopts.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "average_fte_monthly_cost_eur": {
+    "unit": "EUR_per_person_per_month",
+    "low": 10000,
+    "base": 15000,
+    "high": 22000,
+    "rationale": "EU agency loaded-cost averages for senior technical and policy staff in Brussels typically cluster 10-22k EUR/month including overhead, pension, and employer charges.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

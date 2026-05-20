@@ -1,0 +1,288 @@
+{
+  "plan_summary": {
+    "plan_name": "Hemispheric Partition (Builder Path)",
+    "plan_type": "geopolitical_megaproject",
+    "primary_goal": "Legally partition Earth along the equator within 24 months: 85% critical infrastructure severance, 95% priority demographic relocation, hybrid IOB governance.",
+    "modelling_frame": "Tests whether the 24-month $12T front-loaded allocation covers severance and Northern stabilization while meeting the 85% Wave 1 severance, 95% relocation, 90% IOB transfer, 13k/km^2 density, and 10% machine energy contribution gates."
+  },
+  "key_values": [
+    {
+      "id": "initial_allocation_usd",
+      "label": "Initial 24-month budget allocation",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 12000000000000,
+      "comment": "Front-loaded capital that must cover severance plus Northern stabilization in the first 24 months.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Initial 24-month budget allocation: $12 Trillion USD"
+    },
+    {
+      "id": "total_program_budget_usd",
+      "label": "Total project budget envelope",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 30000000000000,
+      "comment": "Full $30T envelope; the residual after the $12T tranche backstops post-Month-24 stabilization.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Total project budget baseline: $30 Trillion USD"
+    },
+    {
+      "id": "partition_deadline_months",
+      "label": "Legal partition deadline",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 24,
+      "comment": "Hard deadline for legal partition completion; sets the denominator for monthly burn.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total separation legal deadline: 24 months"
+    },
+    {
+      "id": "wave1_verification_target_fraction",
+      "label": "Wave 1 severance verification target",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.85,
+      "comment": "85% handover verification gate; falling short blocks Wave 2 and jeopardizes the deadline.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Wave N+1 starts upon 85% handover verification of Wave N"
+    },
+    {
+      "id": "relocation_completion_target_fraction",
+      "label": "Priority relocation completion target",
+      "category": "coverage",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.95,
+      "comment": "95% of designated personnel must cross the boundary by Month 24 for SMART completion.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "verified successful relocation of 95% of all designated personnel populations"
+    },
+    {
+      "id": "northern_hub_density_cap_per_km2",
+      "label": "Northern hub density cap (planning)",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "persons_per_km2",
+      "value": 13000,
+      "comment": "Conservative planning ceiling; exceeding it for 30+ days breaches the humane mandate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "North density cap used for risk modelling: 13,000 persons/km^2"
+    },
+    {
+      "id": "machine_energy_contribution_target_fraction",
+      "label": "Mandated machine energy contribution share",
+      "category": "compliance",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.10,
+      "comment": "10% of total energy output the machine domain must contribute for climate stabilization.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Required machine energy contribution: ten percent of total energy output"
+    },
+    {
+      "id": "iob_dissolution_transfer_threshold_fraction",
+      "label": "IOB dissolution infrastructure transfer threshold",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.90,
+      "comment": "If 90% of designated transfers are not certified by Month 24, the IOB dissolves.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "If 90% of designated infrastructure transfers are not certified complete by Month 24, the Oversight Body dissolves"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "monthly_burn_rate_usd",
+      "question": "What monthly burn does the front-loaded $12T imply across the 24-month mandate?",
+      "why_it_matters": "Sets the cash baseline for severance, stabilization, and replacement-labor planning.",
+      "formula_hint": "monthly_burn_rate_usd = initial_allocation_usd / partition_deadline_months",
+      "output_name": "monthly_burn_rate_usd",
+      "output_unit": "USD_per_month",
+      "depends_on": ["initial_allocation_usd", "partition_deadline_months"]
+    },
+    {
+      "id": "iob_dissolution_transfer_margin",
+      "question": "Does certified infrastructure transfer clear the 90% IOB-dissolution threshold?",
+      "why_it_matters": "Negative margin triggers automatic IOB dissolution and blocks bilateral negotiation.",
+      "formula_hint": "iob_dissolution_transfer_margin = achieved_wave1_verification_fraction - iob_dissolution_transfer_threshold_fraction",
+      "output_name": "iob_dissolution_transfer_margin",
+      "output_unit": "fraction",
+      "depends_on": ["achieved_wave1_verification_fraction", "iob_dissolution_transfer_threshold_fraction"]
+    },
+    {
+      "id": "northern_hub_density_margin",
+      "question": "Do Northern hubs stay below the 13k persons/km^2 planning cap?",
+      "why_it_matters": "Negative margin for 30+ days breaches the humane relocation mandate and forces modular housing acceleration.",
+      "formula_hint": "northern_hub_density_margin = northern_hub_density_cap_per_km2 - achieved_northern_hub_density_per_km2",
+      "output_name": "northern_hub_density_margin",
+      "output_unit": "persons_per_km2",
+      "depends_on": ["northern_hub_density_cap_per_km2", "achieved_northern_hub_density_per_km2"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "total_relocation_headcount",
+      "label": "Total demographic headcount requiring relocation",
+      "unit": "people",
+      "why_needed": "Denominator for the 95% relocation gate and logistical throughput sizing across the 24-month window.",
+      "suggested_estimation_method": "Audit population registries south of 3 degrees S and north of 3 degrees N requiring transfer."
+    },
+    {
+      "id": "achieved_wave1_verification_fraction",
+      "label": "Actual Wave 1 verification share achieved",
+      "unit": "fraction",
+      "why_needed": "Compared against the 85% target to determine whether subsequent severance waves can commence.",
+      "suggested_estimation_method": "Monte Carlo dependency-mapping simulation of cascading failure for the M8 cutoff with +/-30 day slip."
+    },
+    {
+      "id": "total_24mo_severance_and_stabilization_cost_usd",
+      "label": "Total 24-month severance plus stabilization cost",
+      "unit": "USD",
+      "why_needed": "Compared against the $12T front-loaded allocation to test budget adequacy and reserve health.",
+      "suggested_estimation_method": "Sum replacement-labor cost, modular-housing capex, severance contract caps, and IOB operating cost over 24 months."
+    },
+    {
+      "id": "achieved_machine_energy_contribution_fraction",
+      "label": "Actual machine energy contribution share",
+      "unit": "fraction",
+      "why_needed": "Compared against the 10% target to determine whether IOB funds for Northern stabilization continue.",
+      "suggested_estimation_method": "Audit metered Southern energy output billed to the climate stabilization account over rolling 90-day windows."
+    },
+    {
+      "id": "achieved_northern_hub_density_per_km2",
+      "label": "Actual peak Northern hub population density",
+      "unit": "persons_per_km2",
+      "why_needed": "Tested against the 13k/km^2 cap to determine whether the humane relocation mandate is breached.",
+      "suggested_estimation_method": "Project influx volumes and modular housing deployment schedule onto the five largest Northern consolidation hubs."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "budget_24mo_surplus_usd",
+      "label": "Front-loaded budget surplus after 24-month execution",
+      "formula_hint": "budget_24mo_surplus_usd = initial_allocation_usd - total_24mo_severance_and_stabilization_cost_usd",
+      "output_name": "budget_24mo_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["initial_allocation_usd", "total_24mo_severance_and_stabilization_cost_usd"],
+      "why_first": "Tests whether the $12T tranche covers severance plus stabilization; negative surplus signals reserve raid."
+    },
+    {
+      "id": "wave1_verification_margin",
+      "label": "Wave 1 verification margin",
+      "formula_hint": "wave1_verification_margin = achieved_wave1_verification_fraction - wave1_verification_target_fraction",
+      "output_name": "wave1_verification_margin",
+      "output_unit": "fraction",
+      "depends_on": ["achieved_wave1_verification_fraction", "wave1_verification_target_fraction"],
+      "why_first": "Positive margin lets Wave 2 proceed; negative blocks subsequent waves and jeopardises the 24-month deadline."
+    },
+    {
+      "id": "machine_energy_contribution_margin",
+      "label": "Machine energy contribution margin",
+      "formula_hint": "machine_energy_contribution_margin = achieved_machine_energy_contribution_fraction - machine_energy_contribution_target_fraction",
+      "output_name": "machine_energy_contribution_margin",
+      "output_unit": "fraction",
+      "depends_on": ["achieved_machine_energy_contribution_fraction", "machine_energy_contribution_target_fraction"],
+      "why_first": "Positive margin keeps IOB stabilization funds flowing; sustained negative halts them."
+    },
+    {
+      "id": "required_relocated_people",
+      "label": "Required relocated headcount to meet 95% gate",
+      "formula_hint": "required_relocated_people = total_relocation_headcount * relocation_completion_target_fraction",
+      "output_name": "required_relocated_people",
+      "output_unit": "people",
+      "depends_on": ["total_relocation_headcount", "relocation_completion_target_fraction"],
+      "why_first": "Translates the 95% SMART gate into an absolute logistics target for corridor throughput planning."
+    },
+    {
+      "id": "post_24mo_reserve_buffer_usd",
+      "label": "Post-Month-24 reserve buffer",
+      "formula_hint": "post_24mo_reserve_buffer_usd = total_program_budget_usd - initial_allocation_usd",
+      "output_name": "post_24mo_reserve_buffer_usd",
+      "output_unit": "USD",
+      "depends_on": ["total_program_budget_usd", "initial_allocation_usd"],
+      "why_first": "Quantifies remaining envelope to absorb overruns and post-partition stabilization commitments."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "machine_southern_viability_gate",
+      "label": "Machine civilization independent viability south of 3 degrees S",
+      "why_it_matters": "The partition premise assumes the machine domain can sustain energy and compute below 3 degrees S without Northern input; the model treats this as a fixed assumption rather than a probabilistic test.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Physical separation premise collapses; partition reverts to managed co-dependency and the 24-month deadline becomes meaningless."
+    },
+    {
+      "id": "iob_charter_ratification_gate",
+      "label": "Hybrid IOB charter ratification by Month 15",
+      "why_it_matters": "Permanent hybrid Arbitration Panel must be ratified by Month 15 for legitimate post-Month-24 governance; the model cannot quantify political ratification probability.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Dispute resolution defaults to a single emergency arbiter and the bilateral negotiation pathway is blocked."
+    },
+    {
+      "id": "non_coercion_welfare_continuity_gate",
+      "label": "Civilian welfare continuity (food, water, power)",
+      "why_it_matters": "Severance must not interrupt civilian food, water, or power; this is a binding non-coercion compliance gate not captured in any financial threshold.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "The non-coercive constraint of the treaty is violated and the entire Builder mandate loses legitimacy."
+    },
+    {
+      "id": "sovereign_sensor_trust_latency_gate",
+      "label": "Sovereign Sensor Trust sub-50ms latency for 99.99% of streams",
+      "why_it_matters": "Corridor governance fails if real-time sensor feeds breach the latency SLA; the deterministic model does not simulate network performance.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Sensor Trust fails as the corridor-dispute resolution layer, reintroducing kinetic-escalation risk."
+    },
+    {
+      "id": "global_airspace_waiver_gate",
+      "label": "Global airspace and resource-sharing legal waivers",
+      "why_it_matters": "Demographic transport at planetary scale requires airspace waivers and resource-sharing treaties the model treats as granted.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Logistical relocation cannot proceed at the scale required to hit the 95% relocation gate by Month 24."
+    }
+  ]
+}

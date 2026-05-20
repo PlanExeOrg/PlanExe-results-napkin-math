@@ -1,0 +1,126 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hemispheric Partition (Builder Path)",
+    "plan_type": "geopolitical_megaproject"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "initial_allocation_usd": 12000000000000,
+        "total_program_budget_usd": 30000000000000,
+        "partition_deadline_months": 24,
+        "wave1_verification_target_fraction": 0.85,
+        "relocation_completion_target_fraction": 0.95,
+        "northern_hub_density_cap_per_km2": 13000,
+        "machine_energy_contribution_target_fraction": 0.1,
+        "iob_dissolution_transfer_threshold_fraction": 0.9,
+        "total_relocation_headcount": 200000000,
+        "achieved_wave1_verification_fraction": 0.55,
+        "total_24mo_severance_and_stabilization_cost_usd": 8000000000000,
+        "achieved_machine_energy_contribution_fraction": 0.03,
+        "achieved_northern_hub_density_per_km2": 8000
+      },
+      "outputs": {
+        "budget_24mo_surplus_usd": 4000000000000,
+        "wave1_verification_margin": -0.29999999999999993,
+        "machine_energy_contribution_margin": -0.07,
+        "required_relocated_people": 190000000.0,
+        "post_24mo_reserve_buffer_usd": 18000000000000
+      }
+    },
+    "base": {
+      "inputs": {
+        "initial_allocation_usd": 12000000000000,
+        "total_program_budget_usd": 30000000000000,
+        "partition_deadline_months": 24,
+        "wave1_verification_target_fraction": 0.85,
+        "relocation_completion_target_fraction": 0.95,
+        "northern_hub_density_cap_per_km2": 13000,
+        "machine_energy_contribution_target_fraction": 0.1,
+        "iob_dissolution_transfer_threshold_fraction": 0.9,
+        "total_relocation_headcount": 600000000,
+        "achieved_wave1_verification_fraction": 0.85,
+        "total_24mo_severance_and_stabilization_cost_usd": 14000000000000,
+        "achieved_machine_energy_contribution_fraction": 0.1,
+        "achieved_northern_hub_density_per_km2": 12000
+      },
+      "outputs": {
+        "budget_24mo_surplus_usd": -2000000000000,
+        "wave1_verification_margin": 0.0,
+        "machine_energy_contribution_margin": 0.0,
+        "required_relocated_people": 570000000.0,
+        "post_24mo_reserve_buffer_usd": 18000000000000
+      }
+    },
+    "high": {
+      "inputs": {
+        "initial_allocation_usd": 12000000000000,
+        "total_program_budget_usd": 30000000000000,
+        "partition_deadline_months": 24,
+        "wave1_verification_target_fraction": 0.85,
+        "relocation_completion_target_fraction": 0.95,
+        "northern_hub_density_cap_per_km2": 13000,
+        "machine_energy_contribution_target_fraction": 0.1,
+        "iob_dissolution_transfer_threshold_fraction": 0.9,
+        "total_relocation_headcount": 1500000000,
+        "achieved_wave1_verification_fraction": 0.85,
+        "total_24mo_severance_and_stabilization_cost_usd": 25000000000000,
+        "achieved_machine_energy_contribution_fraction": 0.1,
+        "achieved_northern_hub_density_per_km2": 18000
+      },
+      "outputs": {
+        "budget_24mo_surplus_usd": -13000000000000,
+        "wave1_verification_margin": 0.0,
+        "machine_energy_contribution_margin": 0.0,
+        "required_relocated_people": 1425000000.0,
+        "post_24mo_reserve_buffer_usd": 18000000000000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "budget_24mo_surplus_usd": {
+        "low": 4000000000000,
+        "base": -2000000000000,
+        "high": -13000000000000,
+        "unit": "USD",
+        "spread_ratio": -3.25,
+        "spread_absolute": -17000000000000
+      },
+      "wave1_verification_margin": {
+        "low": -0.29999999999999993,
+        "base": 0.0,
+        "high": 0.0,
+        "unit": "fraction",
+        "spread_ratio": -0.0,
+        "spread_absolute": 0.29999999999999993
+      },
+      "machine_energy_contribution_margin": {
+        "low": -0.07,
+        "base": 0.0,
+        "high": 0.0,
+        "unit": "fraction",
+        "spread_ratio": -0.0,
+        "spread_absolute": 0.07
+      },
+      "required_relocated_people": {
+        "low": 190000000.0,
+        "base": 570000000.0,
+        "high": 1425000000.0,
+        "unit": "people",
+        "spread_ratio": 7.5,
+        "spread_absolute": 1235000000.0
+      },
+      "post_24mo_reserve_buffer_usd": {
+        "low": 18000000000000,
+        "base": 18000000000000,
+        "high": 18000000000000,
+        "unit": "USD",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0
+      }
+    }
+  },
+  "warnings": []
+}

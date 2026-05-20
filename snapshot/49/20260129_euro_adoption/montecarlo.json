@@ -1,0 +1,319 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Denmark DKK to EUR Adoption (Builder's Blueprint)",
+    "plan_type": "public_finance_transition"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "public_info_budget_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 99867039.00520921,
+      "std": 10098302.868663443,
+      "min": 75224224.19687147,
+      "p05": 83038450.37066351,
+      "p25": 92581204.19938743,
+      "p50": 99818330.49997085,
+      "p75": 107120792.55044748,
+      "p95": 116995925.28772512,
+      "max": 124417786.91831511
+    },
+    "referendum_support_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.010314974654127528,
+      "std": 0.055211885273612975,
+      "min": -0.14851351105935495,
+      "p05": -0.10389559743433306,
+      "p25": -0.05063186318945498,
+      "p50": -0.008612031962687228,
+      "p75": 0.02970771337625938,
+      "p95": 0.07919987057929115,
+      "max": 0.11888306336051435
+    },
+    "public_awareness_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.03147793256039075,
+      "std": 0.10252674979372518,
+      "min": -0.2990249327347349,
+      "p05": -0.21217256803920917,
+      "p25": -0.1037318915491168,
+      "p50": -0.024103404090745295,
+      "p75": 0.04318905432442727,
+      "p95": 0.13179787458174852,
+      "max": 0.19830705161205842
+    },
+    "contingency_buffer_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -60416243.277952634,
+      "std": 35005180.77335352,
+      "min": -148954419.26439276,
+      "p05": -121555096.4830979,
+      "p25": -85619386.26432258,
+      "p50": -58344564.08369544,
+      "p75": -34314149.367652945,
+      "p95": -5360843.05080191,
+      "max": 18675360.810016833
+    },
+    "real_indexation_margin": {
+      "unit": "ratio",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.008403702744688466,
+      "std": 0.007492995963070732,
+      "min": -0.032044478049585656,
+      "p05": -0.021383192970316166,
+      "p25": -0.013509833911165392,
+      "p50": -0.008143000282692991,
+      "p75": -0.0030026020946810617,
+      "p95": 0.0034684924371077377,
+      "max": 0.012920452719866082
+    }
+  },
+  "thresholds": {
+    "public_info_budget_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "referendum_support_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4427,
+      "valid_count": 10000,
+      "probability": 0.4427
+    },
+    "public_awareness_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4035,
+      "valid_count": 10000,
+      "probability": 0.4035
+    },
+    "contingency_buffer_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 283,
+      "valid_count": 10000,
+      "probability": 0.0283
+    },
+    "real_indexation_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1358,
+      "valid_count": 10000,
+      "probability": 0.1358
+    }
+  },
+  "sensitivity": {
+    "public_info_budget_dkk": {
+      "top_inputs": [
+        {
+          "id": "total_transition_budget_dkk",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "referendum_support_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_referendum_support",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "public_awareness_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_public_awareness",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "contingency_buffer_dkk": {
+      "top_inputs": [
+        {
+          "id": "cash_logistics_shock_cost_dkk",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "real_indexation_margin": {
+      "top_inputs": [
+        {
+          "id": "baseline_annual_inflation_rate",
+          "correlation": -0.8352
+        },
+        {
+          "id": "annual_real_indexation_factor",
+          "correlation": 0.5554
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "public_info_budget_dkk": [
+      {
+        "id": "total_transition_budget_dkk",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "referendum_support_margin": [
+      {
+        "id": "actual_referendum_support",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "public_awareness_margin": [
+      {
+        "id": "actual_public_awareness",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "contingency_buffer_dkk": [
+      {
+        "id": "cash_logistics_shock_cost_dkk",
+        "p_pass_low_quartile": 0.1132,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -11.32
+      }
+    ],
+    "real_indexation_margin": [
+      {
+        "id": "baseline_annual_inflation_rate",
+        "p_pass_low_quartile": 0.4384,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -43.84
+      },
+      {
+        "id": "annual_real_indexation_factor",
+        "p_pass_low_quartile": 0.002,
+        "p_pass_high_quartile": 0.3624,
+        "delta_pp": 36.04
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "referendum_support_margin": [
+      {
+        "id": "actual_referendum_support",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 0.5913879680373128,
+        "conditional_pass_prob": 0.8854,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "public_awareness_margin": [
+      {
+        "id": "actual_public_awareness",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 0.6758965959092547,
+        "conditional_pass_prob": 0.807,
+        "admitted_fraction": 0.5
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "baseline_annual_inflation_rate",
+      "score": 56.8298,
+      "worst_gate": "real_indexation_margin",
+      "bound_width_ratio": 1.5,
+      "source": "data"
+    },
+    {
+      "id": "actual_public_awareness",
+      "score": 42.6071,
+      "worst_gate": "public_awareness_margin",
+      "bound_width_ratio": 0.7143,
+      "source": "data"
+    },
+    {
+      "id": "actual_referendum_support",
+      "score": 25.0785,
+      "worst_gate": "referendum_support_margin",
+      "bound_width_ratio": 0.45,
+      "source": "assumption"
+    },
+    {
+      "id": "cash_logistics_shock_cost_dkk",
+      "score": 18.6994,
+      "worst_gate": "contingency_buffer_dkk",
+      "bound_width_ratio": 1.7,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "public_info_budget_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.5,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.50"
+      ]
+    },
+    "referendum_support_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.45,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.45"
+      ]
+    },
+    "public_awareness_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.7143,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.71"
+      ]
+    },
+    "contingency_buffer_dkk": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.7,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.70"
+      ]
+    },
+    "real_indexation_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.7599,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.76"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}
