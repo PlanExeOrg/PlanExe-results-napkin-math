@@ -37,11 +37,12 @@ This pins the snapshot to the exact zip artifact it was generated from.
 
 ## How to populate `meta.json` for a new plan dir
 
-The source of truth is `../PlanExe-web/zip_index.json`. Use the lookup helper:
+The source of truth is `zip_index.json` in the `PlanExe-web` repo. The
+local clone lives at `/Users/neoneye/git/PlanExe-web/`. Use the lookup
+helper (run from this repo's root):
 
 ```bash
-cd ../PlanExe-web
-python3 lookup_zip_index.py <plan_name> > ../PlanExeGroup/PlanExe-results-napkin-math/snapshot/<N>/<plan_name>/meta.json
+python3 /Users/neoneye/git/PlanExe-web/lookup_zip_index.py <plan_name> > snapshot/<N>/<plan_name>/meta.json
 ```
 
 The plan name may be given with or without the `.zip` suffix.
