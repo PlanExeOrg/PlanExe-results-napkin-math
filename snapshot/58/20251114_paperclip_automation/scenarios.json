@@ -1,0 +1,155 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Automated Paperclip Manufacturing and Fulfillment Pilot",
+    "plan_type": "industrial_automation_pilot"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_budget_max_usd": 500000,
+        "max_manual_intervention_hours_per_week": 2,
+        "onsite_expert_floor_usd": 15000,
+        "onsite_expert_contract_cap_usd": 25000,
+        "opc_ua_middleware_cost_usd": 35000,
+        "wire_bender_midpoint_usd": 20000,
+        "packing_machine_midpoint_usd": 10000,
+        "contingency_fraction": 0.10,
+        "actual_manual_intervention_hours_per_week": 0.5,
+        "actual_onsite_expert_cost_usd": 12000,
+        "permits_and_safety_cost_usd": 8000,
+        "rigging_and_install_cost_usd": 15000,
+        "internal_developer_cost_usd": 40000,
+        "subtotal_named_components_usd": 140000,
+        "total_project_cost_estimate_usd": 154000.0,
+        "budget_surplus_usd": 346000.0,
+        "manual_intervention_surplus_hours_per_week": 1.5,
+        "expert_cap_margin_usd": 13000,
+        "expert_floor_margin_usd": -3000
+      },
+      "outputs": {
+        "subtotal_named_components_usd": 140000,
+        "total_project_cost_estimate_usd": 154000.0,
+        "budget_surplus_usd": 346000.0,
+        "manual_intervention_surplus_hours_per_week": 1.5,
+        "expert_cap_margin_usd": 13000,
+        "expert_floor_margin_usd": -3000
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_budget_max_usd": 500000,
+        "max_manual_intervention_hours_per_week": 2,
+        "onsite_expert_floor_usd": 15000,
+        "onsite_expert_contract_cap_usd": 25000,
+        "opc_ua_middleware_cost_usd": 50000,
+        "wire_bender_midpoint_usd": 30000,
+        "packing_machine_midpoint_usd": 20000,
+        "contingency_fraction": 0.10,
+        "actual_manual_intervention_hours_per_week": 1.8,
+        "actual_onsite_expert_cost_usd": 18000,
+        "permits_and_safety_cost_usd": 18000,
+        "rigging_and_install_cost_usd": 30000,
+        "internal_developer_cost_usd": 80000,
+        "subtotal_named_components_usd": 246000,
+        "total_project_cost_estimate_usd": 270600.0,
+        "budget_surplus_usd": 229400.0,
+        "manual_intervention_surplus_hours_per_week": 0.2,
+        "expert_cap_margin_usd": 7000,
+        "expert_floor_margin_usd": 3000
+      },
+      "outputs": {
+        "subtotal_named_components_usd": 246000,
+        "total_project_cost_estimate_usd": 270600.0,
+        "budget_surplus_usd": 229400.0,
+        "manual_intervention_surplus_hours_per_week": 0.2,
+        "expert_cap_margin_usd": 7000,
+        "expert_floor_margin_usd": 3000
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_budget_max_usd": 500000,
+        "max_manual_intervention_hours_per_week": 2,
+        "onsite_expert_floor_usd": 15000,
+        "onsite_expert_contract_cap_usd": 25000,
+        "opc_ua_middleware_cost_usd": 75000,
+        "wire_bender_midpoint_usd": 40000,
+        "packing_machine_midpoint_usd": 30000,
+        "contingency_fraction": 0.10,
+        "actual_manual_intervention_hours_per_week": 4.5,
+        "actual_onsite_expert_cost_usd": 30000,
+        "permits_and_safety_cost_usd": 35000,
+        "rigging_and_install_cost_usd": 55000,
+        "internal_developer_cost_usd": 130000,
+        "subtotal_named_components_usd": 395000,
+        "total_project_cost_estimate_usd": 434500.0,
+        "budget_surplus_usd": 65500.0,
+        "manual_intervention_surplus_hours_per_week": -2.5,
+        "expert_cap_margin_usd": -5000,
+        "expert_floor_margin_usd": 15000
+      },
+      "outputs": {
+        "subtotal_named_components_usd": 395000,
+        "total_project_cost_estimate_usd": 434500.0,
+        "budget_surplus_usd": 65500.0,
+        "manual_intervention_surplus_hours_per_week": -2.5,
+        "expert_cap_margin_usd": -5000,
+        "expert_floor_margin_usd": 15000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "subtotal_named_components_usd": {
+        "low": 140000,
+        "base": 246000,
+        "high": 395000,
+        "unit": "USD",
+        "spread_ratio": 2.8214285714285716,
+        "spread_absolute": 255000
+      },
+      "total_project_cost_estimate_usd": {
+        "low": 154000.0,
+        "base": 270600.0,
+        "high": 434500.0,
+        "unit": "USD",
+        "spread_ratio": 2.8214285714285716,
+        "spread_absolute": 280500.0
+      },
+      "budget_surplus_usd": {
+        "low": 346000.0,
+        "base": 229400.0,
+        "high": 65500.0,
+        "unit": "USD",
+        "spread_ratio": 0.18930635838150288,
+        "spread_absolute": -280500.0
+      },
+      "manual_intervention_surplus_hours_per_week": {
+        "low": 1.5,
+        "base": 0.2,
+        "high": -2.5,
+        "unit": "hours_per_week",
+        "spread_ratio": null,
+        "spread_absolute": -4.0
+      },
+      "expert_cap_margin_usd": {
+        "low": 13000,
+        "base": 7000,
+        "high": -5000,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": -18000
+      },
+      "expert_floor_margin_usd": {
+        "low": -3000,
+        "base": 3000,
+        "high": 15000,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": 18000
+      }
+    }
+  },
+  "warnings": []
+}

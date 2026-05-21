@@ -1,0 +1,132 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026-2027 (Pioneer's Gambit)",
+    "plan_type": "public_sector_logistics"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "budget_ceiling_crore": 15000,
+        "target_household_coverage": 0.99,
+        "contingency_fund_crore": 750,
+        "provisional_release_deadline_months": 6,
+        "ingestion_mttr_target_hours": 4,
+        "actual_household_coverage": 0.90,
+        "expected_total_cost_crore": 12000,
+        "actual_provisional_release_months": 4,
+        "actual_ingestion_mttr_hours": 2,
+        "expected_contingency_draw_crore": 200,
+        "household_coverage_margin": -0.09000000000000008,
+        "budget_surplus_crore": 3000,
+        "provisional_release_timing_margin_months": 2,
+        "ingestion_mttr_margin_hours": 2,
+        "contingency_buffer_crore": 550
+      },
+      "outputs": {
+        "household_coverage_margin": -0.09000000000000008,
+        "budget_surplus_crore": 3000,
+        "provisional_release_timing_margin_months": 2,
+        "ingestion_mttr_margin_hours": 2,
+        "contingency_buffer_crore": 550
+      }
+    },
+    "base": {
+      "inputs": {
+        "budget_ceiling_crore": 15000,
+        "target_household_coverage": 0.99,
+        "contingency_fund_crore": 750,
+        "provisional_release_deadline_months": 6,
+        "ingestion_mttr_target_hours": 4,
+        "actual_household_coverage": 0.99,
+        "expected_total_cost_crore": 14000,
+        "actual_provisional_release_months": 6,
+        "actual_ingestion_mttr_hours": 4,
+        "expected_contingency_draw_crore": 600,
+        "household_coverage_margin": 0.0,
+        "budget_surplus_crore": 1000,
+        "provisional_release_timing_margin_months": 0,
+        "ingestion_mttr_margin_hours": 0,
+        "contingency_buffer_crore": 150
+      },
+      "outputs": {
+        "household_coverage_margin": 0.0,
+        "budget_surplus_crore": 1000,
+        "provisional_release_timing_margin_months": 0,
+        "ingestion_mttr_margin_hours": 0,
+        "contingency_buffer_crore": 150
+      }
+    },
+    "high": {
+      "inputs": {
+        "budget_ceiling_crore": 15000,
+        "target_household_coverage": 0.99,
+        "contingency_fund_crore": 750,
+        "provisional_release_deadline_months": 6,
+        "ingestion_mttr_target_hours": 4,
+        "actual_household_coverage": 0.995,
+        "expected_total_cost_crore": 17500,
+        "actual_provisional_release_months": 9,
+        "actual_ingestion_mttr_hours": 10,
+        "expected_contingency_draw_crore": 1200,
+        "household_coverage_margin": 0.0050000000000000044,
+        "budget_surplus_crore": -2500,
+        "provisional_release_timing_margin_months": -3,
+        "ingestion_mttr_margin_hours": -6,
+        "contingency_buffer_crore": -450
+      },
+      "outputs": {
+        "household_coverage_margin": 0.0050000000000000044,
+        "budget_surplus_crore": -2500,
+        "provisional_release_timing_margin_months": -3,
+        "ingestion_mttr_margin_hours": -6,
+        "contingency_buffer_crore": -450
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "household_coverage_margin": {
+        "low": -0.09000000000000008,
+        "base": 0.0,
+        "high": 0.0050000000000000044,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.09500000000000008
+      },
+      "budget_surplus_crore": {
+        "low": 3000,
+        "base": 1000,
+        "high": -2500,
+        "unit": "crore_INR",
+        "spread_ratio": -0.8333333333333334,
+        "spread_absolute": -5500
+      },
+      "provisional_release_timing_margin_months": {
+        "low": 2,
+        "base": 0,
+        "high": -3,
+        "unit": "months",
+        "spread_ratio": -1.5,
+        "spread_absolute": -5
+      },
+      "ingestion_mttr_margin_hours": {
+        "low": 2,
+        "base": 0,
+        "high": -6,
+        "unit": "hours",
+        "spread_ratio": -3.0,
+        "spread_absolute": -8
+      },
+      "contingency_buffer_crore": {
+        "low": 550,
+        "base": 150,
+        "high": -450,
+        "unit": "crore_INR",
+        "spread_ratio": -0.8181818181818182,
+        "spread_absolute": -1000
+      }
+    }
+  },
+  "warnings": []
+}

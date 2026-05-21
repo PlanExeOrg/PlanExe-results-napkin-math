@@ -1,0 +1,855 @@
+{
+  "section_summary": "This section selects the 'The Builder: Pragmatic Scale-Up' scenario as the operational baseline for the 9 GW Hauts-de-France data center project, establishing a constrained, phased expansion contingent on validating external approvals and securing high-percentage tenant commitments before escalating capital expenditure into subsequent phases.",
+  "numeric_values": [
+    {
+      "line_english": "Estimated Phase 1 budget for 500 MW\u20131 GW: \u20ac5B\u2013\u20ac10B \u2014 initial CapEx estimate.",
+      "line_original": "\u20ac5B\u2013\u20ac10B",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Phase 1, 500 MW\u20131 GW: \u20ac5B\u2013\u20ac10B",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Full 9 GW buildout cost estimate: \u20ac100B\u2013\u20ac140B+ \u2014 maximum capital outlay estimate.",
+      "line_original": "Full 9 GW buildout: \u20ac100B\u2013\u20ac140B+",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Full 9 GW buildout: \u20ac100B\u2013\u20ac140B+",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Phase 1 required anchor tenant commitment threshold: 30% \u2013 50% of next expansion tranche \u2014 expansion gate trigger.",
+      "line_original": "at least 30\u201350% of the next expansion tranche",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "at least 30\u201350% of the next expansion tranche",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Total electric power target for full buildout: 9 GW \u2014 capacity ceiling for long-term model.",
+      "line_original": "full-buildout power target of 9 GW",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "full-buildout power target of 9 GW",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Phase 1 incremental power capacity range: 500 MW\u20131 GW \u2014 capacity ramp for short-term staging.",
+      "line_original": "Phase 1: 500 MW\u20131 GW",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Phase 1: 500 MW\u20131 GW",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Projected power capacity target scale-up to Phase 2: 1 GW\u20133 GW \u2014 mid-term capacity milestone.",
+      "line_original": "Scale to 1\u20133 GW",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Scale to 1\u20133 GW",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "Project must pivot if Phase 1 power, land, water, and social license are not credible.",
+      "line_original": "proceed only if Phase 1 power, land, water, permits, tenants, financing, fiber, and social license are credible.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "proceed only if Phase 1 power, land, water, permits",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The chosen scenario rejects the contiguous 161 km\u00b2 block in favor of distributed sites.",
+      "line_original": "Abandon the contiguous 161 km\u00b2 block and instead secure distinct, non-contiguous land parcels",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Abandon the contiguous 161 km\u00b2 block",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The plan must proceed skeptically, allowing for downsizing, splitting, or project cancellation.",
+      "line_original": "allowed to recommend downsizing, splitting the campus, delaying expansion, or cancelling the project",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "allowed to recommend downsizing, splitting the campus",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Full 9 GW scale-up requires sustained demand, grid capacity, financing, and social license.",
+      "line_original": "Reach 9 GW only if demand, grid capacity, financing, and social license remain strong.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Reach 9 GW only if demand, grid capacity, financing",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Expansion to Phase 2 is contingent upon meeting reliability, water, and community targets.",
+      "line_original": "expand only if power reliability, PUE, water, security, and community targets are met",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "expand only if power reliability, PUE, water, security",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The plan assumes EUR is the primary currency impacting local costs and financing.",
+      "line_original": "EUR as the primary currency for budgeting, financing, reporting",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "EUR as the primary currency for budgeting",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If credible commitments for power, land, and water are not secured, then do not proceed past Phase 0.",
+      "line_original": "proceed only if Phase 1 power, land, water, permits, tenants, financing, fiber, and social license are credible.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "proceed only if Phase 1 power, land, water, permits",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If anchor tenants commit less than 30% of the next tranche, then do not issue Final Decision to Invest for expansion.",
+      "line_original": "No credible anchor tenants = no FID for the next phase.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "No credible anchor tenants = no FID for the next phase.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If power reliability, PUE, water, and security targets are not met after Phase 1, then do not expand.",
+      "line_original": "expand only if power reliability, PUE, water, security, and community targets are met",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "expand only if power reliability, PUE, water, security",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If national-security review is not clear by Phase 1 deadline, then project progress is halted.",
+      "line_original": "Treat all external approvals... as uncertain until the plan defines a realistic process to obtain them.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "inferred",
+      "source_quote": "Treat all external approvals... as uncertain until the plan defines",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If an RTS decision is not obtained for a single proven corridor, then the total capacity target is reduced to 3 GW.",
+      "line_original": "Immediately reduce the target power commitment for the entire project to 3 GW total capacity",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "reduce the target power commitment for the entire project to 3 GW",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If social license is not credible, then the project should not proceed past Phase 0.",
+      "line_original": "social license are credible.",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "social license are credible.",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Grid overwhelming risk: failure of Hauts-de-France to host 9 GW without collapse \u2014 potential total project dependency failure.",
+      "line_original": "without overwhelming the grid",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "stress_test",
+      "source_quote": "overwhelming the grid",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Land market failure risk: inability to assemble 161 km\u00b2 \u2014 land assembly delay/cost overrun shock.",
+      "line_original": "land market, water systems, permitting process",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "stress_test",
+      "source_quote": "land market, water systems, permitting process",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Permitting process failure risk: environmental or municipal blockages leading to schedule overruns impacting viability.",
+      "line_original": "permitting process, local communities, and environmental constraints",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "stress_test",
+      "source_quote": "permitting process, local communities, and environmental constraints",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Grid upgrade cost overruns: unforeseen expenditure mandated by RTE/EDF beyond initial budget estimates.",
+      "line_original": "grid upgrades, substations",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "grid upgrades, substations",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Supply-chain security risk for hardware: failure to vet non-French GPUs/TPUs leading to security rejection shock.",
+      "line_original": "supply-chain security",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "supply-chain security",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Sabotage or physical disruption impacting grid connection or fiber routes capacity.",
+      "line_original": "resilience against sabotage or grid/fiber disruption",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "grid/fiber disruption",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Percentage of total CAPEX allocated to USD-denominated GPU/TPU procurement \u2014 estimate capital exposure mix.",
+      "line_original": "Track USD exposure separately for GPUs/TPUs",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "missing",
+      "source_quote": "Track USD exposure separately",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Total land assembly budget required until commitment for the non-contiguous parcels \u2014 input for Phase 0/1 burn rate.",
+      "line_original": "land assembly",
+      "modelling_relevance": 4,
+      "source_evidence": 2,
+      "source_status": "missing",
+      "source_quote": "land assembly",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Capital expenditure multiplier applied for substation construction per 1 GW of capacity \u2014 input for grid cost scaling.",
+      "line_original": "substations",
+      "modelling_relevance": 4,
+      "source_evidence": 2,
+      "source_status": "missing",
+      "source_quote": "substations",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Average annual EUR/USD foreign exchange rate for hardware procurement \u2014 input for FX hedging model.",
+      "line_original": "FX hedging assumptions",
+      "modelling_relevance": 4,
+      "source_evidence": 2,
+      "source_status": "missing",
+      "source_quote": "Include FX hedging assumptions",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Average annual cost per employee for French labor \u2014 input for workforce cost model.",
+      "line_original": "French labor",
+      "modelling_relevance": 3,
+      "source_evidence": 2,
+      "source_status": "missing",
+      "source_quote": "French labor",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Unit cost for brownfield remediation per square hectare \u2014 input for environmental mitigation scaling.",
+      "line_original": "brownfield remediation",
+      "modelling_relevance": 3,
+      "source_evidence": 2,
+      "source_status": "missing",
+      "source_quote": "brownfield remediation",
+      "quote_verified": true
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 26,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 366,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nEstablish an intentionally extreme hyperscale AI data center campus in **Hauts-de-France, France**, focused on the industrial AI belt around **Cambrai / E-Valley, Valenciennes / Denain / Escaudain, Dunkirk, Saint-Omer, and nearby industrial or brownfield land**.\n\nThe project has a fixed notional footprint of **12.7 km \u00d7 12.7 km** \u2014 approximately **161 km\u00b2 / 40,000 acres** \u2014 and a full-buildout power target of **9 GW** over **10\u201315+ years**. Treat this as a red-team planning scenario: the plan must be rigorous, skeptical, and allowed to recommend downsizing, splitting the campus, delaying expansion, or cancelling the project if feasibility fails.\n\n## Selected Location\n\nUse **Hauts-de-France** as the only location.\n\nReasons:\n\n- strong industrial redevelopment and reindustrialization narrative\n- existing logistics, port, rail, steel, refinery, military, and brownfield land contexts\n- Cambrai / E-Valley as a large redevelopment zone\n- Dunkirk as a heavy-industry and port-logistics hub\n- better cooling climate than southern France\n- strong latency to Paris, London, Brussels, Amsterdam, Frankfurt, and northern Europe\n- geopolitically safer than Russia-adjacent regions\n- stronger public narrative than a pure greenfield rural megaproject\n\n## Core Feasibility Question\n\nCan Hauts-de-France realistically host a **9 GW**, **161 km\u00b2**, AI/hyperscale compute campus without overwhelming the grid, land market, water systems, permitting process, local communities, and environmental constraints?\n\nDo not assume the answer is yes.\n\nDo not invent binding commitments from RTE, EDF, DGSI, ANSSI, tenants, municipalities, or prefectural authorities. Treat all external approvals, grid commitments, security clearances, tenant contracts, and public-sector commitments as uncertain until the plan defines a realistic process to obtain them. Mark any milestone depending on an external authority as \u201cuncontrolled\u201d unless backed by a contract, permit, formal decision, or signed term sheet.\n\n## Campus Specifications\n\n- **Footprint:** 12.7 km \u00d7 12.7 km, approximately 161 km\u00b2 / 40,000 acres\n- **Power:** 9 GW full buildout\n- **Phase 1:** 500 MW\u20131 GW\n- **Use:** high-density GPU/TPU clusters for AI training, fine-tuning, batch inference, sovereign AI, and selected enterprise inference\n- **PUE target:** 1.15\u20131.25\n- **Cooling:** direct-to-chip liquid cooling by default; optional 50\u2013100 MW immersion cooling pilot\n- **Water:** prefer zero- or ultra-low-water cooling; treat freshwater or evaporative cooling as high-risk\n- **Power strategy:** French low-carbon grid, nuclear-backed contracts, EDF/RTE coordination, PPAs, BESS, grid flexibility, and limited backup generation\n- **Connectivity:** diverse fiber to Paris, London, Brussels, Amsterdam, Frankfurt, Marseille, and subsea/transatlantic routes\n- **Security:** national-security review, hardened perimeter, cyber/OT separation, anti-drone systems, supply-chain security, and resilience against sabotage or grid/fiber disruption\n\n## Building Model\n\nUse low-to-mid-rise data halls:\n\n- typical height: **14\u201320 m**\n- maximum height: **25\u201330 m**\n- individual halls: **20,000\u2013100,000 m\u00b2**, with some up to 150,000+ m\u00b2\n- full buildout: **50\u2013100+ major buildings**\n- explain why taller buildings are usually less suitable for AI-scale data centers\n\nDo **not** assume most of the 161 km\u00b2 should be buildings. Create a land-use model covering:\n\n- data halls\n- substations\n- BESS\n- backup generation\n- roads/logistics\n- fiber corridors\n- stormwater\n- biodiversity buffers\n- heat-reuse infrastructure\n- security setbacks\n- expansion reserve\n- community buffers\n- agricultural or ecological continuation zones\n- brownfield remediation zones\n\nChallenge whether a single square footprint is rational, or whether a split-campus model across nearby industrial zones is better.\n\n## Budget Assumptions\n\nUse these estimates, but validate or challenge them:\n\n- Phase 0 feasibility/site control: **\u20ac250M\u2013\u20ac750M**\n- Phase 1, 500 MW\u20131 GW: **\u20ac5B\u2013\u20ac10B**\n- Expansion to 3 GW: **\u20ac25B\u2013\u20ac45B**\n- Full 9 GW buildout: **\u20ac100B\u2013\u20ac140B+**\n\nUse **EUR as the primary currency** for budgeting, financing, reporting, land, labor, grid, power, permitting, taxes, and public-benefit commitments. Track **USD exposure separately** for GPUs/TPUs, networking hardware, selected software, and international vendor contracts. Include FX hedging assumptions where USD-denominated hardware procurement materially affects the budget.\n\nInclude cost drivers: grid upgrades, substations, nuclear-backed power contracts, cooling systems, fiber, land acquisition, brownfield remediation, environmental mitigation, security, financing costs, French labor, permitting, public benefit commitments, and community compensation.\n\n## Phased Roadmap\n\n### Phase 0: Years 0\u20131\n\nFeasibility, site control, land assembly, grid hosting capacity, EDF/RTE engagement, cooling/water feasibility, environmental baseline, community risk, fiber feasibility, anchor tenant validation, financing pre-commitments, permitting path, national-security review, and no-build alternative.\n\nDecision gate: proceed only if Phase 1 power, land, water, permits, tenants, financing, fiber, and social license are credible.\n\n### Phase 1: Years 1\u20133\n\nBuild **500 MW\u20131 GW** with 8\u201320 data halls, dedicated substation, BESS/backup, liquid-cooling loop, diverse fiber, hardened perimeter, first tenants, public benefit agreement, local workforce program, and environmental monitoring.\n\nDecision gate: expand only if power reliability, PUE, water, security, and community targets are met, and if creditworthy anchor tenants have signed take-or-pay or equivalent capacity commitments for at least 30\u201350% of the next expansion tranche. No credible anchor tenants = no FID for the next phase.\n\n### Phase 2: Years 3\u20137\n\nScale to **1\u20133 GW** with more halls, additional substations, transmission upgrades, heat-reuse pilots, expanded fiber, supplier ecosystem, and public-benefit payments.\n\n### Phase 3: Years 7\u201311\n\nScale to **3\u20136 GW** with sovereign AI zones, high-security compute partitions, standardized liquid cooling, resilience testing, and lifecycle replacement planning.\n\n### Phase 4: Years 11\u201315+\n\nReach **9 GW** only if demand, grid capacity, financing, environmental permits, and social license remain strong.\n\n## Required Analysis\n\nAnalyze:\n\n- whether 161 km\u00b2 can be assembled\n- whether the square footprint is realistic\n- whether split-campus design is superior\n- grid and transmission feasibility\n- power procurement and price risk\n- cooling and water risk\n- heat-reuse opportunity\n- fiber latency and route diversity\n- brownfield remediation risk\n- agricultural displacement\n- permitting and national-security review\n- local political support\n- public opposition risk\n- tenant demand\n- financing credibility\n- scalability from 1 GW to 3 GW to 9 GW\n\n## Required Output\n\nProduce a complete plan with:\n\n- executive summary\n- selected site rationale\n- land-use model\n- single-site vs split-campus analysis\n- phased roadmap\n- budget model\n- power model\n- cooling model\n- connectivity strategy\n- permitting path\n- stakeholder map\n- environmental and water strategy\n- community/social-license strategy\n- security strategy\n- tenant strategy\n- workforce strategy\n- public benefit strategy\n- risk register\n- decision gates\n- kill criteria\n- open questions\n- first 180-day action plan\n\nThe output must be skeptical, not promotional. It should identify what would make the project infeasible and what must be proven before serious capital is committed.\n\nToday's date:\n2026-May-16\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Strategic planning and feasibility assessment for a massive, multi-phase, infrastructure-intensive commercial data center project targeting 9 GW capacity, involving significant capital expenditure, grid coordination, regulatory navigation, and long-term industrial development.\n\n**Topic:** Development of an intentionally extreme hyperscale AI data center campus (9 GW) in Hauts-de-France, France.\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan is an extremely detailed, multi-year strategy focused on the physical execution of building a massive data center campus spanning 161 km\u00b2 in Hauts-de-France, France. This involves massive physical construction, land acquisition/assembly (161 km\u00b2), coordinating multi-gigawatt electrical infrastructure (9 GW), managing physical cooling systems (liquid cooling loops), establishing physical fiber routes, dealing with brownfield remediation, and navigating physical permitting processes localized to specific parcels of land. Even though the *output* relates to software/AI compute, the *plan* is overwhelmingly dedicated to overcoming rigorous physical, engineering, logistical, and regulatory hurdles required to place that compute in the real world. Therefore, it is classified as physical.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"b00fc888-34bf-4edd-9fb7-db1a8e0a6c52\",\"name\":\"Grid Integration and Power Source Commitment\",\"consequences\":\"Committing to the 9 GW target prematurely risks substantial sunk costs in preliminary grid connection studies and substation rights-of-way that RTE may deny or heavily condition. A conservative approach mandates securing binding, contracted capacity allocation for Phase 2 (3 GW) before approving Phase 1 construction financing, acknowledging that RTE-mandated regional transmission upgrades introduce major, uncontrolled schedule risk and cost overruns outside developer control. Delaying firm power commitment until a later gate pushes tenants further downstream, potentially jeopardizing take-or-pay contracts.\",\"options\":[\"Negotiate a firm, contracted 500MW-1GW connection point for Phase 1 contingent on immediate, pre-paid submission of subsequent grid impact studies required for the full 9 GW capacity, accepting high initial capital exposure to expedite timeline.\",\"Limit Phase 1 scope to 500 MW backed only by a non-binding RTE hosting consultation response, deferring all transmission upgrade capital expenditure until the 3 GW expansion gate, prioritizing immediate land and building mobilization over power certainty.\",\"Establish a dual-path parallel strategy where the core campus targets 3 GW utilizing contracted nuclear power, while the remaining 6 GW is explicitly budgeted and planned as physically separate, geographically decoupled microgrids powered by contracted, on-site co-located long-duration BESS charged via PPA, accepting higher PUE for distribution.\",\"Immediately reduce the target power commitment for the entire project to 3 GW total capacity, focusing all grid negotiation efforts on securing a single, proven transmission corridor, thereby de-risking the initial 8-year timeline.\"],\"review\":\"Tying Phase 1 financing to future grid confirmation for 9 GW creates an unmanageable schedule risk tied to RTE decisions, whereas scoping down limits initial revenue potential and campus dominance in the target region.\",\"description\":\"This lever manages the critical dependency between physical construction commencement and securing contracted electrical capacity from RTE. Success is measured by obtaining binding transmission allocation for at least Phase 2 (3 GW) prior to finalizing Phase 1 construction financing. It involves negotiating high initial capital outlay for feasibility studies to accelerate the overall timeline while accepting the uncertainty inherent in French grid planning decisions.\",\"synergy_text\":\"Amplifies Power Procurement Sequencing and Risk Hedging by securing the physical corridor for future power buys. It is constrained by Land Assembly Modality and Footprint Rationalization.\",\"conflict_text\":\"Conflicts with Tenant Acquisition Trigger Threshold by potentially securing power before tenants are fully locked in, risking stranded fixed power capacity if demand dips unexpectedly.\"},{\"lever_id\":\"182c7249-4c09-4842-b27a-e05ac3137228\",\"name\":\"Land Assembly Modality and Footprint Rationalization\",\"consequences\":\"Attempting to assemble the contiguous 161 km\\u00b2 square parcel in Hauts-de-France presents extreme challenges in local planning consent, agricultural displacement, and brownfield aggregation, likely leading to multi-year litigation delays. Adopting a split-campus model across 3-5 existing, fully zoned industrial parks (e.g., Dunkirk port logistics, E-Valley) simplifies land control and accelerates Phase 1 but fragments the centralized security perimeter and increases internal logistics overhead for shared services like H/R or central offices. The high-rise mandate for AI compute density within a wide footprint pushes the land-use model toward inefficient internal sprawl rather than optimized density.\",\"options\":[\"Abandon the contiguous 161 km\\u00b2 block and instead secure distinct, non-contiguous land parcels totaling 50 km\\u00b2 across three established, permitted industrial zones (e.g., Cambrai, Dunkirk, Valenciennes) to accelerate Phase 1 readiness and fragment environmental permitting risk.\",\"Force the consolidation of the full 161 km\\u00b2 target by offering a substantial, non-negotiable public benefit or land-value guarantee package to prefectural authorities, streamlining assembly under a single, comprehensive, but politically vulnerable, exceptional planning decree.\",\"Institute a hyper-dense development model where 80% of the 161 km\\u00b2 is immediately designated as permanent ecological preservation/water retention/agricultural buffer around five strategically placed, highly secure, and vertically integrated 1 GW nodes, effectively limiting buildable area to 30 km\\u00b2 long-term.\"],\"review\":\"Forcing a single, monolithic land assembly guarantees schedule delays via local judicial review, whereas distributing the asset across industrial zones sacrifices centralized security and logistical efficiency for speed of land control.\",\"description\":\"This strategic decision dictates the physical geography of the campus, addressing the infeasibility of aggregating 161 km\\u00b2 contiguously. Rationalization involves distributing phases across existing industrial zones to expedite land control and permitting velocity. Success metrics include reduced dispute timelines and successful integration of previously fragmented sites into a unified security and logistics concept, minimizing land-use sprawl.\",\"synergy_text\":\"Synergizes strongly with Local Social License and Community Buffer Zones, as splitting the campus across multiple sites may dilute localized opposition to a single, massive land grab.\",\"conflict_text\":\"Creates conflict with National Security and Sovereignty Alignment by complicating the establishment of a single, hardened, perimeter-controlled zone necessary for sensitive national compute workloads.\"},{\"lever_id\":\"2d21cacb-07ff-4ee3-91ca-ab89bc0e7f52\",\"name\":\"National Security and Sovereignty Alignment\",\"consequences\":\"Failure to secure early, explicit alignment with DGSI/ANSSI regarding hardware provenance, data classification, and physical security for the sovereign AI partition jeopardizes the entire tenant base, as French state entities require stringent guarantees. Treating the national security review as a post-Phase 1 permitting milestone delays revenue; conversely, tailoring the physical design (e.g., dedicated facility layers, hardened corridors) prematurely adds substantial construction cost and reduces flexibility should security requirements shift based on geopolitical events beyond Year 3. The timeline for security clearance is often the longest uncontrolled path in French infrastructure projects.\",\"options\":[\"Mandate that the first 500 MW load remains exclusively for non-classified commercial tenants until a formal, signed agreement governing the separation, auditing, and operational protocols for the dedicated sovereign AI partition is executed with relevant national authorities.\",\"Immediately allocate 2 GW of the total capacity as a pre-engineered, physically isolated, and dedicated sovereign compute zone, designed to the highest DGSI standards from Day 1, even if initial tenants are non-sovereign, to secure favorable regulatory status early.\",\"Execute Phase 1 entirely on a temporary, modular, and externally hardened perimeter, deliberately foregoing initial sovereign classification until the facility demonstrates 24 months of flawless, low-incident operational performance and predictable PUE metrics.\"],\"review\":\"Delaying physical security hardening for the sovereign zone until after Phase 1 risks expensive retrofitting or outright denial of high-value government contracts, but early over-engineering inflates Phase 1 capital expenditure unnecessarily.\",\"description\":\"This lever ensures the project's core French sovereign AI mandate is met by proactively aligning physical design and operational protocols with DGSI/ANSSI requirements from the outset. Success depends on achieving a signed protocol defining hardware sourcing control and internal security partitioning before Phase 1 Power FID. This governs access to premium, state-backed revenue streams, treating security compliance as an enabler rather than a post-construction certification.\",\"synergy_text\":\"Directly enables Heat Reuse and Public Benefit Monetization by providing a secure framework under which sensitive domestic workloads can operate, boosting domestic value.\",\"conflict_text\":\"Creates tension with Tenant Acquisition Trigger Threshold, as meeting stringent security requirements immediately raises the base cost engineering for all initial capacity, potentially slowing initial commercial lease-up.\"},{\"lever_id\":\"876ac8dc-d585-433d-ae2b-ca9fbe0095ba\",\"name\":\"Tenant Acquisition Trigger Threshold\",\"consequences\":\"Setting the expansion trigger (Phase 2 FID) contingent on 30\\u201350% committed capacity via take-or-pay contracts forces a deliberate slowdown, protecting the project from overbuilding power infrastructure but potentially ceding market share to faster competitors in the Northern European AI race. Conversely, proceeding with expansion based on soft LOIs or pipeline visibility (e.g., 10% commitment) allows for rapid deployment but introduces material financing risk if anchor tenants retract during the 3-year construction window for the next tranche, leading to stranded substation capacity.\",\"options\":[\"Raise the minimum take-or-pay commitment threshold for the 1-3 GW expansion gate to 60% of the next tranche's capacity, sacrificing speed entirely in favor of leveraging committed revenue to secure significantly lower, syndicated debt financing rates.\",\"Mandate that only US Dollar-denominated GW-capacity contracts for sovereign AI workloads count toward the Phase 2 expansion trigger, creating a higher barrier to entry but insulating the project's core P&L from short-term EUR/USD volatility.\",\"Approve Phase 2 expansion based solely on achieving 100% utilization of the Phase 1 1 GW capacity being guaranteed by a consortium of three medium-sized European cloud providers, accepting lower per-unit revenue for guaranteed base-load tenancy.\"],\"review\":\"Requiring high revenue commitment (60%+) for expansion de-risks financing against vacancy but dramatically slows reaction time to sudden spikes in AI compute demand, sacrificing first-mover advantage.\",\"description\":\"This lever controls the pace of scale-up\\u2014specifically transitioning from 1 GW to 3 GW\\u2014by making expansion conditional on anchored, bankable revenue contracts, not merely projected market growth. Success is defined by securing high-percentage take-or-pay commitments before commencing high-CAPEX infrastructure builds like the next wave of substations. This prioritizes financial stability over aggressive market capture speed.\",\"synergy_text\":\"Synergizes with Grid Integration and Power Source Commitment by using committed tenant revenue as the leverage required to unlock further high-capacity grid investment discussions with RTE.\",\"conflict_text\":\"Directly conflicts with Fiber Connectivity Path Diversity and Ownership, as aggressive commitment thresholds might force early, suboptimal fiber expansion decisions before strategic long-term routing is finalized.\"},{\"lever_id\":\"b50b7c15-19d1-4b06-bd0f-46fb2d08c412\",\"name\":\"Fiber Connectivity Path Redundancy and Terrestrial vs. Subsea Access\",\"consequences\":\"The choice among diverse fiber routes directly impacts the critical low-latency connection to major European financial and AI hubs, which is non-negotiable for the intended use case. Prioritizing a single, ultra-low latency terrestrial path with minimal terrestrial hops, while faster, concentrates catastrophic risk on a single physical corridor susceptible to localized digging or infrastructure failure across the French/Belgian border. Developing immediate redundancy via multiple terrestrial paths, or incorporating immediate subsea route diversity, adds significant initial right-of-way negotiation complexity and higher operational leasing costs.\",\"options\":[\"Mandate diversity only through the primary terrestrial routes to Paris and Brussels, accepting the geographic concentration risk in exchange for achieving best-possible latency metrics necessary for time-sensitive AI model training synchronization.\",\"Fund the immediate physical construction or long-term leasing of physically separate fiber trenches, simultaneously entering agreements for two different subsea landing points (e.g., Dieppe/Calais and Dieppe/UK), prioritizing resilience over the first year's latency performance.\",\"Outsource all fiber corridor development to a single, established carrier under a 15-year managed service contract, accepting their pre-existing primary routes in exchange for eliminating the immediate financial and administrative burden of land acquisition/easement processing.\"],\"review\":\"Outsourcing connectivity eliminates immediate complexity but locks the campus into a carrier's existing infrastructure limitations, which may not meet the evolving, specialized bandwidth or ultra-low latency requirements of the core AI workloads.\",\"description\":\"This lever involves granular selection and negotiation of physical fiber assets, directly balancing latency performance (crucial for AI workloads) against single-point-of-failure risk from terrestrial route concentration. The objective is achieving geographic diversity across multiple continental points and subsea access early in the plan. Success is defined by achieving multi-route physical separation, even if it necessitates utilizing higher-cost or slightly higher-latency secondary connections initially.\",\"synergy_text\":\"Is strongly amplified by Fiber Connectivity Path Diversity and Ownership, as this lever defines the requirements the ownership strategy must execute upon for resilience and performance.\",\"conflict_text\":\"Trades off against Local Workforce Sourcing and Skill Uplift Mandate. Focusing intense early effort and capital on complex fiber easement negotiation detracts focus from essential local recruitment and training programs.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer: Accelerated Dominance\",\"strategic_logic\":\"This path aggressively pursues the 9 GW vision by front-loading capital and complexity to secure regional primacy and meet potential early market demand spikes. It accepts high financial and regulatory risk by aiming for the fastest possible mobilization across power commitment, land assembly, and security definition.\",\"lever_settings\":{\"Grid Integration and Power Source Commitment\":\"Negotiate a firm, contracted 500MW-1GW connection point for Phase 1 contingent on immediate, pre-paid submission of subsequent grid impact studies required for the full 9 GW capacity, accepting high initial capital exposure to expedite timeline.\",\"Land Assembly Modality and Footprint Rationalization\":\"Force the consolidation of the full 161 km\\u00b2 target by offering a substantial, non-negotiable public benefit or land-value guarantee package to prefectural authorities, streamlining assembly under a single, comprehensive, but politically vulnerable, exceptional planning decree.\",\"National Security and Sovereignty Alignment\":\"Immediately allocate 2 GW of the total capacity as a pre-engineered, physically isolated, and dedicated sovereign compute zone, designed to the highest DGSI standards from Day 1, even if initial tenants are non-sovereign, to secure favorable regulatory status early.\",\"Tenant Acquisition Trigger Threshold\":\"Approve Phase 2 expansion based solely on achieving 100% utilization of the Phase 1 1 GW capacity being guaranteed by a consortium of three medium-sized European cloud providers, accepting lower per-unit revenue for guaranteed base-load tenancy.\",\"Fiber Connectivity Path Redundancy and Terrestrial vs. Subsea Access\":\"Fund the immediate physical construction or long-term leasing of physically separate fiber trenches, simultaneously entering agreements for two different subsea landing points (e.g., Dieppe/Calais and Dieppe/UK), prioritizing resilience over the first year's latency performance.\"}},{\"scenario_name\":\"The Builder: Pragmatic Scale-Up\",\"strategic_logic\":\"This path prioritizes a measured, phased approach that validates each major commitment before escalating capital. It seeks the optimal balance between speed and de-risking, relying on strong anchor tenants and avoiding the political pitfalls of extreme land demands while managing grid exposure commensurate with secured revenue.\",\"lever_settings\":{\"Grid Integration and Power Source Commitment\":\"Limit Phase 1 scope to 500 MW backed only by a non-binding RTE hosting consultation response, deferring all transmission upgrade capital expenditure until the 3 GW expansion gate, prioritizing immediate land and building mobilization over power certainty.\",\"Land Assembly Modality and Footprint Rationalization\":\"Institute a hyper-dense development model where 80% of the 161 km\\u00b2 is immediately designated as permanent ecological preservation/water retention/agricultural buffer around five strategically placed, highly secure, and vertically integrated 1 GW nodes, effectively limiting buildable area to 30 km\\u00b2 long-term.\",\"National Security and Sovereignty Alignment\":\"Mandate that the first 500 MW load remains exclusively for non-classified commercial tenants until a formal, signed agreement governing the separation, auditing, and operational protocols for the dedicated sovereign AI partition is executed with relevant national authorities.\",\"Tenant Acquisition Trigger Threshold\":\"Raise the minimum take-or-pay commitment threshold for the 1-3 GW expansion gate to 60% of the next tranche's capacity, sacrificing speed entirely in favor of leveraging committed revenue to secure significantly lower, syndicated debt financing rates.\",\"Fiber Connectivity Path Redundancy and Terrestrial vs. Subsea Access\":\"Mandate diversity only through the primary terrestrial routes to Paris and Brussels, accepting the geographic concentration risk in exchange for achieving best-possible latency metrics necessary for time-sensitive AI model training synchronization.\"}},{\"scenario_name\":\"The Consolidator: Stability and Cost Control\",\"strategic_logic\":\"This conservative strategy minimizes regulatory exposure and upfront CapEx by immediately scaling back the overall ambition to a demonstrably achievable 3 GW total footprint. It favors proven operational stability over market capture speed, leveraging controlled cost structures to enhance financing credibility.\",\"lever_settings\":{\"Grid Integration and Power Source Commitment\":\"Immediately reduce the target power commitment for the entire project to 3 GW total capacity, focusing all grid negotiation efforts on securing a single, proven transmission corridor, thereby de-risking the initial 8-year timeline.\",\"Land Assembly Modality and Footprint Rationalization\":\"Abandon the contiguous 161 km\\u00b2 block and instead secure distinct, non-contiguous land parcels totaling 50 km\\u00b2 across three established, permitted industrial zones (e.g., Cambrai, Dunkirk, Valenciennes) to accelerate Phase 1 readiness and fragment environmental permitting risk.\",\"National Security and Sovereignty Alignment\":\"Execute Phase 1 entirely on a temporary, modular, and externally hardened perimeter, deliberately foregoing initial sovereign classification until the facility demonstrates 24 months of flawless, low-incident operational performance and predictable PUE metrics.\",\"Tenant Acquisition Trigger Threshold\":\"Mandate that only US Dollar-denominated GW-capacity contracts for sovereign AI workloads count toward the Phase 2 expansion trigger, creating a higher barrier to entry but insulating the project's core P&L from short-term EUR/USD volatility.\",\"Fiber Connectivity Path Redundancy and Terrestrial vs. Subsea Access\":\"Outsource all fiber corridor development to a single, established carrier under a 15-year managed service contract, accepting their pre-existing primary routes in exchange for eliminating the immediate financial and administrative burden of land acquisition/easement processing.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"Intentionally extreme hyperscale, targeting 9 GW capacity across a massive 161 km\\u00b2 footprint, spanning 10\\u201315+ years with \\u20ac100B+ expenditure. Aims for regional dominance.\",\"risk_and_novelty\":\"Extremely high risk and novelty. The plan demands rigorous feasibility analysis, treating commitments as uncertain ('red-team'). It requires overcoming novel challenges in land aggregation, multi-GW grid coordination in France, and advanced liquid cooling deployment at this scale.\",\"complexity_and_constraints\":\"Extremely high complexity. Defined by numerous engineering constraints (PUE 1.15-1.25, liquid cooling), financial constraints (\\u20ac100B+ budget), strict regulatory hurdles (DGSI/ANSSI), and mandatory skepticism regarding external approvals (RTE, Prefectures).\",\"domain_and_tone\":\"Industrial infrastructure development (Data Center/Energy/Real Estate) combined with high-level corporate strategy. The tone is rigorously skeptical, analytical, and condition-heavy, demanding feasibility proof rather than promotional certainty.\",\"holistic_profile_of_the_plan\":\"\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer: Accelerated Dominance\",\"fit_score\":8,\"fit_assessment\":\"This scenario directly matches the plan's inherent 'intentionally extreme' nature by front-loading risks, such as forcing land consolidation and immediately defining a sovereign zone, aligning with the $9 GW ambition.\"},{\"scenario_name\":\"The Builder: Pragmatic Scale-Up\",\"fit_score\":9,\"fit_assessment\":\"This scenario best fits the requirement to be 'rigorous, skeptical, and allowed to recommend downsizing,' as it heavily validates commitments before scaling, controlling power exposure (non-binding RTE for Phase 1) and rationalizing the footprint (hyper-dense model).\"},{\"scenario_name\":\"The Consolidator: Stability and Cost Control\",\"fit_score\":4,\"fit_assessment\":\"This scenario is a poor fit because it immediately scales down the core ambition to 3 GW, which contradicts the plan's explicit focus on planning for a 9 GW target and addressing the feasibility of the extreme scale.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Builder: Pragmatic Scale-Up\",\"justification\":\"The 'Pragmatic Scale-Up' scenario is the superior fit because the project plan\\u2019s core directive is to conduct a 'red-team planning scenario' that is 'rigorous, skeptical,' and *allowed* to fail or downsize.\\n\\n*   **Alignment with Skepticism:** This scenario enforces validation gates, using non-binding power commitments for Phase 1 and demanding high revenue thresholds (60% take-or-pay) for Phase 2 expansion, directly recognizing the plan's need to treat external approvals as uncertain until proven.\\n*   **Risk Management:** It embraces footprint rationalization by adopting a 'hyper-dense development model' for the 161 km\\u00b2 area, addressing complexity without resorting to the politically risky forced consolidation favored by The Pioneer.\\n*   **Comparative Weakness of Others:** 'The Pioneer' accelerates risk by forcing full land assembly and pre-engineering the sovereign zone, violating the plan's skeptical tone. 'The Consolidator' fails because it dismisses the core ambition by immediately cutting the target to 3 GW, rather than proving feasibility at 9 GW.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 2153,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nPer-period and per-unit rates (important): when the source expresses a\nquantity as a rate (a value divided by some period or some other unit),\nthe label MUST carry the denominator so the rate stays visible\ndownstream. Write the label as '<quantity> per <denominator>' or\ninclude the denominator in the unit field (e.g. '<unit>/<denominator>').\nA flat label that drops the denominator is invalid when the source\nstates one \u2014 the downstream extract can no longer reconstruct the\nmultiplication. For these rate entries the modelling role should\ndescribe the multiplication structure rather than just naming the cost,\nso a downstream stage can identify the matching scaling input.\n\nSource-stated rates belong in this bucket, not in missing_data. If the\nsource names a per-period or per-unit rate at all \u2014 explicitly,\ninferred, as a recommended range, or as a stress_test magnitude \u2014 emit\nit as a numeric_value with the denominator preserved. Setting\nsource_status to 'inferred' or 'stress_test' is fine when the source's\nframing fits; do NOT route a rate-like quantity to missing_data merely\nbecause the source gives it as a range, a recommendation, or an\nexpert's estimate rather than as a single committed value.\nmissing_data_to_estimate is reserved for primitives the source does NOT\nname. A rate the source mentions, even imprecisely, has been named and\nmust surface here with its denominator intact.\n\nA total cost that the source ALSO frames as a per-period burn must\nappear here in BOTH forms when the source supplies both: one entry for\nthe total (with its absolute label) and one entry for the rate (with\nthe per-period denominator). Listing only the total flattens the burn\nstructure; listing only the rate hides the source's own committed total.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n- '<what the rate is> per <denominator>: <amount> <unit-from-source>/<denominator> \u2014 <modelling role describing what it scales with>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 4,
+        "second_pass_response_byte_count": 2255,
+        "second_pass_user_prompt": "Review the numeric_values items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 8,
+        "newly_added_count": 8,
+        "scored_items": [
+          {
+            "line_english": "Total electric power target for full buildout: 9 GW \u2014 capacity ceiling for long-term model.",
+            "line_original": "full-buildout power target of 9 GW",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "full-buildout power target of 9 GW",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Phase 1 incremental power capacity range: 500 MW\u20131 GW \u2014 capacity ramp for short-term staging.",
+            "line_original": "Phase 1: 500 MW\u20131 GW",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Phase 1: 500 MW\u20131 GW",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Projected power capacity target scale-up to Phase 2: 1 GW\u20133 GW \u2014 mid-term capacity milestone.",
+            "line_original": "Scale to 1\u20133 GW",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Scale to 1\u20133 GW",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Projected power capacity target scale-up to Phase 3: 3 GW\u20136 GW \u2014 upper-mid-term capacity gate.",
+            "line_original": "Scale to 3\u20136 GW",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Scale to 3\u20136 GW",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total notional footprint area: 161 km\u00b2 \u2014 land area constraint input.",
+            "line_original": "161 km\u00b2",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "approximately 161 km\u00b2",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Estimated Phase 0 feasibility/site control budget: \u20ac250M\u2013\u20ac750M \u2014 start-up expenditure envelope.",
+            "line_original": "\u20ac250M\u2013\u20ac750M",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Phase 0 feasibility/site control: \u20ac250M\u2013\u20ac750M",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Estimated Phase 1 budget for 500 MW\u20131 GW: \u20ac5B\u2013\u20ac10B \u2014 initial CapEx estimate.",
+            "line_original": "\u20ac5B\u2013\u20ac10B",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Phase 1, 500 MW\u20131 GW: \u20ac5B\u2013\u20ac10B",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Projected expansion budget to 3 GW: \u20ac25B\u2013\u20ac45B \u2014 mid-term investment envelope.",
+            "line_original": "\u20ac25B\u2013\u20ac45B",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Expansion to 3 GW: \u20ac25B\u2013\u20ac45B",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Target PUE range for operations: 1.15\u20131.25 \u2014 operational efficiency constraint.",
+            "line_original": "PUE target: 1.15\u20131.25",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "PUE target: 1.15\u20131.25",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Immersion cooling pilot capacity range: 50 MW\u2013100 MW \u2014 optional early technology scaling.",
+            "line_original": "optional 50\u2013100 MW immersion cooling pilot",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "optional 50\u2013100 MW immersion cooling pilot",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Range for individual data hall size: 20,000 m\u00b2\u2013100,000 m\u00b2 \u2014 building volume input for land-use model.",
+            "line_original": "20,000\u2013100,000 m\u00b2",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "20,000\u2013100,000 m\u00b2",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Maximum height for typical data halls: 30 m \u2014 vertical constraint for structural models.",
+            "line_original": "maximum height: 25\u201330 m",
+            "modelling_relevance": 2,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "maximum height: 25\u201330 m",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Minimum height for typical data halls: 14 m \u2014 minimum vertical coverage assumption.",
+            "line_original": "typical height: 14\u201320 m",
+            "modelling_relevance": 2,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "typical height: 14\u201320 m",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total buildout timeframe estimate: 15+ years \u2014 project duration horizon.",
+            "line_original": "10\u201315+ years",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "explicit",
+            "source_quote": "10\u201315+ years",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Full 9 GW buildout cost estimate: \u20ac100B\u2013\u20ac140B+ \u2014 maximum capital outlay estimate.",
+            "line_original": "Full 9 GW buildout: \u20ac100B\u2013\u20ac140B+",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Full 9 GW buildout: \u20ac100B\u2013\u20ac140B+",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Phase 1 required anchor tenant commitment threshold: 30% \u2013 50% of next expansion tranche \u2014 expansion gate trigger.",
+            "line_original": "at least 30\u201350% of the next expansion tranche",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "at least 30\u201350% of the next expansion tranche",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 31,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 3,
+        "second_pass_response_byte_count": 2737,
+        "second_pass_user_prompt": "Review the load_bearing_assumptions items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 0,
+        "second_pass_item_count": 8,
+        "newly_added_count": 8,
+        "scored_items": [
+          {
+            "line_english": "Project must pivot if Phase 1 power, land, water, and social license are not credible.",
+            "line_original": "proceed only if Phase 1 power, land, water, permits, tenants, financing, fiber, and social license are credible.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "proceed only if Phase 1 power, land, water, permits",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Expansion to Phase 2 is contingent upon meeting reliability, water, and community targets.",
+            "line_original": "expand only if power reliability, PUE, water, security, and community targets are met",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "expand only if power reliability, PUE, water, security",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Full 9 GW scale-up requires sustained demand, grid capacity, financing, and social license.",
+            "line_original": "Reach 9 GW only if demand, grid capacity, financing, and social license remain strong.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Reach 9 GW only if demand, grid capacity, financing",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The default cooling strategy must be direct-to-chip liquid cooling.",
+            "line_original": "direct-to-chip liquid cooling by default",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "direct-to-chip liquid cooling by default",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Freshwater or evaporative cooling must be treated as a high-risk strategy.",
+            "line_original": "treat freshwater or evaporative cooling as high-risk",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "treat freshwater or evaporative cooling as high-risk",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The plan assumes EUR is the primary currency impacting local costs and financing.",
+            "line_original": "EUR as the primary currency for budgeting, financing, reporting",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "EUR as the primary currency for budgeting",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen scenario rejects the contiguous 161 km\u00b2 block in favor of distributed sites.",
+            "line_original": "Abandon the contiguous 161 km\u00b2 block and instead secure distinct, non-contiguous land parcels",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Abandon the contiguous 161 km\u00b2 block",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The plan must proceed skeptically, allowing for downsizing, splitting, or project cancellation.",
+            "line_original": "allowed to recommend downsizing, splitting the campus, delaying expansion, or cancelling the project",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "allowed to recommend downsizing, splitting the campus",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 3,
+        "response_byte_count": 1630,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\n- A per-period burn rate (any cost or output expressed as a value per\n  unit of time) needs the matching duration the rate will be\n  multiplied by \u2014 the count of those time units the burn applies for.\n  Without the duration, the rate cannot be turned into a total and the\n  multiplication is lost downstream.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 1417,
+        "second_pass_user_prompt": "Review the missing_data_to_estimate items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 5,
+        "newly_added_count": 2,
+        "scored_items": [
+          {
+            "line_english": "Total monthly operational cost per MW \u2014 estimate based on similar French nuclear-backed sites.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Percentage of total CAPEX allocated to USD-denominated GPU/TPU procurement \u2014 estimate capital exposure mix.",
+            "line_original": "Track USD exposure separately for GPUs/TPUs",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "missing",
+            "source_quote": "Track USD exposure separately",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Average annual EUR/USD foreign exchange rate for hardware procurement \u2014 input for FX hedging model.",
+            "line_original": "FX hedging assumptions",
+            "modelling_relevance": 4,
+            "source_evidence": 2,
+            "source_status": "missing",
+            "source_quote": "Include FX hedging assumptions",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Time duration in years for Phase 2 scaling (1 GW to 3 GW) \u2014 input for staged cost calculation.",
+            "line_original": "Phase 2: Years 3\u20137",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Average annual cost per employee for French labor \u2014 input for workforce cost model.",
+            "line_original": "French labor",
+            "modelling_relevance": 3,
+            "source_evidence": 2,
+            "source_status": "missing",
+            "source_quote": "French labor",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total land assembly budget required until commitment for the non-contiguous parcels \u2014 input for Phase 0/1 burn rate.",
+            "line_original": "land assembly",
+            "modelling_relevance": 4,
+            "source_evidence": 2,
+            "source_status": "missing",
+            "source_quote": "land assembly",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Capital expenditure multiplier applied for substation construction per 1 GW of capacity \u2014 input for grid cost scaling.",
+            "line_original": "substations",
+            "modelling_relevance": 4,
+            "source_evidence": 2,
+            "source_status": "missing",
+            "source_quote": "substations",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Unit cost for brownfield remediation per square hectare \u2014 input for environmental mitigation scaling.",
+            "line_original": "brownfield remediation",
+            "modelling_relevance": 3,
+            "source_evidence": 2,
+            "source_status": "missing",
+            "source_quote": "brownfield remediation",
+            "quote_verified": true
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 3,
+        "response_byte_count": 2432,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nCapacity requirements count as gates. When the source states a numeric\nminimum needed to physically support a declared capacity, output, or\nservice level, the requirement IS the gate \u2014 even when the source\nframes it as a sizing calculation rather than an explicit pass/fail\ncondition. Write it in the if/then form: 'If <quantity> falls below\n<required value>, then <the supported capacity cannot be achieved>.'\nDo not skip such requirements just because the source phrases them as\nsizing math instead of a gate.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 802,
+        "second_pass_user_prompt": "Review the gates_and_thresholds items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 7,
+        "second_pass_item_count": 2,
+        "newly_added_count": 2,
+        "scored_items": [
+          {
+            "line_english": "If anchor tenants commit less than 30% of the next tranche, then do not issue Final Decision to Invest for expansion.",
+            "line_original": "No credible anchor tenants = no FID for the next phase.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "No credible anchor tenants = no FID for the next phase.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If power reliability, PUE, water, and security targets are not met after Phase 1, then do not expand.",
+            "line_original": "expand only if power reliability, PUE, water, security, and community targets are met",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "expand only if power reliability, PUE, water, security",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If national-security review is not clear by Phase 1 deadline, then project progress is halted.",
+            "line_original": "Treat all external approvals... as uncertain until the plan defines a realistic process to obtain them.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "Treat all external approvals... as uncertain until the plan defines",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If credible commitments for power, land, and water are not secured, then do not proceed past Phase 0.",
+            "line_original": "proceed only if Phase 1 power, land, water, permits, tenants, financing, fiber, and social license are credible.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "proceed only if Phase 1 power, land, water, permits",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the PUE is not within 1.15\u20131.25 range during pilot, then liquid cooling must be re-assessed.",
+            "line_original": "PUE target: 1.15\u20131.25",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "PUE target: 1.15\u20131.25",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If social license is not credible, then the project should not proceed past Phase 0.",
+            "line_original": "social license are credible.",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "social license are credible.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If demand, grid capacity, or social license slackens, then the 9 GW target will not be reached.",
+            "line_original": "Reach 9 GW only if demand, grid capacity, financing, and social license remain strong.",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Reach 9 GW only if demand, grid capacity, financing",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If an RTS decision is not obtained for a single proven corridor, then the total capacity target is reduced to 3 GW.",
+            "line_original": "Immediately reduce the target power commitment for the entire project to 3 GW total capacity",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "reduce the target power commitment for the entire project to 3 GW",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the square footprint proves irrational, then the project must adopt a split-campus design.",
+            "line_original": "Challenge whether a single square footprint is rational, or whether a split-campus design is better.",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Challenge whether a single square footprint is rational",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 2191,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 3,
+        "second_pass_response_byte_count": 1781,
+        "second_pass_user_prompt": "Review the risks_and_shocks items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 7,
+        "second_pass_item_count": 6,
+        "newly_added_count": 6,
+        "scored_items": [
+          {
+            "line_english": "Grid overwhelming risk: failure of Hauts-de-France to host 9 GW without collapse \u2014 potential total project dependency failure.",
+            "line_original": "without overwhelming the grid",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "stress_test",
+            "source_quote": "overwhelming the grid",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Land market failure risk: inability to assemble 161 km\u00b2 \u2014 land assembly delay/cost overrun shock.",
+            "line_original": "land market, water systems, permitting process",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "stress_test",
+            "source_quote": "land market, water systems, permitting process",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Permitting process failure risk: environmental or municipal blockages leading to schedule overruns impacting viability.",
+            "line_original": "permitting process, local communities, and environmental constraints",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "stress_test",
+            "source_quote": "permitting process, local communities, and environmental constraints",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Water system capacity risk: inability to secure non-freshwater resources for cooling \u2014 operational constraint shock.",
+            "line_original": "water systems",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "water systems",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Grid upgrade cost overruns: unforeseen expenditure mandated by RTE/EDF beyond initial budget estimates.",
+            "line_original": "grid upgrades, substations",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "grid upgrades, substations",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Delay due to national-security review: extended security clearance process delaying operational start or hostage costs.",
+            "line_original": "national-security review",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "national-security review",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Sovereign AI tenant withdrawal risk: loss of anchor tenant requiring redesignation of secure capacity by Year 3.",
+            "line_original": "sovereign AI",
+            "modelling_relevance": 4,
+            "source_evidence": 2,
+            "source_status": "inferred",
+            "source_quote": "sovereign AI, selected enterprise inference",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Supply-chain security risk for hardware: failure to vet non-French GPUs/TPUs leading to security rejection shock.",
+            "line_original": "supply-chain security",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "supply-chain security",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Geopolitical instability resulting in sanctions or hardware access reduction from US/Asia outside of Year 3.",
+            "line_original": "geopolitically safer than Russia-adjacent regions",
+            "modelling_relevance": 3,
+            "source_evidence": 2,
+            "source_status": "stress_test",
+            "source_quote": "geopolitically safer than Russia-adjacent regions",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Sabotage or physical disruption impacting grid connection or fiber routes capacity.",
+            "line_original": "resilience against sabotage or grid/fiber disruption",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "grid/fiber disruption",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Brownfield remediation risk: unexpectedly high cost or contamination severity stalling early site readiness.",
+            "line_original": "brownfield remediation risk",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "brownfield remediation risk",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Agricultural displacement backlash leading to litigation and delays during land assembly.",
+            "line_original": "agricultural displacement",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "agricultural displacement",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Local political opposition risk halting or significantly modifying public benefit commitments post-agreement.",
+            "line_original": "local political support",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "local political support",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

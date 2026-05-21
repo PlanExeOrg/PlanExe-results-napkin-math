@@ -1,0 +1,354 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026-2027 (Pioneer's Gambit)",
+    "plan_type": "public_sector_logistics"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "household_coverage_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.028554699548692428,
+      "std": 0.021646036327633372,
+      "min": -0.08941357763108437,
+      "p05": -0.06897672430296636,
+      "p25": -0.04401918455347034,
+      "p50": -0.025091643241940242,
+      "p75": -0.010228550495327088,
+      "p95": 6.595697628433003e-05,
+      "max": 0.004641099752655031
+    },
+    "budget_surplus_crore": {
+      "unit": "crore_INR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 501.2863371527847,
+      "std": 1147.3023850914117,
+      "min": -2467.0044821414776,
+      "p05": -1537.3351767992954,
+      "p25": -319.37726047668457,
+      "p50": 608.7173225613369,
+      "p75": 1363.0938672283728,
+      "p95": 2269.8838884840543,
+      "max": 2981.323206424291
+    },
+    "provisional_release_timing_margin_months": {
+      "unit": "months",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.32753255185879987,
+      "std": 1.0269180735866101,
+      "min": -2.975967349980575,
+      "p05": -2.1221209901693756,
+      "p25": -1.0572193200848095,
+      "p50": -0.2438995344785515,
+      "p75": 0.43858036949757784,
+      "p95": 1.275539206739165,
+      "max": 1.976642079775802
+    },
+    "ingestion_mttr_margin_hours": {
+      "unit": "hours",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -1.362369282808611,
+      "std": 1.7033147590716773,
+      "min": -5.962909359169293,
+      "p05": -4.505766297545087,
+      "p25": -2.564444311590864,
+      "p50": -1.137702159009058,
+      "p75": -0.027293287516563236,
+      "p95": 1.0929221831351792,
+      "max": 1.9899295485871908
+    },
+    "contingency_buffer_crore": {
+      "unit": "crore_INR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 81.27812739359842,
+      "std": 205.1981845885029,
+      "min": -436.1863559700839,
+      "p05": -274.5922328629235,
+      "p25": -63.37863944033745,
+      "p50": 96.37162125038691,
+      "p75": 232.37491654570562,
+      "p95": 407.7239062796862,
+      "max": 548.5610058573131
+    }
+  },
+  "thresholds": {
+    "household_coverage_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 512,
+      "valid_count": 10000,
+      "probability": 0.0512
+    },
+    "budget_surplus_crore": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6739,
+      "valid_count": 10000,
+      "probability": 0.6739
+    },
+    "provisional_release_timing_margin_months": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4007,
+      "valid_count": 10000,
+      "probability": 0.4007
+    },
+    "ingestion_mttr_margin_hours": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2421,
+      "valid_count": 10000,
+      "probability": 0.2421
+    },
+    "contingency_buffer_crore": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6611,
+      "valid_count": 10000,
+      "probability": 0.6611
+    }
+  },
+  "sensitivity": {
+    "household_coverage_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_household_coverage",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "budget_surplus_crore": {
+      "top_inputs": [
+        {
+          "id": "expected_total_cost_crore",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "provisional_release_timing_margin_months": {
+      "top_inputs": [
+        {
+          "id": "actual_provisional_release_months",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "ingestion_mttr_margin_hours": {
+      "top_inputs": [
+        {
+          "id": "actual_ingestion_mttr_hours",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "contingency_buffer_crore": {
+      "top_inputs": [
+        {
+          "id": "expected_contingency_draw_crore",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "household_coverage_margin": [
+      {
+        "id": "actual_household_coverage",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.2048,
+        "delta_pp": 20.48
+      }
+    ],
+    "budget_surplus_crore": [
+      {
+        "id": "expected_total_cost_crore",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "provisional_release_timing_margin_months": [
+      {
+        "id": "actual_provisional_release_months",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "ingestion_mttr_margin_hours": [
+      {
+        "id": "actual_ingestion_mttr_hours",
+        "p_pass_low_quartile": 0.9684,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -96.84
+      }
+    ],
+    "contingency_buffer_crore": [
+      {
+        "id": "expected_contingency_draw_crore",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "household_coverage_margin": [
+      {
+        "id": "actual_household_coverage",
+        "direction": "above",
+        "input_percentile_cutoff": 95,
+        "cutoff_value": 0.9900659569762843,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.05
+      }
+    ],
+    "budget_surplus_crore": [
+      {
+        "id": "expected_total_cost_crore",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 15319.377260476685,
+        "conditional_pass_prob": 0.8985,
+        "admitted_fraction": 0.75
+      }
+    ],
+    "provisional_release_timing_margin_months": [
+      {
+        "id": "actual_provisional_release_months",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 6.243899534478551,
+        "conditional_pass_prob": 0.8014,
+        "admitted_fraction": 0.5
+      }
+    ],
+    "ingestion_mttr_margin_hours": [
+      {
+        "id": "actual_ingestion_mttr_hours",
+        "direction": "below",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 4.027293287516564,
+        "conditional_pass_prob": 0.9684,
+        "admitted_fraction": 0.25
+      }
+    ],
+    "contingency_buffer_crore": [
+      {
+        "id": "expected_contingency_draw_crore",
+        "direction": "below",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 813.3786394403375,
+        "conditional_pass_prob": 0.8815,
+        "admitted_fraction": 0.75
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_ingestion_mttr_hours",
+      "score": 146.7901,
+      "worst_gate": "ingestion_mttr_margin_hours",
+      "bound_width_ratio": 2.0,
+      "source": "assumption"
+    },
+    {
+      "id": "expected_contingency_draw_crore",
+      "score": 56.4833,
+      "worst_gate": "contingency_buffer_crore",
+      "bound_width_ratio": 1.6667,
+      "source": "data"
+    },
+    {
+      "id": "actual_provisional_release_months",
+      "score": 49.9417,
+      "worst_gate": "provisional_release_timing_margin_months",
+      "bound_width_ratio": 0.8333,
+      "source": "assumption"
+    },
+    {
+      "id": "expected_total_cost_crore",
+      "score": 12.8111,
+      "worst_gate": "budget_surplus_crore",
+      "bound_width_ratio": 0.3929,
+      "source": "data"
+    },
+    {
+      "id": "actual_household_coverage",
+      "score": 1.8646,
+      "worst_gate": "household_coverage_margin",
+      "bound_width_ratio": 0.096,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "household_coverage_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.096,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.10"
+      ]
+    },
+    "budget_surplus_crore": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.3929,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.39"
+      ]
+    },
+    "provisional_release_timing_margin_months": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.8333,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.83"
+      ]
+    },
+    "ingestion_mttr_margin_hours": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 2.0,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 2.00"
+      ]
+    },
+    "contingency_buffer_crore": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.6667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.67"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": [
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "bounds declares 2 correlation group(s) but the Gaussian-copula sampler is not yet implemented (Phase 8); variables will be sampled independently for this run \u2014 joint-tail risk is structurally understated until the sampler ships",
+      "severity": "WARN"
+    }
+  ]
+}

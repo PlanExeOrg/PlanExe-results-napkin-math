@@ -1,0 +1,336 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "White House East Wing Casino - Pioneer's Gauntlet",
+    "plan_type": "commercial"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "contingency_reserve_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 90000000.0,
+      "std": 0.0,
+      "min": 90000000.0,
+      "p05": 90000000.0,
+      "p25": 90000000.0,
+      "p50": 90000000.0,
+      "p75": 90000000.0,
+      "p95": 90000000.0,
+      "max": 90000000.0
+    },
+    "sponsor_capital_at_risk_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 450000000.0,
+      "std": 0.0,
+      "min": 450000000.0,
+      "p05": 450000000.0,
+      "p25": 450000000.0,
+      "p50": 450000000.0,
+      "p75": 450000000.0,
+      "p95": 450000000.0,
+      "max": 450000000.0
+    },
+    "phase1_noi_gate_surplus": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2278408.9587195236,
+      "std": 2933546.6886426206,
+      "min": -3647946.6635341933,
+      "p05": -2039324.4499064602,
+      "p25": 17104.035070792073,
+      "p50": 1909229.234752643,
+      "p75": 4372979.4580771495,
+      "p95": 7584328.048777095,
+      "max": 10529773.533050982
+    },
+    "political_reversal_buffer_surplus": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -33782459.69924705,
+      "std": 46416927.96672933,
+      "min": -156654169.26091582,
+      "p05": -117514128.9372784,
+      "p25": -66355656.0639907,
+      "p50": -27662221.396195643,
+      "p75": 2300538.2165616155,
+      "p95": 34154264.068085045,
+      "max": 59738593.732461
+    },
+    "levy_coverage_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 180727873.94239748,
+      "std": 311702026.54141724,
+      "min": -452156791.59944105,
+      "p05": -249207434.53602403,
+      "p25": -56835853.83929753,
+      "p50": 133508023.12082028,
+      "p75": 376388131.61032736,
+      "p95": 774745564.4538108,
+      "max": 1352477642.4114463
+    },
+    "phase1_noi_gate_margin": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2278408.9587195236,
+      "std": 2933546.6886426206,
+      "min": -3647946.6635341933,
+      "p05": -2039324.4499064602,
+      "p25": 17104.035070792073,
+      "p50": 1909229.234752643,
+      "p75": 4372979.4580771495,
+      "p95": 7584328.048777095,
+      "max": 10529773.533050982
+    }
+  },
+  "thresholds": {
+    "phase1_noi_gate_surplus": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 7526,
+      "valid_count": 10000,
+      "probability": 0.7526
+    },
+    "political_reversal_buffer_surplus": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2720,
+      "valid_count": 10000,
+      "probability": 0.272
+    },
+    "levy_coverage_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 6767,
+      "valid_count": 10000,
+      "probability": 0.6767
+    }
+  },
+  "sensitivity": {
+    "contingency_reserve_usd": {
+      "top_inputs": []
+    },
+    "sponsor_capital_at_risk_usd": {
+      "top_inputs": []
+    },
+    "phase1_noi_gate_surplus": {
+      "top_inputs": [
+        {
+          "id": "achievable_daily_noi_usd",
+          "correlation": 0.9982
+        },
+        {
+          "id": "relocation_blackout_days",
+          "correlation": -0.0525
+        }
+      ]
+    },
+    "political_reversal_buffer_surplus": {
+      "top_inputs": [
+        {
+          "id": "political_reversal_shock_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "levy_coverage_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "ancillary_gross_revenue_annual_usd",
+          "correlation": 0.8442
+        },
+        {
+          "id": "ancillary_margin_fraction",
+          "correlation": 0.4979
+        }
+      ]
+    },
+    "phase1_noi_gate_margin": {
+      "top_inputs": [
+        {
+          "id": "achievable_daily_noi_usd",
+          "correlation": 0.9982
+        },
+        {
+          "id": "relocation_blackout_days",
+          "correlation": -0.0525
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "phase1_noi_gate_surplus": [
+      {
+        "id": "achievable_daily_noi_usd",
+        "p_pass_low_quartile": 0.0308,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 96.92
+      },
+      {
+        "id": "relocation_blackout_days",
+        "p_pass_low_quartile": 0.7697863376467048,
+        "p_pass_high_quartile": 0.7368253968253968,
+        "delta_pp": -3.3
+      }
+    ],
+    "political_reversal_buffer_surplus": [
+      {
+        "id": "political_reversal_shock_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "levy_coverage_surplus_usd": [
+      {
+        "id": "ancillary_gross_revenue_annual_usd",
+        "p_pass_low_quartile": 0.146,
+        "p_pass_high_quartile": 0.9936,
+        "delta_pp": 84.76
+      },
+      {
+        "id": "ancillary_margin_fraction",
+        "p_pass_low_quartile": 0.4264,
+        "p_pass_high_quartile": 0.8784,
+        "delta_pp": 45.2
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "phase1_noi_gate_surplus": [
+      {
+        "id": "achievable_daily_noi_usd",
+        "direction": "above",
+        "input_percentile_cutoff": 10,
+        "cutoff_value": 38902.51878440108,
+        "conditional_pass_prob": 0.8362,
+        "admitted_fraction": 0.9
+      }
+    ],
+    "political_reversal_buffer_surplus": [
+      {
+        "id": "political_reversal_shock_usd",
+        "direction": "below",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 96727979.87367587,
+        "conditional_pass_prob": 0.8242,
+        "admitted_fraction": 0.33
+      }
+    ],
+    "levy_coverage_surplus_usd": [
+      {
+        "id": "ancillary_gross_revenue_annual_usd",
+        "direction": "above",
+        "input_percentile_cutoff": 25,
+        "cutoff_value": 1908497973.0740302,
+        "conditional_pass_prob": 0.8536,
+        "admitted_fraction": 0.75
+      },
+      {
+        "id": "ancillary_margin_fraction",
+        "direction": "above",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 0.3011231414016987,
+        "conditional_pass_prob": 0.8152,
+        "admitted_fraction": 0.5
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "political_reversal_shock_usd",
+      "score": 177.9556,
+      "worst_gate": "political_reversal_buffer_surplus",
+      "bound_width_ratio": 2.4444,
+      "source": "data"
+    },
+    {
+      "id": "achievable_daily_noi_usd",
+      "score": 67.9377,
+      "worst_gate": "phase1_noi_gate_surplus",
+      "bound_width_ratio": 2.8333,
+      "source": "assumption"
+    },
+    {
+      "id": "ancillary_gross_revenue_annual_usd",
+      "score": 57.5461,
+      "worst_gate": "levy_coverage_surplus_usd",
+      "bound_width_ratio": 2.1,
+      "source": "data"
+    },
+    {
+      "id": "ancillary_margin_fraction",
+      "score": 14.6132,
+      "worst_gate": "levy_coverage_surplus_usd",
+      "bound_width_ratio": 1.0,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "contingency_reserve_usd": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "sponsor_capital_at_risk_usd": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "phase1_noi_gate_surplus": {
+      "grade": "LOW",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 2.0595,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 2.06"
+      ]
+    },
+    "political_reversal_buffer_surplus": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 2.4444,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 2.44"
+      ]
+    },
+    "levy_coverage_surplus_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.55,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.55"
+      ]
+    },
+    "phase1_noi_gate_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 2.0595,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 2.06"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

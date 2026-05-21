@@ -1,0 +1,35 @@
+{
+  "expected_recovered_crates": {
+    "unit": "crates",
+    "low": 65000,
+    "base": 108000,
+    "high": 160000,
+    "rationale": "Base anchored on the 108,000-crate target (40% of 270,000). Low reflects Risk 7 (incentive fatigue, municipal MoU slippage) reverting recovery toward baseline; high reflects Risk 1 (viral overshoot beyond 1.35M DKK donation cap).",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "logistics_cost_per_crate_dkk": {
+    "unit": "DKK_per_crate",
+    "low": 8,
+    "base": 15,
+    "high": 25,
+    "rationale": "Base near the 15 DKK/crate threshold the reviewer flagged as the budget-overrun trigger. Low reflects supermarket-channel efficiency; high reflects Issue 1 stress test of 25 DKK/crate on municipal channel causing 21-42% logistics overrun.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "marketing_cost_realized_dkk": {
+    "unit": "DKK",
+    "low": 800000,
+    "base": 1000000,
+    "high": 1500000,
+    "rationale": "Base at the 1.0M DKK allocation. High reflects Risk 3 stress test of a 500,000 DKK marketing increase if irreverent tone is vetoed and paid media replaces lost organic impressions; low reflects under-spend if virality lands cleanly.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

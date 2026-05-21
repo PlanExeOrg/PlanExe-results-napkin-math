@@ -1,0 +1,233 @@
+{
+  "plan_summary": {
+    "plan_name": "Yellowstone Caldera Red Warning Evacuation (Pioneer Strategy)",
+    "plan_type": "emergency_response",
+    "primary_goal": "Clear 35,800 Zone Zero occupants within 6 hours and bridge the T+6 to T+18 logistical ingress gap with airlifted N95/water supplies while keeping decentralized C2 nodes powered for 72 hours.",
+    "modelling_frame": "Tests three executable viability gates: Zone Zero contraflow throughput vs the T+6 deadline, T+8 to T+16 airlift staging vs the 30% N95 target, and C2 72-hour fuel cache vs the UPS baseline. Stafford Act, FAA/DoD airspace waiver, and tri-state Governor MOU are treated as unmodelled authorisation gates."
+  },
+  "key_values": [
+    {
+      "id": "zone_zero_population",
+      "label": "Zone Zero population (tourists + staff)",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "people",
+      "value": 35800,
+      "comment": "Combined evacuee count (35,000 tourists + 800 staff) that contraflow throughput must clear by T+6 hours.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Zone Zero contains 35,000 visitors and 800 essential staff"
+    },
+    {
+      "id": "zone_zero_clearance_window_hours",
+      "label": "Zone Zero clearance window",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "hours",
+      "value": 6,
+      "comment": "Hard deadline for 98% Zone Zero egress; missing it triggers Phase 2 failure and VEI-7 contingency risk.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Zone Zero population clear by T+6 hours deadline"
+    },
+    {
+      "id": "zone_zero_clearance_target_fraction",
+      "label": "Zone Zero clearance success threshold",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.98,
+      "comment": "Success metric: 98% of registered vehicles must exit final checkpoint by T+6 or Pioneer Strategy fails Phase 1.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "98% of registered vehicles exiting the final checkpoint"
+    },
+    {
+      "id": "available_helicopter_sorties",
+      "label": "Authorised heavy-lift helicopter sorties",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "sorties",
+      "value": 10,
+      "comment": "Total CH-47-class sorties allowed in T+8 to T+16 ingress window for N95/water airlift to Bozeman and Idaho Falls.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "ten heavy-lift helicopter sorties (CH-47s)"
+    },
+    {
+      "id": "airlift_staging_target_fraction",
+      "label": "Required airlift staging fraction by T+16",
+      "category": "coverage",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.30,
+      "comment": "Threshold: 30% of T+18 N95/water requirement must be staged at Bozeman/Idaho Falls by T+16 via authorised sorties.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "30% of T+18 water/N95 requirement at staging areas by T+16"
+    },
+    {
+      "id": "c2_fuel_cache_target_hours",
+      "label": "Required C2 fuel cache duration",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hours",
+      "value": 72,
+      "comment": "Each of three decentralised C2 nodes must sustain 72 hours of external diesel/JP-8 power before resupply.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "secure 72 hours of external diesel/JP-8 power cache for C2 sites"
+    },
+    {
+      "id": "zone_one_n95_units_required",
+      "label": "Zone One N95 respirator requirement",
+      "category": "logistics",
+      "value_type": "explicit",
+      "unit": "units",
+      "value": 100000,
+      "comment": "Total N95 units to pre-stage for Zone One respiratory protection; sets airlift payload requirement.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Respiratory protection for 100,000 people as N95 minimum"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_jurisdictional_friction_delay",
+      "question": "Does the tri-state dual-hat MOU resolve early enough to keep engineering on the 72-hour cache schedule?",
+      "why_it_matters": "Late MOU signing causes a 4-12 hour ashfall-hardening delay that cascades into grid collapse and C2 power loss.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": ["c2_fuel_cache_surplus_hours"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "vehicle_throughput_per_hour",
+      "label": "Contraflow vehicle throughput rate",
+      "unit": "vehicles_per_hour",
+      "why_needed": "Determines whether US-191/US-20 contraflow can clear the required vehicle count within the T+6 window.",
+      "suggested_estimation_method": "FHWA contraflow lane studies (1,800-2,400 vph per lane) times number of contraflow lanes available."
+    },
+    {
+      "id": "occupants_per_vehicle",
+      "label": "Average occupants per evacuating vehicle",
+      "unit": "people_per_vehicle",
+      "why_needed": "Converts vehicle throughput to people throughput so the T+6 clearance constraint can be tested.",
+      "suggested_estimation_method": "Tourist destination vehicle-occupancy norms (2.5-3.5 people/vehicle in family-park settings)."
+    },
+    {
+      "id": "sortie_payload_kg",
+      "label": "Payload capacity per CH-47 sortie",
+      "unit": "kg",
+      "why_needed": "Combined with sortie count and item mass it determines whether 30% staging by T+16 is mechanically achievable.",
+      "suggested_estimation_method": "CH-47F internal/external lift specs (8,000-12,000 kg per sortie) derated for ash visibility."
+    },
+    {
+      "id": "c2_node_ups_baseline_hours",
+      "label": "C2 node UPS-only baseline duration",
+      "unit": "hours",
+      "why_needed": "Sets the floor the 72-hour cache must exceed; without it the cache-vs-UPS surplus cannot be evaluated.",
+      "suggested_estimation_method": "USGS-style hardened-node UPS rating (24-48 hours) per review-plan and expert-criticism notes."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "required_evacuee_throughput_per_hour",
+      "label": "Required evacuee throughput per hour",
+      "formula_hint": "required_evacuee_throughput_per_hour = (zone_zero_population * zone_zero_clearance_target_fraction) / zone_zero_clearance_window_hours",
+      "output_name": "required_evacuee_throughput_per_hour",
+      "output_unit": "people_per_hour",
+      "depends_on": ["zone_zero_population", "zone_zero_clearance_target_fraction", "zone_zero_clearance_window_hours"],
+      "why_first": "Anchors the Phase 1 gate: contraflow must move at least this many people per hour or Zone Zero clearance fails."
+    },
+    {
+      "id": "achievable_evacuee_throughput_per_hour",
+      "label": "Achievable evacuee throughput from contraflow",
+      "formula_hint": "achievable_evacuee_throughput_per_hour = vehicle_throughput_per_hour * occupants_per_vehicle",
+      "output_name": "achievable_evacuee_throughput_per_hour",
+      "output_unit": "people_per_hour",
+      "depends_on": ["vehicle_throughput_per_hour", "occupants_per_vehicle"],
+      "why_first": "Bottom-up evacuee throughput from contraflow lane capacity; compared against the required rate to test Phase 1 viability."
+    },
+    {
+      "id": "evacuation_throughput_surplus",
+      "label": "Evacuation throughput surplus",
+      "formula_hint": "evacuation_throughput_surplus = achievable_evacuee_throughput_per_hour - required_evacuee_throughput_per_hour",
+      "output_name": "evacuation_throughput_surplus",
+      "output_unit": "people_per_hour",
+      "depends_on": ["achievable_evacuee_throughput_per_hour", "required_evacuee_throughput_per_hour"],
+      "why_first": "Positive surplus means contraflow can clear Zone Zero by T+6; negative means Phase 1 fails and VEI-7 contingency risk rises."
+    },
+    {
+      "id": "airlift_staging_surplus_kg",
+      "label": "Airlift staging payload surplus",
+      "formula_hint": "airlift_staging_surplus_kg = (available_helicopter_sorties * sortie_payload_kg) - (airlift_staging_target_fraction * zone_one_n95_units_required * 0.05)",
+      "output_name": "airlift_staging_surplus_kg",
+      "output_unit": "kg",
+      "depends_on": ["available_helicopter_sorties", "sortie_payload_kg", "airlift_staging_target_fraction", "zone_one_n95_units_required"],
+      "why_first": "Tests whether 10 sorties can deliver 30% of the 100k N95 mass (0.05 kg/unit) within the T+8 to T+16 window."
+    },
+    {
+      "id": "c2_fuel_cache_surplus_hours",
+      "label": "C2 fuel cache duration surplus vs UPS baseline",
+      "formula_hint": "c2_fuel_cache_surplus_hours = c2_fuel_cache_target_hours - c2_node_ups_baseline_hours",
+      "output_name": "c2_fuel_cache_surplus_hours",
+      "output_unit": "hours",
+      "depends_on": ["c2_fuel_cache_target_hours", "c2_node_ups_baseline_hours"],
+      "why_first": "Tests whether the 72-hour cache plan clears the UPS-only baseline so command continuity is preserved past T+48."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "stafford_act_declaration_gate",
+      "label": "Stafford Act declaration for $500M DRF access",
+      "why_it_matters": "Without the declaration, the $500M DRF ceiling is unreachable and every financed component of the plan stalls.",
+      "source_anchor": "assumptions",
+      "consequence_if_false": "All airlift, fuel cache, shelter intake, and contractor mobilisation funding stalls; the Pioneer Strategy cannot execute."
+    },
+    {
+      "id": "faa_dod_airspace_waiver_gate",
+      "label": "FAA/DoD airspace waiver for T+8 to T+16 ingress",
+      "why_it_matters": "The 10 emergency sorties depend on a waiver against the silicate-ash grounding of ZLC/ZSE; without it the airlift cannot launch.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "30% N95/water staging by T+16 cannot occur and Zone One faces respiratory/dehydration casualty surge."
+    },
+    {
+      "id": "tri_state_governor_mou_gate",
+      "label": "MT/WY/ID Governor dual-hat MOU before T+0",
+      "why_it_matters": "Engineering tasking for fuel caches and ash hardening requires signed tri-state operational authority before boundary crossing.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Jurisdictional friction delays ashfall hardening 4-12 hours, raising grid collapse probability and C2 failure risk."
+    }
+  ]
+}

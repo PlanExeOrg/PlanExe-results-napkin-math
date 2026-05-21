@@ -1,0 +1,109 @@
+{
+  "phase1_capex_budget_eur": {
+    "unit": "EUR",
+    "low": 5000000000,
+    "base": 7500000000,
+    "high": 10000000000,
+    "rationale": "Megaproject CAPEX (multi-billion, multi-year, sovereign-scale). Plan states Phase 1 CAPEX as 5B-10B; Premortem flags stranded-capital risk and Expert Criticism flags uncosted holding-cost overruns. Triangular forced because Phase-8 lognormal sampler not yet implemented in run_monte_carlo (fat tails understated).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "phase1_contingency_reserve_eur": {
+    "unit": "EUR",
+    "low": 750000000,
+    "base": 1125000000,
+    "high": 1500000000,
+    "rationale": "Inferred 15% contingency on Phase 1 CAPEX; megaproject overrun-tail risk anchored on Review Issue 2's 1.3B+ holding-cost overrun warning. Triangular forced because Phase-8 lognormal sampler not yet implemented in run_monte_carlo (fat tails understated).",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "usd_hardware_capex_share": {
+    "unit": "fraction",
+    "low": 0.2,
+    "base": 0.3,
+    "high": 0.45,
+    "rationale": "Plan assumes 30% USD hardware share of full 120B; medium uncertainty given evolving GPU/TPU sourcing mix and DGSI non-classified hardware restrictions for Phase 1 (Assumptions Q7).",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "fx_hedge_coverage_fraction": {
+    "unit": "fraction",
+    "low": 0.5,
+    "base": 0.7,
+    "high": 0.85,
+    "rationale": "Plan commits to 70% forward hedging; Risk 4 notes residual exposure even with hedging. Spread reflects forward-market liquidity uncertainty for multi-year multi-billion hedges.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "fx_shock_magnitude_fraction": {
+    "unit": "fraction",
+    "low": 0.0,
+    "base": 0.1,
+    "high": 0.2,
+    "rationale": "Plan stress-tests a 10% EUR depreciation (Assumptions Q5, Risk 4); range covers benign FX year (0%) to deeper 20% depreciation captured by Premortem 8B-15B inflation citation.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "land_holding_cost_eur_per_hectare_year": {
+    "unit": "EUR_per_hectare_per_year",
+    "low": 35000,
+    "base": 60000,
+    "high": 90000,
+    "rationale": "Review Issue 2 cites 50k-75k EUR/ha/year benchmark; spread widens for cadastral variance and remediation surcharges across Cambrai/Dunkirk industrial zones.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_phase2_takeorpay_commitment_fraction": {
+    "unit": "fraction",
+    "low": 0.25,
+    "base": 0.6,
+    "high": 0.75,
+    "rationale": "Base centered on plan commitment 0.6 (DEFAULT); no plan-internal passage anchors a base shift. Low-side spread reflects Risk 3 anchor-tenant withdrawal and Expert-Criticism 30-50% trigger as a softer downside floor.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_phase1_pue": {
+    "unit": "ratio",
+    "low": 1.15,
+    "base": 1.2,
+    "high": 1.32,
+    "rationale": "Base at plan target 1.20 (DEFAULT); no plan-internal passage anchors a shift. High-side reflects Risk 2 (0.1 PUE drift to 1.25-1.35 on brownfield liquid-cooling scale-up); low capped by liquid-cooling 1.15 design target.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "remediation_cost_overrun_eur": {
+    "unit": "EUR",
+    "low": 0,
+    "base": 500000000,
+    "high": 1500000000,
+    "rationale": "Risk 9 forecasts remediation overrun of 250-750M baseline doubling to 500M-2.25B; one-sided shortfall draw with base at mid doubling scenario, high near Risk-9 upper tail. Triangular forced because Phase-8 lognormal sampler not yet implemented in run_monte_carlo (fat tails understated).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "correlations": [
+    {
+      "group_id": "phase1_megaproject_cost_drift",
+      "variables": ["phase1_capex_budget_eur", "remediation_cost_overrun_eur"],
+      "rho": 0.5,
+      "rationale": "Review Issue 2 and Risk 9 both forecast that brownfield remediation surprises co-drive Phase 1 CAPEX overruns; same hyper-dense brownfield assembly causes both."
+    }
+  ]
+}

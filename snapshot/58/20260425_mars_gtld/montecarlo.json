@@ -1,0 +1,352 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": ".mars gTLD Application",
+    "plan_type": "Internet governance / gTLD registry acquisition"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "y1_revenue_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1039635.7420662217,
+      "std": 685661.3368694736,
+      "min": 38949.435666203506,
+      "p05": 238316.5281602302,
+      "p25": 521149.0481742772,
+      "p50": 866306.391218063,
+      "p75": 1392130.0823463665,
+      "p95": 2418570.6329778866,
+      "max": 4703711.306156311
+    },
+    "breakeven_registrations_y1": {
+      "unit": "domains",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 95105.78110037238,
+      "std": 44723.30787525291,
+      "min": 28244.6116969143,
+      "p05": 44395.25400747845,
+      "p25": 63050.58940799828,
+      "p50": 84775.29526990582,
+      "p75": 115283.76076209926,
+      "p95": 181195.2722160424,
+      "max": 417140.8564251519
+    },
+    "y1_revenue_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -7131786.799105768,
+      "std": 1616056.67774751,
+      "min": -11768923.61811338,
+      "p05": -9914171.901325705,
+      "p25": -8249456.601104058,
+      "p50": -7060406.14730539,
+      "p75": -5984066.732781498,
+      "p95": -4581968.251069044,
+      "max": -1542124.6104678148
+    },
+    "contingency_after_shocks_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -2756085.5466645095,
+      "std": 3708367.6662099226,
+      "min": -18300415.057797898,
+      "p05": -9226267.24033201,
+      "p25": -5148187.0008982085,
+      "p50": -2509533.8466555057,
+      "p75": -170920.2580976599,
+      "p95": 2989092.078870776,
+      "max": 8428371.129338808
+    },
+    "capital_runway_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 22002321.23581855,
+      "std": 15873318.68568801,
+      "min": -19957988.87806224,
+      "p05": -2294817.461801058,
+      "p25": 10105410.81920895,
+      "p50": 20476750.400437452,
+      "p75": 32943965.48822747,
+      "p95": 50504149.230002545,
+      "max": 67809518.84585857
+    }
+  },
+  "thresholds": {
+    "y1_revenue_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "contingency_after_shocks_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2336,
+      "valid_count": 10000,
+      "probability": 0.2336
+    },
+    "capital_runway_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 9295,
+      "valid_count": 10000,
+      "probability": 0.9295
+    }
+  },
+  "sensitivity": {
+    "y1_revenue_usd": {
+      "top_inputs": [
+        {
+          "id": "y1_registration_volume",
+          "correlation": 0.7847
+        },
+        {
+          "id": "avg_registration_price_usd",
+          "correlation": 0.5607
+        }
+      ]
+    },
+    "breakeven_registrations_y1": {
+      "top_inputs": [
+        {
+          "id": "avg_registration_price_usd",
+          "correlation": -0.8153
+        },
+        {
+          "id": "annual_opex_usd",
+          "correlation": 0.3784
+        }
+      ]
+    },
+    "y1_revenue_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "annual_opex_usd",
+          "correlation": -0.9055
+        },
+        {
+          "id": "y1_registration_volume",
+          "correlation": 0.3402
+        },
+        {
+          "id": "avg_registration_price_usd",
+          "correlation": 0.2417
+        }
+      ]
+    },
+    "contingency_after_shocks_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "string_contention_overrun_usd",
+          "correlation": -0.6031
+        },
+        {
+          "id": "contingency_reserve_usd",
+          "correlation": 0.5695
+        },
+        {
+          "id": "string_contention_probability",
+          "correlation": -0.471
+        },
+        {
+          "id": "regulatory_shock_cost_usd",
+          "correlation": -0.2779
+        },
+        {
+          "id": "political_backlash_cost_usd",
+          "correlation": -0.1151
+        }
+      ]
+    },
+    "capital_runway_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "initial_budget_envelope_usd",
+          "correlation": 0.9714
+        },
+        {
+          "id": "annual_opex_usd",
+          "correlation": -0.1495
+        },
+        {
+          "id": "contingency_reserve_usd",
+          "correlation": -0.1295
+        },
+        {
+          "id": "review_duration_months",
+          "correlation": -0.1143
+        },
+        {
+          "id": "hsm_capex_usd",
+          "correlation": -0.0587
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "y1_revenue_surplus_usd": [
+      {
+        "id": "avg_registration_price_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "y1_registration_volume",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "annual_opex_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "contingency_after_shocks_surplus_usd": [
+      {
+        "id": "contingency_reserve_usd",
+        "p_pass_low_quartile": 0.0196,
+        "p_pass_high_quartile": 0.5292,
+        "delta_pp": 50.96
+      },
+      {
+        "id": "string_contention_overrun_usd",
+        "p_pass_low_quartile": 0.494,
+        "p_pass_high_quartile": 0.0488,
+        "delta_pp": -44.52
+      },
+      {
+        "id": "string_contention_probability",
+        "p_pass_low_quartile": 0.4288,
+        "p_pass_high_quartile": 0.0896,
+        "delta_pp": -33.92
+      },
+      {
+        "id": "regulatory_shock_cost_usd",
+        "p_pass_low_quartile": 0.3652,
+        "p_pass_high_quartile": 0.1196,
+        "delta_pp": -24.56
+      },
+      {
+        "id": "political_backlash_cost_usd",
+        "p_pass_low_quartile": 0.2812,
+        "p_pass_high_quartile": 0.1896,
+        "delta_pp": -9.16
+      }
+    ],
+    "capital_runway_surplus_usd": [
+      {
+        "id": "initial_budget_envelope_usd",
+        "p_pass_low_quartile": 0.7184,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 28.16
+      },
+      {
+        "id": "annual_opex_usd",
+        "p_pass_low_quartile": 0.9668,
+        "p_pass_high_quartile": 0.8816,
+        "delta_pp": -8.52
+      },
+      {
+        "id": "review_duration_months",
+        "p_pass_low_quartile": 0.958,
+        "p_pass_high_quartile": 0.8964,
+        "delta_pp": -6.16
+      },
+      {
+        "id": "contingency_reserve_usd",
+        "p_pass_low_quartile": 0.956,
+        "p_pass_high_quartile": 0.9012,
+        "delta_pp": -5.48
+      },
+      {
+        "id": "hsm_capex_usd",
+        "p_pass_low_quartile": 0.9472,
+        "p_pass_high_quartile": 0.9108,
+        "delta_pp": -3.64
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [
+    {
+      "id": "string_contention_probability",
+      "score": 32.4954,
+      "worst_gate": "contingency_after_shocks_surplus_usd",
+      "bound_width_ratio": 1.25,
+      "source": "assumption"
+    },
+    {
+      "id": "annual_opex_usd",
+      "score": 0.5606,
+      "worst_gate": "capital_runway_surplus_usd",
+      "bound_width_ratio": 0.9333,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "y1_revenue_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 3.5667,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 3.57"
+      ]
+    },
+    "breakeven_registrations_y1": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.6333,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.63"
+      ]
+    },
+    "y1_revenue_surplus_usd": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 2.6889,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 2.69"
+      ]
+    },
+    "contingency_after_shocks_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.8,
+      "average_bound_width_ratio": 0.9833,
+      "reasons": [
+        "4/5 input bounds anchored in data; 1/5 are assumptions",
+        "average bound-width-to-base ratio = 0.98"
+      ]
+    },
+    "capital_runway_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8867,
+      "reasons": [
+        "5/5 input bounds anchored in data; 0/5 are assumptions",
+        "average bound-width-to-base ratio = 0.89"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

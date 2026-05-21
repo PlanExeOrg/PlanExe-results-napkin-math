@@ -1,0 +1,250 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Yellowstone Caldera Red Warning Evacuation (Pioneer Strategy)",
+    "plan_type": "emergency_response"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "required_evacuee_throughput_per_hour": {
+      "unit": "people_per_hour",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 5847.333333333333,
+      "std": 0.0,
+      "min": 5847.333333333333,
+      "p05": 5847.333333333333,
+      "p25": 5847.333333333333,
+      "p50": 5847.333333333333,
+      "p75": 5847.333333333333,
+      "p95": 5847.333333333333,
+      "max": 5847.333333333333
+    },
+    "achievable_evacuee_throughput_per_hour": {
+      "unit": "people_per_hour",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 9384.283563046476,
+      "std": 2000.2888048691186,
+      "min": 4072.4097080770457,
+      "p05": 6161.854742360981,
+      "p25": 7935.885970920649,
+      "p50": 9354.770455852853,
+      "p75": 10766.219016216015,
+      "p95": 12802.424777998036,
+      "max": 15719.162657446588
+    },
+    "evacuation_throughput_surplus": {
+      "unit": "people_per_hour",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 3536.9502297131457,
+      "std": 2000.2888048691186,
+      "min": -1774.9236252562873,
+      "p05": 314.5214090276481,
+      "p25": 2088.552637587316,
+      "p50": 3507.437122519519,
+      "p75": 4918.885682882681,
+      "p95": 6955.091444664704,
+      "max": 9871.829324113256
+    },
+    "airlift_staging_surplus_kg": {
+      "unit": "kg",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 85084.66090478342,
+      "std": 14333.656384315707,
+      "min": 48890.85276309116,
+      "p05": 60622.547730250146,
+      "p25": 74627.54778973965,
+      "p50": 85676.11107907025,
+      "p75": 95512.70899311444,
+      "p95": 108112.79547586707,
+      "max": 118215.64185017154
+    },
+    "c2_fuel_cache_surplus_hours": {
+      "unit": "hours",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 35.91272130832776,
+      "std": 4.895283249005045,
+      "min": 24.090853144268074,
+      "p05": 27.660110127484245,
+      "p25": 32.415358419518576,
+      "p50": 35.9101486878641,
+      "p75": 39.39996237460648,
+      "p95": 44.15159474778597,
+      "max": 47.957274693098356
+    }
+  },
+  "thresholds": {
+    "evacuation_throughput_surplus": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 9684,
+      "valid_count": 10000,
+      "probability": 0.9684
+    },
+    "airlift_staging_surplus_kg": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "c2_fuel_cache_surplus_hours": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    }
+  },
+  "sensitivity": {
+    "required_evacuee_throughput_per_hour": {
+      "top_inputs": []
+    },
+    "achievable_evacuee_throughput_per_hour": {
+      "top_inputs": [
+        {
+          "id": "vehicle_throughput_per_hour",
+          "correlation": 0.8457
+        },
+        {
+          "id": "occupants_per_vehicle",
+          "correlation": 0.5288
+        }
+      ]
+    },
+    "evacuation_throughput_surplus": {
+      "top_inputs": [
+        {
+          "id": "vehicle_throughput_per_hour",
+          "correlation": 0.8457
+        },
+        {
+          "id": "occupants_per_vehicle",
+          "correlation": 0.5288
+        }
+      ]
+    },
+    "airlift_staging_surplus_kg": {
+      "top_inputs": [
+        {
+          "id": "sortie_payload_kg",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "c2_fuel_cache_surplus_hours": {
+      "top_inputs": [
+        {
+          "id": "c2_node_ups_baseline_hours",
+          "correlation": -1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "evacuation_throughput_surplus": [
+      {
+        "id": "vehicle_throughput_per_hour",
+        "p_pass_low_quartile": 0.87390263367917,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 12.61
+      },
+      {
+        "id": "occupants_per_vehicle",
+        "p_pass_low_quartile": 0.9172,
+        "p_pass_high_quartile": 0.9972,
+        "delta_pp": 8.0
+      }
+    ],
+    "airlift_staging_surplus_kg": [
+      {
+        "id": "sortie_payload_kg",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "c2_fuel_cache_surplus_hours": [
+      {
+        "id": "c2_node_ups_baseline_hours",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [
+    {
+      "id": "vehicle_throughput_per_hour",
+      "score": 0.3321,
+      "worst_gate": "evacuation_throughput_surplus",
+      "bound_width_ratio": 0.8333,
+      "source": "data"
+    },
+    {
+      "id": "occupants_per_vehicle",
+      "score": 0.1354,
+      "worst_gate": "evacuation_throughput_surplus",
+      "bound_width_ratio": 0.5357,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "required_evacuee_throughput_per_hour": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "achievable_evacuee_throughput_per_hour": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6845,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.68"
+      ]
+    },
+    "evacuation_throughput_surplus": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6845,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.68"
+      ]
+    },
+    "airlift_staging_surplus_kg": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.7778,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.78"
+      ]
+    },
+    "c2_fuel_cache_surplus_hours": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6667,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.67"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

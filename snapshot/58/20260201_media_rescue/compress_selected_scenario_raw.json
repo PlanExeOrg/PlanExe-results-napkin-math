@@ -1,0 +1,619 @@
+{
+  "section_summary": "This section locks in the 'The Builder: Pragmatic Hardware Autonomy & Balanced Review' scenario as the operational baseline, directly selecting the specific mitigation choices made for hardware lifecycle maintenance, data archival security, workload distribution at partner sites, and AI validation sensitivity, thereby defining the parameters for subsequent financial and operational calculations.",
+  "numeric_values": [
+    {
+      "line_english": "Total project budget over 10 years: $250 million \u2014 absolute funding commitment.",
+      "line_original": "$250 million over 10 years",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "$250 million over 10 years",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Annual operating cost per mobile ingest unit range: $2-3 million/year \u2014 primary operational burn input scaling with fleet size.",
+      "line_original": "$2-3M per MIU annually",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "$2-3M per MIU annually",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Phase 1 budget commitment: $60 million \u2014 stage funding input.",
+      "line_original": "$60M for Phase 1",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "$60M for Phase 1",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Phase 2 budget commitment: $120 million \u2014 stage funding input.",
+      "line_original": "$120M for Phase 2",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "$120M for Phase 2",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Phase 3 budget commitment: $70 million \u2014 stage funding input.",
+      "line_original": "$70M for Phase 3",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "$70M for Phase 3",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Per mobile ingest unit cost range: $3-4 million \u2014 capital expenditure input per unit structure.",
+      "line_original": "$3-4M per-MIU cost",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "$3-4M per-MIU cost",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If successful digitization rate is less than 95%, then Phase 1 success is not met.",
+      "line_original": ">95% successful digitization",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Success metrics: (1) >95% successful digitization",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If signal reconstruction accuracy is less than 80%, then Phase 1 success is not met.",
+      "line_original": ">80% signal reconstruction accuracy",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Success metrics: (2) >80% signal reconstruction accuracy",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If automated metadata accuracy is less than 70%, then Phase 1 success is not met.",
+      "line_original": ">70% automated metadata accuracy",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Success metrics: (3) >70% automated metadata accuracy",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If content requiring human review exceeds 20%, then Phase 1 success and review bottleneck goal is failed.",
+      "line_original": "<20% content requiring human review",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "(4) <20% content requiring human review",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If legal or privacy incidents occur, then legal goal is failed (Zero legal/privacy incidents).",
+      "line_original": "Zero legal/privacy incidents",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "(8) Zero legal/privacy incidents",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If equipment uptime is less than 90%, then maintenance program success is not validated.",
+      "line_original": "Equipment uptime >90%",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "(9) Equipment uptime >90%",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Degradation of physical media before digitization window closes: permanent loss within 10-30 years.",
+      "line_original": "permanently lost within 10-30 years",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "stress_test",
+      "source_quote": "permanently lost within 10-30 years",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure of AI pre-screening to reduce human review load by 80% causes bottleneck overload.",
+      "line_original": "reduces review load by 80%",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "stress_test",
+      "source_quote": "reduces human review load by 80%",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure to secure parts via cannibalization leads to equipment failure and lost uptime >10%.",
+      "line_original": "Equipment uptime >90%",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "stress_test",
+      "source_quote": "Equipment uptime >90%",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Catastrophic media damage during shipping (vibration, thermal shock) resulting in loss (mitigated by plan, but a baseline risk).",
+      "line_original": "Shipping fragile media is risky",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "Shipping fragile media is risky",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Knowledge loss risk: failure to build the vintage knowledge base leads to operational failure.",
+      "line_original": "complete vintage knowledge base established",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "complete vintage knowledge base established",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Total duration in years for Phase 1 deployment \u2014 needed to correctly apply phase funding and staff ramp-up models.",
+      "line_original": "Phase 1 (Years 1-2)",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "missing",
+      "source_quote": "Phase 1 (Years 1-2)",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Average operational duration for each site deployment in months \u2014 needed to calculate total fleet utilization time.",
+      "line_original": "typically 6-12 months",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "missing",
+      "source_quote": "typically 6-12 months",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Number of unique archive locations to be serviced across Phases 1, 2, and 3 \u2014 needed to scale deployment duration and staffing.",
+      "line_original": "thousands of locations",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Total annual revenue target from cost-sharing partners over 10 years \u2014 needed to calculate partner revenue share percentage.",
+      "line_original": "funding: government archives, cultural preservation organizations, technology companies, cost-sharing",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Annual cost escalation factor for operating cost range ($2-3M per MIU annually) \u2014 needed for future year OPEX projection.",
+      "line_original": "$2-3M per MIU annually",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Rate of knowledge loss (retirements per year) requiring immediate training coverage \u2014 needed to drive training investment sizing.",
+      "line_original": "Partner with retired engineers (70-80 years old)",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 22,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 420,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nThe Containerized Dark Data Ingestor Network (CDDIN): Deploy a fleet of specialized, mobile digitization units housed in climate-controlled shipping containers that are trucked directly to archives, universities, and storage facilities. Each container contains a complete digitization line (tape decks, film scanners, or card readers) with robotic loading systems and AI-powered signal processing. Instead of shipping fragile, degrading media across continents, the units come to the media\u2014parking in facility parking lots or loading docks, processing collections on-site, then moving to the next location. This solves the shipping risk problem (media never leaves the premises, satisfying insurance requirements) while maintaining the efficiency of centralized automation. The network operates as a distributed system, with multiple containerized units processing collections simultaneously at different locations worldwide.\nThe problem: Between 1950-2000, humanity generated exabytes of data on physical media (magnetic tapes, film reels, punch cards) stored in thousands of locations. These media are actively degrading and will be permanently lost within 10-30 years. Current digitization is slow, expensive, and cannot scale. Shipping fragile media is risky (vibration, thermal shock can destroy items in transit), and archives' insurance policies often forbid unique artifacts from leaving the premises. A mobile, containerized approach brings the digitization factory to the media, eliminating shipping risk while maintaining automation efficiency.\nContainerized unit architecture: Each Mobile Ingest Unit (MIU) is a 40-foot shipping container retrofitted with: (1) Specialized processing line - either Tape Line (10-15 tape decks), Film Line (5-8 film scanners), or Card/Disk Line (automated readers), (2) Robotic loading systems - arms that load media into equipment (simple, proven task), (3) Pre-treatment systems - baking ovens for sticky tapes (8-24 hour cycles), humidity controls for film stabilization, (4) AI signal processing workstations - clean audio, fix video errors, reconstruct corrupted data, extract metadata, (5) Climate control - maintains stable temperature/humidity during processing, (6) Power systems - can connect to facility power or operate on generators, (7) Data transmission - satellite and fiber connectivity for uploading digitized content to central archive, (8) On-board storage - 500TB local storage before upload. Units are designed for 6-12 month deployments at each location, processing entire collections before moving to the next site.\nHardware acquisition and maintenance strategy: The project acknowledges that professional tape decks and film equipment are no longer manufactured. Solution: (1) Equipment acquisition - Purchase 300-500 vintage units from decommissioned TV stations, radio stations, and closed facilities (eBay, auctions, direct purchases), creating a parts inventory, (2) Cannibalization program - Maintain a central parts warehouse, systematically harvesting components from non-functional units to keep operational units running, (3) Engineering training program - Partner with retired engineers (70-80 years old) to train younger engineers in \"dead\" technology maintenance (azimuth alignment, head calibration, belt replacement, mechanical repair), creating a knowledge transfer pipeline, (4) 3D printing capability - Where possible, manufacture replacement parts (belts, rollers, simple mechanical components) using 3D printing and CNC machining, (5) Maintenance rotation - Each MIU includes a maintenance engineer trained in vintage equipment repair, with central support team available for complex issues. This creates a \"living museum\" of obsolete technology expertise.\nWorkflow: (1) Site arrival - MIU trucked to archive location, positioned in parking lot or loading dock, connected to power and data, (2) Collection intake - Archive staff (or MIU crew) bring media to container, perform initial sorting by format and condition, (3) Pre-treatment - Media requiring stabilization (sticky tapes baked, brittle film humidified) processed in batches, (4) Automated digitization - Robotic arms load media into equipment, continuous processing in real-time (playback speed is the bottleneck, addressed with parallel units), (5) AI processing - Signal cleaning, error correction, metadata extraction happen during/after digitization, (6) Quality control and review - AI flags items needing human review (copyright, privacy, classification), archive staff or MIU crew review flagged items (typically 10-20% of content), (7) Archival upload - Processed data uploaded to distributed archive network, (8) Media return - Original media returned to archive storage (never left the premises), (9) Unit relocation - After collection complete (typically 6-12 months), MIU moves to next location. Multiple MIUs operate simultaneously at different archives worldwide.\nAI-powered processing and review optimization: The AI systems handle: (1) Signal reconstruction - Clean audio, fix video tracking, reconstruct corrupted frames, (2) Metadata extraction - Speech-to-text, OCR, scene recognition to auto-generate searchable metadata, (3) Pre-screening for review - AI flags items with: copyright markers (watermarks, logos, known content), privacy indicators (PII patterns, medical records, personal data), classification markers (government stamps, security labels). This reduces human review load: instead of reviewing 1,000 hours of content, AI pre-screens and flags only 200 hours requiring review (80% reduction). Human reviewers focus on flagged items at 2x speed (sufficient for copyright/privacy checks), requiring 100 man-hours/day instead of 1,000. This makes the review bottleneck manageable: 12-15 reviewers per active MIU, not 30-40.\nDeployment strategy: Phase 1 (Years 1-2): Build 3 pilot MIUs (1 Tape Line, 1 Film Line, 1 Card Line), acquire and refurbish vintage equipment, establish parts inventory and training program, conduct pilot operations at 3 partner archives. Success metrics: >95% successful digitization, >80% signal reconstruction accuracy, >70% automated metadata accuracy, <20% content requiring human review. Phase 2 (Years 3-5): Scale to 15 MIUs, establish partnerships with 30+ major archives, begin systematic processing. Target: 500,000+ items digitized, 25+ petabytes recovered. Phase 3 (Years 6-10): Full network of 30 MIUs operating simultaneously worldwide, comprehensive digitization of at-risk collections. Target: 3.6+ million items, 200+ petabytes, complete vintage knowledge base established.\nLegal and review framework: (1) On-site processing - Media never leaves archive premises, satisfying insurance requirements, (2) Source agreements - Clear contracts defining digitization scope, copyright status, privacy requirements, (3) AI pre-screening - Reduces review load by 80%, flags items needing human attention, (4) Human review gate - Archive staff or MIU crew review flagged items before archival upload, (5) Access controls - Archived data tagged with restrictions (public, restricted, classified) based on source agreements, (6) No autonomous legal decisions - AI flags, humans decide. This ensures compliance while keeping review bottleneck manageable.\nBudget and economics: $250 million over 10 years: $60M for Phase 1 (3 MIUs, equipment acquisition, parts inventory, training program, R&D), $120M for Phase 2 (12 additional MIUs, operations scaling, staff), $70M for Phase 3 (15 final MIUs, ongoing operations). Per-MIU cost: $3-4M (container retrofit, equipment, robotics, AI systems). Equipment acquisition: $20M for vintage equipment purchases and parts inventory. Training program: $5M for knowledge transfer from retired engineers. Operating costs: $2-3M per MIU annually (staff: 3-4 engineers/maintenance, 12-15 reviewers, logistics; utilities, consumables, parts). Total staff: 50-60 people per active MIU, 1,500-1,800 people at full scale. Cost per item: $50-100 (vs. $500-2000 for current methods). Funding: government archives, cultural preservation organizations, technology companies, cost-sharing with source institutions.\nSuccess metrics: (1) >95% successful digitization of degraded media, (2) >80% signal reconstruction accuracy, (3) >70% automated metadata accuracy, (4) <20% content requiring human review (AI pre-screening efficiency), (5) 3.6+ million items digitized over 10 years, (6) 200+ petabytes recovered, (7) Zero shipping-related media damage (on-site processing), (8) Zero legal/privacy incidents, (9) Equipment uptime >90% (maintenance program success), (10) Complete vintage knowledge base spanning 1950-2000.\nRisk mitigation: Hardware risks: Equipment failures, parts scarcity, knowledge loss. Mitigation: Large parts inventory (300-500 units cannibalized), training program with retired engineers, 3D printing for simple parts, maintenance rotation. Review bottleneck: Too much content requiring human review. Mitigation: AI pre-screening reduces load by 80%, focused review on flagged items only. Shipping risks: Media damage in transit. Mitigation: Eliminated\u2014media never leaves premises. Operational risks: Site access, power requirements, weather. Mitigation: Flexible deployment (parking lots, loading docks), generator backup, climate-controlled containers. Financial risks: Cost overruns, equipment acquisition challenges. Mitigation: Realistic $250M budget accounting for vintage equipment and staff, phased approach, proven containerized model.\nWhy containerized approach works: (1) Eliminates shipping risk - Media never leaves archive, no vibration/thermal damage, satisfies insurance, (2) Maintains automation efficiency - Specialized lines, robotic loading, parallel processing, (3) Scalable deployment - Multiple units at different locations simultaneously, (4) Flexible - Can park in parking lots, loading docks, anywhere with power, (5) Cost-effective - Reusable units, no facility construction, lower overhead, (6) Archive-friendly - On-site processing builds trust, media stays secure, (7) Proven model - Similar to mobile medical units, disaster response containers, just applied to digitization.\nPost-human value: When humans are gone, this recovered data becomes invaluable. It preserves: (1) Historical knowledge from 1950-2000, (2) Early computing and programming, (3) Scientific data and research, (4) Cultural artifacts, (5) Government records. The vintage knowledge base provides AI systems with unique training data, historical context, early computing knowledge, and a complete analog-to-digital transition record. Data is stored in formats that future AI systems can directly access and learn from, ensuring this knowledge persists even after original physical media has degraded.\nBanned approaches: No shipping fragile media long distances, no single system trying to handle all formats (specialized container types), no assumptions about equipment availability (acknowledge vintage equipment challenges), no autonomous legal/privacy decisions (human review required), and no underestimating review bottleneck (AI pre-screening is essential).\n\nToday's date:\n2026-May-02\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Large-scale industrial project focused on deploying mobile infrastructure (containerized units) to provide a scalable, technically advanced service (data digitization) aimed at preserving widespread cultural, governmental, and scientific heritage, falling under major infrastructure/societal maintenance initiatives.\n\n**Topic:** Containerized Mobile Digitization Network for At-Risk Archival Media\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan describes the development, manufacturing, acquisition, and logistical deployment of a fleet of physical, containerized digitization units (MIUs). This involves numerous physical actions: retrofitting 40-foot shipping containers, manufacturing/acquiring specialized physical hardware (tape decks, film scanners, robotic arms), physically trucking these units to various archive locations worldwide, setting up generators/power connections on-site, and physically maintaining complex vintage equipment via an on-site engineer rotation. The entire core premise relies on the physical movement and on-site operation of the MIUs to solve the archival media shipping risk problem. This is fundamentally a physical infrastructure deployment plan.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"b1b3cc45-8c15-4d94-8b25-15e1acfb9ff0\",\"name\":\"Vintage Technology Maintenance Pipeline\",\"consequences\":\"Prioritizing the systematic knowledge transfer from retired engineers over faster parts manufacturing solidifies the long-term operational capability, ensuring higher uptime for the specialized MIUs even as older engineers retire. However, this intensive training program acts as a severe throttle on engineering capacity, slowing the rate at which new MIUs can be brought online during the critical Phase 2 scale-up period of years 3-5. This trades short-term deployment velocity for long-term operational resilience where parts acquisition is inherently uncertain.\",\"options\":[\"Commit 80% of engineering staff exclusively to the in-residence training program for the first five years, treating knowledge capture as the primary deliverable alongside pilot operations.\",\"Immediately divert engineering resources into developing standardized, modular replacement assemblies for high-failure components (e.g., tape drive heads, film sprockets) using modern, purchasable parts, bypassing deep vintage knowledge reliance.\",\"Formalize the cannibalization process as a central, high-throughput factory floor operation, aggressively harvesting parts from 300 non-operational units in the first two years to create pre-built component caches for field engineers.\"],\"review\":\"Focusing engineering solely on training drastically reduces the pipeline of available talent for the emergent maintenance needs of the initial three pilot units, potentially creating a critical operational gap before the centralized cache is effective.\",\"description\":\"This lever focuses on embedding deep, specialized expertise for maintaining obsolete hardware by systematically pairing retired engineers with younger staff for knowledge transfer. Success is measured by high Equipment Uptime (>90%) and the completion of a comprehensive 'vintage knowledge base' by year 10. It prioritizes long-term operational resilience and expertise continuity over rapid deployment velocity.\",\"synergy_text\":\"It strongly synergizes with ROBOTICS Loading System Failure Redundancy by ensuring that mechanical maintenance expertise is available for both the complex digitization lines and the simpler loading arms.\",\"conflict_text\":\"This specialized focus conflicts with Revenue Model Structure, as dedicating extensive engineering time to this deep training throttles the deployment speed of new MIUs, limiting immediate revenue generation.\"},{\"lever_id\":\"a641821d-2916-4791-bc1f-da75d300c3e5\",\"name\":\"AI Pre-Screening Validation Threshold\",\"consequences\":\"Adjusting the AI's sensitivity for flagging content requiring human review directly determines the manageable load on the 12-15 reviewers per MIU. Lowering the threshold captures more potentially problematic content (copyright/privacy) but may push the required human review load above the planned 20% maximum, overloading the constrained review team. Raising the threshold risks automated archival of sensitive but unprocessed material, jeopardizing the 'Zero legal incidents' metric.\",\"options\":[\"Set the AI pre-screening sensitivity to flag only content exhibiting two or more explicit PII or copyright markers, aiming for a 90% automated rejection rate to maximize throughput.\",\"Mandate a universal 15% human review watermark override on all AI flags, requiring a mandatory two-person review cycle on all content flagged by the AI before archival upload, regardless of apparent severity.\",\"Institute an archival 'quarantine' period where all AI-validated content remains inaccessible for one year, allowing human review teams to process flagged items during the off-season of digitization fieldwork.\"],\"review\":\"Increasing the sensitivity to catch marginal cases burdens the human review team immediately, reducing the effective throughput gain from parallel MIU deployment and risking burnout among essential quality control staff.\",\"description\":\"This lever calibrates the AI's sensitivity for flagging content that requires human eyes for Legal and review framework compliance (copyright, privacy). The key trade-off is throughput versus risk mitigation. Success means keeping human review load below the 20% threshold while meeting the 'Zero legal incidents' metric. It manages the primary bottleneck in the workflow.\",\"synergy_text\":\"It directly amplifies AI Pre-Screening Human Review Feedback Loop by providing the quantitative results necessary to fine-tune the operational threshold and optimize the efficiency of human intervention.\",\"conflict_text\":\"Setting this threshold too low directly conflicts with Archive Collaboration Model, as the resulting surge in flagged items will overwhelmingly burden archive staff who are already handling pre-treatment duties.\"},{\"lever_id\":\"4d728591-11b4-4218-8fd9-a347f5eaad59\",\"name\":\"Archive Collaboration Model\",\"consequences\":\"Shifting the responsibility for initial media sorting and pre-treatment (baking, humidity cycling) onto the archive staff reduces the required on-board crew size per MIU, saving significant annual operating costs and increasing the number of deployable units within the existing budget structure. Conversely, this strategy introduces workflow inconsistency, as the calibration and rigor of archive staff handling pre-treatment will vary widely based on their internal resources and commitment, potentially causing more hardware stabilization failures.\",\"options\":[\"Reduce the standard MIU crew size from four to two personnel (maintenance engineer and data lead), mandating that the partner archive must supply two dedicated staff members to manage all physical loading and pre-treatment.\",\"Require all partner archives to pay a direct augmentation fee if their internal sorting/pre-treatment reliability falls below an 85% success rate, offsetting the cost of MIU engineering intervention.\",\"Develop a certified, remotely monitored 'Pre-Treatment Module' for installation inside the archive facility, allowing MIU crews to manage the stabilization remotely while focusing on digitization within the main container.\"],\"review\":\"Relying on archive staff for crucial pre-treatment introduces unpredictable variables in media conditioning, which could lead to costly, irrecoverable hardware damage inside the specialized digitization lines.\",\"description\":\"This lever defines the extent to which partner archives are responsible for initial media segregation and stabilization processes like baking or humidification. Shifting work onsite reduces MIU operating costs and accelerates deployment scaling, but risks inconsistent pre-treatment quality. Success is measured by minimizing MIU crew size while maintaining acceptable media stabilization rates.\",\"synergy_text\":\"It supports Revenue Model Structure by reducing the required specialized crew per MIU, lowering the annual operating cost and allowing more units to be supported by the overall budget.\",\"conflict_text\":\"Transferring pre-treatment tasks conflicts with Vintage Technology Maintenance Pipeline, as inconsistent material stabilization leads to unpredictable failures in the vintage hardware the maintenance pipeline is designed to support.\"},{\"lever_id\":\"70910141-5f77-4b4a-91dd-e2ceb48bb22d\",\"name\":\"Data Archival Destination Strategy\",\"consequences\":\"Determining where the final digitized data resides immediately impacts long-term security and accessibility, with local partnerships offering immediate cost transparency but introducing geopolitical risk if an archive must move data across shifting jurisdictional boundaries. Using the central, proprietary distributed network ensures complete control over access keys and preservation formats, but it requires significant ongoing investment in centralization infrastructure that might become obsolete faster than the physical data conversion.\",\"options\":[\"Sign binding, irrevocable data escrow agreements with three major global cloud providers (AWS, Azure, Google) immediately, decentralizing the risk so that national archive partners only host the local access layer.\",\"Mandate that 75% of all recovered data must reside on independent, government-accredited preservation servers owned and operated solely by the CDDIN project until the 10-year mark, ensuring format control.\",\"Establish micro-node archival servers physically located within a 200-mile radius of each active MIU deployment site to minimize latency for immediate data certification and local stakeholder review.\"],\"review\":\"Hosting the majority of data centrally in a proprietary system creates a catastrophic single point of failure for the entire project's post-operational value, making future data migration cumbersome if cloud terms change.\",\"description\":\"This strategic decision determines the long-term hosting, accessibility, and security strategy for the recovered petabytes of data. It dictates the future infrastructure costs and the project's vulnerability to external regulatory or commercial shifts. Success relies on ensuring permanent data access while minimizing post-deployment storage overhead.\",\"synergy_text\":\"It must align with Archival Data Upload Interoperability, as the chosen destination determines the required transmission protocols and security handshake mechanisms required for seamless data transmission from the MIUs.\",\"conflict_text\":\"Aggressive decentralization via local partnerships might conflict with On-Board Processing Capacity vs. Upload Strategy, potentially requiring higher on-board storage buffers if real-time upload bandwidth capabilities are inconsistent across many local sites.\"},{\"lever_id\":\"b1c19937-2fad-4f14-8a98-4af09556bd76\",\"name\":\"Vintage Knowledge Transfer Cadence\",\"consequences\":\"Increasing the frequency of formal knowledge transfer sessions between retired engineers and current staff will accelerate the operational competence curve for proprietary vintage maintenance tasks. This immediate reduction in time-to-competence will improve Equipment Uptime metrics, but the associated labor costs for scheduling and paying the senior experts across multiple continents will increase the annual Operations Budget per MIU substantially.\",\"options\":[\"Institute monthly mandated, in-person knowledge transfer workshops conducted centrally, requiring all maintenance engineers to cycle through the training hub every quarter.\",\"Deploy retired engineers as embedded 'Flying QCs' who visit operational MIUs biannually, delivering context-specific training based on observed unit performance anomalies.\",\"Develop a fully immersive simulation environment using 3D blueprints and mechanical feedback loops to allow younger engineers to train asynchronously without relying on subject matter expert availability.\"],\"review\":\"Mandating frequent in-person workshops ensures deep knowledge transfer but imposes high logistical overhead and delays engineer return to active service, thereby lowering immediate fleet utilization rates.\",\"description\":\"This lever controls the frequency and modality of knowledge sharing from the retiring experts to the active engineering pool responsible for complex physical repairs. A higher cadence accelerates the operational readiness of newly trained engineers but increases the administrative cost associated with scheduling senior staff across global logistics. It directly controls the speed of expertise maturation.\",\"synergy_text\":\"Synergizes well with Vintage Technology Maintenance Pipeline by providing the structured mechanism through which that pipeline of specialized knowledge transfer actually occurs over time.\",\"conflict_text\":\"Frequent, detailed training risks conflict with MIU Energy Independence Profile, as maximizing the time senior experts spend teaching locally reduces the available engineering oversight for optimizing mobile power systems.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer: Aggressive Knowledge Capture & Throughput Maximization\",\"strategic_logic\":\"This pathway prioritizes securing the knowledge base and maximizing immediate digitization throughput by accepting high logistical overhead and focusing hardware self-sufficiency. It bets heavily on the knowledge capture aspect being the most critical lever for long-term success.\",\"lever_settings\":{\"Vintage Technology Maintenance Pipeline\":\"Commit 80% of engineering staff exclusively to the in-residence training program for the first five years, treating knowledge capture as the primary deliverable alongside pilot operations.\",\"AI Pre-Screening Validation Threshold\":\"Set the AI pre-screening sensitivity to flag only content exhibiting two or more explicit PII or copyright markers, aiming for a 90% automated rejection rate to maximize throughput.\",\"Archive Collaboration Model\":\"Reduce the standard MIU crew size from four to two personnel (maintenance engineer and data lead), mandating that the partner archive must supply two dedicated staff members to manage all physical loading and pre-treatment.\",\"Data Archival Destination Strategy\":\"Mandate that 75% of all recovered data must reside on independent, government-accredited preservation servers owned and operated solely by the CDDIN project until the 10-year mark, ensuring format control.\",\"Vintage Knowledge Transfer Cadence\":\"Institute monthly mandated, in-person knowledge transfer workshops conducted centrally, requiring all maintenance engineers to cycle through the training hub every quarter.\"}},{\"scenario_name\":\"The Builder: Pragmatic Hardware Autonomy & Balanced Review\",\"strategic_logic\":\"This scenario seeks optimal scale by engineering away reliance on single experts and streamlining the review bottleneck through moderate AI sensitivity. It focuses on building robust, replicable physical asset management before scaling the fleet dramatically.\",\"lever_settings\":{\"Vintage Technology Maintenance Pipeline\":\"Immediately divert engineering resources into developing standardized, modular replacement assemblies for high-failure components (e.g., tape drive heads, film sprockets) using modern, purchasable parts, bypassing deep vintage knowledge reliance.\",\"AI Pre-Screening Validation Threshold\":\"Mandate a universal 15% human review watermark override on all AI flags, requiring a mandatory two-person review cycle on all content flagged by the AI before archival upload, regardless of apparent severity.\",\"Archive Collaboration Model\":\"Develop a certified, remotely monitored 'Pre-Treatment Module' for installation inside the archive facility, allowing MIU crews to manage the stabilization remotely while focusing on digitization within the main container.\",\"Data Archival Destination Strategy\":\"Sign binding, irrevocable data escrow agreements with three major global cloud providers (AWS, Azure, Google) immediately, decentralizing the risk so that national archive partners only host the local access layer.\",\"Vintage Knowledge Transfer Cadence\":\"Deploy retired engineers as embedded 'Flying QCs' who visit operational MIUs biannually, delivering context-specific training based on observed unit performance anomalies.\"}},{\"scenario_name\":\"The Consolidator: Risk Aversion & Localized Resilience\",\"strategic_logic\":\"This highly conservative approach minimizes operational risk by guaranteeing hardware longevity through aggressive parts stockpiling and ensuring immediate local data availability. It accepts higher initial capital cost to flatten future variable operational expenses.\",\"lever_settings\":{\"Vintage Technology Maintenance Pipeline\":\"Formalize the cannibalization process as a central, high-throughput factory floor operation, aggressively harvesting parts from 300 non-operational units in the first two years to create pre-built component caches for field engineers.\",\"AI Pre-Screening Validation Threshold\":\"Institute an archival 'quarantine' period where all AI-validated content remains inaccessible for one year, allowing human review teams to process flagged items during the off-season of digitization fieldwork.\",\"Archive Collaboration Model\":\"Require all partner archives to pay a direct augmentation fee if their internal sorting/pre-treatment reliability falls below an 85% success rate, offsetting the cost of MIU engineering intervention.\",\"Data Archival Destination Strategy\":\"Establish micro-node archival servers physically located within a 200-mile radius of each active MIU deployment site to minimize latency for immediate data certification and local stakeholder review.\",\"Vintage Knowledge Transfer Cadence\":\"Develop a fully immersive simulation environment using 3D blueprints and mechanical feedback loops to allow younger engineers to train asynchronously without relying on subject matter expert availability.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"Global, infrastructure-heavy deployment of a fleet (up to 30 units) aimed at preserving exabytes of data across thousands of global locations, suggesting a societal-level preservation initiative.\",\"risk_and_novelty\":\"High risk due to reliance on obsolete, unmanufactured hardware where maintenance requires specialized 'dead technology' knowledge transfer. Novelty lies in the containerized, mobile factory concept combined with advanced AI pre-screening.\",\"complexity_and_constraints\":\"Extremely high complexity spanning hardware engineering (vintage tech maintenance), AI development (signal processing, metadata extraction), logistics (global mobile deployment), and compliance (legal/privacy review framework). Budget ($250M over 10 years) and timeline (Phased 10-year rollout) are significant constraints.\",\"domain_and_tone\":\"Scientific/Industrial Infrastructure/Cultural Preservation. The tone is highly detailed, technical, and focused on mitigating specific, high-stakes technical and logistical dependencies.\",\"holistic_profile_of_the_plan\":\"A massive, high-risk infrastructure project tackling the preservation of critical heritage data, defined by its dependency on obsolete technology maintenance (knowledge loss risk) and managed by balancing intensive AI automation with mandatory human legal/privacy review. Success hinges on either mastering vintage maintenance or engineering around it, and effectively managing the human review bottleneck.\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer: Aggressive Knowledge Capture & Throughput Maximization\",\"fit_score\":6,\"fit_assessment\":\"This scenario strongly prioritizes the knowledge capture aspect essential for long-term hardware resilience. However, committing 80% of engineers to training severely clashes with the necessity for rapid deployment and maintenance of the initial pilot fleet, potentially undermining the Phase 1 success metrics.\"},{\"scenario_name\":\"The Builder: Pragmatic Hardware Autonomy & Balanced Review\",\"fit_score\":9,\"fit_assessment\":\"This scenario directly addresses the core plan tension: managing obsolete hardware risk while ensuring scalable deployment. Diverting resources to modular replacements reduces knowledge dependency risk, while 'Flying QC' visits provide necessary hands-on support for the complex vintage lines. The balanced review threshold aligns well with the plan's need to manage operational load.\"},{\"scenario_name\":\"The Consolidator: Risk Aversion & Localized Resilience\",\"fit_score\":7,\"fit_assessment\":\"The aggressive cannibalization strategy is excellent risk mitigation for hardware scarcity. However, mandating a one-year archival quarantine before data is accessible severely conflicts with the efficiency gains derived from parallel MIU deployment and sacrifices immediate project value realization for extreme caution.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Builder: Pragmatic Hardware Autonomy & Balanced Review\",\"justification\":\"The Builder scenario is the optimal fit because it pragmatically addresses the two highest-stakes tensions in the complex plan: the inherent obsolescence risk of the hardware and the operational bottleneck of the AI/human review process.\\n\\n*   **Alignment with Plan Profile:** The plan\\u2019s core challenge is maintaining complex vintage gear; The Builder mitigates this by engineering autonomous replacement paths, balancing the deep training necessity. The balanced AI threshold setting supports throughput while acknowledging the non-negotiable compliance requirement for human review.\\n*   **Comparison with Alternatives:**\\n    *   **The Pioneer** sacrifices immediate operational readiness by over-committing engineers to theoretical training (80% commitment paralyzes Phase 1 maintenance) for long-term knowledge capture.\\n    *   **The Consolidator** introduces a crippling one-year archival quarantine, delaying the recovery of life-saving historical data, which contradicts the high-stakes, immediate nature of preserving actively degrading media archives.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 2095,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nPer-period and per-unit rates (important): when the source expresses a\nquantity as a rate (a value divided by some period or some other unit),\nthe label MUST carry the denominator so the rate stays visible\ndownstream. Write the label as '<quantity> per <denominator>' or\ninclude the denominator in the unit field (e.g. '<unit>/<denominator>').\nA flat label that drops the denominator is invalid when the source\nstates one \u2014 the downstream extract can no longer reconstruct the\nmultiplication. For these rate entries the modelling role should\ndescribe the multiplication structure rather than just naming the cost,\nso a downstream stage can identify the matching scaling input.\n\nSource-stated rates belong in this bucket, not in missing_data. If the\nsource names a per-period or per-unit rate at all \u2014 explicitly,\ninferred, as a recommended range, or as a stress_test magnitude \u2014 emit\nit as a numeric_value with the denominator preserved. Setting\nsource_status to 'inferred' or 'stress_test' is fine when the source's\nframing fits; do NOT route a rate-like quantity to missing_data merely\nbecause the source gives it as a range, a recommendation, or an\nexpert's estimate rather than as a single committed value.\nmissing_data_to_estimate is reserved for primitives the source does NOT\nname. A rate the source mentions, even imprecisely, has been named and\nmust surface here with its denominator intact.\n\nA total cost that the source ALSO frames as a per-period burn must\nappear here in BOTH forms when the source supplies both: one entry for\nthe total (with its absolute label) and one entry for the rate (with\nthe per-period denominator). Listing only the total flattens the burn\nstructure; listing only the rate hides the source's own committed total.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n- '<what the rate is> per <denominator>: <amount> <unit-from-source>/<denominator> \u2014 <modelling role describing what it scales with>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 3,
+        "second_pass_response_byte_count": 2201,
+        "second_pass_user_prompt": "Review the numeric_values items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 8,
+        "newly_added_count": 8,
+        "scored_items": [
+          {
+            "line_english": "Total project budget over 10 years: $250 million \u2014 absolute funding commitment.",
+            "line_original": "$250 million over 10 years",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "$250 million over 10 years",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Phase 1 budget commitment: $60 million \u2014 stage funding input.",
+            "line_original": "$60M for Phase 1",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "$60M for Phase 1",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Phase 2 budget commitment: $120 million \u2014 stage funding input.",
+            "line_original": "$120M for Phase 2",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "$120M for Phase 2",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Phase 3 budget commitment: $70 million \u2014 stage funding input.",
+            "line_original": "$70M for Phase 3",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "$70M for Phase 3",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Per mobile ingest unit cost range: $3-4 million \u2014 capital expenditure input per unit structure.",
+            "line_original": "$3-4M per-MIU cost",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "$3-4M per-MIU cost",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Vintage equipment acquisition and parts inventory budget: $20 million \u2014 initial CAPEX for components.",
+            "line_original": "$20M for vintage equipment purchases",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "$20M for vintage equipment purchases",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Annual operating cost per mobile ingest unit range: $2-3 million/year \u2014 primary operational burn input scaling with fleet size.",
+            "line_original": "$2-3M per MIU annually",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "$2-3M per MIU annually",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total staff projection at full scale: 1,500-1,800 people \u2014 maximum headcount input.",
+            "line_original": "1,500-1,800 people at full scale",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "1,500-1,800 people at full scale",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Number of pilot mobile ingest units to build in Phase 1: three (3) units \u2014 initial deployment count.",
+            "line_original": "Build 3 pilot MIUs",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Build 3 pilot MIUs (1 Tape Line, 1 Film Line, 1 Card Line)",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Target number of operational mobile ingest units in Phase 2: fifteen (15) units \u2014 scaling target count.",
+            "line_original": "Scale to 15 MIUs",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Scale to 15 MIUs",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Target number of operational mobile ingest units in Phase 3: thirty (30) units \u2014 final fleet size target.",
+            "line_original": "Full network of 30 MIUs",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Full network of 30 MIUs",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Target items digitized by end of Phase 2: 500,000+ items \u2014 intermediate performance metric.",
+            "line_original": "Target: 500,000+ items digitized",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Target: 500,000+ items digitized",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Target petabytes recovered by end of Phase 2: 25+ petabytes \u2014 intermediate data recovery metric.",
+            "line_original": "25+ petabytes recovered",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "25+ petabytes recovered",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Target items digitized by end of Phase 3: 3.6+ million items \u2014 final volume metric.",
+            "line_original": "Target: 3.6+ million items",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Target: 3.6+ million items",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Target petabytes recovered by end of Phase 3: 200+ petabytes \u2014 final data recovery metric.",
+            "line_original": "200+ petabytes",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "200+ petabytes",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Training program budget commitment: $5 million \u2014 dedicated OPEX for knowledge transfer.",
+            "line_original": "Training program: $5M",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Training program: $5M",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 31,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 3,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the load_bearing_assumptions items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 0,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": []
+      },
+      "missing_data_to_estimate": {
+        "duration": 3,
+        "response_byte_count": 1859,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\n- A per-period burn rate (any cost or output expressed as a value per\n  unit of time) needs the matching duration the rate will be\n  multiplied by \u2014 the count of those time units the burn applies for.\n  Without the duration, the rate cannot be turned into a total and the\n  multiplication is lost downstream.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the missing_data_to_estimate items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Total annual revenue target from cost-sharing partners over 10 years \u2014 needed to calculate partner revenue share percentage.",
+            "line_original": "funding: government archives, cultural preservation organizations, technology companies, cost-sharing",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Number of unique archive locations to be serviced across Phases 1, 2, and 3 \u2014 needed to scale deployment duration and staffing.",
+            "line_original": "thousands of locations",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Average operational duration for each site deployment in months \u2014 needed to calculate total fleet utilization time.",
+            "line_original": "typically 6-12 months",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "missing",
+            "source_quote": "typically 6-12 months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Annual cost escalation factor for operating cost range ($2-3M per MIU annually) \u2014 needed for future year OPEX projection.",
+            "line_original": "$2-3M per MIU annually",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Rate of knowledge loss (retirements per year) requiring immediate training coverage \u2014 needed to drive training investment sizing.",
+            "line_original": "Partner with retired engineers (70-80 years old)",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Total duration in years for Phase 1 deployment \u2014 needed to correctly apply phase funding and staff ramp-up models.",
+            "line_original": "Phase 1 (Years 1-2)",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "missing",
+            "source_quote": "Phase 1 (Years 1-2)",
+            "quote_verified": true
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 3,
+        "response_byte_count": 2352,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nCapacity requirements count as gates. When the source states a numeric\nminimum needed to physically support a declared capacity, output, or\nservice level, the requirement IS the gate \u2014 even when the source\nframes it as a sizing calculation rather than an explicit pass/fail\ncondition. Write it in the if/then form: 'If <quantity> falls below\n<required value>, then <the supported capacity cannot be achieved>.'\nDo not skip such requirements just because the source phrases them as\nsizing math instead of a gate.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 27,
+        "second_pass_user_prompt": "Review the gates_and_thresholds items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "If successful digitization rate is less than 95%, then Phase 1 success is not met.",
+            "line_original": ">95% successful digitization",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Success metrics: (1) >95% successful digitization",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If signal reconstruction accuracy is less than 80%, then Phase 1 success is not met.",
+            "line_original": ">80% signal reconstruction accuracy",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Success metrics: (2) >80% signal reconstruction accuracy",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If automated metadata accuracy is less than 70%, then Phase 1 success is not met.",
+            "line_original": ">70% automated metadata accuracy",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Success metrics: (3) >70% automated metadata accuracy",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If content requiring human review exceeds 20%, then Phase 1 success and review bottleneck goal is failed.",
+            "line_original": "<20% content requiring human review",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "(4) <20% content requiring human review",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If equipment uptime is less than 90%, then maintenance program success is not validated.",
+            "line_original": "Equipment uptime >90%",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "(9) Equipment uptime >90%",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If legal or privacy incidents occur, then legal goal is failed (Zero legal/privacy incidents).",
+            "line_original": "Zero legal/privacy incidents",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "(8) Zero legal/privacy incidents",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If units deploy for less than 6 months, then deployment velocity is faster than planned baseline.",
+            "line_original": "Designed for 6-12 month deployments",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "Designed for 6-12 month deployments",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If units deploy for more than 12 months, then deployment velocity is slower than planned baseline.",
+            "line_original": "Designed for 6-12 month deployments",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "Designed for 6-12 month deployments",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      },
+      "risks_and_shocks": {
+        "duration": 2,
+        "response_byte_count": 1498,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 23,
+        "second_pass_user_prompt": "Review the risks_and_shocks items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 5,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Degradation of physical media before digitization window closes: permanent loss within 10-30 years.",
+            "line_original": "permanently lost within 10-30 years",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "stress_test",
+            "source_quote": "permanently lost within 10-30 years",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Catastrophic media damage during shipping (vibration, thermal shock) resulting in loss (mitigated by plan, but a baseline risk).",
+            "line_original": "Shipping fragile media is risky",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "Shipping fragile media is risky",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Knowledge loss risk: failure to build the vintage knowledge base leads to operational failure.",
+            "line_original": "complete vintage knowledge base established",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "complete vintage knowledge base established",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure of AI pre-screening to reduce human review load by 80% causes bottleneck overload.",
+            "line_original": "reduces review load by 80%",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "stress_test",
+            "source_quote": "reduces human review load by 80%",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Failure to secure parts via cannibalization leads to equipment failure and lost uptime >10%.",
+            "line_original": "Equipment uptime >90%",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "stress_test",
+            "source_quote": "Equipment uptime >90%",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

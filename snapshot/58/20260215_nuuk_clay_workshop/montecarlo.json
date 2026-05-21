@@ -1,0 +1,309 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "commercial community-arts venture"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "contingency_reserve_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 300000.0,
+      "std": 0.0,
+      "min": 300000.0,
+      "p05": 300000.0,
+      "p25": 300000.0,
+      "p50": 300000.0,
+      "p75": 300000.0,
+      "p95": 300000.0,
+      "max": 300000.0
+    },
+    "annual_labor_cost_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 854410.3449838146,
+      "std": 117550.14814133874,
+      "min": 536235.1631426035,
+      "p05": 669205.4875205206,
+      "p25": 769474.8994961008,
+      "p50": 847404.6329348423,
+      "p75": 933275.1622544271,
+      "p95": 1060018.6470891552,
+      "max": 1189594.9735120325
+    },
+    "drop_in_revenue_shortfall_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 400524.59571253683,
+      "std": 87953.38347506036,
+      "min": 134936.30817767192,
+      "p05": 259813.31797481957,
+      "p25": 337531.4442988072,
+      "p50": 398618.97511247563,
+      "p75": 461455.0057662921,
+      "p95": 549145.3924593041,
+      "max": 705533.3180403206
+    },
+    "labor_law_shock_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 177562.56979175867,
+      "std": 69210.3586825381,
+      "min": 1878.4561166311107,
+      "p05": 57625.09524714649,
+      "p25": 128772.96570086252,
+      "p50": 181323.24731274974,
+      "p75": 227414.7026205566,
+      "p95": 286816.8821134569,
+      "max": 399396.4509300989
+    },
+    "contingency_after_shocks_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -278087.16550429544,
+      "std": 111573.16910609367,
+      "min": -645455.8934399498,
+      "p05": -464529.49967809167,
+      "p25": -355385.97506361303,
+      "p50": -276462.0564891221,
+      "p75": -201304.07147222833,
+      "p95": -93762.07496842428,
+      "max": 91234.89572978762
+    },
+    "budget_after_labor_margin_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1145589.6550161855,
+      "std": 117550.14814133874,
+      "min": 810405.0264879675,
+      "p05": 939981.3529108448,
+      "p25": 1066724.837745573,
+      "p50": 1152595.3670651577,
+      "p75": 1230525.1005038992,
+      "p95": 1330794.5124794792,
+      "max": 1463764.8368573966
+    }
+  },
+  "thresholds": {
+    "contingency_after_shocks_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 42,
+      "valid_count": 10000,
+      "probability": 0.0042
+    }
+  },
+  "sensitivity": {
+    "contingency_reserve_dkk": {
+      "top_inputs": []
+    },
+    "annual_labor_cost_dkk": {
+      "top_inputs": [
+        {
+          "id": "monthly_fte_cost_dkk",
+          "correlation": 0.8486
+        },
+        {
+          "id": "months_in_year1",
+          "correlation": 0.5337
+        }
+      ]
+    },
+    "drop_in_revenue_shortfall_dkk": {
+      "top_inputs": [
+        {
+          "id": "drop_in_revenue_mix_share",
+          "correlation": 0.6991
+        },
+        {
+          "id": "year1_revenue_target_dkk",
+          "correlation": 0.6399
+        },
+        {
+          "id": "minimum_viable_hourly_rate_dkk",
+          "correlation": -0.1786
+        },
+        {
+          "id": "drop_in_utilization_rate",
+          "correlation": -0.1647
+        },
+        {
+          "id": "off_peak_hours_per_year",
+          "correlation": -0.1578
+        }
+      ]
+    },
+    "labor_law_shock_dkk": {
+      "top_inputs": [
+        {
+          "id": "labor_law_shock_cost_share",
+          "correlation": 0.9271
+        },
+        {
+          "id": "monthly_fte_cost_dkk",
+          "correlation": 0.2833
+        },
+        {
+          "id": "months_in_year1",
+          "correlation": 0.1987
+        }
+      ]
+    },
+    "contingency_after_shocks_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "labor_law_shock_cost_share",
+          "correlation": -0.5698
+        },
+        {
+          "id": "drop_in_revenue_mix_share",
+          "correlation": -0.5518
+        },
+        {
+          "id": "year1_revenue_target_dkk",
+          "correlation": -0.4972
+        },
+        {
+          "id": "monthly_fte_cost_dkk",
+          "correlation": -0.1795
+        },
+        {
+          "id": "minimum_viable_hourly_rate_dkk",
+          "correlation": 0.1423
+        }
+      ]
+    },
+    "budget_after_labor_margin_dkk": {
+      "top_inputs": [
+        {
+          "id": "monthly_fte_cost_dkk",
+          "correlation": -0.8486
+        },
+        {
+          "id": "months_in_year1",
+          "correlation": -0.5337
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "contingency_after_shocks_surplus_dkk": [
+      {
+        "id": "labor_law_shock_cost_share",
+        "p_pass_low_quartile": 0.0168,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -1.68
+      },
+      {
+        "id": "drop_in_revenue_mix_share",
+        "p_pass_low_quartile": 0.0148,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -1.48
+      },
+      {
+        "id": "year1_revenue_target_dkk",
+        "p_pass_low_quartile": 0.0136,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -1.36
+      },
+      {
+        "id": "off_peak_hours_per_year",
+        "p_pass_low_quartile": 0.001996007984031936,
+        "p_pass_high_quartile": 0.007584830339321357,
+        "delta_pp": 0.56
+      },
+      {
+        "id": "minimum_viable_hourly_rate_dkk",
+        "p_pass_low_quartile": 0.0024,
+        "p_pass_high_quartile": 0.0068,
+        "delta_pp": 0.44
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [
+    {
+      "id": "year1_revenue_target_dkk",
+      "score": 0.8126,
+      "worst_gate": "contingency_after_shocks_surplus_dkk",
+      "bound_width_ratio": 0.6,
+      "source": "assumption"
+    },
+    {
+      "id": "off_peak_hours_per_year",
+      "score": 0.5576,
+      "worst_gate": "contingency_after_shocks_surplus_dkk",
+      "bound_width_ratio": 1.0,
+      "source": "assumption"
+    }
+  ],
+  "model_confidence": {
+    "contingency_reserve_dkk": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "annual_labor_cost_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.4145,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.41"
+      ]
+    },
+    "drop_in_revenue_shortfall_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.6,
+      "average_bound_width_ratio": 0.8218,
+      "reasons": [
+        "3/5 input bounds anchored in data; 2/5 are assumptions",
+        "average bound-width-to-base ratio = 0.82"
+      ]
+    },
+    "labor_law_shock_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.6667,
+      "average_bound_width_ratio": 0.7006,
+      "reasons": [
+        "2/3 input bounds anchored in data; 1/3 are assumptions",
+        "average bound-width-to-base ratio = 0.70"
+      ]
+    },
+    "contingency_after_shocks_surplus_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.625,
+      "average_bound_width_ratio": 0.7763,
+      "reasons": [
+        "5/8 input bounds anchored in data; 3/8 are assumptions",
+        "average bound-width-to-base ratio = 0.78"
+      ]
+    },
+    "budget_after_labor_margin_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 0.4145,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 0.41"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

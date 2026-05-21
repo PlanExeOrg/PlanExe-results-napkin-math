@@ -1,0 +1,71 @@
+{
+  "actual_household_coverage": {
+    "unit": "fraction",
+    "low": 0.90,
+    "base": 0.99,
+    "high": 0.995,
+    "rationale": "Base centered on plan commitment 0.99 (DEFAULT); no plan-internal passage anchors a base shift. Low-side spread reflects stress-test forecasts: Selected Scenario satellite-hub failure 2-5% coverage drop and Risk 6 5-10% undercount of fluid populations. High capped near a hard saturation ceiling at 0.995.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "expected_total_cost_crore": {
+    "unit": "crore_INR",
+    "low": 12000,
+    "base": 14000,
+    "high": 17500,
+    "rationale": "Megaproject CAPEX (multi-billion, multi-year, sovereign-scale). Plan ceiling 15000 crore; stress-test 'cost exceeding 15000 crore by >5%' anchors upper tail. Range straddles 12000-15000 stated band; triangular forced because Phase-8 lognormal sampler not yet implemented in run_monte_carlo (fat tails understated).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_provisional_release_months": {
+    "unit": "months",
+    "low": 4,
+    "base": 6,
+    "high": 9,
+    "rationale": "Base centered on plan commitment 6 months (DEFAULT); no plan-internal passage anchors a base shift. High side reflects Risk 2 admin delays of 2-3 months in key states and Risk 4 monsoon timeline slippage of 4-8 weeks. Low side covers optimistic concurrent-processing execution.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_ingestion_mttr_hours": {
+    "unit": "hours",
+    "low": 2,
+    "base": 4,
+    "high": 10,
+    "rationale": "Base centered on plan commitment 4 hours (DEFAULT); no plan-internal passage anchors a base shift. High side anchored on Issue 3 sensitivity — MTTR breach causes 10-day supervisor review delay and 2-week salary delay. Spread is asymmetric reflecting one-sided overrun risk.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "expected_contingency_draw_crore": {
+    "unit": "crore_INR",
+    "low": 200,
+    "base": 600,
+    "high": 1200,
+    "rationale": "Base anchored on Risk 5 device emergency procurement 400-600 crore. High side reflects compounding draws from satellite-hub overrun, paper-audit logistics, and security expansion against the single 750-crore pool. Low side covers benign execution with only minor remediation calls.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "correlations": [
+    {
+      "group_id": "monsoon_admin_coupling",
+      "variables": ["actual_household_coverage", "actual_provisional_release_months"],
+      "rho": 0.5,
+      "rationale": "Risk 2 and Risk 4 both feed coverage shortfall AND schedule slip — monsoon grounding 3-5 weeks and admin delays 2-3 months degrade enumeration and push the provisional release together."
+    },
+    {
+      "group_id": "tech_failure_cost_coupling",
+      "variables": ["actual_ingestion_mttr_hours", "expected_contingency_draw_crore"],
+      "rho": 0.5,
+      "rationale": "Risk 1 and Issue 3 forecast that pipeline failures (MTTR breach) trigger device-procurement, security, and audit drawdowns on the same 750-crore contingency pool."
+    }
+  ]
+}

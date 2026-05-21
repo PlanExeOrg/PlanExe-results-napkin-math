@@ -1,0 +1,146 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Engine — Pragmatic Scale-Up",
+    "plan_type": "Hyperscale data center megaproject (multi-phase, EUR-denominated)"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "phase1_capex_budget_eur": 5000000000,
+        "phase2_takeorpay_commitment_threshold": 0.6,
+        "land_buffer_area_hectares": 12880,
+        "land_holding_duration_months": 18,
+        "usd_hardware_capex_share": 0.2,
+        "fx_hedge_coverage_fraction": 0.5,
+        "fx_shock_magnitude_fraction": 0.0,
+        "phase1_contingency_reserve_eur": 750000000,
+        "land_holding_cost_eur_per_hectare_year": 35000,
+        "actual_phase2_takeorpay_commitment_fraction": 0.25,
+        "actual_phase1_pue": 1.15,
+        "remediation_cost_overrun_eur": 0,
+        "land_holding_cost_total_eur": 676200000,
+        "fx_unhedged_exposure_eur": 0,
+        "phase2_takeorpay_commitment_margin": -0.35,
+        "phase1_pue_margin": 0.05000000000000004,
+        "phase1_contingency_surplus_eur": 73800000
+      },
+      "outputs": {
+        "land_holding_cost_total_eur": 676200000,
+        "fx_unhedged_exposure_eur": 0,
+        "phase2_takeorpay_commitment_margin": -0.35,
+        "phase1_pue_margin": 0.05000000000000004,
+        "phase1_contingency_surplus_eur": 73800000
+      }
+    },
+    "base": {
+      "inputs": {
+        "phase1_capex_budget_eur": 7500000000,
+        "phase2_takeorpay_commitment_threshold": 0.6,
+        "land_buffer_area_hectares": 12880,
+        "land_holding_duration_months": 18,
+        "usd_hardware_capex_share": 0.3,
+        "fx_hedge_coverage_fraction": 0.7,
+        "fx_shock_magnitude_fraction": 0.1,
+        "phase1_contingency_reserve_eur": 1125000000,
+        "land_holding_cost_eur_per_hectare_year": 60000,
+        "actual_phase2_takeorpay_commitment_fraction": 0.6,
+        "actual_phase1_pue": 1.2,
+        "remediation_cost_overrun_eur": 500000000,
+        "land_holding_cost_total_eur": 1159200000,
+        "fx_unhedged_exposure_eur": 67500000,
+        "phase2_takeorpay_commitment_margin": 0.0,
+        "phase1_pue_margin": 0.0,
+        "phase1_contingency_surplus_eur": -601700000
+      },
+      "outputs": {
+        "land_holding_cost_total_eur": 1159200000,
+        "fx_unhedged_exposure_eur": 67500000,
+        "phase2_takeorpay_commitment_margin": 0.0,
+        "phase1_pue_margin": 0.0,
+        "phase1_contingency_surplus_eur": -601700000
+      }
+    },
+    "high": {
+      "inputs": {
+        "phase1_capex_budget_eur": 10000000000,
+        "phase2_takeorpay_commitment_threshold": 0.6,
+        "land_buffer_area_hectares": 12880,
+        "land_holding_duration_months": 18,
+        "usd_hardware_capex_share": 0.45,
+        "fx_hedge_coverage_fraction": 0.85,
+        "fx_shock_magnitude_fraction": 0.2,
+        "phase1_contingency_reserve_eur": 1500000000,
+        "land_holding_cost_eur_per_hectare_year": 90000,
+        "actual_phase2_takeorpay_commitment_fraction": 0.75,
+        "actual_phase1_pue": 1.32,
+        "remediation_cost_overrun_eur": 1500000000,
+        "land_holding_cost_total_eur": 1738800000,
+        "fx_unhedged_exposure_eur": 135000000,
+        "phase2_takeorpay_commitment_margin": 0.15000000000000002,
+        "phase1_pue_margin": -0.1199999999999999,
+        "phase1_contingency_surplus_eur": -1873800000
+      },
+      "outputs": {
+        "land_holding_cost_total_eur": 1738800000,
+        "fx_unhedged_exposure_eur": 135000000,
+        "phase2_takeorpay_commitment_margin": 0.15000000000000002,
+        "phase1_pue_margin": -0.1199999999999999,
+        "phase1_contingency_surplus_eur": -1873800000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "land_holding_cost_total_eur": {
+        "low": 676200000,
+        "base": 1159200000,
+        "high": 1738800000,
+        "unit": "EUR",
+        "spread_ratio": 2.5713693581188996,
+        "spread_absolute": 1062600000
+      },
+      "fx_unhedged_exposure_eur": {
+        "low": 0,
+        "base": 67500000,
+        "high": 135000000,
+        "unit": "EUR",
+        "spread_ratio": null,
+        "spread_absolute": 135000000
+      },
+      "phase2_takeorpay_commitment_margin": {
+        "low": -0.35,
+        "base": 0.0,
+        "high": 0.15000000000000002,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.5
+      },
+      "phase1_pue_margin": {
+        "low": 0.05000000000000004,
+        "base": 0.0,
+        "high": -0.1199999999999999,
+        "unit": "ratio",
+        "spread_ratio": -2.3999999999999652,
+        "spread_absolute": -0.16999999999999993
+      },
+      "phase1_contingency_surplus_eur": {
+        "low": 73800000,
+        "base": -601700000,
+        "high": -1873800000,
+        "unit": "EUR",
+        "spread_ratio": -25.39024390243902,
+        "spread_absolute": -1947600000
+      }
+    }
+  },
+  "warnings": [
+    {
+      "stage": "run_scenarios",
+      "scenario": null,
+      "calculation": "q_phase1_capex_budget_usd_million",
+      "message": "Skipped: formula_hint is null.",
+      "severity": "WARN"
+    }
+  ]
+}

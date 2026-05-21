@@ -1,0 +1,57 @@
+{
+  "annual_opex_per_miu_usd": {
+    "unit": "USD_per_year",
+    "low": 2000000,
+    "base": 2500000,
+    "high": 3500000,
+    "rationale": "Source-stated range $2-3M/MIU/yr; high extended to 3.5M to capture Risk 4 (20% OPEX escalation, $400-600k/MIU) flagged in Expert Criticism and Premortem.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "capex_per_miu_usd": {
+    "unit": "USD",
+    "low": 3000000,
+    "base": 3500000,
+    "high": 4500000,
+    "rationale": "Source range $3-4M baseline per MIU; high extended to 4.5M to cover Risk 6 retrofit overrun ($450k-1M per unit) when vintage units lack compatible power/dimensions.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "phase1_duration_years": {
+    "unit": "years",
+    "low": 1.0,
+    "base": 1.5,
+    "high": 2.5,
+    "rationale": "Plan anchors Phase 2 gate at Month 18 (1.5y); spread reflects Issue 1 sensitivity flagging 50% R&D schedule overrun risk that pushes the Phase 1 operational window into year 2+.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "ai_false_positive_rate": {
+    "unit": "fraction",
+    "low": 0.08,
+    "base": 0.10,
+    "high": 0.17,
+    "rationale": "Plan assumes 10% baseline AI flag rate; Issue 3 sensitivity explicitly tests 12-15% FPR scenarios. High of 0.17 captures Expert Criticism stress that miscalibration overloads reviewers.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "mandatory_override_fraction": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.15,
+    "high": 0.15,
+    "rationale": "Plan explicitly mandates a 15% human override watermark on all AI flags as a fixed compliance buffer; this is a policy parameter not subject to operational variance.",
+    "source": "data",
+    "sampling_discipline": "fixed",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

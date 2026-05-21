@@ -1,0 +1,702 @@
+{
+  "section_summary": "This section locks in the 'The Pioneer's Gambit' scenario as the committed execution plan, defining the specific operational choices made regarding infrastructure redundancy, caste data release sequencing, migrant enumeration tactics, political data release buffering, and enumerator incentive structures, superseding all alternative strategic pathways considered.",
+  "numeric_values": [
+    {
+      "line_english": "Phase 1 start date: April 1, 2026 \u2014 milestone gate for initial data collection.",
+      "line_original": "Phase 1 begins April 1, 2026",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Phase 1 begins April 1, 2026",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Phase 2 duration: 7 months (from September 2026 through April 1, 2027) \u2014 duration input for demographic collection.",
+      "line_original": "Phase 2 runs September 2026 through April 1, 2027",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Phase 2 runs September 2026 through April 1, 2027",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Budget minimum estimate: 12,000 crore \u20b9 \u2014 input for total project CAPEX/OPEX.",
+      "line_original": "\u20b912,000\u201315,000 crore",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget is estimated at \u20b912,000\u201315,000 crore",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Budget maximum estimate: 15,000 crore \u20b9 \u2014 input for total project CAPEX/OPEX.",
+      "line_original": "\u20b912,000\u201315,000 crore",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget is estimated at \u20b912,000\u201315,000 crore",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Provisional population totals deadline: 6 months post-Phase 2 completion \u2014 milestone for delimitation gate.",
+      "line_original": "provisional population totals published within 6 months of Phase 2 completion",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "published within 6 months of Phase 2 completion",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Full dataset release deadline: 18 months post-Phase 2 completion \u2014 final data delivery milestone.",
+      "line_original": "full dataset including caste tables released within 18 months",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "released within 18 months",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "Interim population totals derived from Phase 1 housing data will satisfy immediate delimitation requirements.",
+      "line_original": "Pre-commit to releasing the baseline population totals for constituency delineation first, using only the initial housing frame documentation (Phase 1 data)",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "using only the initial housing frame documentation (Phase 1 data)",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The satellite communication hubs deployment in remote areas will guarantee data transmission rates.",
+      "line_original": "Deploy ruggedized, solar-charging satellite communication hubs tethered to regional supervisors, thereby sacrificing per-unit enumeration cost savings to guarantee continuous data transmission from the most isolated 10% of enumeration blocks.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "guarantee continuous data transmission from the most isolated 10%",
+      "quote_verified": true
+    },
+    {
+      "line_english": "A specific financial reward structure will drive enumerator adherence to rapid data validation standards.",
+      "line_original": "Implement a tiered financial reward structure where 50% of enumerator payment is contingent upon the validation team's acceptance of their submitted data blocks within seven days of upload.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "50% of enumerator payment is contingent upon the validation",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The two-stage caste data collection method will yield credible data after the public review period.",
+      "line_original": "Mandate a two-stage data collection where Phase 2 includes provisional, anonymized self-declared caste categories, which are then subject to a mandatory three-month public review period before finalization",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "subject to a mandatory three-month public review period",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Field supervisors can successfully document temporary housing sites, achieving coverage for fluid populations.",
+      "line_original": "Mandate that all field supervisors dedicate 15% of their required weekly check-ins to actively seek out and document temporary housing sites",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "actively seek out and document temporary housing sites",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The technology stack will maintain application reliability despite widespread, intermittent connectivity challenges.",
+      "line_original": "The technology stack must function reliably across India's extraordinary infrastructure variance",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "must function reliably across India's extraordinary infrastructure variance",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If provisional population totals are not published within 6 months of Phase 2 completion, then the success criterion is not met.",
+      "line_original": "provisional population totals published within 6 months of Phase 2 completion",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "published within 6 months of Phase 2 completion",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If household enumeration falls below 99%+, then the success criterion is not met.",
+      "line_original": "complete enumeration of 99%+ of households in both phases",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "99%+ of households in both phases",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the full dataset, including caste tables, is not released within 18 months, then the success criterion is not met.",
+      "line_original": "full dataset including caste tables released within 18 months",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "released within 18 months",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If digital submission fails in remote areas, then local revenue staff must immediately conduct a paper audit within 72 hours.",
+      "line_original": "digital submission failure automatically triggers an immediate, independent secondary paper audit conducted by local revenue staff within 72 hours",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "paper audit conducted by local revenue staff within 72 hours",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If final caste tables are not deemed methodologically credible, then the census success criterion is not met.",
+      "line_original": "census accepted as methodologically credible by domestic and international statistical bodies",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "accepted as methodologically credible",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Monsoon season disruption during the middle months of Phase 1: operational timeline compression.",
+      "line_original": "accounting for monsoon season disruption during the middle months of Phase 1",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "monsoon season disruption during the middle months of Phase 1",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Security requirements in conflict-affected areas like Kashmir and Naxalite corridors: deployment constraints.",
+      "line_original": "security requirements in conflict-affected areas (Kashmir, Naxalite corridors, Northeast insurgency zones)",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "security requirements in conflict-affected areas (Kashmir, Naxalite corridors",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Technology failure (connectivity/hardware) leading to enumerator fabrication of entries to meet quotas: data quality shock.",
+      "line_original": "app reliability in low-connectivity environments, data synchronization and deduplication at scale, and the risk of enumerators fabricating entries",
+      "modelling_relevance": 5,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "risk of enumerators fabricating entries to meet quotas",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Political backlash from groups opposing new reservation quotas based on comprehensive caste data release: methodology credibility failure.",
+      "line_original": "risks political backlash from groups opposing the creation of new reservation categories",
+      "modelling_relevance": 5,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "risks political backlash from groups opposing the creation",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Regional non-cooperation based on political friction over delimitation favoring one region over another: timeline delay/rework.",
+      "line_original": "Pick a realistic scenario that accounts for the near-certainty of political interference, regional non-cooperation",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "political interference, regional non-cooperation",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Total duration of Phase 1 in months \u2014 needed to scale monthly burn rate for personnel costs.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Average monthly cost per enumerator in \u20b9/month \u2014 required to calculate the 3 million personnel cost basis.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Duration in months for which provisional population totals must be sustained (6 months post-Phase 2) \u2014 needed to schedule the subsequent data release cost.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Duration in months for which the full dataset must be sustained (18 months post-Phase 2) \u2014 needed to schedule the final data delivery cost.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Discount rate / expected cost of capital in percentage per year \u2014 required for Net Present Value calculation on the \u20b912,000\u201315,000 crore budget.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Cost incurred per day of monsoon season disruption \u2014 required for modeling Phase 1 operational delays.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 21,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 386,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nExecute India's long-delayed decennial population census \u2014 the world's largest national headcount \u2014 covering over 1.4 billion people across 240+ million households, originally scheduled for 2021 but postponed nearly five years by the COVID-19 pandemic. Phase 1 begins April 1, 2026, running through September 2026, focused on housing and facilities documentation; Phase 2 runs September 2026 through April 1, 2027, collecting the full demographic dataset including the first comprehensive caste enumeration since 1931 under British colonial rule, broadening caste accounting beyond the historically marginalized Scheduled Castes (Dalits) and Scheduled Tribes (Adivasis) to cover all caste categories.\\n\\nThe operation deploys over 3 million government workers as enumerators \u2014 up from 2.7 million in the 2011 census \u2014 equipped with a multilingual smartphone application integrated with satellite-based mapping, offering a digital survey option blended with traditional in-person enumeration. The technology stack must function reliably across India's extraordinary infrastructure variance: from dense urban slums with intermittent connectivity to remote tribal areas in the Northeast and island territories with no cellular coverage at all. Plan the logistics of training, equipping, deploying, and supervising 3 million enumerators across 28 states and 8 union territories with dozens of official languages, accounting for monsoon season disruption during the middle months of Phase 1, security requirements in conflict-affected areas (Kashmir, Naxalite corridors, Northeast insurgency zones), and the challenge of enumerating nomadic, homeless, and migrant populations who do not fit neatly into household-based survey frames.\n\nThe political stakes are enormous and must be treated as a first-order operational constraint. Census results will directly reshape India's parliamentary map \u2014 potentially redrawing constituency boundaries and increasing the number of Lok Sabha seats based on population shifts since the last delimitation freeze in 1976, a process that pits fast-growing northern Hindi-belt states against slower-growing southern states that fear losing political representation. The caste census dimension is equally charged: it is the first comprehensive caste count in 95 years, and its results will inform reservation quotas, welfare targeting, and political mobilization for decades. Expect intense political pressure on methodology, question framing, and data release timing from all sides \u2014 the census is simultaneously a statistical exercise and a political weapon.\n\nAddress data quality and fraud prevention: the 2011 census relied entirely on paper forms and was plagued by enumeration gaps, duplicate counting, and post-hoc data quality issues. The shift to smartphone-based digital collection is a massive improvement but introduces new risks \u2014 device procurement and distribution for 3 million workers, app reliability in low-connectivity environments, data synchronization and deduplication at scale, and the risk of enumerators fabricating entries to meet quotas. Plan quality assurance through independent verification surveys, GPS-stamped entries, and real-time anomaly detection in the incoming data stream.\\n\\nBudget is estimated at \u20b912,000\u201315,000 crore (approximately .4\u20131.8 billion USD), funded entirely by the Government of India through the Ministry of Home Affairs, with the Registrar General and Census Commissioner as the executing authority. Success criteria: complete enumeration of 99%+ of households in both phases, provisional population totals published within 6 months of Phase 2 completion, full dataset including caste tables released within 18 months, and the census accepted as methodologically credible by domestic and international statistical bodies. Pick a realistic scenario that accounts for the near-certainty of political interference, regional non-cooperation, and technology failures at the margins.\n\nToday's date:\n2025-Jan-01\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Mega-scale national infrastructure and governance project involving logistical planning, technology deployment, political risk management, societal resource allocation determination, and extensive government resource management (logistics, personnel, finance).\n\n**Topic:** Execution of India's Decennial Population Census (2026-2027)\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan details the execution of India's decennial population census, which is an operation involving the physical deployment, training, equipping, and supervision of 3 million government workers (enumerators) across the entire geography of India. This task inherently requires physical movement, on-site data collection, device distribution, and navigation of real-world environmental constraints (monsoons, remote areas). Even with the use of a smartphone application, the core activity is an in-person headcount requiring physical presence. Therefore, this plan is fundamentally physical.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"c207843e-f6f2-491d-ae8f-3636f1005e1d\",\"name\":\"Enumeration Coverage Strategy for Infrastructure Gaps\",\"consequences\":\"Selecting a high-tech dominant approach prioritizes digital data integrity via GPS stamping and real-time anomaly detection, accelerating initial reporting. However, this strategy inherently risks significant undercount (below 99% target) in disconnected remote areas or informal settlements where device battery life and connectivity failures compound enumeration delays. The downstream effect is a data reliability gap where digitally covered areas are deemed more credible than manually verified, paper-backed regions, potentially exacerbating political friction.\",\"options\":[\"Mandate a blended operational protocol where digital submission failure automatically triggers an immediate, independent secondary paper audit conducted by local revenue staff within 72 hours to secure coverage.\",\"Deploy ruggedized, solar-charging satellite communication hubs tethered to regional supervisors, thereby sacrificing per-unit enumeration cost savings to guarantee continuous data transmission from the most isolated 10% of enumeration blocks.\",\"Shift the primary data capture workflow to exclusively use pre-loaded, cryptographically signed forms on the mobile application, accepting enumeration delays during monsoon cycles to maximize the use of ideal, stable weather windows for deep rural traversal.\"],\"review\":\"Focusing on automated remediation for lost digital data increases immediate operational complexity and relies heavily on another layer of often scarce government personnel, potentially exceeding the already stretched supervisory capacity.\",\"description\":\"This lever focuses on maintaining high enumeration coverage (targeting 99%+) by strategically blending digital capture with contingency plans for infrastructure failure points. Success hinges on rapidly executing secondary paper audits to bridge digital gaps in remote or low-connectivity environments. The key trade-off is accepting increased logistical complexity and supervisory load to prevent unacceptable data loss from a pure digital approach.\",\"synergy_text\":\"It strongly supports the Real-Time Data Monitoring and Feedback System by providing redundant data capture, ensuring the monitoring system has data streams even when primary connectivity fails.\",\"conflict_text\":\"It conflicts with Sourcing and Lifecycle Management of Enumerator Hardware, as requiring secondary paper audits offsets the efficiencies gained by the digital strategy the hardware enables.\"},{\"lever_id\":\"c6aef6f4-7684-49aa-aa27-af66d4d6759c\",\"name\":\"Methodological Handling of Comprehensive Caste Data\",\"consequences\":\"The decision regarding the framing and inclusion of caste identity profoundly impacts the political credibility of the entire exercise, as the data will immediately inform reservation policy adjustments. Committing to releasing the full, disaggregated caste tables immediately alongside population counts satisfies activists seeking transparency but risks political backlash from groups opposing the creation of new reservation categories, potentially leading to targeted non-cooperation in their regions. Delaying the release of caste data until after the delimitation exercise stabilizes the immediate political environment but guarantees accusations that the census results were manipulated to favor incumbent political boundaries.\",\"options\":[\"Adopt the precise, historical enumeration methodology used in 1931 as a non-negotiable baseline, guaranteeing methodological consistency even if this questionnaire design fails to capture contemporary forms of social identity shifts post-independence.\",\"Mandate a two-stage data collection where Phase 2 includes provisional, anonymized self-declared caste categories, which are then subject to a mandatory three-month public review period before finalization and linkage to the population totals.\",\"Exclude the comprehensive OBC/caste enumeration entirely from the main 2026-2027 count due to current political volatility, proposing instead a distinct, separate, smaller national socio-economic survey focused solely on caste alignment to be executed 18 months later.\"],\"review\":\"Committing to a legacy 1931 framework ensures methodological purity against political tampering but ignores necessary updates to social classification demanded by contemporary societal realities, potentially invalidating the data's utility.\",\"description\":\"This determines the political and statistical credibility of the census by defining how the highly sensitive, non-scheduled caste categories are framed and collected. The core challenge is balancing methodological transparency (satisfying statistical rigor) against political expediency (managing immediate backlash over reservation shifts). Success is measured by the accepted final linkage between caste identity and demographic counts for policy use.\",\"synergy_text\":\"Methodological Handling significantly influences Addressing Political Friction in Delimitation Data Aggregation, as the caste results will directly fuel post-census political contention separate from mere population counts.\",\"conflict_text\":\"It directly conflicts with Addressing Nomadic and Migrant Population Enumeration, as methods optimized for stable household caste charting may fail to accurately capture fluid identities among transient groups.\"},{\"lever_id\":\"2175813a-4ef4-4b52-ba44-e7ba50552355\",\"name\":\"Addressing Nomadic and Migrant Population Enumeration\",\"consequences\":\"The plan to secure 99%+ coverage requires explicitly accounting for populations that do not reside in fixed households, often requiring specialized collection methods that deviate significantly from the primary household survey frame. Deploying dedicated, mobile 'Special Enumeration Teams' (SETs) risks creating a perception of second-class data quality for these segments, as SETs may lack the detailed local knowledge possessed by area-based enumerators, leading to undercounting stigma. Conversely, integrating these populations into the standard household frame requires enumerators to spend disproportionate time verifying temporary residency status, significantly slowing the overall pace of data collection across stable geographies.\",\"options\":[\"Mandate that all field supervisors dedicate 15% of their required weekly check-ins to actively seek out and document temporary housing sites (labor camps, roadside settlements, religious shelters) using distinct geo-tags separate from standard dwelling units.\",\"Partner directly with registered trade unions and large industrial employers to mandate the submission of non-resident worker manifests as a proxy validation measure for transient, employed populations during Phase 2 collection.\",\"Institute a decentralized micro-grant system, empowering local NGOs focused on migrant and tribal welfare to assist in the enumeration of their communities, offering them a participatory role in the data source validation.\"],\"review\":\"Partnering with large employers for worker manifests introduces immediate bias toward employed migrants, likely overlooking undocumented or self-employed nomadic groups, thereby compromising the comprehensive mandate.\",\"description\":\"This lever tackles the challenge of accurately counting fluid, non-fixed populations (migrants, homeless, nomadic groups) without compromising the main enumeration timeline. It necessitates defining non-traditional survey frames, potentially involving NGOs or employers, which introduces data validation complexity far beyond standard household checks. Success is achieving inclusion without introducing significant measurement bias or slowing down enumeration pace in static areas.\",\"synergy_text\":\"It leverages synergy with Enumerator Performance Calibration and Incentive Structuring by requiring specialized, high-effort data collection that performance metrics can specifically reward.\",\"conflict_text\":\"It creates friction with Addressing Political Friction in Delimitation Data Aggregation, as verifying these difficult-to-count populations will delay the final population totals needed for prompt boundary adjustments.\"},{\"lever_id\":\"17530cce-f3c8-4e6f-9365-6b4d87e698c4\",\"name\":\"Addressing Political Friction in Delimitation Data Aggregation\",\"consequences\":\"Proactively isolating the finalized population tallies used for immediate parliamentary realignment (Lok Sabha seat allocation) and publishing them six months ahead of the comprehensive, politically sensitive caste tables will allow for one political battle to conclude before the second major data release. This buys critical time for managing disputes over state-level resource allocation based on caste data, but creates a perception of political management, potentially undermining the perceived impartiality of the overall statistical release schedule.\",\"options\":[\"Pre-commit to releasing the baseline population totals for constituency delineation first, using only the initial housing frame documentation (Phase 1 data) before full demographic data is adjudicated, managing expectations for speed.\",\"Establish a constitutionally mandated, non-partisan Judicial Review Board, staffed by retired Supreme Court judges and former Election Commission officials, to serve as the sole arbitrator for all disputes related to Phase 1 population aggregation.\",\"Implement a 'buffered zone' calculation method where boundary adjustments are based on the 2011 projection plus a standardized regional growth factor until the full 2026/27 data is fully ratified, delaying immediate legislative impact by one full cycle.\"],\"review\":\"Separating population counts from caste data appeases immediate political demands concerning legislative power, but risks fracturing public trust if the caste data, when released later, shows disparities with the initial population tallies.\",\"description\":\"This strategy manages stakeholder expectations by decoupling the release of politically charged population figures\\u2014essential for immediate parliamentary reshaping\\u2014from the deeply divisive, comprehensive caste data. The objective is to channel immediate political conflict toward one dataset first, protecting the subsequent data release's credibility. Success is quantified by the stability of the interim delimitation process post-initial release.\",\"synergy_text\":\"It synergizes with Methodological Handling of Comprehensive Caste Data by creating a time buffer, allowing the political system to absorb the population shift before confronting the caste classification details.\",\"conflict_text\":\"It conflicts with Enumerator Coverage Strategy for Infrastructure Gaps, as any delay caused by coverage remediation necessitates delaying the entire delivery pipeline, including the prioritized delimitation data release.\"},{\"lever_id\":\"57b10ea7-c785-4693-8f9a-4c0097f71b0d\",\"name\":\"Enumerator Performance Calibration and Incentive Structuring\",\"consequences\":\"Establishing performance-based incentives tied directly to the successful processing of digital enumeration batches, rather than mere completion rates, will directly encourage data accuracy and timely synchronization. Downstream, this necessitates developing a very granular, near real-time performance dashboard for supervisors, shifting management focus from physical oversight to data quality monitoring, which requires more sophisticated analytical staff recruitment.\",\"options\":[\"Implement a tiered financial reward structure where 50% of enumerator payment is contingent upon the validation team's acceptance of their submitted data blocks within seven days of upload.\",\"Mandate a 'digital literacy certification' prerequisite for deployment, utilizing a national training grid that scores competency in offline data entry and digital security protocols before assignment.\",\"Institute a non-monetary recognition portfolio for supervisors flagging superior data integrity over sheer volume, focusing recognition on supervisors successfully navigating high-conflict or low-connectivity zones without data outliers.\"],\"review\":\"Tying large financial rewards to post-hoc data validation inherently delays worker compensation and risks inflating data quality efforts near Phase 1's end, potentially compressing the critical data processing window.\",\"description\":\"This lever shifts performance measurement from simple headcount to quantifiable digital data quality, incentivizing accurate and timely synchronization over rapid form submission. It requires substantial managerial investment in data literacy and analytical capacity for supervisors. Key success metrics involve the percentage of submitted data blocks passing initial automated validation checks, ensuring fidelity before data processing begins.\",\"synergy_text\":\"It directly amplifies the Real-Time Data Monitoring and Feedback System by guaranteeing that the incoming data quality is high enough for anomaly detection to yield meaningful results.\",\"conflict_text\":\"It creates tension with Dynamic Training Modules for Enumerators; if performance incentives are high, enumerators may only focus training on high-scoring digital tasks, neglecting complex edge cases addressed in broader training.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer's Gambit\",\"strategic_logic\":\"This pathway aggressively trusts cutting-edge technology and accepts the highest associated risks to achieve unprecedented speed and coverage fidelity. It prioritizes innovative solutions for connectivity and immediate data integrity checks, aiming to set a new global benchmark for census methodology, even if it creates immediate political complexities regarding data structuring.\",\"lever_settings\":{\"Enumeration Coverage Strategy for Infrastructure Gaps\":\"Deploy ruggedized, solar-charging satellite communication hubs tethered to regional supervisors, thereby sacrificing per-unit enumeration cost savings to guarantee continuous data transmission from the most isolated 10% of enumeration blocks.\",\"Methodological Handling of Comprehensive Caste Data\":\"Mandate a two-stage data collection where Phase 2 includes provisional, anonymized self-declared caste categories, which are then subject to a mandatory three-month public review period before finalization and linkage to the population totals.\",\"Addressing Nomadic and Migrant Population Enumeration\":\"Mandate that all field supervisors dedicate 15% of their required weekly check-ins to actively seek out and document temporary housing sites (labor camps, roadside settlements, religious shelters) using distinct geo-tags separate from standard dwelling units.\",\"Addressing Political Friction in Delimitation Data Aggregation\":\"Pre-commit to releasing the baseline population totals for constituency delineation first, using only the initial housing frame documentation (Phase 1 data) before full demographic data is adjudicated, managing expectations for speed.\",\"Enumerator Performance Calibration and Incentive Structuring\":\"Implement a tiered financial reward structure where 50% of enumerator payment is contingent upon the validation team's acceptance of their submitted data blocks within seven days of upload.\"}},{\"scenario_name\":\"The Builder's Foundation\",\"strategic_logic\":\"This pragmatic scenario seeks a robust balance, leveraging digital tools where reliable but maintaining redundant physical protocols where necessary to ensure coverage. It focuses on capability building and risk mitigation through established governance structures, ensuring the data is accepted as credible despite slower execution in fringe areas.\",\"lever_settings\":{\"Enumeration Coverage Strategy for Infrastructure Gaps\":\"Mandate a blended operational protocol where digital submission failure automatically triggers an immediate, independent secondary paper audit conducted by local revenue staff within 72 hours to secure coverage.\",\"Methodological Handling of Comprehensive Caste Data\":\"Exclude the comprehensive OBC/caste enumeration entirely from the main 2026-2027 count due to current political volatility, proposing instead a distinct, separate, smaller national socio-economic survey focused solely on caste alignment to be executed 18 months later.\",\"Addressing Nomadic and Migrant Population Enumeration\":\"Mandate that all field supervisors dedicate 15% of their required weekly check-ins to actively seek out and document temporary housing sites (labor camps, roadside settlements, religious shelters) using distinct geo-tags separate from standard dwelling units.\",\"Addressing Political Friction in Delimitation Data Aggregation\":\"Establish a constitutionally mandated, non-partisan Judicial Review Board, staffed by retired Supreme Court judges and former Election Commission officials, to serve as the sole arbitrator for all disputes related to Phase 1 population aggregation.\",\"Enumerator Performance Calibration and Incentive Structuring\":\"Mandate a 'digital literacy certification' prerequisite for deployment, utilizing a national training grid that scores competency in offline data entry and digital security protocols before assignment.\"}},{\"scenario_name\":\"The Consolidator's Safeguard\",\"strategic_logic\":\"This low-risk path prioritizes political stability and guaranteed coverage above methodological modernization or deep sociological detail. It leans on proven, stable operational procedures and conservative data collection timelines, sacrificing speed and immediate comprehensive caste inclusion to ensure governmental mandate acceptance.\",\"lever_settings\":{\"Enumeration Coverage Strategy for Infrastructure Gaps\":\"Shift the primary data capture workflow to exclusively use pre-loaded, cryptographically signed forms on the mobile application, accepting enumeration delays during monsoon cycles to maximize the use of ideal, stable weather windows for deep rural traversal.\",\"Methodological Handling of Comprehensive Caste Data\":\"Adopt the precise, historical enumeration methodology used in 1931 as a non-negotiable baseline, guaranteeing methodological consistency even if this questionnaire design fails to capture contemporary forms of social identity shifts post-independence.\",\"Addressing Nomadic and Migrant Population Enumeration\":\"Partner directly with registered trade unions and large industrial employers to mandate the submission of non-resident worker manifests as a proxy validation measure for transient, employed populations during Phase 2 collection.\",\"Addressing Political Friction in Delimitation Data Aggregation\":\"Implement a 'buffered zone' calculation method where boundary adjustments are based on the 2011 projection plus a standardized regional growth factor until the full 2026/27 data is fully ratified, delaying immediate legislative impact by one full cycle.\",\"Enumerator Performance Calibration and Incentive Structuring\":\"Institute a non-monetary recognition portfolio for supervisors flagging superior data integrity over sheer volume, focusing recognition on supervisors successfully navigating high-conflict or low-connectivity zones without data outliers.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"World-leading, mega-scale national logistical and governance operation covering 1.4 billion people across nearly all geographies, defined by a multi-phase execution timeline.\",\"risk_and_novelty\":\"Extremely high risk due to simultaneous deployment of novel digital technology (smartphone app, GPS stamping) across highly variable infrastructure and the introduction of the first comprehensive caste enumeration in 95 years, which carries massive political volatility.\",\"complexity_and_constraints\":\"Extreme operational complexity involving 3 million personnel, multiple official languages, handling monsoons, security zones, data quality remediation (moving from paper to digital), and immense political pressure dictating data release timing.\",\"domain_and_tone\":\"Governmental, large-scale infrastructure execution, characterized by urgency, extreme political sensitivity, and high technical dependency.\",\"holistic_profile_of_the_plan\":\"This is a high-stakes, massive endeavor requiring the fusion of legacy bureaucratic scale with cutting-edge, yet fragile, digital tools, all while navigating deep, intersecting political fault lines over both geographic representation and social classification.\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer's Gambit\",\"fit_score\":9,\"fit_assessment\":\"This scenario aligns extremely well by accepting the inherent tech risks (e.g., aggressive satellite comms deployment) to meet the need for aggressive data integrity and speed, especially concerning the digital shift and publishing *interim* delimitation data quickly.\"},{\"scenario_name\":\"The Builder's Foundation\",\"fit_score\":7,\"fit_assessment\":\"This is a strong, pragmatic fit, prioritizing reliable coverage via blended protocols, which mitigates the risk of massive undercounting. However, its decision to delay caste enumeration entirely (Lever B) might undervalue the political necessity of integrating that data into the 2026/27 timeline.\"},{\"scenario_name\":\"The Consolidator's Safeguard\",\"fit_score\":4,\"fit_assessment\":\"This scenario is too risk-averse. Prioritizing stability by accepting delays (monsoon focus) and using legacy caste methodologies (1931 baseline) fundamentally conflicts with the plan's clear emphasis on adopting digital workflows and delivering the long-awaited comprehensive caste data.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Pioneer's Gambit\",\"justification\":\"The Pioneer's Gambit is the most suitable strategy because the project profile is defined by extreme ambition (world's largest headcount) paired with high technological novelty (digital census, caste enumeration) and severe political constraints requiring immediate action.\\n\\n*   **Alignment with Ambition & Novelty:** This scenario embraces the inherent risks of the digital rollout (e.g., expensive satellite hubs) necessary to meet the need for high data fidelity and faster reporting timelines, which aligns with the plan's goal to overcome the 2011 paper-based flaws.\\n*   **Political Maneuvering:** It directly addresses the sequencing of highly charged political releases by committing to fast-track baseline population totals for delimitation first, creating necessary political tempo management for the subsequent release of the volatile caste data.\\n*   **Comparative Weakness of Others:** The Builder\\u2019s Foundation is too cautious in delaying the critical caste component, while The Consolidator's Safeguard sacrifices the mandated modernization by reverting to slow, tradition-bound methods, failing to address the urgency tied to the postponed 2021 start.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 4,
+        "response_byte_count": 2779,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nPer-period and per-unit rates (important): when the source expresses a\nquantity as a rate (a value divided by some period or some other unit),\nthe label MUST carry the denominator so the rate stays visible\ndownstream. Write the label as '<quantity> per <denominator>' or\ninclude the denominator in the unit field (e.g. '<unit>/<denominator>').\nA flat label that drops the denominator is invalid when the source\nstates one \u2014 the downstream extract can no longer reconstruct the\nmultiplication. For these rate entries the modelling role should\ndescribe the multiplication structure rather than just naming the cost,\nso a downstream stage can identify the matching scaling input.\n\nSource-stated rates belong in this bucket, not in missing_data. If the\nsource names a per-period or per-unit rate at all \u2014 explicitly,\ninferred, as a recommended range, or as a stress_test magnitude \u2014 emit\nit as a numeric_value with the denominator preserved. Setting\nsource_status to 'inferred' or 'stress_test' is fine when the source's\nframing fits; do NOT route a rate-like quantity to missing_data merely\nbecause the source gives it as a range, a recommendation, or an\nexpert's estimate rather than as a single committed value.\nmissing_data_to_estimate is reserved for primitives the source does NOT\nname. A rate the source mentions, even imprecisely, has been named and\nmust surface here with its denominator intact.\n\nA total cost that the source ALSO frames as a per-period burn must\nappear here in BOTH forms when the source supplies both: one entry for\nthe total (with its absolute label) and one entry for the rate (with\nthe per-period denominator). Listing only the total flattens the burn\nstructure; listing only the rate hides the source's own committed total.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n- '<what the rate is> per <denominator>: <amount> <unit-from-source>/<denominator> \u2014 <modelling role describing what it scales with>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 3,
+        "second_pass_response_byte_count": 2010,
+        "second_pass_user_prompt": "Review the numeric_values items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 9,
+        "second_pass_item_count": 6,
+        "newly_added_count": 6,
+        "scored_items": [
+          {
+            "line_english": "Phase 1 start date: April 1, 2026 \u2014 milestone gate for initial data collection.",
+            "line_original": "Phase 1 begins April 1, 2026",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Phase 1 begins April 1, 2026",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Phase 1 end date: September 2026 \u2014 milestone gate for initial data collection.",
+            "line_original": "running through September 2026",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "running through September 2026",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Phase 2 duration: 7 months (from September 2026 through April 1, 2027) \u2014 duration input for demographic collection.",
+            "line_original": "Phase 2 runs September 2026 through April 1, 2027",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Phase 2 runs September 2026 through April 1, 2027",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total enumerator count deployed: 3 million personnel \u2014 input for training and salary cost modeling.",
+            "line_original": "employs over 3 million government workers as enumerators",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "employs over 3 million government workers",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Budget minimum estimate: 12,000 crore \u20b9 \u2014 input for total project CAPEX/OPEX.",
+            "line_original": "\u20b912,000\u201315,000 crore",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget is estimated at \u20b912,000\u201315,000 crore",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Budget maximum estimate: 15,000 crore \u20b9 \u2014 input for total project CAPEX/OPEX.",
+            "line_original": "\u20b912,000\u201315,000 crore",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget is estimated at \u20b912,000\u201315,000 crore",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Minimum household coverage target: 99+% households \u2014 critical success threshold for baseline viability.",
+            "line_original": "complete enumeration of 99%+ of households in both phases",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "99%+ of households in both phases",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Provisional population totals deadline: 6 months post-Phase 2 completion \u2014 milestone for delimitation gate.",
+            "line_original": "provisional population totals published within 6 months of Phase 2 completion",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "published within 6 months of Phase 2 completion",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Full dataset release deadline: 18 months post-Phase 2 completion \u2014 final data delivery milestone.",
+            "line_original": "full dataset including caste tables released within 18 months",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "released within 18 months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Caste census coverage gap since 1931: 95 years \u2014 scope of statistical novelty.",
+            "line_original": "first comprehensive caste count in 95 years",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "first comprehensive caste count in 95 years",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Enumerators contingency for 2011 census: 2.7 million personnel \u2014 baseline for scale comparison.",
+            "line_original": "up from 2.7 million in the 2011 census",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "up from 2.7 million in the 2011 census",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Number of states and union territories covered: 36 regions \u2014 input for deployment complexity modeling.",
+            "line_original": "across 28 states and 8 union territories",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "across 28 states and 8 union territories",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Minimum enumerator check-ins for nomadic groups: 15% of weekly check-ins \u2014 commitment for Lever 2175813a-4ef4-4b52-ba44-e7ba50552355.",
+            "line_original": "dedicate 15% of their required weekly check-ins",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "dedicate 15% of their required weekly check-ins",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Financial reward contingency for enumerators: 50% of payment \u2014 commitment for Lever 57b10ea7-c785-4693-8f9a-4c0097f71b0d.",
+            "line_original": "50% of enumerator payment is contingent",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "50% of enumerator payment is contingent",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Minimum revenue projection percentage for delimitation buffering: 100% projected growth \u2014 commitment for Lever 17530cce-f3c8-4e6f-9365-6b4d87e698c4.",
+            "line_original": "based on the 2011 projection plus a standardized regional growth factor",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "explicit",
+            "source_quote": "based on the 2011 projection plus a standardized",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 3624,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the load_bearing_assumptions items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "The satellite communication hubs deployment in remote areas will guarantee data transmission rates.",
+            "line_original": "Deploy ruggedized, solar-charging satellite communication hubs tethered to regional supervisors, thereby sacrificing per-unit enumeration cost savings to guarantee continuous data transmission from the most isolated 10% of enumeration blocks.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "guarantee continuous data transmission from the most isolated 10%",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The two-stage caste data collection method will yield credible data after the public review period.",
+            "line_original": "Mandate a two-stage data collection where Phase 2 includes provisional, anonymized self-declared caste categories, which are then subject to a mandatory three-month public review period before finalization",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "subject to a mandatory three-month public review period",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Field supervisors can successfully document temporary housing sites, achieving coverage for fluid populations.",
+            "line_original": "Mandate that all field supervisors dedicate 15% of their required weekly check-ins to actively seek out and document temporary housing sites",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "actively seek out and document temporary housing sites",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Interim population totals derived from Phase 1 housing data will satisfy immediate delimitation requirements.",
+            "line_original": "Pre-commit to releasing the baseline population totals for constituency delineation first, using only the initial housing frame documentation (Phase 1 data)",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "using only the initial housing frame documentation (Phase 1 data)",
+            "quote_verified": true
+          },
+          {
+            "line_english": "A specific financial reward structure will drive enumerator adherence to rapid data validation standards.",
+            "line_original": "Implement a tiered financial reward structure where 50% of enumerator payment is contingent upon the validation team's acceptance of their submitted data blocks within seven days of upload.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "50% of enumerator payment is contingent upon the validation",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The technology stack will maintain application reliability despite widespread, intermittent connectivity challenges.",
+            "line_original": "The technology stack must function reliably across India's extraordinary infrastructure variance",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "must function reliably across India's extraordinary infrastructure variance",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The political environment will permit the release of demographic data necessary for seat delimitation first.",
+            "line_original": "Address political pressure on methodology, question framing, and data release timing from all sides",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "political pressure on methodology, question framing",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The data quality assurance system will prevent enumerators from fabricating entries to meet quotas.",
+            "line_original": "risk of enumerators fabricating entries to meet quotas. Plan quality assurance through independent verification surveys",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "risk of enumerators fabricating entries to meet quotas.",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 3,
+        "response_byte_count": 1704,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\n- A per-period burn rate (any cost or output expressed as a value per\n  unit of time) needs the matching duration the rate will be\n  multiplied by \u2014 the count of those time units the burn applies for.\n  Without the duration, the rate cannot be turned into a total and the\n  multiplication is lost downstream.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the missing_data_to_estimate items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Total duration of Phase 1 in months \u2014 needed to scale monthly burn rate for personnel costs.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Average monthly cost per enumerator in \u20b9/month \u2014 required to calculate the 3 million personnel cost basis.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Duration in months for which provisional population totals must be sustained (6 months post-Phase 2) \u2014 needed to schedule the subsequent data release cost.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Duration in months for which the full dataset must be sustained (18 months post-Phase 2) \u2014 needed to schedule the final data delivery cost.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Cost incurred per day of monsoon season disruption \u2014 required for modeling Phase 1 operational delays.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Discount rate / expected cost of capital in percentage per year \u2014 required for Net Present Value calculation on the \u20b912,000\u201315,000 crore budget.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 3,
+        "response_byte_count": 1862,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nCapacity requirements count as gates. When the source states a numeric\nminimum needed to physically support a declared capacity, output, or\nservice level, the requirement IS the gate \u2014 even when the source\nframes it as a sizing calculation rather than an explicit pass/fail\ncondition. Write it in the if/then form: 'If <quantity> falls below\n<required value>, then <the supported capacity cannot be achieved>.'\nDo not skip such requirements just because the source phrases them as\nsizing math instead of a gate.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 27,
+        "second_pass_user_prompt": "Review the gates_and_thresholds items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 5,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "If household enumeration falls below 99%+, then the success criterion is not met.",
+            "line_original": "complete enumeration of 99%+ of households in both phases",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "99%+ of households in both phases",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If provisional population totals are not published within 6 months of Phase 2 completion, then the success criterion is not met.",
+            "line_original": "provisional population totals published within 6 months of Phase 2 completion",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "published within 6 months of Phase 2 completion",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the full dataset, including caste tables, is not released within 18 months, then the success criterion is not met.",
+            "line_original": "full dataset including caste tables released within 18 months",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "released within 18 months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If digital submission fails in remote areas, then local revenue staff must immediately conduct a paper audit within 72 hours.",
+            "line_original": "digital submission failure automatically triggers an immediate, independent secondary paper audit conducted by local revenue staff within 72 hours",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "paper audit conducted by local revenue staff within 72 hours",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If final caste tables are not deemed methodologically credible, then the census success criterion is not met.",
+            "line_original": "census accepted as methodologically credible by domestic and international statistical bodies",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "accepted as methodologically credible",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 2083,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 23,
+        "second_pass_user_prompt": "Review the risks_and_shocks items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 5,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Monsoon season disruption during the middle months of Phase 1: operational timeline compression.",
+            "line_original": "accounting for monsoon season disruption during the middle months of Phase 1",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "monsoon season disruption during the middle months of Phase 1",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Security requirements in conflict-affected areas like Kashmir and Naxalite corridors: deployment constraints.",
+            "line_original": "security requirements in conflict-affected areas (Kashmir, Naxalite corridors, Northeast insurgency zones)",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "security requirements in conflict-affected areas (Kashmir, Naxalite corridors",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Technology failure (connectivity/hardware) leading to enumerator fabrication of entries to meet quotas: data quality shock.",
+            "line_original": "app reliability in low-connectivity environments, data synchronization and deduplication at scale, and the risk of enumerators fabricating entries",
+            "modelling_relevance": 5,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "risk of enumerators fabricating entries to meet quotas",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Regional non-cooperation based on political friction over delimitation favoring one region over another: timeline delay/rework.",
+            "line_original": "Pick a realistic scenario that accounts for the near-certainty of political interference, regional non-cooperation",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "political interference, regional non-cooperation",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Political backlash from groups opposing new reservation quotas based on comprehensive caste data release: methodology credibility failure.",
+            "line_original": "risks political backlash from groups opposing the creation of new reservation categories",
+            "modelling_relevance": 5,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "risks political backlash from groups opposing the creation",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

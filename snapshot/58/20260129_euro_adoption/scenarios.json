@@ -1,0 +1,137 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Denmark DKK to EUR Adoption (Builder's Blueprint)",
+    "plan_type": "public_finance_national_transition"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_transition_budget_floor_dkk": 15000000000,
+        "transition_duration_years": 4,
+        "ring_fenced_contingency_dkk": 50000000,
+        "cash_logistics_shock_cost_dkk": 50000000,
+        "public_info_funding_share": 0.005,
+        "inflation_excess_over_baseline_pp": 0.0,
+        "estimated_transition_cost_dkk": 12000000000,
+        "baseline_inflation_rate": 0.01,
+        "estimated_public_info_required_cost_dkk": 60000000,
+        "real_budget_after_inflation_dkk": 14414705167.242245,
+        "budget_envelope_surplus_dkk": 2414705167.2422447,
+        "contingency_buffer_after_cash_shock_dkk": 0.0,
+        "public_info_funding_surplus_dkk": 15000000.0,
+        "combined_financial_viability_surplus_dkk": 0.0
+      },
+      "outputs": {
+        "real_budget_after_inflation_dkk": 14414705167.242245,
+        "budget_envelope_surplus_dkk": 2414705167.2422447,
+        "contingency_buffer_after_cash_shock_dkk": 0.0,
+        "public_info_funding_surplus_dkk": 15000000.0,
+        "combined_financial_viability_surplus_dkk": 0.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_transition_budget_floor_dkk": 20000000000,
+        "transition_duration_years": 6,
+        "ring_fenced_contingency_dkk": 50000000,
+        "cash_logistics_shock_cost_dkk": 100000000,
+        "public_info_funding_share": 0.005,
+        "inflation_excess_over_baseline_pp": 0.02,
+        "estimated_transition_cost_dkk": 20000000000,
+        "baseline_inflation_rate": 0.02,
+        "estimated_public_info_required_cost_dkk": 120000000,
+        "real_budget_after_inflation_dkk": 15806290514.602915,
+        "budget_envelope_surplus_dkk": -4193709485.397085,
+        "contingency_buffer_after_cash_shock_dkk": -50000000.0,
+        "public_info_funding_surplus_dkk": -20000000.0,
+        "combined_financial_viability_surplus_dkk": -4193709485.397085
+      },
+      "outputs": {
+        "real_budget_after_inflation_dkk": 15806290514.602915,
+        "budget_envelope_surplus_dkk": -4193709485.397085,
+        "contingency_buffer_after_cash_shock_dkk": -50000000.0,
+        "public_info_funding_surplus_dkk": -20000000.0,
+        "combined_financial_viability_surplus_dkk": -4193709485.397085
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_transition_budget_floor_dkk": 25000000000,
+        "transition_duration_years": 8,
+        "ring_fenced_contingency_dkk": 50000000,
+        "cash_logistics_shock_cost_dkk": 200000000,
+        "public_info_funding_share": 0.005,
+        "inflation_excess_over_baseline_pp": 0.04,
+        "estimated_transition_cost_dkk": 40000000000,
+        "baseline_inflation_rate": 0.035,
+        "estimated_public_info_required_cost_dkk": 250000000,
+        "real_budget_after_inflation_dkk": 14017555834.834494,
+        "budget_envelope_surplus_dkk": -25982444165.165504,
+        "contingency_buffer_after_cash_shock_dkk": -150000000.0,
+        "public_info_funding_surplus_dkk": -125000000.0,
+        "combined_financial_viability_surplus_dkk": -25982444165.165504
+      },
+      "outputs": {
+        "real_budget_after_inflation_dkk": 14017555834.834494,
+        "budget_envelope_surplus_dkk": -25982444165.165504,
+        "contingency_buffer_after_cash_shock_dkk": -150000000.0,
+        "public_info_funding_surplus_dkk": -125000000.0,
+        "combined_financial_viability_surplus_dkk": -25982444165.165504
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "real_budget_after_inflation_dkk": {
+        "low": 14414705167.242245,
+        "base": 15806290514.602915,
+        "high": 14017555834.834494,
+        "unit": "DKK",
+        "spread_ratio": 0.9724432064854815,
+        "spread_absolute": -397149332.40775108
+      },
+      "budget_envelope_surplus_dkk": {
+        "low": 2414705167.2422447,
+        "base": -4193709485.397085,
+        "high": -25982444165.165504,
+        "unit": "DKK",
+        "spread_ratio": -10.760203041474378,
+        "spread_absolute": -28397149332.407749
+      },
+      "contingency_buffer_after_cash_shock_dkk": {
+        "low": 0.0,
+        "base": -50000000.0,
+        "high": -150000000.0,
+        "unit": "DKK",
+        "spread_ratio": null,
+        "spread_absolute": -150000000.0
+      },
+      "public_info_funding_surplus_dkk": {
+        "low": 15000000.0,
+        "base": -20000000.0,
+        "high": -125000000.0,
+        "unit": "DKK",
+        "spread_ratio": -8.333333333333334,
+        "spread_absolute": -140000000.0
+      },
+      "combined_financial_viability_surplus_dkk": {
+        "low": 0.0,
+        "base": -4193709485.397085,
+        "high": -25982444165.165504,
+        "unit": "DKK",
+        "spread_ratio": null,
+        "spread_absolute": -25982444165.165504
+      }
+    }
+  },
+  "warnings": [
+    {
+      "stage": "run_scenarios",
+      "scenario": null,
+      "calculation": "q_inflation_indexation_adequacy",
+      "message": "Skipped: formula_hint is null.",
+      "severity": "WARN"
+    }
+  ]
+}

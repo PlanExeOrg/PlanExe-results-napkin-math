@@ -1,0 +1,224 @@
+{
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "commercial community-arts venture",
+    "primary_goal": "Establish a financially resilient community clay workshop in Nuuk on a 2M DKK Year 1 budget, hitting a 40/35/25 revenue mix while preserving a 15% contingency.",
+    "modelling_frame": "Year 1 break-even and contingency survival: tests whether the speculative drop-in/rental revenue stream clears its 25% target at the minimum viable hourly rate, and whether the 15% contingency absorbs labor-law reclassification and rental-shortfall shocks."
+  },
+  "key_values": [
+    {
+      "id": "year1_total_budget_dkk",
+      "label": "Year 1 total budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "DKK",
+      "value": 2000000,
+      "comment": "Total allocated capital envelope for Year 1; every other DKK quantity is benchmarked against this.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Year 1 total budget: 2 million DKK"
+    },
+    {
+      "id": "contingency_reserve_share",
+      "label": "Contingency reserve share of budget",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.15,
+      "comment": "Ring-fenced share of Year 1 budget reserved as untouchable contingency against labor, rental, and utility shocks.",
+      "formula_hint": "contingency_reserve_dkk = year1_total_budget_dkk * contingency_reserve_share",
+      "output_name": "contingency_reserve_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_total_budget_dkk", "contingency_reserve_share"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Contingency reserve commitment: 15% of total Year 1 budget"
+    },
+    {
+      "id": "drop_in_revenue_mix_share",
+      "label": "Drop-in/rental share of Year 1 revenue",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.25,
+      "comment": "Speculative share of revenue from off-peak hourly rentals; flagged as the most fragile revenue stream.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Year 1 revenue mix estimate: 25% from drop-ins/rentals"
+    },
+    {
+      "id": "minimum_viable_hourly_rate_dkk",
+      "label": "Minimum viable hourly rental rate",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "DKK_per_hour",
+      "value": 165,
+      "comment": "Minimum hourly rental rate that covers off-peak overhead; binding floor for the speculative drop-in revenue stream.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Minimum viable hourly rental rate target of 165 DKK/hour"
+    },
+    {
+      "id": "fte_equivalent_count",
+      "label": "FTE equivalent staffing",
+      "category": "staffing",
+      "value_type": "explicit",
+      "unit": "FTE",
+      "value": 2,
+      "comment": "Four part-time instructors equate to two FTE salary equivalents driving the annual labor cost line.",
+      "formula_hint": "annual_labor_cost_dkk = fte_equivalent_count * monthly_fte_cost_dkk * months_in_year1",
+      "output_name": "annual_labor_cost_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["fte_equivalent_count", "monthly_fte_cost_dkk", "months_in_year1"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Staffing model equivalence: two (2) FTE salary equivalents"
+    },
+    {
+      "id": "labor_law_shock_cost_share",
+      "label": "Labor-law non-compliance cost shock",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.275,
+      "comment": "Reclassification to salaried structure inflates fixed labor cost by roughly 20-35%; midpoint is the base shock factor.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "fixed labor cost increases by 20-35% in Year 1"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_budget_after_labor_margin",
+      "question": "After paying the baseline annual labor cost, does the 2M DKK budget still leave a positive margin for fit-out, materials, and utilities?",
+      "why_it_matters": "Identifies whether the largest fixed expense (instructor pay) leaves operating room within the Year 1 envelope before contingency is even touched.",
+      "formula_hint": "budget_after_labor_margin_dkk = year1_total_budget_dkk - annual_labor_cost_dkk",
+      "output_name": "budget_after_labor_margin_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_total_budget_dkk", "annual_labor_cost_dkk"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "year1_revenue_target_dkk",
+      "label": "Year 1 total revenue target",
+      "unit": "DKK",
+      "why_needed": "The revenue-mix shares are fractions of total revenue, not of budget; without it no revenue-stream coverage formula can resolve.",
+      "suggested_estimation_method": "Anchor near the 2M DKK budget envelope and stress-test ±30%; refine once annual operating cost is modelled."
+    },
+    {
+      "id": "monthly_fte_cost_dkk",
+      "label": "Monthly cost per FTE equivalent",
+      "unit": "DKK_per_month",
+      "why_needed": "Drives the annual labor cost line; the entire labor-law shock and budget-after-labor margin depend on it.",
+      "suggested_estimation_method": "Use Greenlandic skilled-instructor pay benchmarks (roughly 30k-45k DKK/month) and bound around the contractor midpoint."
+    },
+    {
+      "id": "months_in_year1",
+      "label": "Operational months in Year 1",
+      "unit": "months",
+      "why_needed": "Annualises both labor cost and revenue against the 2M DKK envelope; the digest flags this as a missing primitive.",
+      "suggested_estimation_method": "Anchor at 12 months with downside 9 (delayed September 2026 readiness) and upside 12."
+    },
+    {
+      "id": "off_peak_hours_per_year",
+      "label": "Available off-peak rental hours per year",
+      "unit": "hours_per_year",
+      "why_needed": "Caps the bottom-up drop-in revenue (rate * hours) and tests whether the 25% mix share is mechanically reachable.",
+      "suggested_estimation_method": "Estimate weekly off-peak slots times operating weeks; bound 600-1800 hours/year."
+    },
+    {
+      "id": "drop_in_utilization_rate",
+      "label": "Off-peak rental utilization fraction",
+      "unit": "fraction",
+      "why_needed": "Without an uptake rate the off-peak hours cap converts to revenue at 100%, which the source explicitly flags as unrealistic.",
+      "suggested_estimation_method": "Bound 0.2-0.6 around a base near 0.4; aligned with the source's <60% deficit trigger."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "contingency_reserve_dkk",
+      "label": "Contingency reserve in DKK",
+      "formula_hint": "contingency_reserve_dkk = year1_total_budget_dkk * contingency_reserve_share",
+      "output_name": "contingency_reserve_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_total_budget_dkk", "contingency_reserve_share"],
+      "why_first": "Anchors every downstream shock-absorption test against a single named pool."
+    },
+    {
+      "id": "annual_labor_cost_dkk",
+      "label": "Annual labor cost (baseline contractor model)",
+      "formula_hint": "annual_labor_cost_dkk = fte_equivalent_count * monthly_fte_cost_dkk * months_in_year1",
+      "output_name": "annual_labor_cost_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["fte_equivalent_count", "monthly_fte_cost_dkk", "months_in_year1"],
+      "why_first": "Largest fixed expense line and the base on which the labor-law shock multiplies."
+    },
+    {
+      "id": "drop_in_revenue_shortfall_dkk",
+      "label": "Drop-in revenue shortfall vs. target",
+      "formula_hint": "drop_in_revenue_shortfall_dkk = max(0, year1_revenue_target_dkk * drop_in_revenue_mix_share - minimum_viable_hourly_rate_dkk * off_peak_hours_per_year * drop_in_utilization_rate)",
+      "output_name": "drop_in_revenue_shortfall_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["year1_revenue_target_dkk", "drop_in_revenue_mix_share", "minimum_viable_hourly_rate_dkk", "off_peak_hours_per_year", "drop_in_utilization_rate"],
+      "why_first": "Quantifies the named risk that speculative off-peak rentals fall short and debit the contingency."
+    },
+    {
+      "id": "labor_law_shock_dkk",
+      "label": "Labor-law reclassification shock magnitude",
+      "formula_hint": "labor_law_shock_dkk = annual_labor_cost_dkk * labor_law_shock_cost_share",
+      "output_name": "labor_law_shock_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["annual_labor_cost_dkk", "labor_law_shock_cost_share"],
+      "why_first": "Converts the 20-35% shock fraction into an absolute DKK pressure debited from the contingency reserve."
+    },
+    {
+      "id": "contingency_after_shocks_surplus_dkk",
+      "label": "Combined contingency surplus after shocks",
+      "formula_hint": "contingency_after_shocks_surplus_dkk = contingency_reserve_dkk - labor_law_shock_dkk - drop_in_revenue_shortfall_dkk",
+      "output_name": "contingency_after_shocks_surplus_dkk",
+      "output_unit": "DKK",
+      "depends_on": ["contingency_reserve_dkk", "labor_law_shock_dkk", "drop_in_revenue_shortfall_dkk"],
+      "why_first": "Top-level viability gate: the single 15% reserve must absorb both named shocks from the same pool."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "contractor_labor_law_compliance_gate",
+      "label": "Greenlandic labor-law contractor classification",
+      "why_it_matters": "Plan budgets assume contractor classification; a non-compliance ruling forces mandatory salaried structure and could deplete the 2M DKK budget independently of any operational threshold.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Mandatory severance/salary cost overrides the 15% contingency and may consume the entire Year 1 budget."
+    },
+    {
+      "id": "utility_variance_authorization_gate",
+      "label": "Nuuk municipal utility variance for high-draw kiln",
+      "why_it_matters": "Centralized kiln operation depends on a zoning/utility variance the plan treats as a fixed pre-condition; without it the workshop cannot fire ceramics.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Fit-out cannot complete, Q3 readiness target missed, and no kiln-based revenue is generated."
+    },
+    {
+      "id": "commercial_lease_gate",
+      "label": "Commercial lease near Katuaq by 2026-07-01",
+      "why_it_matters": "All downstream timelines and material-buffer prepayments are conditional on securing the lease on time; treated as binary in the source narrative.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Material buffer prepayment contracts cannot proceed and the September 2026 readiness target is lost."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Global Hemispheric Partition (Builder Path)",
+    "plan_type": "mega-project_geopolitical"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "initial_24m_allocation_usd": 12000000000000,
+        "partition_deadline_months": 24,
+        "handover_verification_threshold": 0.85,
+        "density_cap_persons_per_km2": 13000,
+        "cip_replacement_ratio": 1.5,
+        "cip_cost_share_cap": 0.05,
+        "actual_wave_verification_rate": 0.65,
+        "wave3_actual_completion_month": 15,
+        "projected_peak_hub_density": 9000,
+        "cip_count_moved_south": 500,
+        "monthly_replacement_unit_cost_usd": 8000,
+        "wave_verification_margin": -0.2,
+        "schedule_audit_buffer_months": 9,
+        "density_buffer_persons_per_km2": 4000,
+        "cip_replacement_cost_usd": 144000000,
+        "cip_cost_share_buffer": 0.049988
+      },
+      "outputs": {
+        "wave_verification_margin": -0.2,
+        "schedule_audit_buffer_months": 9,
+        "density_buffer_persons_per_km2": 4000,
+        "cip_replacement_cost_usd": 144000000,
+        "cip_cost_share_buffer": 0.049988
+      }
+    },
+    "base": {
+      "inputs": {
+        "initial_24m_allocation_usd": 12000000000000,
+        "partition_deadline_months": 24,
+        "handover_verification_threshold": 0.85,
+        "density_cap_persons_per_km2": 13000,
+        "cip_replacement_ratio": 2.0,
+        "cip_cost_share_cap": 0.05,
+        "actual_wave_verification_rate": 0.85,
+        "wave3_actual_completion_month": 16,
+        "projected_peak_hub_density": 12500,
+        "cip_count_moved_south": 2000,
+        "monthly_replacement_unit_cost_usd": 18000,
+        "wave_verification_margin": 0.0,
+        "schedule_audit_buffer_months": 8,
+        "density_buffer_persons_per_km2": 500,
+        "cip_replacement_cost_usd": 1728000000,
+        "cip_cost_share_buffer": 0.049856
+      },
+      "outputs": {
+        "wave_verification_margin": 0.0,
+        "schedule_audit_buffer_months": 8,
+        "density_buffer_persons_per_km2": 500,
+        "cip_replacement_cost_usd": 1728000000,
+        "cip_cost_share_buffer": 0.049856
+      }
+    },
+    "high": {
+      "inputs": {
+        "initial_24m_allocation_usd": 12000000000000,
+        "partition_deadline_months": 24,
+        "handover_verification_threshold": 0.85,
+        "density_cap_persons_per_km2": 13000,
+        "cip_replacement_ratio": 3.5,
+        "cip_cost_share_cap": 0.05,
+        "actual_wave_verification_rate": 0.92,
+        "wave3_actual_completion_month": 22,
+        "projected_peak_hub_density": 18000,
+        "cip_count_moved_south": 8000,
+        "monthly_replacement_unit_cost_usd": 40000,
+        "wave_verification_margin": 0.07,
+        "schedule_audit_buffer_months": 2,
+        "density_buffer_persons_per_km2": -5000,
+        "cip_replacement_cost_usd": 26880000000,
+        "cip_cost_share_buffer": 0.04776
+      },
+      "outputs": {
+        "wave_verification_margin": 0.07,
+        "schedule_audit_buffer_months": 2,
+        "density_buffer_persons_per_km2": -5000,
+        "cip_replacement_cost_usd": 26880000000,
+        "cip_cost_share_buffer": 0.04776
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "wave_verification_margin": {
+        "low": -0.2,
+        "base": 0.0,
+        "high": 0.07,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.27
+      },
+      "schedule_audit_buffer_months": {
+        "low": 9,
+        "base": 8,
+        "high": 2,
+        "unit": "months",
+        "spread_ratio": 0.2222222222222222,
+        "spread_absolute": -7
+      },
+      "density_buffer_persons_per_km2": {
+        "low": 4000,
+        "base": 500,
+        "high": -5000,
+        "unit": "persons_per_km2",
+        "spread_ratio": -1.25,
+        "spread_absolute": -9000
+      },
+      "cip_replacement_cost_usd": {
+        "low": 144000000,
+        "base": 1728000000,
+        "high": 26880000000,
+        "unit": "USD",
+        "spread_ratio": 186.66666666666666,
+        "spread_absolute": 26736000000
+      },
+      "cip_cost_share_buffer": {
+        "low": 0.049988,
+        "base": 0.049856,
+        "high": 0.04776,
+        "unit": "fraction",
+        "spread_ratio": 0.9554693126350324,
+        "spread_absolute": -0.002228
+      }
+    }
+  },
+  "warnings": []
+}

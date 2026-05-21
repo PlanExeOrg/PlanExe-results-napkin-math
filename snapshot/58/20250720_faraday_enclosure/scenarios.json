@@ -1,0 +1,152 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Europe's first certified Faraday enclosure launch",
+    "plan_type": "commercial product launch"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "year1_budget_eur": 400000,
+        "cash_trigger_threshold_eur": 50000,
+        "premium_unit_price_eur": 110,
+        "unit_bom_cost_eur": 60,
+        "iso_run_fixed_cost_eur": 150000,
+        "iso_run_units": 2000,
+        "presale_target_units": 1500,
+        "fixed_operating_cost_eur": 250000,
+        "presale_conversion_rate": 0.01,
+        "addressable_prepper_buyers": 8000,
+        "wholesale_discount_fraction": 0.3,
+        "retailer_committed_units": 0,
+        "expected_year1_units_sold": 80.0,
+        "year1_gross_profit_eur": 1360.0,
+        "net_cash_from_operations_eur": -398640.0,
+        "funding_gate_surplus_eur": -448640.0,
+        "year1_budget_surplus_eur": 0,
+        "iso_inventory_surplus_units": -1420.0
+      },
+      "outputs": {
+        "expected_year1_units_sold": 80.0,
+        "year1_gross_profit_eur": 1360.0,
+        "net_cash_from_operations_eur": -398640.0,
+        "funding_gate_surplus_eur": -448640.0,
+        "year1_budget_surplus_eur": 0,
+        "iso_inventory_surplus_units": -1420.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "year1_budget_eur": 400000,
+        "cash_trigger_threshold_eur": 50000,
+        "premium_unit_price_eur": 149,
+        "unit_bom_cost_eur": 75,
+        "iso_run_fixed_cost_eur": 150000,
+        "iso_run_units": 2000,
+        "presale_target_units": 1500,
+        "fixed_operating_cost_eur": 250000,
+        "presale_conversion_rate": 0.03,
+        "addressable_prepper_buyers": 17500,
+        "wholesale_discount_fraction": 0.45,
+        "retailer_committed_units": 1000,
+        "expected_year1_units_sold": 1525.0,
+        "year1_gross_profit_eur": 10598.750000000004,
+        "net_cash_from_operations_eur": -389401.25,
+        "funding_gate_surplus_eur": -439401.25,
+        "year1_budget_surplus_eur": 0,
+        "iso_inventory_surplus_units": 25.0
+      },
+      "outputs": {
+        "expected_year1_units_sold": 1525.0,
+        "year1_gross_profit_eur": 10598.750000000004,
+        "net_cash_from_operations_eur": -389401.25,
+        "funding_gate_surplus_eur": -439401.25,
+        "year1_budget_surplus_eur": 0,
+        "iso_inventory_surplus_units": 25.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "year1_budget_eur": 400000,
+        "cash_trigger_threshold_eur": 50000,
+        "premium_unit_price_eur": 159,
+        "unit_bom_cost_eur": 95,
+        "iso_run_fixed_cost_eur": 150000,
+        "iso_run_units": 2000,
+        "presale_target_units": 1500,
+        "fixed_operating_cost_eur": 250000,
+        "presale_conversion_rate": 0.07,
+        "addressable_prepper_buyers": 22000,
+        "wholesale_discount_fraction": 0.55,
+        "retailer_committed_units": 1000,
+        "expected_year1_units_sold": 2000,
+        "year1_gross_profit_eur": -46900.00000000001,
+        "net_cash_from_operations_eur": -446900.0,
+        "funding_gate_surplus_eur": -496900.0,
+        "year1_budget_surplus_eur": 0,
+        "iso_inventory_surplus_units": 500
+      },
+      "outputs": {
+        "expected_year1_units_sold": 2000,
+        "year1_gross_profit_eur": -46900.00000000001,
+        "net_cash_from_operations_eur": -446900.0,
+        "funding_gate_surplus_eur": -496900.0,
+        "year1_budget_surplus_eur": 0,
+        "iso_inventory_surplus_units": 500
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "expected_year1_units_sold": {
+        "low": 80.0,
+        "base": 1525.0,
+        "high": 2000,
+        "unit": "units",
+        "spread_ratio": 25.0,
+        "spread_absolute": 1920.0
+      },
+      "year1_gross_profit_eur": {
+        "low": 1360.0,
+        "base": 10598.750000000004,
+        "high": -46900.00000000001,
+        "unit": "EUR",
+        "spread_ratio": -34.485294117647065,
+        "spread_absolute": -48260.00000000001
+      },
+      "net_cash_from_operations_eur": {
+        "low": -398640.0,
+        "base": -389401.25,
+        "high": -446900.0,
+        "unit": "EUR",
+        "spread_ratio": null,
+        "spread_absolute": -48260.0
+      },
+      "funding_gate_surplus_eur": {
+        "low": -448640.0,
+        "base": -439401.25,
+        "high": -496900.0,
+        "unit": "EUR",
+        "spread_ratio": null,
+        "spread_absolute": -48260.0
+      },
+      "year1_budget_surplus_eur": {
+        "low": 0,
+        "base": 0,
+        "high": 0,
+        "unit": "EUR",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0
+      },
+      "iso_inventory_surplus_units": {
+        "low": -1420.0,
+        "base": 25.0,
+        "high": 500,
+        "unit": "units",
+        "spread_ratio": null,
+        "spread_absolute": 1920.0
+      }
+    }
+  },
+  "warnings": []
+}

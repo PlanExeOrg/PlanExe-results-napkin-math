@@ -1,0 +1,123 @@
+{
+  "initial_budget_envelope_usd": {
+    "unit": "USD",
+    "low": 25000000,
+    "base": 50000000,
+    "high": 100000000,
+    "rationale": "Plan states $25M-$100M+ envelope verbatim (Selected Scenario, Expert Criticism). Low = stated minimum capital commitment ($25M); base = midpoint of stated range; high = upper end of stated range. Asymmetric upper-side because the source explicitly says '$100M or more'.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "contingency_reserve_usd": {
+    "unit": "USD",
+    "low": 10000000,
+    "base": 15000000,
+    "high": 20000000,
+    "rationale": "Plan states $10M-$20M dedicated contingency buffer for legal defense, lobbying, and string-contention auctions (Project Plan mitigation). Low/high are the literal range endpoints.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "string_contention_overrun_usd": {
+    "unit": "USD",
+    "low": 5000000,
+    "base": 15000000,
+    "high": 30000000,
+    "rationale": "Premortem stress-tests Financial risk overrun at $10M-$20M; Expert Criticism warns string contention 'rapidly depletes contingency funds'. High extended above stated range because Issue 2 / Risk 3 are described as compounding; low set below the stated band to allow the soft-landing case.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "hsm_capex_usd": {
+    "unit": "USD",
+    "low": 5000000,
+    "base": 7500000,
+    "high": 10000000,
+    "rationale": "Executive Summary mandates $5M-$10M CapEx for internal HSM procurement. Bounds bracket the stated range exactly; midpoint as base.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "regulatory_shock_cost_usd": {
+    "unit": "USD",
+    "low": 5000000,
+    "base": 7500000,
+    "high": 10000000,
+    "rationale": "Review Plan / Premortem stress-test states $5M-$10M extra defense cost on regulatory objection. Bounds match the stated range.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "political_backlash_cost_usd": {
+    "unit": "USD",
+    "low": 2000000,
+    "base": 3000000,
+    "high": 4000000,
+    "rationale": "Risk 5 / Review Plan: political backlash causes $2M-$4M extra legal cost. Bounds match the stated range.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "review_duration_months": {
+    "unit": "months",
+    "low": 15,
+    "base": 18,
+    "high": 27,
+    "rationale": "Plan commits to 18-month delegation target; Risk 1 stress-tests 6-12 month regulatory delay (push to 24-30); Risk 5 stress-tests 3-6 month political delay. Base centered on plan commitment; high reflects realised execution under named delay shocks.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "avg_registration_price_usd": {
+    "unit": "USD",
+    "low": 25,
+    "base": 75,
+    "high": 200,
+    "rationale": "Issue 2 sensitivity uses $75/domain as anchor and explores $50 downside. New gTLD wholesale prices typically $10-$200; .mars novelty supports premium upper end but adoption uncertainty bounds the low side.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "y1_registration_volume": {
+    "unit": "domains",
+    "low": 1000,
+    "base": 5000,
+    "high": 25000,
+    "rationale": "Issue 2 cites 3,000-5,000 domain volumes. New gTLD Year 1 volumes for niche/novelty TLDs cluster 1k-25k. .mars has no installed base, so low side weighted heavily; high reflects speculative upside from collector / defensive registrations.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "annual_opex_usd": {
+    "unit": "USD",
+    "low": 5000000,
+    "base": 7500000,
+    "high": 12000000,
+    "rationale": "Issue 2 names '$5M-$10M OpEx' as the plan's stated assumption. Base centered on midpoint; high extends to $12M because Premortem warns proprietary sync tooling and 5-FTE staffing may push the high end past $10M.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "string_contention_probability": {
+    "unit": "fraction",
+    "low": 0.2,
+    "base": 0.4,
+    "high": 0.7,
+    "rationale": "ICANN historical contention rate for short single-word TLDs ~30-50%; .mars uniqueness and high public profile elevate probability. Risk 3 classifies likelihood as Medium and Risk 1 as High; bounds straddle both judgments.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

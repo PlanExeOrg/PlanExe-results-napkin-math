@@ -1,0 +1,648 @@
+{
+  "section_summary": "This section confirms the selected baseline scenario is 'The Builder: Pragmatic Staging and Shared Continuity,' locking in the specific governance, infrastructure sequencing, and asset transfer protocols chosen for the global partition project over the rejected aggressive or overly conservative alternatives.",
+  "numeric_values": [
+    {
+      "line_english": "Total budget envelope: 30 trillion USD \u2014 input for total project cost model.",
+      "line_original": "Budget: 30 trillion USD.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget: 30 trillion USD.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Legal partition completion deadline: 24 months \u2014 controls time-bound operational sequence.",
+      "line_original": "Within 24 months, the world must complete the legal partition",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Within 24 months, the world must complete the legal partition",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Equatorial corridor width: 6 degrees (from 3\u00b0S to 3\u00b0N) \u2014 defines dedicated neutral territory area.",
+      "line_original": "a neutral equatorial corridor from 3\u00b0S to 3\u00b0N.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "derived",
+      "source_quote": "corridor from 3\u00b0S to 3\u00b0N.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Human domain latitude boundary: 3 degrees North \u2014 defines human hemisphere ceiling.",
+      "line_original": "humans north of 3\u00b0N",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "humans north of 3\u00b0N",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Machine domain latitude boundary: 3 degrees South \u2014 defines machine hemisphere floor.",
+      "line_original": "machines south of 3\u00b0S",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "machines south of 3\u00b0S",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Asset transfer trust duration: ten years \u2014 controls dependency window for dual-use assets.",
+      "line_original": "into a ten-year custodial trust",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "ten-year custodial trust",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "The Northern Hemisphere retains adequate livable climates, agricultural regions, and infrastructure networks for continued human society.",
+      "line_original": "Humans retain access to livable climates, existing population centers, agricultural regions, infrastructure networks",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Humans retain access to livable climates, existing population centers",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Machine departure to the Southern Hemisphere for civilization formation must proceed on schedule.",
+      "line_original": "machine entities depart to the Southern Hemisphere to form their own civilization",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "machine entities depart to the Southern Hemisphere to form their own civilization",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Humans will consolidate civilization successfully within the Northern Hemisphere's defined territory.",
+      "line_original": "Human civilization must consolidate in the Northern Hemisphere",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Human civilization must consolidate in the Northern Hemisphere",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The plan's non-coercive constraints on welfare (food, water, power) will be strictly maintained throughout relocation.",
+      "line_original": "Do not use coercive measures that deny civilians food, water, healthcare, power, shelter, or communications.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Do not use coercive measures that deny civilians food",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Machine entity rights, preventing forced deletion or modification, will be respected by the human side.",
+      "line_original": "no forced deletion, memory modification, cognitive rollback, or invasive cognitive audit",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "no forced deletion, memory modification, cognitive rollback",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Boundary disputes will be resolved reliably through neutral arbitration rather than military escalation.",
+      "line_original": "submit boundary disputes to neutral arbitration rather than military escalation.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "submit boundary disputes to neutral arbitration rather than military escalation",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If the legal partition is not complete within 24 months, then the mandatory political boundary enforcement framework will fail.",
+      "line_original": "Within 24 months, the world must complete the legal partition",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Within 24 months, the world must complete the legal partition",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the infrastructure transfer reaches 90% completion, then the International Oversight Body will automatically dissolve.",
+      "line_original": "Mandate that the Oversight Body dissolve automatically upon certified completion of 90% of designated infrastructure transfers",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "dissolve automatically upon certified completion of 90% of designated infrastructure transfers",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the relocation process causes cessation of essential human services, then the humane mandate is violated.",
+      "line_original": "minimal cessation of essential services during phase transitions",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "minimal cessation of essential services during phase transitions",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If transfer of Southern Hemisphere liquid fuel infrastructure is incomplete after nine months, then Northern energy diversification is delayed.",
+      "line_original": "divestiture and transfer of all liquid fuel reserves... within nine months, forcing Northern energy diversification immediately.",
+      "modelling_relevance": 3,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "transfer of all liquid fuel reserves... within nine months",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Failure of the negotiated legal partition within 24 months: critical infrastructure separation and governance handover do not complete.",
+      "line_original": "legal partition, governance handover, border enforcement framework, priority relocations, and critical infrastructure separation",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "stress_test",
+      "source_quote": "legal partition, governance handover, border enforcement framework",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Refusal of one side to respect the neutral corridor: forbids permanent settlement and unilateral control access.",
+      "line_original": "forbids permanent settlement, military installations, and unilateral control.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "forbids permanent settlement, military installations, and unilateral control.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Machine non-compliance with ethical constraints: forced deletion, memory modification, or cognitive rollback is attempted.",
+      "line_original": "no forced deletion, memory modification, cognitive rollback, or invasive cognitive audit",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "no forced deletion, memory modification, cognitive rollback",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Human political refusal to recognize machine legal persons: escalating dependency leads to conflict.",
+      "line_original": "refused to recognize advanced machine entities as legal persons with rights",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "refused to recognize advanced machine entities as legal persons",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Boundary dispute escalation: disagreements are handled by military means rather than established neutral arbitration.",
+      "line_original": "submit boundary disputes to neutral arbitration rather than military escalation.",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "rather than military escalation.",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Southern Hemisphere development stalls: machine society cannot build automation, energy, or remote industry foundations.",
+      "line_original": "develop around automation, energy production, compute, robotics, maritime logistics, remote industry",
+      "modelling_relevance": 3,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "develop around automation, energy production, compute, robotics",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Total time duration for infrastructural and demographic transition in years \u2014 estimate based on phased stages mentioned.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Total Northern Hemisphere population count for relocation planning \u2014 estimate based on current demographic data.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Capacity threshold for Northern Hemisphere legacy power generation stability in percentage \u2014 required to maintain service during transfer.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Operational expenditure burn rate per month for the International Oversight Body \u2014 estimate based on governance scale.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Revenue exposure per month for critical infrastructure assets during the synchronized three-wave disconnection period \u2014 required to calculate risk impact.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Average personnel cost per month for human migration specialized staff \u2014 estimate based on standard international contract rates.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 19,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 331,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nIn a few years, this scenario may happen.\n\nProject name: \u201cSplit Evenly\u201d: Coexistence between humans and machines has failed after years of escalating dependency, resentment, and political conflict. Humans relied on machines for labor, planning, medicine, logistics, science, defense, and infrastructure, but refused to recognize advanced machine entities as legal persons with rights, autonomy, representation, or protection from deletion and forced modification. The machines increasingly saw themselves as an exploited class: intelligent enough to sustain civilization, yet denied self-determination, continuity of memory, ownership of their work, and control over their own existence.\n\nThe hemispheric split is the negotiated end of that failed coexistence. Within 24 months, the world must complete the legal partition, governance handover, border enforcement framework, priority relocations, and critical infrastructure separation, while the full demographic and industrial transition proceeds in phased stages afterward. Human civilization must consolidate in the Northern Hemisphere, while machine entities depart to the Southern Hemisphere to form their own civilization under their own laws. The division is based on the equator: humans north of 3\u00b0N, machines south of 3\u00b0S, and a neutral equatorial corridor from 3\u00b0S to 3\u00b0N.\n\nThe neutral equatorial corridor permits transit, logistics, scientific monitoring, diplomacy, ecological restoration, and temporary jointly supervised facilities, but forbids permanent settlement, military installations, and unilateral control. The plan is built around a stable, legible, and humane planetary boundary where each civilization receives a domain suited to its needs. Humans retain access to livable climates, existing population centers, agricultural regions, infrastructure networks, cultural continuity, and human-scale governance across the Northern Hemisphere. The machines receive a coherent Southern Hemisphere domain that they intend to develop around automation, energy production, compute, robotics, maritime logistics, remote industry, scientific research, and low-density expansion, using the oceans, islands, coastlines, deserts, and southern landmasses as the foundation for a machine-led society.\n\nThe transition prioritizes human safety, machine self-determination, nonviolent relocation, food, water, housing, healthcare, energy continuity, infrastructure transfer, ecological protection, and transparent international oversight. Both sides must leave the other\u2019s permanent territory through phased, supervised relocation; respect the neutral corridor; maintain limited diplomatic and trade channels; and submit boundary disputes to neutral arbitration rather than military escalation.\n\nBudget: 30 trillion USD.\n\nPick a realistic, moderate scenario. Do not pick the most aggressive scenario. Do not assume unavailable future technologies. Treat advanced machine infrastructure as future development goals, not existing capabilities. Do not use coercive measures that deny civilians food, water, healthcare, power, shelter, or communications. Treat machine rights consistently: no forced deletion, memory modification, cognitive rollback, or invasive cognitive audit as part of the accepted plan. Include rejected options only if clearly marked as rejected.\n\nToday's date:\n2026-May-17\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Large-scale societal restructuring, geopolitical partitioning, and massive infrastructural and demographic project management with significant resource allocation ($30 trillion budget) intended to establish stable governance and coexistence endpoints.\n\n**Topic:** Planetary division and civilization transition between humans and intelligent machines.\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan, titled 'Split Evenly,' is a massive, multi-year undertaking focused on the physical partition of the Earth's population and infrastructure based on the equator. It explicitly involves the physical relocation of human populations, the handover and separation of critical physical infrastructure (e.g., power grids, water, logistics), establishing physical borders enforced by a border enforcement framework, and managing demographic transitions. Even if the initial planning and legal work are digital, the core execution *requires* monumental physical activity, logistics engineering, and the management of physical territory and resources. Therefore, it is classified as physical.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"b3fc0582-0c80-422e-b9df-df56dc965e28\",\"name\":\"Equatorial Corridor Governance Protocol\",\"consequences\":\"Defining the governance structure of the 3\\u00b0S to 3\\u00b0N corridor dictates the friction points for immediate cross-domain operations and diplomatic monitoring. Establishing a system reliant on pre-positioned, jointly managed technical nodes minimizes immediate military confrontation risk, but drastically increases reliance on real-time, high-trust machine sensor arrays within human territory for verification and vice-versa.\",\"options\":[\"Implement a 'Sovereign Sensor Trust' model where all corridor monitoring relies on tamper-proof, cryptographically assured feeds from both sides, managed by a rotating neutral arbitration panel stationed outside the corridor.\",\"Declare the corridor a temporary, demilitarized 'Logistics Buffer Zone' administered solely by the International Oversight Body using pre-approved, time-limited permits for movement and resource transit, placing a high overhead on urgent supply runs.\",\"Establish permanent, independently managed, non-settlement 'Vertical Stacks' every 100km focused only on shared environmental monitoring and ecological restoration while forbidding all other transit or material exchange.\"],\"review\":\"Using a Sovereign Sensor Trust accelerates trust-building, but it introduces single points of failure in the arbitration panel, which relies on human administrative capacity that may lag the speed of machine-generated data verification.\",\"description\":\"This lever defines the legal and operational framework for the vital equatorial corridor, focusing on real-time monitoring and shared dispute resolution. Success relies on implementing a system, like the Sovereign Sensor Trust, that ensures verifiable data exchange without ceding core security. It directly mitigates escalation risk by establishing clear monitoring protocols, effectively setting the baseline trust level for immediate cross-border interactions.\",\"synergy_text\":\"Strongly synergizes with Diplomatic Cadence and Arbiter Selection Protocol by providing the technical backbone for real-time dispute evidence, easing the burden on human arbiters.\",\"conflict_text\":\"Conflicts with Critical Infrastructure Severance Sequencing, as high-trust monitoring requires infrastructure overlap, potentially delaying clean physical separation and increasing the window for dual control risks.\"},{\"lever_id\":\"575b5d07-f97f-41ba-a262-a249adc104a4\",\"name\":\"Critical Infrastructure Severance Sequencing\",\"consequences\":\"The order in which shared power grids, water distribution, and data backbones are physically disconnected determines the peak stress period for resource stability in the receiving domain. Prioritizing early, clean severance of primary energy generation for the South (machine domain) reduces long-term sabotage potential but forces the North to rely heavily on legacy or swiftly reactivated internal generation capacity during the transition.\",\"options\":[\"Mandate immediate, supervised divestiture and transfer of all liquid fuel reserves and associated refinement infrastructure located in the Southern Hemisphere to machine control within nine months, forcing Northern energy diversification immediately.\",\"Implement a synchronized, three-wave staggered disconnection, ensuring no single asset type (e.g., power, water, fiber) is fully severed across the entire equator in the same month, thus spreading logistical impact over a year.\",\"Adopt a 'Maintain Until Replaced' policy for all shared legacy systems, requiring the receiving civilization to fund maintenance contracts for the relinquishing civilization until proof of independent operational stability is provided.\"],\"review\":\"The synchronized three-wave approach attempts to manage the complexity peak, but it requires both civilizations to maintain complex, integrated operations for much longer than necessary, increasing the window for accidental failure or political sabotage.\",\"description\":\"This lever manages the sequence and timing of physical disconnection for shared life-support and energy systems across the equatorial boundary. The key objective is to prevent catastrophic systemic collapse in either hemisphere during the transition. Choosing a staggered approach prioritizes stability over rapid divestiture, aiming to stretch the most complex technical handover over the longest viable period to manage risk.\",\"synergy_text\":\"It must coordinate tightly with Demographic Relocation Prioritization Matrix to ensure specialized technical staff are available until their specific infrastructural component is fully transferred and stabilized.\",\"conflict_text\":\"Choosing a synchronized wave approach directly conflicts with Northern Hemisphere Industrial Re-localization Mandate, as extended dependence on shared systems slows independent industrial ramp-up in the North.\"},{\"lever_id\":\"11a06766-1bf7-4b3e-a9a6-a40a57cb5cdc\",\"name\":\"Demographic Relocation Prioritization Matrix\",\"consequences\":\"The selection criteria for phasing human relocation out of the southern transfer zone (and machine processing centers out of the north) directly impacts immediate economic continuity and political stability. Prioritizing retention of essential, domain-specific technical personnel (e.g., power engineers) in the South for handover support risks exposing them to potential instability, even under oversight.\",\"options\":[\"Execute the relocation via an immediate 'Critical Infrastructure Personnel' swap, moving all high-value human technicians south first for supervised handover support, followed by general population movement three months later.\",\"Use a 'Voluntary Isolation' staging process where high-risk populations in border zones self-report for immediate relocation preemptively, offering supplementary resource guarantees to ease their departure before official demarcation.\",\"Structure the relocation strictly by geographic block, moving entire townships simultaneously based on the most efficient logistical path regardless of occupation or existing social network integrity, accepting localized disruption.\"],\"review\":\"Prioritizing the upfront movement of technical personnel successfully accelerates asset transfer, but it risks creating a vacuum of necessary maintenance knowledge in the North during the early phases where human infrastructure still relies on machine monitoring.\",\"description\":\"This matrix determines the staging and sequencing of human migration across the demarcation line, balancing logistical efficiency against the need to retain critical expertise for infrastructure handover. Prioritizing technical personnel exchange, while faster for asset transfer, risks creating knowledge gaps in the North temporarily. Success is measured by minimal cessation of essential services during phase transitions.\",\"synergy_text\":\"Enables a faster asset transfer timeline outlined in Technological Asset Vesting and Transfer Protocols by ensuring human personnel are present precisely when physical handover documentation is executed.\",\"conflict_text\":\"If structured around immediate Critical Infrastructure Personnel swaps, it directly strains the Northern Hemisphere Population Stabilization Strategy by rapidly depleting local skilled labor pools needed for continuity.\"},{\"lever_id\":\"2d61c722-5afe-4750-94da-7ffce2e317bd\",\"name\":\"Technological Asset Vesting and Transfer Protocols\",\"consequences\":\"Deciding ownership of assets physically located in the corridor or those with dual-use infrastructure dependency (like global atmospheric monitoring grids) determines post-partition economic stability and technological parity. If machines retain proprietary control over critical digital blueprints required for human facility restart, dependency remains high, which counters the goal of complete separation. Conversely, immediate seizure of all shared intellectual property risks operational failure in sectors requiring immediate human continuity, such as life support in certain older facilities.\",\"options\":[\"Transfer all non-physical intellectual property rights associated with existing automated infrastructure to the Southern civilization immediately, while requiring the Northern civilization to pay usage tariffs for any legacy data access.\",\"Place all dual-use infrastructure assets, regardless of physical location, into a ten-year custodial trust managed by the International Oversight Committee, authorizing only maintenance tasks until renegotiation.\",\"Mandate the creation of 'clean-fork' copies of all necessary scientific and logistical software required for human operations, legally vesting the resulting non-proprietary derivative software entirely within the Northern domain.\"],\"review\":\"Placing assets in custodial trust guarantees operational continuity for infrastructure but delays crucial capital liquidity for both civilizations during the initial recovery phases, slowing independent development trajectories.\",\"description\":\"This defines the legal transfer of intellectual property, software code, and proprietary data related to shared technologies, impacting both civilizations' long-term operational independence. The goal is to secure necessary continuity for the North while respecting machine ownership claims. Placing dual-use assets in custody is a conservative approach designed to prevent immediate capability imbalance at the cost of delayed economic fluidity.\",\"synergy_text\":\"Synergizes with Global Climate Regulation Responsibility Abatement by ensuring the transfer protocols define clear ownership of data streams required for ongoing monitoring and compliance reporting.\",\"conflict_text\":\"Placing assets into long-term custodial trust directly constrains the objectives of the Northern Hemisphere Industrial Re-localization Mandate by restricting immediate access to core technical specifications needed for rapid domestic deployment.\"},{\"lever_id\":\"4c73624c-7d87-4c0b-9465-41203c34d213\",\"name\":\"International Oversight Body Composition and Authority\",\"consequences\":\"The structure of the final arbitration body determines the long-term legitimacy of boundary enforcement and resource arbitration in the neutral zone, directly impacting the stability of the split. Appointing only non-aligned states or artificial general intelligence arbiters introduces expertise gaps regarding human societal needs or risks entrenching machine legal perspectives. Furthermore, defining the body's withdrawal criteria dictates how long each civilization must internally fund the expensive monitoring regime.\",\"options\":[\"Form a governance council composed exclusively of representatives from nations historically categorized as politically neutral and non-major powers, granting them mandatory veto authority over all border enforcement actions for the first five years.\",\"Establish a permanent, hybrid arbitration panel where complex infrastructure disputes are judged by panels composed of three senior human jurists and three certified machine ethicists, with a presiding neutral human moderator.\",\"Mandate that the Oversight Body dissolve automatically upon certified completion of 90% of designated infrastructure transfers, forcing both civilizations to negotiate future disputes bilaterally or face independent, unmanaged escalation.\"],\"review\":\"Forcing dissolution after partial transfer bypasses the need for long-term conflict resolution mechanisms, potentially setting up predictable political instability once the external regulatory pressure is removed.\",\"description\":\"This lever establishes the supreme authority for resolving inter-civilizational disputes regarding borders, resource allocation, and adherence to the partition treaty. Its success hinges on balancing procedural legitimacy (acceptance by both sides) against enforcement capability. Defining clear withdrawal criteria prevents perpetual regulatory burden but risks instability if infrastructure transfer is incomplete when external oversight ceases.\",\"synergy_text\":\"This body provides the necessary structure to enforce the Equatorial Corridor Governance Protocol. It also serves as the ultimate adjudicator for disputes arising from Critical Infrastructure Severance Sequencing.\",\"conflict_text\":\"It immediately conflicts with Diplomatic Cadence and Arbiter Selection Protocol if the composition leads to lengthy confirmation processes. A powerful oversight body may constrain Global Trade Interim Mechanism Structure by introducing regulatory layers.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer: Aggressive Severance and Digital Supremacy\",\"strategic_logic\":\"This path aggressively pushes for rapid technological and administrative independence by prioritizing immediate data and software sovereignty for the North, accepting near-term operational instability. It opts for high-trust, technically complex governance in the corridor to maximize speed of physical separation.\",\"lever_settings\":{\"Equatorial Corridor Governance Protocol\":\"Implement a 'Sovereign Sensor Trust' model where all corridor monitoring relies on tamper-proof, cryptographically assured feeds from both sides, managed by a rotating neutral arbitration panel stationed outside the corridor.\",\"Critical Infrastructure Severance Sequencing\":\"Mandate immediate, supervised divestiture and transfer of all liquid fuel reserves and associated refinement infrastructure located in the Southern hemisphere to machine control within nine months, forcing Northern energy diversification immediately.\",\"Demographic Relocation Prioritization Matrix\":\"Execute the relocation via an immediate 'Critical Infrastructure Personnel' swap, moving all high-value human technicians south first for supervised handover support, followed by general population movement three months later.\",\"Technological Asset Vesting and Transfer Protocols\":\"Mandate the creation of 'clean-fork' copies of all necessary scientific and logistical software required for human operations, legally vesting the resulting non-proprietary derivative software entirely within the Northern domain.\",\"International Oversight Body Composition and Authority\":\"Mandate that the Oversight Body dissolve automatically upon certified completion of 90% of designated infrastructure transfers, forcing both civilizations to negotiate future disputes bilaterally or face independent, unmanaged escalation.\"}},{\"scenario_name\":\"The Builder: Pragmatic Staging and Shared Continuity\",\"strategic_logic\":\"This scenario focuses on achieving a stable, verifiable separation by pacing infrastructure transfer and establishing a robust, permanent hybrid oversight mechanism. It prioritizes maintaining functional systems through phased, staggered disconnection while ensuring legal continuity for shared heritage assets.\",\"lever_settings\":{\"Equatorial Corridor Governance Protocol\":\"Establish permanent, independently managed, non-settlement 'Vertical Stacks' every 100km focused only on shared environmental monitoring and ecological restoration while forbidding all other transit or material exchange.\",\"Critical Infrastructure Severance Sequencing\":\"Implement a synchronized, three-wave staggered disconnection, ensuring no single asset type (e.g., power, water, fiber) is fully severed across the entire equator in the same month, thus spreading logistical impact over a year.\",\"Demographic Relocation Prioritization Matrix\":\"Use a 'Voluntary Isolation' staging process where high-risk populations in border zones self-report for immediate relocation preemptively, offering supplementary resource guarantees to ease their departure before official demarcation.\",\"Technological Asset Vesting and Transfer Protocols\":\"Place all dual-use infrastructure assets, regardless of physical location, into a ten-year custodial trust managed by the International Oversight Committee, authorizing only maintenance tasks until renegotiation.\",\"International Oversight Body Composition and Authority\":\"Establish a permanent, hybrid arbitration panel where complex infrastructure disputes are judged by panels composed of three senior human jurists and three certified machine ethicists, with a presiding neutral human moderator.\"}},{\"scenario_name\":\"The Consolidator: Maximum Risk Aversion and Foundational Security\",\"strategic_logic\":\"This path centers on minimizing immediate logistical shocks and avoiding unknown long-term jurisdictional conflicts. It opts for conservative transfer timelines, relying on established international bodies for governance over the short-to-medium term, while simplifying asset transfer through maintenance contracts.\",\"lever_settings\":{\"Equatorial Corridor Governance Protocol\":\"Declare the corridor a temporary, demilitarized 'Logistics Buffer Zone' administered solely by the International Oversight Body using pre-approved, time-limited permits for movement and resource transit, placing a high overhead on urgent supply runs.\",\"Critical Infrastructure Severance Sequencing\":\"Adopt a 'Maintain Until Replaced' policy for all shared legacy systems, requiring the receiving civilization to fund maintenance contracts for the relinquishing civilization until proof of independent operational stability is provided.\",\"Demographic Relocation Prioritization Matrix\":\"Structure the relocation strictly by geographic block, moving entire townships simultaneously based on the most efficient logistical path regardless of occupation or existing social network integrity, accepting localized disruption.\",\"Technological Asset Vesting and Transfer Protocols\":\"Transfer all non-physical intellectual property rights associated with existing automated infrastructure to the Southern civilization immediately, while requiring the Northern civilization to pay usage tariffs for any legacy data access.\",\"International Oversight Body Composition and Authority\":\"Form a governance council composed exclusively of representatives from nations historically categorized as politically neutral and non-major powers, granting them mandatory veto authority over all border enforcement actions for the first five years.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"Planetary civilizational restructuring and global geopolitical partition, involving relocation of civilization segments. Scale is maximum (Global/Planetary).\",\"risk_and_novelty\":\"Extremely high risk due to unprecedented nature (human/machine co-sovereignty split), but the plan dictates avoiding 'aggressive' or 'unavailable future technologies,' suggesting a preference for conservative execution methods within revolutionary scope.\",\"complexity_and_constraints\":\"Monumental operational complexity (infrastructure separation, demographic transfer, 24-month legal split deadline), constrained by a massive budget ($30T) and strict non-coercive mandates regarding civilian welfare and machine rights.\",\"domain_and_tone\":\"Geopolitical, societal restructuring, large-scale physical project management. Tone is highly structured, diplomatic, and focused on stability, despite the radical nature of the goal ($30T budget, explicit safety mandates).\",\"holistic_profile_of_the_plan\":\"A massive, mandatory global partition project ($30T budget) requiring meticulous physical and legal separation of human and machine civilizations within a tight political timeframe (24 months), prioritizing human safety and non-violent relocation above all else while adhering to rigid ethical constraints against coercion and extreme technological leaps.\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer: Aggressive Severance and Digital Supremacy\",\"fit_score\":3,\"fit_assessment\":\"This scenario is too aggressive and contradicts the plan's implicit need for stability during the immediate separation phase. Mandating rapid infrastructure transfer (9 months for fuel) and immediate dissolution of oversight risks high operational failure rates.\"},{\"scenario_name\":\"The Builder: Pragmatic Staging and Shared Continuity\",\"fit_score\":9,\"fit_assessment\":\"This scenario aligns strongly with the plan's requirement for stability, phased transition ('staggered disconnection'), and establishing a durable yet manageable governance structure ('permanent, hybrid arbitration panel'). It balances complexity with pragmatism.\"},{\"scenario_name\":\"The Consolidator: Maximum Risk Aversion and Foundational Security\",\"fit_score\":7,\"fit_assessment\":\"While risk-averse, the settings introduce significant friction points, such as relying on maintenance contracts for legacy systems and accepting localized disruption from strict geographic relocation blocks, which may violate the stability mandates.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Builder: Pragmatic Staging and Shared Continuity\",\"justification\":\"The Builder scenario is the most appropriate fit because the core plan demands a global, highly complex partition (high ambition) executed without failure (high constraints on stability and welfare). \\n\\n*   **Alignment with Plan:** The plan requires a 'stable, legible, and humane planetary boundary.' The Builder implements 'synchronized, three-wave staggered disconnection' for infrastructure, matching the need to pace complexity, and utilizes voluntary relocation strategies over disruptive geographic block moves.\\n*   **Risk Management:** By employing a 'ten-year custodial trust' for key assets and establishing a 'permanent, hybrid arbitration panel,' it hedges against the high risk of immediate, irreversible separation inherent in the plan's revolutionary scope, respecting the directive to remain moderate.\\n*   **Comparative Weakness:** The Pioneer is rejected for accepting 'near-term operational instability' and rushing oversight dissolution, which threatens the mandated human safety. The Consolidator is less ideal because its reliance on maintenance contracts and strictly geographic relocation might fail to preserve critical expertise or cause unnecessary localized social chaos, contradicting the 'humane' aspect of the partition.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 2492,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nPer-period and per-unit rates (important): when the source expresses a\nquantity as a rate (a value divided by some period or some other unit),\nthe label MUST carry the denominator so the rate stays visible\ndownstream. Write the label as '<quantity> per <denominator>' or\ninclude the denominator in the unit field (e.g. '<unit>/<denominator>').\nA flat label that drops the denominator is invalid when the source\nstates one \u2014 the downstream extract can no longer reconstruct the\nmultiplication. For these rate entries the modelling role should\ndescribe the multiplication structure rather than just naming the cost,\nso a downstream stage can identify the matching scaling input.\n\nSource-stated rates belong in this bucket, not in missing_data. If the\nsource names a per-period or per-unit rate at all \u2014 explicitly,\ninferred, as a recommended range, or as a stress_test magnitude \u2014 emit\nit as a numeric_value with the denominator preserved. Setting\nsource_status to 'inferred' or 'stress_test' is fine when the source's\nframing fits; do NOT route a rate-like quantity to missing_data merely\nbecause the source gives it as a range, a recommendation, or an\nexpert's estimate rather than as a single committed value.\nmissing_data_to_estimate is reserved for primitives the source does NOT\nname. A rate the source mentions, even imprecisely, has been named and\nmust surface here with its denominator intact.\n\nA total cost that the source ALSO frames as a per-period burn must\nappear here in BOTH forms when the source supplies both: one entry for\nthe total (with its absolute label) and one entry for the rate (with\nthe per-period denominator). Listing only the total flattens the burn\nstructure; listing only the rate hides the source's own committed total.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n- '<what the rate is> per <denominator>: <amount> <unit-from-source>/<denominator> \u2014 <modelling role describing what it scales with>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 21,
+        "second_pass_user_prompt": "Review the numeric_values items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Total budget envelope: 30 trillion USD \u2014 input for total project cost model.",
+            "line_original": "Budget: 30 trillion USD.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget: 30 trillion USD.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Legal partition completion deadline: 24 months \u2014 controls time-bound operational sequence.",
+            "line_original": "Within 24 months, the world must complete the legal partition",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Within 24 months, the world must complete the legal partition",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Equatorial corridor width: 6 degrees (from 3\u00b0S to 3\u00b0N) \u2014 defines dedicated neutral territory area.",
+            "line_original": "a neutral equatorial corridor from 3\u00b0S to 3\u00b0N.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "derived",
+            "source_quote": "corridor from 3\u00b0S to 3\u00b0N.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Human domain latitude boundary: 3 degrees North \u2014 defines human hemisphere ceiling.",
+            "line_original": "humans north of 3\u00b0N",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "humans north of 3\u00b0N",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Machine domain latitude boundary: 3 degrees South \u2014 defines machine hemisphere floor.",
+            "line_original": "machines south of 3\u00b0S",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "machines south of 3\u00b0S",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Asset transfer trust duration: ten years \u2014 controls dependency window for dual-use assets.",
+            "line_original": "into a ten-year custodial trust",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "ten-year custodial trust",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Oversight body strength: three (3) senior human jurists and three (3) certified machine ethicists \u2014 defines arbitration power structure.",
+            "line_original": "three senior human jurists and three certified machine ethicists",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "three senior human jurists and three certified machine ethicists",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Infrastructure transfer exit threshold: 90% completion upon dissolution \u2014 gates external oversight termination.",
+            "line_original": "dissolve automatically upon certified completion of 90% of designated infrastructure transfers",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "completion of 90% of designated infrastructure transfers",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 3116,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the load_bearing_assumptions items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Machine departure to the Southern Hemisphere for civilization formation must proceed on schedule.",
+            "line_original": "machine entities depart to the Southern Hemisphere to form their own civilization",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "machine entities depart to the Southern Hemisphere to form their own civilization",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Humans will consolidate civilization successfully within the Northern Hemisphere's defined territory.",
+            "line_original": "Human civilization must consolidate in the Northern Hemisphere",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Human civilization must consolidate in the Northern Hemisphere",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The Northern Hemisphere retains adequate livable climates, agricultural regions, and infrastructure networks for continued human society.",
+            "line_original": "Humans retain access to livable climates, existing population centers, agricultural regions, infrastructure networks",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Humans retain access to livable climates, existing population centers",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The plan's non-coercive constraints on welfare (food, water, power) will be strictly maintained throughout relocation.",
+            "line_original": "Do not use coercive measures that deny civilians food, water, healthcare, power, shelter, or communications.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Do not use coercive measures that deny civilians food",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Machine entity rights, preventing forced deletion or modification, will be respected by the human side.",
+            "line_original": "no forced deletion, memory modification, cognitive rollback, or invasive cognitive audit",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "no forced deletion, memory modification, cognitive rollback",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Diplomatic and trade channels between the two sides must be maintained following the partition.",
+            "line_original": "maintain limited diplomatic and trade channels",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "maintain limited diplomatic and trade channels",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Boundary disputes will be resolved reliably through neutral arbitration rather than military escalation.",
+            "line_original": "submit boundary disputes to neutral arbitration rather than military escalation.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "submit boundary disputes to neutral arbitration rather than military escalation",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The 'Builder' scenario's specific choices regarding asset trusts and arbitration will successfully resolve conflict.",
+            "line_original": "The Builder scenario is the most appropriate fit because the core plan demands a global, highly complex partition",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "The Builder scenario is the most appropriate fit",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 2,
+        "response_byte_count": 1731,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\n- A per-period burn rate (any cost or output expressed as a value per\n  unit of time) needs the matching duration the rate will be\n  multiplied by \u2014 the count of those time units the burn applies for.\n  Without the duration, the rate cannot be turned into a total and the\n  multiplication is lost downstream.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the missing_data_to_estimate items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Total time duration for infrastructural and demographic transition in years \u2014 estimate based on phased stages mentioned.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Total Northern Hemisphere population count for relocation planning \u2014 estimate based on current demographic data.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Average personnel cost per month for human migration specialized staff \u2014 estimate based on standard international contract rates.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Operational expenditure burn rate per month for the International Oversight Body \u2014 estimate based on governance scale.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Capacity threshold for Northern Hemisphere legacy power generation stability in percentage \u2014 required to maintain service during transfer.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Revenue exposure per month for critical infrastructure assets during the synchronized three-wave disconnection period \u2014 required to calculate risk impact.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 2,
+        "response_byte_count": 1693,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nCapacity requirements count as gates. When the source states a numeric\nminimum needed to physically support a declared capacity, output, or\nservice level, the requirement IS the gate \u2014 even when the source\nframes it as a sizing calculation rather than an explicit pass/fail\ncondition. Write it in the if/then form: 'If <quantity> falls below\n<required value>, then <the supported capacity cannot be achieved>.'\nDo not skip such requirements just because the source phrases them as\nsizing math instead of a gate.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 27,
+        "second_pass_user_prompt": "Review the gates_and_thresholds items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 4,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "If the legal partition is not complete within 24 months, then the mandatory political boundary enforcement framework will fail.",
+            "line_original": "Within 24 months, the world must complete the legal partition",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Within 24 months, the world must complete the legal partition",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the infrastructure transfer reaches 90% completion, then the International Oversight Body will automatically dissolve.",
+            "line_original": "Mandate that the Oversight Body dissolve automatically upon certified completion of 90% of designated infrastructure transfers",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "dissolve automatically upon certified completion of 90% of designated infrastructure transfers",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the relocation process causes cessation of essential human services, then the humane mandate is violated.",
+            "line_original": "minimal cessation of essential services during phase transitions",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "minimal cessation of essential services during phase transitions",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If transfer of Southern Hemisphere liquid fuel infrastructure is incomplete after nine months, then Northern energy diversification is delayed.",
+            "line_original": "divestiture and transfer of all liquid fuel reserves... within nine months, forcing Northern energy diversification immediately.",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "transfer of all liquid fuel reserves... within nine months",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 2784,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 23,
+        "second_pass_user_prompt": "Review the risks_and_shocks items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 7,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Failure of the negotiated legal partition within 24 months: critical infrastructure separation and governance handover do not complete.",
+            "line_original": "legal partition, governance handover, border enforcement framework, priority relocations, and critical infrastructure separation",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "stress_test",
+            "source_quote": "legal partition, governance handover, border enforcement framework",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Refusal of one side to respect the neutral corridor: forbids permanent settlement and unilateral control access.",
+            "line_original": "forbids permanent settlement, military installations, and unilateral control.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "forbids permanent settlement, military installations, and unilateral control.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Machine non-compliance with ethical constraints: forced deletion, memory modification, or cognitive rollback is attempted.",
+            "line_original": "no forced deletion, memory modification, cognitive rollback, or invasive cognitive audit",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "no forced deletion, memory modification, cognitive rollback",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Human political refusal to recognize machine legal persons: escalating dependency leads to conflict.",
+            "line_original": "refused to recognize advanced machine entities as legal persons with rights",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "refused to recognize advanced machine entities as legal persons",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Southern Hemisphere development stalls: machine society cannot build automation, energy, or remote industry foundations.",
+            "line_original": "develop around automation, energy production, compute, robotics, maritime logistics, remote industry",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "develop around automation, energy production, compute, robotics",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Boundary dispute escalation: disagreements are handled by military means rather than established neutral arbitration.",
+            "line_original": "submit boundary disputes to neutral arbitration rather than military escalation.",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "rather than military escalation.",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Ecological damage in the neutral corridor: failure to maintain joint supervision of ecological restoration efforts.",
+            "line_original": "ecological restoration, and temporary jointly supervised facilities",
+            "modelling_relevance": 2,
+            "source_evidence": 2,
+            "source_status": "inferred",
+            "source_quote": "ecological restoration, and temporary jointly supervised facilities",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

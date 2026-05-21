@@ -1,0 +1,366 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Europe's first certified Faraday enclosure launch",
+    "plan_type": "commercial product launch"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "expected_year1_units_sold": {
+      "unit": "units",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1173.918913709798,
+      "std": 534.8278830929802,
+      "min": 109.27861077489897,
+      "p05": 332.5877515616591,
+      "p25": 625.2475418653573,
+      "p50": 1353.0128747302983,
+      "p75": 1599.0764280763153,
+      "p95": 1927.9497807902235,
+      "max": 2000.0
+    },
+    "year1_gross_profit_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2687.206273801796,
+      "std": 15175.240020073727,
+      "min": -56485.7054556631,
+      "p05": -21807.352972484096,
+      "p25": -5378.10962727587,
+      "p50": 1678.786963148102,
+      "p75": 10394.703879865181,
+      "p95": 29940.331637426043,
+      "max": 82696.79361066934
+    },
+    "net_cash_from_operations_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -397312.7937261982,
+      "std": 15175.240020073727,
+      "min": -456485.7054556631,
+      "p05": -421807.3529724841,
+      "p25": -405378.10962727584,
+      "p50": -398321.2130368519,
+      "p75": -389605.2961201348,
+      "p95": -370059.66836257395,
+      "max": -317303.2063893307
+    },
+    "funding_gate_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -447312.7937261982,
+      "std": 15175.240020073727,
+      "min": -506485.7054556631,
+      "p05": -471807.3529724841,
+      "p25": -455378.10962727584,
+      "p50": -448321.2130368519,
+      "p75": -439605.2961201348,
+      "p95": -420059.66836257395,
+      "max": -367303.2063893307
+    },
+    "year1_budget_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "p05": 0.0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "iso_inventory_surplus_units": {
+      "unit": "units",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -326.08108629020194,
+      "std": 534.8278830929802,
+      "min": -1390.7213892251011,
+      "p05": -1167.4122484383408,
+      "p25": -874.7524581346427,
+      "p50": -146.98712526970166,
+      "p75": 99.07642807631538,
+      "p95": 427.94978079022343,
+      "max": 500.0
+    }
+  },
+  "thresholds": {
+    "funding_gate_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "year1_budget_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "iso_inventory_surplus_units": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3509,
+      "valid_count": 10000,
+      "probability": 0.3509
+    }
+  },
+  "sensitivity": {
+    "expected_year1_units_sold": {
+      "top_inputs": [
+        {
+          "id": "retailer_committed_units",
+          "correlation": 0.9123
+        },
+        {
+          "id": "presale_conversion_rate",
+          "correlation": 0.3538
+        },
+        {
+          "id": "addressable_prepper_buyers",
+          "correlation": 0.1935
+        }
+      ]
+    },
+    "year1_gross_profit_eur": {
+      "top_inputs": [
+        {
+          "id": "unit_bom_cost_eur",
+          "correlation": -0.5596
+        },
+        {
+          "id": "wholesale_discount_fraction",
+          "correlation": -0.5433
+        },
+        {
+          "id": "premium_unit_price_eur",
+          "correlation": 0.4496
+        },
+        {
+          "id": "retailer_committed_units",
+          "correlation": 0.0849
+        },
+        {
+          "id": "presale_conversion_rate",
+          "correlation": 0.0245
+        }
+      ]
+    },
+    "net_cash_from_operations_eur": {
+      "top_inputs": [
+        {
+          "id": "unit_bom_cost_eur",
+          "correlation": -0.5596
+        },
+        {
+          "id": "wholesale_discount_fraction",
+          "correlation": -0.5433
+        },
+        {
+          "id": "premium_unit_price_eur",
+          "correlation": 0.4496
+        },
+        {
+          "id": "retailer_committed_units",
+          "correlation": 0.0849
+        },
+        {
+          "id": "presale_conversion_rate",
+          "correlation": 0.0245
+        }
+      ]
+    },
+    "funding_gate_surplus_eur": {
+      "top_inputs": [
+        {
+          "id": "unit_bom_cost_eur",
+          "correlation": -0.5596
+        },
+        {
+          "id": "wholesale_discount_fraction",
+          "correlation": -0.5433
+        },
+        {
+          "id": "premium_unit_price_eur",
+          "correlation": 0.4496
+        },
+        {
+          "id": "retailer_committed_units",
+          "correlation": 0.0849
+        },
+        {
+          "id": "presale_conversion_rate",
+          "correlation": 0.0245
+        }
+      ]
+    },
+    "year1_budget_surplus_eur": {
+      "top_inputs": []
+    },
+    "iso_inventory_surplus_units": {
+      "top_inputs": [
+        {
+          "id": "retailer_committed_units",
+          "correlation": 0.9123
+        },
+        {
+          "id": "presale_conversion_rate",
+          "correlation": 0.3538
+        },
+        {
+          "id": "addressable_prepper_buyers",
+          "correlation": 0.1935
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "funding_gate_surplus_eur": [
+      {
+        "id": "premium_unit_price_eur",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "unit_bom_cost_eur",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "presale_conversion_rate",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "addressable_prepper_buyers",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "wholesale_discount_fraction",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "iso_inventory_surplus_units": [
+      {
+        "id": "retailer_committed_units",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.5886596208689817,
+        "delta_pp": 58.87
+      },
+      {
+        "id": "presale_conversion_rate",
+        "p_pass_low_quartile": 0.022,
+        "p_pass_high_quartile": 0.5888,
+        "delta_pp": 56.68
+      },
+      {
+        "id": "addressable_prepper_buyers",
+        "p_pass_low_quartile": 0.20391843262694923,
+        "p_pass_high_quartile": 0.472,
+        "delta_pp": 26.81
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [
+    {
+      "id": "presale_conversion_rate",
+      "score": 73.582,
+      "worst_gate": "iso_inventory_surplus_units",
+      "bound_width_ratio": 2.0,
+      "source": "data"
+    },
+    {
+      "id": "retailer_committed_units",
+      "score": 38.2125,
+      "worst_gate": "iso_inventory_surplus_units",
+      "bound_width_ratio": 1.0,
+      "source": "data"
+    },
+    {
+      "id": "addressable_prepper_buyers",
+      "score": 13.9219,
+      "worst_gate": "iso_inventory_surplus_units",
+      "bound_width_ratio": 0.8,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "expected_year1_units_sold": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.2667,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 1.27"
+      ]
+    },
+    "year1_gross_profit_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8585,
+      "reasons": [
+        "6/6 input bounds anchored in data; 0/6 are assumptions",
+        "average bound-width-to-base ratio = 0.86"
+      ]
+    },
+    "net_cash_from_operations_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8585,
+      "reasons": [
+        "6/6 input bounds anchored in data; 0/6 are assumptions",
+        "average bound-width-to-base ratio = 0.86"
+      ]
+    },
+    "funding_gate_surplus_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8585,
+      "reasons": [
+        "6/6 input bounds anchored in data; 0/6 are assumptions",
+        "average bound-width-to-base ratio = 0.86"
+      ]
+    },
+    "year1_budget_surplus_eur": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "iso_inventory_surplus_units": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.2667,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 1.27"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,163 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "White House East Wing Casino - Pioneer's Gauntlet",
+    "plan_type": "commercial"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "initial_sponsor_budget_usd": 600000000,
+        "contingency_fund_share": 0.15,
+        "sponsor_release_share": 0.75,
+        "required_daily_noi_usd": 50000,
+        "profitability_window_days": 90,
+        "relocation_blackout_days": 5,
+        "monthly_levy_target_usd": 50000000,
+        "achievable_daily_noi_usd": 10000,
+        "political_reversal_shock_usd": 30000000,
+        "ancillary_gross_revenue_annual_usd": 800000000,
+        "ancillary_margin_fraction": 0.15,
+        "contingency_reserve_usd": 90000000.0,
+        "sponsor_capital_at_risk_usd": 450000000.0,
+        "phase1_noi_gate_surplus": -3650000.0,
+        "political_reversal_buffer_surplus": 60000000.0,
+        "levy_coverage_surplus_usd": -480000000.0,
+        "phase1_noi_gate_margin": -3650000.0,
+        "q_levy_coverage": -480000000.0
+      },
+      "outputs": {
+        "contingency_reserve_usd": 90000000.0,
+        "sponsor_capital_at_risk_usd": 450000000.0,
+        "phase1_noi_gate_surplus": -3650000.0,
+        "political_reversal_buffer_surplus": 60000000.0,
+        "levy_coverage_surplus_usd": -480000000.0,
+        "phase1_noi_gate_margin": -3650000.0,
+        "q_levy_coverage": -480000000.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "initial_sponsor_budget_usd": 600000000,
+        "contingency_fund_share": 0.15,
+        "sponsor_release_share": 0.75,
+        "required_daily_noi_usd": 50000,
+        "profitability_window_days": 90,
+        "relocation_blackout_days": 7,
+        "monthly_levy_target_usd": 50000000,
+        "achievable_daily_noi_usd": 60000,
+        "political_reversal_shock_usd": 90000000,
+        "ancillary_gross_revenue_annual_usd": 2000000000,
+        "ancillary_margin_fraction": 0.30,
+        "contingency_reserve_usd": 90000000.0,
+        "sponsor_capital_at_risk_usd": 450000000.0,
+        "phase1_noi_gate_surplus": 480000.0,
+        "political_reversal_buffer_surplus": 0.0,
+        "levy_coverage_surplus_usd": 0.0,
+        "phase1_noi_gate_margin": 480000.0,
+        "q_levy_coverage": 0.0
+      },
+      "outputs": {
+        "contingency_reserve_usd": 90000000.0,
+        "sponsor_capital_at_risk_usd": 450000000.0,
+        "phase1_noi_gate_surplus": 480000.0,
+        "political_reversal_buffer_surplus": 0.0,
+        "levy_coverage_surplus_usd": 0.0,
+        "phase1_noi_gate_margin": 480000.0,
+        "q_levy_coverage": 0.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "initial_sponsor_budget_usd": 600000000,
+        "contingency_fund_share": 0.15,
+        "sponsor_release_share": 0.75,
+        "required_daily_noi_usd": 50000,
+        "profitability_window_days": 90,
+        "relocation_blackout_days": 14,
+        "monthly_levy_target_usd": 50000000,
+        "achievable_daily_noi_usd": 180000,
+        "political_reversal_shock_usd": 250000000,
+        "ancillary_gross_revenue_annual_usd": 5000000000,
+        "ancillary_margin_fraction": 0.45,
+        "contingency_reserve_usd": 90000000.0,
+        "sponsor_capital_at_risk_usd": 450000000.0,
+        "phase1_noi_gate_surplus": 9180000.0,
+        "political_reversal_buffer_surplus": -160000000.0,
+        "levy_coverage_surplus_usd": 1650000000.0,
+        "phase1_noi_gate_margin": 9180000.0,
+        "q_levy_coverage": 1650000000.0
+      },
+      "outputs": {
+        "contingency_reserve_usd": 90000000.0,
+        "sponsor_capital_at_risk_usd": 450000000.0,
+        "phase1_noi_gate_surplus": 9180000.0,
+        "political_reversal_buffer_surplus": -160000000.0,
+        "levy_coverage_surplus_usd": 1650000000.0,
+        "phase1_noi_gate_margin": 9180000.0,
+        "q_levy_coverage": 1650000000.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "contingency_reserve_usd": {
+        "low": 90000000.0,
+        "base": 90000000.0,
+        "high": 90000000.0,
+        "unit": "USD",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "sponsor_capital_at_risk_usd": {
+        "low": 450000000.0,
+        "base": 450000000.0,
+        "high": 450000000.0,
+        "unit": "USD",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "phase1_noi_gate_surplus": {
+        "low": -3650000.0,
+        "base": 480000.0,
+        "high": 9180000.0,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": 12830000.0
+      },
+      "political_reversal_buffer_surplus": {
+        "low": 60000000.0,
+        "base": 0.0,
+        "high": -160000000.0,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": -220000000.0
+      },
+      "levy_coverage_surplus_usd": {
+        "low": -480000000.0,
+        "base": 0.0,
+        "high": 1650000000.0,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": 2130000000.0
+      },
+      "phase1_noi_gate_margin": {
+        "low": -3650000.0,
+        "base": 480000.0,
+        "high": 9180000.0,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": 12830000.0
+      },
+      "q_levy_coverage": {
+        "low": -480000000.0,
+        "base": 0.0,
+        "high": 1650000000.0,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": 2130000000.0
+      }
+    }
+  },
+  "warnings": []
+}

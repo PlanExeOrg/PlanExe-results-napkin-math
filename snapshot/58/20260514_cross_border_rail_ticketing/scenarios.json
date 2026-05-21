@@ -1,0 +1,155 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Through-Ticketing Coordination Program",
+    "plan_type": "public_coordination_program"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "public_coordination_budget_eur": 1500000000,
+        "capacity_building_grants_eur": 900000000,
+        "public_reference_distributor_cost_eur": 150000000,
+        "emergency_float_reserve_eur": 300000000,
+        "through_ticket_adoption_target_fraction": 0.4,
+        "governance_fte_count": 35,
+        "initial_clearing_float_eur": 150000000,
+        "clearing_liquidity_shock_eur": 50000000,
+        "eligible_cross_border_journeys_per_year": 30000000,
+        "projected_through_ticket_adoption_fraction": 0.15,
+        "peak_daily_clearing_obligation_eur": 50000000,
+        "monthly_fte_cost_eur": 10000,
+        "residual_program_overhead_eur": 50000000,
+        "governance_two_year_personnel_cost_eur": 8400000,
+        "coordination_budget_buffer_eur": 91600000,
+        "clearing_liquidity_surplus_eur": 400000000,
+        "clearing_coverage_ratio": 6.0,
+        "through_ticket_volume_target": 12000000.0,
+        "adoption_margin_fraction": -0.25
+      },
+      "outputs": {
+        "governance_two_year_personnel_cost_eur": 8400000,
+        "coordination_budget_buffer_eur": 91600000,
+        "clearing_liquidity_surplus_eur": 400000000,
+        "clearing_coverage_ratio": 6.0,
+        "through_ticket_volume_target": 12000000.0,
+        "adoption_margin_fraction": -0.25
+      }
+    },
+    "base": {
+      "inputs": {
+        "public_coordination_budget_eur": 1500000000,
+        "capacity_building_grants_eur": 900000000,
+        "public_reference_distributor_cost_eur": 150000000,
+        "emergency_float_reserve_eur": 300000000,
+        "through_ticket_adoption_target_fraction": 0.4,
+        "governance_fte_count": 35,
+        "initial_clearing_float_eur": 200000000,
+        "clearing_liquidity_shock_eur": 125000000,
+        "eligible_cross_border_journeys_per_year": 80000000,
+        "projected_through_ticket_adoption_fraction": 0.4,
+        "peak_daily_clearing_obligation_eur": 130000000,
+        "monthly_fte_cost_eur": 14000,
+        "residual_program_overhead_eur": 100000000,
+        "governance_two_year_personnel_cost_eur": 11760000,
+        "coordination_budget_buffer_eur": 38240000,
+        "clearing_liquidity_surplus_eur": 375000000,
+        "clearing_coverage_ratio": 2.5641025641025643,
+        "through_ticket_volume_target": 32000000.0,
+        "adoption_margin_fraction": 0.0
+      },
+      "outputs": {
+        "governance_two_year_personnel_cost_eur": 11760000,
+        "coordination_budget_buffer_eur": 38240000,
+        "clearing_liquidity_surplus_eur": 375000000,
+        "clearing_coverage_ratio": 2.5641025641025643,
+        "through_ticket_volume_target": 32000000.0,
+        "adoption_margin_fraction": 0.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "public_coordination_budget_eur": 1500000000,
+        "capacity_building_grants_eur": 900000000,
+        "public_reference_distributor_cost_eur": 150000000,
+        "emergency_float_reserve_eur": 300000000,
+        "through_ticket_adoption_target_fraction": 0.4,
+        "governance_fte_count": 35,
+        "initial_clearing_float_eur": 280000000,
+        "clearing_liquidity_shock_eur": 200000000,
+        "eligible_cross_border_journeys_per_year": 200000000,
+        "projected_through_ticket_adoption_fraction": 0.55,
+        "peak_daily_clearing_obligation_eur": 300000000,
+        "monthly_fte_cost_eur": 20000,
+        "residual_program_overhead_eur": 200000000,
+        "governance_two_year_personnel_cost_eur": 16800000,
+        "coordination_budget_buffer_eur": -66800000,
+        "clearing_liquidity_surplus_eur": 380000000,
+        "clearing_coverage_ratio": 1.288888888888889,
+        "through_ticket_volume_target": 80000000.0,
+        "adoption_margin_fraction": 0.15000000000000002
+      },
+      "outputs": {
+        "governance_two_year_personnel_cost_eur": 16800000,
+        "coordination_budget_buffer_eur": -66800000,
+        "clearing_liquidity_surplus_eur": 380000000,
+        "clearing_coverage_ratio": 1.288888888888889,
+        "through_ticket_volume_target": 80000000.0,
+        "adoption_margin_fraction": 0.15000000000000002
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "governance_two_year_personnel_cost_eur": {
+        "low": 8400000,
+        "base": 11760000,
+        "high": 16800000,
+        "unit": "EUR",
+        "spread_ratio": 2.0,
+        "spread_absolute": 8400000
+      },
+      "coordination_budget_buffer_eur": {
+        "low": 91600000,
+        "base": 38240000,
+        "high": -66800000,
+        "unit": "EUR",
+        "spread_ratio": -0.7292576419213974,
+        "spread_absolute": -158400000
+      },
+      "clearing_liquidity_surplus_eur": {
+        "low": 400000000,
+        "base": 375000000,
+        "high": 380000000,
+        "unit": "EUR",
+        "spread_ratio": 0.95,
+        "spread_absolute": -20000000
+      },
+      "clearing_coverage_ratio": {
+        "low": 6.0,
+        "base": 2.5641025641025643,
+        "high": 1.288888888888889,
+        "unit": "fraction",
+        "spread_ratio": 0.21481481481481482,
+        "spread_absolute": -4.711111111111111
+      },
+      "through_ticket_volume_target": {
+        "low": 12000000.0,
+        "base": 32000000.0,
+        "high": 80000000.0,
+        "unit": "journeys_per_year",
+        "spread_ratio": 6.666666666666667,
+        "spread_absolute": 68000000.0
+      },
+      "adoption_margin_fraction": {
+        "low": -0.25,
+        "base": 0.0,
+        "high": 0.15000000000000002,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.4
+      }
+    }
+  },
+  "warnings": []
+}

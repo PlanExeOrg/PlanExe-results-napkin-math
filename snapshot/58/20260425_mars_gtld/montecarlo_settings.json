@@ -1,0 +1,19 @@
+{
+  "n_runs": 10000,
+  "seed": 12345,
+  "distribution_default": "triangular",
+  "thresholds": {
+    "y1_revenue_surplus_usd": {
+      "operator": ">=",
+      "value": 0
+    },
+    "contingency_after_shocks_surplus_usd": {
+      "operator": ">=",
+      "value": 0
+    },
+    "capital_runway_surplus_usd": {
+      "operator": ">=",
+      "value": 0
+    }
+  }
+}

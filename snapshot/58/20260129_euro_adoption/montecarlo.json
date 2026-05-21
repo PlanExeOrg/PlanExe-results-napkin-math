@@ -1,0 +1,405 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Denmark DKK to EUR Adoption (Builder's Blueprint)",
+    "plan_type": "public_finance_national_transition"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "real_budget_after_inflation_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 15659781823.06155,
+      "std": 1904113201.2744172,
+      "min": 9978260365.361616,
+      "p05": 12592978604.179947,
+      "p25": 14314839465.653595,
+      "p50": 15637056112.04723,
+      "p75": 16970004410.652824,
+      "p95": 18885316807.271744,
+      "max": 22382419268.6675
+    },
+    "budget_envelope_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -8397422979.296506,
+      "std": 6162649171.487617,
+      "min": -27616710246.376293,
+      "p05": -19311498420.753784,
+      "p25": -12684370169.893711,
+      "p50": -7711065206.8603525,
+      "p75": -3783947805.8728623,
+      "p95": 838386176.4080732,
+      "max": 7783614322.837875
+    },
+    "contingency_buffer_after_cash_shock_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -66491007.65752774,
+      "std": 31163522.75889298,
+      "min": -149240020.87728924,
+      "p05": -122239028.1888188,
+      "p25": -88563880.57297459,
+      "p50": -62844450.68701853,
+      "p75": -42761237.6678779,
+      "p95": -19840175.9248523,
+      "max": -639682.9901599586
+    },
+    "public_info_funding_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -43426732.724903226,
+      "std": 41408745.49914151,
+      "min": -166622083.81687385,
+      "p05": -117263074.88360275,
+      "p25": -72459229.6483388,
+      "p50": -39241846.33748948,
+      "p75": -12111776.246414494,
+      "p95": 18676196.29208079,
+      "max": 59045514.24602397
+    },
+    "combined_financial_viability_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -8529252753.584083,
+      "std": 5949459080.878669,
+      "min": -27616710246.376293,
+      "p05": -19311498420.753784,
+      "p25": -12684370169.893711,
+      "p50": -7711065206.8603525,
+      "p75": -3783947805.8728623,
+      "p95": -88656231.14027308,
+      "max": -5348383.5896983445
+    }
+  },
+  "thresholds": {
+    "budget_envelope_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 739,
+      "valid_count": 10000,
+      "probability": 0.0739
+    },
+    "contingency_buffer_after_cash_shock_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "public_info_funding_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 1543,
+      "valid_count": 10000,
+      "probability": 0.1543
+    },
+    "combined_financial_viability_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    }
+  },
+  "sensitivity": {
+    "real_budget_after_inflation_dkk": {
+      "top_inputs": [
+        {
+          "id": "total_transition_budget_floor_dkk",
+          "correlation": 0.8386
+        },
+        {
+          "id": "inflation_excess_over_baseline_pp",
+          "correlation": -0.3925
+        },
+        {
+          "id": "transition_duration_years",
+          "correlation": -0.2899
+        },
+        {
+          "id": "baseline_inflation_rate",
+          "correlation": -0.2577
+        }
+      ]
+    },
+    "budget_envelope_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "estimated_transition_cost_dkk",
+          "correlation": -0.9511
+        },
+        {
+          "id": "total_transition_budget_floor_dkk",
+          "correlation": 0.2459
+        },
+        {
+          "id": "inflation_excess_over_baseline_pp",
+          "correlation": -0.1092
+        },
+        {
+          "id": "transition_duration_years",
+          "correlation": -0.0884
+        },
+        {
+          "id": "baseline_inflation_rate",
+          "correlation": -0.0882
+        }
+      ]
+    },
+    "contingency_buffer_after_cash_shock_dkk": {
+      "top_inputs": [
+        {
+          "id": "cash_logistics_shock_cost_dkk",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "public_info_funding_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "estimated_public_info_required_cost_dkk",
+          "correlation": -0.9698
+        },
+        {
+          "id": "total_transition_budget_floor_dkk",
+          "correlation": 0.2509
+        }
+      ]
+    },
+    "combined_financial_viability_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "estimated_transition_cost_dkk",
+          "correlation": -0.951
+        },
+        {
+          "id": "total_transition_budget_floor_dkk",
+          "correlation": 0.2355
+        },
+        {
+          "id": "inflation_excess_over_baseline_pp",
+          "correlation": -0.1042
+        },
+        {
+          "id": "transition_duration_years",
+          "correlation": -0.0847
+        },
+        {
+          "id": "baseline_inflation_rate",
+          "correlation": -0.0835
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "budget_envelope_surplus_dkk": [
+      {
+        "id": "estimated_transition_cost_dkk",
+        "p_pass_low_quartile": 0.2924,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -29.24
+      },
+      {
+        "id": "total_transition_budget_floor_dkk",
+        "p_pass_low_quartile": 0.0144,
+        "p_pass_high_quartile": 0.1452,
+        "delta_pp": 13.08
+      },
+      {
+        "id": "inflation_excess_over_baseline_pp",
+        "p_pass_low_quartile": 0.11,
+        "p_pass_high_quartile": 0.0464,
+        "delta_pp": -6.36
+      },
+      {
+        "id": "transition_duration_years",
+        "p_pass_low_quartile": 0.09940910670837678,
+        "p_pass_high_quartile": 0.05175469691598724,
+        "delta_pp": -4.77
+      },
+      {
+        "id": "baseline_inflation_rate",
+        "p_pass_low_quartile": 0.1008,
+        "p_pass_high_quartile": 0.054,
+        "delta_pp": -4.68
+      }
+    ],
+    "contingency_buffer_after_cash_shock_dkk": [
+      {
+        "id": "cash_logistics_shock_cost_dkk",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "public_info_funding_surplus_dkk": [
+      {
+        "id": "estimated_public_info_required_cost_dkk",
+        "p_pass_low_quartile": 0.5976,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -59.76
+      },
+      {
+        "id": "total_transition_budget_floor_dkk",
+        "p_pass_low_quartile": 0.0668,
+        "p_pass_high_quartile": 0.258,
+        "delta_pp": 19.12
+      }
+    ],
+    "combined_financial_viability_surplus_dkk": [
+      {
+        "id": "total_transition_budget_floor_dkk",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "transition_duration_years",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "cash_logistics_shock_cost_dkk",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "inflation_excess_over_baseline_pp",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "estimated_transition_cost_dkk",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {
+    "combined_financial_viability_surplus_dkk": {
+      "fail_count": 10000,
+      "binding_when_aggregate_fails": [
+        {
+          "dependency": "budget_envelope_surplus_dkk",
+          "frequency": 0.9235
+        },
+        {
+          "dependency": "contingency_buffer_after_cash_shock_dkk",
+          "frequency": 0.055
+        },
+        {
+          "dependency": "public_info_funding_surplus_dkk",
+          "frequency": 0.0215
+        }
+      ]
+    }
+  },
+  "required_input_thresholds": {
+    "public_info_funding_surplus_dkk": [
+      {
+        "id": "estimated_public_info_required_cost_dkk",
+        "direction": "below",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 100660006.32217942,
+        "conditional_pass_prob": 0.8247,
+        "admitted_fraction": 0.15
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "estimated_public_info_required_cost_dkk",
+      "score": 80.0201,
+      "worst_gate": "public_info_funding_surplus_dkk",
+      "bound_width_ratio": 1.5833,
+      "source": "assumption"
+    },
+    {
+      "id": "estimated_transition_cost_dkk",
+      "score": 37.9108,
+      "worst_gate": "budget_envelope_surplus_dkk",
+      "bound_width_ratio": 1.4,
+      "source": "assumption"
+    },
+    {
+      "id": "baseline_inflation_rate",
+      "score": 5.4177,
+      "worst_gate": "budget_envelope_surplus_dkk",
+      "bound_width_ratio": 1.25,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "real_budget_after_inflation_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.1042,
+      "reasons": [
+        "4/4 input bounds anchored in data; 0/4 are assumptions",
+        "average bound-width-to-base ratio = 1.10"
+      ]
+    },
+    "budget_envelope_surplus_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.8,
+      "average_bound_width_ratio": 1.1633,
+      "reasons": [
+        "4/5 input bounds anchored in data; 1/5 are assumptions",
+        "average bound-width-to-base ratio = 1.16"
+      ]
+    },
+    "contingency_buffer_after_cash_shock_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.5,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.50"
+      ]
+    },
+    "public_info_funding_surplus_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.0417,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.04"
+      ]
+    },
+    "combined_financial_viability_surplus_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.7143,
+      "average_bound_width_ratio": 1.2714,
+      "reasons": [
+        "5/7 input bounds anchored in data; 2/7 are assumptions",
+        "average bound-width-to-base ratio = 1.27"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": [
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "bounds declares 1 correlation group(s) but the Gaussian-copula sampler is not yet implemented (Phase 8); variables will be sampled independently for this run \u2014 joint-tail risk is structurally understated until the sampler ships",
+      "severity": "WARN"
+    }
+  ]
+}

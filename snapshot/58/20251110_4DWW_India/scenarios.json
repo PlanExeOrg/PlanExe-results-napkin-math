@@ -1,0 +1,163 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India 4-Day Work Week National Pilot",
+    "plan_type": "public_policy_pilot"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_program_budget_inr_crore": 2000,
+        "formal_track_allocation_fraction": 0.70,
+        "contingency_fund_fraction": 0.10,
+        "productivity_grants_share_of_incentive": 0.80,
+        "sme_share_target_fraction": 0.50,
+        "voluntary_optin_threshold_fraction": 0.75,
+        "productivity_retention_threshold_fraction": 0.95,
+        "aggregate_risk_shock_cost_inr_crore": 60,
+        "realised_sme_share": 0.30,
+        "realised_optin_rate": 0.55,
+        "realised_productivity_retention_fraction": 0.50,
+        "formal_track_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_shock_buffer_inr_crore": 140.0,
+        "productivity_grants_pool_inr_crore": 1120.0,
+        "productivity_retention_margin": -0.45,
+        "sme_share_margin": -0.20,
+        "optin_margin": -0.20
+      },
+      "outputs": {
+        "formal_track_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_shock_buffer_inr_crore": 140.0,
+        "productivity_grants_pool_inr_crore": 1120.0,
+        "productivity_retention_margin": -0.45,
+        "sme_share_margin": -0.20,
+        "optin_margin": -0.20
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_program_budget_inr_crore": 2000,
+        "formal_track_allocation_fraction": 0.70,
+        "contingency_fund_fraction": 0.10,
+        "productivity_grants_share_of_incentive": 0.80,
+        "sme_share_target_fraction": 0.50,
+        "voluntary_optin_threshold_fraction": 0.75,
+        "productivity_retention_threshold_fraction": 0.95,
+        "aggregate_risk_shock_cost_inr_crore": 200,
+        "realised_sme_share": 0.50,
+        "realised_optin_rate": 0.75,
+        "realised_productivity_retention_fraction": 0.75,
+        "formal_track_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_shock_buffer_inr_crore": 0.0,
+        "productivity_grants_pool_inr_crore": 1120.0,
+        "productivity_retention_margin": -0.20,
+        "sme_share_margin": 0.0,
+        "optin_margin": 0.0
+      },
+      "outputs": {
+        "formal_track_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_shock_buffer_inr_crore": 0.0,
+        "productivity_grants_pool_inr_crore": 1120.0,
+        "productivity_retention_margin": -0.20,
+        "sme_share_margin": 0.0,
+        "optin_margin": 0.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_program_budget_inr_crore": 2000,
+        "formal_track_allocation_fraction": 0.70,
+        "contingency_fund_fraction": 0.10,
+        "productivity_grants_share_of_incentive": 0.80,
+        "sme_share_target_fraction": 0.50,
+        "voluntary_optin_threshold_fraction": 0.75,
+        "productivity_retention_threshold_fraction": 0.95,
+        "aggregate_risk_shock_cost_inr_crore": 700,
+        "realised_sme_share": 0.55,
+        "realised_optin_rate": 0.88,
+        "realised_productivity_retention_fraction": 0.95,
+        "formal_track_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_shock_buffer_inr_crore": -500.0,
+        "productivity_grants_pool_inr_crore": 1120.0,
+        "productivity_retention_margin": 0.0,
+        "sme_share_margin": 0.05,
+        "optin_margin": 0.13
+      },
+      "outputs": {
+        "formal_track_budget_inr_crore": 1400.0,
+        "contingency_reserve_inr_crore": 200.0,
+        "contingency_shock_buffer_inr_crore": -500.0,
+        "productivity_grants_pool_inr_crore": 1120.0,
+        "productivity_retention_margin": 0.0,
+        "sme_share_margin": 0.05,
+        "optin_margin": 0.13
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "formal_track_budget_inr_crore": {
+        "low": 1400.0,
+        "base": 1400.0,
+        "high": 1400.0,
+        "unit": "INR_crore",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "contingency_reserve_inr_crore": {
+        "low": 200.0,
+        "base": 200.0,
+        "high": 200.0,
+        "unit": "INR_crore",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "contingency_shock_buffer_inr_crore": {
+        "low": 140.0,
+        "base": 0.0,
+        "high": -500.0,
+        "unit": "INR_crore",
+        "spread_ratio": -3.571428571428571,
+        "spread_absolute": -640.0
+      },
+      "productivity_grants_pool_inr_crore": {
+        "low": 1120.0,
+        "base": 1120.0,
+        "high": 1120.0,
+        "unit": "INR_crore",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "productivity_retention_margin": {
+        "low": -0.45,
+        "base": -0.20,
+        "high": 0.0,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.45
+      },
+      "sme_share_margin": {
+        "low": -0.20,
+        "base": 0.0,
+        "high": 0.05,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.25
+      },
+      "optin_margin": {
+        "low": -0.20,
+        "base": 0.0,
+        "high": 0.13,
+        "unit": "fraction",
+        "spread_ratio": null,
+        "spread_absolute": 0.33
+      }
+    }
+  },
+  "warnings": []
+}

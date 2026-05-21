@@ -1,0 +1,397 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Crate Escape: Arla Milk Crate Recovery Campaign 2026",
+    "plan_type": "commercial_csr_reverse_logistics"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "donation_outlay_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 553687.1385,
+      "std": 96057.8468271037,
+      "min": 327025.0,
+      "p05": 397657.25,
+      "p25": 483913.75,
+      "p50": 549712.5,
+      "p75": 622285.0,
+      "p95": 720441.5,
+      "max": 794215.0
+    },
+    "donation_cap_buffer_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 796312.8615,
+      "std": 96057.8468271037,
+      "min": 555785.0,
+      "p05": 629558.5,
+      "p25": 727715.0,
+      "p50": 800287.5,
+      "p75": 866086.25,
+      "p95": 952342.75,
+      "max": 1022975.0
+    },
+    "logistics_cost_total_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1771520.5358387006,
+      "std": 502465.25897752465,
+      "min": 607086.766249214,
+      "p05": 1039458.0629078187,
+      "p25": 1399629.566724508,
+      "p50": 1719450.6699209427,
+      "p75": 2093785.0819162757,
+      "p95": 2697840.091268935,
+      "max": 3655769.506814955
+    },
+    "logistics_budget_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -121520.53583870067,
+      "std": 502465.2589775247,
+      "min": -2005769.5068149548,
+      "p05": -1047840.0912689362,
+      "p25": -443785.08191627567,
+      "p50": -69450.66992094275,
+      "p75": 250370.43327549193,
+      "p95": 610541.9370921813,
+      "max": 1042913.233750786
+    },
+    "total_budget_surplus_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 575618.191231778,
+      "std": 585124.8830018004,
+      "min": -1728465.7287461788,
+      "p05": -473720.05643418716,
+      "p25": 195587.7839026185,
+      "p50": 625730.377693094,
+      "p75": 1001806.2037505127,
+      "p95": 1445321.152749445,
+      "max": 2226731.5873275325
+    },
+    "volume_target_surplus": {
+      "unit": "crates",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2737.4277,
+      "std": 19211.569365420743,
+      "min": -42595.0,
+      "p05": -28468.55,
+      "p25": -11217.25,
+      "p50": 1942.5,
+      "p75": 16457.0,
+      "p95": 36088.299999999996,
+      "max": 50843.0
+    },
+    "foundation_donation_margin_dkk": {
+      "unit": "DKK",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 53687.1385,
+      "std": 96057.8468271037,
+      "min": -172975.0,
+      "p05": -102342.75,
+      "p25": -16086.25,
+      "p50": 49712.5,
+      "p75": 122285.0,
+      "p95": 220441.49999999997,
+      "max": 294215.0
+    },
+    "recovery_rate_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.01013862111111109,
+      "std": 0.07115396061266942,
+      "min": -0.1577592592592593,
+      "p05": -0.10543907407407409,
+      "p25": -0.04154537037037037,
+      "p50": 0.00719444444444442,
+      "p75": 0.06095185185185181,
+      "p95": 0.13366037037037035,
+      "max": 0.18830740740740737
+    }
+  },
+  "thresholds": {
+    "donation_cap_buffer_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "logistics_budget_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4427,
+      "valid_count": 10000,
+      "probability": 0.4427
+    },
+    "total_budget_surplus_dkk": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 8353,
+      "valid_count": 10000,
+      "probability": 0.8353
+    }
+  },
+  "sensitivity": {
+    "donation_outlay_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "donation_cap_buffer_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "logistics_cost_total_dkk": {
+      "top_inputs": [
+        {
+          "id": "logistics_cost_per_crate_dkk",
+          "correlation": 0.7801
+        },
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 0.6147
+        }
+      ]
+    },
+    "logistics_budget_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "logistics_cost_per_crate_dkk",
+          "correlation": -0.7801
+        },
+        {
+          "id": "expected_recovered_crates",
+          "correlation": -0.6147
+        }
+      ]
+    },
+    "total_budget_surplus_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": -0.692
+        },
+        {
+          "id": "logistics_cost_per_crate_dkk",
+          "correlation": -0.67
+        },
+        {
+          "id": "marketing_cost_realized_dkk",
+          "correlation": -0.2496
+        }
+      ]
+    },
+    "volume_target_surplus": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "foundation_donation_margin_dkk": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "recovery_rate_margin": {
+      "top_inputs": [
+        {
+          "id": "expected_recovered_crates",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "donation_cap_buffer_dkk": [
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "logistics_budget_surplus_dkk": [
+      {
+        "id": "logistics_cost_per_crate_dkk",
+        "p_pass_low_quartile": 0.9092,
+        "p_pass_high_quartile": 0.056,
+        "delta_pp": -85.32
+      },
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 0.7784,
+        "p_pass_high_quartile": 0.15913634546181527,
+        "delta_pp": -61.93
+      }
+    ],
+    "total_budget_surplus_dkk": [
+      {
+        "id": "logistics_cost_per_crate_dkk",
+        "p_pass_low_quartile": 0.9976,
+        "p_pass_high_quartile": 0.5516,
+        "delta_pp": -44.6
+      },
+      {
+        "id": "expected_recovered_crates",
+        "p_pass_low_quartile": 0.9968,
+        "p_pass_high_quartile": 0.563374650139944,
+        "delta_pp": -43.34
+      },
+      {
+        "id": "marketing_cost_realized_dkk",
+        "p_pass_low_quartile": 0.8928,
+        "p_pass_high_quartile": 0.7516,
+        "delta_pp": -14.12
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "logistics_budget_surplus_dkk": [
+      {
+        "id": "logistics_cost_per_crate_dkk",
+        "direction": "below",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 14.23481619405449,
+        "conditional_pass_prob": 0.8427,
+        "admitted_fraction": 0.33
+      },
+      {
+        "id": "expected_recovered_crates",
+        "direction": "below",
+        "input_percentile_cutoff": 85,
+        "cutoff_value": 89959.2,
+        "conditional_pass_prob": 0.8527,
+        "admitted_fraction": 0.15
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "logistics_cost_per_crate_dkk",
+      "score": 53.8887,
+      "worst_gate": "logistics_budget_surplus_dkk",
+      "bound_width_ratio": 1.1333,
+      "source": "data"
+    },
+    {
+      "id": "expected_recovered_crates",
+      "score": 30.3592,
+      "worst_gate": "logistics_budget_surplus_dkk",
+      "bound_width_ratio": 0.8796,
+      "source": "data"
+    },
+    {
+      "id": "marketing_cost_realized_dkk",
+      "score": 1.6279,
+      "worst_gate": "total_budget_surplus_dkk",
+      "bound_width_ratio": 0.7,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "donation_outlay_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8796,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.88"
+      ]
+    },
+    "donation_cap_buffer_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8796,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.88"
+      ]
+    },
+    "logistics_cost_total_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.0065,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.01"
+      ]
+    },
+    "logistics_budget_surplus_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.0065,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 1.01"
+      ]
+    },
+    "total_budget_surplus_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.9043,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 0.90"
+      ]
+    },
+    "volume_target_surplus": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8796,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.88"
+      ]
+    },
+    "foundation_donation_margin_dkk": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8796,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.88"
+      ]
+    },
+    "recovery_rate_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.8796,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.88"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

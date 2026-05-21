@@ -1,0 +1,46 @@
+{
+  "vehicle_throughput_per_hour": {
+    "unit": "vehicles_per_hour",
+    "low": 1800,
+    "base": 3600,
+    "high": 4800,
+    "rationale": "FHWA emergency contraflow studies cluster around 1,800-2,400 vph per lane. US-191/US-20 dual-lane contraflow gives base near 3,600 vph; high reflects two-lane sustained max, low reflects one-lane realised throughput under congestion.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "occupants_per_vehicle": {
+    "unit": "people_per_vehicle",
+    "low": 2.0,
+    "base": 2.8,
+    "high": 3.5,
+    "rationale": "National-park vehicle occupancy norms run 2.5-3.5 (family groups); base 2.8 from US NPS visitor surveys, low covers couples/single-occupant rentals, high covers full-load families and tour vans.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "sortie_payload_kg": {
+    "unit": "kg",
+    "low": 5000,
+    "base": 9000,
+    "high": 12000,
+    "rationale": "CH-47F max external lift ~12,000 kg; ash-visibility and high-altitude derates trim payload. Base 9,000 kg reflects typical operational hot-and-high lift; low covers heavy derate; high covers internal-cabin-only no-derate.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "c2_node_ups_baseline_hours": {
+    "unit": "hours",
+    "low": 24,
+    "base": 36,
+    "high": 48,
+    "rationale": "Review-plan and Expert Criticism state UPS lasts 24-48 hours depending on load and ash impact; base 36h is the midpoint. USGS station baseline is 48h but C2 generator load typically reduces effective UPS runtime.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

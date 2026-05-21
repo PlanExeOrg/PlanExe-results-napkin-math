@@ -1,0 +1,57 @@
+{
+  "achievable_daily_noi_usd": {
+    "unit": "USD_per_day",
+    "low": 10000,
+    "base": 60000,
+    "high": 180000,
+    "rationale": "Required floor is $50k/day. A 999-guest VIP venue at high-roller spend can plausibly clear it, but Expert Criticism flags T2CA vetting friction and 60/40 split dilution as binding downside drivers, so low falls well below floor.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "political_reversal_shock_usd": {
+    "unit": "USD",
+    "low": 30000000,
+    "base": 90000000,
+    "high": 250000000,
+    "rationale": "CAPEX-class shock: site remediation plus legal costs over $10M cited in Risk 1; base anchored on the $90M reserve the plan ring-fences for this scenario; lognormal preferred but sampler unavailable.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "relocation_blackout_days": {
+    "unit": "days",
+    "low": 5,
+    "base": 7,
+    "high": 14,
+    "rationale": "Plan commits to a 7-day blackout; Data Collection 2 caps the assumption at 8 calendar days with medium confidence, and Issue 2 sensitivity tests a 2-week slip from logistics failures.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "ancillary_gross_revenue_annual_usd": {
+    "unit": "USD_per_year",
+    "low": 800000000,
+    "base": 2000000000,
+    "high": 5000000000,
+    "rationale": "Review plan derives ~$2B annual gross from $50M/month at ~30% margin; ancillary revenue with downside from political backlash and upside from VIP capture; lognormal preferred but sampler unavailable.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "ancillary_margin_fraction": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.30,
+    "high": 0.45,
+    "rationale": "Review plan benchmarks 30% margin for ancillary hospitality; comparable luxury hospitality operations typically run 15-45% net margin depending on labor and security overhead.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

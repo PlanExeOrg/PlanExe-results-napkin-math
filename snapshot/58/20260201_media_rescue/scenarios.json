@@ -1,0 +1,146 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Containerized Dark Data Ingestor Network (CDDIN)",
+    "plan_type": "industrial infrastructure deployment"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_budget_usd": 250000000,
+        "phase1_budget_usd": 60000000,
+        "annual_opex_per_miu_usd": 2000000,
+        "capex_per_miu_usd": 3000000,
+        "fleet_target_units": 30,
+        "program_duration_years": 10,
+        "human_review_load_cap_fraction": 0.2,
+        "phase1_duration_years": 1.0,
+        "ai_false_positive_rate": 0.08,
+        "mandatory_override_fraction": 0.15,
+        "fleet_capex_total_usd": 90000000,
+        "fleet_lifetime_opex_usd": 600000000,
+        "program_budget_surplus_usd": -440000000,
+        "realised_review_load_fraction": 0.092,
+        "review_load_margin": 0.108,
+        "phase1_budget_surplus_usd": 45000000
+      },
+      "outputs": {
+        "fleet_capex_total_usd": 90000000,
+        "fleet_lifetime_opex_usd": 600000000,
+        "program_budget_surplus_usd": -440000000,
+        "realised_review_load_fraction": 0.092,
+        "review_load_margin": 0.108,
+        "phase1_budget_surplus_usd": 45000000
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_budget_usd": 250000000,
+        "phase1_budget_usd": 60000000,
+        "annual_opex_per_miu_usd": 2500000,
+        "capex_per_miu_usd": 3500000,
+        "fleet_target_units": 30,
+        "program_duration_years": 10,
+        "human_review_load_cap_fraction": 0.2,
+        "phase1_duration_years": 1.5,
+        "ai_false_positive_rate": 0.10,
+        "mandatory_override_fraction": 0.15,
+        "fleet_capex_total_usd": 105000000,
+        "fleet_lifetime_opex_usd": 750000000,
+        "program_budget_surplus_usd": -605000000,
+        "realised_review_load_fraction": 0.115,
+        "review_load_margin": 0.085,
+        "phase1_budget_surplus_usd": 38250000
+      },
+      "outputs": {
+        "fleet_capex_total_usd": 105000000,
+        "fleet_lifetime_opex_usd": 750000000,
+        "program_budget_surplus_usd": -605000000,
+        "realised_review_load_fraction": 0.115,
+        "review_load_margin": 0.085,
+        "phase1_budget_surplus_usd": 38250000
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_budget_usd": 250000000,
+        "phase1_budget_usd": 60000000,
+        "annual_opex_per_miu_usd": 3500000,
+        "capex_per_miu_usd": 4500000,
+        "fleet_target_units": 30,
+        "program_duration_years": 10,
+        "human_review_load_cap_fraction": 0.2,
+        "phase1_duration_years": 2.5,
+        "ai_false_positive_rate": 0.17,
+        "mandatory_override_fraction": 0.15,
+        "fleet_capex_total_usd": 135000000,
+        "fleet_lifetime_opex_usd": 1050000000,
+        "program_budget_surplus_usd": -935000000,
+        "realised_review_load_fraction": 0.1955,
+        "review_load_margin": 0.0045,
+        "phase1_budget_surplus_usd": 20250000
+      },
+      "outputs": {
+        "fleet_capex_total_usd": 135000000,
+        "fleet_lifetime_opex_usd": 1050000000,
+        "program_budget_surplus_usd": -935000000,
+        "realised_review_load_fraction": 0.1955,
+        "review_load_margin": 0.0045,
+        "phase1_budget_surplus_usd": 20250000
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "fleet_capex_total_usd": {
+        "low": 90000000,
+        "base": 105000000,
+        "high": 135000000,
+        "unit": "USD",
+        "spread_ratio": 1.5,
+        "spread_absolute": 45000000
+      },
+      "fleet_lifetime_opex_usd": {
+        "low": 600000000,
+        "base": 750000000,
+        "high": 1050000000,
+        "unit": "USD",
+        "spread_ratio": 1.75,
+        "spread_absolute": 450000000
+      },
+      "program_budget_surplus_usd": {
+        "low": -440000000,
+        "base": -605000000,
+        "high": -935000000,
+        "unit": "USD",
+        "spread_ratio": 2.125,
+        "spread_absolute": -495000000
+      },
+      "realised_review_load_fraction": {
+        "low": 0.092,
+        "base": 0.115,
+        "high": 0.1955,
+        "unit": "fraction",
+        "spread_ratio": 2.125,
+        "spread_absolute": 0.1035
+      },
+      "review_load_margin": {
+        "low": 0.108,
+        "base": 0.085,
+        "high": 0.0045,
+        "unit": "fraction",
+        "spread_ratio": 0.041666666666666664,
+        "spread_absolute": -0.1035
+      },
+      "phase1_budget_surplus_usd": {
+        "low": 45000000,
+        "base": 38250000,
+        "high": 20250000,
+        "unit": "USD",
+        "spread_ratio": 0.45,
+        "spread_absolute": -24750000
+      }
+    }
+  },
+  "warnings": []
+}

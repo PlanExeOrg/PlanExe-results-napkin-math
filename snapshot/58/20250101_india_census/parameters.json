@@ -1,0 +1,199 @@
+{
+  "plan_summary": {
+    "plan_name": "India Decennial Census 2026-2027 (Pioneer's Gambit)",
+    "plan_type": "public_sector_logistics",
+    "primary_goal": "Achieve 99%+ household enumeration coverage with sequenced political data release within budget and timeline.",
+    "modelling_frame": "Tests whether budget, enumerator pay validation cycle, device integrity, ingestion pipeline MTTR, and political-release timing leave positive margin against stated thresholds."
+  },
+  "key_values": [
+    {
+      "id": "budget_ceiling_crore",
+      "label": "Budget ceiling (max estimate)",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "crore_INR",
+      "value": 15000,
+      "comment": "Upper bound of the stated 12,000-15,000 crore envelope. Acts as the hard fiscal cap for the program.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Budget maximum estimate: 15,000 crore"
+    },
+    {
+      "id": "target_household_coverage",
+      "label": "Target household enumeration coverage",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.99,
+      "comment": "Coverage threshold below which the success criterion fails. Primary headcount gate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Target enumeration coverage of 99%+"
+    },
+    {
+      "id": "contingency_fund_crore",
+      "label": "5% operational contingency fund",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "crore_INR",
+      "value": 750,
+      "comment": "Ring-fenced reserve for tech remediation, security zones, paper audits. Single pool absorbing multiple shocks per source.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "5% contingency fund equivalent to 750 crore managed by Registrar General"
+    },
+    {
+      "id": "provisional_release_deadline_months",
+      "label": "Provisional totals deadline (months post-Phase 2)",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 6,
+      "comment": "Political schedule gate for delimitation. Missing this triggers political crisis.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Provisional population totals deadline: 6 months post-Phase 2 completion"
+    },
+    {
+      "id": "ingestion_mttr_target_hours",
+      "label": "Ingestion pipeline MTTR target",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hours",
+      "value": 4,
+      "comment": "Max restoration time before validation backlog delays 50% contingent pay and triggers attrition.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Cloud architecture provides burst capacity 3x average daily volume with MTTR of 4 hours"
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_household_coverage",
+      "label": "Realised household enumeration coverage",
+      "unit": "fraction",
+      "why_needed": "Realised coverage tested against the 99% target gate.",
+      "suggested_estimation_method": "Use stress-test signals: satellite-hub failure (2-5% drop) and fluid-population undercount (5-10%) bound realistic distribution around 99%."
+    },
+    {
+      "id": "expected_total_cost_crore",
+      "label": "Expected total program cost",
+      "unit": "crore_INR",
+      "why_needed": "Drives budget surplus against the 15,000-crore ceiling and consumes contingency on overrun.",
+      "suggested_estimation_method": "Anchor at the 12,000-15,000 stated range; widen upper tail using the >5% overrun stress-test."
+    },
+    {
+      "id": "actual_provisional_release_months",
+      "label": "Realised time to provisional release",
+      "unit": "months",
+      "why_needed": "Compared against 6-month deadline; admin delays of 2-3 months are the main risk.",
+      "suggested_estimation_method": "Center near 6 months; widen using the 2-3 month admin-delay and 4-8 week monsoon stress-tests."
+    },
+    {
+      "id": "actual_ingestion_mttr_hours",
+      "label": "Realised ingestion pipeline MTTR",
+      "unit": "hours",
+      "why_needed": "Tested against 4-hour target; breach delays validation pay and triggers attrition cascade.",
+      "suggested_estimation_method": "Center near target; widen upward using the stress-test 'beyond 4-hour MTTR' breach scenarios."
+    },
+    {
+      "id": "expected_contingency_draw_crore",
+      "label": "Expected draw on 5% contingency fund",
+      "unit": "crore_INR",
+      "why_needed": "Multiple shocks (device emergency procurement 400-600 crore, satellite overrun, paper-audit logistics) draw on the same contingency pool; needed to test if buffer survives.",
+      "suggested_estimation_method": "Use stress-test numbers: 400-600 crore device emergency anchors center; widen to capture satellite-cost overrun and paper-audit logistics drawing the same pool."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "household_coverage_margin",
+      "label": "Household coverage margin vs 99% target",
+      "formula_hint": "household_coverage_margin = actual_household_coverage - target_household_coverage",
+      "output_name": "household_coverage_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_household_coverage", "target_household_coverage"],
+      "why_first": "Primary success gate of the census; positive means the headcount criterion passes."
+    },
+    {
+      "id": "budget_surplus_crore",
+      "label": "Budget surplus against 15,000-crore ceiling",
+      "formula_hint": "budget_surplus_crore = budget_ceiling_crore - expected_total_cost_crore",
+      "output_name": "budget_surplus_crore",
+      "output_unit": "crore_INR",
+      "depends_on": ["budget_ceiling_crore", "expected_total_cost_crore"],
+      "why_first": "Tests fiscal viability before contingency draw; positive = within stated cap."
+    },
+    {
+      "id": "provisional_release_timing_margin_months",
+      "label": "Provisional release timing margin",
+      "formula_hint": "provisional_release_timing_margin_months = provisional_release_deadline_months - actual_provisional_release_months",
+      "output_name": "provisional_release_timing_margin_months",
+      "output_unit": "months",
+      "depends_on": ["provisional_release_deadline_months", "actual_provisional_release_months"],
+      "why_first": "Political delimitation gate; positive = data released ahead of the deadline."
+    },
+    {
+      "id": "ingestion_mttr_margin_hours",
+      "label": "Ingestion MTTR margin",
+      "formula_hint": "ingestion_mttr_margin_hours = ingestion_mttr_target_hours - actual_ingestion_mttr_hours",
+      "output_name": "ingestion_mttr_margin_hours",
+      "output_unit": "hours",
+      "depends_on": ["ingestion_mttr_target_hours", "actual_ingestion_mttr_hours"],
+      "why_first": "Pipeline stability gates 50% contingent pay; positive = validation backlog avoided."
+    },
+    {
+      "id": "contingency_buffer_crore",
+      "label": "Contingency buffer after expected draws",
+      "formula_hint": "contingency_buffer_crore = contingency_fund_crore - expected_contingency_draw_crore",
+      "output_name": "contingency_buffer_crore",
+      "output_unit": "crore_INR",
+      "depends_on": ["contingency_fund_crore", "expected_contingency_draw_crore"],
+      "why_first": "Tests whether the single 750-crore reserve absorbs device, satellite, and paper-audit shocks per the plan's stated single-pool framing."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "caste_methodology_lockdown_gate",
+      "label": "Q4 2025 legal lock-in of caste methodology",
+      "why_it_matters": "Mass training of 3M enumerators presumes ECI/NSC sign-off on the final caste data dictionary and linkage logic before deployment.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Late methodology shifts invalidate training, spike error rates, and risk international statistical-body rejection — independent of any financial threshold."
+    },
+    {
+      "id": "judicial_review_board_authority_gate",
+      "label": "Statutory Judicial Review Board by Q3 2025",
+      "why_it_matters": "Provides binding arbitration over methodology disputes and sequencing; absent it, regional non-cooperation cannot be resolved within the 6-month window.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Methodology disputes escalate to constitutional crisis, freezing delimitation regardless of operational performance."
+    },
+    {
+      "id": "presidential_census_authorization_gate",
+      "label": "Presidential authorization under Census Act 1948",
+      "why_it_matters": "Mandatory legal prerequisite for the census to occur at all; no quantifiable threshold the simulation can test.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Without authorization the census cannot lawfully proceed, ending the plan irrespective of budget or coverage."
+    }
+  ],
+  "dropped_signals": []
+}

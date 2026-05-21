@@ -1,0 +1,249 @@
+{
+  "plan_summary": {
+    "plan_name": "Europe's first certified Faraday enclosure launch",
+    "plan_type": "commercial product launch",
+    "primary_goal": "Reach EUR 50k net cash from operations by Month 12 to unlock EUR 350k follow-on funding for a server-grade pivot.",
+    "modelling_frame": "Year-1 commercial launch of a single-SKU Faraday enclosure with a two-tier price ladder; tests whether pre-sales volume and gross margin clear the EUR 50k cash trigger, fund EU EMC certification, and absorb the 2,000-unit ISO production commitment."
+  },
+  "key_values": [
+    {
+      "id": "year1_budget_eur",
+      "label": "Year-1 operational budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 400000,
+      "comment": "Year-1 cash envelope covering production, certification, marketing, ops, contingency. Caps all Year-1 spending.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Year-1 operational burn budget: EUR 400k - input to period 1 cash burn."
+    },
+    {
+      "id": "cash_trigger_threshold_eur",
+      "label": "Funding-gate cash trigger",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 50000,
+      "comment": "Net cash from operations needed by Month 12 to unlock the EUR 350k follow-on tranche.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "EUR 50k net cash from operations by Month 12 unlocks follow-on funding."
+    },
+    {
+      "id": "premium_unit_price_eur",
+      "label": "Premium enclosure retail price",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "EUR_per_unit",
+      "value": 149,
+      "comment": "Two-tier pricing premium SKU. Drives ARPU and contribution margin.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Two-tier pricing: EUR 79 fabric pouch, EUR 149 full metal enclosure."
+    },
+    {
+      "id": "unit_bom_cost_eur",
+      "label": "BOM cost per enclosure",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR_per_unit",
+      "value": 75,
+      "comment": "Laptop-combo BOM cost. Variable material cost subtracted from price to derive unit margin.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Phone-only enclosure BOM EUR 45 vs laptop combo BOM EUR 75."
+    },
+    {
+      "id": "iso_run_fixed_cost_eur",
+      "label": "ISO run materials and tooling cost",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 150000,
+      "comment": "Sunk fixed cost if the 2,000-unit Tallinn ISO run is committed. Year-1 production line item.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "ISO run raw materials and tooling cost is EUR 150k."
+    },
+    {
+      "id": "iso_run_units",
+      "label": "ISO production run size",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "units",
+      "value": 2000,
+      "comment": "Minimum order quantity for the ISO-certified run. Caps Year-1 sellable inventory once committed.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Minimum order quantity for ISO run is 2,000 units per run."
+    },
+    {
+      "id": "presale_target_units",
+      "label": "Six-month pre-sale absorption target",
+      "category": "demand",
+      "value_type": "explicit",
+      "unit": "units",
+      "value": 1500,
+      "comment": "Pre-sale threshold required within 6 months to self-fund the ISO run and pivot path.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "high",
+      "source_text": "Pre-sales must absorb at least 1,500 units within 6 months."
+    },
+    {
+      "id": "fixed_operating_cost_eur",
+      "label": "Year-1 non-production fixed costs",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 250000,
+      "comment": "EUR 80k EMC certification + EUR 100k marketing + EUR 50k operations + EUR 20k contingency from the Year-1 plan.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "EUR 80k certification + EUR 100k marketing + EUR 50k operations + EUR 20k contingency."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_iso_run_inventory_risk",
+      "question": "Does Year-1 demand absorb enough of the 2,000-unit ISO run to avoid inventory overhang?",
+      "why_it_matters": "Unsold ISO inventory both wastes BOM cash and starves the pivot. Tests whether expected demand clears the inventory floor.",
+      "formula_hint": "iso_inventory_surplus_units = expected_year1_units_sold - presale_target_units",
+      "output_name": "iso_inventory_surplus_units",
+      "output_unit": "units",
+      "depends_on": ["expected_year1_units_sold", "presale_target_units"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "presale_conversion_rate",
+      "label": "Pre-order conversion rate from targeted traffic",
+      "unit": "fraction",
+      "why_needed": "Without a validated conversion rate the 1,500-unit pre-sale target is speculative; drives expected units sold.",
+      "suggested_estimation_method": "A/B test landing page with 10% vs 50% deposit on prepper forums; benchmark against direct-to-consumer hardware launches (typical 1-5%)."
+    },
+    {
+      "id": "addressable_prepper_buyers",
+      "label": "European active prepper buyers reachable in Year 1",
+      "unit": "people",
+      "why_needed": "Population denominator for the conversion funnel; ceiling on Year-1 unit demand.",
+      "suggested_estimation_method": "Use stated 15,000-20,000 active-buyer range as base; refine via 500-person survey and forum panel size."
+    },
+    {
+      "id": "wholesale_discount_fraction",
+      "label": "Retailer wholesale discount on premium SKU",
+      "unit": "fraction",
+      "why_needed": "Net ARPU on the 1,000-unit retailer channel is unknown without the discount; large impact on gross profit.",
+      "suggested_estimation_method": "Obtain written terms from SurvivalAid.de and at least two European prepper retailers (expected 40-50%)."
+    },
+    {
+      "id": "retailer_committed_units",
+      "label": "Retailer guaranteed Year-1 volume",
+      "unit": "units",
+      "why_needed": "Wholesale channel volume needed to combine with direct pre-sales into total expected Year-1 units sold.",
+      "suggested_estimation_method": "Confirm 1,000-unit white-label volume in writing with SurvivalAid.de before committing to ISO run."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "expected_year1_units_sold",
+      "label": "Expected Year-1 units sold across channels",
+      "formula_hint": "expected_year1_units_sold = min(iso_run_units, retailer_committed_units + addressable_prepper_buyers * presale_conversion_rate)",
+      "output_name": "expected_year1_units_sold",
+      "output_unit": "units",
+      "depends_on": ["iso_run_units", "retailer_committed_units", "addressable_prepper_buyers", "presale_conversion_rate"],
+      "why_first": "All cash, margin, and trigger calculations depend on this volume estimate."
+    },
+    {
+      "id": "year1_gross_profit_eur",
+      "label": "Year-1 gross profit before fixed costs",
+      "formula_hint": "year1_gross_profit_eur = expected_year1_units_sold * (premium_unit_price_eur * (1 - wholesale_discount_fraction) - unit_bom_cost_eur)",
+      "output_name": "year1_gross_profit_eur",
+      "output_unit": "EUR",
+      "depends_on": ["expected_year1_units_sold", "premium_unit_price_eur", "wholesale_discount_fraction", "unit_bom_cost_eur"],
+      "why_first": "Translates volume into the cash that has to cover fixed costs and the EUR 50k cash trigger."
+    },
+    {
+      "id": "net_cash_from_operations_eur",
+      "label": "Net cash from operations by Month 12",
+      "formula_hint": "net_cash_from_operations_eur = year1_gross_profit_eur - fixed_operating_cost_eur - iso_run_fixed_cost_eur",
+      "output_name": "net_cash_from_operations_eur",
+      "output_unit": "EUR",
+      "depends_on": ["year1_gross_profit_eur", "fixed_operating_cost_eur", "iso_run_fixed_cost_eur"],
+      "why_first": "The realised value tested against the EUR 50k funding-gate threshold."
+    },
+    {
+      "id": "funding_gate_surplus_eur",
+      "label": "Funding-gate cash surplus",
+      "formula_hint": "funding_gate_surplus_eur = net_cash_from_operations_eur - cash_trigger_threshold_eur",
+      "output_name": "funding_gate_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["net_cash_from_operations_eur", "cash_trigger_threshold_eur"],
+      "why_first": "Positive means the EUR 350k follow-on tranche is unlocked; the single most load-bearing gate in the plan."
+    },
+    {
+      "id": "year1_budget_surplus_eur",
+      "label": "Year-1 cash envelope surplus",
+      "formula_hint": "year1_budget_surplus_eur = year1_budget_eur - fixed_operating_cost_eur - iso_run_fixed_cost_eur",
+      "output_name": "year1_budget_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["year1_budget_eur", "fixed_operating_cost_eur", "iso_run_fixed_cost_eur"],
+      "why_first": "Tests whether Year-1 commitments fit inside the EUR 400k envelope before any revenue is earned."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "eu_emc_ce_certification_gate",
+      "label": "EU EMC Directive CE certification",
+      "why_it_matters": "Without CE marking via a notified body the enclosure cannot be sold in the EU at all; pre-sales and retailer terms presuppose this gate passes.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Year-1 sales halted, EUR 80k certification spend lost, follow-on tranche withheld."
+    },
+    {
+      "id": "funder_trigger_renegotiation_gate",
+      "label": "Renegotiation of funding trigger to measurable metric",
+      "why_it_matters": "Without converting the vague 'positive cash flow' clause into the EUR 50k Month-12 net-cash metric, even a passing model is exposed to discretionary funder withholding.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Follow-on funding can be withheld even when the financial model passes, project terminated."
+    },
+    {
+      "id": "iso_supplier_capacity_commitment_gate",
+      "label": "Baltic ISO supplier capacity confirmation",
+      "why_it_matters": "The financial model assumes Tallinn ISO and Latvian non-ISO shops have available capacity for the 500/2,000-unit runs; without signed slots the schedule slips by months.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Production delay of 3-4 months pushes first sales past Month 12 and forfeits the cash trigger."
+    }
+  ]
+}

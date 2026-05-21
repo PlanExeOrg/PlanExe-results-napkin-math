@@ -1,0 +1,348 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Through-Ticketing Coordination Program",
+    "plan_type": "public_coordination_program"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "governance_two_year_personnel_cost_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 12340672.065121772,
+      "std": 1732499.524758675,
+      "min": 8464510.94454356,
+      "p05": 9635092.50820894,
+      "p25": 11045140.732875135,
+      "p50": 12226078.804481559,
+      "p75": 13587186.152112149,
+      "p95": 15380501.57309555,
+      "max": 16747821.928504199
+    },
+    "coordination_budget_buffer_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 21029052.989219088,
+      "std": 31586763.952795498,
+      "min": -63183458.65086365,
+      "p05": -36277627.93509678,
+      "p25": -1521063.394670494,
+      "p50": 24451490.806303263,
+      "p75": 44776955.93230142,
+      "p95": 68670807.33818114,
+      "max": 88942120.24207006
+    },
+    "clearing_liquidity_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 384686754.35869133,
+      "std": 40620783.232028626,
+      "min": 262606962.81727904,
+      "p05": 318086585.69707775,
+      "p25": 355674066.57981557,
+      "p50": 384069424.8873334,
+      "p75": 413321593.0665113,
+      "p95": 452534586.2599803,
+      "max": 506391002.7399225
+    },
+    "clearing_coverage_ratio": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 2.376947550488566,
+      "std": 0.8838840299386679,
+      "min": 1.037781564353426,
+      "p05": 1.3323778137729454,
+      "p25": 1.7211322387104964,
+      "p50": 2.1930770217897875,
+      "p75": 2.8081725466356913,
+      "p95": 4.153959760255797,
+      "max": 6.945247504142174
+    },
+    "through_ticket_volume_target": {
+      "unit": "journeys_per_year",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 41253233.083160006,
+      "std": 14258994.917205423,
+      "min": 12272398.0,
+      "p05": 20448591.92,
+      "p25": 30209125.6,
+      "p50": 39344014.800000004,
+      "p75": 51341515.4,
+      "p95": 67050168.66,
+      "max": 79645488.0
+    },
+    "adoption_margin_fraction": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.03184071072367592,
+      "std": 0.0822980665073073,
+      "min": -0.24920386091173657,
+      "p05": -0.17828920209235186,
+      "p25": -0.08974776050470185,
+      "p50": -0.024731372750495084,
+      "p75": 0.028534763779094155,
+      "p95": 0.09717086081583245,
+      "max": 0.14868864781750268
+    }
+  },
+  "thresholds": {
+    "coordination_budget_buffer_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 7378,
+      "valid_count": 10000,
+      "probability": 0.7378
+    },
+    "clearing_liquidity_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "clearing_coverage_ratio": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "adoption_margin_fraction": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3784,
+      "valid_count": 10000,
+      "probability": 0.3784
+    }
+  },
+  "sensitivity": {
+    "governance_two_year_personnel_cost_eur": {
+      "top_inputs": [
+        {
+          "id": "monthly_fte_cost_eur",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "coordination_budget_buffer_eur": {
+      "top_inputs": [
+        {
+          "id": "residual_program_overhead_eur",
+          "correlation": -0.9985
+        },
+        {
+          "id": "monthly_fte_cost_eur",
+          "correlation": -0.0639
+        }
+      ]
+    },
+    "clearing_liquidity_surplus_eur": {
+      "top_inputs": [
+        {
+          "id": "clearing_liquidity_shock_eur",
+          "correlation": -0.7584
+        },
+        {
+          "id": "initial_clearing_float_eur",
+          "correlation": 0.6489
+        }
+      ]
+    },
+    "clearing_coverage_ratio": {
+      "top_inputs": [
+        {
+          "id": "peak_daily_clearing_obligation_eur",
+          "correlation": -0.9075
+        },
+        {
+          "id": "initial_clearing_float_eur",
+          "correlation": 0.1228
+        }
+      ]
+    },
+    "through_ticket_volume_target": {
+      "top_inputs": [
+        {
+          "id": "eligible_cross_border_journeys_per_year",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "adoption_margin_fraction": {
+      "top_inputs": [
+        {
+          "id": "projected_through_ticket_adoption_fraction",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "coordination_budget_buffer_eur": [
+      {
+        "id": "residual_program_overhead_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0048,
+        "delta_pp": -99.52
+      },
+      {
+        "id": "monthly_fte_cost_eur",
+        "p_pass_low_quartile": 0.762,
+        "p_pass_high_quartile": 0.712,
+        "delta_pp": -5.0
+      }
+    ],
+    "clearing_liquidity_surplus_eur": [
+      {
+        "id": "initial_clearing_float_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "clearing_liquidity_shock_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "clearing_coverage_ratio": [
+      {
+        "id": "initial_clearing_float_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "peak_daily_clearing_obligation_eur",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "adoption_margin_fraction": [
+      {
+        "id": "projected_through_ticket_adoption_fraction",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "coordination_budget_buffer_eur": [
+      {
+        "id": "residual_program_overhead_eur",
+        "direction": "below",
+        "input_percentile_cutoff": 10,
+        "cutoff_value": 161734279.4009233,
+        "conditional_pass_prob": 0.8198,
+        "admitted_fraction": 0.9
+      }
+    ],
+    "adoption_margin_fraction": [
+      {
+        "id": "projected_through_ticket_adoption_fraction",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 0.41016519491500875,
+        "conditional_pass_prob": 1.0,
+        "admitted_fraction": 0.33
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "projected_through_ticket_adoption_fraction",
+      "score": 62.16,
+      "worst_gate": "adoption_margin_fraction",
+      "bound_width_ratio": 1.0,
+      "source": "assumption"
+    },
+    {
+      "id": "residual_program_overhead_eur",
+      "score": 39.1412,
+      "worst_gate": "coordination_budget_buffer_eur",
+      "bound_width_ratio": 1.5,
+      "source": "assumption"
+    },
+    {
+      "id": "monthly_fte_cost_eur",
+      "score": 0.9364,
+      "worst_gate": "coordination_budget_buffer_eur",
+      "bound_width_ratio": 0.7143,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "governance_two_year_personnel_cost_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.7143,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.71"
+      ]
+    },
+    "coordination_budget_buffer_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.1071,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.11"
+      ]
+    },
+    "clearing_liquidity_surplus_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.925,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.93"
+      ]
+    },
+    "clearing_coverage_ratio": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.2865,
+      "reasons": [
+        "1/2 input bounds anchored in data; 1/2 are assumptions",
+        "average bound-width-to-base ratio = 1.29"
+      ]
+    },
+    "through_ticket_volume_target": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 2.125,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 2.12"
+      ]
+    },
+    "adoption_margin_fraction": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 1.0,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 1.00"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,90 @@
+{
+  "drop_in_revenue_mix_share": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.25,
+    "high": 0.30,
+    "rationale": "Base centered on plan commitment of 25%. Premortem and Expert Criticism flag the off-peak rental stream as speculative; low-side reflects the 60%-of-target risk passage, high capped near the source's stated target.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "minimum_viable_hourly_rate_dkk": {
+    "unit": "DKK_per_hour",
+    "low": 50,
+    "base": 165,
+    "high": 200,
+    "rationale": "Plan states 165 DKK/hr as the minimum viable rate but Expert Criticism documents a 50 DKK/hr Local Co-op fallback when uptake fails; high side allows a modest tourist premium.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "labor_law_shock_cost_share": {
+    "unit": "fraction",
+    "low": 0.0,
+    "base": 0.275,
+    "high": 0.35,
+    "rationale": "Review Plan Issue 3 forecasts a 20-35% fixed-labor cost increase if contractor classification is rejected. Low side at zero represents the compliant outcome; base at the 20-35% midpoint; high at the upper named bound.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "year1_revenue_target_dkk": {
+    "unit": "DKK",
+    "low": 1400000,
+    "base": 2000000,
+    "high": 2600000,
+    "rationale": "Source provides no explicit Year 1 revenue target; base anchored at the 2M DKK budget envelope as a working break-even proxy. Spread ±30% reflects high uncertainty noted in the Missing-data items.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "monthly_fte_cost_dkk": {
+    "unit": "DKK_per_month",
+    "low": 28000,
+    "base": 38000,
+    "high": 50000,
+    "rationale": "Greenlandic skilled-instructor pay benchmark; base near 38k DKK/month consistent with Nordic part-time art-instructor rates. Spread reflects the contractor/salaried classification uncertainty named in Review Issue 3.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "months_in_year1": {
+    "unit": "months",
+    "low": 9,
+    "base": 12,
+    "high": 12,
+    "rationale": "Base 12 months for full Year 1 operation. Low side at 9 reflects the September 2026 readiness target slipping into Q4, shortening operational year as flagged in Expert Criticism gate passage.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "off_peak_hours_per_year": {
+    "unit": "hours_per_year",
+    "low": 600,
+    "base": 1200,
+    "high": 1800,
+    "rationale": "Off-peak studio capacity is missing in the source. Base ~1200h/year assumes ~25h/week off-peak across 48 operating weeks; bounds span 12-37h/week to bracket schedule uncertainty.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "drop_in_utilization_rate": {
+    "unit": "fraction",
+    "low": 0.2,
+    "base": 0.4,
+    "high": 0.6,
+    "rationale": "Source flags off-peak rental uptake as speculative; Premortem names a 60%-of-target deficit trigger. Base 0.4 represents partial uptake; low 0.2 the named deficit case; high 0.6 optimistic uptake.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

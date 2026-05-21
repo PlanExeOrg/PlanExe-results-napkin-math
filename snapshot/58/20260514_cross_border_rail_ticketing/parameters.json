@@ -1,0 +1,256 @@
+{
+  "plan_summary": {
+    "plan_name": "EU Cross-Border Rail Through-Ticketing Coordination Program",
+    "plan_type": "public_coordination_program",
+    "primary_goal": "Achieve 40% of eligible cross-border journeys sold as single through-tickets within five years, supported by binding OSDM standards and a solvent clearing mechanism.",
+    "modelling_frame": "Budget allocation against the EUR 1.5B coordination fund, clearing-mechanism liquidity buffers against working-capital shocks, and through-ticket adoption against the 40% target."
+  },
+  "key_values": [
+    {
+      "id": "public_coordination_budget_eur",
+      "label": "Public coordination budget total",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 1500000000,
+      "comment": "Total EU coordination fund covering grants, reference distributor, clearing capitalisation, governance, and reserves.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Public coordination budget total: EUR 1.5 billion"
+    },
+    {
+      "id": "capacity_building_grants_eur",
+      "label": "Capacity-building grants allocation",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 900000000,
+      "comment": "60% of the EUR 1.5B fund earmarked for IT capacity-building grants to national operators.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Capacity building grants: EUR 900M (60% of 1.5B) for national operators."
+    },
+    {
+      "id": "public_reference_distributor_cost_eur",
+      "label": "Public reference distributor 5-year cost",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 150000000,
+      "comment": "10% ring-fenced for establishing and running the public reference distributor over five years.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "medium",
+      "uncertainty": "low",
+      "source_text": "Public reference distributor running costs: 10% (EUR 150M) of 1.5B fund."
+    },
+    {
+      "id": "initial_clearing_float_eur",
+      "label": "Initial clearing mechanism float requirement",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 200000000,
+      "comment": "Liquidity buffer needed to settle inter-carrier obligations at T+3 across busy corridors.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Initial clearing mechanism float: EUR 200 million."
+    },
+    {
+      "id": "emergency_float_reserve_eur",
+      "label": "Emergency Float Reserve",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 300000000,
+      "comment": "Ring-fenced contingency for clearing-mechanism shocks; activated if liquidity dips below 150% of peak daily obligation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Emergency Float Reserve ring-fenced budget: EUR 300 million."
+    },
+    {
+      "id": "through_ticket_adoption_target_fraction",
+      "label": "Through-ticket adoption target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.40,
+      "comment": "Primary five-year success metric: share of eligible cross-border journeys sold as single through-tickets.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Cross-border journeys sold as single through-tickets target proportion: 40% within five years."
+    },
+    {
+      "id": "governance_fte_count",
+      "label": "Governance/standards/testing FTEs (first two years)",
+      "category": "staffing",
+      "value_type": "explicit",
+      "unit": "people",
+      "value": 35,
+      "comment": "35 FTEs across standards, conformance testing, and stakeholder relations; consumes operational overhead not covered by grants.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Personnel capacity: 35 FTEs for governance/standards/testing in the first two years."
+    },
+    {
+      "id": "clearing_liquidity_shock_eur",
+      "label": "Plausible clearing-mechanism liquidity shock",
+      "category": "sensitivity",
+      "value_type": "inferred",
+      "unit": "EUR",
+      "value": 125000000,
+      "comment": "Mid-point of the stated 50-200M working-capital gap that the public budget may need to absorb under under-capitalisation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Under-capitalisation could force EU budget to cover float gaps of EUR 50 to 200 million."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_adoption_target_feasibility",
+      "question": "Does the projected through-ticket volume clear the 40% adoption target?",
+      "why_it_matters": "If projected adoption is below the target, the program's primary success metric is missed.",
+      "formula_hint": "adoption_margin_fraction = projected_through_ticket_adoption_fraction - through_ticket_adoption_target_fraction",
+      "output_name": "adoption_margin_fraction",
+      "output_unit": "fraction",
+      "depends_on": ["projected_through_ticket_adoption_fraction", "through_ticket_adoption_target_fraction"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "eligible_cross_border_journeys_per_year",
+      "label": "Total eligible cross-border journeys per year",
+      "unit": "journeys_per_year",
+      "why_needed": "Denominator for converting the 40% adoption target into an absolute ticket volume and revenue base.",
+      "suggested_estimation_method": "Triangulate from Eurostat cross-border rail passenger statistics for the four launch corridors, with 30-50% uplift for full EU coverage."
+    },
+    {
+      "id": "projected_through_ticket_adoption_fraction",
+      "label": "Projected through-ticket adoption fraction at year five",
+      "unit": "fraction",
+      "why_needed": "Realised quantity tested against the 40% adoption target; without it the gate is dead-ended.",
+      "suggested_estimation_method": "Analogy to PSD2/open-banking adoption curves and distributor uptake projections under cost-recovery royalty caps."
+    },
+    {
+      "id": "peak_daily_clearing_obligation_eur",
+      "label": "Peak daily clearing obligation",
+      "unit": "EUR",
+      "why_needed": "Drives the 150%-of-peak liquidity threshold and so determines the effective coverage of the EUR 200M float.",
+      "suggested_estimation_method": "Estimate from projected daily through-ticket volume times average cross-border fare, with seasonal peak multiplier."
+    },
+    {
+      "id": "monthly_fte_cost_eur",
+      "label": "Average monthly cost per governance/testing FTE",
+      "unit": "EUR_per_FTE_per_month",
+      "why_needed": "Required to size governance operating overhead against the residual coordination budget.",
+      "suggested_estimation_method": "EU institution salary benchmarks for senior technical/regulatory staff plus overhead, typically 12-18k EUR per FTE per month fully loaded."
+    },
+    {
+      "id": "residual_program_overhead_eur",
+      "label": "Other program overheads (testing, governance ops, contingencies outside grants/distributor/reserves)",
+      "unit": "EUR",
+      "why_needed": "Captures unallocated EUR 1.5B coordination-fund consumption beyond grants, reference distributor, reserves, and FTE cost.",
+      "suggested_estimation_method": "Assume 5-15% of the EUR 1.5B fund for testing, audits, legal, and contingency outside the named line items."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "governance_two_year_personnel_cost_eur",
+      "label": "Governance two-year personnel cost",
+      "formula_hint": "governance_two_year_personnel_cost_eur = governance_fte_count * monthly_fte_cost_eur * 24",
+      "output_name": "governance_two_year_personnel_cost_eur",
+      "output_unit": "EUR",
+      "depends_on": ["governance_fte_count", "monthly_fte_cost_eur"],
+      "why_first": "Bottom-up FTE cost is the only way to connect the 35-FTE staffing plan to the budget envelope."
+    },
+    {
+      "id": "coordination_budget_buffer_eur",
+      "label": "Coordination budget buffer after named commitments",
+      "formula_hint": "coordination_budget_buffer_eur = public_coordination_budget_eur - capacity_building_grants_eur - public_reference_distributor_cost_eur - emergency_float_reserve_eur - governance_two_year_personnel_cost_eur - residual_program_overhead_eur",
+      "output_name": "coordination_budget_buffer_eur",
+      "output_unit": "EUR",
+      "depends_on": ["public_coordination_budget_eur", "capacity_building_grants_eur", "public_reference_distributor_cost_eur", "emergency_float_reserve_eur", "governance_two_year_personnel_cost_eur", "residual_program_overhead_eur"],
+      "why_first": "Confirms whether the EUR 1.5B envelope actually covers grants, reference distributor, emergency reserve, governance overhead, and other testing/legal overheads. The EUR 200M operational float is financed via transactional-fee collateral and is not debited from the fund."
+    },
+    {
+      "id": "clearing_liquidity_surplus_eur",
+      "label": "Clearing mechanism liquidity surplus under shock",
+      "formula_hint": "clearing_liquidity_surplus_eur = initial_clearing_float_eur + emergency_float_reserve_eur - clearing_liquidity_shock_eur",
+      "output_name": "clearing_liquidity_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["initial_clearing_float_eur", "emergency_float_reserve_eur", "clearing_liquidity_shock_eur"],
+      "why_first": "Tests whether the EUR 200M float and EUR 300M reserve together absorb the stated 50-200M working-capital shock."
+    },
+    {
+      "id": "clearing_coverage_ratio",
+      "label": "Clearing liquidity coverage versus peak daily obligation",
+      "formula_hint": "clearing_coverage_ratio = (initial_clearing_float_eur + emergency_float_reserve_eur) / (1.5 * peak_daily_clearing_obligation_eur)",
+      "output_name": "clearing_coverage_ratio",
+      "output_unit": "fraction",
+      "depends_on": ["initial_clearing_float_eur", "emergency_float_reserve_eur", "peak_daily_clearing_obligation_eur"],
+      "why_first": "Operationalises the 150%-of-peak-daily-obligation tripwire that triggers reserve activation; ratio >= 1 means the reserve clears the trigger."
+    },
+    {
+      "id": "through_ticket_volume_target",
+      "label": "Absolute through-ticket volume target",
+      "formula_hint": "through_ticket_volume_target = eligible_cross_border_journeys_per_year * through_ticket_adoption_target_fraction",
+      "output_name": "through_ticket_volume_target",
+      "output_unit": "journeys_per_year",
+      "depends_on": ["eligible_cross_border_journeys_per_year", "through_ticket_adoption_target_fraction"],
+      "why_first": "Converts the 40% adoption target into the absolute ticket count distributors and operators must process at year five."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "dg_move_legal_authority_gate",
+      "label": "DG MOVE legal authority for OSDM/enforcement",
+      "why_it_matters": "Without a binding legal mandate from DG MOVE the 'Three Strikes' enforcement and mandatory API exposure cannot be applied to sovereign operators.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Standards remain voluntary; major operators ignore deadlines; the 40% adoption target collapses regardless of budget."
+    },
+    {
+      "id": "incumbent_political_acceptance_gate",
+      "label": "Incumbent operator political acceptance of enforcement",
+      "why_it_matters": "Coordinated lobbying or political resistance by SNCF/DB/OeBB can stall enforcement and the tiered-liability framework outside any modelled threshold.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "6-12 month delays on key routes and weakened liability framework, undermining clearing-mechanism and adoption assumptions."
+    },
+    {
+      "id": "prm_accessibility_compliance_gate",
+      "label": "PRM accessibility schema bound into core standard",
+      "why_it_matters": "Failure to bind PRM accessibility schemas into the month-18 standard creates a regulatory equity breach the deterministic model cannot quantify.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Mandatory non-compliance, fines, and reputational damage that block the program independently of budget or adoption outcomes."
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "plan_summary": {
+    "plan_name": "Automated Paperclip Manufacturing and Fulfillment Pilot",
+    "plan_type": "industrial_automation_pilot",
+    "primary_goal": "Demonstrate end-to-end autonomous paperclip production from API call to staged parcel with documented manual intervention under 2 hours per week, inside a $300k-$500k budget under the 'Builder' strategy.",
+    "modelling_frame": "Tests whether the named hardware, integration, and expert-commissioning components plus a 10% contingency fit under the $500k cap, whether the realised on-site expert contract clears the mandatory $15k floor and stays under the $25k SMART contract cap, and whether the realised manual-intervention load stays under the 2-hour autonomy gate."
+  },
+  "key_values": [
+    {
+      "id": "total_budget_max_usd",
+      "label": "Total program budget ceiling",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 500000,
+      "comment": "Upper bound of the stated $300k-$500k range; breach threshold for the budget gate. Tested by budget_surplus_usd.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total budget range upper bound: $500,000."
+    },
+    {
+      "id": "max_manual_intervention_hours_per_week",
+      "label": "Manual intervention gate (autonomy)",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hours_per_week",
+      "value": 2,
+      "comment": "120-minute weekly cap on manual work; the headline feasibility gate. Tested by manual_intervention_surplus.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Manual intervention permitted: under 2 hours per week."
+    },
+    {
+      "id": "onsite_expert_floor_usd",
+      "label": "Mandatory on-site expert allocation floor",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 15000,
+      "comment": "Issue-3 floor: at least 1 week of on-site PLC expert time must be funded post-rigging. Tested by expert_floor_margin_usd.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Allocate minimum fixed budget of $15,000 for 1 week of dedicated on-site expert time."
+    },
+    {
+      "id": "onsite_expert_contract_cap_usd",
+      "label": "On-site expert contract cap",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 25000,
+      "comment": "Data Collection SMART objective: signed contract must come in below this cap. Tested by expert_cap_margin_usd.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Secure a signed contract for on-site PLC integration support with confirmed cost less than $25,000."
+    },
+    {
+      "id": "opc_ua_middleware_cost_usd",
+      "label": "Outsourced OPC UA middleware allocation",
+      "category": "cost",
+      "value_type": "inferred",
+      "unit": "USD",
+      "value": 50000,
+      "comment": "Q3 assumption: ~$50k of integration budget for the OPC UA middleware abstraction layer. Component of the bottom-up project cost.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "OPC UA middleware development budget assumption is approximately $50,000."
+    },
+    {
+      "id": "wire_bender_midpoint_usd",
+      "label": "Used wire bender allocation (midpoint of $20k-$40k)",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 30000,
+      "comment": "Midpoint of the stated $20k-$40k allocation; component of the bottom-up project cost.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Wire bending machine budget range: $20,000 to $40,000."
+    },
+    {
+      "id": "packing_machine_midpoint_usd",
+      "label": "Packing machine allocation (midpoint of $10k-$30k)",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 20000,
+      "comment": "Midpoint of the stated $10k-$30k allocation; component of the bottom-up project cost.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Packing machine budget is $10,000 to $30,000."
+    },
+    {
+      "id": "contingency_fraction",
+      "label": "Operational contingency fraction of budget",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.10,
+      "comment": "Risk-3 action: 10% contingency on the bottom-up component sum.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Establish a 10% contingency fund; closely monitor expenditures."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "expert_floor_margin_usd",
+      "question": "Does the realised on-site expert allocation clear the $15k Issue-3 floor?",
+      "why_it_matters": "Threshold pairing for onsite_expert_floor_usd: dropping below the floor reverts the integration posture to remote-only, which the source flags as inadequate for legacy PLC debugging.",
+      "formula_hint": "expert_floor_margin_usd = actual_onsite_expert_cost_usd - onsite_expert_floor_usd",
+      "output_name": "expert_floor_margin_usd",
+      "output_unit": "USD",
+      "depends_on": [
+        "actual_onsite_expert_cost_usd",
+        "onsite_expert_floor_usd"
+      ]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_manual_intervention_hours_per_week",
+      "label": "Realised manual-intervention hours per operational week",
+      "unit": "hours_per_week",
+      "why_needed": "Drives the autonomy-gate margin against the 2-hour cap.",
+      "suggested_estimation_method": "Pilot log over a 4-week stabilisation window after expert engagement; sensitivity from Issue 2 (10% material variance can reduce 2-hour goal probability 50-70%)."
+    },
+    {
+      "id": "actual_onsite_expert_cost_usd",
+      "label": "Realised on-site expert contract cost",
+      "unit": "USD",
+      "why_needed": "Tested against the $15k floor and the $25k cap; also a component of the bottom-up project cost.",
+      "suggested_estimation_method": "Firm quotes from specialist PLC integrators with 1-week mobilisation; cross-check against the $7k-$12k emergency rate from Issue 3."
+    },
+    {
+      "id": "permits_and_safety_cost_usd",
+      "label": "Permits, OSHA compliance, and safety-interlock cost",
+      "unit": "USD",
+      "why_needed": "Component of the bottom-up project cost; the source does not name a separate allocation.",
+      "suggested_estimation_method": "Third-party regulatory consultant quote during Phase 1; cross-check against the Risk-1 $10k-$20k cost-increase band."
+    },
+    {
+      "id": "rigging_and_install_cost_usd",
+      "label": "Rigging, install, and physical-integration labour cost",
+      "unit": "USD",
+      "why_needed": "Component of the bottom-up project cost; Expert Criticism flags integration labour for Phases 3 and 5 as underbudgeted.",
+      "suggested_estimation_method": "Fixed-price rigging quotes for the 4,000 sq ft pilot cell after equipment selection."
+    },
+    {
+      "id": "internal_developer_cost_usd",
+      "label": "Internal developer / control-software labour cost",
+      "unit": "USD",
+      "why_needed": "Component of the bottom-up project cost; Risk 4 names single-developer bottleneck risk.",
+      "suggested_estimation_method": "Loaded FTE rate times planned developer-weeks across the 6-phase plan."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "subtotal_named_components_usd",
+      "label": "Sum of named project components (before contingency)",
+      "formula_hint": "subtotal_named_components_usd = wire_bender_midpoint_usd + packing_machine_midpoint_usd + opc_ua_middleware_cost_usd + actual_onsite_expert_cost_usd + permits_and_safety_cost_usd + rigging_and_install_cost_usd + internal_developer_cost_usd",
+      "output_name": "subtotal_named_components_usd",
+      "output_unit": "USD",
+      "depends_on": [
+        "wire_bender_midpoint_usd",
+        "packing_machine_midpoint_usd",
+        "opc_ua_middleware_cost_usd",
+        "actual_onsite_expert_cost_usd",
+        "permits_and_safety_cost_usd",
+        "rigging_and_install_cost_usd",
+        "internal_developer_cost_usd"
+      ],
+      "why_first": "Bottom-up sum of named draws against the cap; preserves each named component as a primitive instead of collapsing into a flat total."
+    },
+    {
+      "id": "total_project_cost_estimate_usd",
+      "label": "Bottom-up project cost with contingency",
+      "formula_hint": "total_project_cost_estimate_usd = subtotal_named_components_usd * (1 + contingency_fraction)",
+      "output_name": "total_project_cost_estimate_usd",
+      "output_unit": "USD",
+      "depends_on": [
+        "subtotal_named_components_usd",
+        "contingency_fraction"
+      ],
+      "why_first": "Applies the 10% Risk-3 contingency to the named-component sum; tested against the $500k cap."
+    },
+    {
+      "id": "budget_surplus_usd",
+      "label": "Budget headroom against the $500k cap",
+      "formula_hint": "budget_surplus_usd = total_budget_max_usd - total_project_cost_estimate_usd",
+      "output_name": "budget_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": [
+        "total_budget_max_usd",
+        "total_project_cost_estimate_usd"
+      ],
+      "why_first": "Primary budget-breach gate; positive means the bottom-up estimate fits inside the cap."
+    },
+    {
+      "id": "manual_intervention_surplus_hours_per_week",
+      "label": "Manual-intervention margin against the autonomy gate",
+      "formula_hint": "manual_intervention_surplus_hours_per_week = max_manual_intervention_hours_per_week - actual_manual_intervention_hours_per_week",
+      "output_name": "manual_intervention_surplus_hours_per_week",
+      "output_unit": "hours_per_week",
+      "depends_on": [
+        "max_manual_intervention_hours_per_week",
+        "actual_manual_intervention_hours_per_week"
+      ],
+      "why_first": "Primary autonomy-feasibility gate; positive means the pilot meets the headline feasibility goal."
+    },
+    {
+      "id": "expert_cap_margin_usd",
+      "label": "On-site expert contract margin against the $25k cap",
+      "formula_hint": "expert_cap_margin_usd = onsite_expert_contract_cap_usd - actual_onsite_expert_cost_usd",
+      "output_name": "expert_cap_margin_usd",
+      "output_unit": "USD",
+      "depends_on": [
+        "onsite_expert_contract_cap_usd",
+        "actual_onsite_expert_cost_usd"
+      ],
+      "why_first": "Threshold pairing for the $25k SMART contract cap; positive means contract fits inside the named ceiling."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "building_electrical_osha_permits_gate",
+      "label": "Building, electrical, and OSHA permits granted in Phase 1",
+      "why_it_matters": "Phase 2+ cannot begin until permits are in hand; failure halts physical install regardless of any financial gate.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Project blocked at Phase 1; sunk costs on design and pre-procurement without operational continuation."
+    },
+    {
+      "id": "control_architecture_resolution_gate",
+      "label": "Formal OPC UA vs. custom-I/O selection signed off by D+10",
+      "why_it_matters": "Without an architecture decision the integration timeline cannot start; binary architect sign-off the model cannot simulate.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Control System Protocol Selection blocked; software phases stall; scope creep for the internal developer."
+    },
+    {
+      "id": "wire_bender_fieldbus_support_gate",
+      "label": "Selected wire bender supports a documented fieldbus protocol by D+14",
+      "why_it_matters": "Premortem stops the purchase if the chosen machine lacks fieldbus support; integration then becomes a custom-driver gamble the plan refuses to take.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Purchase blocked; alternative bender must be sourced, or strategy pivots to a custom-I/O posture with budget implications."
+    },
+    {
+      "id": "carrier_staging_acceptance_gate",
+      "label": "Carrier accepts fixed-table staging for the Phase 6 demo",
+      "why_it_matters": "Phase 6 demo depends on carrier acceptance of fixed-table mechanical handoff rather than dynamic conveyor staging; binary external decision.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Phase 6 demonstration fails; mechanical handoff must be re-engineered with dynamic staging at additional CAPEX."
+    }
+  ]
+}

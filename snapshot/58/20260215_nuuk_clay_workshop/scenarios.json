@@ -1,0 +1,149 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Nuuk Community Clay Workshop",
+    "plan_type": "commercial community-arts venture"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "year1_total_budget_dkk": 2000000,
+        "contingency_reserve_share": 0.15,
+        "drop_in_revenue_mix_share": 0.15,
+        "minimum_viable_hourly_rate_dkk": 50,
+        "fte_equivalent_count": 2,
+        "labor_law_shock_cost_share": 0.0,
+        "year1_revenue_target_dkk": 1400000,
+        "monthly_fte_cost_dkk": 28000,
+        "months_in_year1": 9,
+        "off_peak_hours_per_year": 600,
+        "drop_in_utilization_rate": 0.2,
+        "contingency_reserve_dkk": 300000.0,
+        "annual_labor_cost_dkk": 504000.0,
+        "drop_in_revenue_shortfall_dkk": 204000.0,
+        "labor_law_shock_dkk": 0.0,
+        "contingency_after_shocks_surplus_dkk": 96000.0,
+        "budget_after_labor_margin_dkk": 1496000.0
+      },
+      "outputs": {
+        "contingency_reserve_dkk": 300000.0,
+        "annual_labor_cost_dkk": 504000.0,
+        "drop_in_revenue_shortfall_dkk": 204000.0,
+        "labor_law_shock_dkk": 0.0,
+        "contingency_after_shocks_surplus_dkk": 96000.0,
+        "budget_after_labor_margin_dkk": 1496000.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "year1_total_budget_dkk": 2000000,
+        "contingency_reserve_share": 0.15,
+        "drop_in_revenue_mix_share": 0.25,
+        "minimum_viable_hourly_rate_dkk": 165,
+        "fte_equivalent_count": 2,
+        "labor_law_shock_cost_share": 0.275,
+        "year1_revenue_target_dkk": 2000000,
+        "monthly_fte_cost_dkk": 38000,
+        "months_in_year1": 12,
+        "off_peak_hours_per_year": 1200,
+        "drop_in_utilization_rate": 0.4,
+        "contingency_reserve_dkk": 300000.0,
+        "annual_labor_cost_dkk": 912000.0,
+        "drop_in_revenue_shortfall_dkk": 420800.0,
+        "labor_law_shock_dkk": 250800.0,
+        "contingency_after_shocks_surplus_dkk": -371600.0,
+        "budget_after_labor_margin_dkk": 1088000.0
+      },
+      "outputs": {
+        "contingency_reserve_dkk": 300000.0,
+        "annual_labor_cost_dkk": 912000.0,
+        "drop_in_revenue_shortfall_dkk": 420800.0,
+        "labor_law_shock_dkk": 250800.0,
+        "contingency_after_shocks_surplus_dkk": -371600.0,
+        "budget_after_labor_margin_dkk": 1088000.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "year1_total_budget_dkk": 2000000,
+        "contingency_reserve_share": 0.15,
+        "drop_in_revenue_mix_share": 0.30,
+        "minimum_viable_hourly_rate_dkk": 200,
+        "fte_equivalent_count": 2,
+        "labor_law_shock_cost_share": 0.35,
+        "year1_revenue_target_dkk": 2600000,
+        "monthly_fte_cost_dkk": 50000,
+        "months_in_year1": 12,
+        "off_peak_hours_per_year": 1800,
+        "drop_in_utilization_rate": 0.6,
+        "contingency_reserve_dkk": 300000.0,
+        "annual_labor_cost_dkk": 1200000.0,
+        "drop_in_revenue_shortfall_dkk": 564000.0,
+        "labor_law_shock_dkk": 420000.0,
+        "contingency_after_shocks_surplus_dkk": -684000.0,
+        "budget_after_labor_margin_dkk": 800000.0
+      },
+      "outputs": {
+        "contingency_reserve_dkk": 300000.0,
+        "annual_labor_cost_dkk": 1200000.0,
+        "drop_in_revenue_shortfall_dkk": 564000.0,
+        "labor_law_shock_dkk": 420000.0,
+        "contingency_after_shocks_surplus_dkk": -684000.0,
+        "budget_after_labor_margin_dkk": 800000.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "contingency_reserve_dkk": {
+        "low": 300000.0,
+        "base": 300000.0,
+        "high": 300000.0,
+        "unit": "DKK",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0.0
+      },
+      "annual_labor_cost_dkk": {
+        "low": 504000.0,
+        "base": 912000.0,
+        "high": 1200000.0,
+        "unit": "DKK",
+        "spread_ratio": 2.380952380952381,
+        "spread_absolute": 696000.0
+      },
+      "drop_in_revenue_shortfall_dkk": {
+        "low": 204000.0,
+        "base": 420800.0,
+        "high": 564000.0,
+        "unit": "DKK",
+        "spread_ratio": 2.764705882352941,
+        "spread_absolute": 360000.0
+      },
+      "labor_law_shock_dkk": {
+        "low": 0.0,
+        "base": 250800.0,
+        "high": 420000.0,
+        "unit": "DKK",
+        "spread_ratio": null,
+        "spread_absolute": 420000.0
+      },
+      "contingency_after_shocks_surplus_dkk": {
+        "low": 96000.0,
+        "base": -371600.0,
+        "high": -684000.0,
+        "unit": "DKK",
+        "spread_ratio": -7.125,
+        "spread_absolute": -780000.0
+      },
+      "budget_after_labor_margin_dkk": {
+        "low": 1496000.0,
+        "base": 1088000.0,
+        "high": 800000.0,
+        "unit": "DKK",
+        "spread_ratio": 0.5347593582887701,
+        "spread_absolute": -696000.0
+      }
+    }
+  },
+  "warnings": []
+}

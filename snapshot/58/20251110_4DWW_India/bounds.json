@@ -1,0 +1,46 @@
+{
+  "aggregate_risk_shock_cost_inr_crore": {
+    "unit": "INR_crore",
+    "low": 60,
+    "base": 200,
+    "high": 700,
+    "rationale": "Sums stated stress_test shocks under partial/full realisation: Risk 1 regulatory delay sunk INR 150-300 cr, Risk 2 data integrity INR 50 cr, Risk 3 post-incentive overrun up to INR 300 cr, Risk 5 political crisis INR 10 cr. Low reflects only the smaller items materialising; high reflects concurrent regulatory + incentive overrun realisations.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "realised_sme_share": {
+    "unit": "fraction",
+    "low": 0.30,
+    "base": 0.50,
+    "high": 0.55,
+    "rationale": "Base centered on plan commitment 0.5 (DEFAULT); no plan-internal passage anchors a shift. Spread anchored on Risk 4 (high likelihood selection bias toward large unionized firms) and SME burnout risk in Premortem — adverse realisation drives SME share down toward 0.3; small upside cushion from mandated MOUs.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "realised_optin_rate": {
+    "unit": "fraction",
+    "low": 0.55,
+    "base": 0.75,
+    "high": 0.88,
+    "rationale": "Base centered on plan commitment 0.75 (DEFAULT); no plan-internal passage anchors a base shift. Asymmetric low side anchored on Expert Criticism stress_test 'low voluntary uptake from high-maturity firms due to lack of compelling operational tool', tied to delayed Killer App; upside capped by voluntary structure.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "realised_productivity_retention_fraction": {
+    "unit": "fraction",
+    "low": 0.50,
+    "base": 0.75,
+    "high": 0.95,
+    "rationale": "Base shifted below the 0.95 plan threshold (negative margin at base) anchored on Review Issue 2 'Sustainability of Productivity Gains Post-Incentive Expiry' which mandates a 'Sustained Performance Model' assuming 50% attrition of grant-driven efficiency in the first 12 months post-expiry, with a 75% sustained-productivity floor that triggers formal review.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

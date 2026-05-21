@@ -1,0 +1,143 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Yellowstone Caldera Red Warning Evacuation (Pioneer Strategy)",
+    "plan_type": "emergency_response"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "zone_zero_population": 35800,
+        "zone_zero_clearance_window_hours": 6,
+        "zone_zero_clearance_target_fraction": 0.98,
+        "available_helicopter_sorties": 10,
+        "airlift_staging_target_fraction": 0.30,
+        "c2_fuel_cache_target_hours": 72,
+        "zone_one_n95_units_required": 100000,
+        "vehicle_throughput_per_hour": 1800,
+        "occupants_per_vehicle": 2.0,
+        "sortie_payload_kg": 5000,
+        "c2_node_ups_baseline_hours": 24,
+        "required_evacuee_throughput_per_hour": 5846.666666666667,
+        "achievable_evacuee_throughput_per_hour": 3600.0,
+        "evacuation_throughput_surplus": -2246.666666666667,
+        "airlift_staging_surplus_kg": 48500.0,
+        "c2_fuel_cache_surplus_hours": 48
+      },
+      "outputs": {
+        "required_evacuee_throughput_per_hour": 5846.666666666667,
+        "achievable_evacuee_throughput_per_hour": 3600.0,
+        "evacuation_throughput_surplus": -2246.666666666667,
+        "airlift_staging_surplus_kg": 48500.0,
+        "c2_fuel_cache_surplus_hours": 48
+      }
+    },
+    "base": {
+      "inputs": {
+        "zone_zero_population": 35800,
+        "zone_zero_clearance_window_hours": 6,
+        "zone_zero_clearance_target_fraction": 0.98,
+        "available_helicopter_sorties": 10,
+        "airlift_staging_target_fraction": 0.30,
+        "c2_fuel_cache_target_hours": 72,
+        "zone_one_n95_units_required": 100000,
+        "vehicle_throughput_per_hour": 3600,
+        "occupants_per_vehicle": 2.8,
+        "sortie_payload_kg": 9000,
+        "c2_node_ups_baseline_hours": 36,
+        "required_evacuee_throughput_per_hour": 5846.666666666667,
+        "achievable_evacuee_throughput_per_hour": 10080.0,
+        "evacuation_throughput_surplus": 4233.333333333333,
+        "airlift_staging_surplus_kg": 88500.0,
+        "c2_fuel_cache_surplus_hours": 36
+      },
+      "outputs": {
+        "required_evacuee_throughput_per_hour": 5846.666666666667,
+        "achievable_evacuee_throughput_per_hour": 10080.0,
+        "evacuation_throughput_surplus": 4233.333333333333,
+        "airlift_staging_surplus_kg": 88500.0,
+        "c2_fuel_cache_surplus_hours": 36
+      }
+    },
+    "high": {
+      "inputs": {
+        "zone_zero_population": 35800,
+        "zone_zero_clearance_window_hours": 6,
+        "zone_zero_clearance_target_fraction": 0.98,
+        "available_helicopter_sorties": 10,
+        "airlift_staging_target_fraction": 0.30,
+        "c2_fuel_cache_target_hours": 72,
+        "zone_one_n95_units_required": 100000,
+        "vehicle_throughput_per_hour": 4800,
+        "occupants_per_vehicle": 3.5,
+        "sortie_payload_kg": 12000,
+        "c2_node_ups_baseline_hours": 48,
+        "required_evacuee_throughput_per_hour": 5846.666666666667,
+        "achievable_evacuee_throughput_per_hour": 16800.0,
+        "evacuation_throughput_surplus": 10953.333333333334,
+        "airlift_staging_surplus_kg": 118500.0,
+        "c2_fuel_cache_surplus_hours": 24
+      },
+      "outputs": {
+        "required_evacuee_throughput_per_hour": 5846.666666666667,
+        "achievable_evacuee_throughput_per_hour": 16800.0,
+        "evacuation_throughput_surplus": 10953.333333333334,
+        "airlift_staging_surplus_kg": 118500.0,
+        "c2_fuel_cache_surplus_hours": 24
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "required_evacuee_throughput_per_hour": {
+        "low": 5846.666666666667,
+        "base": 5846.666666666667,
+        "high": 5846.666666666667,
+        "unit": "people_per_hour",
+        "spread_ratio": 1.0,
+        "spread_absolute": 0
+      },
+      "achievable_evacuee_throughput_per_hour": {
+        "low": 3600.0,
+        "base": 10080.0,
+        "high": 16800.0,
+        "unit": "people_per_hour",
+        "spread_ratio": 4.666666666666667,
+        "spread_absolute": 13200.0
+      },
+      "evacuation_throughput_surplus": {
+        "low": -2246.666666666667,
+        "base": 4233.333333333333,
+        "high": 10953.333333333334,
+        "unit": "people_per_hour",
+        "spread_ratio": null,
+        "spread_absolute": 13200.000000000002
+      },
+      "airlift_staging_surplus_kg": {
+        "low": 48500.0,
+        "base": 88500.0,
+        "high": 118500.0,
+        "unit": "kg",
+        "spread_ratio": 2.443298969072165,
+        "spread_absolute": 70000.0
+      },
+      "c2_fuel_cache_surplus_hours": {
+        "low": 48,
+        "base": 36,
+        "high": 24,
+        "unit": "hours",
+        "spread_ratio": 0.5,
+        "spread_absolute": -24
+      }
+    }
+  },
+  "warnings": [
+    {
+      "stage": "run_scenarios",
+      "scenario": null,
+      "calculation": "q_jurisdictional_friction_delay",
+      "message": "Skipped: formula_hint is null.",
+      "severity": "WARN"
+    }
+  ]
+}

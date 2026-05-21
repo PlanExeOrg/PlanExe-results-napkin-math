@@ -1,0 +1,256 @@
+{
+  "plan_summary": {
+    "plan_name": ".mars gTLD Application",
+    "plan_type": "Internet governance / gTLD registry acquisition",
+    "primary_goal": "Secure ICANN delegation of the .mars gTLD within 18 months under the 'Builder' strategy, with internal HSM-based DNSSEC control and a viable Year 1 financial base before the 50% revenue pledge re-activates.",
+    "modelling_frame": "Tests Year 1 financial viability of the registry: whether the upfront budget envelope covers HSM CapEx, base OpEx, and the contingency draw from regulatory/political and string-contention shocks, and whether projected Year 1 revenue covers base overhead before the suspended 50% pledge resumes."
+  },
+  "key_values": [
+    {
+      "id": "initial_budget_envelope_usd",
+      "label": "Initial budget envelope",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 25000000,
+      "comment": "Plan-committed minimum capital allocation; upper bound is $100M+. Lower bound is the validated viability floor.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "initial budget envelope between USD 25M and USD 100M or more"
+    },
+    {
+      "id": "hsm_capex_usd",
+      "label": "Internal HSM CapEx (mandatory reallocation)",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 7500000,
+      "comment": "Mandatory $5M-$10M CapEx reallocated from contingency for internal HSM procurement, reversing external DNSSEC delegation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "mandatory $5M-$10M CapEx immediately reallocated for internal HSM procurement"
+    },
+    {
+      "id": "contingency_reserve_usd",
+      "label": "Dedicated contingency fund",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 15000000,
+      "comment": "Ring-fenced $10M-$20M buffer for legal defense, lobbying, and string-contention auctions; absorbs regulatory and political shocks.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "dedicated contingency fund buffer ($10M-$20M range)"
+    },
+    {
+      "id": "revenue_pledge_fraction",
+      "label": "Net revenue pledge to research fund",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.5,
+      "comment": "50% of net registry revenue committed to environmental/science fund; currently suspended until $25M+ overhead is covered.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "net revenue commitment of 50% to scientific research fund"
+    },
+    {
+      "id": "regulatory_shock_cost_usd",
+      "label": "Regulatory objection cost shock",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "USD",
+      "value": 7500000,
+      "comment": "Stress-test magnitude $5M-$10M extra cost on regulatory objection; drives draw on contingency reserve.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Defense budget impact of USD 5M-10M extra cost upon regulatory objection"
+    },
+    {
+      "id": "string_contention_overrun_usd",
+      "label": "String contention / compliance cost overrun",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "USD",
+      "value": 15000000,
+      "comment": "Financial risk overrun of $10M-$20M from string contention or trademark issues; primary contingency draw.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "high",
+      "source_text": "Financial risk overrun from string contention or compliance costs is modeled at $10M-$20M"
+    },
+    {
+      "id": "political_backlash_cost_usd",
+      "label": "Political backlash extra legal cost",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "USD",
+      "value": 3000000,
+      "comment": "Stress-test $2M-$4M extra legal cost from political backlash over private planetary namespace operation.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "medium",
+      "uncertainty": "medium",
+      "source_text": "Political backlash over private operation causes 3-6 month delays plus $2M-$4M extra legal costs"
+    },
+    {
+      "id": "review_duration_months",
+      "label": "ICANN review duration",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 18,
+      "comment": "18-month time-bound completion target (start to 2027-Nov-02 delegation); sets burn-rate denominator.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Within 18 months of project start (Target Completion: 2027-November-02)"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_breakeven_volume_feasibility",
+      "question": "Is the implied Year 1 registration volume to cover base overhead plausible for a brand-new planetary-namespace gTLD?",
+      "why_it_matters": "Expert criticism flagged the 50% pledge as unsupported by any volume-price-OpEx model; pledge resumes only after this gate clears.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": ["breakeven_registrations_y1"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "avg_registration_price_usd",
+      "label": "Average .mars registration price (Year 1)",
+      "unit": "USD",
+      "why_needed": "Required to compute Year 1 revenue and break-even registration volume against base OpEx plus HSM CapEx.",
+      "suggested_estimation_method": "Anchor on historical new-gTLD wholesale prices ($10-$200/domain) and premium-niche TLDs; bracket widely given novelty."
+    },
+    {
+      "id": "y1_registration_volume",
+      "label": "Year 1 .mars registration volume",
+      "unit": "domains",
+      "why_needed": "Drives total Year 1 revenue and tests the unverified break-even claim in Expert Criticism Issue 2.",
+      "suggested_estimation_method": "Anchor on first-year volumes of novelty/niche new gTLDs (typically 1k-50k domains in Year 1) with wide spread."
+    },
+    {
+      "id": "annual_opex_usd",
+      "label": "Annual base OpEx ceiling",
+      "unit": "USD",
+      "why_needed": "Required to compute net revenue and determine whether base overhead is covered before the 50% pledge resumes.",
+      "suggested_estimation_method": "Distill assumption: $5M-$10M OpEx mentioned in Issue 2; bracket against 5-FTE staffing plus Tier 1 cloud DNS infrastructure."
+    },
+    {
+      "id": "string_contention_probability",
+      "label": "Probability of string contention or formal objection",
+      "unit": "fraction",
+      "why_needed": "Determines whether the $10M-$20M overrun is drawn against contingency; gates contingency_after_shocks calculation.",
+      "suggested_estimation_method": "Anchor on ICANN historical contention rate for novel single-word TLDs (~30-50%); .mars uniqueness elevates likelihood."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "calc_y1_revenue",
+      "label": "Year 1 registry revenue",
+      "formula_hint": "y1_revenue_usd = y1_registration_volume * avg_registration_price_usd",
+      "output_name": "y1_revenue_usd",
+      "output_unit": "USD",
+      "depends_on": ["y1_registration_volume", "avg_registration_price_usd"],
+      "why_first": "Establishes top-line revenue magnitude required for every break-even and pledge-survival test."
+    },
+    {
+      "id": "calc_breakeven_registrations",
+      "label": "Year 1 break-even registration volume",
+      "formula_hint": "breakeven_registrations_y1 = annual_opex_usd / avg_registration_price_usd",
+      "output_name": "breakeven_registrations_y1",
+      "output_unit": "domains",
+      "depends_on": ["annual_opex_usd", "avg_registration_price_usd"],
+      "why_first": "Expert Criticism Issue 2 demands this; tests whether the implied volume to cover base OpEx is realistic before the 50% pledge resumes."
+    },
+    {
+      "id": "calc_y1_revenue_surplus",
+      "label": "Year 1 revenue surplus after OpEx and 50% pledge",
+      "formula_hint": "y1_revenue_surplus_usd = y1_revenue_usd - annual_opex_usd - revenue_pledge_fraction * max(0, y1_revenue_usd - annual_opex_usd)",
+      "output_name": "y1_revenue_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["y1_revenue_usd", "annual_opex_usd", "revenue_pledge_fraction"],
+      "why_first": "Gate: positive surplus after OpEx AND the 50% pledge means the plan covers base overhead even with the pledge active; negative means the pledge must stay suspended or the operating base drains."
+    },
+    {
+      "id": "calc_contingency_after_shocks",
+      "label": "Contingency reserve after expected shocks",
+      "formula_hint": "contingency_after_shocks_surplus_usd = contingency_reserve_usd - string_contention_overrun_usd * string_contention_probability - regulatory_shock_cost_usd - political_backlash_cost_usd",
+      "output_name": "contingency_after_shocks_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["contingency_reserve_usd", "string_contention_overrun_usd", "string_contention_probability", "regulatory_shock_cost_usd", "political_backlash_cost_usd"],
+      "why_first": "Tests whether the ring-fenced $10M-$20M contingency absorbs the named shocks; positive = the contingency line item survives."
+    },
+    {
+      "id": "calc_capital_runway_surplus",
+      "label": "Capital runway surplus over 18-month review",
+      "formula_hint": "capital_runway_surplus_usd = initial_budget_envelope_usd - hsm_capex_usd - (annual_opex_usd * review_duration_months / 12) - contingency_reserve_usd",
+      "output_name": "capital_runway_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["initial_budget_envelope_usd", "hsm_capex_usd", "annual_opex_usd", "review_duration_months", "contingency_reserve_usd"],
+      "why_first": "Tests whether the $25M floor budget covers HSM CapEx plus 18 months of OpEx plus the contingency line item; positive = the floor is viable; negative = the plan requires the upper budget range to survive."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "icann_delegation_approval_gate",
+      "label": "ICANN delegation approval",
+      "why_it_matters": "Without ICANN's Board approving the .mars delegation, no operational scenario matters; this is the binding regulatory authorization the model treats as a fixed yes/no input rather than a sampled probability.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "The registry never operates; all budgeted CapEx and OpEx is sunk cost."
+    },
+    {
+      "id": "space_agency_endorsement_gate",
+      "label": "Major space agency public endorsement",
+      "why_it_matters": "The 'Builder' strategy hinges on securing observational support / non-objection from at least two major space agencies before ICANN review; failure unwinds the political legitimacy claim.",
+      "source_anchor": "executive_summary",
+      "consequence_if_false": "ICANN review momentum stalls; political backlash risk (Risk 5) realizes at the high end."
+    },
+    {
+      "id": "sovereign_acceptance_gate",
+      "label": "Sovereign / international body acceptance of private planetary namespace",
+      "why_it_matters": "Premortem and Expert Criticism repeatedly warn that ITU/UN COPUOS or government objection to private operation of a planetary namespace is an existential gate the financial model cannot test.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Delegation rejected or reversed; the entire 7-year governance pathway collapses."
+    },
+    {
+      "id": "fips_140_2_certification_gate",
+      "label": "Internal HSM FIPS 140-2 Level 3 certification",
+      "why_it_matters": "Data Collection Item 3 mandates this certification by Q4 2026 to invalidate the externally-delegated DNSSEC posture; failure forfeits cryptographic sovereignty per Expert Criticism.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Plan reverts to outsourced DNSSEC, re-introducing the existential security risk experts flagged."
+    }
+  ]
+}

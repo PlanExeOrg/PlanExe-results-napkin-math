@@ -1,0 +1,87 @@
+{
+  "total_transition_budget_floor_dkk": {
+    "unit": "DKK",
+    "low": 15000000000,
+    "base": 20000000000,
+    "high": 25000000000,
+    "rationale": "Plan states DKK 15-25B reference range over 6 years. Base at midpoint; low/high mirror the stated reference floor/ceiling. Triangular within stated envelope (this is the committed envelope, not bottom-up CAPEX).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "inflation_excess_over_baseline_pp": {
+    "unit": "fraction",
+    "low": 0.0,
+    "base": 0.02,
+    "high": 0.04,
+    "rationale": "Premortem stress scenario quantifies +2pp shock (~DKK 2.2B real-value erosion); spread from zero (no excess) to 4pp matches eurozone post-2022 inflation excursions over multi-year horizons.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "estimated_transition_cost_dkk": {
+    "unit": "DKK",
+    "low": 12000000000,
+    "base": 20000000000,
+    "high": 40000000000,
+    "rationale": "Megaproject CAPEX: bottom-up cost across legal, IT integration (TARGET2), cash logistics, comms. Right-skewed range per iron law of megaprojects; high reflects Risk 4 and Risk 9 schedule-driven overruns. Triangular pending lognormal sampler.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "cash_logistics_shock_cost_dkk": {
+    "unit": "DKK",
+    "low": 50000000,
+    "base": 100000000,
+    "high": 200000000,
+    "rationale": "Risk 5 / Premortem state DKK 100M overhead if dual circulation extends 1-3 months. Spread brackets the stated 100M with 2x downside coverage and 2x upside for compounded security/logistics failure.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "transition_duration_years": {
+    "unit": "years",
+    "low": 4,
+    "base": 6,
+    "high": 8,
+    "rationale": "Plan states 4-8 year window post political decision; budget reference uses 6 years as midpoint. Integer bounds reflect annual indexation review cycles.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "baseline_inflation_rate": {
+    "unit": "fraction",
+    "low": 0.01,
+    "base": 0.02,
+    "high": 0.035,
+    "rationale": "ECB inflation target 2%; eurozone CPI has ranged ~1-3.5% over comparable multi-year windows. Expert criticism cites 2027 CPI factor 1.015 as benchmark.",
+    "source": "data",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "estimated_public_info_required_cost_dkk": {
+    "unit": "DKK",
+    "low": 60000000,
+    "base": 120000000,
+    "high": 250000000,
+    "rationale": "Comparable EU adoption / referendum campaigns in mid-sized member states ran DKK-equivalent 60-250M for multi-year sustained messaging. Base aligned with the stated 0.5%-of-budget allocation magnitude (~DKK 100M at floor envelope).",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "correlations": [
+    {
+      "group_id": "inflation_pressure",
+      "variables": ["baseline_inflation_rate", "inflation_excess_over_baseline_pp"],
+      "rho": 0.5,
+      "rationale": "Premortem and Issue 2 (Review Plan) jointly forecast that if eurozone inflation runs high, the excess-over-baseline shock co-moves with it — both reflect the same macroeconomic regime affecting budget real value."
+    }
+  ]
+}

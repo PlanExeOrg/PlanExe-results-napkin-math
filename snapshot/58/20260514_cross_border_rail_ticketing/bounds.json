@@ -1,0 +1,79 @@
+{
+  "initial_clearing_float_eur": {
+    "unit": "EUR",
+    "low": 150000000,
+    "base": 200000000,
+    "high": 280000000,
+    "rationale": "Base at the plan's stated EUR 200M float for the busiest corridors. Spread reflects the Review Plan's noted dependency on peak-daily-obligation sizing and Issue 2's flag that the float may need recapitalisation if velocity is low.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "clearing_liquidity_shock_eur": {
+    "unit": "EUR",
+    "low": 50000000,
+    "base": 125000000,
+    "high": 200000000,
+    "rationale": "Stress-test magnitude from the Premortem and Review Plan: EUR 50-200M working-capital gap if clearing under-capitalises. Triangular over the stated band; no anchor for a wider tail.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "eligible_cross_border_journeys_per_year": {
+    "unit": "journeys_per_year",
+    "low": 30000000,
+    "base": 80000000,
+    "high": 200000000,
+    "rationale": "Eurostat cross-border passenger rail volumes for EU put plausible eligible cross-border journeys in the tens to low hundreds of millions per year; wide spread reflects definitional ambiguity (point-to-point vs. ticket count).",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "projected_through_ticket_adoption_fraction": {
+    "unit": "fraction",
+    "low": 0.15,
+    "base": 0.40,
+    "high": 0.55,
+    "rationale": "Base centered on plan commitment 0.40 (DEFAULT); no plan-internal passage anchors a shift. Low-side spread reflects Risk 7 (distributor adoption friction) and Risk 1 (operator non-compliance); high capped under 0.6 as a stretch ceiling.",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "peak_daily_clearing_obligation_eur": {
+    "unit": "EUR",
+    "low": 50000000,
+    "base": 130000000,
+    "high": 300000000,
+    "rationale": "Plan's EUR 200M float sized for busiest corridors implies peak daily obligation broadly in this band; spread reflects uncertainty about velocity and corridor scope expansion.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "monthly_fte_cost_eur": {
+    "unit": "EUR_per_FTE_per_month",
+    "low": 10000,
+    "base": 14000,
+    "high": 20000,
+    "rationale": "EU institution and seconded national-regulator senior technical/policy staff typically cost 10-20k EUR per FTE per month fully loaded (salary, benefits, overhead, travel).",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "residual_program_overhead_eur": {
+    "unit": "EUR",
+    "low": 50000000,
+    "base": 100000000,
+    "high": 200000000,
+    "rationale": "Unallocated coordination-fund spend (testing audits, legal, contingency) typically 3-15% of a multi-year EU program envelope; here roughly EUR 50-200M against the EUR 1.5B fund after named line items.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "India 4-Day Work Week National Pilot",
+    "plan_type": "public_policy_pilot"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "formal_track_budget_inr_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1400.0,
+      "std": 0.0,
+      "min": 1400.0,
+      "p05": 1400.0,
+      "p25": 1400.0,
+      "p50": 1400.0,
+      "p75": 1400.0,
+      "p95": 1400.0,
+      "max": 1400.0
+    },
+    "contingency_reserve_inr_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 200.0,
+      "std": 0.0,
+      "min": 200.0,
+      "p05": 200.0,
+      "p25": 200.0,
+      "p50": 200.0,
+      "p75": 200.0,
+      "p95": 200.0,
+      "max": 200.0
+    },
+    "contingency_shock_buffer_inr_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -117.83286694078609,
+      "std": 135.8531679543719,
+      "min": -490.68459069304186,
+      "p05": -371.9348046036021,
+      "p25": -213.9326808071596,
+      "p50": -97.11425866946635,
+      "p75": -9.214178844685435,
+      "p95": 71.94323005724597,
+      "max": 138.10162731889562
+    },
+    "productivity_grants_pool_inr_crore": {
+      "unit": "INR_crore",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1120.0,
+      "std": 0.0,
+      "min": 1120.0,
+      "p05": 1120.0,
+      "p25": 1120.0,
+      "p50": 1120.0,
+      "p75": 1120.0,
+      "p95": 1120.0,
+      "max": 1120.0
+    },
+    "productivity_retention_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.21501282920841205,
+      "std": 0.09190690126615847,
+      "min": -0.44915556697788184,
+      "p05": -0.37393921277280584,
+      "p25": -0.28002683212881596,
+      "p50": -0.21106653912493556,
+      "p75": -0.14876392511392228,
+      "p95": -0.06470221727584162,
+      "max": -0.0016060718601018653
+    },
+    "sme_share_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.05026538103902638,
+      "std": 0.05445580181966001,
+      "min": -0.1987408108340003,
+      "p05": -0.15077558180337525,
+      "p25": -0.08963981104201312,
+      "p50": -0.042207792335481775,
+      "p75": -0.0059663682658480655,
+      "p95": 0.02546902882799819,
+      "max": 0.0491591963496687
+    },
+    "optin_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.02372391612537567,
+      "std": 0.06785071429949899,
+      "min": -0.1981023935904619,
+      "p05": -0.1411445269289595,
+      "p25": -0.07314966956045829,
+      "p50": -0.019508435587320128,
+      "p75": 0.02610209452101578,
+      "p95": 0.08305193667596686,
+      "max": 0.12871475868277793
+    }
+  },
+  "thresholds": {
+    "contingency_shock_buffer_inr_crore": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2169,
+      "valid_count": 10000,
+      "probability": 0.2169
+    },
+    "productivity_retention_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    }
+  },
+  "sensitivity": {
+    "formal_track_budget_inr_crore": {
+      "top_inputs": []
+    },
+    "contingency_reserve_inr_crore": {
+      "top_inputs": []
+    },
+    "contingency_shock_buffer_inr_crore": {
+      "top_inputs": [
+        {
+          "id": "aggregate_risk_shock_cost_inr_crore",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "productivity_grants_pool_inr_crore": {
+      "top_inputs": []
+    },
+    "productivity_retention_margin": {
+      "top_inputs": [
+        {
+          "id": "realised_productivity_retention_fraction",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "sme_share_margin": {
+      "top_inputs": [
+        {
+          "id": "realised_sme_share",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "optin_margin": {
+      "top_inputs": [
+        {
+          "id": "realised_optin_rate",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "contingency_shock_buffer_inr_crore": [
+      {
+        "id": "aggregate_risk_shock_cost_inr_crore",
+        "p_pass_low_quartile": 0.8676,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -86.76
+      }
+    ],
+    "productivity_retention_margin": [
+      {
+        "id": "realised_productivity_retention_fraction",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "contingency_shock_buffer_inr_crore": [
+      {
+        "id": "aggregate_risk_shock_cost_inr_crore",
+        "direction": "below",
+        "input_percentile_cutoff": 75,
+        "cutoff_value": 209.21417884468542,
+        "conditional_pass_prob": 0.8676,
+        "admitted_fraction": 0.25
+      }
+    ]
+  },
+  "missing_value_priority": [],
+  "model_confidence": {
+    "formal_track_budget_inr_crore": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "contingency_reserve_inr_crore": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "contingency_shock_buffer_inr_crore": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 3.2,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 3.20"
+      ]
+    },
+    "productivity_grants_pool_inr_crore": {
+      "grade": "HIGH",
+      "reasons": [
+        "all inputs are fixed values"
+      ]
+    },
+    "productivity_retention_margin": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.60"
+      ]
+    },
+    "sme_share_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.5,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.50"
+      ]
+    },
+    "optin_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.44,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.44"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

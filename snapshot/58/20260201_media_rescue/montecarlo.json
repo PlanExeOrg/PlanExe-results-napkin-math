@@ -1,0 +1,290 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Containerized Dark Data Ingestor Network (CDDIN)",
+    "plan_type": "industrial infrastructure deployment"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "fleet_capex_total_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 109991735.3959461,
+      "std": 9442465.03353313,
+      "min": 90146304.56008926,
+      "p05": 95719360.55706832,
+      "p25": 102822695.21755761,
+      "p50": 108966488.5508802,
+      "p75": 116738684.74833928,
+      "p95": 126938300.23895136,
+      "max": 134723683.72456852
+    },
+    "fleet_lifetime_opex_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 798623643.5354025,
+      "std": 92508222.5664944,
+      "min": 601647704.6109614,
+      "p05": 659070305.1924356,
+      "p25": 729194938.0565281,
+      "p50": 788318034.8889236,
+      "p75": 864193825.7898663,
+      "p95": 966819215.5845761,
+      "max": 1043949464.1701431
+    },
+    "program_budget_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -658615378.9313487,
+      "std": 93032142.92670806,
+      "min": -909798943.7204788,
+      "p05": -828020526.4071963,
+      "p25": -724456450.3867604,
+      "p50": -648522233.7880924,
+      "p75": -588665992.71478,
+      "p95": -518289816.55530417,
+      "max": -452688714.45524144
+    },
+    "realised_review_load_fraction": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.13454464226593033,
+      "std": 0.022239252187846857,
+      "min": 0.09212283525734222,
+      "p05": 0.1030641651001153,
+      "p25": 0.1168101557355372,
+      "p50": 0.13143968726518612,
+      "p75": 0.15023687976043343,
+      "p95": 0.17581361273857044,
+      "max": 0.19501133432610426
+    },
+    "review_load_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 0.06545535773406966,
+      "std": 0.022239252187846857,
+      "min": 0.004988665673895748,
+      "p05": 0.024186387261429562,
+      "p25": 0.0497631202395666,
+      "p50": 0.06856031273481387,
+      "p75": 0.08318984426446281,
+      "p95": 0.09693583489988469,
+      "max": 0.1078771647426578
+    },
+    "phase1_budget_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 35704550.21537926,
+      "std": 3089681.4657280603,
+      "min": 22324505.021819923,
+      "p05": 30145641.49563447,
+      "p25": 33736386.92265761,
+      "p50": 35966864.43600985,
+      "p75": 37965302.33859161,
+      "p95": 40291080.4871935,
+      "max": 44543373.38285111
+    }
+  },
+  "thresholds": {
+    "program_budget_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 0,
+      "valid_count": 10000,
+      "probability": 0.0
+    },
+    "review_load_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "phase1_budget_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    }
+  },
+  "sensitivity": {
+    "fleet_capex_total_usd": {
+      "top_inputs": [
+        {
+          "id": "capex_per_miu_usd",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "fleet_lifetime_opex_usd": {
+      "top_inputs": [
+        {
+          "id": "annual_opex_per_miu_usd",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "program_budget_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "annual_opex_per_miu_usd",
+          "correlation": -0.9948
+        },
+        {
+          "id": "capex_per_miu_usd",
+          "correlation": -0.1061
+        }
+      ]
+    },
+    "realised_review_load_fraction": {
+      "top_inputs": [
+        {
+          "id": "ai_false_positive_rate",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "review_load_margin": {
+      "top_inputs": [
+        {
+          "id": "ai_false_positive_rate",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "phase1_budget_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "phase1_duration_years",
+          "correlation": -0.8048
+        },
+        {
+          "id": "annual_opex_per_miu_usd",
+          "correlation": -0.5
+        },
+        {
+          "id": "capex_per_miu_usd",
+          "correlation": -0.3056
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "program_budget_surplus_usd": [
+      {
+        "id": "annual_opex_per_miu_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "capex_per_miu_usd",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "review_load_margin": [
+      {
+        "id": "ai_false_positive_rate",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "phase1_budget_surplus_usd": [
+      {
+        "id": "annual_opex_per_miu_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "capex_per_miu_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "phase1_duration_years",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {},
+  "missing_value_priority": [],
+  "model_confidence": {
+    "fleet_capex_total_usd": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.4286,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.43"
+      ]
+    },
+    "fleet_lifetime_opex_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.60"
+      ]
+    },
+    "program_budget_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.5143,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.51"
+      ]
+    },
+    "realised_review_load_fraction": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.45,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.45"
+      ]
+    },
+    "review_load_margin": {
+      "grade": "HIGH",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.45,
+      "reasons": [
+        "2/2 input bounds anchored in data; 0/2 are assumptions",
+        "average bound-width-to-base ratio = 0.45"
+      ]
+    },
+    "phase1_budget_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.6762,
+      "reasons": [
+        "3/3 input bounds anchored in data; 0/3 are assumptions",
+        "average bound-width-to-base ratio = 0.68"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

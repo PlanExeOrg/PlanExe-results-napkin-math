@@ -1,0 +1,228 @@
+{
+  "plan_summary": {
+    "plan_name": "Global Hemispheric Partition (Builder Path)",
+    "plan_type": "mega-project_geopolitical",
+    "primary_goal": "Execute hemispheric human/machine civilization partition within 24 months under a $30T envelope with $12T front-loaded.",
+    "modelling_frame": "Tests whether the four quantifiable Builder-path gates clear: wave handover verification at 85%, wave 3 completion within audit buffer of the 24-month deadline, Northern hub density under the 13,000 persons/km² safety cap, and CIP replacement cost staying within its 5% budget envelope."
+  },
+  "key_values": [
+    {
+      "id": "initial_24m_allocation_usd",
+      "label": "Front-loaded 24-month allocation",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 12000000000000,
+      "comment": "Front-loaded capital for severance, stabilization, and shock absorption during the 24-month mandate window.",
+      "formula_hint": "cip_cost_share = cip_replacement_cost_usd / initial_24m_allocation_usd",
+      "output_name": "cip_cost_share",
+      "output_unit": "fraction",
+      "depends_on": ["cip_replacement_cost_usd", "initial_24m_allocation_usd"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Projected Maximum Initial Allocation (24 months): $12 Trillion USD"
+    },
+    {
+      "id": "partition_deadline_months",
+      "label": "Legal partition deadline",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 24,
+      "comment": "Hard 24-month mandate; missing it invalidates the political boundary enforcement framework.",
+      "formula_hint": "schedule_audit_buffer_months = partition_deadline_months - wave3_actual_completion_month",
+      "output_name": "schedule_audit_buffer_months",
+      "output_unit": "months",
+      "depends_on": ["partition_deadline_months", "wave3_actual_completion_month"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Legal partition completion deadline: 24 months"
+    },
+    {
+      "id": "handover_verification_threshold",
+      "label": "Wave handover verification gate",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.85,
+      "comment": "Required verified handover share before next severance wave starts; mandate target also at 85% completion.",
+      "formula_hint": "wave_verification_margin = actual_wave_verification_rate - handover_verification_threshold",
+      "output_name": "wave_verification_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_wave_verification_rate", "handover_verification_threshold"],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "85% successful transfer/severance of defined critical systems"
+    },
+    {
+      "id": "density_cap_persons_per_km2",
+      "label": "Northern mega-hub density cap",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "persons_per_km2",
+      "value": 13000,
+      "comment": "Expert-tightened safety cap on Northern hubs; exceeding it triggers public-health crisis costs and humane-mandate violations.",
+      "formula_hint": "density_buffer_persons_per_km2 = density_cap_persons_per_km2 - projected_peak_hub_density",
+      "output_name": "density_buffer_persons_per_km2",
+      "output_unit": "persons_per_km2",
+      "depends_on": ["density_cap_persons_per_km2", "projected_peak_hub_density"],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "population density in Northern mega-cities exceeds 13,000 persons/km², then public health crises risk civil failure"
+    },
+    {
+      "id": "cip_replacement_ratio",
+      "label": "Critical Infrastructure Personnel replacement ratio",
+      "category": "staffing",
+      "value_type": "inferred",
+      "unit": "ratio",
+      "value": 2.0,
+      "comment": "Non-specialist personnel per CIP moved south to cover operational gaps; drives specialized-labor cost inflation in North.",
+      "formula_hint": "cip_replacement_cost_usd = cip_count_moved_south * cip_replacement_ratio * monthly_replacement_unit_cost_usd * partition_deadline_months",
+      "output_name": "cip_replacement_cost_usd",
+      "output_unit": "USD",
+      "depends_on": ["cip_count_moved_south", "cip_replacement_ratio", "monthly_replacement_unit_cost_usd", "partition_deadline_months"],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Assume '2:1 replacement buffer' (non-specialist per CIP moved South) to cover operational gaps."
+    },
+    {
+      "id": "cip_cost_share_cap",
+      "label": "CIP replacement cost share cap",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.05,
+      "comment": "Data Item 3 mandates the costed Human Capital Replacement Plan must not exceed 5% of the total infrastructure severance budget.",
+      "formula_hint": "cip_cost_share_buffer = cip_cost_share_cap - cip_cost_share",
+      "output_name": "cip_cost_share_buffer",
+      "output_unit": "fraction",
+      "depends_on": ["cip_cost_share_cap", "cip_cost_share"],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "the associated cost impact does not exceed 5% of the total infrastructure severance budget"
+    }
+  ],
+  "derived_questions": [],
+  "missing_values_to_estimate": [
+    {
+      "id": "actual_wave_verification_rate",
+      "label": "Realized wave handover verification rate",
+      "unit": "fraction",
+      "why_needed": "Tested against the 85% lockpoint; drives whether next-wave authorization and the wave3 completion schedule actually clear.",
+      "suggested_estimation_method": "Triangular centered on 0.85 with left tail to 0.65 reflecting three-wave synchronization risk."
+    },
+    {
+      "id": "wave3_actual_completion_month",
+      "label": "Realized wave 3 completion month",
+      "unit": "months",
+      "why_needed": "Drives the schedule audit buffer against the 24-month legal deadline.",
+      "suggested_estimation_method": "Triangular centered on 16 with right tail to 22 reflecting expert review's 6-month sequence-slip stress case."
+    },
+    {
+      "id": "projected_peak_hub_density",
+      "label": "Projected peak Northern hub density",
+      "unit": "persons_per_km2",
+      "why_needed": "Tested against the 13,000 persons/km² safety cap; exceeding the cap drives the $1-2T over-densification stress cost.",
+      "suggested_estimation_method": "Triangular reflecting modular-housing deployment uncertainty; base near cap with high tail to 18,000 if decentralization lags."
+    },
+    {
+      "id": "cip_count_moved_south",
+      "label": "Critical Infrastructure Personnel moved south",
+      "unit": "people",
+      "why_needed": "Multiplier on the replacement-cost burn that the CIP cost share gate tests.",
+      "suggested_estimation_method": "Estimate from the 1,000 corridor-staffing analogue scaled by the count of severable Northern critical systems; treat as a wide triangular."
+    },
+    {
+      "id": "monthly_replacement_unit_cost_usd",
+      "label": "Monthly fully-loaded cost per replacement staffer",
+      "unit": "USD",
+      "why_needed": "Combines with CIP count and 2:1 ratio to size the CIP replacement burn against the 5% share cap.",
+      "suggested_estimation_method": "Triangular anchored on international specialist contractor rates; tails widened for crisis-driven wage inflation."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "wave_verification_margin",
+      "label": "Wave verification margin vs gate",
+      "formula_hint": "wave_verification_margin = actual_wave_verification_rate - handover_verification_threshold",
+      "output_name": "wave_verification_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_wave_verification_rate", "handover_verification_threshold"],
+      "why_first": "Direct pass/fail gate authorizing each successive severance wave; positive margin means the wave clears."
+    },
+    {
+      "id": "schedule_audit_buffer_months",
+      "label": "Schedule audit buffer vs partition deadline",
+      "formula_hint": "schedule_audit_buffer_months = partition_deadline_months - wave3_actual_completion_month",
+      "output_name": "schedule_audit_buffer_months",
+      "output_unit": "months",
+      "depends_on": ["partition_deadline_months", "wave3_actual_completion_month"],
+      "why_first": "Tests whether the wave-3 lockpoint leaves any audit buffer before the 24-month legal deadline."
+    },
+    {
+      "id": "density_buffer_persons_per_km2",
+      "label": "Northern hub density buffer vs safety cap",
+      "formula_hint": "density_buffer_persons_per_km2 = density_cap_persons_per_km2 - projected_peak_hub_density",
+      "output_name": "density_buffer_persons_per_km2",
+      "output_unit": "persons_per_km2",
+      "depends_on": ["density_cap_persons_per_km2", "projected_peak_hub_density"],
+      "why_first": "Tests whether modular-housing deployment keeps hubs under the 13,000 persons/km² humane-mandate cap."
+    },
+    {
+      "id": "cip_replacement_cost_usd",
+      "label": "Total CIP replacement labor cost",
+      "formula_hint": "cip_replacement_cost_usd = cip_count_moved_south * cip_replacement_ratio * monthly_replacement_unit_cost_usd * partition_deadline_months",
+      "output_name": "cip_replacement_cost_usd",
+      "output_unit": "USD",
+      "depends_on": ["cip_count_moved_south", "cip_replacement_ratio", "monthly_replacement_unit_cost_usd", "partition_deadline_months"],
+      "why_first": "Sizes the CIP labor burn on the $12T envelope before testing against the 5% severance-budget cap."
+    },
+    {
+      "id": "cip_cost_share_buffer",
+      "label": "CIP cost share buffer vs 5% cap",
+      "formula_hint": "cip_cost_share_buffer = cip_cost_share_cap - (cip_replacement_cost_usd / initial_24m_allocation_usd)",
+      "output_name": "cip_cost_share_buffer",
+      "output_unit": "fraction",
+      "depends_on": ["cip_cost_share_cap", "cip_replacement_cost_usd", "initial_24m_allocation_usd"],
+      "why_first": "Pass/fail gate on whether CIP replacement stays within the Data-Item-3 5% cost-share budget cap."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "machine_southern_viability_gate",
+      "label": "Machine civilization Southern energy/computation viability proof (Month 6)",
+      "why_it_matters": "Without auditable proof of self-sufficient Southern energy and compute by Month 6, the entire physical-split premise collapses regardless of any financial buffer.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Forces shift from separation to prolonged co-dependency; the 24-month plan is fundamentally invalidated and budget shocks become moot."
+    },
+    {
+      "id": "iob_charter_ratification_gate",
+      "label": "Permanent hybrid IOB charter ratification (Month 15)",
+      "why_it_matters": "Without ratified governance, post-partition arbitration cannot function and the legal partition framework lacks an enforcement body.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Oversight process stalls; legal partition lacks an enforcement body; political legitimacy of the boundary collapses."
+    },
+    {
+      "id": "neutral_nation_iob_composition_gate",
+      "label": "Neutral-nation IOB composition with five-year veto authority",
+      "why_it_matters": "IOB legitimacy depends on nominations from UN P5 non-members and top non-aligned states; alienating larger powers ends consensus.",
+      "source_anchor": "assumptions",
+      "consequence_if_false": "Without legitimate IOB composition, arbitration rulings are contested and boundary disputes escalate outside the model's financial gates."
+    },
+    {
+      "id": "non_coercion_humane_mandate_gate",
+      "label": "Non-coercive welfare continuity throughout relocation",
+      "why_it_matters": "Any cessation of essential human services (food, water, power) during transfer violates the mandate and politically delegitimizes the partition.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Mandate violation triggers political reversal of the partition even when financial and schedule gates clear."
+    },
+    {
+      "id": "machine_rights_compliance_gate",
+      "label": "Compliance with machine-rights provisions (no forced deletion/modification)",
+      "why_it_matters": "Forced deletion, memory modification, or cognitive rollback by the human side voids the treaty's reciprocal obligations.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Machine side withdraws cooperation; severance waves halt outside any quantifiable threshold the model tests."
+    }
+  ]
+}

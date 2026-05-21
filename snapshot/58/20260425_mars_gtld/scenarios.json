@@ -1,0 +1,146 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": ".mars gTLD Application",
+    "plan_type": "Internet governance / gTLD registry acquisition"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "initial_budget_envelope_usd": 25000000,
+        "hsm_capex_usd": 5000000,
+        "contingency_reserve_usd": 10000000,
+        "revenue_pledge_fraction": 0.5,
+        "regulatory_shock_cost_usd": 5000000,
+        "string_contention_overrun_usd": 5000000,
+        "political_backlash_cost_usd": 2000000,
+        "review_duration_months": 15,
+        "avg_registration_price_usd": 25,
+        "y1_registration_volume": 1000,
+        "annual_opex_usd": 5000000,
+        "string_contention_probability": 0.2,
+        "y1_revenue_usd": 25000,
+        "breakeven_registrations_y1": 200000.0,
+        "y1_revenue_surplus_usd": -4975000.0,
+        "contingency_after_shocks_surplus_usd": 2000000.0,
+        "capital_runway_surplus_usd": 3750000.0
+      },
+      "outputs": {
+        "y1_revenue_usd": 25000,
+        "breakeven_registrations_y1": 200000.0,
+        "y1_revenue_surplus_usd": -4975000.0,
+        "contingency_after_shocks_surplus_usd": 2000000.0,
+        "capital_runway_surplus_usd": 3750000.0
+      }
+    },
+    "base": {
+      "inputs": {
+        "initial_budget_envelope_usd": 50000000,
+        "hsm_capex_usd": 7500000,
+        "contingency_reserve_usd": 15000000,
+        "revenue_pledge_fraction": 0.5,
+        "regulatory_shock_cost_usd": 7500000,
+        "string_contention_overrun_usd": 15000000,
+        "political_backlash_cost_usd": 3000000,
+        "review_duration_months": 18,
+        "avg_registration_price_usd": 75,
+        "y1_registration_volume": 5000,
+        "annual_opex_usd": 7500000,
+        "string_contention_probability": 0.4,
+        "y1_revenue_usd": 375000,
+        "breakeven_registrations_y1": 100000.0,
+        "y1_revenue_surplus_usd": -7125000.0,
+        "contingency_after_shocks_surplus_usd": -1500000.0,
+        "capital_runway_surplus_usd": 16250000.0
+      },
+      "outputs": {
+        "y1_revenue_usd": 375000,
+        "breakeven_registrations_y1": 100000.0,
+        "y1_revenue_surplus_usd": -7125000.0,
+        "contingency_after_shocks_surplus_usd": -1500000.0,
+        "capital_runway_surplus_usd": 16250000.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "initial_budget_envelope_usd": 100000000,
+        "hsm_capex_usd": 10000000,
+        "contingency_reserve_usd": 20000000,
+        "revenue_pledge_fraction": 0.5,
+        "regulatory_shock_cost_usd": 10000000,
+        "string_contention_overrun_usd": 30000000,
+        "political_backlash_cost_usd": 4000000,
+        "review_duration_months": 27,
+        "avg_registration_price_usd": 200,
+        "y1_registration_volume": 25000,
+        "annual_opex_usd": 12000000,
+        "string_contention_probability": 0.7,
+        "y1_revenue_usd": 5000000,
+        "breakeven_registrations_y1": 60000.0,
+        "y1_revenue_surplus_usd": -7000000.0,
+        "contingency_after_shocks_surplus_usd": -15000000.0,
+        "capital_runway_surplus_usd": 43000000.0
+      },
+      "outputs": {
+        "y1_revenue_usd": 5000000,
+        "breakeven_registrations_y1": 60000.0,
+        "y1_revenue_surplus_usd": -7000000.0,
+        "contingency_after_shocks_surplus_usd": -15000000.0,
+        "capital_runway_surplus_usd": 43000000.0
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "y1_revenue_usd": {
+        "low": 25000,
+        "base": 375000,
+        "high": 5000000,
+        "unit": "USD",
+        "spread_ratio": 200.0,
+        "spread_absolute": 4975000
+      },
+      "breakeven_registrations_y1": {
+        "low": 200000.0,
+        "base": 100000.0,
+        "high": 60000.0,
+        "unit": "domains",
+        "spread_ratio": 0.3,
+        "spread_absolute": -140000.0
+      },
+      "y1_revenue_surplus_usd": {
+        "low": -4975000.0,
+        "base": -7125000.0,
+        "high": -7000000.0,
+        "unit": "USD",
+        "spread_ratio": null,
+        "spread_absolute": -2025000.0
+      },
+      "contingency_after_shocks_surplus_usd": {
+        "low": 2000000.0,
+        "base": -1500000.0,
+        "high": -15000000.0,
+        "unit": "USD",
+        "spread_ratio": -7.5,
+        "spread_absolute": -17000000.0
+      },
+      "capital_runway_surplus_usd": {
+        "low": 3750000.0,
+        "base": 16250000.0,
+        "high": 43000000.0,
+        "unit": "USD",
+        "spread_ratio": 11.466666666666667,
+        "spread_absolute": 39250000.0
+      }
+    }
+  },
+  "warnings": [
+    {
+      "stage": "run_scenarios",
+      "scenario": null,
+      "calculation": "q_breakeven_volume_feasibility",
+      "message": "Skipped: formula_hint is null.",
+      "severity": "WARN"
+    }
+  ]
+}

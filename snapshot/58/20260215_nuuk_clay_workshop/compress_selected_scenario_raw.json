@@ -1,0 +1,621 @@
+{
+  "section_summary": "This section identifies the definitive operational plan as 'The Builder's Balance: Measured Growth and Community Integration,' setting the specific lever configurations for staffing, revenue strategy, utility management, community outreach, and initial budget contingency which must be used for all downstream quantitative analysis.",
+  "numeric_values": [
+    {
+      "line_english": "Year 1 total budget: 2 million DKK \u2014 input to initial capital allocation model",
+      "line_original": "Budget: 2 million DKK for Year 1",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Budget: 2 million DKK for Year 1",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Contingency reserve commitment: 15% of total Year 1 budget \u2014 protective allocation for startup variance",
+      "line_original": "Commit 15% of the total Year 1 budget as an untouchable operating contingency",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Commit 15% of the total Year 1 budget",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Staffing model equivalence: two (2) FTE salary equivalents \u2014 input to baseline Year 1 burn rate",
+      "line_original": "effectively operating with two full-time equivalents salary-wise for Year 1",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "two full-time equivalents salary-wise for Year 1",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Allocated studio time dedicated to Katuaq programming: 10% per month \u2014 capacity constraint on commercial use",
+      "line_original": "dedicating 10% of monthly studio time slots specifically for Katuaq-led programming",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "10% of monthly studio time slots",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Number of part-time instructors: four (4) \u2014 input to fixed labor cost basis",
+      "line_original": "Staff the teaching team with four part-time instructors",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "four part-time instructors",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Duration of fixed local membership pricing: six (6) months \u2014 period for revenue assumption stability",
+      "line_original": "Limit local membership sales entirely for the first six months",
+      "modelling_relevance": 3,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "first six months",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "Revenue stability relies on a tiered access fee structure where non-workshop attendees pay high hourly rental rates.",
+      "line_original": "open studio hours rely entirely on a high hourly rental rate for non-enrolled individuals.",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "open studio hours rely entirely on a high hourly rental rate",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The facility setup requires handling higher shipping costs for materials from Denmark or Iceland.",
+      "line_original": "higher costs for shipping clay and equipment from Denmark/Iceland",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "inferred",
+      "source_quote": "higher costs for shipping clay",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The workshop demands managing special Greenland-specific requirements for clay drying and space heating.",
+      "line_original": "heating and drying space for clay",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "inferred",
+      "source_quote": "heating and drying space for clay",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Demand will experience strong seasonal peaks between June and October, requiring utilization strategies for the off-season.",
+      "line_original": "strong seasonal demand; long supplier lead times",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "strong seasonal demand",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The chosen staffing model relies on instructors covering specialized topics, with the lead instructor managing general studio hours.",
+      "line_original": "Utilize the four part-time roles for specialized topics only, relying on the lead instructor to manage all general studio hours",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Utilize the four part-time roles for specialized topics only",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Kiln efficiency will be managed by centralizing firing in an insulated space, accepting longer curing times.",
+      "line_original": "Centralize all drying and firing functions into a single, heavily insulated, dedicated basement space with dedicated heating controls, accepting longer clay curing times",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Centralize all drying and firing functions into a single",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If the contingency fund falls below zero, then the project cannot cover unforeseen startup hurdles.",
+      "line_original": "Commit 15% of the total Year 1 budget as an untouchable operating contingency",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "untouchable operating contingency",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the utilization rate is too low during the off-season, the fixed wage burden from salaried instructors may not be justified.",
+      "line_original": "demanding high year-round utilization rates to meet the break-even target",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "demanding high year-round utilization rates",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the revenue structure prioritizes low-margin memberships, then the cash flow needed for equipment upkeep may be delayed.",
+      "line_original": "Prioritizing high-volume, low-margin membership subscriptions establishes critical community foot traffic... but this delays reaching the required cash flow",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "Prioritizing high-volume, low-margin membership subscriptions",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If high upfront investment in efficient kiln technology occurs, then this starves the contingency funds needed for initial maintenance.",
+      "line_original": "Prioritizing advanced kiln technology reduces long-term utility spend, but the associated high upfront capital investment depletes the contingency funds",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "upfront capital investment depletes the contingency funds",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If instructor absences occur, then session reliability critical to the 'third place' mandate may be undermined.",
+      "line_original": "Contracting instructors reduces fixed costs during quiet months but guarantees session cancellations when illness strikes, undermining the reliability expectation",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "guarantees session cancellations when illness strikes",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Instructor absence when using the contract-only model leads to session cancellations, undermining the community hub reliability.",
+      "line_original": "Contracting instructors reduces fixed costs during quiet months but guarantees session cancellations when illness strikes, undermining the reliability expectation",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "stress_test",
+      "source_quote": "session cancellations when illness strikes",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Over-reliance on high-margin tourist workshops may alienate local regulars, shifting the social atmosphere away from the mission.",
+      "line_original": "Focusing only on high-margin, short-duration tourist drop-ins creates an inconsistent environment potentially alienating local regulars.",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "alienating local regulars",
+      "quote_verified": true
+    },
+    {
+      "line_english": "High upfront capital investment in efficient kiln technology depletes early contingency funds available for unexpected building maintenance issues.",
+      "line_original": "high upfront capital investment... depletes the contingency funds needed for unexpected building maintenance early on",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "investment... depletes the contingency funds",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Aggressive off-peak firing schedules required by utility optimization complicate the flexible drop-in studio schedule, causing coordination friction.",
+      "line_original": "Implementing aggressive off-peak firing schedules stabilizes utility costs but forces coordination requirements that may complicate the flexible drop-in studio schedule.",
+      "modelling_relevance": 3,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "forces coordination requirements that may complicate",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Formal partnership integration with Katuaq introduces administrative overhead and external reporting obligations consuming staff time.",
+      "line_original": "Formally embed the workshop as the exclusive satellite ceramics provider for Katuaq, dedicating 10% of monthly studio time slots",
+      "modelling_relevance": 3,
+      "source_evidence": 3,
+      "source_status": "stress_test",
+      "source_quote": "introduces administrative overhead and external reporting obligations",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Target revenue per month for Year 1 \u2014 needed to calculate utilization required to cover fixed costs.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Number of months in Year 1 operation \u2014 needed to annualize the 2 million DKK budget and fixed costs.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Average tourist workshop price per 5-day session \u2014 needed to project high-margin revenue stream contribution.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Hours per month of open-studio time provided \u2014 needed to scale high hourly rental revenue rates.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Electricity cost per kWh \u2014 needed to determine operational expense from kiln/heating profiles.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Clay material cost per kilogram \u2014 needed to calculate variable studio supply consumption against membership/drop-in rates.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 19,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 354,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nClay Workshop, Nuuk, Greenland. A community clay workshop located near Katuaq Cultural Centre offering weekly drop-in sessions and recurring courses in hand-building and wheel work. It should feel like a social \"third place\" where people return regularly to work with clay and socialize. The workshop targets locals (Nuuk ~20,000) and tourists, with seasonal peaks in summer (June\u2013October) and winter. Staff the teaching team with four part-time instructors so that illness or absence does not cancel sessions. Operational setup includes open-studio hours, fixed 4\u20136 week courses, and a mix of memberships and drop-ins. The location near Katuaq and Nuuk Center provides visibility and cultural alignment. Greenland-specific factors: higher costs for shipping clay and equipment from Denmark/Iceland; heating and drying space for clay; strong seasonal demand; long supplier lead times. Budget: 2 million DKK for Year 1 (startup, equipment, fit-out, rent, four teachers, utilities, supplies, marketing). Pick a realistic, low-risk scenario. Avoid overly ambitious scenarios.\n\nToday's date:\n2026-May-10\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Creating a community-focused, profit-oriented venture offering ceramics instruction and studio access, managing local operational challenges like supply chain and seasonal demand.\n\n**Topic:** Establishment and operation of a community clay workshop in Nuuk, Greenland.\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan is to establish and operate a physical Clay Workshop in Nuuk, Greenland. This involves numerous physical requirements: securing and fitting out a physical commercial space, purchasing, installing, and maintaining physical equipment (kilns, wheels), physically procuring and handling materials (clay, glazes), managing physical utilities (heating, drying space), and conducting in-person drop-in sessions and recurring courses. Even the budgeting and staffing decisions are rooted in supporting the physical operations and the resulting in-person service delivery.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"b35d9620-65b5-4e52-a65c-51f17717e805\",\"name\":\"Instructor Staffing Model and Session Reliability\",\"consequences\":\"Maintaining four part-time instructors ensures reliability against individual absence, which is critical for a social third place; however, it introduces a high fixed wage burden during the identified low season (November\\u2013February). This increases the baseline operational burn rate significantly, demanding high year-round utilization rates to meet the break-even target.\",\"options\":[\"Staff all four instructors on a contract basis tied only to scheduled course dates and drop-in hours, transferring all non-session idle time risk back to the instructors.\",\"Convert two instructors to salaried, year-round roles focusing their non-teaching time on equipment maintenance, community outreach, and curriculum development to justify the fixed cost.\",\"Utilize the four part-time roles for specialized topics only, relying on the lead instructor to manage all general studio hours, effectively operating with two full-time equivalents salary-wise for Year 1.\"],\"review\":\"Contracting instructors reduces fixed costs during quiet months but guarantees session cancellations when illness strikes, undermining the reliability expectation of a community hub.\",\"description\":\"This lever dictates handling staffing risks inherent in operating a physical social hub in Nuuk. Success means maintaining reliable, scheduled sessions through instructor absence coverage. It directly manages the trade-off between fixed labor cost stability and operational resilience, demanding robust utilization, especially during lower-demand shoulder seasons, to leverage the salary investment.\",\"synergy_text\":\"Directly enables Community Integration and Cultural Alignment by ensuring scheduled programming continuity. It also supports Membership Value Proposition Calibration through consistent service availability.\",\"conflict_text\":\"This lever heavily conflicts with Startup Budget Allocation for Contingency by increasing fixed baseline costs. It also challenges Kiln Firing and Energy Cost Management due to higher baseline heating needs.\"},{\"lever_id\":\"0fbae6e1-c9fa-4ee1-81a3-6bf6d070e3f8\",\"name\":\"Revenue Stream Prioritization Matrix\",\"consequences\":\"Prioritizing high-volume, low-margin membership subscriptions establishes critical community foot traffic necessary for the 'third place' atmosphere, but this delays reaching the required cash flow needed for equipment upkeep. Focusing only on high-margin, short-duration tourist drop-ins maximizes immediate revenue but creates an inconsistent environment potentially alienating local regulars.\",\"options\":[\"Peg all monthly local memberships at a price point equivalent to one drop-in session, making sustained community presence functionally free to maximize repeat social utility.\",\"Limit local membership sales entirely for the first six months, focusing all marketing efforts and studio time on premium, all-inclusive 5-day tourist workshops requiring full pre-payment.\",\"Institute a tiered facility access fee structure where workshop attendees pay zero studio fee, but open studio hours rely entirely on a high hourly rental rate for non-enrolled individuals.\"],\"review\":\"Subsidizing membership sacrifices early revenue needed for operational buffers against high Arctic costs, whereas prioritizing tourists risks creating an exclusive, non-local atmosphere counter to the core social mission.\",\"description\":\"This strategy determines the balance between securing reliable local patronage (memberships) and maximizing high-yield, short-term income from tourists. The core objective is establishing community presence while ensuring sufficient cash flow to handle high Greenlandic operational costs. Success is measured by a healthy mix achieving consistent utilization and positive operating margin.\",\"synergy_text\":\"Synergizes with Market Visibility and Off-Season Engagement Strategy by using memberships to stabilize utilization. It also feeds into Membership Value Proposition Calibration by defining core offerings.\",\"conflict_text\":\"Prioritizing low-margin memberships conflicts with Startup Budget Allocation for Contingency, as it lowers immediate cash reserves. It also strains Studio Space Utilization During Off-Peak Hours if membership use dominates limited time slots.\"},{\"lever_id\":\"5f1a4b62-dc76-4df1-9edf-f533c7130e6d\",\"name\":\"Facility Utilities and Environmental Management\",\"consequences\":\"Given Greenland's high energy costs, optimizing kiln usage and space heating presents a constant operational trade-off between quality output and utility expense. Implementing aggressive off-peak firing schedules stabilizes utility costs but forces coordination requirements that may complicate the flexible drop-in studio schedule.\",\"options\":[\"Invest immediately in a high-efficiency electric kiln system rated for aggressive multi-load cycling, accepting a higher initial equipment cost to ensure lower sustained energy overhead during intense summer operation.\",\"Centralize all drying and firing functions into a single, heavily insulated, dedicated basement space with dedicated heating controls, accepting longer clay curing times to avoid heating the general workshop floor during off-hours.\",\"Mandate that all members using open studio time must self-schedule their firing slots within a narrow 12-hour window monitored remotely, allowing utility consumption to peak during daytime business hours.\"],\"review\":\"Prioritizing advanced kiln technology reduces long-term utility spend, but the associated high upfront capital investment depletes the contingency funds needed for unexpected building maintenance early on.\",\"description\":\"This focuses on mitigating high Arctic utility costs through equipment choices and operational scheduling, directly impacting profitability margin. Success involves optimizing kiln energy consumption relative to clay curing schedules, balancing upfront capital expenditure against long-term operational savings. It ensures operational viability despite expensive power sources.\",\"synergy_text\":\"Strongly supports Kiln Firing and Energy Cost Management by providing the technological basis for efficiency. It also influences Facility Temperature and Clay Curing Protocol via equipment limitations.\",\"conflict_text\":\"High initial investment in efficient systems conflicts with Startup Budget Allocation for Contingency. Restricting firing windows conflicts with Instructor Staffing Model and Session Reliability due to scheduling inflexibility.\"},{\"lever_id\":\"5e2656ca-7de0-4d21-bd25-d2e30d672bf9\",\"name\":\"Community Integration and Cultural Alignment\",\"consequences\":\"Deep integration with the nearby Katuaq Cultural Centre solidifies the workshop's positioning as a cultural asset, encouraging cross-promotion and potential shared grant access, but requires administrative overhead in joint planning and external reporting. Focusing purely on commercial viability limits external partnership dependencies but fails to capitalize on the existing cultural traffic flow.\",\"options\":[\"Formally embed the workshop as the exclusive satellite ceramics provider for Katuaq, dedicating 10% of monthly studio time slots specifically for Katuaq-led programming and events.\",\"Bypass formal partnership with Katuaq and instead offer free, introductory 'Taster Sessions' exclusively for established, non-arts-based community groups like the local women's association or youth center.\",\"Maintain strictly commercial separation, leveraging the location proximity solely for visibility while focusing all marketing exclusively on attracting transient, high-spending tourist cohorts found near the center.\"],\"review\":\"Formalizing a partnership guarantees community visibility but introduces reporting obligations that consume limited administrative time better spent navigating complex local utility contracts.\",\"description\":\"This lever focuses on embedding the workshop within Nuuk\\u2019s social fabric, leveraging proximity to Katuaq to attract repeat local traffic and fulfill the 'third place' mandate. Success is gauged by the volume of cross-promotional activity and organic community referrals, positioning the venture as a cultural fixture rather than just a retail studio.\",\"synergy_text\":\"Amplifies Market Visibility and Off-Season Engagement Strategy by accessing established cultural foot traffic. It directly impacts Membership Value Proposition Calibration by offering unique communal benefits.\",\"conflict_text\":\"Deep integration increases administrative load, potentially constraining resources needed for Material Input Buffer and Supplier Dependency management. It may conflict with strict Revenue Stream Prioritization Matrix if partnerships demand service concessions.\"},{\"lever_id\":\"173fc5d8-bd3f-4107-b9ab-add637e134ac\",\"name\":\"Startup Budget Allocation for Contingency\",\"consequences\":\"Reserving a significant portion of the 2M DKK budget as liquid contingency protects against unforeseen Greenlandic startup hurdles like delayed facility handover or unexpected utility deposits. However, this reserve immediately starves critical upfront investments, potentially leading to reliance on high-interest short-term debt to acquire essential equipment.\",\"options\":[\"Commit 15% of the total Year 1 budget as an untouchable operating contingency, strictly limiting initial equipment purchases to only mission-critical items and deferring non-essential fit-out items.\",\"Allocate zero dedicated contingency fund, instead allocating all capital upfront to fully outfit the space with top-tier equipment, making the early revenue stream the only source of emergency funds.\",\"Treat instructor wages for the first three slow months as the effective contingency, pre-paying salaries upon contract signing to attract necessary talent, while budgeting equipment purchases based only on confirmed revenue projections.\"],\"review\":\"A large contingency insulates against unforeseen administrative delays, yet under-investing in robust equipment initially guarantees higher long-term maintenance costs and lower production throughput.\",\"description\":\"This governs the initial financial robustness against unforeseen costs common in remote operations (shipping, fit-out delays). Establishing a reserve preserves agility, but over-reserving starves necessary upfront expenditure on essential, high-impact equipment. The goal is to find the minimal reserve that allows operating flexibility without crippling initial productivity.\",\"synergy_text\":\"A robust contingency immediately supports Localizing Material Input Substitution by affording budget for small, necessary pilot material changes. It also underpins Facility Utilities and Environmental Management during unexpected setup overruns.\",\"conflict_text\":\"A large fund directly constrains initial investment in Specialized Tooling and Equipment Sourcing Strategy. It also trades off against Instructor Staffing Model by reducing liquid assets available to absorb initial fixed wage risks.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer's Edge: Maximize Throughput and Innovation\",\"strategic_logic\":\"This path aggressively pursues technological superiority and maximized operational output to justify premium pricing, betting on high visitor conversion despite high initial capital outlay and staffing costs. It prioritizes speed and quality above short-term cost control.\",\"lever_settings\":{\"Instructor Staffing Model and Session Reliability\":\"Convert two instructors to salaried, year-round roles focusing their non-teaching time on equipment maintenance, community outreach, and curriculum development to justify the fixed cost.\",\"Revenue Stream Prioritization Matrix\":\"Limit local membership sales entirely for the first six months, focusing all marketing efforts and studio time on premium, all-inclusive 5-day tourist workshops requiring full pre-payment.\",\"Facility Utilities and Environmental Management\":\"Invest immediately in a high-efficiency electric kiln system rated for aggressive multi-load cycling, accepting a higher initial equipment cost to ensure lower sustained energy overhead during intense summer operation.\",\"Community Integration and Cultural Alignment\":\"Formally embed the workshop as the exclusive satellite ceramics provider for Katuaq, dedicating 10% of monthly studio time slots specifically for Katuaq-led programming and events.\",\"Startup Budget Allocation for Contingency\":\"Allocate zero dedicated contingency fund, instead allocating all capital upfront to fully outfit the space with top-tier equipment, making the early revenue stream the only source of emergency funds.\"}},{\"scenario_name\":\"The Builder's Balance: Measured Growth and Community Integration\",\"strategic_logic\":\"This scenario seeks the most reliable path to profitability by blending guaranteed core staffing with diversified revenue sources and moderate investments in efficiency, buffering essential administrative needs against production upgrades.\",\"lever_settings\":{\"Instructor Staffing Model and Session Reliability\":\"Utilize the four part-time roles for specialized topics only, relying on the lead instructor to manage all general studio hours, effectively operating with two full-time equivalents salary-wise for Year 1.\",\"Revenue Stream Prioritization Matrix\":\"Institute a tiered facility access fee structure where workshop attendees pay zero studio fee, but open studio hours rely entirely on a high hourly rental rate for non-enrolled individuals.\",\"Facility Utilities and Environmental Management\":\"Centralize all drying and firing functions into a single, heavily insulated, dedicated basement space with dedicated heating controls, accepting longer clay curing times to avoid heating the general workshop floor during off-hours.\",\"Community Integration and Cultural Alignment\":\"Bypass formal partnership with Katuaq and instead offer free, introductory 'Taster Sessions' exclusively for established, non-arts-based community groups like the local women's association or youth center.\",\"Startup Budget Allocation for Contingency\":\"Commit 15% of the total Year 1 budget as an untouchable operating contingency, strictly limiting initial equipment purchases to only mission-critical items and deferring non-essential fit-out items.\"}},{\"scenario_name\":\"The Consolidator: Stability and Local Core Focus\",\"strategic_logic\":\"This highly conservative approach minimizes upfront risk by freezing fixed costs, maximizing the initial contingency fund, and building a loyal, predictable local base through low membership barriers, accepting slower growth and minimal technological investment.\",\"lever_settings\":{\"Instructor Staffing Model and Session Reliability\":\"Staff all four instructors on a contract basis tied only to scheduled course dates and drop-in hours, transferring all non-session idle time risk back to the instructors.\",\"Revenue Stream Prioritization Matrix\":\"Peg all monthly local memberships at a price point equivalent to one drop-in session, making sustained community presence functionally free to maximize repeat social utility.\",\"Facility Utilities and Environmental Management\":\"Mandate that all members using open studio time must self-schedule their firing slots within a narrow 12-hour window monitored remotely, allowing utility consumption to peak during daytime business hours.\",\"Community Integration and Cultural Alignment\":\"Maintain strictly commercial separation, leveraging the location proximity solely for visibility while focusing all marketing exclusively on attracting transient, high-spending tourist cohorts found near the center.\",\"Startup Budget Allocation for Contingency\":\"Treat instructor wages for the first three slow months as the effective contingency, pre-paying salaries upon contract signing to attract necessary talent, while budgeting equipment purchases based only on confirmed revenue projections.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"Local establishment of a community-focused, profit-oriented venture targeting Nuuk's population, requiring physical build-out and managing specific regional constraints (Greenlandic logistics/costs).\",\"risk_and_novelty\":\"Moderate risk due to high operational costs (shipping, heating) in a remote location, combined with the novelty of establishing a social 'third place' dependent on local consistency, contradicting high seasonal tourist volume.\",\"complexity_and_constraints\":\"High complexity due to conflicting requirements: needing a reliable, staffed presence ('third place') while managing high Arctic costs, seasonal swings, and a fixed, relatively constrained 2M DKK Year 1 budget.\",\"domain_and_tone\":\"Business and operational management within a creative/community service domain, characterized by a cautious and realistic tone explicitly requesting a 'low-risk scenario' while acknowledging necessary upfront investment.\",\"holistic_profile_of_the_plan\":\"A constrained, moderately complex local business launch in a high-cost environment (Greenland) requiring infrastructural stability (staff coverage, utility management) and a sustained community focus, explicitly demanding a low-risk, grounded approach.\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer's Edge: Maximize Throughput and Innovation\",\"fit_score\":3,\"fit_assessment\":\"This scenario is too high-risk, pursuing aggressive capital expenditure and zero contingency, directly conflicting with the plan's explicit request for a 'realistic, low-risk scenario.' It prioritizes maximum output over stability.\"},{\"scenario_name\":\"The Builder's Balance: Measured Growth and Community Integration\",\"fit_score\":9,\"fit_assessment\":\"This scenario aligns perfectly with the stated goals: it balances moderate investment (centralized heating/kiln setup) with robust risk mitigation (15% contingency) and a staff model that balances fixed costs while supporting community continuity.\"},{\"scenario_name\":\"The Consolidator: Stability and Local Core Focus\",\"fit_score\":7,\"fit_assessment\":\"This scenario is low-risk but slightly misaligned. While it prioritizes stability, its strategy of minimizing fixed instructor costs and strictly commercial separation conflicts with the operational need for reliable session coverage inherent in a social 'third place' hub.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Builder's Balance: Measured Growth and Community Integration\",\"justification\":\"The Builder's Balance is the optimal fit because it directly addresses the plan's dual mandate: achieving profitability in a high-cost environment while fulfilling the social requirement of a reliable community hub, mandated by the explicit 'low-risk' preference.\\n\\n*   **Alignment with Risk/Budget:** It commits 15% contingency, providing necessary insulation against Greenlandic startup hurdles, unlike the Pioneer's zero-contingency approach.\\n*   **Handling Complexity:** It tempers ambition by opting for centralized utility management (slower drying but managed costs) rather than high upfront kiln tech, balancing operational needs against the tight 2M DKK budget.\\n*   **Staffing and Community:** The staffing model minimizes immediate fixed costs while retaining essential coverage, aligning better with year-round expectations than the Consolidator\\u2019s high-risk contract-only reliance, which undermines session reliability.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 1934,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nPer-period and per-unit rates (important): when the source expresses a\nquantity as a rate (a value divided by some period or some other unit),\nthe label MUST carry the denominator so the rate stays visible\ndownstream. Write the label as '<quantity> per <denominator>' or\ninclude the denominator in the unit field (e.g. '<unit>/<denominator>').\nA flat label that drops the denominator is invalid when the source\nstates one \u2014 the downstream extract can no longer reconstruct the\nmultiplication. For these rate entries the modelling role should\ndescribe the multiplication structure rather than just naming the cost,\nso a downstream stage can identify the matching scaling input.\n\nSource-stated rates belong in this bucket, not in missing_data. If the\nsource names a per-period or per-unit rate at all \u2014 explicitly,\ninferred, as a recommended range, or as a stress_test magnitude \u2014 emit\nit as a numeric_value with the denominator preserved. Setting\nsource_status to 'inferred' or 'stress_test' is fine when the source's\nframing fits; do NOT route a rate-like quantity to missing_data merely\nbecause the source gives it as a range, a recommendation, or an\nexpert's estimate rather than as a single committed value.\nmissing_data_to_estimate is reserved for primitives the source does NOT\nname. A rate the source mentions, even imprecisely, has been named and\nmust surface here with its denominator intact.\n\nA total cost that the source ALSO frames as a per-period burn must\nappear here in BOTH forms when the source supplies both: one entry for\nthe total (with its absolute label) and one entry for the rate (with\nthe per-period denominator). Listing only the total flattens the burn\nstructure; listing only the rate hides the source's own committed total.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n- '<what the rate is> per <denominator>: <amount> <unit-from-source>/<denominator> \u2014 <modelling role describing what it scales with>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 21,
+        "second_pass_user_prompt": "Review the numeric_values items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Year 1 total budget: 2 million DKK \u2014 input to initial capital allocation model",
+            "line_original": "Budget: 2 million DKK for Year 1",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Budget: 2 million DKK for Year 1",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Contingency reserve commitment: 15% of total Year 1 budget \u2014 protective allocation for startup variance",
+            "line_original": "Commit 15% of the total Year 1 budget as an untouchable operating contingency",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Commit 15% of the total Year 1 budget",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Number of part-time instructors: four (4) \u2014 input to fixed labor cost basis",
+            "line_original": "Staff the teaching team with four part-time instructors",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "four part-time instructors",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Staffing model equivalence: two (2) FTE salary equivalents \u2014 input to baseline Year 1 burn rate",
+            "line_original": "effectively operating with two full-time equivalents salary-wise for Year 1",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "two full-time equivalents salary-wise for Year 1",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Duration of fixed local membership pricing: six (6) months \u2014 period for revenue assumption stability",
+            "line_original": "Limit local membership sales entirely for the first six months",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "first six months",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Allocated studio time dedicated to Katuaq programming: 10% per month \u2014 capacity constraint on commercial use",
+            "line_original": "dedicating 10% of monthly studio time slots specifically for Katuaq-led programming",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "10% of monthly studio time slots",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 2931,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the load_bearing_assumptions items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "The facility setup requires handling higher shipping costs for materials from Denmark or Iceland.",
+            "line_original": "higher costs for shipping clay and equipment from Denmark/Iceland",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "higher costs for shipping clay",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The workshop demands managing special Greenland-specific requirements for clay drying and space heating.",
+            "line_original": "heating and drying space for clay",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "inferred",
+            "source_quote": "heating and drying space for clay",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Demand will experience strong seasonal peaks between June and October, requiring utilization strategies for the off-season.",
+            "line_original": "strong seasonal demand; long supplier lead times",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "strong seasonal demand",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Supplier lead times are long, necessitating buffer stock management for ceramic inputs.",
+            "line_original": "long supplier lead times",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "long supplier lead times",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen staffing model relies on instructors covering specialized topics, with the lead instructor managing general studio hours.",
+            "line_original": "Utilize the four part-time roles for specialized topics only, relying on the lead instructor to manage all general studio hours",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Utilize the four part-time roles for specialized topics only",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Revenue stability relies on a tiered access fee structure where non-workshop attendees pay high hourly rental rates.",
+            "line_original": "open studio hours rely entirely on a high hourly rental rate for non-enrolled individuals.",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "open studio hours rely entirely on a high hourly rental rate",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Kiln efficiency will be managed by centralizing firing in an insulated space, accepting longer curing times.",
+            "line_original": "Centralize all drying and firing functions into a single, heavily insulated, dedicated basement space with dedicated heating controls, accepting longer clay curing times",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Centralize all drying and firing functions into a single",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Community integration relies on offering taster sessions to non-arts local community groups rather than formal partnerships.",
+            "line_original": "offer free, introductory 'Taster Sessions' exclusively for established, non-arts-based community groups",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "offer free, introductory 'Taster Sessions'",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 3,
+        "response_byte_count": 1581,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\n- A per-period burn rate (any cost or output expressed as a value per\n  unit of time) needs the matching duration the rate will be\n  multiplied by \u2014 the count of those time units the burn applies for.\n  Without the duration, the rate cannot be turned into a total and the\n  multiplication is lost downstream.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the missing_data_to_estimate items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Target revenue per month for Year 1 \u2014 needed to calculate utilization required to cover fixed costs.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Hours per month of open-studio time provided \u2014 needed to scale high hourly rental revenue rates.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Electricity cost per kWh \u2014 needed to determine operational expense from kiln/heating profiles.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Clay material cost per kilogram \u2014 needed to calculate variable studio supply consumption against membership/drop-in rates.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Number of months in Year 1 operation \u2014 needed to annualize the 2 million DKK budget and fixed costs.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Average tourist workshop price per 5-day session \u2014 needed to project high-margin revenue stream contribution.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 3,
+        "response_byte_count": 2128,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nCapacity requirements count as gates. When the source states a numeric\nminimum needed to physically support a declared capacity, output, or\nservice level, the requirement IS the gate \u2014 even when the source\nframes it as a sizing calculation rather than an explicit pass/fail\ncondition. Write it in the if/then form: 'If <quantity> falls below\n<required value>, then <the supported capacity cannot be achieved>.'\nDo not skip such requirements just because the source phrases them as\nsizing math instead of a gate.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 27,
+        "second_pass_user_prompt": "Review the gates_and_thresholds items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 5,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "If the contingency fund falls below zero, then the project cannot cover unforeseen startup hurdles.",
+            "line_original": "Commit 15% of the total Year 1 budget as an untouchable operating contingency",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "untouchable operating contingency",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the utilization rate is too low during the off-season, the fixed wage burden from salaried instructors may not be justified.",
+            "line_original": "demanding high year-round utilization rates to meet the break-even target",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "demanding high year-round utilization rates",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the revenue structure prioritizes low-margin memberships, then the cash flow needed for equipment upkeep may be delayed.",
+            "line_original": "Prioritizing high-volume, low-margin membership subscriptions establishes critical community foot traffic... but this delays reaching the required cash flow",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Prioritizing high-volume, low-margin membership subscriptions",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If high upfront investment in efficient kiln technology occurs, then this starves the contingency funds needed for initial maintenance.",
+            "line_original": "Prioritizing advanced kiln technology reduces long-term utility spend, but the associated high upfront capital investment depletes the contingency funds",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "upfront capital investment depletes the contingency funds",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If instructor absences occur, then session reliability critical to the 'third place' mandate may be undermined.",
+            "line_original": "Contracting instructors reduces fixed costs during quiet months but guarantees session cancellations when illness strikes, undermining the reliability expectation",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "guarantees session cancellations when illness strikes",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 2308,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 23,
+        "second_pass_user_prompt": "Review the risks_and_shocks items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 5,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Instructor absence when using the contract-only model leads to session cancellations, undermining the community hub reliability.",
+            "line_original": "Contracting instructors reduces fixed costs during quiet months but guarantees session cancellations when illness strikes, undermining the reliability expectation",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "stress_test",
+            "source_quote": "session cancellations when illness strikes",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Over-reliance on high-margin tourist workshops may alienate local regulars, shifting the social atmosphere away from the mission.",
+            "line_original": "Focusing only on high-margin, short-duration tourist drop-ins creates an inconsistent environment potentially alienating local regulars.",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "alienating local regulars",
+            "quote_verified": true
+          },
+          {
+            "line_english": "High upfront capital investment in efficient kiln technology depletes early contingency funds available for unexpected building maintenance issues.",
+            "line_original": "high upfront capital investment... depletes the contingency funds needed for unexpected building maintenance early on",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "investment... depletes the contingency funds",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Aggressive off-peak firing schedules required by utility optimization complicate the flexible drop-in studio schedule, causing coordination friction.",
+            "line_original": "Implementing aggressive off-peak firing schedules stabilizes utility costs but forces coordination requirements that may complicate the flexible drop-in studio schedule.",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "forces coordination requirements that may complicate",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Formal partnership integration with Katuaq introduces administrative overhead and external reporting obligations consuming staff time.",
+            "line_original": "Formally embed the workshop as the exclusive satellite ceramics provider for Katuaq, dedicating 10% of monthly studio time slots",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "stress_test",
+            "source_quote": "introduces administrative overhead and external reporting obligations",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

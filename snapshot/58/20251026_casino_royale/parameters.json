@@ -1,0 +1,256 @@
+{
+  "plan_summary": {
+    "plan_name": "White House East Wing Casino - Pioneer's Gauntlet",
+    "plan_type": "commercial",
+    "primary_goal": "Launch Phase 1 container casino, hit 90-day continuous profitability to unlock 75% sponsor capital, and seed a long-term Infrastructure Levy.",
+    "modelling_frame": "Tests Phase 1 NOI gate against the sponsor 75% capital release, the $90M contingency buffer against a political reversal shock, and the ancillary Infrastructure Levy against required long-term operating cost. Regulatory shutdown and AML compliance are tracked as unmodelled existential gates."
+  },
+  "key_values": [
+    {
+      "id": "initial_sponsor_budget_usd",
+      "label": "Initial sponsor capital budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 600000000,
+      "comment": "Total sponsor capital envelope; denominator for contingency share and source of staged Phase 1 / Phase 2 tranches.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Initial sponsor budget envelope is 600 Million USD - total initial capital input."
+    },
+    {
+      "id": "contingency_fund_share",
+      "label": "Political reversal contingency share of budget",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.15,
+      "comment": "Share of sponsor budget ring-fenced for political reversal / site remediation; sets the absorption capacity for shutdown shock.",
+      "formula_hint": "contingency_reserve_usd = initial_sponsor_budget_usd * contingency_fund_share",
+      "output_name": "contingency_reserve_usd",
+      "output_unit": "USD",
+      "depends_on": ["initial_sponsor_budget_usd", "contingency_fund_share"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Contingency fund allocation of 15% of $600M USD - political reversal reserve."
+    },
+    {
+      "id": "sponsor_release_share",
+      "label": "Share of sponsor capital tied to Phase 1 success",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.75,
+      "comment": "Fraction of sponsor capital whose release is gated by 90-day continuous profitability; defines the cash exposure to the gate.",
+      "formula_hint": "sponsor_capital_at_risk_usd = initial_sponsor_budget_usd * sponsor_release_share",
+      "output_name": "sponsor_capital_at_risk_usd",
+      "output_unit": "USD",
+      "depends_on": ["initial_sponsor_budget_usd", "sponsor_release_share"],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "75% of all committed sponsor capital release tied to Phase 1 operational success."
+    },
+    {
+      "id": "required_daily_noi_usd",
+      "label": "Required daily Net Operating Income threshold",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "USD_per_day",
+      "value": 50000,
+      "comment": "Daily NOI floor sponsors require, sustained for 90 days, to unlock the 75% tranche; defines pass/fail of Phase 1.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Minimum Net Operating Income required per operational day: $50,000 USD - funding unlock floor."
+    },
+    {
+      "id": "profitability_window_days",
+      "label": "Required continuous profitability window",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "days",
+      "value": 90,
+      "comment": "Length of continuous profitable operation required to trigger sponsor capital release; multiplied with daily NOI for the gate test.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Profitability benchmark of 90 days of continuous operation - duration for sponsor milestone."
+    },
+    {
+      "id": "relocation_blackout_days",
+      "label": "Planned Phase 1 to Phase 2 relocation blackout",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "days",
+      "value": 7,
+      "comment": "Planned operational blackout during container relocation; consumes profitable operating days inside the 90-day gate window.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Methodology requires complete disconnection and relocation, necessitating a planned 7-day operational blackout."
+    },
+    {
+      "id": "monthly_levy_target_usd",
+      "label": "Monthly Infrastructure Levy target",
+      "category": "outcome",
+      "value_type": "explicit",
+      "unit": "USD_per_month",
+      "value": 50000000,
+      "comment": "Monthly revenue the long-term levy must generate from ancillary services to cover post-sponsorship operating cost.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "high",
+      "source_text": "Surcharge is a 0.5% fixed levy projected to yield $50 Million USD per month."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_phase1_noi_gate",
+      "question": "Does achievable Phase 1 NOI clear the 90-day continuous profitability threshold after accounting for the relocation blackout?",
+      "why_it_matters": "Failure withholds 75% of sponsor capital and triggers the $450M shortfall scenario.",
+      "formula_hint": "phase1_noi_gate_margin = achievable_daily_noi_usd * (profitability_window_days - relocation_blackout_days) - required_daily_noi_usd * profitability_window_days",
+      "output_name": "phase1_noi_gate_margin",
+      "output_unit": "USD",
+      "depends_on": ["achievable_daily_noi_usd", "profitability_window_days", "relocation_blackout_days", "required_daily_noi_usd"]
+    },
+    {
+      "id": "q_levy_coverage",
+      "question": "Can the Infrastructure Levy on ancillary services cover the projected annual post-sponsorship operating cost?",
+      "why_it_matters": "Long-term solvency depends on ancillary revenue at the stated ancillary margin replacing sponsor cash.",
+      "formula_hint": "levy_coverage_surplus_usd = ancillary_gross_revenue_annual_usd * ancillary_margin_fraction - monthly_levy_target_usd * 12",
+      "output_name": "levy_coverage_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["ancillary_gross_revenue_annual_usd", "ancillary_margin_fraction", "monthly_levy_target_usd"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "achievable_daily_noi_usd",
+      "label": "Achievable average daily NOI during Phase 1",
+      "unit": "USD_per_day",
+      "why_needed": "Realised NOI is the variable tested against the $50,000/day floor for the sponsor gate.",
+      "suggested_estimation_method": "Bottom-up: 999-guest capacity * average daily spend per high-roller patron * utilization, minus operating cost; benchmark against luxury VIP gaming venues."
+    },
+    {
+      "id": "ancillary_gross_revenue_annual_usd",
+      "label": "Annual gross revenue from on-site ancillary services",
+      "unit": "USD_per_year",
+      "why_needed": "Drives the Infrastructure Levy coverage of the $50M/month post-sponsorship operating need.",
+      "suggested_estimation_method": "Review notes that hitting the $50M monthly target implies ~$2B annual gross at ~30% margin; bound using comparable high-end hospitality complexes."
+    },
+    {
+      "id": "ancillary_margin_fraction",
+      "label": "Ancillary services net margin",
+      "unit": "fraction",
+      "why_needed": "Converts ancillary gross revenue into operating cash available for the levy coverage test.",
+      "suggested_estimation_method": "Review plan cites ~30% as the benchmark; bound 0.20-0.40 around comparable hospitality operations."
+    },
+    {
+      "id": "political_reversal_shock_usd",
+      "label": "Political reversal site-restoration cost",
+      "unit": "USD",
+      "why_needed": "Tests whether the 15% contingency reserve can absorb a political reversal mandate.",
+      "suggested_estimation_method": "Bound from public-sector demolition/remediation precedents on federal land plus legal cost over $10M cited in Risk 1."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "contingency_reserve_usd",
+      "label": "Political reversal contingency reserve",
+      "formula_hint": "contingency_reserve_usd = initial_sponsor_budget_usd * contingency_fund_share",
+      "output_name": "contingency_reserve_usd",
+      "output_unit": "USD",
+      "depends_on": ["initial_sponsor_budget_usd", "contingency_fund_share"],
+      "why_first": "Quantifies the pre-funded shock absorber used by the political reversal buffer test."
+    },
+    {
+      "id": "sponsor_capital_at_risk_usd",
+      "label": "Sponsor capital tied to Phase 1 gate",
+      "formula_hint": "sponsor_capital_at_risk_usd = initial_sponsor_budget_usd * sponsor_release_share",
+      "output_name": "sponsor_capital_at_risk_usd",
+      "output_unit": "USD",
+      "depends_on": ["initial_sponsor_budget_usd", "sponsor_release_share"],
+      "why_first": "Frames the cash exposure that the 90-day NOI gate releases or withholds."
+    },
+    {
+      "id": "phase1_noi_gate_surplus",
+      "label": "Phase 1 NOI gate surplus over required threshold",
+      "formula_hint": "phase1_noi_gate_surplus = achievable_daily_noi_usd * (profitability_window_days - relocation_blackout_days) - required_daily_noi_usd * profitability_window_days",
+      "output_name": "phase1_noi_gate_surplus",
+      "output_unit": "USD",
+      "depends_on": ["achievable_daily_noi_usd", "profitability_window_days", "relocation_blackout_days", "required_daily_noi_usd"],
+      "why_first": "Tests whether realised NOI clears the contractual sponsor gate after the relocation blackout consumes operating days."
+    },
+    {
+      "id": "political_reversal_buffer_surplus",
+      "label": "Contingency reserve buffer vs political reversal shock",
+      "formula_hint": "political_reversal_buffer_surplus = contingency_reserve_usd - political_reversal_shock_usd",
+      "output_name": "political_reversal_buffer_surplus",
+      "output_unit": "USD",
+      "depends_on": ["contingency_reserve_usd", "political_reversal_shock_usd"],
+      "why_first": "Checks whether the $90M ring-fenced reserve can absorb a stated political reversal restoration cost."
+    },
+    {
+      "id": "levy_coverage_surplus_usd",
+      "label": "Annual Infrastructure Levy coverage surplus",
+      "formula_hint": "levy_coverage_surplus_usd = ancillary_gross_revenue_annual_usd * ancillary_margin_fraction - monthly_levy_target_usd * 12",
+      "output_name": "levy_coverage_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["ancillary_gross_revenue_annual_usd", "ancillary_margin_fraction", "monthly_levy_target_usd"],
+      "why_first": "Tests long-term solvency claim that on-site ancillary services can fund the $50M/month operating deficit."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "post_facto_regulatory_authorization_gate",
+      "label": "Post-facto GSA/DOI land-use authorization",
+      "why_it_matters": "Phase 1 construction proceeds in parallel with seeking post-facto authorization for repurposing the East Wing site; without it the whole project halts.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Adverse court ruling or denial halts construction, stranding Phase 1 assets; review estimates near-100% probability of failure and 80-100% ROI loss."
+    },
+    {
+      "id": "aml_banking_consortium_gate",
+      "label": "International banking consortium AML/KYC certification",
+      "why_it_matters": "Tier 2 Commercial Access settlement of high-value markers must run through pre-approved banks meeting AML/KYC; loss of access blocks the high-roller revenue model.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Without AML-compliant settlement the 60% high-roller revenue stream cannot be operated legally and Phase 1 NOI collapses."
+    },
+    {
+      "id": "infrastructure_levy_political_acceptance_gate",
+      "label": "Political acceptance of the Infrastructure Levy successor mechanism",
+      "why_it_matters": "Long-term funding depends on replacing the opaque National Security Surcharge with a transparent ancillary levy that survives political and regulatory scrutiny.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "If the levy is blocked or politically reversed, the $50M/month operating funding disappears post-sponsorship and the venue becomes insolvent."
+    }
+  ],
+  "dropped_signals": [
+    {
+      "id": "phase1_shortfall_stress_usd",
+      "origin": "source_digest",
+      "source_anchor": "review_plan",
+      "expected_section": "key_values",
+      "dropped_from": null,
+      "reason": "redundant_with",
+      "replacement_id": null,
+      "redundant_with_id": "sponsor_capital_at_risk_usd",
+      "cap_kind": null,
+      "rationale": "Stated $450M downside equals initial_sponsor_budget_usd * sponsor_release_share, which the calculation already produces."
+    }
+  ]
+}

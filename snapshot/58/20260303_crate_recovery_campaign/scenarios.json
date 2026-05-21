@@ -1,0 +1,174 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Crate Escape: Arla Milk Crate Recovery Campaign 2026",
+    "plan_type": "commercial_csr_reverse_logistics"
+  },
+  "scenarios": {
+    "low": {
+      "inputs": {
+        "total_program_budget_dkk": 4000000,
+        "max_donation_outlay_dkk": 1350000,
+        "logistics_budget_dkk": 1650000,
+        "donation_per_crate_dkk": 5,
+        "target_recovery_crates": 108000,
+        "min_foundation_donation_dkk": 500000,
+        "annual_loss_volume_crates": 270000,
+        "expected_recovered_crates": 65000,
+        "logistics_cost_per_crate_dkk": 8,
+        "marketing_cost_realized_dkk": 800000,
+        "donation_outlay_dkk": 325000,
+        "donation_cap_buffer_dkk": 1025000,
+        "logistics_cost_total_dkk": 520000,
+        "logistics_budget_surplus_dkk": 1130000,
+        "total_budget_surplus_dkk": 2355000,
+        "volume_target_surplus": -43000,
+        "foundation_donation_margin_dkk": -175000,
+        "recovery_rate_margin": -0.15925925925925927
+      },
+      "outputs": {
+        "donation_outlay_dkk": 325000,
+        "donation_cap_buffer_dkk": 1025000,
+        "logistics_cost_total_dkk": 520000,
+        "logistics_budget_surplus_dkk": 1130000,
+        "total_budget_surplus_dkk": 2355000,
+        "volume_target_surplus": -43000,
+        "foundation_donation_margin_dkk": -175000,
+        "recovery_rate_margin": -0.15925925925925927
+      }
+    },
+    "base": {
+      "inputs": {
+        "total_program_budget_dkk": 4000000,
+        "max_donation_outlay_dkk": 1350000,
+        "logistics_budget_dkk": 1650000,
+        "donation_per_crate_dkk": 5,
+        "target_recovery_crates": 108000,
+        "min_foundation_donation_dkk": 500000,
+        "annual_loss_volume_crates": 270000,
+        "expected_recovered_crates": 108000,
+        "logistics_cost_per_crate_dkk": 15,
+        "marketing_cost_realized_dkk": 1000000,
+        "donation_outlay_dkk": 540000,
+        "donation_cap_buffer_dkk": 810000,
+        "logistics_cost_total_dkk": 1620000,
+        "logistics_budget_surplus_dkk": 30000,
+        "total_budget_surplus_dkk": 840000,
+        "volume_target_surplus": 0,
+        "foundation_donation_margin_dkk": 40000,
+        "recovery_rate_margin": 0.0
+      },
+      "outputs": {
+        "donation_outlay_dkk": 540000,
+        "donation_cap_buffer_dkk": 810000,
+        "logistics_cost_total_dkk": 1620000,
+        "logistics_budget_surplus_dkk": 30000,
+        "total_budget_surplus_dkk": 840000,
+        "volume_target_surplus": 0,
+        "foundation_donation_margin_dkk": 40000,
+        "recovery_rate_margin": 0.0
+      }
+    },
+    "high": {
+      "inputs": {
+        "total_program_budget_dkk": 4000000,
+        "max_donation_outlay_dkk": 1350000,
+        "logistics_budget_dkk": 1650000,
+        "donation_per_crate_dkk": 5,
+        "target_recovery_crates": 108000,
+        "min_foundation_donation_dkk": 500000,
+        "annual_loss_volume_crates": 270000,
+        "expected_recovered_crates": 160000,
+        "logistics_cost_per_crate_dkk": 25,
+        "marketing_cost_realized_dkk": 1500000,
+        "donation_outlay_dkk": 800000,
+        "donation_cap_buffer_dkk": 550000,
+        "logistics_cost_total_dkk": 4000000,
+        "logistics_budget_surplus_dkk": -2350000,
+        "total_budget_surplus_dkk": -2300000,
+        "volume_target_surplus": 52000,
+        "foundation_donation_margin_dkk": 300000,
+        "recovery_rate_margin": 0.19259259259259262
+      },
+      "outputs": {
+        "donation_outlay_dkk": 800000,
+        "donation_cap_buffer_dkk": 550000,
+        "logistics_cost_total_dkk": 4000000,
+        "logistics_budget_surplus_dkk": -2350000,
+        "total_budget_surplus_dkk": -2300000,
+        "volume_target_surplus": 52000,
+        "foundation_donation_margin_dkk": 300000,
+        "recovery_rate_margin": 0.19259259259259262
+      }
+    }
+  },
+  "comparison": {
+    "outputs": {
+      "donation_outlay_dkk": {
+        "low": 325000,
+        "base": 540000,
+        "high": 800000,
+        "unit": "DKK",
+        "spread_ratio": 2.4615384615384617,
+        "spread_absolute": 475000
+      },
+      "donation_cap_buffer_dkk": {
+        "low": 1025000,
+        "base": 810000,
+        "high": 550000,
+        "unit": "DKK",
+        "spread_ratio": 0.5365853658536586,
+        "spread_absolute": -475000
+      },
+      "logistics_cost_total_dkk": {
+        "low": 520000,
+        "base": 1620000,
+        "high": 4000000,
+        "unit": "DKK",
+        "spread_ratio": 7.6923076923076925,
+        "spread_absolute": 3480000
+      },
+      "logistics_budget_surplus_dkk": {
+        "low": 1130000,
+        "base": 30000,
+        "high": -2350000,
+        "unit": "DKK",
+        "spread_ratio": -2.0796460176991154,
+        "spread_absolute": -3480000
+      },
+      "total_budget_surplus_dkk": {
+        "low": 2355000,
+        "base": 840000,
+        "high": -2300000,
+        "unit": "DKK",
+        "spread_ratio": -0.9766454352441614,
+        "spread_absolute": -4655000
+      },
+      "volume_target_surplus": {
+        "low": -43000,
+        "base": 0,
+        "high": 52000,
+        "unit": "crates",
+        "spread_ratio": -1.2093023255813953,
+        "spread_absolute": 95000
+      },
+      "foundation_donation_margin_dkk": {
+        "low": -175000,
+        "base": 40000,
+        "high": 300000,
+        "unit": "DKK",
+        "spread_ratio": -1.7142857142857142,
+        "spread_absolute": 475000
+      },
+      "recovery_rate_margin": {
+        "low": -0.15925925925925927,
+        "base": 0.0,
+        "high": 0.19259259259259262,
+        "unit": "fraction",
+        "spread_ratio": -1.2093023255813952,
+        "spread_absolute": 0.3518518518518519
+      }
+    }
+  },
+  "warnings": []
+}

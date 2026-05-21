@@ -1,0 +1,358 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Automated Paperclip Manufacturing and Fulfillment Pilot",
+    "plan_type": "industrial_automation_pilot"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "subtotal_named_components_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 260280.18283020877,
+      "std": 23621.952731030382,
+      "min": 190271.98620943376,
+      "p05": 222519.55381432272,
+      "p25": 243405.34969169126,
+      "p50": 259694.68522953297,
+      "p75": 276701.7659103973,
+      "p95": 299169.3982148808,
+      "max": 358118.68517614366
+    },
+    "total_project_cost_estimate_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 286308.2011132297,
+      "std": 25984.14800413342,
+      "min": 209299.18483037714,
+      "p05": 244771.509195755,
+      "p25": 267745.8846608604,
+      "p50": 285664.1537524863,
+      "p75": 304371.94250143704,
+      "p95": 329086.33803636895,
+      "max": 393930.55369375803
+    },
+    "budget_surplus_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 213691.79888677035,
+      "std": 25984.14800413342,
+      "min": 106069.44630624197,
+      "p05": 170913.66196363108,
+      "p25": 195628.05749856296,
+      "p50": 214335.84624751372,
+      "p75": 232254.1153391396,
+      "p95": 255228.490804245,
+      "max": 290700.8151696229
+    },
+    "manual_intervention_surplus_hours_per_week": {
+      "unit": "hours_per_week",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.2810399543311611,
+      "std": 0.834195981201102,
+      "min": -2.4824063642649588,
+      "p05": -1.7912227215484215,
+      "p25": -0.8703728494419087,
+      "p50": -0.1936096240524101,
+      "p75": 0.3444046669835338,
+      "p95": 0.9828860822790774,
+      "max": 1.4942589593897302
+    },
+    "expert_cap_margin_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 4963.1677703138885,
+      "std": 3738.800781027063,
+      "min": -4737.904532472068,
+      "p05": -1671.8716193744349,
+      "p25": 2335.6245486503503,
+      "p50": 5366.672632180465,
+      "p75": 7780.887308878661,
+      "p95": 10662.165222269952,
+      "max": 12976.354913437977
+    },
+    "expert_floor_margin_usd": {
+      "unit": "USD",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 5036.8322296861115,
+      "std": 3738.800781027063,
+      "min": -2976.3549134379773,
+      "p05": -662.165222269953,
+      "p25": 2219.1126911213387,
+      "p50": 4633.327367819535,
+      "p75": 7664.37545134965,
+      "p95": 11671.871619374431,
+      "max": 14737.904532472068
+    }
+  },
+  "thresholds": {
+    "budget_surplus_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 10000,
+      "valid_count": 10000,
+      "probability": 1.0
+    },
+    "manual_intervention_surplus_hours_per_week": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 4142,
+      "valid_count": 10000,
+      "probability": 0.4142
+    },
+    "expert_cap_margin_usd": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 8785,
+      "valid_count": 10000,
+      "probability": 0.8785
+    }
+  },
+  "sensitivity": {
+    "subtotal_named_components_usd": {
+      "top_inputs": [
+        {
+          "id": "internal_developer_cost_usd",
+          "correlation": 0.786
+        },
+        {
+          "id": "rigging_and_install_cost_usd",
+          "correlation": 0.3542
+        },
+        {
+          "id": "opc_ua_middleware_cost_usd",
+          "correlation": 0.3412
+        },
+        {
+          "id": "permits_and_safety_cost_usd",
+          "correlation": 0.2406
+        },
+        {
+          "id": "wire_bender_midpoint_usd",
+          "correlation": 0.1896
+        }
+      ]
+    },
+    "total_project_cost_estimate_usd": {
+      "top_inputs": [
+        {
+          "id": "internal_developer_cost_usd",
+          "correlation": 0.786
+        },
+        {
+          "id": "rigging_and_install_cost_usd",
+          "correlation": 0.3542
+        },
+        {
+          "id": "opc_ua_middleware_cost_usd",
+          "correlation": 0.3412
+        },
+        {
+          "id": "permits_and_safety_cost_usd",
+          "correlation": 0.2406
+        },
+        {
+          "id": "wire_bender_midpoint_usd",
+          "correlation": 0.1896
+        }
+      ]
+    },
+    "budget_surplus_usd": {
+      "top_inputs": [
+        {
+          "id": "internal_developer_cost_usd",
+          "correlation": -0.786
+        },
+        {
+          "id": "rigging_and_install_cost_usd",
+          "correlation": -0.3542
+        },
+        {
+          "id": "opc_ua_middleware_cost_usd",
+          "correlation": -0.3412
+        },
+        {
+          "id": "permits_and_safety_cost_usd",
+          "correlation": -0.2406
+        },
+        {
+          "id": "wire_bender_midpoint_usd",
+          "correlation": -0.1896
+        }
+      ]
+    },
+    "manual_intervention_surplus_hours_per_week": {
+      "top_inputs": [
+        {
+          "id": "actual_manual_intervention_hours_per_week",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "expert_cap_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_onsite_expert_cost_usd",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "expert_floor_margin_usd": {
+      "top_inputs": [
+        {
+          "id": "actual_onsite_expert_cost_usd",
+          "correlation": 1.0
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "budget_surplus_usd": [
+      {
+        "id": "opc_ua_middleware_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "wire_bender_midpoint_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "packing_machine_midpoint_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "actual_onsite_expert_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      },
+      {
+        "id": "permits_and_safety_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 0.0
+      }
+    ],
+    "manual_intervention_surplus_hours_per_week": [
+      {
+        "id": "actual_manual_intervention_hours_per_week",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "expert_cap_margin_usd": [
+      {
+        "id": "actual_onsite_expert_cost_usd",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.514,
+        "delta_pp": -48.6
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "manual_intervention_surplus_hours_per_week": [
+      {
+        "id": "actual_manual_intervention_hours_per_week",
+        "direction": "below",
+        "input_percentile_cutoff": 50,
+        "cutoff_value": 2.19360962405241,
+        "conditional_pass_prob": 0.8284,
+        "admitted_fraction": 0.5
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_manual_intervention_hours_per_week",
+      "score": 130.1778,
+      "worst_gate": "manual_intervention_surplus_hours_per_week",
+      "bound_width_ratio": 2.2222,
+      "source": "data"
+    },
+    {
+      "id": "actual_onsite_expert_cost_usd",
+      "score": 5.9049,
+      "worst_gate": "expert_cap_margin_usd",
+      "bound_width_ratio": 1.0,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "subtotal_named_components_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.7143,
+      "average_bound_width_ratio": 1.0607,
+      "reasons": [
+        "5/7 input bounds anchored in data; 2/7 are assumptions",
+        "average bound-width-to-base ratio = 1.06"
+      ]
+    },
+    "total_project_cost_estimate_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.7143,
+      "average_bound_width_ratio": 1.0607,
+      "reasons": [
+        "5/7 input bounds anchored in data; 2/7 are assumptions",
+        "average bound-width-to-base ratio = 1.06"
+      ]
+    },
+    "budget_surplus_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.7143,
+      "average_bound_width_ratio": 1.0607,
+      "reasons": [
+        "5/7 input bounds anchored in data; 2/7 are assumptions",
+        "average bound-width-to-base ratio = 1.06"
+      ]
+    },
+    "manual_intervention_surplus_hours_per_week": {
+      "grade": "LOW",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 2.2222,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 2.22"
+      ]
+    },
+    "expert_cap_margin_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.0,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.00"
+      ]
+    },
+    "expert_floor_margin_usd": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 1.0,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 1.00"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": []
+}

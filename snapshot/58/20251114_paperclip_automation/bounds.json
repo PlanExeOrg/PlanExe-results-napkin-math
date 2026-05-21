@@ -1,0 +1,90 @@
+{
+  "actual_manual_intervention_hours_per_week": {
+    "unit": "hours_per_week",
+    "low": 0.5,
+    "base": 1.8,
+    "high": 4.5,
+    "rationale": "Plan threshold is 2.0 hr/week; base 1.8 sits just inside the gate. Anchored on Issue 2 — 10% material variance reduces probability of meeting the 2-hour goal by 50-70%; high-side reflects Risk 2 used-machinery integration drift past the cap. Spread is asymmetric: irreducible operator touchpoints floor near 0.5, while debugging excursions can run hours.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "actual_onsite_expert_cost_usd": {
+    "unit": "USD",
+    "low": 12000,
+    "base": 18000,
+    "high": 30000,
+    "rationale": "Plan floor is $15k for 1 week on-site; cap is $25k. Base 18k centred between Issue-3 floor and Premortem statement that on-site PLC integration can be contracted for under $30k. Low 12k from the Issue-3 emergency on-site week band ($7k-$12k); high 30k from the Premortem $30k ceiling for the first engagement.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "opc_ua_middleware_cost_usd": {
+    "unit": "USD",
+    "low": 35000,
+    "base": 50000,
+    "high": 75000,
+    "rationale": "Base at Q3 inferred $50k allocation. High 75k from the Premortem assumption that OPC UA middleware development cost must not exceed $75,000. Low 35k reflects competitive specialist quotes when scope is well-defined.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "wire_bender_midpoint_usd": {
+    "unit": "USD",
+    "low": 20000,
+    "base": 30000,
+    "high": 40000,
+    "rationale": "Stated $20k-$40k allocation range from Selected Scenario and Expert Criticism. Base at midpoint; bounds at the explicit endpoints. Hard ceiling reflects the plan's stated CAPEX envelope for the bender.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "packing_machine_midpoint_usd": {
+    "unit": "USD",
+    "low": 10000,
+    "base": 20000,
+    "high": 30000,
+    "rationale": "Stated $10k-$30k allocation range from Expert Criticism. Base at midpoint; bounds at the explicit endpoints.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "permits_and_safety_cost_usd": {
+    "unit": "USD",
+    "low": 8000,
+    "base": 18000,
+    "high": 35000,
+    "rationale": "Source does not name a separate allocation. Base 18k anchored to Risk-1 cost-increase band ($10k-$20k) for regulatory delay; high 35k covers third-party safety-interlock retrofit flagged by Expert Criticism (OSHA pre-engineering). Low 8k assumes clean permit path on the existing industrial zone.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "rigging_and_install_cost_usd": {
+    "unit": "USD",
+    "low": 15000,
+    "base": 30000,
+    "high": 55000,
+    "rationale": "Source does not name a rigging line item. Base anchored to typical industrial rigging plus install for two machines into a 4,000 sq ft cell. High-side asymmetry reflects Expert Criticism flagging Phase 3/5 integration labour as underbudgeted.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "internal_developer_cost_usd": {
+    "unit": "USD",
+    "low": 40000,
+    "base": 80000,
+    "high": 130000,
+    "rationale": "Source does not state developer-week allocation. Base assumes loaded FTE rate around $2k/week for 30-40 internal developer-weeks across the 6-phase plan. High-side reflects Risk 4 (single-developer bottleneck) extending the timeline; low-side reflects compressed scope.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "actual_wave_verification_rate": {
+    "unit": "fraction",
+    "low": 0.65,
+    "base": 0.85,
+    "high": 0.92,
+    "rationale": "Base centered on plan commitment 0.85 (DEFAULT); no plan-internal passage anchors a shift. Low-side spread to 0.65 reflects Risk 2 cascade-sync failure and Issue 3 (planetary-scale prevents perfect synchronization across waves).",
+    "source": "assumption",
+    "sampling_discipline": "fraction",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "wave3_actual_completion_month": {
+    "unit": "months",
+    "low": 15,
+    "base": 16,
+    "high": 22,
+    "rationale": "Base centered on plan commitment Month 16 (DEFAULT). High-side anchored on Issue 3 explicit sensitivity: 6-month sequence slip to Month 22 plausible under planetary-scale synchronization failure, missing the 24-month legal deadline.",
+    "source": "data",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "projected_peak_hub_density": {
+    "unit": "persons_per_km2",
+    "low": 9000,
+    "base": 12500,
+    "high": 18000,
+    "rationale": "Base just under the 13,000 cap reflects modular-housing-deployment intent (Risk 8 mitigation). High side to 18,000 reflects Question-7 stated 15,000 internal cap plus expert-criticism stress case of failed decentralization.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "cip_count_moved_south": {
+    "unit": "people",
+    "low": 500,
+    "base": 2000,
+    "high": 8000,
+    "rationale": "Anchored on Question-3 1,000-personnel Vertical-Stacks staffing analogue scaled by severable Northern critical systems (power, water, data). Wide 4x spread reflects unspecified scope of Decision-3 CIP swap.",
+    "source": "assumption",
+    "sampling_discipline": "integer",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "monthly_replacement_unit_cost_usd": {
+    "unit": "USD",
+    "low": 8000,
+    "base": 18000,
+    "high": 40000,
+    "rationale": "Base reflects loaded international specialist contractor monthly rate. High-side anchored on Issue-2 sensitivity (3:1 ratio inflates labor 25% over baseline) plus crisis-driven wage inflation under 24-month mandate.",
+    "source": "assumption",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "cip_replacement_ratio": {
+    "unit": "ratio",
+    "low": 1.5,
+    "base": 2.0,
+    "high": 3.5,
+    "rationale": "Base 2.0 is the review-recommended 2:1 buffer (Issue 2). High-side anchored on Issue-2 explicit sensitivity that actual ratio may be 3:1, inflating immediate labor cost 25% over baseline for 24 months.",
+    "source": "data",
+    "sampling_discipline": "continuous",
+    "non_negative": true,
+    "default_pass_probability": null
+  },
+  "correlations": [
+    {
+      "group_id": "cip_labor_drift",
+      "variables": ["cip_replacement_ratio", "monthly_replacement_unit_cost_usd"],
+      "rho": 0.6,
+      "rationale": "Issue 2 forecasts coupled movement: when the realized replacement ratio drifts up to 3:1, specialized-labor scarcity also inflates per-staffer cost. Both respond to the same Northern human-capital-flight driver under Decision 3."
+    }
+  ]
+}

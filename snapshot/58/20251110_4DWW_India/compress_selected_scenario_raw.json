@@ -1,0 +1,747 @@
+{
+  "section_summary": "This section identifies the specific 'The Builder: Pragmatic Equity and Scalability' scenario as the baseline execution plan, which constitutes the fixed structure for all subsequent cost, timeline, and risk quantification derived from the linked plan document's mandated financial envelopes, governance configurations, and phased schedule.",
+  "numeric_values": [
+    {
+      "line_english": "Total program budget: INR 2,000 crore \u2014 input to total outlay model.",
+      "line_original": "Total: INR 2,000 crore",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Total: INR 2,000 crore",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Formal sector 4DWW allocation percentage: 70% \u2014 input to allocation model.",
+      "line_original": "70% to formal-sector 4DWW",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "70% to formal-sector 4DWW",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Informal sector formalization allocation percentage: 30% \u2014 input to allocation model.",
+      "line_original": "30% to informal-sector formalization",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "30% to informal-sector formalization",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Contingency budget percentage allocation: 10% \u2014 input to overhead calculation.",
+      "line_original": "10% contingency",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "10% contingency",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Pilot execution duration: 48 Months \u2014 input to total project timeline.",
+      "line_original": "Timeline (48 Months)",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Timeline (48 Months)",
+      "quote_verified": true
+    },
+    {
+      "line_english": "SME cohort inclusion target percentage: 50% \u2014 gates pilot structure complexity.",
+      "line_original": "50% of participating companies must be SMEs",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "50% of participating companies must be SMEs",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "Productivity and equity gains must be measurable across all pilot cohorts.",
+      "line_original": "measurable productivity and equity gains",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "measurable productivity and equity gains",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Econometric evaluation requires verifiable baselines and pre-registered hypotheses for analysis.",
+      "line_original": "Require verifiable baselines, pre-registration of hypotheses",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Require verifiable baselines, pre-registration of hypotheses",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Pilot progress requires formal quarterly decision gates with defined continue/expand thresholds.",
+      "line_original": "Define quarterly gates with thresholds for continue/expand/pause/rollback",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Define quarterly gates with thresholds",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The central PMO structure must act as the single point for decision and budget control.",
+      "line_original": "apex Program Management Office (PMO) as the single point of decision, budget",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "PMO as the single point of decision, budget",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Voluntary opt-in must successfully populate formal sector pilot cohorts.",
+      "line_original": "Start with voluntary, opt-in pilots",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Start with voluntary, opt-in pilots",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Legal amendments proposed must be minimal and only where strictly necessary.",
+      "line_original": "Propose targeted, minimal amendments/notifications only where needed",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Propose targeted, minimal amendments/notifications only where needed",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If quarterly performance thresholds fail, then an adaptive rollback procedure must be executed.",
+      "line_original": "Define quarterly gates with thresholds for continue/expand/pause/rollback; document adaptive rollback procedures",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Define quarterly gates with thresholds for continue/expand/pause/rollback",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If performance trends negatively toward a threshold, then a mandatory 30-day observation window applies.",
+      "line_original": "Build a mandatory, 30-day observation window into the playbook",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "mandatory, 30-day observation window into the playbook",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If productivity grants conditions are not met within nine months, then the incentive disbursement stops.",
+      "line_original": "contingent exclusively on hitting predefined, verifiable efficiency increases",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "contingent exclusively on hitting predefined, verifiable efficiency increases",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If pilot results are inconclusive or poor, then the governance must decide on pausing or rolling back.",
+      "line_original": "thresholds for continue/expand/pause/rollback",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "thresholds for continue/expand/pause/rollback",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If a rollback condition is met, then the rollback procedure must be executed within the review period.",
+      "line_original": "playbooks for scheduling/ops, safety, peak-load management, and rollbacks",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "playbooks for scheduling/ops, safety, peak-load management",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If safety or well-being metrics trend negatively, then the pilot must halt immediately per playbook.",
+      "line_original": "immediately halt any pilot showing increased reported stress or injury rates",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "halt any pilot showing increased reported stress or injury rates",
+      "quote_verified": false
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Formal workforce pilot selection bias: invalidates generalization to less organized SME base.",
+      "line_original": "biases the productivity findings away from Small and Medium Enterprises (SMEs)",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "biases the productivity findings away from Small and Medium Enterprises",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Failure to secure state MOU/buy-in: leads to implementation bottlenecks outside PMO.",
+      "line_original": "State Labor Departments... passive resistance during notification/implementation phases",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "passive resistance during notification/implementation phases",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Participant fatigue from data logging burden: leads to data quality collapse across SMEs.",
+      "line_original": "administrative burden on participating SMEs, increasing data quality risk",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "administrative burden on participating SMEs, increasing data quality risk",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Over-reliance on performance grants: excludes high-fixed-cost enterprises from pilot participation.",
+      "line_original": "excludes high-fixed-cost, low-profit enterprises",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "excludes high-fixed-cost, low-profit enterprises",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Rigid quantitative rollback triggers: force premature termination of volatile but successful experiments.",
+      "line_original": "prevents adaptive management... forcing premature termination",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "prevents adaptive management of temporarily volatile experiments",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Informal sector track failure: jeopardizes overall national equity narrative alignment.",
+      "line_original": "Informal-sector formalization mission (parallel, independently governed but reporting alignment)",
+      "modelling_relevance": 3,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "Informal-sector formalization mission (parallel, independently governed)",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Total monthly cost of informal-sector formalization mission \u2014 required to calculate 30% budget share utilization.",
+      "line_original": "30% to informal-sector formalization",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Number of formal sector companies participating in voluntary pilots \u2014 estimate based on sector size and incentive uptake rate.",
+      "line_original": "cohorts must include",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Average monthly administrative cost per company for mandatory data collection \u2014 estimate from SME administrative burden analysis.",
+      "line_original": "mandatory, comparable indicators across all pilots",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Average productivity increase percentage required to unlock productivity-sharing grants \u2014 estimate from sensitivity analysis.",
+      "line_original": "productivity-sharing grants",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Total FTE count required for the apex Program Management Office (PMO) \u2014 estimate required staffing level for 48 Months.",
+      "line_original": "apex Program Management Office (PMO)",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Estimated payroll tax rebate percentage offered to adopting formal sector firms \u2014 estimate from policy design exercise.",
+      "line_original": "time-bound payroll tax rebates/credits",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 23,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 362,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\n4-Day Work Week (4DWW) \u2013 India, Low-Risk National Program\n\nObjective: Produce an implementation plan for a controlled, evidence-driven 4DWW program in India that maximizes administrative simplicity, political viability, and measurable productivity and equity gains.\n\nScope & Governance\n\u2022 Single authority: Establish an apex Program Management Office (PMO) under NITI Aayog as the single point of decision, budget, data standards, and communications.\n\u2022 Two linked tracks (decoupled):\n1. Formal-sector work-time reform (core program).\n2. Informal-sector formalization mission (parallel, independently governed but reporting alignment to the PMO).\n\u2022 Keep charters separate, budgets ring-fenced, and reporting templates harmonized.\n\nPilots & Cohorts (Formal Sector First)\n\u2022 Start with voluntary, opt-in pilots in the formal sector only.\n\u2022 Cohorts must include: IT/services, manufacturing/SMEs across Bengaluru, Mumbai, Coimbatore, Jaipur with controlled diversity (company size, unionization, gender mix).\n\u2022 Require opt-out provisions and explicit failure contingencies (criteria and playbooks for rollback to 5-day weeks).\n\nLegal & Policy\n\u2022 Propose targeted, minimal amendments/notifications only where needed (definitions of workday, weekly hour limits, overtime rules, hazard exceptions).\n\u2022 Respect concurrent central/state competencies; include model state notifications and MOUs.\n\nIncentives\n\u2022 Prioritize voluntary incentives (time-bound payroll tax rebates/credits, productivity-sharing grants, cost-shared upskilling) over mandates.\n\u2022 No broad bundling with unrelated reforms.\n\nData, Metrics & Audits (Standardized)\n\u2022 Deliver a unified measurement framework with mandatory, comparable indicators across all pilots:\n\u2022 Output & efficiency: output per worker-hour, throughput time, first-pass yield/defect rate.\n\u2022 Workforce: absenteeism, retention, hiring time, diversity (incl. women's participation), engagement scores.\n\u2022 Well-being & safety: self-reported stress, injury/near-miss rates.\n\u2022 Financials: unit cost, overtime spend, revenue and operating margin trend.\n\u2022 Customer/quality: SLA adherence, NPS/complaints.\n\u2022 Externalities: energy usage (kWh/employee), commute hours avoided.\n\u2022 Specify data schemas, collection cadence, privacy safeguards, and third-party productivity audits.\n\u2022 Require verifiable baselines, pre-registration of hypotheses, and difference-in-differences or matched-control evaluation.\n\nPlaybooks & Decision Gates\n\u2022 Produce metric-aligned playbooks (scheduling models, rostering, peak-load handling, compliance, safety).\n\u2022 Define quarterly gates with thresholds for continue/expand/pause/rollback; document adaptive rollback procedures.\n\nPolitical-Risk Management\n\u2022 Phased visibility: early low-profile reporting to stakeholders; public comms only after first verified wins.\n\u2022 Build stakeholder buy-in (industry bodies, unions, state labor departments) and a narrative anchored in equity and growth (productivity, jobs quality, inclusion).\n\u2022 Include rapid-response and misinformation protocols.\n\nInformal-Sector Track (Independent)\n\u2022 Launch focused formalization pilots (registration, wage protection, benefits access, scheduling predictability) under a separate mission team with its own M&E, budget, and partners\u2014linked but not bundled with 4DWW.\n\nBudget\n\u2022 Total: INR 2,000 crore (~USD 240M).\n\u2022 Allocation: 70% to formal-sector 4DWW; 30% to informal-sector formalization.\n\u2022 Break down into: program ops/PMO, incentives, audits & evaluation, capacity building, legal work, communications, and 10% contingency.\n\nTimeline (48 Months)\n\u2022 Months 0\u201312: Setup PMO; legal readiness; recruit cohorts; finalize metrics; baseline audits; launch pilots.\n\u2022 Months 13\u201336: Iterative evaluation, scaling of successful cells, targeted adjustments, and documented rollbacks when thresholds fail.\n\u2022 Months 37\u201348: Integration into standard practice where proven; publish national toolkits; transition governance.\n\nDeliverables (planner must output)\n\u2022 PMO charter & RACI; state & sector engagement plan.\n\u2022 Cohort selection rubric and signed MOUs.\n\u2022 Legal options memo (central/state), with model notifications.\n\u2022 Incentive policy menu with costings and uptake targets.\n\u2022 Unified M&E handbook, data dictionary, dashboards, and audit protocols.\n\u2022 Playbooks for scheduling/ops, safety, peak-load management, and rollbacks.\n\u2022 Quarterly decision-gate calendar with thresholds.\n\u2022 Communications plan and crisis-response guide.\n\u2022 Detailed budget with disbursement triggers.\n\u2022 Risk register with mitigations and owners.\n\nConstraints & Style\n\u2022 Keep administration simple, roles explicit, and reporting lightweight but verifiable.\n\u2022 Prefer plain language and tables/flows that a state department or SME can adopt in days, not months.\n\u2022 Prohibited terms: blockchain, AI, quantum, NFT, DAO, Metaverse, VR, AR.\n\u2022 Output must be practical, cite assumptions, and include a one-page executive brief plus appendices.\n\nToday's date:\n2026-May-17\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Developing a detailed, evidence-driven implementation strategy for a large-scale national policy/program (4DWW) involving governance structure, piloting, legal frameworks, incentive design, data measurement, and political risk management, aimed at national productivity and equity improvement.\n\n**Topic:** National implementation plan for a 4-Day Work Week pilot program in India\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan is an extensive professional services engagement focused on 'Producing an implementation plan' and generating numerous detailed deliverables (charters, rubrics, handbooks, playbooks, memos, budgets). While the *subject* (4DWW) relates to labor policy, the *execution* required by the planner involves significant physical elements: establishing a physical Program Management Office (PMO) under NITI Aayog in India, holding in-person stakeholder buy-in meetings with unions and state departments, physically auditing partner sites (IT, manufacturing, SMEs across multiple cities), and creating physical infrastructure documentation (playbooks, reports) intended for physical adoption by government bodies. Since the plan necessitates centralized physical governance, audits conducted in physical locations, and physical stakeholder engagement, it is classified as physical.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"0f3a07fe-fbc2-4b78-8b59-4f47a6e9df9d\",\"name\":\"Formal Sector Cohort Selection Criteria\",\"consequences\":\"Selecting pilot companies heavily weighted toward highly unionized, large-scale manufacturing stabilizes political buy-in and ensures compliance monitoring feasibility, but biases the productivity findings away from Small and Medium Enterprises (SMEs) where administrative simplicity might be most beneficial. This approach risks creating a highly regulated, isolated success story that cannot be easily generalized to the broader, less organized SME base.\",\"options\":[\"Prioritize pilot cohorts exclusively from IT and services sectors in Tier-1 cities to ensure high data fidelity and standardized output measurement against pre-existing digital performance metrics.\",\"Mandate that 50% of participating companies across all metro areas must be SMEs demonstrating less than 100 employees to test administrative simplicity and lightweight playbook efficacy directly within the hardest segment.\",\"Weight cohort selection heavily toward industries with established, mature collective bargaining agreements to minimize industrial relations friction during initial 4DWW scheduling adjustments.\"],\"review\":\"Prioritizing large, unionized manufacturing introduces selection bias against the typical SME profile, complicating the transferability of findings while potentially overstating the administrative ease for smaller firms.\",\"description\":\"This lever defines the inclusion and exclusion criteria for companies participating in the formal sector pilots, balancing representativeness against measurement feasibility. Success hinges on selecting cohorts that adequately test administrative simplicity (SMEs) while ensuring enough baseline stability (large firms, unionization) for reliable productivity measurement against control groups. The key is creating a microcosm that reflects future scalability challenges.\",\"synergy_text\":\"It strongly synergizes with Productivity Audit Verification Standard by determining the specific, auditable input/output dynamics necessary for quality control and verifiable baseline establishment.\",\"conflict_text\":\"Conflict arises with Incentive Mechanism Prioritization; a focus on hard-to-measure SMEs might necessitate more complex, subsidy-heavy incentives, contrasting with simple rebate preferences.\"},{\"lever_id\":\"b3fb5185-6124-4939-b4e1-df21ef887c14\",\"name\":\"Incentive Mechanism Prioritization\",\"consequences\":\"Focusing the budget almost exclusively on payroll tax rebates forces companies to internalize the productivity gains rapidly to offset short-term scheduling costs, accelerating the required behavioral adoption timeline. However, this approach excludes high-fixed-cost, low-profit enterprises that cannot absorb immediate operational dips, thereby limiting the program's reach into politically sensitive sectors like mass production manufacturing.\",\"options\":[\"Allocate 80% of the incentive budget toward productivity-sharing grants contingent exclusively on hitting predefined, verifiable efficiency increases relative to the established baseline within the first nine months.\",\"Use time-bound payroll tax credits solely as a mechanism to finance accredited, external workforce upskilling programs required by the 4DWW transition, focusing incentives on human capital transformation rather than direct operational subsidy.\",\"Institute a tiered incentive structure where uptake is conditional not only on efficiency improvements but also on documented improvements in gender diversity metrics within the new work structure.\"],\"review\":\"Linking incentives solely to performance grants speeds up ROI realization but excludes marginal firms needing baseline support, narrowing the pilot's representation of the national employment landscape.\",\"description\":\"This lever dictates how scarce budget resources are allocated to encourage 4DWW adoption, focusing on either direct financial relief (rebates) or investment in human capital transformation (upskilling grants). The strategy determines adoption speed versus depth of structural change. Success is measured by the speed of uptake in targeted firms and the correlation between incentive type and sustained productivity improvement, avoiding dependence on subsidy.\",\"synergy_text\":\"It gains maximum impact when coupled with Formal Sector Cohort Selection Criteria, ensuring the chosen incentives align with the financial resilience and operational needs of the selected company types.\",\"conflict_text\":\"Over-reliance on performance grants can conflict with Rollback Contingency Pre-specification, as struggling firms may fail to meet grant conditions but should not automatically trigger a rollback if they are making good faith efforts.\"},{\"lever_id\":\"8db51c94-7d48-4066-97ad-1c8e8160c7fe\",\"name\":\"PMO Governance Authority Structure\",\"consequences\":\"Centralizing all decision-making power within the NITI Aayog-lodged PMO ensures rapid, centralized policy alignment and swift application of the unified measurement framework across all pilots. Conversely, this heavy centralization risks alienating powerful State Labor Departments who may perceive the Apex body as superseding local industrial relations expertise, leading to passive resistance during notification/implementation phases.\",\"options\":[\"Establish a formal Executive Steering Committee co-chaired by PMO secretariat and high-ranking representatives from three key state labor departments to mandate joint sign-off on all quarterly decision-gate thresholds.\",\"Grant the PMO absolute decision authority over cohort selection and metric definition, while delegating all on-the-ground compliance verification and local grievance resolution entirely to the respective State Labor Ministries.\",\"Design the PMO structure as a wholly decentralized network of regional hubs, where performance reporting flows upward, but operational budget authority resides entirely within the geographic location of the pilot site.\"],\"review\":\"Centralizing all decisions swiftly enforces standardization but risks undercutting state-level political buy-in necessary for legal adoption, potentially causing implementation bottlenecks outside the PMO's direct purview.\",\"description\":\"This defines the locus of ultimate authority, determining whether the central PMO dictates all outcomes or delegates implementation power to state entities. Effective governance requires balancing centralized data standardization (for national comparison) with local political empowerment necessary for rapid adoption and labor relations management across diverse states. Success is defined by unified measurement adoption without state-level non-cooperation.\",\"synergy_text\":\"It must align precisely with Stakeholder Buy-in Sequencing; successful buy-in from state departments requires demonstrating that the PMO structure respects their local jurisdiction and expertise.\",\"conflict_text\":\"High centralization risks undermining the effectiveness of Regulatory Amendment Depth, as local governments may slow-walk the adoption of state-level notifications dictated solely by the apex authority.\"},{\"lever_id\":\"132a5710-31d9-4021-a080-c88d39fb31e9\",\"name\":\"Rollback Contingency Pre-specification\",\"consequences\":\"Pre-defining rigorous, non-negotiable quantitative thresholds for immediate rollback (e.g., 10% drop in first-pass yield sustained over two consecutive months) simplifies the decision-making process at the quarterly gate review, minimizing political debate about failure. However, this inflexibility prevents adaptive management if immediate negative performance is due to temporary, non-systemic issues like seasonal weather peaks or supply chain noise, forcing premature termination of valuable experiments.\",\"options\":[\"Define rollback conditions based purely on the comparative performance deviation against only the matched control groups, ignoring absolute historical benchmarks to isolate successful treatment effects more clearly.\",\"Build a mandatory, 30-day observation window into the playbook for any metric that trends negatively toward a threshold, requiring a joint PMO/Company risk assessment before executing the pre-approved rollback procedure.\",\"Tie rollback triggers exclusively to workforce well-being or safety metrics, treating productivity dips as manageable operational variance but immediately halting any pilot showing increased reported stress or injury rates.\"],\"review\":\"Setting rigid quantitative rollback triggers streamlines quarterly governance but sacrifices diagnostic depth, potentially pulling successful but temporarily volatile pilots prematurely based on absolute performance drops.\",\"description\":\"This establishes the objective, pre-agreed failure conditions that mandate stopping or reversing a pilot iteration. Specifying these metrics and exact thresholds upfront removes ambiguity from quarterly governance meetings, ensuring objectivity. Success is measured by the speed and clarity of execution when thresholds are breached across any key performance indicator.\",\"synergy_text\":\"It gains foundational structure from Data Collection Modality and Cadence Control, as the rollback thresholds are meaningless without reliable, frequently reported data matching the agreed-upon schema.\",\"conflict_text\":\"This conflicts with Incentive Mechanism Prioritization; rigid rollback rules can punish firms who accepted incentives but face temporary setbacks, creating a disincentive to participate due to perceived high downside risk.\"},{\"lever_id\":\"36e4d952-2e4c-451e-a7c2-5e6ff953ad2d\",\"name\":\"Data Collection Modality and Cadence Control\",\"consequences\":\"Mandating high-frequency, granular data collection (daily logging of energy usage, hourly throughput time) ensures the econometrics team has rich panel data necessary for robust difference-in-differences analysis, maximizing internal validity. This requirement places an intense administrative burden on participating SMEs, increasing data quality risk if monitoring relies on manual entry, potentially leading to participant fatigue and non-compliance drift over the three-year window.\",\"options\":[\"Pre-negotiate API integration access with major ERP/HRIS platforms used by large formal-sector firms to automate data extraction for efficiency and throughput metrics, bypassing manual input entirely.\",\"Design specialized, low-friction tablet-based input interfaces for SME and manufacturing sites that use visual scales (e.g., happy/neutral/sad faces for stress) rather than numerical entry for qualitative data points.\",\"Reduce the measurement cadence for high-cost metrics (e.g., carbon footprint via energy metering) to quarterly aggregation points, relying only on monthly or bi-weekly collection for personnel metrics like absenteeism.\"],\"review\":\"Demanding high-granularity data ensures superior econometric power but risks significant SME burnout and non-compliance due to administrative overhead unless costly automated data extraction methods are universally applied.\",\"description\":\"This lever determines the required granularity and frequency for collecting performance, workforce, and well-being data across diverse pilot cohorts. Success hinges on achieving rich panel data for rigorous econometrics (Difference-in-Differences) while simultaneously designing collection systems that minimize administrative burden and participant fatigue, especially for SMEs lacking sophisticated HR infrastructure.\",\"synergy_text\":\"It strongly amplifies Productivity Audit Verification Standard by providing the raw inputs needed for robust validation, and enables Data Collection Modality and Cadence Control.\",\"conflict_text\":\"It conflicts with Incentive Mechanism Prioritization if high administrative collection costs are imposed, and potentially constrains Stakeholder Buy-in Sequencing if SMEs withdraw due to data overload.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer: Velocity and Data Supremacy\",\"strategic_logic\":\"This path prioritizes rapid, high-fidelity learning by choosing the most technologically advanced and efficiency-focused options, accepting high initial administrative setup costs and potential friction in complex environments. It aims to establish definitive, globally significant proof points quickly.\",\"lever_settings\":{\"Formal Sector Cohort Selection Criteria\":\"Prioritize pilot cohorts exclusively from IT and services sectors in Tier-1 cities to ensure high data fidelity and standardized output measurement against pre-existing digital performance metrics.\",\"Incentive Mechanism Prioritization\":\"Allocate 80% of the incentive budget toward productivity-sharing grants contingent exclusively on hitting predefined, verifiable efficiency increases relative to the established baseline within the first nine months.\",\"PMO Governance Authority Structure\":\"Grant the PMO absolute decision authority over cohort selection and metric definition, while delegating all on-the-ground compliance verification and local grievance resolution entirely to the respective State Labor Ministries.\",\"Rollback Contingency Pre-specification\":\"Define rollback conditions based purely on the comparative performance deviation against only the matched control groups, ignoring absolute historical benchmarks to isolate successful treatment effects more clearly.\",\"Data Collection Modality and Cadence Control\":\"Pre-negotiate API integration access with major ERP/HRIS platforms used by large formal-sector firms to automate data extraction for efficiency and throughput metrics, bypassing manual input entirely.\"}},{\"scenario_name\":\"The Builder: Pragmatic Equity and Scalability\",\"strategic_logic\":\"This scenario seeks a balanced approach, focusing on including administrative complexity early to ensure national scalability while building robust political consensus through shared governance. It balances measurable productivity gains with documented workforce empowerment.\",\"lever_settings\":{\"Formal Sector Cohort Selection Criteria\":\"Mandate that 50% of participating companies across all metro areas must be SMEs demonstrating less than 100 employees to test administrative simplicity and lightweight playbook efficacy directly within the hardest segment.\",\"Incentive Mechanism Prioritization\":\"Institute a tiered incentive structure where uptake is conditional not only on efficiency improvements but also on documented improvements in gender diversity metrics within the new work structure.\",\"PMO Governance Authority Structure\":\"Establish a formal Executive Steering Committee co-chaired by PMO secretariat and high-ranking representatives from three key state labor departments to mandate joint sign-off on all quarterly decision-gate thresholds.\",\"Rollback Contingency Pre-specification\":\"Build a mandatory, 30-day observation window into the playbook for any metric that trends negatively toward a threshold, requiring a joint PMO/Company risk assessment before executing the pre-approved rollback procedure.\",\"Data Collection Modality and Cadence Control\":\"Design specialized, low-friction tablet-based input interfaces for SME and manufacturing sites that use visual scales (e.g., happy/neutral/sad faces for stress) rather than numerical entry for qualitative data points.\"}},{\"scenario_name\":\"The Consolidator: Stability and Political De-risking\",\"strategic_logic\":\"This conservative path prioritizes ensuring predictable continuity and minimizing political exposure by deferring high-risk segments and focusing on established industrial relations frameworks. It accepts slower learning curves in exchange for assured operational stability.\",\"lever_settings\":{\"Formal Sector Cohort Selection Criteria\":\"Weight cohort selection heavily toward industries with established, mature collective bargaining agreements to minimize industrial relations friction during initial 4DWW scheduling adjustments.\",\"Incentive Mechanism Prioritization\":\"Use time-bound payroll tax credits solely as a mechanism to finance accredited, external workforce upskilling programs required by the 4DWW transition, focusing incentives on human capital transformation rather than direct operational subsidy.\",\"PMO Governance Authority Structure\":\"Design the PMO structure as a wholly decentralized network of regional hubs, where performance reporting flows upward, but operational budget authority resides entirely within the geographic location of the pilot site.\",\"Rollback Contingency Pre-specification\":\"Tie rollback triggers exclusively to workforce well-being or safety metrics, treating productivity dips as manageable operational variance but immediately halting any pilot showing increased reported stress or injury rates.\",\"Data Collection Modality and Cadence Control\":\"Reduce the measurement cadence for high-cost metrics (e.g., carbon footprint via energy metering) to quarterly aggregation points, relying only on monthly or bi-weekly collection for personnel metrics like absenteeism.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"Large-scale national policy program (India) aiming for structural labor reform, executed via a complex governance structure (PMO, dual tracks).\",\"risk_and_novelty\":\"High novelty, as 4DWW is experimental at this scale, but explicitly designated as 'low-risk' due to reliance on voluntary opt-in; however, the complexity of multi-city physical piloting introduces significant operational risk.\",\"complexity_and_constraints\":\"Very high complexity: Requires simultaneous work on formal/informal sectors, necessitates legal/policy amendments respecting state competencies, mandates rigorous, standardized M&E across diverse cohorts (IT, manufacturing, SMEs), and defines clear decision gates/rollback scenarios.\",\"domain_and_tone\":\"Public policy, national governance, and economic measurement. The tone is extremely detail-oriented, highly structured, practical, and focused on verifiable evidence and administrative simplicity.\",\"holistic_profile_of_the_plan\":\"A highly detailed, bounded, evidence-driven implementation strategy for a significant national policy pilot in India. The core challenge is balancing the need for rigorous, generalizable data (requiring standardization) against the critical necessity of managing political buy-in, administrative simplicity for SMEs, and comprehensive risk management across diverse physical and legal domains.\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer: Velocity and Data Supremacy\",\"fit_score\":6,\"fit_assessment\":\"This scenario fits the plan's requirement for rigorous measurement but clashes with the emphasized goals of administrative simplicity and national scalability, as it ignores SMEs and complex governance consensus.\"},{\"scenario_name\":\"The Builder: Pragmatic Equity and Scalability\",\"fit_score\":10,\"fit_assessment\":\"This scenario perfectly aligns with the plan's dual focus on rigorous evidence (via SME inclusion/diverse metrics) and the need for political viability through shared governance and pragmatic data collection methods appropriate for varied sectors.\"},{\"scenario_name\":\"The Consolidator: Stability and Political De-risking\",\"fit_score\":4,\"fit_assessment\":\"This scenario is too conservative; it minimizes political risk by avoiding complexity (SMEs, decentralized governance) but fails to meet the plan's high ambition for national scalability and robust evidence capture across high-variability sectors.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Builder: Pragmatic Equity and Scalability\",\"justification\":\"The plan demands a balance between ambitious, rigorous evidence gathering and real-world administrative simplicity in a complex federal environment, making 'The Builder' the optimal fit.\\n\\n*   **Alignment with Plan Profile:** The plan necessitates testing administrative simplicity (by including SMEs) and handling political realities (requiring joint sign-off via the Executive Steering Committee), both central tenets of the Builder scenario.\\n*   **Cohort/Data Fit:** The Builder\\u2019s focus on SME inclusion (50% mandate) directly addresses the need for playbooks usable by smaller firms, while its commitment to diversity metrics aligns with the equity goals.\\n*   **Superiority over Others:** 'The Pioneer' is too narrow, prioritizing IT/services fidelity over national applicability and political consensus. 'The Consolidator' is too cautious, weakening the measurement rigor by deferring complex sectors and minimizing central authority required for data standardization.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 1884,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nPer-period and per-unit rates (important): when the source expresses a\nquantity as a rate (a value divided by some period or some other unit),\nthe label MUST carry the denominator so the rate stays visible\ndownstream. Write the label as '<quantity> per <denominator>' or\ninclude the denominator in the unit field (e.g. '<unit>/<denominator>').\nA flat label that drops the denominator is invalid when the source\nstates one \u2014 the downstream extract can no longer reconstruct the\nmultiplication. For these rate entries the modelling role should\ndescribe the multiplication structure rather than just naming the cost,\nso a downstream stage can identify the matching scaling input.\n\nSource-stated rates belong in this bucket, not in missing_data. If the\nsource names a per-period or per-unit rate at all \u2014 explicitly,\ninferred, as a recommended range, or as a stress_test magnitude \u2014 emit\nit as a numeric_value with the denominator preserved. Setting\nsource_status to 'inferred' or 'stress_test' is fine when the source's\nframing fits; do NOT route a rate-like quantity to missing_data merely\nbecause the source gives it as a range, a recommendation, or an\nexpert's estimate rather than as a single committed value.\nmissing_data_to_estimate is reserved for primitives the source does NOT\nname. A rate the source mentions, even imprecisely, has been named and\nmust surface here with its denominator intact.\n\nA total cost that the source ALSO frames as a per-period burn must\nappear here in BOTH forms when the source supplies both: one entry for\nthe total (with its absolute label) and one entry for the rate (with\nthe per-period denominator). Listing only the total flattens the burn\nstructure; listing only the rate hides the source's own committed total.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n- '<what the rate is> per <denominator>: <amount> <unit-from-source>/<denominator> \u2014 <modelling role describing what it scales with>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 21,
+        "second_pass_user_prompt": "Review the numeric_values items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 7,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Total program budget: INR 2,000 crore \u2014 input to total outlay model.",
+            "line_original": "Total: INR 2,000 crore",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Total: INR 2,000 crore",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Formal sector 4DWW allocation percentage: 70% \u2014 input to allocation model.",
+            "line_original": "70% to formal-sector 4DWW",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "70% to formal-sector 4DWW",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Informal sector formalization allocation percentage: 30% \u2014 input to allocation model.",
+            "line_original": "30% to informal-sector formalization",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "30% to informal-sector formalization",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Contingency budget percentage allocation: 10% \u2014 input to overhead calculation.",
+            "line_original": "10% contingency",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "10% contingency",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Pilot execution duration: 48 Months \u2014 input to total project timeline.",
+            "line_original": "Timeline (48 Months)",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Timeline (48 Months)",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Formal sector pilot execution duration: 24 Months \u2014 derived from timeline start/end logic for core program.",
+            "line_original": "Months 13\u201336: Iterative evaluation",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "derived",
+            "source_quote": "Months 13\u201336: Iterative evaluation",
+            "quote_verified": true
+          },
+          {
+            "line_english": "SME cohort inclusion target percentage: 50% \u2014 gates pilot structure complexity.",
+            "line_original": "50% of participating companies must be SMEs",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "50% of participating companies must be SMEs",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 2585,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 3,
+        "second_pass_response_byte_count": 2531,
+        "second_pass_user_prompt": "Review the load_bearing_assumptions items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 8,
+        "newly_added_count": 8,
+        "scored_items": [
+          {
+            "line_english": "Productivity and equity gains must be measurable across all pilot cohorts.",
+            "line_original": "measurable productivity and equity gains",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "measurable productivity and equity gains",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Voluntary opt-in must successfully populate formal sector pilot cohorts.",
+            "line_original": "Start with voluntary, opt-in pilots",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Start with voluntary, opt-in pilots",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Legal amendments proposed must be minimal and only where strictly necessary.",
+            "line_original": "Propose targeted, minimal amendments/notifications only where needed",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Propose targeted, minimal amendments/notifications only where needed",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Incentive strategy must prioritize voluntary mechanisms like tax rebates over mandates.",
+            "line_original": "Prioritize voluntary incentives over mandates",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Prioritize voluntary incentives over mandates",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Econometric evaluation requires verifiable baselines and pre-registered hypotheses for analysis.",
+            "line_original": "Require verifiable baselines, pre-registration of hypotheses",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Require verifiable baselines, pre-registration of hypotheses",
+            "quote_verified": true
+          },
+          {
+            "line_english": "All key metrics must integrate into a single, unified measurement framework for comparison.",
+            "line_original": "Deliver a unified measurement framework with mandatory, comparable indicators",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Deliver a unified measurement framework with mandatory, comparable indicators",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Pilot progress requires formal quarterly decision gates with defined continue/expand thresholds.",
+            "line_original": "Define quarterly gates with thresholds for continue/expand/pause/rollback",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Define quarterly gates with thresholds",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Public communication must be delayed until first verified productivity wins are established.",
+            "line_original": "public comms only after first verified wins",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "public comms only after first verified wins",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Administrative simplicity is achievable across diverse formal sector cohorts tested.",
+            "line_original": "Keep charters separate, budgets ring-fenced",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "Keep charters separate, budgets ring-fenced",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Pilot cohorts must maintain controlled diversity across size, unionization, and gender mix.",
+            "line_original": "controlled diversity (company size, unionization, gender mix)",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "controlled diversity (company size, unionization, gender mix)",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen incentive approach will not bundle with unrelated policy reforms.",
+            "line_original": "No broad bundling with unrelated reforms",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "No broad bundling with unrelated reforms",
+            "quote_verified": true
+          },
+          {
+            "line_english": "State implementation competency gaps can be mitigated via model state notifications and MOUs.",
+            "line_original": "include model state notifications and MOUs",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "include model state notifications and MOUs",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen scenario requires SME inclusion to test lightweight playbook efficacy.",
+            "line_original": "test administrative simplicity and lightweight playbook efficacy",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "derived",
+            "source_quote": "test administrative simplicity and lightweight playbook efficacy",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The central PMO structure must act as the single point for decision and budget control.",
+            "line_original": "apex Program Management Office (PMO) as the single point of decision, budget",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "PMO as the single point of decision, budget",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Adaptive rollback procedures must successfully manage necessary adjustments during scaling phases.",
+            "line_original": "document adaptive rollback procedures",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "document adaptive rollback procedures",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The Informal Track must maintain independent governance, budget, and M&E structure.",
+            "line_original": "Independent... with its own M&E, budget, and partners",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Independent... with its own M&E, budget",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 3,
+        "response_byte_count": 1820,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\n- A per-period burn rate (any cost or output expressed as a value per\n  unit of time) needs the matching duration the rate will be\n  multiplied by \u2014 the count of those time units the burn applies for.\n  Without the duration, the rate cannot be turned into a total and the\n  multiplication is lost downstream.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 626,
+        "second_pass_user_prompt": "Review the missing_data_to_estimate items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 2,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Number of formal sector companies participating in voluntary pilots \u2014 estimate based on sector size and incentive uptake rate.",
+            "line_original": "cohorts must include",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Average monthly administrative cost per company for mandatory data collection \u2014 estimate from SME administrative burden analysis.",
+            "line_original": "mandatory, comparable indicators across all pilots",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Estimated payroll tax rebate percentage offered to adopting formal sector firms \u2014 estimate from policy design exercise.",
+            "line_original": "time-bound payroll tax rebates/credits",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Average productivity increase percentage required to unlock productivity-sharing grants \u2014 estimate from sensitivity analysis.",
+            "line_original": "productivity-sharing grants",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Total FTE count required for the apex Program Management Office (PMO) \u2014 estimate required staffing level for 48 Months.",
+            "line_original": "apex Program Management Office (PMO)",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Total monthly cost of informal-sector formalization mission \u2014 required to calculate 30% budget share utilization.",
+            "line_original": "30% to informal-sector formalization",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 5,
+        "response_byte_count": 2217,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nCapacity requirements count as gates. When the source states a numeric\nminimum needed to physically support a declared capacity, output, or\nservice level, the requirement IS the gate \u2014 even when the source\nframes it as a sizing calculation rather than an explicit pass/fail\ncondition. Write it in the if/then form: 'If <quantity> falls below\n<required value>, then <the supported capacity cannot be achieved>.'\nDo not skip such requirements just because the source phrases them as\nsizing math instead of a gate.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 27,
+        "second_pass_user_prompt": "Review the gates_and_thresholds items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "If quarterly performance thresholds fail, then an adaptive rollback procedure must be executed.",
+            "line_original": "Define quarterly gates with thresholds for continue/expand/pause/rollback; document adaptive rollback procedures",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Define quarterly gates with thresholds for continue/expand/pause/rollback",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If safety or well-being metrics trend negatively, then the pilot must halt immediately per playbook.",
+            "line_original": "immediately halt any pilot showing increased reported stress or injury rates",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "halt any pilot showing increased reported stress or injury rates",
+            "quote_verified": false
+          },
+          {
+            "line_english": "If performance trends negatively toward a threshold, then a mandatory 30-day observation window applies.",
+            "line_original": "Build a mandatory, 30-day observation window into the playbook",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "mandatory, 30-day observation window into the playbook",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If productivity grants conditions are not met within nine months, then the incentive disbursement stops.",
+            "line_original": "contingent exclusively on hitting predefined, verifiable efficiency increases",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "contingent exclusively on hitting predefined, verifiable efficiency increases",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If pilot results are inconclusive or poor, then the governance must decide on pausing or rolling back.",
+            "line_original": "thresholds for continue/expand/pause/rollback",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "thresholds for continue/expand/pause/rollback",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If a rollback condition is met, then the rollback procedure must be executed within the review period.",
+            "line_original": "playbooks for scheduling/ops, safety, peak-load management, and rollbacks",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "playbooks for scheduling/ops, safety, peak-load management",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 2565,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 23,
+        "second_pass_user_prompt": "Review the risks_and_shocks items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 7,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Failure to secure state MOU/buy-in: leads to implementation bottlenecks outside PMO.",
+            "line_original": "State Labor Departments... passive resistance during notification/implementation phases",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "passive resistance during notification/implementation phases",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Participant fatigue from data logging burden: leads to data quality collapse across SMEs.",
+            "line_original": "administrative burden on participating SMEs, increasing data quality risk",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "administrative burden on participating SMEs, increasing data quality risk",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Formal workforce pilot selection bias: invalidates generalization to less organized SME base.",
+            "line_original": "biases the productivity findings away from Small and Medium Enterprises (SMEs)",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "biases the productivity findings away from Small and Medium Enterprises",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Over-reliance on performance grants: excludes high-fixed-cost enterprises from pilot participation.",
+            "line_original": "excludes high-fixed-cost, low-profit enterprises",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "excludes high-fixed-cost, low-profit enterprises",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Rigid quantitative rollback triggers: force premature termination of volatile but successful experiments.",
+            "line_original": "prevents adaptive management... forcing premature termination",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "prevents adaptive management of temporarily volatile experiments",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Inconsistent application of unified measurement framework: invalidates national comparison capability.",
+            "line_original": "risks alienating powerful State Labor Departments who may perceive the Apex body as superseding",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "State Labor Departments... perceiving Apex body as superseding",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Informal sector track failure: jeopardizes overall national equity narrative alignment.",
+            "line_original": "Informal-sector formalization mission (parallel, independently governed but reporting alignment)",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "Informal-sector formalization mission (parallel, independently governed)",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

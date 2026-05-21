@@ -1,0 +1,339 @@
+{
+  "valid": true,
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Engine \u2014 Pragmatic Scale-Up",
+    "plan_type": "Hyperscale data center megaproject (multi-phase, EUR-denominated)"
+  },
+  "settings": {
+    "n_runs": 10000,
+    "seed": 12345,
+    "distribution_default": "triangular"
+  },
+  "outputs": {
+    "land_holding_cost_total_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 1193953836.5206363,
+      "std": 217832604.2035581,
+      "min": 684899265.5903357,
+      "p05": 842751549.2536129,
+      "p25": 1032895781.1873178,
+      "p50": 1187125562.6203346,
+      "p75": 1351292827.0133376,
+      "p95": 1567590011.3383856,
+      "max": 1732506645.3474963
+    },
+    "fx_unhedged_exposure_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": 75720273.66931343,
+      "std": 40018130.92353374,
+      "min": 275628.3731410386,
+      "p05": 20277508.626023054,
+      "p25": 46605266.98735164,
+      "p50": 70031022.76050618,
+      "p75": 98815904.59536842,
+      "p95": 149188145.33027184,
+      "max": 293610292.3403801
+    },
+    "phase2_takeorpay_commitment_margin": {
+      "unit": "fraction",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.06719825719161593,
+      "std": 0.1058827262262694,
+      "min": -0.3463600412244315,
+      "p05": -0.2576076650319568,
+      "p25": -0.1428167920444931,
+      "p50": -0.054569297142713746,
+      "p75": 0.013756540186903893,
+      "p95": 0.0904619062718843,
+      "max": 0.14655055323247523
+    },
+    "phase1_pue_margin": {
+      "unit": "ratio",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -0.02333962390083925,
+      "std": 0.035611389313848676,
+      "min": -0.11811385963086862,
+      "p05": -0.08786229066498598,
+      "p25": -0.049126244050635204,
+      "p50": -0.018954396839016674,
+      "p75": 0.004189147063202336,
+      "p95": 0.02886233835545946,
+      "max": 0.049102775723106395
+    },
+    "phase1_contingency_surplus_eur": {
+      "unit": "EUR",
+      "count": 10000,
+      "missing_count": 0,
+      "mean": -811596029.7825054,
+      "std": 418626496.97038317,
+      "min": -2289315148.288374,
+      "p05": -1541843422.2743547,
+      "p25": -1099116397.8659873,
+      "p50": -790718656.4305112,
+      "p75": -511839941.89631015,
+      "p95": -157307363.90023848,
+      "max": 359343138.7745533
+    }
+  },
+  "thresholds": {
+    "phase2_takeorpay_commitment_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 3020,
+      "valid_count": 10000,
+      "probability": 0.302
+    },
+    "phase1_pue_margin": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 2977,
+      "valid_count": 10000,
+      "probability": 0.2977
+    },
+    "phase1_contingency_surplus_eur": {
+      "operator": ">=",
+      "value": 0,
+      "success_count": 170,
+      "valid_count": 10000,
+      "probability": 0.017
+    }
+  },
+  "sensitivity": {
+    "land_holding_cost_total_eur": {
+      "top_inputs": [
+        {
+          "id": "land_holding_cost_eur_per_hectare_year",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "fx_unhedged_exposure_eur": {
+      "top_inputs": [
+        {
+          "id": "fx_shock_magnitude_fraction",
+          "correlation": 0.7675
+        },
+        {
+          "id": "fx_hedge_coverage_fraction",
+          "correlation": -0.4346
+        },
+        {
+          "id": "usd_hardware_capex_share",
+          "correlation": 0.3084
+        },
+        {
+          "id": "phase1_capex_budget_eur",
+          "correlation": 0.2506
+        }
+      ]
+    },
+    "phase2_takeorpay_commitment_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_phase2_takeorpay_commitment_fraction",
+          "correlation": 1.0
+        }
+      ]
+    },
+    "phase1_pue_margin": {
+      "top_inputs": [
+        {
+          "id": "actual_phase1_pue",
+          "correlation": -1.0
+        }
+      ]
+    },
+    "phase1_contingency_surplus_eur": {
+      "top_inputs": [
+        {
+          "id": "remediation_cost_overrun_eur",
+          "correlation": -0.7686
+        },
+        {
+          "id": "land_holding_cost_eur_per_hectare_year",
+          "correlation": -0.5249
+        },
+        {
+          "id": "phase1_contingency_reserve_eur",
+          "correlation": 0.3767
+        },
+        {
+          "id": "fx_shock_magnitude_fraction",
+          "correlation": -0.0808
+        },
+        {
+          "id": "usd_hardware_capex_share",
+          "correlation": -0.0441
+        }
+      ]
+    }
+  },
+  "quartile_analysis": {
+    "phase2_takeorpay_commitment_margin": [
+      {
+        "id": "actual_phase2_takeorpay_commitment_fraction",
+        "p_pass_low_quartile": 0.0,
+        "p_pass_high_quartile": 1.0,
+        "delta_pp": 100.0
+      }
+    ],
+    "phase1_pue_margin": [
+      {
+        "id": "actual_phase1_pue",
+        "p_pass_low_quartile": 1.0,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -100.0
+      }
+    ],
+    "phase1_contingency_surplus_eur": [
+      {
+        "id": "remediation_cost_overrun_eur",
+        "p_pass_low_quartile": 0.064,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -6.4
+      },
+      {
+        "id": "land_holding_cost_eur_per_hectare_year",
+        "p_pass_low_quartile": 0.0564,
+        "p_pass_high_quartile": 0.0,
+        "delta_pp": -5.64
+      },
+      {
+        "id": "phase1_contingency_reserve_eur",
+        "p_pass_low_quartile": 0.0004,
+        "p_pass_high_quartile": 0.0444,
+        "delta_pp": 4.4
+      },
+      {
+        "id": "fx_shock_magnitude_fraction",
+        "p_pass_low_quartile": 0.0236,
+        "p_pass_high_quartile": 0.0132,
+        "delta_pp": -1.04
+      },
+      {
+        "id": "fx_hedge_coverage_fraction",
+        "p_pass_low_quartile": 0.0144,
+        "p_pass_high_quartile": 0.02,
+        "delta_pp": 0.56
+      }
+    ]
+  },
+  "binding_gate_analysis": {},
+  "required_input_thresholds": {
+    "phase2_takeorpay_commitment_margin": [
+      {
+        "id": "actual_phase2_takeorpay_commitment_fraction",
+        "direction": "above",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 0.5926690263965966,
+        "conditional_pass_prob": 0.9152,
+        "admitted_fraction": 0.33
+      }
+    ],
+    "phase1_pue_margin": [
+      {
+        "id": "actual_phase1_pue",
+        "direction": "below",
+        "input_percentile_cutoff": 67,
+        "cutoff_value": 1.202810444255889,
+        "conditional_pass_prob": 0.9021,
+        "admitted_fraction": 0.33
+      }
+    ]
+  },
+  "missing_value_priority": [
+    {
+      "id": "actual_phase2_takeorpay_commitment_fraction",
+      "score": 58.1667,
+      "worst_gate": "phase2_takeorpay_commitment_margin",
+      "bound_width_ratio": 0.8333,
+      "source": "assumption"
+    },
+    {
+      "id": "remediation_cost_overrun_eur",
+      "score": 18.8736,
+      "worst_gate": "phase1_contingency_surplus_eur",
+      "bound_width_ratio": 3.0,
+      "source": "data"
+    },
+    {
+      "id": "actual_phase1_pue",
+      "score": 9.9493,
+      "worst_gate": "phase1_pue_margin",
+      "bound_width_ratio": 0.1417,
+      "source": "assumption"
+    },
+    {
+      "id": "land_holding_cost_eur_per_hectare_year",
+      "score": 5.0821,
+      "worst_gate": "phase1_contingency_surplus_eur",
+      "bound_width_ratio": 0.9167,
+      "source": "data"
+    }
+  ],
+  "model_confidence": {
+    "land_holding_cost_total_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 1.0,
+      "average_bound_width_ratio": 0.9167,
+      "reasons": [
+        "1/1 input bounds anchored in data; 0/1 are assumptions",
+        "average bound-width-to-base ratio = 0.92"
+      ]
+    },
+    "fx_unhedged_exposure_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5,
+      "average_bound_width_ratio": 1.0,
+      "reasons": [
+        "2/4 input bounds anchored in data; 2/4 are assumptions",
+        "average bound-width-to-base ratio = 1.00"
+      ]
+    },
+    "phase2_takeorpay_commitment_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.8333,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.83"
+      ]
+    },
+    "phase1_pue_margin": {
+      "grade": "LOW",
+      "data_source_fraction": 0.0,
+      "average_bound_width_ratio": 0.1417,
+      "reasons": [
+        "0/1 input bounds anchored in data; 1/1 are assumptions",
+        "average bound-width-to-base ratio = 0.14"
+      ]
+    },
+    "phase1_contingency_surplus_eur": {
+      "grade": "MEDIUM",
+      "data_source_fraction": 0.5714,
+      "average_bound_width_ratio": 1.2262,
+      "reasons": [
+        "4/7 input bounds anchored in data; 3/7 are assumptions",
+        "average bound-width-to-base ratio = 1.23"
+      ]
+    }
+  },
+  "bounds_post_processor": {
+    "stripped_threshold_ids": []
+  },
+  "warnings": [
+    {
+      "stage": "monte_carlo",
+      "run": null,
+      "calculation": null,
+      "message": "bounds declares 1 correlation group(s) but the Gaussian-copula sampler is not yet implemented (Phase 8); variables will be sampled independently for this run \u2014 joint-tail risk is structurally understated until the sampler ships",
+      "severity": "WARN"
+    }
+  ]
+}

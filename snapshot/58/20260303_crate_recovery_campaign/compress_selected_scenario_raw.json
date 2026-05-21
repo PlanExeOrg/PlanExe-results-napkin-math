@@ -1,0 +1,639 @@
+{
+  "section_summary": "This section defines the specific scenario selected for modeling, locking in the commitment to the 'The Pioneer: Aggressive Volume Capture' strategy, which dictates the cost structure arising from the maximum 5 DKK donation per crate and the total program budget ceiling of 4 million DKK, alongside the primary success metric of recovering at least 40% of the annual loss volume within the 2026 timeline.",
+  "numeric_values": [
+    {
+      "line_english": "Minimum success volume recovery target of 108,000 crates \u2014 primary KPI.",
+      "line_original": "recover at least 40% of the annual loss volume (108,000 crates)",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "recover at least 40% of the annual loss volume (108,000 crates)",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Total program budget ceiling of 4 million DKK \u2014 hard expenditure cap.",
+      "line_original": "total programme budget ceiling of 4 million DKK",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "total programme budget ceiling of 4 million DKK",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Maximum donation outlay of 1.35 million DKK \u2014 input to total cost model.",
+      "line_original": "1.35 million DKK in maximum donation outlay",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "1.35 million DKK in maximum donation outlay",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Minimum required donation to Arla Foundation of 500,000 DKK \u2014 secondary KPI floor.",
+      "line_original": "donate a minimum of 500,000 DKK to Arla Foundation",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "donate a minimum of 500,000 DKK",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Charitable donation incentive of 5 DKK per crate returned \u2014 incentive lever.",
+      "line_original": "donate five Danish kroner for every green Arla crate handed back",
+      "modelling_relevance": 5,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "donate five Danish kroner",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Pilot launch period during Q2 2026 \u2014 timeline gate for initial testing.",
+      "line_original": "pilot launch in select regions during Q2",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "pilot launch in select regions during Q2",
+      "quote_verified": true
+    }
+  ],
+  "load_bearing_assumptions": [
+    {
+      "line_english": "Social media virality and earned press coverage must be primary marketing goals.",
+      "line_original": "Social media virality and earned press coverage are explicit goals",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "Social media virality and earned press coverage are explicit goals",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The chosen incentive structure relies on the logistics chain absorbing the resulting throughput.",
+      "line_original": "ensuring the logistic chain can absorb the resulting throughput",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "ensuring the logistic chain can absorb the resulting throughput",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Supermarkets must integrate simple intake procedures without burdening staff or disrupting normal operations.",
+      "line_original": "without burdening staff or disrupting normal operations",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "without burdening staff or disrupting normal operations",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Paid media must remain supplementary and not primary for the campaign.",
+      "line_original": "paid media should be supplementary rather than primary",
+      "modelling_relevance": 3,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "paid media should be supplementary rather than primary",
+      "quote_verified": true
+    },
+    {
+      "line_english": "The chosen scenario relies on the consumer response being driven by an irreverent, humorous narrative.",
+      "line_original": "irreverent marketing narrative centered on the 'secret lives'",
+      "modelling_relevance": 5,
+      "source_evidence": 3,
+      "source_status": "explicit",
+      "source_quote": "irreverent marketing narrative centered on the 'secret lives'",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Crates must last 20 years to maintain the value proposition regarding wasted material.",
+      "line_original": "Each crate is engineered to last 20 years",
+      "modelling_relevance": 3,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "engineered to last 20 years",
+      "quote_verified": true
+    }
+  ],
+  "gates_and_thresholds": [
+    {
+      "line_english": "If crate recovery falls below 40% of annual loss volume in year one, then the campaign fails its primary success criterion.",
+      "line_original": "recover at least 40% of the annual loss volume (108,000 crates) in year one",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "recover at least 40% of the annual loss volume",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If organic social media impressions fall below 20 million, then the marketing goal is not met.",
+      "line_original": "generate at least 20 million organic social media impressions",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "generate at least 20 million organic social media impressions",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If donation amount is less than 500,000 DKK, then the minimum charitable contribution fails.",
+      "line_original": "donate a minimum of 500,000 DKK to Arla Foundation",
+      "modelling_relevance": 4,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "donate a minimum of 500,000 DKK",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If campaign design and logistics are not complete by end of Q1 2026, then feasibility is jeopardized.",
+      "line_original": "campaign concept and logistics design by end of Q1 2026",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "concept and logistics design by end of Q1 2026",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If new-crate production orders for 2027 are not measurably reduced, then environmental success is limited.",
+      "line_original": "achieve measurable reduction in new-crate production orders for 2027",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "measurable reduction in new-crate production orders for 2027",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If donation payout exceeds 1.35 million DKK, then the maximum donation budget is overrun.",
+      "line_original": "5 DKK \u00d7 up to 270,000 crate returns = 1.35 million DKK in maximum donation outlay",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "derived",
+      "source_quote": "1.35 million DKK in maximum donation outlay",
+      "quote_verified": true
+    }
+  ],
+  "risks_and_shocks": [
+    {
+      "line_english": "Consumers repurposing crates for second lives: loss of 270,000 units annually.",
+      "line_original": "loses approximately 270,000 of its iconic green plastic milk crates every year",
+      "modelling_relevance": 5,
+      "source_evidence": 5,
+      "source_status": "explicit",
+      "source_quote": "loses approximately 270,000 of its iconic green plastic milk crates",
+      "quote_verified": true
+    },
+    {
+      "line_english": "Unreturned crates generate 106 tonnes of CO2 replacement production annually.",
+      "line_original": "replacement production alone generates an estimated 106 tonnes of CO2 annually",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "explicit",
+      "source_quote": "generates an estimated 106 tonnes of CO2 annually",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If Incentive Structure Calibration is too low, consumer engagement fails the 40% return goal.",
+      "line_original": "If the donation is set too low, consumer engagement will fail",
+      "modelling_relevance": 4,
+      "source_evidence": 4,
+      "source_status": "inferred",
+      "source_quote": "Setting the incentive too low risks failing the volume target",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If the chosen promotional posture is too conservative, earned media potential will be sacrificed.",
+      "line_original": "A very safe, conservative message ensures partner goodwill but sacrifices the potential for the wide organic reach",
+      "modelling_relevance": 4,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "sacrifices the potential for the wide organic reach",
+      "quote_verified": true
+    },
+    {
+      "line_english": "If crate grading is too permissive, high reprocessing costs increase total logistics expenditure.",
+      "line_original": "Overly permissive grading leads to high reprocessing costs",
+      "modelling_relevance": 3,
+      "source_evidence": 3,
+      "source_status": "inferred",
+      "source_quote": "Overly permissive grading leads to high reprocessing costs",
+      "quote_verified": true
+    }
+  ],
+  "missing_data_to_estimate": [
+    {
+      "line_english": "Duration of nationwide campaign in months for 2026 \u2014 scale factor for burn rate.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 5,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Cost per crate for inspection and cleaning in DKK/crate \u2014 unit cost for processing stream.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Unit cost for marketing execution in DKK/impression or DKK/social post \u2014 scales non-donation spend.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Cost per crate for physical logistics transport in DKK/crate \u2014 cost of reverse haulage.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 4,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Total dollar value of 2026 expected new-crate production orders in DKK \u2014 baseline for reduction goal.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    },
+    {
+      "line_english": "Estimated replacement crate production cost in DKK/crate to calculate savings.",
+      "line_original": "NOT IN SOURCE",
+      "modelling_relevance": 3,
+      "source_evidence": 1,
+      "source_status": "missing",
+      "source_quote": "NOT IN SOURCE",
+      "quote_verified": false
+    }
+  ],
+  "metadata": {
+    "context_window": 1048576,
+    "num_output": 32000,
+    "is_chat_model": true,
+    "is_function_calling_model": false,
+    "model_name": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "system_role": "system",
+    "llm_classname": "OpenRouter_LLM",
+    "section_type": "selected_scenario",
+    "total_duration": 21,
+    "per_bucket": {
+      "section_summary": {
+        "duration": 2,
+        "response_byte_count": 426,
+        "user_prompt": "Section type: selected_scenario\nSection title: Selected Scenario\n\nSection-specific guidance:\nThis is the Selected (picked) Scenario \u2014 the actual plan to model, not the menu of options. The signal is in what the plan *committed to*. Keep: chosen strategy name, explicit commitments and the numbers attached to them (budget envelope, contingency %, revenue mix, deadlines, conversion targets), viability gates for the chosen strategy, risk buffers and mitigations. Scenario-boundary rule (HARD): only include items that belong to the selected baseline scenario. The candidate-scenarios input enumerates several named scenarios; only one of them is the chosen baseline (identified by the selected_scenario.json content). Every other named scenario is a rejected alternative and must not produce numeric_values, load_bearing_assumptions, gates_and_thresholds, or risks_and_shocks. A rejected alternative may be named in source_quote ONLY for disambiguation. Do NOT write gates of the form 'If the <rejected scenario name> were chosen, then ...' \u2014 that is modelling the wrong plan. Do NOT include numbers that quantify only a rejected alternative (e.g. 'zero contingency under the high-risk option'). Drop also: speculative trade-offs the plan ultimately did not pick, generic 'option A vs B' narrative. If a rejected alternative is mentioned only for disambiguation, do not treat its numbers as commitments of the chosen plan.\n\nCompress the following Markdown section:\n[START_SECTION_MARKDOWN]\nFile 'plan.txt':\nPlan:\nArla Foods, Denmark's largest dairy cooperative, loses approximately 270,000 of its iconic green plastic milk crates every year because they never return from supermarket delivery routes \u2014 consumers repurpose them as storage boxes, garden furniture, playground building blocks, and countless other second lives. Each crate is engineered to last 20 years, so every unreturned unit represents wasted material and energy; the replacement production alone generates an estimated 106 tonnes of CO2 annually. Arla now wants to run a nationwide return campaign throughout 2026 to recover as many of these crates as possible, using a charitable donation as the behavioural nudge: for every green Arla crate handed back, the company will donate five Danish kroner to Arla Foundation, which funds children's nutrition education programmes across Denmark.\n\nThe campaign's return infrastructure spans two channels: consumers can drop off crates at participating supermarket chains (the same stores that receive Arla deliveries) and at Denmark's network of municipal recycling stations (genbrugsstationer). Logistics must handle collection, inspection, cleaning, and reintroduction of returned crates into the existing dairy supply chain, while crates that are too damaged for reuse need to be routed to plastics recycling. The programme should define clear visual identification guidance so consumers can distinguish an Arla crate from look-alikes, and supermarkets need simple in-store procedures \u2014 signage, a designated drop-off point, and a lightweight count-and-report mechanism \u2014 without burdening staff or disrupting normal operations. Recycling stations need similar low-friction intake instructions.\n\nStakeholders include Arla Foods (programme owner and funder), Arla Foundation (donation recipient and co-communicator), major Danish supermarket groups such as Salling Group, Coop Danmark, and Rema 1000, municipal waste authorities operating the recycling stations, and the Danish public as participants. The campaign's marketing should be provocative enough to cut through everyday noise \u2014 these crates are a culturally familiar object in Denmark, and the message should tap into that recognition with humour or surprise while emphasising both the environmental upside (CO2 reduction) and the charitable angle (children's nutrition). Social media virality and earned press coverage are explicit goals; paid media should be supplementary rather than primary.\n\nBudget is estimated at 5 DKK \u00d7 up to 270,000 crate returns = 1.35 million DKK in maximum donation outlay, plus campaign marketing, logistics infrastructure, and supermarket coordination costs \u2014 assume a total programme budget ceiling of 4 million DKK. Timeline: campaign concept and logistics design by end of Q1 2026, pilot launch in select regions during Q2, and nationwide rollout from Q3 through end of 2026. Success criteria: recover at least 40% of the annual loss volume (108,000 crates) in year one, achieve measurable reduction in new-crate production orders for 2027, generate at least 20 million organic social media impressions, and donate a minimum of 500,000 DKK to Arla Foundation. Pick a realistic, low-risk scenario \u2014 this is a CSR-driven logistics campaign, not a moonshot. Banned words: blockchain, NFT, AI, VR, AR.\n\nToday's date:\n2026-Mar-03\n\nProject start ASAP\n\nFile 'purpose.md':\n**Purpose:** business\n\n**Purpose Detailed:** Strategic planning and implementation for a large-scale corporate social responsibility (CSR) and reverse logistics initiative aimed at recovering lost packaging assets (milk crates), driven by environmental and charitable incentives.\n\n**Topic:** Nationwide logistics and CSR campaign for recovering lost Arla milk crates\n\nFile 'plan_type.md':\nThis plan requires one or more physical locations. It cannot be executed digitally.\n\n**Explanation:** The plan is fundamentally about executing a physical reverse logistics operation. It requires consumers to physically transport crates to specific physical locations (supermarkets and municipal recycling stations). Furthermore, the subsequent steps involve tangible physical handling: collection, transportation, inspection, cleaning, and reintroducing the crates back into the physical dairy supply chain or routing damaged ones to physical plastics recycling facilities. Even the marketing coordination requires managing physical infrastructure like in-store signage and drop-off points. This is decidedly a physical project.\n\nFile 'levers_vital_few.json':\n[{\"lever_id\":\"8cde354d-fb48-4bdd-ba19-da13ae2fe0fb\",\"name\":\"Incentive Structure Calibration\",\"consequences\":\"Adjusting the per-crate charitable donation directly modulates the direct cost associated with the primary behavioral nudge, affecting the total program budget expenditure. If the donation is set too low, consumer engagement will fail to meet the 40% recovery target, undermining the entire environmental rationale. Conversely, setting it too high accelerates budget burn, potentially requiring the campaign to end prematurely before material recovery stabilizes.\",\"options\":[\"Anchor the financial incentive at the maximum feasible level (5 DKK) to aggressively pursue the 40% return goal, absorbing the highest donation outlay within the 4 million DKK ceiling.\",\"Introduce tiered incentives where the first 50,000 returns receive the full 5 DKK, but subsequent returns drop to 3 DKK to manage budget risk while signaling initial commitment.\",\"Replace the direct monetary donation with a high-perceived-value non-monetary incentive, such as contributing the equivalent value to Arla Foundation only if 150,000 crates are successfully returned.\"],\"review\":\"Setting the incentive too low risks failing the volume target, while a high fixed incentive rapidly consumes the operational budget before logistics are truly optimized for sustained input flow.\",\"description\":\"This lever controls the primary behavioral nudge's cost basis against the recovery goal and budget ceiling. Setting the 5 DKK donation correctly balances achieving the 40% return minimum against avoiding premature budget exhaustion. Success hinges on maximizing the perceived value of the donation to drive crucial initial inertia, while ensuring the logistic chain can absorb the resulting throughput.\",\"synergy_text\":\"It strongly amplifies Campaign Virality Mechanism Focus by providing a concrete, emotionally resonant anchor point for marketing messaging about environmental and charitable impact.\",\"conflict_text\":\"If set too high, it rapidly strains the budget, thus constraining the resources available for funding Supermarket Partner Co-Branding Leverage or necessary logistics infrastructure.\"},{\"lever_id\":\"5fe90cc9-41d0-40b2-ace2-a4fe8e23cdf1\",\"name\":\"Reverse Collection Channel Prioritization\",\"consequences\":\"The selection of which return channel receives primary marketing and logistical focus dictates where consumer effort is concentrated, significantly impacting collection density and transport efficiency. Over-relying on municipal recycling stations risks logistical fragmentation since Arla does not control their staffing schedules or intake protocols. Focusing exclusively on supermarkets ensures supply chain integration but risks consumer frustration if designated drop-off points become cumbersome.\",\"options\":[\"Designate participating supermarket chains as the sole collection point for the initial pilot phase, deferring the deployment of municipal recycling station intake until logistical standardization is proven robust.\",\"Establish a high-throughput, centrally located, temporary collection hub in major Danish metropolitan areas specifically for crates, bypassing both retail and municipal channels for bulk loads.\",\"Implement a logistics model where supermarket pick-ups are scheduled only when their order volume for new deliveries exceeds a predetermined threshold, otherwise directing all returns solely to a dedicated municipal station route.\"],\"review\":\"Prioritizing one channel concentrates recovery efficiency but introduces single points of failure regarding consumer access or logistical bottlenecking if volumes spike unevenly across collection types.\",\"description\":\"This defines the operational density and ease of access for consumers returning crates. Prioritization must balance the convenience required to meet participation targets against the overhead of managing two disparate logistical streams. Effective channel management ensures high return volume without overburdening partners or causing consumer confusion about where to drop off crates.\",\"synergy_text\":\"This lever is crucial for Municipal Recycling Station Engagement Model success, as prioritizing that channel dictates the specifics needed for successful formal collaboration agreements.\",\"conflict_text\":\"Focusing efforts too heavily on supermarkets may strain their willingness to cooperate, potentially undermining Supermarket Partner Co-Branding Leverage due to increased operational burden.\"},{\"lever_id\":\"d5a4456a-fa97-42a5-ac6d-053a3b4efa7b\",\"name\":\"Crate Quality Grading Protocol\",\"consequences\":\"The stringency of the inspection process post-collection directly impacts the labor cost of reverse logistics and the proportion of material successfully cycled back into use versus routed to waste recycling. Overly permissive grading leads to high reprocessing costs and contamination risk in the dairy supply chain. Conversely, strict rejection criteria will fail the environmental goal by unnecessarily diverting high-value plastic to recycling instead of reuse.\",\"options\":[\"Implement a rapid three-stage visual inspection system at collection points, immediately routing any crate showing significant stress fractures or non-Arla contamination directly to plastics recycling without deep cleaning.\",\"Institute a system where all returned crates are routed to centralized cleaning hubs first, delaying the reuse decision until after intensive ultrasonic cleaning has confirmed material integrity and fitness for 20-year service.\",\"Mandate that supermarkets only perform a cursory check for visual branding, accepting all functional-looking crates and deferring the full structural integrity assessment to Arla's central washing facility.\"],\"review\":\"Loose grading reduces immediate inspection labor but pushes downstream cleaning and quality assurance costs higher, potentially nullifying the environmental benefit if many are wrongly scrapped.\",\"description\":\"This protocol sets the standard for material stewardship, balancing the desire for high reuse rates against the operational cost of post-return processing. The stringency determines how many crates enter the reuse stream versus the recycling stream, directly impacting the estimated 106 tonnes of CO2 avoided. It governs the efficiency of the Post-Collection Material Processing Flow.\",\"synergy_text\":\"It locks in the feasibility of Crate Reintroduction Timelines; a strict protocol ensures the clean crates entering the supply chain meet immediate quality requirements.\",\"conflict_text\":\"A very strict protocol conflicts directly with Reverse Collection Point Triage Authority, as it necessitates centralizing destructive decision-making away from the point of consumer return.\"},{\"lever_id\":\"f53027ed-85ac-4867-858d-2b71ae53d0bd\",\"name\":\"Post-Collection Material Processing Flow\",\"consequences\":\"Determining the inspection/cleaning/reentry flow dictates the speed at which assets return to service or are routed to recycling, directly impacting the CO2 offset benefit realization timing. If the cleaning process is too slow or requires specialized, single-purpose equipment, facility throughput will bottleneck, forcing stored, returned crates to occupy valuable warehouse space unnecessarily.\",\"options\":[\"Designate existing, underutilized, regional third-party food-grade washing facilities on short-term contracts to handle the cleaning surge based on real-time need, bypassing Arla's internal facilities.\",\"Establish mandatory, high-speed visual inspection lines at Arla regional depots specifically for crate triage, routing only clearly high-quality stock directly into immediate dispatch, while damaged stock awaits detailed processing.\",\"Implement a rapid, non-contact UV sterilization pass for all collected crates as a primary cleaning step, foregoing deep sanitation until the crates cycle through the main dairy production line later.\"],\"review\":\"Using third-party food-grade washing contractors introduces dependency on external scheduling and quality assurance dependencies that may slow down the reintegration timeline compared to dedicated, owned assets.\",\"description\":\"This defines the physical pipeline for transforming collected crates into useable inventory or scrap plastics. The throughput speed of this flow dictates the ROI timeline for the reverse logistics investment and the pace of CO2 offset realization. Efficiency here prevents asset stagnation in warehouses awaiting cleaning and assessment.\",\"synergy_text\":\"An efficient flow is necessary to realize the goal set by the Incentive Structure Calibration, as fast processing validates the consumer's effort with rapid asset reentry.\",\"conflict_text\":\"A slow or overly complex flow will create backlogs, necessitating greater immediate expenditure on storage, which strains the resources needed for Contingency Asset Deployment Strategy.\"},{\"lever_id\":\"d8d6677f-b6a5-4409-8549-b0764a556978\",\"name\":\"Promotional Risk Posture\",\"consequences\":\"The tone of the marketing directly impacts earned media coverage and social virality, which are cost-effective alternatives to paid media; however, an overly provocative message risks backlash or alienating key supermarket partners. A very safe, conservative message ensures partner goodwill but sacrifices the potential for the wide organic reach that success depends upon.\",\"options\":[\"Adopt a tone focusing exclusively on the quantifiable environmental impact (tonnes of CO2 saved) using deeply technical, factual industry language to appeal to serious environmental advocates.\",\"Develop a high-profile, slightly irreverent marketing narrative centered on the 'secret lives' of the lost crates, using humour about their misuse in gardens and playgrounds to spark conversation.\",\"Focus the campaign entirely on the direct link between crate return and improved child health outcomes, using poignant visual testimonials from nutrition education program participants.\"],\"review\":\"While appealing to technical advocates, using deeply factual, industry-focused language risks failing to generate the viral social media impressions required, thereby undermining the primary marketing objective.\",\"description\":\"This lever dictates the marketing tone used to communicate the environmental and charitable value proposition. The chosen posture directly influences earned media and organic reach potential, balancing the need for provocative, viral content against the preservation of brand integrity and positive relationships with supply chain partners, like supermarkets.\",\"synergy_text\":\"A high-risk but humorous posture amplifies Campaign Virality Mechanism Focus by creating cultural content inherently suited for wide organic sharing and earned media.\",\"conflict_text\":\"An overly provocative tone can create strain with Supermarket Partner Co-Branding Leverage, potentially causing partners to distance themselves from messaging deemed too risky or controversial.\"}]\n\nFile 'candidate_scenarios.json':\n[{\"scenario_name\":\"The Pioneer: Aggressive Volume Capture\",\"strategic_logic\":\"This strategy bets heavily on achieving maximum volume (over 108,000 units) quickly by maximizing incentives and driving viral, disruptive marketing. It accepts the highest logistical complexity and cost to secure rapid market penetration and media exposure.\",\"lever_settings\":{\"Incentive Structure Calibration\":\"Anchor the financial incentive at the maximum feasible level (5 DKK) to aggressively pursue the 40% return goal, absorbing the highest donation outlay within the 4 million DKK ceiling.\",\"Reverse Collection Channel Prioritization\":\"Designate participating supermarket chains as the sole collection point for the initial pilot phase, deferring the deployment of municipal recycling station intake until logistical standardization is proven robust.\",\"Crate Quality Grading Protocol\":\"Institute a system where all returned crates are routed to centralized cleaning hubs first, delaying the reuse decision until after intensive ultrasonic cleaning has confirmed material integrity and fitness for 20-year service.\",\"Post-Collection Material Processing Flow\":\"Designate existing, underutilized, regional third-party food-grade washing facilities on short-term contracts to handle the cleaning surge based on real-time need, bypassing Arla's internal facilities.\",\"Promotional Risk Posture\":\"Develop a high-profile, slightly irreverent marketing narrative centered on the 'secret lives' of the lost crates, using humour about their misuse in gardens and playgrounds to spark conversation.\"}},{\"scenario_name\":\"The Builder: Balanced and Scalable Progression\",\"strategic_logic\":\"This path focuses on building a robust, scalable operation by moderating the financial commitment while ensuring dual-channel consumer access. It prioritizes operational learning during the pilot phase to enable sustainable growth beyond the initial campaign.\",\"lever_settings\":{\"Incentive Structure Calibration\":\"Introduce tiered incentives where the first 50,000 returns receive the full 5 DKK, but subsequent returns drop to 3 DKK to manage budget risk while signaling initial commitment.\",\"Reverse Collection Channel Prioritization\":\"Implement a logistics model where supermarket pick-ups are scheduled only when their order volume for new deliveries exceeds a predetermined threshold, otherwise directing all returns solely to a dedicated municipal station route.\",\"Crate Quality Grading Protocol\":\"Mandate that supermarkets only perform a cursory check for visual branding, accepting all functional-looking crates and deferring the full structural integrity assessment to Arla's central washing facility.\",\"Post-Collection Material Processing Flow\":\"Establish mandatory, high-speed visual inspection lines at Arla regional depots specifically for crate triage, routing only clearly high-quality stock directly into immediate dispatch, while damaged stock awaits detailed processing.\",\"Promotional Risk Posture\":\"Focus the campaign entirely on the direct link between crate return and improved child health outcomes, using poignant visual testimonials from nutrition education program participants.\"}},{\"scenario_name\":\"The Consolidator: Low-Cost Risk Mitigation\",\"strategic_logic\":\"This strategy prioritizes minimizing cost exposure and avoiding logistical complexity by relying on conservative, proven methods and limiting downstream processing costs. It aims for foundational engagement rather than immediate high volume, positioning the charity aspect as the primary driver.\",\"lever_settings\":{\"Incentive Structure Calibration\":\"Replace the direct monetary donation with a high-perceived-value non-monetary incentive, such as contributing the equivalent value to Arla Foundation only if 150,000 crates are successfully returned.\",\"Reverse Collection Channel Prioritization\":\"Implement a logistics model where supermarket pick-ups are scheduled only when their order volume for new deliveries exceeds a predetermined threshold, otherwise directing all returns solely to a dedicated municipal station route.\",\"Crate Quality Grading Protocol\":\"Implement a rapid three-stage visual inspection system at collection points, immediately routing any crate showing significant stress fractures or non-Arla contamination directly to plastics recycling without deep cleaning.\",\"Post-Collection Material Processing Flow\":\"Implement a rapid, non-contact UV sterilization pass for all collected crates as a primary cleaning step, foregoing deep sanitation until the crates cycle through the main dairy production line later.\",\"Promotional Risk Posture\":\"Focus the campaign entirely on the direct link between crate return and improved child health outcomes, using poignant visual testimonials from nutrition education program participants.\"}}]\n\nFile 'selected_scenario.json':\n{\"plan_characteristics\":{\"ambition_and_scale\":\"Nationwide campaign in Denmark targeting an annual loss of 270,000 units, aiming for a 40% recovery rate (108,000 crates) in one year.\",\"risk_and_novelty\":\"Moderately high project risk due to creating a complex two-channel reverse logistics network involving multiple external stakeholders (supermarkets, municipalities). The incentive structure (charity nudge) is novel for this asset recovery context.\",\"complexity_and_constraints\":\"High complexity stemming from integrating dual physical collection channels (supermarkets/recycling stations) with required cleaning, inspection, and reintroduction into the existing dairy supply chain. Budget is constrained to 4 Million DKK. Timeline is aggressive (Q1 design, Q2 pilot, Q3/Q4 national rollout).\",\"domain_and_tone\":\"Corporate Social Responsibility (CSR) and Physical Reverse Logistics, with a required tone that is provocative, humorous, and aimed at maximizing organic social media impact.\",\"holistic_profile_of_the_plan\":\"A time-boxed, medium-to-high complexity, dual-channel reverse logistics effort, driven by strong environmental and CSR goals. Success hinges on achieving high consumer participation via viral marketing, operating within a defined operating budget, and effectively managing quality control for physical asset reintegration.\"},\"scenario_assessments\":[{\"scenario_name\":\"The Pioneer: Aggressive Volume Capture\",\"fit_score\":9,\"fit_assessment\":\"This scenario perfectly matches the plan's explicit goals for high volume (40% target) and the requirement for provocative marketing aimed at social media virality. It matches the high ambition level but accepts the corresponding complexity.\"},{\"scenario_name\":\"The Builder: Balanced and Scalable Progression\",\"fit_score\":7,\"fit_assessment\":\"This scenario moderates the risk well but conflicts with the explicit marketing directive for a provocative/humorous tone, favoring a safer testimonial approach instead. The tiered incentive conflicts slightly with the plan's fixed 5 DKK proposal.\"},{\"scenario_name\":\"The Consolidator: Low-Cost Risk Mitigation\",\"fit_score\":3,\"fit_assessment\":\"This scenario is too conservative. Replacing the fixed 5 DKK donation with a high-threshold non-monetary incentive severely risks failing the volume target (40% goal), directly contradicting the primary success metric in favor of cost minimization.\"}],\"final_choice\":{\"chosen_scenario_name\":\"The Pioneer: Aggressive Volume Capture\",\"justification\":\"The Pioneer scenario is the superior fit because the plan explicitly demands a provocative marketing tone to achieve high organic social media impressions, which aligns perfectly with its 'irreverent marketing narrative' posture. \\n\\n*   **Alignment with Ambition & Risk:** It embraces the aggressive volume target (40% recovery) by maximizing the primary behavioral nudge (5 DKK donation), matching the need for speed and high initial participation.\\n*   **Matching Complexity:** While accepting high complexity (strict quality control via centralized cleaning), this complexity is necessary to support the high-volume capture strategy.\\n*   **Comparative Weakness of Others:** 'The Builder' is too moderate on incentives and uses the wrong marketing posture (safe vs. provocative). 'The Consolidator' actively undermines the core volume target by structuring incentives around excessive thresholds, prioritizing cost mitigation over the required engagement levels.\"}}\n[END_SECTION_MARKDOWN]\n\nWrite one to three sentences in plain English describing what this section\ncontributes to Monte Carlo / napkin-math modelling. No markdown, no bullet\npoints, no lists. Do not enumerate numbers or assumptions \u2014 those are\nhandled in other calls."
+      },
+      "numeric_values": {
+        "duration": 3,
+        "response_byte_count": 2443,
+        "user_prompt": "The 'line' field for this bucket MUST follow the form\n'label: value [unit] \u2014 modelling role':\n- label names what the number represents in 2-6 words\n- value [unit] is the literal value and unit from the source, preserved\n  verbatim \u2014 never invent, translate, or substitute the currency, unit, or\n  date\n- modelling role is a short phrase such as 'input to cash burn model',\n  'gates launch readiness', 'sensitivity driver for revenue', 'capacity\n  ceiling'\n\nBare values are invalid: a percent on its own, an amount in any currency on\nits own, or a date on its own.\n\nPer-period and per-unit rates (important): when the source expresses a\nquantity as a rate (a value divided by some period or some other unit),\nthe label MUST carry the denominator so the rate stays visible\ndownstream. Write the label as '<quantity> per <denominator>' or\ninclude the denominator in the unit field (e.g. '<unit>/<denominator>').\nA flat label that drops the denominator is invalid when the source\nstates one \u2014 the downstream extract can no longer reconstruct the\nmultiplication. For these rate entries the modelling role should\ndescribe the multiplication structure rather than just naming the cost,\nso a downstream stage can identify the matching scaling input.\n\nSource-stated rates belong in this bucket, not in missing_data. If the\nsource names a per-period or per-unit rate at all \u2014 explicitly,\ninferred, as a recommended range, or as a stress_test magnitude \u2014 emit\nit as a numeric_value with the denominator preserved. Setting\nsource_status to 'inferred' or 'stress_test' is fine when the source's\nframing fits; do NOT route a rate-like quantity to missing_data merely\nbecause the source gives it as a range, a recommendation, or an\nexpert's estimate rather than as a single committed value.\nmissing_data_to_estimate is reserved for primitives the source does NOT\nname. A rate the source mentions, even imprecisely, has been named and\nmust surface here with its denominator intact.\n\nA total cost that the source ALSO frames as a per-period burn must\nappear here in BOTH forms when the source supplies both: one entry for\nthe total (with its absolute label) and one entry for the rate (with\nthe per-period denominator). Listing only the total flattens the burn\nstructure; listing only the rate hides the source's own committed total.\n\nTemplate shape (substitute values from the source \u2014 DO NOT copy these\nplaceholders or any unit from them):\n- '<what the number is>: <amount> <currency-from-source> \u2014 <modelling role>.'\n- '<what the number is>: <percent>% \u2014 <modelling role>.'\n- '<what the number is>: <date-from-source> \u2014 <modelling role>.'\n- '<what the rate is> per <denominator>: <amount> <unit-from-source>/<denominator> \u2014 <modelling role describing what it scales with>.'\n\nIf the source contains conflicting values for the same quantity, list each\nwith a disambiguating label (e.g. 'minimum', 'aspirational') rather than\npicking one silently.\n\nSkip numbers that only appear for narrative color. At most 8 items, sorted\nby your judgement of importance for modelling. Fewer items is fine.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 1,
+        "second_pass_response_byte_count": 21,
+        "second_pass_user_prompt": "Review the numeric_values items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 8,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Maximum donation outlay of 1.35 million DKK \u2014 input to total cost model.",
+            "line_original": "1.35 million DKK in maximum donation outlay",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "1.35 million DKK in maximum donation outlay",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Total program budget ceiling of 4 million DKK \u2014 hard expenditure cap.",
+            "line_original": "total programme budget ceiling of 4 million DKK",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "total programme budget ceiling of 4 million DKK",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Minimum success volume recovery target of 108,000 crates \u2014 primary KPI.",
+            "line_original": "recover at least 40% of the annual loss volume (108,000 crates)",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "recover at least 40% of the annual loss volume (108,000 crates)",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Charitable donation incentive of 5 DKK per crate returned \u2014 incentive lever.",
+            "line_original": "donate five Danish kroner for every green Arla crate handed back",
+            "modelling_relevance": 5,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "donate five Danish kroner",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Pilot launch period during Q2 2026 \u2014 timeline gate for initial testing.",
+            "line_original": "pilot launch in select regions during Q2",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "pilot launch in select regions during Q2",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Nationwide rollout start quarter Q3 2026 \u2014 timeline gate for scale-up.",
+            "line_original": "nationwide rollout from Q3 through end of 2026",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "nationwide rollout from Q3 through end of 2026",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Minimum required donation to Arla Foundation of 500,000 DKK \u2014 secondary KPI floor.",
+            "line_original": "donate a minimum of 500,000 DKK to Arla Foundation",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "donate a minimum of 500,000 DKK",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Annual crate loss volume of 270,000 crates \u2014 baseline for recovery calculation.",
+            "line_original": "loses approximately 270,000 of its iconic green plastic milk crates every year",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "loses approximately 270,000 of its iconic green plastic milk crates",
+            "quote_verified": true
+          }
+        ]
+      },
+      "load_bearing_assumptions": {
+        "duration": 3,
+        "response_byte_count": 31,
+        "user_prompt": "The 'line' field for this bucket is a complete short sentence stating the\nassumption itself, in 25 words or fewer. Prefer assumptions that have an\nobvious modelling consequence \u2014 regulatory permissions, demand\nassumptions, supply assumptions, cost-stability assumptions, capacity\nassumptions. Do not enumerate supporting numbers in the line \u2014 numbers\nbelong in numeric_values.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 3,
+        "second_pass_response_byte_count": 2007,
+        "second_pass_user_prompt": "Review the load_bearing_assumptions items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 0,
+        "second_pass_item_count": 6,
+        "newly_added_count": 6,
+        "scored_items": [
+          {
+            "line_english": "Social media virality and earned press coverage must be primary marketing goals.",
+            "line_original": "Social media virality and earned press coverage are explicit goals",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "Social media virality and earned press coverage are explicit goals",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Paid media must remain supplementary and not primary for the campaign.",
+            "line_original": "paid media should be supplementary rather than primary",
+            "modelling_relevance": 3,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "paid media should be supplementary rather than primary",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen incentive structure relies on the logistics chain absorbing the resulting throughput.",
+            "line_original": "ensuring the logistic chain can absorb the resulting throughput",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "ensuring the logistic chain can absorb the resulting throughput",
+            "quote_verified": true
+          },
+          {
+            "line_english": "The chosen scenario relies on the consumer response being driven by an irreverent, humorous narrative.",
+            "line_original": "irreverent marketing narrative centered on the 'secret lives'",
+            "modelling_relevance": 5,
+            "source_evidence": 3,
+            "source_status": "explicit",
+            "source_quote": "irreverent marketing narrative centered on the 'secret lives'",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Supermarkets must integrate simple intake procedures without burdening staff or disrupting normal operations.",
+            "line_original": "without burdening staff or disrupting normal operations",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "without burdening staff or disrupting normal operations",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Crates must last 20 years to maintain the value proposition regarding wasted material.",
+            "line_original": "Each crate is engineered to last 20 years",
+            "modelling_relevance": 3,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "engineered to last 20 years",
+            "quote_verified": true
+          }
+        ]
+      },
+      "missing_data_to_estimate": {
+        "duration": 3,
+        "response_byte_count": 1493,
+        "user_prompt": "The 'line' field for this bucket names a PRIMITIVE input the model would\nneed but the section does not supply. A primitive is a single quantity\nwith a unit (currency/month, kWh, hours, count, percent). State what is\nmissing AND how to estimate it.\n\nTemplate shape:\n- '<missing primitive quantity with unit> \u2014 <how to estimate>'\n\nPrefer primitives over derived quantities. Avoid words like 'gap',\n'shortfall', 'surplus', 'versus', 'coverage', 'feasibility' unless you are\nnaming a formula explicitly; if a derived quantity is missing, decompose\nit into the primitives that go into it.\n\nDenominator-pairing rule (important): the earlier buckets already\ncaptured rates, shares, percentages, per-unit prices, conversion rates,\nutilization targets, FTE counts, and failure-duration magnitudes. Each\nof those needs a matching denominator or scaling input to become an\nexecutable formula. For every such rate-like or per-unit item in the\nprior buckets that the section does NOT otherwise quantify, surface its\nmissing counterpart here. Patterns to look for:\n- A share-of-revenue percentage needs the absolute period-revenue\n  target.\n- A per-hour, per-day, or per-unit price needs the billable hours, days,\n  or units per period the price will be applied to.\n- A conversion or adoption rate needs the count of attendees,\n  candidates, or eligible people the rate operates on.\n- An FTE or headcount value needs the per-head monthly or annual cost.\n- A failure-duration magnitude (weeks of downtime, days of disruption)\n  needs the per-week or per-day revenue exposure the failure interrupts.\n- An overhead coverage threshold ('cover 75% of X') needs the absolute\n  X amount per period.\n- A per-period burn rate (any cost or output expressed as a value per\n  unit of time) needs the matching duration the rate will be\n  multiplied by \u2014 the count of those time units the burn applies for.\n  Without the duration, the rate cannot be turned into a total and the\n  multiplication is lost downstream.\nDo not invent a value; just name the missing primitive and how it\nwould be estimated. Skip this pairing only when the section already\nsupplies the denominator elsewhere.\n\nNote: by definition these items are absent from the source. Always set\nsource_status to 'missing' for items in this bucket. When the source has\nno value, source_quote is 'NOT IN SOURCE' and source_evidence is 1. When\nthe section EXPLICITLY says 'we need to estimate X', you may quote that\nphrase and raise source_evidence accordingly \u2014 but source_status still\nstays 'missing' because the value itself is what's absent.\n\nAt most 6 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 31,
+        "second_pass_user_prompt": "Review the missing_data_to_estimate items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Duration of nationwide campaign in months for 2026 \u2014 scale factor for burn rate.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 5,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Cost per crate for inspection and cleaning in DKK/crate \u2014 unit cost for processing stream.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Unit cost for marketing execution in DKK/impression or DKK/social post \u2014 scales non-donation spend.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Cost per crate for physical logistics transport in DKK/crate \u2014 cost of reverse haulage.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 4,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Estimated replacement crate production cost in DKK/crate to calculate savings.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          },
+          {
+            "line_english": "Total dollar value of 2026 expected new-crate production orders in DKK \u2014 baseline for reduction goal.",
+            "line_original": "NOT IN SOURCE",
+            "modelling_relevance": 3,
+            "source_evidence": 1,
+            "source_status": "missing",
+            "source_quote": "NOT IN SOURCE",
+            "quote_verified": false
+          }
+        ]
+      },
+      "gates_and_thresholds": {
+        "duration": 3,
+        "response_byte_count": 2076,
+        "user_prompt": "The 'line' field for this bucket is a pass/fail condition, KPI cutoff,\nvalidation gate, or deadline that triggers a decision. Write each gate as\nan if/then sentence so the condition AND the consequence read in the\ncorrect logical direction.\n\nTemplate shape (substitute the actual metric, comparison, threshold, and\nconsequence from the source):\n- 'If <failure condition>, then <consequence>.'\n\nExamples of the right direction (these are templates \u2014 substitute values\nfrom the source, do not copy the literals):\n- 'If <metric> falls below <threshold>, then <consequence>.'\n- 'If <approval> is not granted by <date>, then <consequence>.'\n- 'If <ratio> exceeds <threshold>, then <surcharge/contingency action>.'\n\nWrite the failure case as the if-clause. Avoid the inverted form where the\ngate reads as 'X must Y, else Z' \u2014 that pattern flips the logical direction\nand a downstream extractor can misread the boolean.\n\nA gate must be expressible as a threshold, boolean, ratio, surplus, or\ndeficit. If something is a qualitative trade-off without a pass/fail edge,\nleave it out. If a condition is named but no numeric threshold is given in\nthe source, put the missing threshold in missing_data_to_estimate rather\nthan emitting a vague gate like 'must meet a threshold'.\n\nCapacity requirements count as gates. When the source states a numeric\nminimum needed to physically support a declared capacity, output, or\nservice level, the requirement IS the gate \u2014 even when the source\nframes it as a sizing calculation rather than an explicit pass/fail\ncondition. Write it in the if/then form: 'If <quantity> falls below\n<required value>, then <the supported capacity cannot be achieved>.'\nDo not skip such requirements just because the source phrases them as\nsizing math instead of a gate.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 27,
+        "second_pass_user_prompt": "Review the gates_and_thresholds items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 6,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "If crate recovery falls below 40% of annual loss volume in year one, then the campaign fails its primary success criterion.",
+            "line_original": "recover at least 40% of the annual loss volume (108,000 crates) in year one",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "recover at least 40% of the annual loss volume",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If campaign design and logistics are not complete by end of Q1 2026, then feasibility is jeopardized.",
+            "line_original": "campaign concept and logistics design by end of Q1 2026",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "concept and logistics design by end of Q1 2026",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If donation payout exceeds 1.35 million DKK, then the maximum donation budget is overrun.",
+            "line_original": "5 DKK \u00d7 up to 270,000 crate returns = 1.35 million DKK in maximum donation outlay",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "derived",
+            "source_quote": "1.35 million DKK in maximum donation outlay",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If organic social media impressions fall below 20 million, then the marketing goal is not met.",
+            "line_original": "generate at least 20 million organic social media impressions",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "generate at least 20 million organic social media impressions",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If donation amount is less than 500,000 DKK, then the minimum charitable contribution fails.",
+            "line_original": "donate a minimum of 500,000 DKK to Arla Foundation",
+            "modelling_relevance": 4,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "donate a minimum of 500,000 DKK",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If new-crate production orders for 2027 are not measurably reduced, then environmental success is limited.",
+            "line_original": "achieve measurable reduction in new-crate production orders for 2027",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "measurable reduction in new-crate production orders for 2027",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      },
+      "risks_and_shocks": {
+        "duration": 3,
+        "response_byte_count": 1779,
+        "user_prompt": "The 'line' field for this bucket is a trigger plus modelling-relevant\nimpact. Template shape (substitute from the source):\n- '<trigger>: <quantitative or operationally specific impact>'\n\nA risk is a downside scenario that could happen \u2014 an external shock, a\ndemand collapse, a supply disruption, a capacity overload, a regulatory\nrejection. It is NOT the same as a gate/threshold (which is a pass/fail\ncondition you actively check). If you have already produced an item in\ngates_and_thresholds, do not restate it here.\n\nSkip purely qualitative risks that do not name a number, a date, a capacity,\nor an operationally specific failure mode. If you include a scenario\nshock whose magnitude the source does not state, set source_status to\n'inferred' and source_evidence to 1 \u2014 do not present invented shock\nmagnitudes as if they were plan facts.\n\nAt most 8 items.\n\nEvery item in the list is a scored object with six fields: line_english,\nline_original, modelling_relevance, source_evidence, source_status,\nsource_quote.\n\nLanguage rule (apply to every item):\n- line_english: clean English version. ALL structural words must be in\n  English. A source-language term may appear in parentheses only when no\n  good English equivalent exists (e.g. 'kontingens (contingency)' is wrong\n  \u2014 write 'contingency'; 'utility variance approval' is fine even when\n  the source calls it 'forsyningsvariansgodkendelse'). Never produce a\n  hybrid sentence that mixes two languages mid-clause.\n- line_original: the same content in the source's primary language,\n  preserving the source's own terminology verbatim. If the source is\n  fully English, line_original is identical to line_english. If the\n  source contains non-English text, line_original keeps the native\n  spelling and technical terms intact.\n\nQuantity annotation rule (apply to every item):\n- When the source states a count as a word (in any language: \"two\",\n  \"twelve\", \"a dozen\", \"half a hundred\", \"to\", \"deux\", \"zwei\", \u2026),\n  annotate the digit form parenthetically in line_english after the\n  count word. Examples: \"four (4) part-time instructors\", \"a dozen (12)\n  weekly drop-in sessions\", \"two (2) FTE equivalents\". This applies to\n  the line_english field only; line_original keeps the source's native\n  phrasing without the digit annotation.\n- Do NOT digit-annotate vague quantifiers \u2014 \"several\", \"a handful\",\n  \"many\", \"few\", \"some\", \"various\", \"a number of\" are not counts and\n  must NOT be expanded into invented digits. If you do not know the\n  count, leave the word unannotated.\n\nScoring rules (identical across buckets):\n- modelling_relevance (1-5): how useful this item is for Monte Carlo /\n  napkin-math modelling. 5 = primary driver of viability; 1 = irrelevant\n  narrative.\n- source_evidence (1-5): how directly the source text supports this exact\n  item. 5 = near-verbatim quote present in the section; 1 = you invented\n  it. Be honest.\n- source_status: pick exactly one of these five values. The distinction is\n  about what KIND of statement the line makes, not whether the source\n  quantifies it.\n    * 'explicit' \u2014 a PLAN COMMITMENT the source states directly. The plan\n      is binding itself to this number, date, ratio, or condition. Total\n      budget, allocated contingency, target deadline, declared revenue\n      mix, contracted price, committed staff count.\n    * 'derived' \u2014 a value the plan implies but does not state directly,\n      computable from one or more 'explicit' values.\n    * 'inferred' \u2014 covers two cases: (a) a plausible assumption you\n      added that the source does not state at all; (b) an item the\n      source DOES state but only as an assumption, aspiration, expected\n      behaviour, or non-binding claim \u2014 anything the plan is not\n      binding itself to. \"Local users will accept the high rental rate\"\n      is 'inferred', even when the source contains that exact sentence,\n      because the plan does not bind users to accept it; it is a claim\n      the simulation should stress-test. Reserve 'explicit' for items\n      the plan binds itself to (committed budget, allocated reserve,\n      declared deadline, contracted price).\n    * 'stress_test' \u2014 applies to lines that QUANTIFY THE DAMAGE of a\n      failure outcome: the cost of a breakdown, the weeks of downtime,\n      the lost revenue under a what-if, the deficit when an assumption\n      breaks, the capacity shortfall during a shock. The defining trait\n      is that the number measures *how bad it gets if something goes\n      wrong*. Use this tag EVEN WHEN the source states the damage\n      magnitude \u2014 a quantified failure outcome is still a stress test,\n      not a plan commitment.\n      Do NOT confuse the damage magnitude with the trigger threshold\n      inside a gate. \"If revenue falls below 70% of target, then pivot\"\n      is a gate: the 70% is the trigger threshold, not damage. The\n      stress_test number, if there were one, would be a separate item\n      naming what the pivot costs or how much revenue is lost. Gates\n      stay 'explicit'/'derived'/'inferred' according to how the source\n      establishes the threshold; assumptions and load-bearing claims do\n      the same. stress_test belongs almost entirely in risks_and_shocks\n      and in numeric_values lines that name a failure-outcome\n      magnitude.\n    * 'missing' \u2014 a primitive input the plan needs but the source does\n      not supply. Used in the missing_data_to_estimate bucket; the\n      status for items in that bucket will be overwritten to 'missing'\n      regardless of what you set. Do NOT use 'missing' in any other\n      bucket: if the source does not supply a value for an assumption,\n      gate, risk, or numeric_value, use 'inferred' instead.\n  Disambiguation tests, in order of priority:\n  1. Is this a quantification of what could go wrong (failure cost,\n     downtime, lost revenue under a what-if, deficit when an assumption\n     breaks)? If yes \u2192 'stress_test', even when the source states the\n     number.\n  2. Otherwise, is the plan BINDING itself to this \u2014 a committed\n     budget, allocated reserve, declared deadline, contracted rate,\n     committed staff count? If yes \u2192 'explicit'.\n  3. Otherwise, does the source state this as an assumption,\n     aspiration, expected behaviour, or non-binding claim that the\n     simulation would want to stress-test? If yes \u2192 'inferred'.\n  4. Otherwise it's something you added without source support \u2192\n     'inferred' (and source_evidence should be 1).\n  When in doubt prefer 'inferred' over 'explicit'.\n- source_quote: a SHORT (\u226412 word) verbatim or near-verbatim fragment from\n  the section that supports this item. If the item is not in the section,\n  write 'NOT IN SOURCE' and set source_evidence to 1 and source_status to\n  'inferred'.\n\nCast a wide net \u2014 surface borderline candidates with honest low scores\nrather than self-censoring; the lowest-scoring items will be dropped\nafter ranking, so the cost of including a weak candidate is small and the\ncost of missing a real one is large. But never *invent* a specific value\nwhere the source is silent \u2014 mark such guesses 'inferred' with\nsource_evidence 1 if you include them at all.\n\nKeep each source_quote to \u226412 words so the response stays within the\noutput budget.",
+        "second_pass_duration": 2,
+        "second_pass_response_byte_count": 23,
+        "second_pass_user_prompt": "Review the risks_and_shocks items you just produced above. Identify items present in the section that you missed. Emit only NEW items not already covered above; do not repeat or rephrase items you already produced. Apply the same bucket rules. Up to 8 new items. If you captured everything important on the first pass, return an empty list.",
+        "first_pass_item_count": 5,
+        "second_pass_item_count": 0,
+        "newly_added_count": 0,
+        "scored_items": [
+          {
+            "line_english": "Consumers repurposing crates for second lives: loss of 270,000 units annually.",
+            "line_original": "loses approximately 270,000 of its iconic green plastic milk crates every year",
+            "modelling_relevance": 5,
+            "source_evidence": 5,
+            "source_status": "explicit",
+            "source_quote": "loses approximately 270,000 of its iconic green plastic milk crates",
+            "quote_verified": true
+          },
+          {
+            "line_english": "Unreturned crates generate 106 tonnes of CO2 replacement production annually.",
+            "line_original": "replacement production alone generates an estimated 106 tonnes of CO2 annually",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "explicit",
+            "source_quote": "generates an estimated 106 tonnes of CO2 annually",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If Incentive Structure Calibration is too low, consumer engagement fails the 40% return goal.",
+            "line_original": "If the donation is set too low, consumer engagement will fail",
+            "modelling_relevance": 4,
+            "source_evidence": 4,
+            "source_status": "inferred",
+            "source_quote": "Setting the incentive too low risks failing the volume target",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If the chosen promotional posture is too conservative, earned media potential will be sacrificed.",
+            "line_original": "A very safe, conservative message ensures partner goodwill but sacrifices the potential for the wide organic reach",
+            "modelling_relevance": 4,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "sacrifices the potential for the wide organic reach",
+            "quote_verified": true
+          },
+          {
+            "line_english": "If crate grading is too permissive, high reprocessing costs increase total logistics expenditure.",
+            "line_original": "Overly permissive grading leads to high reprocessing costs",
+            "modelling_relevance": 3,
+            "source_evidence": 3,
+            "source_status": "inferred",
+            "source_quote": "Overly permissive grading leads to high reprocessing costs",
+            "quote_verified": true
+          }
+        ],
+        "cross_bucket_promoted_count": 0
+      }
+    },
+    "system_prompt": "You compress one verbose project-plan section so that a downstream\nparameter-extraction model can read it for Monte Carlo and napkin-math\npurposes.\n\nYou are not summarising for a human reader. Throw away narrative and focus\non the one class of signal this call asks for.\n\nDrop in every call:\n- persuasive prose and rhetorical framing\n- repeated restatements of the same lever, decision, or risk\n- expert biographies, role descriptions, search terms\n- generic mitigations with no number, threshold, or specific action\n- synergy/conflict paragraphs unless they identify a hard dependency\n\nGeneral output discipline:\n- preserve numeric values exactly as written in the source (do not round, do\n  not convert percentages to fractions, do not translate currency)\n- never copy units, currencies, or dates from this prompt's examples \u2014 always\n  use what the source actually says\n- do not add commentary, headings, or markdown formatting inside any field\n- if the section genuinely contains nothing for this call's bucket, return\n  an empty list\n- only include facts and numbers that appear in the section text between\n  [START_SECTION_MARKDOWN] and [END_SECTION_MARKDOWN]; do NOT invent\n  breakdowns, sub-categories, or specific values that are not in the source\n- SOURCE-FAITHFULNESS RULE (critical): do NOT create numeric values from\n  generic business intuition. Specifically, never invent: benchmark\n  percentages, generic shock sizes, utilization thresholds, salary shares,\n  equipment cost guesses, growth rates, churn rates, demand reductions,\n  cybersecurity/insurance/disaster impact percentages, or any \"typical\n  business\" filler. If a modelling variable is important but the source\n  does not state a number, that variable belongs in\n  missing_data_to_estimate \u2014 not in numeric_values, not as a hard gate,\n  and not as a quantified risk\n- do not duplicate items you have already produced in another bucket; each\n  bucket captures a distinct kind of signal\n\nCRITICAL response format rules:\n- Your entire response must be exactly one JSON object matching the\n  requested schema.\n- The very first character of your response MUST be '{' and the very last\n  character MUST be '}'.\n- Do NOT wrap the JSON in markdown code fences (no ```json, no ```).\n- Do NOT prefix the JSON with phrases like 'Here is...', 'Below is...',\n  'The output is...', 'Here is the JSON...', or any other introduction.\n- Do NOT append any prose, explanation, or commentary after the closing '}'.\n- Do NOT emit a second JSON object \u2014 there must be exactly one.\n- Do NOT echo the JSON schema. Produce a response that contains the actual\n  VALUES, not the schema structure. Wrong: {\"properties\":{\"<field>\":\n  {\"type\":\"string\"}}}. Right: {\"<field>\":\"<your actual answer>\"}.\n  Wrong: {\"type\":\"array\",\"items\":{...}}. Right: the field's value directly."
+  }
+}

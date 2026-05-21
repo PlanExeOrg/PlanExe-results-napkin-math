@@ -1,0 +1,233 @@
+{
+  "plan_summary": {
+    "plan_name": "Containerized Dark Data Ingestor Network (CDDIN)",
+    "plan_type": "industrial infrastructure deployment",
+    "primary_goal": "Deploy 30 mobile ingest units to recover 200+ petabytes of at-risk legacy media within 10 years",
+    "modelling_frame": "Tests whether the $250M / 10-year budget covers a 30-MIU fleet's CapEx plus 10-year OpEx, whether the Phase 1 $60M tranche sustains the 3-pilot operational window, and whether the AI pre-screen plus 15% override keeps human review load under the 20% threshold."
+  },
+  "key_values": [
+    {
+      "id": "total_budget_usd",
+      "label": "Total project budget over 10 years",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 250000000,
+      "comment": "Absolute funding ceiling across the entire 10-year deployment. Denominator for every coverage and runway test.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total project budget over 10 years: $250 million"
+    },
+    {
+      "id": "phase1_budget_usd",
+      "label": "Phase 1 budget commitment",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 60000000,
+      "comment": "Tranche that must sustain 3 pilot MIUs through the 18-month uptime gate to unlock Phase 2 scaling capex.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Phase 1 budget commitment: $60 million — stage funding input"
+    },
+    {
+      "id": "annual_opex_per_miu_usd",
+      "label": "Annual operating cost per MIU",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD_per_year",
+      "value": 2500000,
+      "comment": "Primary operational burn input; source range $2-3M/year, central used here. Scales with fleet size and years.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Annual operating cost per mobile ingest unit range: $2-3 million/year"
+    },
+    {
+      "id": "capex_per_miu_usd",
+      "label": "Capital cost per Mobile Ingest Unit",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "USD",
+      "value": 3500000,
+      "comment": "CapEx per MIU; source range $3-4M, central used. Drives total fleet build cost.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Per mobile ingest unit cost range: $3-4 million"
+    },
+    {
+      "id": "fleet_target_units",
+      "label": "Target fleet size (MIUs)",
+      "category": "capacity",
+      "value_type": "explicit",
+      "unit": "units",
+      "value": 30,
+      "comment": "Total MIUs to deploy by Year 10 (3 pilot + 27 scale). Drives CapEx and OpEx totals.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "30 Mobile Ingest Units (MIUs) total (3 Pilot, 27 Scale)"
+    },
+    {
+      "id": "program_duration_years",
+      "label": "Total program duration",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "years",
+      "value": 10,
+      "comment": "10-year horizon for full deployment and the 200 PB recovery target. Multiplier on OpEx.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "10-year deployment ... 200+ petabytes recovered"
+    },
+    {
+      "id": "human_review_load_cap_fraction",
+      "label": "Human review load cap",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.2,
+      "comment": "Hard threshold; if realised load exceeds 20% Phase 1 success and the review bottleneck goal fail.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "If content requiring human review exceeds 20%, then Phase 1 success and review bottleneck goal is failed"
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_phase1_runway_feasibility",
+      "question": "Does the $60M Phase 1 tranche cover 3 pilot MIUs' CapEx plus their operational window before the Phase 2 gate?",
+      "why_it_matters": "Phase 1 funding must clear pilot CapEx and operating costs through the 18-month gate; a shortfall halts the whole program.",
+      "formula_hint": "phase1_budget_surplus_usd = phase1_budget_usd - (3 * capex_per_miu_usd) - (3 * annual_opex_per_miu_usd * phase1_duration_years)",
+      "output_name": "phase1_budget_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["phase1_budget_usd", "capex_per_miu_usd", "annual_opex_per_miu_usd", "phase1_duration_years"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "phase1_duration_years",
+      "label": "Phase 1 pilot operational duration",
+      "unit": "years",
+      "why_needed": "Multiplier on Phase 1 OpEx; needed to test whether the $60M tranche sustains 3 pilot MIUs through the gate.",
+      "suggested_estimation_method": "Anchor on the 18-month uptime review cycle the plan names (1.5 years), bounded 1.0 to 2.0."
+    },
+    {
+      "id": "ai_false_positive_rate",
+      "label": "AI pre-screen false positive rate",
+      "unit": "fraction",
+      "why_needed": "Realised flag rate that the 15% override is applied on top of; drives total review load against the 20% cap.",
+      "suggested_estimation_method": "Anchor on the plan's 10% baseline assumption; bound 0.08 to 0.15 per Issue 3 sensitivity."
+    },
+    {
+      "id": "mandatory_override_fraction",
+      "label": "Mandatory human override watermark on AI flags",
+      "unit": "fraction",
+      "why_needed": "Multiplier on the AI flag rate to compute total review load tested against the 20% cap.",
+      "suggested_estimation_method": "Plan explicitly mandates 15% on all AI flags; treat as fixed at 0.15 with narrow bounds."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "fleet_capex_total_usd",
+      "label": "Total fleet capital cost",
+      "formula_hint": "fleet_capex_total_usd = fleet_target_units * capex_per_miu_usd",
+      "output_name": "fleet_capex_total_usd",
+      "output_unit": "USD",
+      "depends_on": ["fleet_target_units", "capex_per_miu_usd"],
+      "why_first": "Establishes the CapEx draw on the $250M envelope before OpEx layering."
+    },
+    {
+      "id": "fleet_lifetime_opex_usd",
+      "label": "Total fleet 10-year operating cost (steady-state proxy)",
+      "formula_hint": "fleet_lifetime_opex_usd = fleet_target_units * annual_opex_per_miu_usd * program_duration_years",
+      "output_name": "fleet_lifetime_opex_usd",
+      "output_unit": "USD",
+      "depends_on": ["fleet_target_units", "annual_opex_per_miu_usd", "program_duration_years"],
+      "why_first": "Upper-bound OpEx layer assuming full fleet runs for the full horizon; tests budget headroom."
+    },
+    {
+      "id": "program_budget_surplus_usd",
+      "label": "Budget surplus after CapEx and lifetime OpEx",
+      "formula_hint": "program_budget_surplus_usd = total_budget_usd - fleet_capex_total_usd - fleet_lifetime_opex_usd",
+      "output_name": "program_budget_surplus_usd",
+      "output_unit": "USD",
+      "depends_on": ["total_budget_usd", "fleet_capex_total_usd", "fleet_lifetime_opex_usd"],
+      "why_first": "Core viability gate: does $250M absorb CapEx and 10-year OpEx for the planned fleet?"
+    },
+    {
+      "id": "realised_review_load_fraction",
+      "label": "Realised total human review load",
+      "formula_hint": "realised_review_load_fraction = ai_false_positive_rate + mandatory_override_fraction * ai_false_positive_rate",
+      "output_name": "realised_review_load_fraction",
+      "output_unit": "fraction",
+      "depends_on": ["ai_false_positive_rate", "mandatory_override_fraction"],
+      "why_first": "Combines AI flag rate and 15% override into the load actually presented to reviewers."
+    },
+    {
+      "id": "review_load_margin",
+      "label": "Margin under the 20% human review cap",
+      "formula_hint": "review_load_margin = human_review_load_cap_fraction - realised_review_load_fraction",
+      "output_name": "review_load_margin",
+      "output_unit": "fraction",
+      "depends_on": ["human_review_load_cap_fraction", "realised_review_load_fraction"],
+      "why_first": "Tests the explicit Phase 1 review-load gate; positive = pass."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "vintage_hardware_acquisition_gate",
+      "label": "Securing 150-300 vintage units via LOIs by Month 6",
+      "why_it_matters": "Phase 1 cannot start construction without sufficient vintage hardware acquired through an auction market the model does not represent.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Phase 1 stalls; cannibalization parts pipeline collapses and the modular-replacement R&D loses its baseline component pool."
+    },
+    {
+      "id": "data_escrow_agreements_gate",
+      "label": "Binding data escrow agreements with three global cloud providers",
+      "why_it_matters": "Long-term data sovereignty and post-deployment value depend on legally binding multi-vendor escrow that the model treats as a fixed input.",
+      "source_anchor": "project_plan",
+      "consequence_if_false": "Decentralized archival strategy collapses; project loses its 75%-on-independent-servers goal and faces forced single-vendor migration."
+    },
+    {
+      "id": "archive_tier3_liability_gate",
+      "label": "Tier 3 contractual liability accepted by Phase 1 archive partners",
+      "why_it_matters": "Pre-Treatment Module strategy and reduced MIU crew sizing depend on partner archives accepting penalty clauses for pre-treatment failures.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Pre-treatment risk reverts to MIU crew; OpEx savings disappear and hardware damage exposure rises."
+    },
+    {
+      "id": "gdpr_marker_taxonomy_gate",
+      "label": "GDPR-aligned PII/Copyright Marker Taxonomy approved by all Phase 1 partners",
+      "why_it_matters": "Zero legal incidents requires a regulator-acceptable classification taxonomy the AI screen and human reviewers operate against; not testable as a number.",
+      "source_anchor": "data_collection",
+      "consequence_if_false": "Human review cannot certify compliance; the zero-legal-incidents goal is breached and operations may be suspended."
+    }
+  ]
+}

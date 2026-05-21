@@ -1,0 +1,256 @@
+{
+  "plan_summary": {
+    "plan_name": "Hauts-de-France 9 GW Sovereign AI Engine — Pragmatic Scale-Up",
+    "plan_type": "Hyperscale data center megaproject (multi-phase, EUR-denominated)",
+    "primary_goal": "Complete Phase 1 (1 GW operational, PUE <=1.20) within 36 months while securing the 60% take-or-pay anchor commitment and binding RTE 3 GW transmission contract required for Phase 2 FID.",
+    "modelling_frame": "Tests Phase 1 viability gates: budget coverage of CAPEX plus land-holding overrun, anchor take-or-pay commitment margin against the 60% threshold, FX exposure absorption on USD-hardware, and PUE clearance margin. Existential gates (binding RTE 3 GW allocation, DGSI/ANSSI sign-off, judicial buffer authorization) are flagged but not financially tested."
+  },
+  "key_values": [
+    {
+      "id": "phase1_capex_budget_eur",
+      "label": "Phase 1 CAPEX budget (1 GW)",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "EUR",
+      "value": 7500000000,
+      "comment": "Phase 1 capital outlay for 500 MW-1 GW buildout; mid-point of stated 5-10B range.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "Estimated Phase 1 budget for 500 MW-1 GW: 5B-10B initial CapEx estimate."
+    },
+    {
+      "id": "phase2_takeorpay_commitment_threshold",
+      "label": "Phase 2 take-or-pay commitment threshold",
+      "category": "funding_gate",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.6,
+      "comment": "60% take-or-pay for next 2 GW tranche must be signed before Phase 2 expansion FID; primary financial gate.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Minimum take-or-pay commitment threshold for 1-3 GW expansion: 60% financial gate for next tranche funding."
+    },
+    {
+      "id": "land_buffer_area_hectares",
+      "label": "Non-buildable buffer area",
+      "category": "operational",
+      "value_type": "explicit",
+      "unit": "hectares",
+      "value": 12880,
+      "comment": "128.8 km^2 buffer (80% of 161 km^2) requires holding-cost budgeting; uncosted in plan, drives early-CAPEX overrun risk.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Essential buffer/community/ecological zones (80%): 128.8 km^2."
+    },
+    {
+      "id": "land_holding_duration_months",
+      "label": "Land-holding duration (Phase 1)",
+      "category": "time",
+      "value_type": "explicit",
+      "unit": "months",
+      "value": 18,
+      "comment": "Plan explicitly budgets 18 months upfront for buffer holding, ring-fenced from infrastructure CAPEX.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Explicitly budget holding costs for the 128.8 km^2 buffer for 18 months upfront."
+    },
+    {
+      "id": "usd_hardware_capex_share",
+      "label": "USD-hardware share of total CAPEX",
+      "category": "cost",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.3,
+      "comment": "Plan assumes 30% of the 120B buildout is USD-denominated hardware; drives FX risk model.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "30% of 120B CAPEX is USD-denominated hardware; 70% hedged."
+    },
+    {
+      "id": "fx_hedge_coverage_fraction",
+      "label": "USD hardware FX hedge coverage",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.7,
+      "comment": "70% of USD hardware procurement is hedged via forwards; remaining 30% is unhedged exposure.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Implement multi-year forward hedging for 70% of USD hardware needs (Phase 1 and 2)."
+    },
+    {
+      "id": "fx_shock_magnitude_fraction",
+      "label": "Unfavourable EUR/USD shift magnitude",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.1,
+      "comment": "Plan stress-tests a 10% unfavourable EUR depreciation against USD as the FX shock scenario.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "medium",
+      "uncertainty": "medium",
+      "source_text": "If EUR depreciates >10% vs. USD, hardware costs could inflate by 8B-15B."
+    },
+    {
+      "id": "phase1_contingency_reserve_eur",
+      "label": "Phase 1 contingency reserve (inferred 15%)",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "EUR",
+      "value": 1125000000,
+      "comment": "Inferred 15% contingency on Phase 1 CAPEX; absorbs land-holding overrun, FX residual, and remediation shocks.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "high",
+      "source_text": "Phase 0 must include funding for uncosted land holding reserves; budget overrun (1.3B+) risk."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_phase1_capex_budget_usd_million",
+      "question": "Does Phase 1 CAPEX budget translate into a stable USD-equivalent envelope after FX shock absorption?",
+      "why_it_matters": "Hardware procurement is USD-denominated; quantifying residual exposure makes the FX gate test interpretable.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": ["phase1_capex_budget_eur", "fx_unhedged_exposure_eur"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "land_holding_cost_eur_per_hectare_year",
+      "label": "Annual holding cost per hectare of buffer land",
+      "unit": "EUR_per_hectare_per_year",
+      "why_needed": "Plan flags 128.8 km^2 buffer holding cost as uncosted; needed to budget the 18-month holding overrun.",
+      "suggested_estimation_method": "Benchmark local cadastral rates and agricultural easement charges in Hauts-de-France (Dunkirk/Cambrai); Review Issue 2 cites 50k-75k EUR/ha/year."
+    },
+    {
+      "id": "actual_phase2_takeorpay_commitment_fraction",
+      "label": "Realised take-or-pay commitment fraction at Phase 2 FID",
+      "unit": "fraction",
+      "why_needed": "The 60% threshold is a hard gate; modelling needs the realised commitment to compute the gate margin.",
+      "suggested_estimation_method": "Anchor base at the 0.6 plan commitment; spread reflects anchor-tenant retraction risk flagged in Premortem and Risk 3."
+    },
+    {
+      "id": "actual_phase1_pue",
+      "label": "Realised Phase 1 operational PUE",
+      "unit": "ratio",
+      "why_needed": "Plan caps PUE at 1.20; tenant SLA compliance gates depend on the realised value; needed for PUE-margin gate.",
+      "suggested_estimation_method": "Anchor on plan target 1.20; spread reflects Risk 2 (0.1 PUE drift on liquid cooling brownfield scale-up)."
+    },
+    {
+      "id": "remediation_cost_overrun_eur",
+      "label": "Brownfield remediation overrun above baseline",
+      "unit": "EUR",
+      "why_needed": "Risk 9 forecasts 250-750M baseline doubling/tripling to 500M-2.25B; consumes the contingency reserve.",
+      "suggested_estimation_method": "Use the cited overrun range as a one-sided draw; base at the mid-point of the doubling scenario."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "land_holding_cost_total_eur",
+      "label": "Total 18-month buffer-land holding cost",
+      "formula_hint": "land_holding_cost_total_eur = land_buffer_area_hectares * land_holding_cost_eur_per_hectare_year * (land_holding_duration_months / 12)",
+      "output_name": "land_holding_cost_total_eur",
+      "output_unit": "EUR",
+      "depends_on": ["land_buffer_area_hectares", "land_holding_cost_eur_per_hectare_year", "land_holding_duration_months"],
+      "why_first": "Quantifies the uncosted holding burden flagged in Review Issue 2 as a 1.3B early-CAPEX overrun risk."
+    },
+    {
+      "id": "fx_unhedged_exposure_eur",
+      "label": "Unhedged FX exposure on Phase 1 USD hardware",
+      "formula_hint": "fx_unhedged_exposure_eur = phase1_capex_budget_eur * usd_hardware_capex_share * (1 - fx_hedge_coverage_fraction) * fx_shock_magnitude_fraction",
+      "output_name": "fx_unhedged_exposure_eur",
+      "output_unit": "EUR",
+      "depends_on": ["phase1_capex_budget_eur", "usd_hardware_capex_share", "fx_hedge_coverage_fraction", "fx_shock_magnitude_fraction"],
+      "why_first": "Quantifies residual EUR exposure from the unhedged 30% of USD hardware under a 10% depreciation shock (Risk 4)."
+    },
+    {
+      "id": "phase2_takeorpay_commitment_margin",
+      "label": "Phase 2 take-or-pay commitment margin",
+      "formula_hint": "phase2_takeorpay_commitment_margin = actual_phase2_takeorpay_commitment_fraction - phase2_takeorpay_commitment_threshold",
+      "output_name": "phase2_takeorpay_commitment_margin",
+      "output_unit": "fraction",
+      "depends_on": ["actual_phase2_takeorpay_commitment_fraction", "phase2_takeorpay_commitment_threshold"],
+      "why_first": "Tests the 60% take-or-pay financial gate; positive margin clears Phase 2 FID."
+    },
+    {
+      "id": "phase1_pue_margin",
+      "label": "Phase 1 PUE clearance margin",
+      "formula_hint": "phase1_pue_margin = 1.20 - actual_phase1_pue",
+      "output_name": "phase1_pue_margin",
+      "output_unit": "ratio",
+      "depends_on": ["actual_phase1_pue"],
+      "why_first": "Engineering SLA gate; tenant contract compliance and energy-cost penalties trip if realised PUE exceeds 1.20."
+    },
+    {
+      "id": "phase1_contingency_surplus_eur",
+      "label": "Phase 1 contingency surplus after land-holding, FX, and remediation overruns",
+      "formula_hint": "phase1_contingency_surplus_eur = phase1_contingency_reserve_eur - land_holding_cost_total_eur - fx_unhedged_exposure_eur - remediation_cost_overrun_eur",
+      "output_name": "phase1_contingency_surplus_eur",
+      "output_unit": "EUR",
+      "depends_on": ["phase1_contingency_reserve_eur", "land_holding_cost_total_eur", "fx_unhedged_exposure_eur", "remediation_cost_overrun_eur"],
+      "why_first": "Combined viability test of the 15% reserve against the three named Phase 1 cost overruns the plan attributes to one budget envelope."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "rte_binding_3gw_allocation_gate",
+      "label": "RTE binding 3 GW transmission allocation",
+      "why_it_matters": "Phase 1 construction financing is contractually blocked until a binding RTE transmission contract for the 3 GW Phase 2 expansion is in hand; the model treats the gate as a fixed input.",
+      "source_anchor": "review_plan",
+      "consequence_if_false": "Phase 1 construction financing cannot close; 1B-2B Phase 0/1 capital stranded if tenants withdraw."
+    },
+    {
+      "id": "dgsi_anssi_signoff_gate",
+      "label": "DGSI/ANSSI sovereign-partition sign-off",
+      "why_it_matters": "Without a formal DGSI/ANSSI agreement before Phase 1 Power FID, premium sovereign revenue streams (10B-20B long-term) are jeopardised; gate is regulatory, not quantitative.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Premium domestic revenue stream lost; 60% Phase 2 commitment threshold becomes harder to clear."
+    },
+    {
+      "id": "judicial_buffer_authorization_gate",
+      "label": "Judicial/permitting authorization for hyper-dense 80% buffer model",
+      "why_it_matters": "Prefectural/judicial review of the 80% buffer can reduce buildable area below 20 km^2, capping capacity at 3-4 GW; outcome is political, not financial.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Buildable area capped; 9 GW long-term goal abandoned; business case re-evaluated downward."
+    },
+    {
+      "id": "social_license_credibility_gate",
+      "label": "Social license credibility (workforce, heat reuse)",
+      "why_it_matters": "Plan states it must not proceed past Phase 0 if social license is not credible; outcome depends on community acceptance of workforce mandate and heat reuse commitments.",
+      "source_anchor": "selected_scenario",
+      "consequence_if_false": "Phase 0 exit condition fails; project does not progress to Phase 1 FID."
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "plan_summary": {
+    "plan_name": "India 4-Day Work Week National Pilot",
+    "plan_type": "public_policy_pilot",
+    "primary_goal": "Generate robust, attributable evidence on 4DWW productivity and equity to inform national labor reform.",
+    "modelling_frame": "Tests whether the INR 2,000 crore envelope and ring-fenced 10% contingency cover aggregate stress-test shocks, whether budget allocations to the formal track and productivity grants are sufficient for the targeted cohort, and whether opt-in, SME-share, and post-incentive productivity retention clear their stated thresholds."
+  },
+  "key_values": [
+    {
+      "id": "total_program_budget_inr_crore",
+      "label": "Total program budget",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "INR_crore",
+      "value": 2000,
+      "comment": "Headline budget envelope governing all formal and informal track spending across 48 months.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Total program budget: INR 2,000 crore"
+    },
+    {
+      "id": "formal_track_allocation_fraction",
+      "label": "Formal track allocation share",
+      "category": "budget",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.70,
+      "comment": "Share of total budget directed to the formal sector 4DWW pilot track.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "Formal sector 4DWW allocation percentage: 70%"
+    },
+    {
+      "id": "contingency_fund_fraction",
+      "label": "Contingency fund share",
+      "category": "risk",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.10,
+      "comment": "Ring-fenced contingency reserve as fraction of total budget; the only buffer named for absorbing stated stress-test shocks.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "low",
+      "source_text": "Contingency budget percentage allocation: 10%"
+    },
+    {
+      "id": "productivity_grants_share_of_incentive",
+      "label": "Productivity grants share of incentive budget",
+      "category": "cost",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.80,
+      "comment": "Fraction of formal-track incentive budget routed to performance-linked productivity grants vs. tax credits.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "80% of incentive budget allocated to productivity grants"
+    },
+    {
+      "id": "sme_share_target_fraction",
+      "label": "SME participation target share",
+      "category": "compliance",
+      "value_type": "explicit",
+      "unit": "fraction",
+      "value": 0.50,
+      "comment": "Required SME share of participating companies; cohort selection criterion gating evidence representativeness.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "low",
+      "source_text": "50% of participating companies must be SMEs"
+    },
+    {
+      "id": "voluntary_optin_threshold_fraction",
+      "label": "Voluntary opt-in threshold",
+      "category": "compliance",
+      "value_type": "inferred",
+      "unit": "fraction",
+      "value": 0.75,
+      "comment": "Minimum voluntary opt-in participation rate required through the first 24 months to keep cohorts representative.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "high",
+      "uncertainty": "medium",
+      "source_text": "Voluntary opt-in participation rates must remain above 75%"
+    },
+    {
+      "id": "productivity_retention_threshold_fraction",
+      "label": "Productivity retention threshold post-incentive",
+      "category": "outcome",
+      "value_type": "derived",
+      "unit": "fraction",
+      "value": 0.95,
+      "comment": "Required sustained productivity (as share of baseline) six months post-incentive expiry; below this national ROI is reduced.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "medium",
+      "source_text": "If productivity retention falls below 95% six months post-incentive expiry, then national ROI projections are reduced."
+    },
+    {
+      "id": "aggregate_risk_shock_cost_inr_crore",
+      "label": "Aggregate stress-test shock cost",
+      "category": "risk",
+      "value_type": "inferred",
+      "unit": "INR_crore",
+      "value": 200,
+      "comment": "Plausible aggregate INR-cost realisation if multiple risks materialise; base sums plausible portion of regulatory delay, data-integrity loss, incentive overrun, and political crisis costs.",
+      "formula_hint": null,
+      "output_name": null,
+      "output_unit": null,
+      "depends_on": [],
+      "modelling_priority": "critical",
+      "uncertainty": "high",
+      "source_text": "Delay INR 150-300 cr; data integrity INR 50 cr; incentive overrun INR 300 cr; political crisis INR 10 cr."
+    }
+  ],
+  "derived_questions": [
+    {
+      "id": "q_sme_share_margin_feasibility",
+      "question": "Does the realised SME share of participating companies clear the 50% mandate?",
+      "why_it_matters": "Failure invalidates the administrative-simplicity test and the evidence base for national rollout.",
+      "formula_hint": "sme_share_margin = realised_sme_share - sme_share_target_fraction",
+      "output_name": "sme_share_margin",
+      "output_unit": "fraction",
+      "depends_on": ["realised_sme_share", "sme_share_target_fraction"]
+    },
+    {
+      "id": "q_optin_margin_feasibility",
+      "question": "Does realised voluntary opt-in clear the 75% threshold in the first 24 months?",
+      "why_it_matters": "Falling below 75% worsens selection bias and undermines generalisability.",
+      "formula_hint": "optin_margin = realised_optin_rate - voluntary_optin_threshold_fraction",
+      "output_name": "optin_margin",
+      "output_unit": "fraction",
+      "depends_on": ["realised_optin_rate", "voluntary_optin_threshold_fraction"]
+    }
+  ],
+  "missing_values_to_estimate": [
+    {
+      "id": "realised_sme_share",
+      "label": "Realised SME share of participating companies",
+      "unit": "fraction",
+      "why_needed": "Tests whether the cohort actually clears the 50% SME mandate.",
+      "suggested_estimation_method": "Estimate from observed MOU sign-ups across selected pilot states; bound from sector size distribution."
+    },
+    {
+      "id": "realised_optin_rate",
+      "label": "Realised voluntary opt-in participation rate",
+      "unit": "fraction",
+      "why_needed": "Tests whether the 75% opt-in threshold for representativeness holds.",
+      "suggested_estimation_method": "Estimate from comparable voluntary policy pilots in Indian formal sector; bound around target."
+    },
+    {
+      "id": "realised_productivity_retention_fraction",
+      "label": "Realised post-incentive productivity retention",
+      "unit": "fraction",
+      "why_needed": "Tests whether sustained productivity clears the 95% retention threshold six months post-incentive.",
+      "suggested_estimation_method": "Use survival analysis on cohorts; bound around 50% attrition of grant-driven efficiency (review-stated assumption)."
+    }
+  ],
+  "recommended_first_calculations": [
+    {
+      "id": "formal_track_budget_inr_crore",
+      "label": "Formal track budget",
+      "formula_hint": "formal_track_budget_inr_crore = total_program_budget_inr_crore * formal_track_allocation_fraction",
+      "output_name": "formal_track_budget_inr_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["total_program_budget_inr_crore", "formal_track_allocation_fraction"],
+      "why_first": "Sets the spending envelope for the formal sector pilot, which the incentive grant pool draws from."
+    },
+    {
+      "id": "contingency_reserve_inr_crore",
+      "label": "Contingency reserve",
+      "formula_hint": "contingency_reserve_inr_crore = total_program_budget_inr_crore * contingency_fund_fraction",
+      "output_name": "contingency_reserve_inr_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["total_program_budget_inr_crore", "contingency_fund_fraction"],
+      "why_first": "Quantifies the only ring-fenced buffer against stress-test shocks; primary input to viability gate."
+    },
+    {
+      "id": "contingency_shock_buffer_inr_crore",
+      "label": "Contingency buffer after aggregate shock",
+      "formula_hint": "contingency_shock_buffer_inr_crore = contingency_reserve_inr_crore - aggregate_risk_shock_cost_inr_crore",
+      "output_name": "contingency_shock_buffer_inr_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["contingency_reserve_inr_crore", "aggregate_risk_shock_cost_inr_crore"],
+      "why_first": "Tests whether the ring-fenced reserve absorbs realised aggregate shocks; positive = pass."
+    },
+    {
+      "id": "productivity_grants_pool_inr_crore",
+      "label": "Productivity grants pool",
+      "formula_hint": "productivity_grants_pool_inr_crore = formal_track_budget_inr_crore * productivity_grants_share_of_incentive",
+      "output_name": "productivity_grants_pool_inr_crore",
+      "output_unit": "INR_crore",
+      "depends_on": ["formal_track_budget_inr_crore", "productivity_grants_share_of_incentive"],
+      "why_first": "Sizes the performance-grant pool that drives adoption behaviour and post-incentive dependency risk."
+    },
+    {
+      "id": "productivity_retention_margin",
+      "label": "Productivity retention margin",
+      "formula_hint": "productivity_retention_margin = realised_productivity_retention_fraction - productivity_retention_threshold_fraction",
+      "output_name": "productivity_retention_margin",
+      "output_unit": "fraction",
+      "depends_on": ["realised_productivity_retention_fraction", "productivity_retention_threshold_fraction"],
+      "why_first": "Tests whether sustained productivity clears the 95% post-incentive threshold; positive = pass."
+    }
+  ],
+  "unmodelled_gates": [
+    {
+      "id": "state_mou_signoff_gate",
+      "label": "State Labor Department MOU and joint sign-off",
+      "why_it_matters": "Centralised enforcement of quarterly decision gates requires binding co-chair sign-off by State Labour Departments; without it the PMO cannot enforce KPI thresholds or rollback.",
+      "source_anchor": "premortem",
+      "consequence_if_false": "Centralised enforcement is blocked, decision gates stall, and the evidence pipeline becomes politically inadmissible."
+    },
+    {
+      "id": "executive_notification_legal_clarity_gate",
+      "label": "Executive notification on overtime definitions",
+      "why_it_matters": "The pilot proceeds via executive notification rather than legislative amendment; legal interpretation must permit 40-hour overtime treatment for the initial 24 months.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "Non-compliance challenges from non-participating firms halt portions of the formal cohort and trigger unplanned legal review."
+    },
+    {
+      "id": "audit_admissibility_gate",
+      "label": "Audit admissibility under State Labour litigation",
+      "why_it_matters": "Litigation could rule third-party audit findings inadmissible, invalidating the entire evidence mandate independent of any KPI margin the model tests.",
+      "source_anchor": "expert_criticism",
+      "consequence_if_false": "The INR 2,000 crore evidence mandate is invalidated; national policy recommendation cannot be supported."
+    }
+  ]
+}
